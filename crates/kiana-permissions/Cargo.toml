@@ -1,0 +1,17 @@
+[package]
+name = "kiana-permissions"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "工具调用权限：模式、规则、命令/路径分类与审批决策。"
+
+[dependencies]
+kiana-core = { workspace = true }
+kiana-sandbox = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

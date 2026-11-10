@@ -1,0 +1,1138 @@
+{
+ "{}": {
+  "check": false,
+  "error": "Invalid regular expression: /{}/u: Lone quantifier brackets"
+ },
+ "{a}": {
+  "check": false,
+  "error": "Invalid regular expression: /{a}/u: Lone quantifier brackets"
+ },
+ "a{": {
+  "check": false,
+  "error": "Invalid regular expression: /a{/u: Incomplete quantifier"
+ },
+ "{1}": {
+  "check": false,
+  "error": "Invalid regular expression: /{1}/u: Nothing to repeat"
+ },
+ "a{,2}": {
+  "check": false,
+  "error": "Invalid regular expression: /a{,2}/u: Incomplete quantifier"
+ },
+ "a{b}c": {
+  "check": false,
+  "error": "Invalid regular expression: /a{b}c/u: Incomplete quantifier"
+ },
+ "http://x/{y}": {
+  "check": false,
+  "error": "Invalid regular expression: /http://x/{y}/u: Incomplete quantifier"
+ },
+ "a{1}": {
+  "check": true,
+  "error": ""
+ },
+ "a{1,}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{L}": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a)": {
+  "check": true,
+  "error": ""
+ },
+ "(?<=a)b": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Foo}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Foo}/u: Invalid property name"
+ },
+ "\\k<a>": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k<a>/u: Invalid named capture referenced"
+ },
+ "[a-\\d]": {
+  "check": false,
+  "error": "Invalid regular expression: /[a-\\d]/u: Invalid character class"
+ },
+ "[]": {
+  "check": true,
+  "error": ""
+ },
+ "[^]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\B]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\B]/u: Invalid escape"
+ },
+ "\\B": {
+  "check": true,
+  "error": ""
+ },
+ "a{1}{2}": {
+  "check": false,
+  "error": "Invalid regular expression: /a{1}{2}/u: Nothing to repeat"
+ },
+ "^*": {
+  "check": false,
+  "error": "Invalid regular expression: /^*/u: Nothing to repeat"
+ },
+ "$*": {
+  "check": false,
+  "error": "Invalid regular expression: /$*/u: Nothing to repeat"
+ },
+ "(?<1>a)": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<1>a)/u: Invalid capture group name"
+ },
+ "\\k<x>(?<x>a)": {
+  "check": true,
+  "error": ""
+ },
+ "\\1(a)": {
+  "check": true,
+  "error": ""
+ },
+ "(a)\\1": {
+  "check": true,
+  "error": ""
+ },
+ "\\8": {
+  "check": false,
+  "error": "Invalid regular expression: /\\8/u: Invalid escape"
+ },
+ "\\0": {
+  "check": true,
+  "error": ""
+ },
+ "\\00": {
+  "check": false,
+  "error": "Invalid regular expression: /\\00/u: Invalid decimal escape"
+ },
+ "a{2,1}": {
+  "check": false,
+  "error": "Invalid regular expression: /a{2,1}/u: numbers out of order in {} quantifier"
+ },
+ "{": {
+  "check": false,
+  "error": "Invalid regular expression: /{/u: Lone quantifier brackets"
+ },
+ "}": {
+  "check": false,
+  "error": "Invalid regular expression: /}/u: Lone quantifier brackets"
+ },
+ "]": {
+  "check": false,
+  "error": "Invalid regular expression: /]/u: Lone quantifier brackets"
+ },
+ "[z-a]": {
+  "check": false,
+  "error": "Invalid regular expression: /[z-a]/u: Range out of order in character class"
+ },
+ "[\\d-a]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\d-a]/u: Invalid character class"
+ },
+ "\\p{Script=Greek}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{sc=Greek}": {
+  "check": true,
+  "error": ""
+ },
+ "\\u{110000}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\u{110000}/u: Invalid Unicode escape"
+ },
+ "\\u{}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\u{}/u: Invalid Unicode escape"
+ },
+ "\\c1": {
+  "check": false,
+  "error": "Invalid regular expression: /\\c1/u: Invalid Unicode escape"
+ },
+ "\\cA": {
+  "check": true,
+  "error": ""
+ },
+ "(?=a)": {
+  "check": true,
+  "error": ""
+ },
+ "(?)": {
+  "check": false,
+  "error": "Invalid regular expression: /(?)/u: Invalid group"
+ },
+ "(?:)": {
+  "check": true,
+  "error": ""
+ },
+ "(?i)": {
+  "check": false,
+  "error": "Invalid regular expression: /(?i)/u: Invalid group"
+ },
+ "\\a": {
+  "check": false,
+  "error": "Invalid regular expression: /\\a/u: Invalid escape"
+ },
+ "\\-": {
+  "check": false,
+  "error": "Invalid regular expression: /\\-/u: Invalid escape"
+ },
+ "[\\-]": {
+  "check": true,
+  "error": ""
+ },
+ "\\x2": {
+  "check": false,
+  "error": "Invalid regular expression: /\\x2/u: Invalid escape"
+ },
+ "\\u12": {
+  "check": false,
+  "error": "Invalid regular expression: /\\u12/u: Invalid Unicode escape"
+ },
+ "a**": {
+  "check": false,
+  "error": "Invalid regular expression: /a**/u: Nothing to repeat"
+ },
+ "a*?": {
+  "check": true,
+  "error": ""
+ },
+ "a??": {
+  "check": true,
+  "error": ""
+ },
+ "()": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a)\\k<y>": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<x>a)\\k<y>/u: Invalid named capture referenced"
+ },
+ "(?<x>a)\\k<x>": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{ASCII}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Any}": {
+  "check": true,
+  "error": ""
+ },
+ "[\\p{L}]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\p{L}-a]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\p{L}-a]/u: Invalid character class"
+ },
+ "a{0}": {
+  "check": true,
+  "error": ""
+ },
+ "a{0,0}": {
+  "check": true,
+  "error": ""
+ },
+ "a{4294967295}": {
+  "check": true,
+  "error": ""
+ },
+ "a{4294967296}": {
+  "check": true,
+  "error": ""
+ },
+ "a{999999999999999999999}": {
+  "check": true,
+  "error": ""
+ },
+ "\\u{10FFFF}": {
+  "check": true,
+  "error": ""
+ },
+ "\\u{1100000}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\u{1100000}/u: Invalid Unicode escape"
+ },
+ "\\c": {
+  "check": false,
+  "error": "Invalid regular expression: /\\c/u: Invalid Unicode escape"
+ },
+ "\\c9": {
+  "check": false,
+  "error": "Invalid regular expression: /\\c9/u: Invalid Unicode escape"
+ },
+ "[\\c1]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\c1]/u: Invalid Unicode escape"
+ },
+ "[\\cA]": {
+  "check": true,
+  "error": ""
+ },
+ "\\xGG": {
+  "check": false,
+  "error": "Invalid regular expression: /\\xGG/u: Invalid escape"
+ },
+ "\\uGGGG": {
+  "check": false,
+  "error": "Invalid regular expression: /\\uGGGG/u: Invalid Unicode escape"
+ },
+ "\\u{GG}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\u{GG}/u: Invalid Unicode escape"
+ },
+ "(?<a-b>x)": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<a-b>x)/u: Invalid capture group name"
+ },
+ "(?<a_b>x)": {
+  "check": true,
+  "error": ""
+ },
+ "\\/": {
+  "check": true,
+  "error": ""
+ },
+ "[/]": {
+  "check": true,
+  "error": ""
+ },
+ "\\,": {
+  "check": false,
+  "error": "Invalid regular expression: /\\,/u: Invalid escape"
+ },
+ "\\e": {
+  "check": false,
+  "error": "Invalid regular expression: /\\e/u: Invalid escape"
+ },
+ "[\\e]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\e]/u: Invalid escape"
+ },
+ "\\p{Latin}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Latin}/u: Invalid property name"
+ },
+ "\\p{Script=Latin}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Script_Extensions=Latin}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{gc=L}": {
+  "check": true,
+  "error": ""
+ },
+ "[\\b]": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a)(?<y>b)\\k<y>": {
+  "check": true,
+  "error": ""
+ },
+ "\\k": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k/u: Invalid named reference"
+ },
+ "\\k<": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k</u: Invalid capture group name"
+ },
+ "\\k<>": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k<>/u: Invalid capture group name"
+ },
+ "a{1,2}?": {
+  "check": true,
+  "error": ""
+ },
+ "a{1,2}??": {
+  "check": false,
+  "error": "Invalid regular expression: /a{1,2}??/u: Nothing to repeat"
+ },
+ "a{1,2}+": {
+  "check": false,
+  "error": "Invalid regular expression: /a{1,2}+/u: Nothing to repeat"
+ },
+ "\\0a": {
+  "check": true,
+  "error": ""
+ },
+ "[\\0]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\0-9]": {
+  "check": true,
+  "error": ""
+ },
+ "\\uD800": {
+  "check": true,
+  "error": ""
+ },
+ "[\\uD800-\\uDFFF]": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Emoji}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{RGI_Emoji}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{RGI_Emoji}/u: Invalid property name"
+ },
+ "\\p{Extended_Pictographic}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{General_Category=Letter}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{General_Category=L}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Letter}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Alphabetic}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{White_Space}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Script=Grek}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{scx=Greek}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{age=3.2}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{age=3.2}/u: Invalid property name"
+ },
+ "\\p{Block=Basic_Latin}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Block=Basic_Latin}/u: Invalid property name"
+ },
+ "a]": {
+  "check": false,
+  "error": "Invalid regular expression: /a]/u: Lone quantifier brackets"
+ },
+ "[a-]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\-a]": {
+  "check": true,
+  "error": ""
+ },
+ "[-a]": {
+  "check": true,
+  "error": ""
+ },
+ "[a-b-c]": {
+  "check": true,
+  "error": ""
+ },
+ "(?<\\u0061>x)": {
+  "check": true,
+  "error": ""
+ },
+ "(?<\\u{61}>x)": {
+  "check": true,
+  "error": ""
+ },
+ "\\u{1F600}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Lu}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Ll}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{L&}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{L&}/u: Invalid property name"
+ },
+ "\\p{sc}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{sc}/u: Invalid property name"
+ },
+ "\\p{Script}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Script}/u: Invalid property name"
+ },
+ "\\p{Script=}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Script=}/u: Invalid property name"
+ },
+ "\\p{}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{}/u: Invalid property name"
+ },
+ "(?<>a)": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<>a)/u: Invalid capture group name"
+ },
+ "(?<a>a)(?<b>b)": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a)\\k<x": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<x>a)\\k<x/u: Invalid capture group name"
+ },
+ "\\k<x>": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k<x>/u: Invalid named capture referenced"
+ },
+ "\\k<x>(?<x>a)(?<x>b)": {
+  "check": false,
+  "error": "Invalid regular expression: /\\k<x>(?<x>a)(?<x>b)/u: Duplicate capture group name"
+ },
+ "abc": {
+  "check": true,
+  "error": ""
+ },
+ "a|b": {
+  "check": true,
+  "error": ""
+ },
+ "a.b": {
+  "check": true,
+  "error": ""
+ },
+ "[a-z]+": {
+  "check": true,
+  "error": ""
+ },
+ "^(foo|bar)$": {
+  "check": true,
+  "error": ""
+ },
+ "\\d{2,4}": {
+  "check": true,
+  "error": ""
+ },
+ "(?:a)": {
+  "check": true,
+  "error": ""
+ },
+ "(?=a)b": {
+  "check": true,
+  "error": ""
+ },
+ "(?<!a)b": {
+  "check": true,
+  "error": ""
+ },
+ "[^a-z]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\]]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\[]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\^]": {
+  "check": true,
+  "error": ""
+ },
+ "[a^]": {
+  "check": true,
+  "error": ""
+ },
+ "\\^": {
+  "check": true,
+  "error": ""
+ },
+ "\\$": {
+  "check": true,
+  "error": ""
+ },
+ "\\{": {
+  "check": true,
+  "error": ""
+ },
+ "\\}": {
+  "check": true,
+  "error": ""
+ },
+ "\\]": {
+  "check": true,
+  "error": ""
+ },
+ "\\[": {
+  "check": true,
+  "error": ""
+ },
+ "a{01}": {
+  "check": true,
+  "error": ""
+ },
+ "a{001,002}": {
+  "check": true,
+  "error": ""
+ },
+ "[\\x00-\\x1f]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\u0000-\\uFFFF]": {
+  "check": true,
+  "error": ""
+ },
+ "\\u0000": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a)|(?<y>b)": {
+  "check": true,
+  "error": ""
+ },
+ "((((((((((a))))))))))": {
+  "check": true,
+  "error": ""
+ },
+ "\\10(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)": {
+  "check": true,
+  "error": ""
+ },
+ "\\11(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)": {
+  "check": false,
+  "error": "Invalid regular expression: /\\11(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)/u: Invalid escape"
+ },
+ "(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)\\10": {
+  "check": true,
+  "error": ""
+ },
+ "😀": {
+  "check": true,
+  "error": ""
+ },
+ "[😀-😄]": {
+  "check": true,
+  "error": ""
+ },
+ "á": {
+  "check": true,
+  "error": ""
+ },
+ "[\\p{Emoji}]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\P{L}]": {
+  "check": true,
+  "error": ""
+ },
+ "\\P{ASCII}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Alpha}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Assigned}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{AHex}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{ASCII_Hex_Digit}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Bidi_Control}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Bidi_C}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Bidi_M}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Cased}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Case_Ignorable}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{CI}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Dash}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Deprecated}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{DI}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Default_Ignorable_Code_Point}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Emoji_Presentation}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Emoji_Modifier}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Emoji_Modifier_Base}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Emoji_Component}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{ExtPict}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Extender}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Ext}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Grapheme_Base}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Gr_Base}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Grapheme_Extend}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Gr_Ext}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Hex_Digit}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Hex}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{ID_Start}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDS}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{ID_Continue}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDC}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Ideographic}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Ideo}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDS_Binary_Operator}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDSB}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDS_Trinary_Operator}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IDST}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Join_Control}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Join_C}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Logical_Order_Exception}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{LOE}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Lowercase}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Lower}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Math}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Noncharacter_Code_Point}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{NChar}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Pattern_Syntax}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Pat_Syn}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Pattern_White_Space}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Pat_WS}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Quotation_Mark}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{QMark}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Radical}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Regional_Indicator}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{RI}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Sentence_Terminal}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{STerm}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Soft_Dotted}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{SD}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Terminal_Punctuation}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Term}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Unified_Ideograph}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{UIdeo}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Uppercase}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Upper}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Variation_Selector}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{VS}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{WSpace}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{space}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{XID_Start}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{XIDS}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{XID_Continue}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{XIDC}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{LC}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{gc=LC}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{gc=Letter}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{IsLatin}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{IsLatin}/u: Invalid property name"
+ },
+ "\\p{InBasic_Latin}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{InBasic_Latin}/u: Invalid property name"
+ },
+ "\\p{Alnum}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Alnum}/u: Invalid property name"
+ },
+ "\\p{Letter_Number}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{gc=Nl}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Punctuation}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{punct}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Number}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{digit}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Script=Old_Italic}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{sc=Ital}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{scx=Latn}": {
+  "check": true,
+  "error": ""
+ },
+ "\\p{Script=latin}": {
+  "check": false,
+  "error": "Invalid regular expression: /\\p{Script=latin}/u: Invalid property name"
+ },
+ "\\p{sc=Latin}": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a){1}": {
+  "check": true,
+  "error": ""
+ },
+ "(?<x>a){1,2": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<x>a){1,2/u: Incomplete quantifier"
+ },
+ "(?<x>a": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<x>a/u: Unterminated group"
+ },
+ "(?<x>a))": {
+  "check": false,
+  "error": "Invalid regular expression: /(?<x>a))/u: Unmatched ')'"
+ },
+ "((a)": {
+  "check": false,
+  "error": "Invalid regular expression: /((a)/u: Unterminated group"
+ },
+ "(?:a))": {
+  "check": false,
+  "error": "Invalid regular expression: /(?:a))/u: Unmatched ')'"
+ },
+ "a|": {
+  "check": true,
+  "error": ""
+ },
+ "|a": {
+  "check": true,
+  "error": ""
+ },
+ "|": {
+  "check": true,
+  "error": ""
+ },
+ "[a-z&&b]": {
+  "check": true,
+  "error": ""
+ },
+ "[a&&]": {
+  "check": true,
+  "error": ""
+ },
+ "a{1}?": {
+  "check": true,
+  "error": ""
+ },
+ "a{1}??": {
+  "check": false,
+  "error": "Invalid regular expression: /a{1}??/u: Nothing to repeat"
+ },
+ "(?=a)*": {
+  "check": false,
+  "error": "Invalid regular expression: /(?=a)*/u: Invalid quantifier"
+ },
+ "\\b*": {
+  "check": false,
+  "error": "Invalid regular expression: /\\b*/u: Nothing to repeat"
+ },
+ "\\b+": {
+  "check": false,
+  "error": "Invalid regular expression: /\\b+/u: Nothing to repeat"
+ },
+ "a\\b": {
+  "check": true,
+  "error": ""
+ },
+ "\\ba": {
+  "check": true,
+  "error": ""
+ },
+ "[\\p{L}]+": {
+  "check": true,
+  "error": ""
+ },
+ "[^\\p{L}]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\P{ASCII}]": {
+  "check": true,
+  "error": ""
+ },
+ "\\P{L}": {
+  "check": true,
+  "error": ""
+ },
+ "[\\w-]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\d-]": {
+  "check": true,
+  "error": ""
+ },
+ "[a-\\w]": {
+  "check": false,
+  "error": "Invalid regular expression: /[a-\\w]/u: Invalid character class"
+ },
+ "[\\s\\S]": {
+  "check": true,
+  "error": ""
+ },
+ "[\\S-\\s]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\S-\\s]/u: Invalid character class"
+ },
+ "[\\w-a]": {
+  "check": false,
+  "error": "Invalid regular expression: /[\\w-a]/u: Invalid character class"
+ }
+}

@@ -1,0 +1,1645 @@
+{
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "tui.editor.cursorUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor up"
+    },
+    "tui.editor.cursorDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor down"
+    },
+    "tui.editor.historyPrevious": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Select previous prompt history entry"
+    },
+    "tui.editor.historyNext": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Select next prompt history entry"
+    },
+    "tui.editor.cursorLeft": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor left"
+    },
+    "tui.editor.cursorRight": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor right"
+    },
+    "tui.editor.cursorWordLeft": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor word left"
+    },
+    "tui.editor.cursorWordRight": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move cursor word right"
+    },
+    "tui.editor.cursorLineStart": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move to line start"
+    },
+    "tui.editor.cursorLineEnd": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move to line end"
+    },
+    "tui.editor.jumpForward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Jump forward to character"
+    },
+    "tui.editor.jumpBackward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Jump backward to character"
+    },
+    "tui.editor.pageUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Page up"
+    },
+    "tui.editor.pageDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Page down"
+    },
+    "tui.editor.deleteCharBackward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete character backward"
+    },
+    "tui.editor.deleteCharForward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete character forward"
+    },
+    "tui.editor.deleteWordBackward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete word backward"
+    },
+    "tui.editor.deleteWordForward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete word forward"
+    },
+    "tui.editor.deleteToLineStart": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete to line start"
+    },
+    "tui.editor.deleteToLineEnd": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete to line end"
+    },
+    "tui.editor.yank": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Yank"
+    },
+    "tui.editor.yankPop": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Yank pop"
+    },
+    "tui.editor.undo": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Undo"
+    },
+    "tui.input.newLine": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Insert newline"
+    },
+    "tui.input.submit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Submit input"
+    },
+    "tui.input.tab": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tab / autocomplete"
+    },
+    "tui.input.copy": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Copy selection"
+    },
+    "tui.select.up": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move selection up"
+    },
+    "tui.select.down": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move selection down"
+    },
+    "tui.select.pageUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Selection page up"
+    },
+    "tui.select.pageDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Selection page down"
+    },
+    "tui.select.confirm": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Confirm selection"
+    },
+    "tui.select.cancel": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Cancel selection"
+    },
+    "tui.altScreen.pageUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport up one page"
+    },
+    "tui.altScreen.pageDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport down one page"
+    },
+    "tui.altScreen.halfPageUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport up half a page"
+    },
+    "tui.altScreen.halfPageDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport down half a page"
+    },
+    "tui.altScreen.lineUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport up one line"
+    },
+    "tui.altScreen.lineDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport down one line"
+    },
+    "tui.altScreen.previousPrompt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Jump to previous semantic prompt"
+    },
+    "tui.altScreen.nextPrompt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Jump to next semantic prompt"
+    },
+    "tui.altScreen.search": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Search the primary scroll view"
+    },
+    "tui.altScreen.searchNext": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Select the next search match"
+    },
+    "tui.altScreen.searchPrevious": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Select the previous search match"
+    },
+    "tui.altScreen.searchClose": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Close transcript search"
+    },
+    "tui.altScreen.top": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport to top"
+    },
+    "tui.altScreen.bottom": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Scroll viewport to bottom"
+    },
+    "app.interrupt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Cancel or abort"
+    },
+    "app.clear": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Clear editor"
+    },
+    "app.exit": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Exit when editor is empty"
+    },
+    "app.suspend": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Suspend to background"
+    },
+    "app.thinking.cycle": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Cycle thinking level"
+    },
+    "app.thinking.save": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Save thinking level"
+    },
+    "app.model.cycleForward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Cycle to next model"
+    },
+    "app.model.cycleBackward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Cycle to previous model"
+    },
+    "app.model.select": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Open model selector"
+    },
+    "app.tools.expand": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle tool output"
+    },
+    "app.thinking.toggle": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle thinking blocks"
+    },
+    "app.session.toggleNamedFilter": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle named session filter"
+    },
+    "app.editor.external": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Open external editor"
+    },
+    "app.message.copy": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Copy selection or last assistant message"
+    },
+    "app.message.followUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Queue follow-up message"
+    },
+    "app.message.dequeue": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Restore queued messages"
+    },
+    "app.clipboard.pasteImage": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Paste files on macOS, images, or text from clipboard"
+    },
+    "app.session.new": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Start a new session"
+    },
+    "app.session.tree": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Open session tree"
+    },
+    "app.session.fork": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Fork current session"
+    },
+    "app.session.resume": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Resume a session"
+    },
+    "app.tree.foldOrUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Fold tree branch or move up"
+    },
+    "app.tree.unfoldOrDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Unfold tree branch or move down"
+    },
+    "app.tree.editLabel": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Edit tree label"
+    },
+    "app.tree.toggleLabelTimestamp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle tree label timestamps"
+    },
+    "app.session.togglePath": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle session path display"
+    },
+    "app.session.toggleSort": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle session sort mode"
+    },
+    "app.session.rename": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Rename session"
+    },
+    "app.session.delete": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete session"
+    },
+    "app.session.deleteNoninvasive": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Delete session when query is empty"
+    },
+    "app.models.save": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Save model selection"
+    },
+    "app.models.enableAll": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Enable all models"
+    },
+    "app.models.clearAll": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Clear all models"
+    },
+    "app.models.toggleProvider": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Toggle all models for provider"
+    },
+    "app.models.reorderUp": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move model up in order"
+    },
+    "app.models.reorderDown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Move model down in order"
+    },
+    "app.tree.filter.default": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: default view"
+    },
+    "app.tree.filter.noTools": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: hide tool results"
+    },
+    "app.tree.filter.userOnly": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: user messages only"
+    },
+    "app.tree.filter.labeledOnly": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: labeled entries only"
+    },
+    "app.tree.filter.all": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: show all entries"
+    },
+    "app.tree.filter.cycleForward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: cycle forward"
+    },
+    "app.tree.filter.cycleBackward": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+            "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+          }
+        }
+      ],
+      "description": "Tree filter: cycle backward"
+    }
+  },
+  "additionalProperties": {
+    "anyOf": [
+      {
+        "type": "string",
+        "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+        "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+      },
+      {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^(?!.*(?:ctrl\\+.*ctrl\\+|shift\\+.*shift\\+|alt\\+.*alt\\+|super\\+.*super\\+))(?:(?:ctrl|shift|alt|super)\\+){0,4}(?:[a-z0-9]|escape|esc|enter|return|tab|space|backspace|delete|insert|clear|home|end|pageUp|pageDown|up|down|left|right|f1|f2|f3|f4|f5|f6|f7|f8|f9|f10|f11|f12|`|-|=|\\[|\\]|\\\\|;|'|,|\\.|/|!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|\\||~|\\{|\\}|:|<|>|\\?)$",
+          "description": "Key identifier with optional ctrl, shift, alt, or super modifiers."
+        }
+      }
+    ]
+  }
+}

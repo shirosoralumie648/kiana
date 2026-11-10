@@ -1,0 +1,2022 @@
+[
+  {
+    "key": "",
+    "capitalize": false,
+    "expected": ""
+  },
+  {
+    "key": "",
+    "capitalize": true,
+    "expected": ""
+  },
+  {
+    "key": "a",
+    "capitalize": false,
+    "expected": "a"
+  },
+  {
+    "key": "a",
+    "capitalize": true,
+    "expected": "A"
+  },
+  {
+    "key": "A",
+    "capitalize": false,
+    "expected": "A"
+  },
+  {
+    "key": "A",
+    "capitalize": true,
+    "expected": "A"
+  },
+  {
+    "key": "escape",
+    "capitalize": false,
+    "expected": "escape"
+  },
+  {
+    "key": "escape",
+    "capitalize": true,
+    "expected": "Escape"
+  },
+  {
+    "key": "ctrl+s",
+    "capitalize": false,
+    "expected": "ctrl+s"
+  },
+  {
+    "key": "ctrl+s",
+    "capitalize": true,
+    "expected": "Ctrl+S"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "capitalize": false,
+    "expected": "ctrl+shift+up"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "capitalize": true,
+    "expected": "Ctrl+Shift+Up"
+  },
+  {
+    "key": "ctrl+shift+up/ctrl+up",
+    "capitalize": false,
+    "expected": "ctrl+shift+up/ctrl+up"
+  },
+  {
+    "key": "ctrl+shift+up/ctrl+up",
+    "capitalize": true,
+    "expected": "Ctrl+Shift+Up/Ctrl+Up"
+  },
+  {
+    "key": "a//b",
+    "capitalize": false,
+    "expected": "a//b"
+  },
+  {
+    "key": "a//b",
+    "capitalize": true,
+    "expected": "A//B"
+  },
+  {
+    "key": "/",
+    "capitalize": false,
+    "expected": "/"
+  },
+  {
+    "key": "/",
+    "capitalize": true,
+    "expected": "/"
+  },
+  {
+    "key": "+",
+    "capitalize": false,
+    "expected": "+"
+  },
+  {
+    "key": "+",
+    "capitalize": true,
+    "expected": "+"
+  },
+  {
+    "key": "++",
+    "capitalize": false,
+    "expected": "++"
+  },
+  {
+    "key": "++",
+    "capitalize": true,
+    "expected": "++"
+  },
+  {
+    "key": "a+",
+    "capitalize": false,
+    "expected": "a+"
+  },
+  {
+    "key": "a+",
+    "capitalize": true,
+    "expected": "A+"
+  },
+  {
+    "key": "+a",
+    "capitalize": false,
+    "expected": "+a"
+  },
+  {
+    "key": "+a",
+    "capitalize": true,
+    "expected": "+A"
+  },
+  {
+    "key": "alt",
+    "capitalize": false,
+    "expected": "alt"
+  },
+  {
+    "key": "alt",
+    "capitalize": true,
+    "expected": "Alt"
+  },
+  {
+    "key": "ALT",
+    "capitalize": false,
+    "expected": "ALT"
+  },
+  {
+    "key": "ALT",
+    "capitalize": true,
+    "expected": "ALT"
+  },
+  {
+    "key": "Alt",
+    "capitalize": false,
+    "expected": "Alt"
+  },
+  {
+    "key": "Alt",
+    "capitalize": true,
+    "expected": "Alt"
+  },
+  {
+    "key": "option",
+    "capitalize": false,
+    "expected": "option"
+  },
+  {
+    "key": "option",
+    "capitalize": true,
+    "expected": "Option"
+  },
+  {
+    "key": "alt+left",
+    "capitalize": false,
+    "expected": "alt+left"
+  },
+  {
+    "key": "alt+left",
+    "capitalize": true,
+    "expected": "Alt+Left"
+  },
+  {
+    "key": "ß",
+    "capitalize": false,
+    "expected": "ß"
+  },
+  {
+    "key": "ß",
+    "capitalize": true,
+    "expected": "SS"
+  },
+  {
+    "key": "ßx",
+    "capitalize": false,
+    "expected": "ßx"
+  },
+  {
+    "key": "ßx",
+    "capitalize": true,
+    "expected": "SSx"
+  },
+  {
+    "key": "ﬁ",
+    "capitalize": false,
+    "expected": "ﬁ"
+  },
+  {
+    "key": "ﬁ",
+    "capitalize": true,
+    "expected": "FI"
+  },
+  {
+    "key": "ﬁsh",
+    "capitalize": false,
+    "expected": "ﬁsh"
+  },
+  {
+    "key": "ﬁsh",
+    "capitalize": true,
+    "expected": "FIsh"
+  },
+  {
+    "key": "ŉ",
+    "capitalize": false,
+    "expected": "ŉ"
+  },
+  {
+    "key": "ŉ",
+    "capitalize": true,
+    "expected": "ʼN"
+  },
+  {
+    "key": "ŉa",
+    "capitalize": false,
+    "expected": "ŉa"
+  },
+  {
+    "key": "ŉa",
+    "capitalize": true,
+    "expected": "ʼNa"
+  },
+  {
+    "key": "ǰ",
+    "capitalize": false,
+    "expected": "ǰ"
+  },
+  {
+    "key": "ǰ",
+    "capitalize": true,
+    "expected": "J̌"
+  },
+  {
+    "key": "ǰa",
+    "capitalize": false,
+    "expected": "ǰa"
+  },
+  {
+    "key": "ǰa",
+    "capitalize": true,
+    "expected": "J̌a"
+  },
+  {
+    "key": "ﬃ",
+    "capitalize": false,
+    "expected": "ﬃ"
+  },
+  {
+    "key": "ﬃ",
+    "capitalize": true,
+    "expected": "FFI"
+  },
+  {
+    "key": "ẖ",
+    "capitalize": false,
+    "expected": "ẖ"
+  },
+  {
+    "key": "ẖ",
+    "capitalize": true,
+    "expected": "H̱"
+  },
+  {
+    "key": "ΐ",
+    "capitalize": false,
+    "expected": "ΐ"
+  },
+  {
+    "key": "ΐ",
+    "capitalize": true,
+    "expected": "Ϊ́"
+  },
+  {
+    "key": "ᾀ",
+    "capitalize": false,
+    "expected": "ᾀ"
+  },
+  {
+    "key": "ᾀ",
+    "capitalize": true,
+    "expected": "ἈΙ"
+  },
+  {
+    "key": "𐐨",
+    "capitalize": false,
+    "expected": "𐐨"
+  },
+  {
+    "key": "𐐨",
+    "capitalize": true,
+    "expected": "𐐨"
+  },
+  {
+    "key": "𐐨abc",
+    "capitalize": false,
+    "expected": "𐐨abc"
+  },
+  {
+    "key": "𐐨abc",
+    "capitalize": true,
+    "expected": "𐐨abc"
+  },
+  {
+    "key": "𐐀",
+    "capitalize": false,
+    "expected": "𐐀"
+  },
+  {
+    "key": "𐐀",
+    "capitalize": true,
+    "expected": "𐐀"
+  },
+  {
+    "key": "😀",
+    "capitalize": false,
+    "expected": "😀"
+  },
+  {
+    "key": "😀",
+    "capitalize": true,
+    "expected": "😀"
+  },
+  {
+    "key": "😀+a",
+    "capitalize": false,
+    "expected": "😀+a"
+  },
+  {
+    "key": "😀+a",
+    "capitalize": true,
+    "expected": "😀+A"
+  },
+  {
+    "key": "a+😀",
+    "capitalize": false,
+    "expected": "a+😀"
+  },
+  {
+    "key": "a+😀",
+    "capitalize": true,
+    "expected": "A+😀"
+  },
+  {
+    "key": "é",
+    "capitalize": false,
+    "expected": "é"
+  },
+  {
+    "key": "é",
+    "capitalize": true,
+    "expected": "É"
+  },
+  {
+    "key": "ǅ",
+    "capitalize": false,
+    "expected": "ǅ"
+  },
+  {
+    "key": "ǅ",
+    "capitalize": true,
+    "expected": "Ǆ"
+  },
+  {
+    "key": "ǆ",
+    "capitalize": false,
+    "expected": "ǆ"
+  },
+  {
+    "key": "ǆ",
+    "capitalize": true,
+    "expected": "Ǆ"
+  },
+  {
+    "key": "ı",
+    "capitalize": false,
+    "expected": "ı"
+  },
+  {
+    "key": "ı",
+    "capitalize": true,
+    "expected": "I"
+  },
+  {
+    "key": "İ",
+    "capitalize": false,
+    "expected": "İ"
+  },
+  {
+    "key": "İ",
+    "capitalize": true,
+    "expected": "İ"
+  },
+  {
+    "key": "Σ",
+    "capitalize": false,
+    "expected": "Σ"
+  },
+  {
+    "key": "Σ",
+    "capitalize": true,
+    "expected": "Σ"
+  },
+  {
+    "key": "σ",
+    "capitalize": false,
+    "expected": "σ"
+  },
+  {
+    "key": "σ",
+    "capitalize": true,
+    "expected": "Σ"
+  },
+  {
+    "key": "ς",
+    "capitalize": false,
+    "expected": "ς"
+  },
+  {
+    "key": "ς",
+    "capitalize": true,
+    "expected": "Σ"
+  },
+  {
+    "key": "ctrl+ß",
+    "capitalize": false,
+    "expected": "ctrl+ß"
+  },
+  {
+    "key": "ctrl+ß",
+    "capitalize": true,
+    "expected": "Ctrl+SS"
+  },
+  {
+    "key": "ctrl+ﬁ+x",
+    "capitalize": false,
+    "expected": "ctrl+ﬁ+x"
+  },
+  {
+    "key": "ctrl+ﬁ+x",
+    "capitalize": true,
+    "expected": "Ctrl+FI+X"
+  },
+  {
+    "key": "𐐨/ß",
+    "capitalize": false,
+    "expected": "𐐨/ß"
+  },
+  {
+    "key": "𐐨/ß",
+    "capitalize": true,
+    "expected": "𐐨/SS"
+  },
+  {
+    "key": "a/b/c",
+    "capitalize": false,
+    "expected": "a/b/c"
+  },
+  {
+    "key": "a/b/c",
+    "capitalize": true,
+    "expected": "A/B/C"
+  },
+  {
+    "key": "ctrl++shift",
+    "capitalize": false,
+    "expected": "ctrl++shift"
+  },
+  {
+    "key": "ctrl++shift",
+    "capitalize": true,
+    "expected": "Ctrl++Shift"
+  },
+  {
+    "key": "Alt😀",
+    "capitalize": false,
+    "expected": "Alt😀"
+  },
+  {
+    "key": "Alt😀",
+    "capitalize": true,
+    "expected": "Alt😀"
+  },
+  {
+    "key": "ΐı㍿ß",
+    "capitalize": false,
+    "expected": "ΐı㍿ß"
+  },
+  {
+    "key": "ΐı㍿ß",
+    "capitalize": true,
+    "expected": "Ϊ́ı㍿ß"
+  },
+  {
+    "key": "altAlt",
+    "capitalize": false,
+    "expected": "altAlt"
+  },
+  {
+    "key": "altAlt",
+    "capitalize": true,
+    "expected": "AltAlt"
+  },
+  {
+    "key": "ᾀé",
+    "capitalize": false,
+    "expected": "ᾀé"
+  },
+  {
+    "key": "ᾀé",
+    "capitalize": true,
+    "expected": "ἈΙé"
+  },
+  {
+    "key": "ẖᾀ",
+    "capitalize": false,
+    "expected": "ẖᾀ"
+  },
+  {
+    "key": "ẖᾀ",
+    "capitalize": true,
+    "expected": "H̱ᾀ"
+  },
+  {
+    "key": "ALTǆ/ı",
+    "capitalize": false,
+    "expected": "ALTǆ/ı"
+  },
+  {
+    "key": "ALTǆ/ı",
+    "capitalize": true,
+    "expected": "ALTǆ/I"
+  },
+  {
+    "key": "Altİ",
+    "capitalize": false,
+    "expected": "Altİ"
+  },
+  {
+    "key": "Altİ",
+    "capitalize": true,
+    "expected": "Altİ"
+  },
+  {
+    "key": "/ᾀ㍿😀",
+    "capitalize": false,
+    "expected": "/ᾀ㍿😀"
+  },
+  {
+    "key": "/ᾀ㍿😀",
+    "capitalize": true,
+    "expected": "/ἈΙ㍿😀"
+  },
+  {
+    "key": " /",
+    "capitalize": false,
+    "expected": " /"
+  },
+  {
+    "key": " /",
+    "capitalize": true,
+    "expected": " /"
+  },
+  {
+    "key": "ΐǄıZ",
+    "capitalize": false,
+    "expected": "ΐǄıZ"
+  },
+  {
+    "key": "ΐǄıZ",
+    "capitalize": true,
+    "expected": "Ϊ́ǄıZ"
+  },
+  {
+    "key": "Z ",
+    "capitalize": false,
+    "expected": "Z "
+  },
+  {
+    "key": "Z ",
+    "capitalize": true,
+    "expected": "Z "
+  },
+  {
+    "key": "ßaéΣ",
+    "capitalize": false,
+    "expected": "ßaéΣ"
+  },
+  {
+    "key": "ßaéΣ",
+    "capitalize": true,
+    "expected": "SSaéΣ"
+  },
+  {
+    "key": "Zalt",
+    "capitalize": false,
+    "expected": "Zalt"
+  },
+  {
+    "key": "Zalt",
+    "capitalize": true,
+    "expected": "Zalt"
+  },
+  {
+    "key": "ςᾀ",
+    "capitalize": false,
+    "expected": "ςᾀ"
+  },
+  {
+    "key": "ςᾀ",
+    "capitalize": true,
+    "expected": "Σᾀ"
+  },
+  {
+    "key": "alt😀ǅŉ",
+    "capitalize": false,
+    "expected": "alt😀ǅŉ"
+  },
+  {
+    "key": "alt😀ǅŉ",
+    "capitalize": true,
+    "expected": "Alt😀ǅŉ"
+  },
+  {
+    "key": "ǰctrl",
+    "capitalize": false,
+    "expected": "ǰctrl"
+  },
+  {
+    "key": "ǰctrl",
+    "capitalize": true,
+    "expected": "J̌ctrl"
+  },
+  {
+    "key": "Altςςẖ",
+    "capitalize": false,
+    "expected": "Altςςẖ"
+  },
+  {
+    "key": "Altςςẖ",
+    "capitalize": true,
+    "expected": "Altςςẖ"
+  },
+  {
+    "key": "ǰﬃ",
+    "capitalize": false,
+    "expected": "ǰﬃ"
+  },
+  {
+    "key": "ǰﬃ",
+    "capitalize": true,
+    "expected": "J̌ﬃ"
+  },
+  {
+    "key": "😀ǅ",
+    "capitalize": false,
+    "expected": "😀ǅ"
+  },
+  {
+    "key": "😀ǅ",
+    "capitalize": true,
+    "expected": "😀ǅ"
+  },
+  {
+    "key": "Altǰ",
+    "capitalize": false,
+    "expected": "Altǰ"
+  },
+  {
+    "key": "Altǰ",
+    "capitalize": true,
+    "expected": "Altǰ"
+  },
+  {
+    "key": "ǰé",
+    "capitalize": false,
+    "expected": "ǰé"
+  },
+  {
+    "key": "ǰé",
+    "capitalize": true,
+    "expected": "J̌é"
+  },
+  {
+    "key": "ı+ǰǄ",
+    "capitalize": false,
+    "expected": "ı+ǰǄ"
+  },
+  {
+    "key": "ı+ǰǄ",
+    "capitalize": true,
+    "expected": "I+J̌Ǆ"
+  },
+  {
+    "key": "Zctrl/ǅ",
+    "capitalize": false,
+    "expected": "Zctrl/ǅ"
+  },
+  {
+    "key": "Zctrl/ǅ",
+    "capitalize": true,
+    "expected": "Zctrl/Ǆ"
+  },
+  {
+    "key": "ς ",
+    "capitalize": false,
+    "expected": "ς "
+  },
+  {
+    "key": "ς ",
+    "capitalize": true,
+    "expected": "Σ "
+  },
+  {
+    "key": "ǄǆAltctrl",
+    "capitalize": false,
+    "expected": "ǄǆAltctrl"
+  },
+  {
+    "key": "ǄǆAltctrl",
+    "capitalize": true,
+    "expected": "ǄǆAltctrl"
+  },
+  {
+    "key": "altß ŉ",
+    "capitalize": false,
+    "expected": "altß ŉ"
+  },
+  {
+    "key": "altß ŉ",
+    "capitalize": true,
+    "expected": "Altß ŉ"
+  },
+  {
+    "key": "/Ǆalt/",
+    "capitalize": false,
+    "expected": "/Ǆalt/"
+  },
+  {
+    "key": "/Ǆalt/",
+    "capitalize": true,
+    "expected": "/Ǆalt/"
+  },
+  {
+    "key": "ǄZ",
+    "capitalize": false,
+    "expected": "ǄZ"
+  },
+  {
+    "key": "ǄZ",
+    "capitalize": true,
+    "expected": "ǄZ"
+  },
+  {
+    "key": "ᾀǅ",
+    "capitalize": false,
+    "expected": "ᾀǅ"
+  },
+  {
+    "key": "ᾀǅ",
+    "capitalize": true,
+    "expected": "ἈΙǅ"
+  },
+  {
+    "key": "𐐨㍿ﬃǰ",
+    "capitalize": false,
+    "expected": "𐐨㍿ﬃǰ"
+  },
+  {
+    "key": "𐐨㍿ﬃǰ",
+    "capitalize": true,
+    "expected": "𐐨㍿ﬃǰ"
+  },
+  {
+    "key": "ctrlŉ+Z",
+    "capitalize": false,
+    "expected": "ctrlŉ+Z"
+  },
+  {
+    "key": "ctrlŉ+Z",
+    "capitalize": true,
+    "expected": "Ctrlŉ+Z"
+  },
+  {
+    "key": "ςᾀᾀ ",
+    "capitalize": false,
+    "expected": "ςᾀᾀ "
+  },
+  {
+    "key": "ςᾀᾀ ",
+    "capitalize": true,
+    "expected": "Σᾀᾀ "
+  },
+  {
+    "key": "ǆΣ",
+    "capitalize": false,
+    "expected": "ǆΣ"
+  },
+  {
+    "key": "ǆΣ",
+    "capitalize": true,
+    "expected": "ǄΣ"
+  },
+  {
+    "key": "ıǅ",
+    "capitalize": false,
+    "expected": "ıǅ"
+  },
+  {
+    "key": "ıǅ",
+    "capitalize": true,
+    "expected": "Iǅ"
+  },
+  {
+    "key": "+Ǆß㍿",
+    "capitalize": false,
+    "expected": "+Ǆß㍿"
+  },
+  {
+    "key": "+Ǆß㍿",
+    "capitalize": true,
+    "expected": "+Ǆß㍿"
+  },
+  {
+    "key": "ﬁǅ",
+    "capitalize": false,
+    "expected": "ﬁǅ"
+  },
+  {
+    "key": "ﬁǅ",
+    "capitalize": true,
+    "expected": "FIǅ"
+  },
+  {
+    "key": "alt+éᾀ",
+    "capitalize": false,
+    "expected": "alt+éᾀ"
+  },
+  {
+    "key": "alt+éᾀ",
+    "capitalize": true,
+    "expected": "Alt+Éᾀ"
+  },
+  {
+    "key": "İǆ",
+    "capitalize": false,
+    "expected": "İǆ"
+  },
+  {
+    "key": "İǆ",
+    "capitalize": true,
+    "expected": "İǆ"
+  },
+  {
+    "key": " ǅ㍿é",
+    "capitalize": false,
+    "expected": " ǅ㍿é"
+  },
+  {
+    "key": " ǅ㍿é",
+    "capitalize": true,
+    "expected": " ǅ㍿é"
+  },
+  {
+    "key": "ǅ㍿",
+    "capitalize": false,
+    "expected": "ǅ㍿"
+  },
+  {
+    "key": "ǅ㍿",
+    "capitalize": true,
+    "expected": "Ǆ㍿"
+  },
+  {
+    "key": "ΐΐALTΐ",
+    "capitalize": false,
+    "expected": "ΐΐALTΐ"
+  },
+  {
+    "key": "ΐΐALTΐ",
+    "capitalize": true,
+    "expected": "Ϊ́ΐALTΐ"
+  },
+  {
+    "key": "ǰǰ+ᾀ",
+    "capitalize": false,
+    "expected": "ǰǰ+ᾀ"
+  },
+  {
+    "key": "ǰǰ+ᾀ",
+    "capitalize": true,
+    "expected": "J̌ǰ+ἈΙ"
+  },
+  {
+    "key": "ΐ+ALTς",
+    "capitalize": false,
+    "expected": "ΐ+ALTς"
+  },
+  {
+    "key": "ΐ+ALTς",
+    "capitalize": true,
+    "expected": "Ϊ́+ALTς"
+  },
+  {
+    "key": "ßİςǄ",
+    "capitalize": false,
+    "expected": "ßİςǄ"
+  },
+  {
+    "key": "ßİςǄ",
+    "capitalize": true,
+    "expected": "SSİςǄ"
+  },
+  {
+    "key": "ALT+ﬁALT",
+    "capitalize": false,
+    "expected": "ALT+ﬁALT"
+  },
+  {
+    "key": "ALT+ﬁALT",
+    "capitalize": true,
+    "expected": "ALT+FIALT"
+  },
+  {
+    "key": "/ﬃ",
+    "capitalize": false,
+    "expected": "/ﬃ"
+  },
+  {
+    "key": "/ﬃ",
+    "capitalize": true,
+    "expected": "/FFI"
+  },
+  {
+    "key": "ǰǅ",
+    "capitalize": false,
+    "expected": "ǰǅ"
+  },
+  {
+    "key": "ǰǅ",
+    "capitalize": true,
+    "expected": "J̌ǅ"
+  },
+  {
+    "key": "Ǆΐ",
+    "capitalize": false,
+    "expected": "Ǆΐ"
+  },
+  {
+    "key": "Ǆΐ",
+    "capitalize": true,
+    "expected": "Ǆΐ"
+  },
+  {
+    "key": "Ǆẖ",
+    "capitalize": false,
+    "expected": "Ǆẖ"
+  },
+  {
+    "key": "Ǆẖ",
+    "capitalize": true,
+    "expected": "Ǆẖ"
+  },
+  {
+    "key": "ǅᾀßAlt",
+    "capitalize": false,
+    "expected": "ǅᾀßAlt"
+  },
+  {
+    "key": "ǅᾀßAlt",
+    "capitalize": true,
+    "expected": "ǄᾀßAlt"
+  },
+  {
+    "key": "éAltﬁalt",
+    "capitalize": false,
+    "expected": "éAltﬁalt"
+  },
+  {
+    "key": "éAltﬁalt",
+    "capitalize": true,
+    "expected": "ÉAltﬁalt"
+  },
+  {
+    "key": "ᾀﬁǆﬃ",
+    "capitalize": false,
+    "expected": "ᾀﬁǆﬃ"
+  },
+  {
+    "key": "ᾀﬁǆﬃ",
+    "capitalize": true,
+    "expected": "ἈΙﬁǆﬃ"
+  },
+  {
+    "key": "ﬃ+éŉ",
+    "capitalize": false,
+    "expected": "ﬃ+éŉ"
+  },
+  {
+    "key": "ﬃ+éŉ",
+    "capitalize": true,
+    "expected": "FFI+Éŉ"
+  },
+  {
+    "key": " ẖ",
+    "capitalize": false,
+    "expected": " ẖ"
+  },
+  {
+    "key": " ẖ",
+    "capitalize": true,
+    "expected": " ẖ"
+  },
+  {
+    "key": "ᾀΐ😀 ",
+    "capitalize": false,
+    "expected": "ᾀΐ😀 "
+  },
+  {
+    "key": "ᾀΐ😀 ",
+    "capitalize": true,
+    "expected": "ἈΙΐ😀 "
+  },
+  {
+    "key": "ŉ ",
+    "capitalize": false,
+    "expected": "ŉ "
+  },
+  {
+    "key": "ŉ ",
+    "capitalize": true,
+    "expected": "ʼN "
+  },
+  {
+    "key": "/ᾀı/",
+    "capitalize": false,
+    "expected": "/ᾀı/"
+  },
+  {
+    "key": "/ᾀı/",
+    "capitalize": true,
+    "expected": "/ἈΙı/"
+  },
+  {
+    "key": "ALTǆ",
+    "capitalize": false,
+    "expected": "ALTǆ"
+  },
+  {
+    "key": "ALTǆ",
+    "capitalize": true,
+    "expected": "ALTǆ"
+  },
+  {
+    "key": "ﬃςΐǆ",
+    "capitalize": false,
+    "expected": "ﬃςΐǆ"
+  },
+  {
+    "key": "ﬃςΐǆ",
+    "capitalize": true,
+    "expected": "FFIςΐǆ"
+  },
+  {
+    "key": "+İﬁǄ",
+    "capitalize": false,
+    "expected": "+İﬁǄ"
+  },
+  {
+    "key": "+İﬁǄ",
+    "capitalize": true,
+    "expected": "+İﬁǄ"
+  },
+  {
+    "key": "ﬃǅ",
+    "capitalize": false,
+    "expected": "ﬃǅ"
+  },
+  {
+    "key": "ﬃǅ",
+    "capitalize": true,
+    "expected": "FFIǅ"
+  },
+  {
+    "key": "𐐨ﬃaltᾀ",
+    "capitalize": false,
+    "expected": "𐐨ﬃaltᾀ"
+  },
+  {
+    "key": "𐐨ﬃaltᾀ",
+    "capitalize": true,
+    "expected": "𐐨ﬃaltᾀ"
+  },
+  {
+    "key": "𐐨ǅ",
+    "capitalize": false,
+    "expected": "𐐨ǅ"
+  },
+  {
+    "key": "𐐨ǅ",
+    "capitalize": true,
+    "expected": "𐐨ǅ"
+  },
+  {
+    "key": "ẖaﬃalt",
+    "capitalize": false,
+    "expected": "ẖaﬃalt"
+  },
+  {
+    "key": "ẖaﬃalt",
+    "capitalize": true,
+    "expected": "H̱aﬃalt"
+  },
+  {
+    "key": "/ı ﬃ",
+    "capitalize": false,
+    "expected": "/ı ﬃ"
+  },
+  {
+    "key": "/ı ﬃ",
+    "capitalize": true,
+    "expected": "/I ﬃ"
+  },
+  {
+    "key": "ŉΣ",
+    "capitalize": false,
+    "expected": "ŉΣ"
+  },
+  {
+    "key": "ŉΣ",
+    "capitalize": true,
+    "expected": "ʼNΣ"
+  },
+  {
+    "key": " Altẖŉ",
+    "capitalize": false,
+    "expected": " Altẖŉ"
+  },
+  {
+    "key": " Altẖŉ",
+    "capitalize": true,
+    "expected": " Altẖŉ"
+  },
+  {
+    "key": "Ǆaltéctrl",
+    "capitalize": false,
+    "expected": "Ǆaltéctrl"
+  },
+  {
+    "key": "Ǆaltéctrl",
+    "capitalize": true,
+    "expected": "Ǆaltéctrl"
+  },
+  {
+    "key": "ıı",
+    "capitalize": false,
+    "expected": "ıı"
+  },
+  {
+    "key": "ıı",
+    "capitalize": true,
+    "expected": "Iı"
+  },
+  {
+    "key": "ﬁςǆﬃ",
+    "capitalize": false,
+    "expected": "ﬁςǆﬃ"
+  },
+  {
+    "key": "ﬁςǆﬃ",
+    "capitalize": true,
+    "expected": "FIςǆﬃ"
+  },
+  {
+    "key": "İᾀ",
+    "capitalize": false,
+    "expected": "İᾀ"
+  },
+  {
+    "key": "İᾀ",
+    "capitalize": true,
+    "expected": "İᾀ"
+  },
+  {
+    "key": "ς㍿",
+    "capitalize": false,
+    "expected": "ς㍿"
+  },
+  {
+    "key": "ς㍿",
+    "capitalize": true,
+    "expected": "Σ㍿"
+  },
+  {
+    "key": " ㍿",
+    "capitalize": false,
+    "expected": " ㍿"
+  },
+  {
+    "key": " ㍿",
+    "capitalize": true,
+    "expected": " ㍿"
+  },
+  {
+    "key": "Σctrlǰctrl",
+    "capitalize": false,
+    "expected": "Σctrlǰctrl"
+  },
+  {
+    "key": "Σctrlǰctrl",
+    "capitalize": true,
+    "expected": "Σctrlǰctrl"
+  },
+  {
+    "key": "𐐨ẖǅZ",
+    "capitalize": false,
+    "expected": "𐐨ẖǅZ"
+  },
+  {
+    "key": "𐐨ẖǅZ",
+    "capitalize": true,
+    "expected": "𐐨ẖǅZ"
+  },
+  {
+    "key": "ﬁAlt",
+    "capitalize": false,
+    "expected": "ﬁAlt"
+  },
+  {
+    "key": "ﬁAlt",
+    "capitalize": true,
+    "expected": "FIAlt"
+  },
+  {
+    "key": "ẖctrlctrlﬃ",
+    "capitalize": false,
+    "expected": "ẖctrlctrlﬃ"
+  },
+  {
+    "key": "ẖctrlctrlﬃ",
+    "capitalize": true,
+    "expected": "H̱ctrlctrlﬃ"
+  },
+  {
+    "key": "ALTaltẖﬁ",
+    "capitalize": false,
+    "expected": "ALTaltẖﬁ"
+  },
+  {
+    "key": "ALTaltẖﬁ",
+    "capitalize": true,
+    "expected": "ALTaltẖﬁ"
+  },
+  {
+    "key": "İ㍿ǅ/",
+    "capitalize": false,
+    "expected": "İ㍿ǅ/"
+  },
+  {
+    "key": "İ㍿ǅ/",
+    "capitalize": true,
+    "expected": "İ㍿ǅ/"
+  },
+  {
+    "key": " alt㍿é",
+    "capitalize": false,
+    "expected": " alt㍿é"
+  },
+  {
+    "key": " alt㍿é",
+    "capitalize": true,
+    "expected": " alt㍿é"
+  },
+  {
+    "key": "😀ﬁ",
+    "capitalize": false,
+    "expected": "😀ﬁ"
+  },
+  {
+    "key": "😀ﬁ",
+    "capitalize": true,
+    "expected": "😀ﬁ"
+  },
+  {
+    "key": "ςǆǰ😀",
+    "capitalize": false,
+    "expected": "ςǆǰ😀"
+  },
+  {
+    "key": "ςǆǰ😀",
+    "capitalize": true,
+    "expected": "Σǆǰ😀"
+  },
+  {
+    "key": "İẖ",
+    "capitalize": false,
+    "expected": "İẖ"
+  },
+  {
+    "key": "İẖ",
+    "capitalize": true,
+    "expected": "İẖ"
+  },
+  {
+    "key": "+ᾀςΐ",
+    "capitalize": false,
+    "expected": "+ᾀςΐ"
+  },
+  {
+    "key": "+ᾀςΐ",
+    "capitalize": true,
+    "expected": "+ἈΙςΐ"
+  },
+  {
+    "key": "ﬁΣﬁᾀ",
+    "capitalize": false,
+    "expected": "ﬁΣﬁᾀ"
+  },
+  {
+    "key": "ﬁΣﬁᾀ",
+    "capitalize": true,
+    "expected": "FIΣﬁᾀ"
+  },
+  {
+    "key": "/Zŉẖ",
+    "capitalize": false,
+    "expected": "/Zŉẖ"
+  },
+  {
+    "key": "/Zŉẖ",
+    "capitalize": true,
+    "expected": "/Zŉẖ"
+  },
+  {
+    "key": "İAlt",
+    "capitalize": false,
+    "expected": "İAlt"
+  },
+  {
+    "key": "İAlt",
+    "capitalize": true,
+    "expected": "İAlt"
+  },
+  {
+    "key": "+ᾀ++",
+    "capitalize": false,
+    "expected": "+ᾀ++"
+  },
+  {
+    "key": "+ᾀ++",
+    "capitalize": true,
+    "expected": "+ἈΙ++"
+  },
+  {
+    "key": "ﬃİΐ+",
+    "capitalize": false,
+    "expected": "ﬃİΐ+"
+  },
+  {
+    "key": "ﬃİΐ+",
+    "capitalize": true,
+    "expected": "FFIİΐ+"
+  },
+  {
+    "key": "aaltﬁZ",
+    "capitalize": false,
+    "expected": "aaltﬁZ"
+  },
+  {
+    "key": "aaltﬁZ",
+    "capitalize": true,
+    "expected": "AaltﬁZ"
+  },
+  {
+    "key": "ALTΣςß",
+    "capitalize": false,
+    "expected": "ALTΣςß"
+  },
+  {
+    "key": "ALTΣςß",
+    "capitalize": true,
+    "expected": "ALTΣςß"
+  },
+  {
+    "key": "/ı",
+    "capitalize": false,
+    "expected": "/ı"
+  },
+  {
+    "key": "/ı",
+    "capitalize": true,
+    "expected": "/I"
+  },
+  {
+    "key": "é𐐨ẖŉ",
+    "capitalize": false,
+    "expected": "é𐐨ẖŉ"
+  },
+  {
+    "key": "é𐐨ẖŉ",
+    "capitalize": true,
+    "expected": "É𐐨ẖŉ"
+  },
+  {
+    "key": "😀Ǆﬃa",
+    "capitalize": false,
+    "expected": "😀Ǆﬃa"
+  },
+  {
+    "key": "😀Ǆﬃa",
+    "capitalize": true,
+    "expected": "😀Ǆﬃa"
+  },
+  {
+    "key": "ẖé",
+    "capitalize": false,
+    "expected": "ẖé"
+  },
+  {
+    "key": "ẖé",
+    "capitalize": true,
+    "expected": "H̱é"
+  },
+  {
+    "key": "İǄ",
+    "capitalize": false,
+    "expected": "İǄ"
+  },
+  {
+    "key": "İǄ",
+    "capitalize": true,
+    "expected": "İǄ"
+  },
+  {
+    "key": "alt😀",
+    "capitalize": false,
+    "expected": "alt😀"
+  },
+  {
+    "key": "alt😀",
+    "capitalize": true,
+    "expected": "Alt😀"
+  },
+  {
+    "key": "Alt+ǰǅ",
+    "capitalize": false,
+    "expected": "Alt+ǰǅ"
+  },
+  {
+    "key": "Alt+ǰǅ",
+    "capitalize": true,
+    "expected": "Alt+J̌ǅ"
+  },
+  {
+    "key": "ǆZéa",
+    "capitalize": false,
+    "expected": "ǆZéa"
+  },
+  {
+    "key": "ǆZéa",
+    "capitalize": true,
+    "expected": "ǄZéa"
+  },
+  {
+    "key": "ẖa",
+    "capitalize": false,
+    "expected": "ẖa"
+  },
+  {
+    "key": "ẖa",
+    "capitalize": true,
+    "expected": "H̱a"
+  },
+  {
+    "key": " ééǄ",
+    "capitalize": false,
+    "expected": " ééǄ"
+  },
+  {
+    "key": " ééǄ",
+    "capitalize": true,
+    "expected": " ééǄ"
+  },
+  {
+    "key": "😀ıǅİ",
+    "capitalize": false,
+    "expected": "😀ıǅİ"
+  },
+  {
+    "key": "😀ıǅİ",
+    "capitalize": true,
+    "expected": "😀ıǅİ"
+  },
+  {
+    "key": "ẖ/",
+    "capitalize": false,
+    "expected": "ẖ/"
+  },
+  {
+    "key": "ẖ/",
+    "capitalize": true,
+    "expected": "H̱/"
+  },
+  {
+    "key": "ctrlctrla😀",
+    "capitalize": false,
+    "expected": "ctrlctrla😀"
+  },
+  {
+    "key": "ctrlctrla😀",
+    "capitalize": true,
+    "expected": "Ctrlctrla😀"
+  },
+  {
+    "key": "ctrlᾀ",
+    "capitalize": false,
+    "expected": "ctrlᾀ"
+  },
+  {
+    "key": "ctrlᾀ",
+    "capitalize": true,
+    "expected": "Ctrlᾀ"
+  },
+  {
+    "key": " İ𐐨ctrl",
+    "capitalize": false,
+    "expected": " İ𐐨ctrl"
+  },
+  {
+    "key": " İ𐐨ctrl",
+    "capitalize": true,
+    "expected": " İ𐐨ctrl"
+  },
+  {
+    "key": "Zǆΐǅ",
+    "capitalize": false,
+    "expected": "Zǆΐǅ"
+  },
+  {
+    "key": "Zǆΐǅ",
+    "capitalize": true,
+    "expected": "Zǆΐǅ"
+  },
+  {
+    "key": "ALTİ",
+    "capitalize": false,
+    "expected": "ALTİ"
+  },
+  {
+    "key": "ALTİ",
+    "capitalize": true,
+    "expected": "ALTİ"
+  },
+  {
+    "key": "ctrl𐐨",
+    "capitalize": false,
+    "expected": "ctrl𐐨"
+  },
+  {
+    "key": "ctrl𐐨",
+    "capitalize": true,
+    "expected": "Ctrl𐐨"
+  },
+  {
+    "key": "ǰß/ǰ",
+    "capitalize": false,
+    "expected": "ǰß/ǰ"
+  },
+  {
+    "key": "ǰß/ǰ",
+    "capitalize": true,
+    "expected": "J̌ß/J̌"
+  },
+  {
+    "key": "ΐ𐐨",
+    "capitalize": false,
+    "expected": "ΐ𐐨"
+  },
+  {
+    "key": "ΐ𐐨",
+    "capitalize": true,
+    "expected": "Ϊ́𐐨"
+  },
+  {
+    "key": "ςǅᾀǄ",
+    "capitalize": false,
+    "expected": "ςǅᾀǄ"
+  },
+  {
+    "key": "ςǅᾀǄ",
+    "capitalize": true,
+    "expected": "ΣǅᾀǄ"
+  },
+  {
+    "key": " ẖctrl㍿",
+    "capitalize": false,
+    "expected": " ẖctrl㍿"
+  },
+  {
+    "key": " ẖctrl㍿",
+    "capitalize": true,
+    "expected": " ẖctrl㍿"
+  },
+  {
+    "key": "Zǅaΐ",
+    "capitalize": false,
+    "expected": "Zǅaΐ"
+  },
+  {
+    "key": "Zǅaΐ",
+    "capitalize": true,
+    "expected": "Zǅaΐ"
+  },
+  {
+    "key": "ǅΣ",
+    "capitalize": false,
+    "expected": "ǅΣ"
+  },
+  {
+    "key": "ǅΣ",
+    "capitalize": true,
+    "expected": "ǄΣ"
+  },
+  {
+    "key": "AltAlt+ǅ",
+    "capitalize": false,
+    "expected": "AltAlt+ǅ"
+  },
+  {
+    "key": "AltAlt+ǅ",
+    "capitalize": true,
+    "expected": "AltAlt+Ǆ"
+  },
+  {
+    "key": "𐐨İ𐐨ς",
+    "capitalize": false,
+    "expected": "𐐨İ𐐨ς"
+  },
+  {
+    "key": "𐐨İ𐐨ς",
+    "capitalize": true,
+    "expected": "𐐨İ𐐨ς"
+  },
+  {
+    "key": "㍿aİﬁ",
+    "capitalize": false,
+    "expected": "㍿aİﬁ"
+  },
+  {
+    "key": "㍿aİﬁ",
+    "capitalize": true,
+    "expected": "㍿aİﬁ"
+  },
+  {
+    "key": "ﬃé",
+    "capitalize": false,
+    "expected": "ﬃé"
+  },
+  {
+    "key": "ﬃé",
+    "capitalize": true,
+    "expected": "FFIé"
+  },
+  {
+    "key": "ﬁ ",
+    "capitalize": false,
+    "expected": "ﬁ "
+  },
+  {
+    "key": "ﬁ ",
+    "capitalize": true,
+    "expected": "FI "
+  },
+  {
+    "key": "ALTẖ㍿Z",
+    "capitalize": false,
+    "expected": "ALTẖ㍿Z"
+  },
+  {
+    "key": "ALTẖ㍿Z",
+    "capitalize": true,
+    "expected": "ALTẖ㍿Z"
+  },
+  {
+    "key": " ǅ",
+    "capitalize": false,
+    "expected": " ǅ"
+  },
+  {
+    "key": " ǅ",
+    "capitalize": true,
+    "expected": " ǅ"
+  },
+  {
+    "key": "ALTctrl",
+    "capitalize": false,
+    "expected": "ALTctrl"
+  },
+  {
+    "key": "ALTctrl",
+    "capitalize": true,
+    "expected": "ALTctrl"
+  },
+  {
+    "key": "ǅǄ",
+    "capitalize": false,
+    "expected": "ǅǄ"
+  },
+  {
+    "key": "ǅǄ",
+    "capitalize": true,
+    "expected": "ǄǄ"
+  },
+  {
+    "key": "ıalt",
+    "capitalize": false,
+    "expected": "ıalt"
+  },
+  {
+    "key": "ıalt",
+    "capitalize": true,
+    "expected": "Ialt"
+  },
+  {
+    "key": "ΐǰǅǆ",
+    "capitalize": false,
+    "expected": "ΐǰǅǆ"
+  },
+  {
+    "key": "ΐǰǅǆ",
+    "capitalize": true,
+    "expected": "Ϊ́ǰǅǆ"
+  },
+  {
+    "key": "ctrlALTǅ㍿",
+    "capitalize": false,
+    "expected": "ctrlALTǅ㍿"
+  },
+  {
+    "key": "ctrlALTǅ㍿",
+    "capitalize": true,
+    "expected": "CtrlALTǅ㍿"
+  },
+  {
+    "key": "ᾀctrl",
+    "capitalize": false,
+    "expected": "ᾀctrl"
+  },
+  {
+    "key": "ᾀctrl",
+    "capitalize": true,
+    "expected": "ἈΙctrl"
+  },
+  {
+    "key": "𐐨㍿ẖİ",
+    "capitalize": false,
+    "expected": "𐐨㍿ẖİ"
+  },
+  {
+    "key": "𐐨㍿ẖİ",
+    "capitalize": true,
+    "expected": "𐐨㍿ẖİ"
+  },
+  {
+    "key": "㍿Σ",
+    "capitalize": false,
+    "expected": "㍿Σ"
+  },
+  {
+    "key": "㍿Σ",
+    "capitalize": true,
+    "expected": "㍿Σ"
+  },
+  {
+    "key": "ALTǰ",
+    "capitalize": false,
+    "expected": "ALTǰ"
+  },
+  {
+    "key": "ALTǰ",
+    "capitalize": true,
+    "expected": "ALTǰ"
+  },
+  {
+    "key": "ǰ/",
+    "capitalize": false,
+    "expected": "ǰ/"
+  },
+  {
+    "key": "ǰ/",
+    "capitalize": true,
+    "expected": "J̌/"
+  },
+  {
+    "key": "ZALTALTς",
+    "capitalize": false,
+    "expected": "ZALTALTς"
+  },
+  {
+    "key": "ZALTALTς",
+    "capitalize": true,
+    "expected": "ZALTALTς"
+  },
+  {
+    "key": "é𐐨ﬃ😀",
+    "capitalize": false,
+    "expected": "é𐐨ﬃ😀"
+  },
+  {
+    "key": "é𐐨ﬃ😀",
+    "capitalize": true,
+    "expected": "É𐐨ﬃ😀"
+  },
+  {
+    "key": " ǆﬃǅ",
+    "capitalize": false,
+    "expected": " ǆﬃǅ"
+  },
+  {
+    "key": " ǆﬃǅ",
+    "capitalize": true,
+    "expected": " ǆﬃǅ"
+  },
+  {
+    "key": "ǰAlt",
+    "capitalize": false,
+    "expected": "ǰAlt"
+  },
+  {
+    "key": "ǰAlt",
+    "capitalize": true,
+    "expected": "J̌Alt"
+  },
+  {
+    "key": "ǅ😀ß𐐨",
+    "capitalize": false,
+    "expected": "ǅ😀ß𐐨"
+  },
+  {
+    "key": "ǅ😀ß𐐨",
+    "capitalize": true,
+    "expected": "Ǆ😀ß𐐨"
+  },
+  {
+    "key": "㍿ŉǄﬃ",
+    "capitalize": false,
+    "expected": "㍿ŉǄﬃ"
+  },
+  {
+    "key": "㍿ŉǄﬃ",
+    "capitalize": true,
+    "expected": "㍿ŉǄﬃ"
+  },
+  {
+    "key": "ǄAltﬃZ",
+    "capitalize": false,
+    "expected": "ǄAltﬃZ"
+  },
+  {
+    "key": "ǄAltﬃZ",
+    "capitalize": true,
+    "expected": "ǄAltﬃZ"
+  },
+  {
+    "key": "ẖAlt𐐨é",
+    "capitalize": false,
+    "expected": "ẖAlt𐐨é"
+  },
+  {
+    "key": "ẖAlt𐐨é",
+    "capitalize": true,
+    "expected": "H̱Alt𐐨é"
+  },
+  {
+    "key": "altǅ",
+    "capitalize": false,
+    "expected": "altǅ"
+  },
+  {
+    "key": "altǅ",
+    "capitalize": true,
+    "expected": "Altǅ"
+  },
+  {
+    "key": "+ŉZǄ",
+    "capitalize": false,
+    "expected": "+ŉZǄ"
+  },
+  {
+    "key": "+ŉZǄ",
+    "capitalize": true,
+    "expected": "+ʼNZǄ"
+  },
+  {
+    "key": "ǅǅ",
+    "capitalize": false,
+    "expected": "ǅǅ"
+  },
+  {
+    "key": "ǅǅ",
+    "capitalize": true,
+    "expected": "Ǆǅ"
+  },
+  {
+    "key": "ᾀǰΐΣ",
+    "capitalize": false,
+    "expected": "ᾀǰΐΣ"
+  },
+  {
+    "key": "ᾀǰΐΣ",
+    "capitalize": true,
+    "expected": "ἈΙǰΐΣ"
+  },
+  {
+    "key": "ǰǆaltǅ",
+    "capitalize": false,
+    "expected": "ǰǆaltǅ"
+  },
+  {
+    "key": "ǰǆaltǅ",
+    "capitalize": true,
+    "expected": "J̌ǆaltǅ"
+  },
+  {
+    "key": "ΐǰ",
+    "capitalize": false,
+    "expected": "ΐǰ"
+  },
+  {
+    "key": "ΐǰ",
+    "capitalize": true,
+    "expected": "Ϊ́ǰ"
+  },
+  {
+    "key": "İǆ/Alt",
+    "capitalize": false,
+    "expected": "İǆ/Alt"
+  },
+  {
+    "key": "İǆ/Alt",
+    "capitalize": true,
+    "expected": "İǆ/Alt"
+  },
+  {
+    "key": "éŉŉς",
+    "capitalize": false,
+    "expected": "éŉŉς"
+  },
+  {
+    "key": "éŉŉς",
+    "capitalize": true,
+    "expected": "Éŉŉς"
+  },
+  {
+    "key": "ctrlALTßAlt",
+    "capitalize": false,
+    "expected": "ctrlALTßAlt"
+  },
+  {
+    "key": "ctrlALTßAlt",
+    "capitalize": true,
+    "expected": "CtrlALTßAlt"
+  },
+  {
+    "key": "ǆ/ctrlﬁ",
+    "capitalize": false,
+    "expected": "ǆ/ctrlﬁ"
+  },
+  {
+    "key": "ǆ/ctrlﬁ",
+    "capitalize": true,
+    "expected": "Ǆ/Ctrlﬁ"
+  },
+  {
+    "key": "ẖǆ",
+    "capitalize": false,
+    "expected": "ẖǆ"
+  },
+  {
+    "key": "ẖǆ",
+    "capitalize": true,
+    "expected": "H̱ǆ"
+  },
+  {
+    "key": "ǆaΣctrl",
+    "capitalize": false,
+    "expected": "ǆaΣctrl"
+  },
+  {
+    "key": "ǆaΣctrl",
+    "capitalize": true,
+    "expected": "ǄaΣctrl"
+  },
+  {
+    "key": "ᾀﬁςﬃ",
+    "capitalize": false,
+    "expected": "ᾀﬁςﬃ"
+  },
+  {
+    "key": "ᾀﬁςﬃ",
+    "capitalize": true,
+    "expected": "ἈΙﬁςﬃ"
+  }
+]

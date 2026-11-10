@@ -1,0 +1,43 @@
+{
+  "node": "v26.12.1",
+  "source": "print-mode.ts: writeRawStdout(`${JSON.stringify(session.sessionManager.getHeader())}\\n`)；header 是 JSON.parse 得到的原始对象，键序/未知字段原样保留。v1_migrated 对应 migrateV1ToV2 给旧 header 追加 version 的情形。",
+  "cases": {
+    "v1_migrated": {
+      "header": {
+        "type": "session",
+        "id": "session-1",
+        "timestamp": "2024-12-03T14:00:00.000Z",
+        "cwd": "/tmp/project",
+        "version": 3
+      },
+      "line": "{\"type\":\"session\",\"id\":\"session-1\",\"timestamp\":\"2024-12-03T14:00:00.000Z\",\"cwd\":\"/tmp/project\",\"version\":3}\n"
+    },
+    "extra_keys": {
+      "header": {
+        "type": "session",
+        "thirdParty": {
+          "nested": [
+            1,
+            true,
+            null
+          ]
+        },
+        "id": "session-1",
+        "timestamp": "2024-12-03T14:00:00.000Z",
+        "cwd": "/tmp/project",
+        "version": 3
+      },
+      "line": "{\"type\":\"session\",\"thirdParty\":{\"nested\":[1,true,null]},\"id\":\"session-1\",\"timestamp\":\"2024-12-03T14:00:00.000Z\",\"cwd\":\"/tmp/project\",\"version\":3}\n"
+    },
+    "fresh": {
+      "header": {
+        "type": "session",
+        "version": 3,
+        "id": "session-1",
+        "timestamp": "2024-12-03T14:00:00.000Z",
+        "cwd": "/tmp/project"
+      },
+      "line": "{\"type\":\"session\",\"version\":3,\"id\":\"session-1\",\"timestamp\":\"2024-12-03T14:00:00.000Z\",\"cwd\":\"/tmp/project\"}\n"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "header": "Bearer resource_metadata=\"https://auth.example/.well-known/oauth-protected-resource\", scope=\"repo read\"",
+    "resourceMetadataUrl": "https://auth.example/.well-known/oauth-protected-resource",
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=\"insufficient_scope\", scope=\"repo admin\", error_description=\"need admin\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo admin",
+    "error": "insufficient_scope",
+    "errorDescription": "need admin"
+  },
+  {
+    "header": "Basic realm=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop resource_metadata=\"not a url\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,error=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "xerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer error=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error = \"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=insufficient_scopeX",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scopeX",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=\"bad scope=x\"",
+    "resourceMetadataUrl": null,
+    "scope": "x\"",
+    "error": null,
+    "errorDescription": "bad scope=x"
+  },
+  {
+    "header": "Bearer scope=\"a\"error=\"b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer resource_metadata=\"https://a.example/x?y=1\", error=\"invalid_token\"",
+    "resourceMetadataUrl": "https://a.example/x?y=1",
+    "scope": null,
+    "error": "invalid_token",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER SCOPE=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop error=\"invalid_token\", error_description=\"bad\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "invalid_token",
+    "errorDescription": "bad"
+  },
+  {
+    "header": "   Bearer error=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\t error=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": null,
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"repo read\", scope=\"other\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Xresource_metadata=\"https://evil\" resource_metadata=\"https://ok.example/meta\"",
+    "resourceMetadataUrl": "https://ok.example/meta",
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP algs=\"ES256\", error=\"invalid_token\", error_description=\"The access token expired\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "invalid_token",
+    "errorDescription": "The access token expired"
+  },
+  {
+    "header": "Bearer error=\"\", scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"a\",, error=\"b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": "b",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  }
+]

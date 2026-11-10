@@ -1,0 +1,381 @@
+{
+ "note": "V8 excerpt / line-column vectors for \"Unexpected token\" errors and position errors. message is exact.",
+ "cases": [
+  {
+   "input": "[x1]",
+   "message": "Unexpected token 'x', \"[x1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1]",
+   "message": "Unexpected token 'x', \"[x1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1,1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[x1]",
+   "message": "Unexpected token 'x', \"[x1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1]",
+   "message": "Unexpected token 'x', \"[x1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1,1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,x1,1,1,1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1,1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1,1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1]\" is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]",
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x1,1,1,1,1\"... is not valid JSON"
+  },
+  {
+   "input": "[1,']",
+   "message": "Unexpected token ''', \"[1,']\" is not valid JSON"
+  },
+  {
+   "input": "[1,\\]",
+   "message": "Unexpected token '\\', \"[1,\\]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\u0000]",
+   "message": "Unexpected token '\u0000', \"[1,\u0000]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\u0001]",
+   "message": "Unexpected token '\u0001', \"[1,\u0001]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\u001f]",
+   "message": "Unexpected token '\u001f', \"[1,\u001f]\" is not valid JSON"
+  },
+  {
+   "input": "[1,😀]",
+   "message": "Unexpected token '�', \"[1,😀]\" is not valid JSON"
+  },
+  {
+   "input": "[1,�]",
+   "message": "Unexpected token '�', \"[1,�]\" is not valid JSON"
+  },
+  {
+   "input": "[1,]]",
+   "message": "Unexpected token ']', \"[1,]]\" is not valid JSON"
+  },
+  {
+   "input": "[1,,]",
+   "message": "Unexpected token ',', \"[1,,]\" is not valid JSON"
+  },
+  {
+   "input": "[1,{]",
+   "message": "Expected property name or '}' in JSON at position 4 (line 1 column 5)"
+  },
+  {
+   "input": "[1,}]",
+   "message": "Unexpected token '}', \"[1,}]\" is not valid JSON"
+  },
+  {
+   "input": "[1,/]",
+   "message": "Unexpected token '/', \"[1,/]\" is not valid JSON"
+  },
+  {
+   "input": "[1, ]",
+   "message": "Unexpected token ']', \"[1, ]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\n]",
+   "message": "Unexpected token ']', \"[1,\n]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\r]",
+   "message": "Unexpected token ']', \"[1,\r]\" is not valid JSON"
+  },
+  {
+   "input": "[1,\t]",
+   "message": "Unexpected token ']', \"[1,\t]\" is not valid JSON"
+  },
+  {
+   "input": "[1, ]",
+   "message": "Unexpected token ' ', \"[1, ]\" is not valid JSON"
+  },
+  {
+   "input": "[1, ]",
+   "message": "Unexpected token ' ', \"[1, ]\" is not valid JSON"
+  },
+  {
+   "input": "[1, ]",
+   "message": "Unexpected token ' ', \"[1, ]\" is not valid JSON"
+  },
+  {
+   "input": "[1,﻿]",
+   "message": "Unexpected token '﻿', \"[1,﻿]\" is not valid JSON"
+  },
+  {
+   "input": "{\"a\":111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111x}",
+   "message": "Expected ',' or '}' after property value in JSON at position 305 (line 1 column 306)"
+  },
+  {
+   "input": "{\"key\":\"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\", x}",
+   "message": "Expected double-quoted property name in JSON at position 311 (line 1 column 312)"
+  },
+  {
+   "input": "[\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",x]",
+   "message": "Unexpected token 'x', ...\"aaaaaaaa\",x]\" is not valid JSON"
+  },
+  {
+   "input": "{\n\"a\": x}",
+   "message": "Unexpected token 'x', \"{\n\"a\": x}\" is not valid JSON"
+  },
+  {
+   "input": "{\r\n\"a\": x}",
+   "message": "Unexpected token 'x', \"{\r\n\"a\": x}\" is not valid JSON"
+  },
+  {
+   "input": "{\r\"a\": x}",
+   "message": "Unexpected token 'x', \"{\r\"a\": x}\" is not valid JSON"
+  },
+  {
+   "input": "{ \"a\": x}",
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+  },
+  {
+   "input": "{ \"a\": x}",
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+  },
+  {
+   "input": "{\"a\":\"😀\",x}",
+   "message": "Expected double-quoted property name in JSON at position 10 (line 1 column 11)"
+  },
+  {
+   "input": "{\"a\":\"é\",x}",
+   "message": "Expected double-quoted property name in JSON at position 9 (line 1 column 10)"
+  },
+  {
+   "input": "[[[[[[[[[\n\n\nx",
+   "message": "Unexpected token 'x', \"[[[[[[[[[\n\n\nx\" is not valid JSON"
+  },
+  {
+   "input": "{\"a\":1,\n\n\n x}",
+   "message": "Expected double-quoted property name in JSON at position 11 (line 4 column 2)"
+  },
+  {
+   "input": "\r\n\r\n x",
+   "message": "Unexpected token 'x', \"\r\n\r\n x\" is not valid JSON"
+  },
+  {
+   "input": "{\"a\":\"\\n\",\"b\": x}",
+   "message": "Unexpected token 'x', \"{\"a\":\"\\n\",\"b\": x}\" is not valid JSON"
+  }
+ ]
+}

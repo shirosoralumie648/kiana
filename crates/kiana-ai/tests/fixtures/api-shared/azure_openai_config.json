@@ -1,0 +1,612 @@
+{
+ "baseUrlCases": [
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v1"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v1/responses"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v1/responses/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v2"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v2"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/custom/path/?x=1"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/custom/path/?x=1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.cognitiveservices.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.cognitiveservices.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.ai.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.ai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://evil-openai.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://evil-openai.azure.com"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://proxy.example.com/openai/v1/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://proxy.example.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "HTTPS://R.OpenAI.Azure.COM/OpenAI"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/OpenAI"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com:443/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://user:pass@r.openai.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://user:pass@r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "http://localhost:8080/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "http://localhost:8080"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/OpenAI/V1/RESPONSES"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/OpenAI/V1/RESPONSES"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai//v1//"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai//v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/%6fpenai"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/%6fpenai"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai%2Fv1"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai%2Fv1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/a b"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/a%20b"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v1?x=1#frag"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1?x=1#frag"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://[::1]:8080/openai"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://[::1]:8080/openai"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://openai.azure.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://openai.azure.com"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com./"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com."
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "HTTPS://R.OPENAI.AZURE.COM/openai/v1/responses"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/openai/v1/responses?api-version=1"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://r.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "not a url"
+   },
+   "options": null,
+   "expected": {
+    "error": "Invalid Azure OpenAI base URL: not a url"
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "  spaced  "
+   },
+   "options": null,
+   "expected": {
+    "error": "Invalid Azure OpenAI base URL:   spaced  "
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": null,
+   "expected": {
+    "error": "Azure OpenAI base URL is required. Set AZURE_OPENAI_BASE_URL or AZURE_OPENAI_RESOURCE_NAME, or pass azureBaseUrl, azureResourceName, or model.baseUrl."
+   }
+  }
+ ],
+ "optionCases": [
+  {
+   "name": "resource",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": {
+    "azureResourceName": "my-res"
+   },
+   "expected": {
+    "ok": "https://my-res.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "name": "optionsBase",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "azureBaseUrl": " https://explicit.example.com/v1/ "
+   },
+   "expected": {
+    "ok": "https://explicit.example.com/v1"
+   }
+  },
+  {
+   "name": "optionsBaseBeatsEnv",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": {
+    "azureBaseUrl": "https://explicit.example.com",
+    "env": {
+     "AZURE_OPENAI_BASE_URL": "https://env.example.com",
+     "AZURE_OPENAI_RESOURCE_NAME": "envres"
+    }
+   },
+   "expected": {
+    "ok": "https://explicit.example.com"
+   }
+  },
+  {
+   "name": "envBase",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": {
+    "env": {
+     "AZURE_OPENAI_BASE_URL": "  https://env.example.com/v1/ "
+    }
+   },
+   "expected": {
+    "ok": "https://env.example.com/v1"
+   }
+  },
+  {
+   "name": "envResource",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": {
+    "env": {
+     "AZURE_OPENAI_RESOURCE_NAME": "envres"
+    }
+   },
+   "expected": {
+    "ok": "https://envres.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "name": "modelFallback",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com/"
+   },
+   "options": null,
+   "expected": {
+    "ok": "https://model.example.com"
+   }
+  },
+  {
+   "name": "whitespaceOption",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "azureBaseUrl": "   "
+   },
+   "expected": {
+    "ok": "https://model.example.com"
+   }
+  },
+  {
+   "name": "resourceTrumpsModel",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "azureResourceName": "res"
+   },
+   "expected": {
+    "ok": "https://res.openai.azure.com/openai/v1"
+   }
+  },
+  {
+   "name": "emptyEnvIgnored",
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": ""
+   },
+   "options": {
+    "env": {
+     "AZURE_OPENAI_BASE_URL": "",
+     "AZURE_OPENAI_RESOURCE_NAME": ""
+    }
+   },
+   "expected": {
+    "error": "Azure OpenAI base URL is required. Set AZURE_OPENAI_BASE_URL or AZURE_OPENAI_RESOURCE_NAME, or pass azureBaseUrl, azureResourceName, or model.baseUrl."
+   }
+  }
+ ],
+ "configCases": [
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": null,
+   "expected": {
+    "ok": {
+     "baseUrl": "https://model.example.com",
+     "apiVersion": "v1"
+    }
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "azureApiVersion": "2024-10-21"
+   },
+   "expected": {
+    "ok": {
+     "baseUrl": "https://model.example.com",
+     "apiVersion": "2024-10-21"
+    }
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "env": {
+     "AZURE_OPENAI_API_VERSION": "2025-01-01"
+    }
+   },
+   "expected": {
+    "ok": {
+     "baseUrl": "https://model.example.com",
+     "apiVersion": "2025-01-01"
+    }
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://model.example.com"
+   },
+   "options": {
+    "azureApiVersion": "",
+    "env": {
+     "AZURE_OPENAI_API_VERSION": "2025-01-01"
+    }
+   },
+   "expected": {
+    "ok": {
+     "baseUrl": "https://model.example.com",
+     "apiVersion": "2025-01-01"
+    }
+   }
+  },
+  {
+   "model": {
+    "id": "gpt-4o",
+    "baseUrl": "https://r.openai.azure.com/"
+   },
+   "options": {
+    "azureResourceName": "res",
+    "azureApiVersion": ""
+   },
+   "expected": {
+    "ok": {
+     "baseUrl": "https://res.openai.azure.com/openai/v1",
+     "apiVersion": "v1"
+    }
+   }
+  }
+ ],
+ "deploymentCases": [
+  {
+   "id": "gpt-4o",
+   "options": {
+    "azureDeploymentName": "explicit"
+   },
+   "expected": {
+    "ok": "explicit"
+   }
+  },
+  {
+   "id": "gpt-4o",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "gpt-4o=fast,gpt-4o-mini=mini"
+    }
+   },
+   "expected": {
+    "ok": "fast"
+   }
+  },
+  {
+   "id": "gpt-4o-mini",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "gpt-4o=fast,gpt-4o-mini=mini"
+    }
+   },
+   "expected": {
+    "ok": "mini"
+   }
+  },
+  {
+   "id": "other",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "gpt-4o=fast"
+    }
+   },
+   "expected": {
+    "ok": "other"
+   }
+  },
+  {
+   "id": "gpt-4o",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "gpt-4o="
+    }
+   },
+   "expected": {
+    "ok": "gpt-4o"
+   }
+  },
+  {
+   "id": "a=b",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "a=b=weird"
+    }
+   },
+   "expected": {
+    "ok": "a=b"
+   }
+  },
+  {
+   "id": "x",
+   "options": {
+    "azureDeploymentName": "",
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": "x=mapped"
+    }
+   },
+   "expected": {
+    "ok": "mapped"
+   }
+  },
+  {
+   "id": "spaces",
+   "options": {
+    "env": {
+     "AZURE_OPENAI_DEPLOYMENT_NAME_MAP": " spaces = deployed ,  =x, y = "
+    }
+   },
+   "expected": {
+    "ok": "deployed"
+   }
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+import type { ExtensionAPI } from "@earendil-works/kiana-coding-agent";
+
+export default function widgetPlacementExtension(kiana: ExtensionAPI) {
+	kiana.on("session_start", (_event, ctx) => {
+		if (!ctx.hasUI) return;
+		ctx.ui.setWidget("widget-above", ["Above editor widget"]);
+		ctx.ui.setWidget("widget-below", ["Below editor widget"], { placement: "belowEditor" });
+	});
+}

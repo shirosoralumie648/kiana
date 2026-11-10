@@ -1,0 +1,97 @@
+[
+ {
+  "name": "plain",
+  "path": "a\u0000b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'a\\x00b'"
+ },
+ {
+  "name": "only_nul",
+  "path": "\u0000",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received '\\x00'"
+ },
+ {
+  "name": "two_nuls",
+  "path": "a\u0000b\u0000c",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'a\\x00b\\x00c'"
+ },
+ {
+  "name": "tab_nl",
+  "path": "x\u0000\t\n",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\\t\\n'"
+ },
+ {
+  "name": "single_quote",
+  "path": "x\u0000'b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received \"x\\x00'b\""
+ },
+ {
+  "name": "double_quote",
+  "path": "x\u0000\"b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\"b'"
+ },
+ {
+  "name": "single_and_double",
+  "path": "x\u0000'\"b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received `x\\x00'\"b`"
+ },
+ {
+  "name": "single_and_backtick",
+  "path": "x\u0000'`b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received \"x\\x00'`b\""
+ },
+ {
+  "name": "double_and_backtick",
+  "path": "x\u0000\"`b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\"`b'"
+ },
+ {
+  "name": "all_three",
+  "path": "x\u0000'\"`b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\\'\"`b'"
+ },
+ {
+  "name": "dollar_brace",
+  "path": "x\u0000'${b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received \"x\\x00'${b\""
+ },
+ {
+  "name": "backslash",
+  "path": "x\u0000\\b",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\\\\b'"
+ },
+ {
+  "name": "control_chars",
+  "path": "x\u0000\u0001\u0007\b\u000b\f\r\u001b\u001f",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\\x01\\x07\\b\\x0B\\f\\r\\x1B\\x1F'"
+ },
+ {
+  "name": "del_and_c1",
+  "path": "x\u0000",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00\\x7F\\x80\\x85\\x9F'"
+ },
+ {
+  "name": "unicode_ws",
+  "path": "x\u0000  ﻿",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00  ﻿'"
+ },
+ {
+  "name": "emoji_and_latin",
+  "path": "x\u0000😀é",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'x\\x00😀é'"
+ },
+ {
+  "name": "boundary_63",
+  "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u0000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\x00bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..."
+ },
+ {
+  "name": "boundary_64",
+  "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u0000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\x00bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..."
+ },
+ {
+  "name": "long_ascii",
+  "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u0000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "message": "The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..."
+ }
+]

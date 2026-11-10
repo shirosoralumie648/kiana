@@ -1,0 +1,31 @@
+{
+  "note": "Generated from the TypeScript reference toolchain: sigv4 with node:crypto per the AWS SigV4 spec, event-stream frame with @smithy/core EventStreamCodec (2026-10-28). Body excludes httpLabel modelId (SDK serializes it only into the URL).",
+  "sigv4": {
+    "method": "POST",
+    "path": "/model/us.anthropic.claude-opus-4-8/converse-stream",
+    "query": "",
+    "body": "{\"messages\":[],\"inferenceConfig\":{}}",
+    "region": "us-east-1",
+    "service": "bedrock",
+    "access_key_id": "AKIDEXAMPLE",
+    "secret_access_key": "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
+    "session_token": "SESSIONTOKEN",
+    "amz_date": "20261028T123456Z",
+    "headers": {
+      "content-type": "application/json",
+      "accept": "application/vnd.amazon.eventstream",
+      "x-custom": "v",
+      "host": "bedrock-runtime.us-east-1.amazonaws.com"
+    },
+    "authorization": "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20261028/us-east-1/bedrock/aws4_request, SignedHeaders=accept;content-type;host;x-amz-date;x-amz-security-token;x-custom, Signature=c86989c73119e77d0a9ef90ecb636753c138ea0b6fc054ec23822ca968cf2c54"
+  },
+  "event_stream": {
+    "base64": "AAAAdgAAAFKW1freDTptZXNzYWdlLXR5cGUHAAVldmVudAs6ZXZlbnQtdHlwZQcADG1lc3NhZ2VTdGFydA06Y29udGVudC10eXBlBwAQYXBwbGljYXRpb24vanNvbnsicm9sZSI6ImFzc2lzdGFudCJ9HMa+GA==",
+    "headers": {
+      ":message-type": "event",
+      ":event-type": "messageStart",
+      ":content-type": "application/json"
+    },
+    "payload": "{\"role\":\"assistant\"}"
+  }
+}

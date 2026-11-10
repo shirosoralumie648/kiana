@@ -1,0 +1,20 @@
+[package]
+name = "kiana-json"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "共享 JS 语义 JSON 层：ECMAScript 数字格式化、String()/truthy、JSON 键序。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+ryu = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+num-bigint = { workspace = true }
+num-traits = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }

@@ -1,0 +1,22 @@
+{
+  "container": [
+    "\u001b[48;2;20;30;40m            \u001b[49m",
+    "\u001b[48;2;20;30;40m  \u001b[31mred\u001b[0m       \u001b[49m",
+    "\u001b[48;2;20;30;40m            \u001b[49m",
+    "",
+    "truncated\u001b[0m...\u001b[0m"
+  ],
+  "editor": {
+    "base": [
+      "\u001b[35m──────────\u001b[0m",
+      "hi\u001b_kiana:fc\u0007 \u001b_kiana:/fc\u0007       ",
+      "\u001b[35m──────────\u001b[0m"
+    ],
+    "override": [
+      "TOP(10,0)[\u001b[35mx\u001b[0m]",
+      "yo\u001b_kiana:fc\u0007 \u001b_kiana:/fc\u0007       ",
+      "BOTTOM"
+    ],
+    "border": "function"
+  }
+}

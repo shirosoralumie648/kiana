@@ -1,0 +1,46 @@
+{
+	"note": "Generated with the TS reference runtime (Node 26 pathToFileURL); loader_impl.rs asserts file_url matches this table for import.meta.url.",
+	"node_path_to_file_url": [
+		"/tmp/x/ext.ts",
+		"/tmp/a b/ext ü+1.ts",
+		"/tmp/q#h?/x.ts",
+		"/tmp/100%/x.ts",
+		"/tmp/sp[a]c^e|{x}/meta.ts",
+		"/tmp/tilde~dir/a~b.ts",
+		"/tmp/quote\"d/single'q.ts",
+		"/tmp/back\\slash/x.ts",
+		"/tmp/angle<>/x.ts",
+		"/tmp/ctrl\u0001/x.ts",
+		"/tmp/tab\there/x.ts",
+		"/tmp/dollar$&()*+,;=@!:x.ts",
+		"/tmp/扩ué/x.ts",
+		"/tmp/`tick`/x.ts"
+	],
+	"node_path_to_file_url_expected": [
+		"file:///tmp/x/ext.ts",
+		"file:///tmp/a%20b/ext%20%C3%BC+1.ts",
+		"file:///tmp/q%23h%3F/x.ts",
+		"file:///tmp/100%25/x.ts",
+		"file:///tmp/sp%5Ba%5Dc%5Ee%7C%7Bx%7D/meta.ts",
+		"file:///tmp/tilde%7Edir/a%7Eb.ts",
+		"file:///tmp/quote%22d/single'q.ts",
+		"file:///tmp/back%5Cslash/x.ts",
+		"file:///tmp/angle%3C%3E/x.ts",
+		"file:///tmp/ctrl%01%7F/x.ts",
+		"file:///tmp/tab%09here/x.ts",
+		"file:///tmp/dollar$&()*+,;=@!:x.ts",
+		"file:///tmp/%E6%89%A9u%C3%A9/x.ts",
+		"file:///tmp/%60tick%60/x.ts"
+	],
+	"jiti_observations": {
+		"basic_entry_import_meta_url_suffix": "basic/entry.ts",
+		"cjs_entry_default_type": "function",
+		"cjs_entry_kind": "cjs-entry",
+		"cjs_relative_default": "{\"dep\":5}",
+		"json_entry_default": true,
+		"tla_entry_default": 7,
+		"uses_filename_filename_suffix": "cjs/uses-filename.ts",
+		"uses_filename_dirname_suffix": "cjs",
+		"uses_require_default": 5
+	}
+}

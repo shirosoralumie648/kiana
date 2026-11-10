@@ -1,0 +1,43 @@
+# cargo-nextest 配置（本地与 CI 的统一测试入口）。
+#
+# 全量测试在高负载下有两个已知时序用例会偶发失败；失败时先用
+# `cargo nextest run -p <crate> --no-fail-fast` 单独重跑确认，不要直接当回归。
+#
+# 注意：nextest 只构建测试二进制，不构建 bin target。kiana-env-client 的测试需要
+# 先 `cargo build -p kiana-env` 产出 daemon（自定义 target dir 时再设置
+# KIANA_ENV_DAEMON 指向该二进制）。
+[profile.default]
+# 一次跑完全部失败用例，便于一轮修完。
+fail-fast = false
+# 默认 60s 对压缩/队列类用例偏短：只标记 slow，不中止（2 倍后终止）。
+slow-timeout = { period = "120s", terminate-after = 2 }
+
+# 全量验收用：已知时序 flake 重试两次；FLAKY 仍需人工确认不是回归。
+[profile.ci]
+retries = 2
+fail-fast = false
+# nextest 默认按 CPU 数（16）并发；kiana-durable 的脚本超时用例在满并发下会
+# 挤不进 300ms 的脚本 deadline，降到 8 让全量门禁稳定。
+test-threads = 8
+slow-timeout = { period = "120s", terminate-after = 2 }
+
+# OAuth 用例固定占用 127.0.0.1:1455（openai_*）与 127.0.0.1:53692（anthropic_oauth）；
+# cargo test 用进程内 SERIAL 互斥，但 nextest 每个测试一个进程，静态 Mutex 无法串行化。
+# 用 nextest 的全局 test-group 保证同一时刻只有一个固定端口用例在跑。
+[test-groups.oauth-fixed-port]
+max-threads = 1
+
+[[profile.default.overrides]]
+filter = 'binary(openai_chatgpt_oauth) | binary(openai_codex_oauth) | binary(anthropic_oauth)'
+test-group = 'oauth-fixed-port'
+
+[[profile.ci.overrides]]
+filter = 'binary(openai_chatgpt_oauth) | binary(openai_codex_oauth) | binary(anthropic_oauth)'
+test-group = 'oauth-fixed-port'
+
+# 这个用例要在 TS 的 10s deadline 内通过输出桥产出 16 MiB；与其它测试抢 CPU 时
+# 会先撞 deadline（单独跑 36s 通过，满并发 44s 失败）。给它整个线程池（等于 ci 的
+# test-threads），让 nextest 等其它用例腾空后再跑它，而不是放宽 deadline 掩盖行为。
+[[profile.ci.overrides]]
+filter = 'test(fails_a_script_whose_output_passes_the_limits_even_if_it_catches_the_error)'
+threads-required = 8

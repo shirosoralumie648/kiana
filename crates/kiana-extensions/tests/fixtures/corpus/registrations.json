@@ -1,0 +1,1294 @@
+{
+  "auto-commit-on-exit.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_shutdown": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "bash-spawn-hook.ts": {
+    "tools": [
+      "bash"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "bookmark.ts": {
+    "tools": [],
+    "commands": [
+      "bookmark",
+      "unbookmark"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "border-status-editor.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_settled": 1,
+      "agent_start": 1,
+      "session_shutdown": 1,
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "built-in-tool-renderer.ts": {
+    "tools": [
+      "bash",
+      "edit",
+      "read",
+      "write"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "claude-rules.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "before_agent_start": 1,
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "commands.ts": {
+    "tools": [],
+    "commands": [
+      "commands"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "confirm-destructive.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_before_fork": 1,
+      "session_before_switch": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "custom-compaction.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_before_compact": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "custom-footer.ts": {
+    "tools": [],
+    "commands": [
+      "footer"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "custom-header.ts": {
+    "tools": [],
+    "commands": [
+      "builtin-header"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "custom-provider-anthropic/": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [
+      "custom-anthropic"
+    ],
+    "virtual_models": 0
+  },
+  "custom-provider-gitlab-duo/": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [
+      "gitlab-duo"
+    ],
+    "virtual_models": 0
+  },
+  "debug-provider.ts": {
+    "tools": [],
+    "commands": [
+      "debug-provider"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "message_end": 1,
+      "provider_stream_event": 1,
+      "turn_end": 1,
+      "turn_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [
+      "debug-provider-events"
+    ],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "dirty-repo-guard.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_before_fork": 1,
+      "session_before_switch": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "dynamic-resources/": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "resources_discover": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "dynamic-tools.ts": {
+    "tools": [],
+    "commands": [
+      "add-echo-tool"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "entry-renderer.ts": {
+    "tools": [],
+    "commands": [
+      "status-card"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [
+      "status-card"
+    ],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "event-bus.ts": {
+    "tools": [],
+    "commands": [
+      "emit"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 2
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "file-trigger.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "git-checkpoint.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_settled": 1,
+      "session_before_fork": 1,
+      "tool_result": 1,
+      "turn_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "git-merge-and-resolve.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_end": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "github-issue-autocomplete.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "handoff.ts": {
+    "tools": [],
+    "commands": [
+      "handoff"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "hello.ts": {
+    "tools": [
+      "hello"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "hidden-thinking-label.ts": {
+    "tools": [],
+    "commands": [
+      "thinking-label"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "inline-bash.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "input": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "input-transform-streaming.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "input": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "input-transform.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "input": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "interactive-shell.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "user_bash": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "jev-router.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 1
+  },
+  "mac-system-theme.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_shutdown": 1,
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "message-renderer.ts": {
+    "tools": [],
+    "commands": [
+      "status"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [
+      "status-update"
+    ],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "minimal-mode.ts": {
+    "tools": [
+      "bash",
+      "edit",
+      "find",
+      "grep",
+      "ls",
+      "read",
+      "write"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "modal-editor.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "model-status.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "model_select": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "notify.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_settled": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "overlay-qa-tests.ts": {
+    "tools": [],
+    "commands": [
+      "overlay-anchors",
+      "overlay-animation",
+      "overlay-edge",
+      "overlay-focus",
+      "overlay-margins",
+      "overlay-maxheight",
+      "overlay-overflow",
+      "overlay-passive",
+      "overlay-percent",
+      "overlay-sidepanel",
+      "overlay-stack",
+      "overlay-streaming",
+      "overlay-toggle"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "overlay-test.ts": {
+    "tools": [],
+    "commands": [
+      "overlay-test"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "permission-gate.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "tool_call": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "pirate.ts": {
+    "tools": [],
+    "commands": [
+      "pirate"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "before_agent_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "plan-mode/": {
+    "tools": [],
+    "commands": [
+      "plan",
+      "todos"
+    ],
+    "flags": [
+      "plan"
+    ],
+    "shortcuts": [
+      "ctrl+alt+p"
+    ],
+    "handlers": {
+      "agent_end": 1,
+      "before_agent_start": 1,
+      "context": 1,
+      "session_start": 1,
+      "tool_call": 1,
+      "turn_end": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "preset.ts": {
+    "tools": [],
+    "commands": [
+      "preset"
+    ],
+    "flags": [
+      "preset"
+    ],
+    "shortcuts": [
+      "ctrl+shift+u"
+    ],
+    "handlers": {
+      "before_agent_start": 1,
+      "session_start": 1,
+      "turn_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "project-trust.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "project_trust": 1,
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "prompt-customizer.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "before_agent_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "protected-paths.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "tool_call": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "provider-payload.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "after_provider_response": 1,
+      "before_provider_request": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "qna.ts": {
+    "tools": [],
+    "commands": [
+      "qna"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "question.ts": {
+    "tools": [
+      "question"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "questionnaire.ts": {
+    "tools": [
+      "questionnaire"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "rainbow-editor.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "reload-runtime.ts": {
+    "tools": [
+      "reload_runtime"
+    ],
+    "commands": [
+      "reload-runtime"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "rpc-demo.ts": {
+    "tools": [],
+    "commands": [
+      "rpc-editor",
+      "rpc-input",
+      "rpc-prefill"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_before_switch": 1,
+      "session_start": 1,
+      "tool_call": 1,
+      "turn_end": 1,
+      "turn_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "sandbox/": {
+    "tools": [
+      "bash"
+    ],
+    "commands": [
+      "sandbox"
+    ],
+    "flags": [
+      "no-sandbox"
+    ],
+    "shortcuts": [],
+    "handlers": {
+      "session_shutdown": 1,
+      "session_start": 1,
+      "user_bash": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "send-user-message.ts": {
+    "tools": [],
+    "commands": [
+      "ask",
+      "askwith",
+      "followup",
+      "steer"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "session-name.ts": {
+    "tools": [],
+    "commands": [
+      "session-name"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "shutdown-command.ts": {
+    "tools": [
+      "deploy_and_exit",
+      "finish_and_exit"
+    ],
+    "commands": [
+      "quit"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "snake.ts": {
+    "tools": [],
+    "commands": [
+      "snake"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "space-invaders.ts": {
+    "tools": [],
+    "commands": [
+      "invaders"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "ssh.ts": {
+    "tools": [
+      "bash",
+      "edit",
+      "read",
+      "write"
+    ],
+    "commands": [],
+    "flags": [
+      "ssh"
+    ],
+    "shortcuts": [],
+    "handlers": {
+      "before_agent_start": 1,
+      "session_start": 1,
+      "user_bash": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "status-line.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1,
+      "turn_end": 1,
+      "turn_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "structured-output.ts": {
+    "tools": [
+      "structured_output"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "subagent/": {
+    "tools": [
+      "subagent"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "summarize.ts": {
+    "tools": [],
+    "commands": [
+      "summarize"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "system-prompt-header.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_start": 1,
+      "session_shutdown": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "tic-tac-toe.ts": {
+    "tools": [
+      "tic_tac_toe",
+      "tic_tac_toe_see_board"
+    ],
+    "commands": [
+      "tic-tac-toe"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "before_agent_start": 1,
+      "session_start": 1,
+      "session_tree": 1
+    },
+    "message_renderers": [
+      "tic-tac-toe-game-over",
+      "tic-tac-toe-move"
+    ],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "timed-confirm.ts": {
+    "tools": [],
+    "commands": [
+      "timed",
+      "timed-select",
+      "timed-signal"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "titlebar-spinner.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "agent_settled": 1,
+      "agent_start": 1,
+      "session_shutdown": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "todo.ts": {
+    "tools": [
+      "todo"
+    ],
+    "commands": [
+      "todos"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1,
+      "session_tree": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "tool-override.ts": {
+    "tools": [
+      "read"
+    ],
+    "commands": [
+      "read-log"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "tools.ts": {
+    "tools": [],
+    "commands": [
+      "tools"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1,
+      "session_tree": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "trigger-compact.ts": {
+    "tools": [],
+    "commands": [
+      "trigger-compact"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "turn_end": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "truncated-tool.ts": {
+    "tools": [
+      "rg"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "widget-placement.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "with-deps/": {
+    "tools": [
+      "parse_duration"
+    ],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {},
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "working-indicator.ts": {
+    "tools": [],
+    "commands": [
+      "working-indicator"
+    ],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  },
+  "working-message-test.ts": {
+    "tools": [],
+    "commands": [],
+    "flags": [],
+    "shortcuts": [],
+    "handlers": {
+      "session_start": 1
+    },
+    "message_renderers": [],
+    "entry_renderers": [],
+    "tool_renderers": false,
+    "markdown_transformer": false,
+    "providers": [],
+    "virtual_models": 0
+  }
+}

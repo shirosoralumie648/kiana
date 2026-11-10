@@ -1,0 +1,50 @@
+[package]
+name = "kiana-interactive"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-interactive-mode + ca-interactive-components：交互主控与 48 个组件。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+libc = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+unicode-segmentation = { workspace = true }
+unicode-width = { workspace = true }
+tempfile = { workspace = true }
+url = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+kiana-json = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-ui-kit = { workspace = true }
+kiana-tools = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-permissions = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-extensions = { workspace = true }
+kiana-resources = { workspace = true }
+kiana-session = { workspace = true }
+kiana-export = { workspace = true }
+kiana-builtin-extensions = { workspace = true }
+libm = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+futures = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

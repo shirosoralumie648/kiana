@@ -1,0 +1,243 @@
+{
+ "note": "expected JSON.stringify(v); stringifier also gives String(v). bits is the IEEE754 pattern of the parsed literal. JSON.parse rounds to the nearest double.",
+ "cases": [
+  {
+   "literal": "0",
+   "stringify": "0",
+   "string": "0",
+   "is_neg_zero": false,
+   "bits": "0"
+  },
+  {
+   "literal": "-0",
+   "stringify": "0",
+   "string": "0",
+   "is_neg_zero": true,
+   "bits": "8000000000000000"
+  },
+  {
+   "literal": "1",
+   "stringify": "1",
+   "string": "1",
+   "is_neg_zero": false,
+   "bits": "3ff0000000000000"
+  },
+  {
+   "literal": "-1",
+   "stringify": "-1",
+   "string": "-1",
+   "is_neg_zero": false,
+   "bits": "bff0000000000000"
+  },
+  {
+   "literal": "1.5",
+   "stringify": "1.5",
+   "string": "1.5",
+   "is_neg_zero": false,
+   "bits": "3ff8000000000000"
+  },
+  {
+   "literal": "-1.5",
+   "stringify": "-1.5",
+   "string": "-1.5",
+   "is_neg_zero": false,
+   "bits": "bff8000000000000"
+  },
+  {
+   "literal": "0.1",
+   "stringify": "0.1",
+   "string": "0.1",
+   "is_neg_zero": false,
+   "bits": "3fb999999999999a"
+  },
+  {
+   "literal": "0.2",
+   "stringify": "0.2",
+   "string": "0.2",
+   "is_neg_zero": false,
+   "bits": "3fc999999999999a"
+  },
+  {
+   "literal": "0.3",
+   "stringify": "0.3",
+   "string": "0.3",
+   "is_neg_zero": false,
+   "bits": "3fd3333333333333"
+  },
+  {
+   "literal": "1e21",
+   "stringify": "1e+21",
+   "string": "1e+21",
+   "is_neg_zero": false,
+   "bits": "444b1ae4d6e2ef50"
+  },
+  {
+   "literal": "1e20",
+   "stringify": "100000000000000000000",
+   "string": "100000000000000000000",
+   "is_neg_zero": false,
+   "bits": "4415af1d78b58c40"
+  },
+  {
+   "literal": "1e-6",
+   "stringify": "0.000001",
+   "string": "0.000001",
+   "is_neg_zero": false,
+   "bits": "3eb0c6f7a0b5ed8d"
+  },
+  {
+   "literal": "1e-7",
+   "stringify": "1e-7",
+   "string": "1e-7",
+   "is_neg_zero": false,
+   "bits": "3e7ad7f29abcaf48"
+  },
+  {
+   "literal": "1e-10",
+   "stringify": "1e-10",
+   "string": "1e-10",
+   "is_neg_zero": false,
+   "bits": "3ddb7cdfd9d7bdbb"
+  },
+  {
+   "literal": "1.25e-10",
+   "stringify": "1.25e-10",
+   "string": "1.25e-10",
+   "is_neg_zero": false,
+   "bits": "3de12e0be826d695"
+  },
+  {
+   "literal": "1234.5",
+   "stringify": "1234.5",
+   "string": "1234.5",
+   "is_neg_zero": false,
+   "bits": "40934a0000000000"
+  },
+  {
+   "literal": "9007199254740992",
+   "stringify": "9007199254740992",
+   "string": "9007199254740992",
+   "is_neg_zero": false,
+   "bits": "4340000000000000"
+  },
+  {
+   "literal": "9007199254740993",
+   "stringify": "9007199254740992",
+   "string": "9007199254740992",
+   "is_neg_zero": false,
+   "bits": "4340000000000000"
+  },
+  {
+   "literal": "123456789012345680000",
+   "stringify": "123456789012345680000",
+   "string": "123456789012345680000",
+   "is_neg_zero": false,
+   "bits": "441ac53a7e04bcda"
+  },
+  {
+   "literal": "1e300",
+   "stringify": "1e+300",
+   "string": "1e+300",
+   "is_neg_zero": false,
+   "bits": "7e37e43c8800759c"
+  },
+  {
+   "literal": "5e-324",
+   "stringify": "5e-324",
+   "string": "5e-324",
+   "is_neg_zero": false,
+   "bits": "1"
+  },
+  {
+   "literal": "1.7976931348623157e308",
+   "stringify": "1.7976931348623157e+308",
+   "string": "1.7976931348623157e+308",
+   "is_neg_zero": false,
+   "bits": "7fefffffffffffff"
+  },
+  {
+   "literal": "0.000001",
+   "stringify": "0.000001",
+   "string": "0.000001",
+   "is_neg_zero": false,
+   "bits": "3eb0c6f7a0b5ed8d"
+  },
+  {
+   "literal": "0.0000001",
+   "stringify": "1e-7",
+   "string": "1e-7",
+   "is_neg_zero": false,
+   "bits": "3e7ad7f29abcaf48"
+  },
+  {
+   "literal": "100",
+   "stringify": "100",
+   "string": "100",
+   "is_neg_zero": false,
+   "bits": "4059000000000000"
+  },
+  {
+   "literal": "1.005",
+   "stringify": "1.005",
+   "string": "1.005",
+   "is_neg_zero": false,
+   "bits": "3ff0147ae147ae14"
+  },
+  {
+   "literal": "1234567890.12345",
+   "stringify": "1234567890.12345",
+   "string": "1234567890.12345",
+   "is_neg_zero": false,
+   "bits": "41d26580b487e69b"
+  },
+  {
+   "literal": "2.2250738585072014e-308",
+   "stringify": "2.2250738585072014e-308",
+   "string": "2.2250738585072014e-308",
+   "is_neg_zero": false,
+   "bits": "10000000000000"
+  },
+  {
+   "literal": "-1e-7",
+   "stringify": "-1e-7",
+   "string": "-1e-7",
+   "is_neg_zero": false,
+   "bits": "be7ad7f29abcaf48"
+  },
+  {
+   "literal": "1e-323",
+   "stringify": "1e-323",
+   "string": "1e-323",
+   "is_neg_zero": false,
+   "bits": "2"
+  },
+  {
+   "literal": "123.456e-789",
+   "stringify": "0",
+   "string": "0",
+   "is_neg_zero": false,
+   "bits": "0"
+  },
+  {
+   "literal": "1e400",
+   "stringify": "null",
+   "string": "Infinity",
+   "is_neg_zero": false,
+   "bits": null
+  },
+  {
+   "literal": "-1e400",
+   "stringify": "null",
+   "string": "-Infinity",
+   "is_neg_zero": false,
+   "bits": null
+  },
+  {
+   "literal": "0.30000000000000004",
+   "stringify": "0.30000000000000004",
+   "string": "0.30000000000000004",
+   "is_neg_zero": false,
+   "bits": "3fd3333333333334"
+  }
+ ]
+}

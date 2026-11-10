@@ -1,0 +1,49 @@
+[package]
+name = "kiana-session"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-session：AgentSession、AgentSessionRuntime/Services、SDK 工厂。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+futures = { workspace = true }
+libc = { workspace = true }
+regex = { workspace = true }
+uuid = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-json = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-telemetry = { workspace = true }
+kiana-core = { workspace = true }
+kiana-chord = { workspace = true }
+kiana-durable = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-extensions = { workspace = true }
+kiana-tools = { workspace = true }
+kiana-hooks = { workspace = true }
+kiana-sandbox = { workspace = true }
+kiana-permissions = { workspace = true }
+kiana-compaction = { workspace = true }
+kiana-export = { workspace = true }
+kiana-resources = { workspace = true }
+kiana-memory = { workspace = true }
+kiana-tui = { workspace = true }
+
+[dev-dependencies]
+base64 = { workspace = true }
+tempfile = { workspace = true }
+futures = { workspace = true }
+insta = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

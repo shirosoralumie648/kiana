@@ -1,0 +1,134 @@
+[
+ {
+  "input": "",
+  "output": ""
+ },
+ {
+  "input": "{}",
+  "output": "{}"
+ },
+ {
+  "input": "{\"a\":1}",
+  "output": "{\"a\":1}"
+ },
+ {
+  "input": "// c\n{}",
+  "output": "\n{}"
+ },
+ {
+  "input": "{\"a\":1,}",
+  "output": "{\"a\":1}"
+ },
+ {
+  "input": "{\"a\":1, }",
+  "output": "{\"a\":1 }"
+ },
+ {
+  "input": "[1,2,]",
+  "output": "[1,2]"
+ },
+ {
+  "input": "[1,2 ,\n]",
+  "output": "[1,2 \n]"
+ },
+ {
+  "input": "{\"a\":\"//not comment\"}",
+  "output": "{\"a\":\"//not comment\"}"
+ },
+ {
+  "input": "{\"a\":\"http://x\"}",
+  "output": "{\"a\":\"http://x\"}"
+ },
+ {
+  "input": "// full\n{\"a\":1 // trailing\n}",
+  "output": "\n{\"a\":1 \n}"
+ },
+ {
+  "input": "{\"a\":\"x\",\"b\":\"y\",}",
+  "output": "{\"a\":\"x\",\"b\":\"y\"}"
+ },
+ {
+  "input": "{\"a\": [1,2,3,], \"b\": {\"c\": 1,},}",
+  "output": "{\"a\": [1,2,3], \"b\": {\"c\": 1}}"
+ },
+ {
+  "input": "\"//\"",
+  "output": "\"//\""
+ },
+ {
+  "input": "'//not'",
+  "output": "'"
+ },
+ {
+  "input": "{\"a\":\"\\\\\"}\"}",
+  "output": "{\"a\":\"\\\\\"}\"}"
+ },
+ {
+  "input": "[,]",
+  "output": "[]"
+ },
+ {
+  "input": "{\"a\":,}",
+  "output": "{\"a\":}"
+ },
+ {
+  "input": "{,}",
+  "output": "{}"
+ },
+ {
+  "input": "{\"a\":1}\n// tail",
+  "output": "{\"a\":1}\n"
+ },
+ {
+  "input": "// only",
+  "output": ""
+ },
+ {
+  "input": "//\n//\n",
+  "output": "\n\n"
+ },
+ {
+  "input": "{\"a\":\"\\\\\\\\\" , }",
+  "output": "{\"a\":\"\\\\\\\\\"  }"
+ },
+ {
+  "input": "{\"a\":\"line\\n//x\"}",
+  "output": "{\"a\":\"line\\n//x\"}"
+ },
+ {
+  "input": "{\"url\":\"https://example.com/a//b\"}",
+  "output": "{\"url\":\"https://example.com/a//b\"}"
+ },
+ {
+  "input": "{\"a\":1,,}",
+  "output": "{\"a\":1,}"
+ },
+ {
+  "input": "[1,,2]",
+  "output": "[1,,2]"
+ },
+ {
+  "input": "{\"a\": \"v\" , }",
+  "output": "{\"a\": \"v\"  }"
+ },
+ {
+  "input": "{\"a\": \"v\" /* block */ }",
+  "output": "{\"a\": \"v\" /* block */ }"
+ },
+ {
+  "input": "\"a\\\"//b\"",
+  "output": "\"a\\\"//b\""
+ },
+ {
+  "input": "{\"a\": \"\\r\\n\"}",
+  "output": "{\"a\": \"\\r\\n\"}"
+ },
+ {
+  "input": "[1,\r\n2,\r\n]",
+  "output": "[1,\r\n2\r\n]"
+ },
+ {
+  "input": "[1, 2,　]",
+  "output": "[1, 2　]"
+ }
+]

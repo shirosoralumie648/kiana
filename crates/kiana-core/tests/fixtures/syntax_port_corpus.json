@@ -1,0 +1,230 @@
+{
+  "languages": {
+    "python": [
+      {
+        "code": "import os\nfrom typing import List\n\n@decorator\ndef foo(a: int = 1, *args, **kwargs) -> List[str]:\n    \"\"\"Docstring here.\"\"\"\n    # comment\n    x = f\"hello {a} {a!r}\"\n    return [i for i in range(10) if i % 2 == 0]\n",
+        "output": "[keyword]import[/keyword][default] os[/default]\n[keyword]from[/keyword][default] typing [/default][keyword]import[/keyword][default] [/default][type]List[/type]\n\n[meta]@decorator[/meta]\n[keyword]def[/keyword][function] [/function][title]foo[/title][function]([/function][params]a: [/params][built_in]int[/built_in][params] = [/params][number]1[/number][params], *args, **kwargs[/params][function]) -> [/function][type]List[/type][function][[/function][built_in]str[/built_in][function]]:[/function]\n[default]    [/default][string]\"\"\"Docstring here.\"\"\"[/string]\n[default]    [/default][comment]# comment[/comment]\n[default]    x = [/default][string]f\"hello [/string][subst]{a}[/subst][string] [/string][subst]{a!r}[/subst][string]\"[/string]\n[default]    [/default][keyword]return[/keyword][default] [i [/default][keyword]for[/keyword][default] i [/default][keyword]in[/keyword][default] [/default][built_in]range[/built_in][default]([/default][number]10[/number][default]) [/default][keyword]if[/keyword][default] i % [/default][number]2[/number][default] == [/default][number]0[/number][default]][/default]\n"
+      },
+      {
+        "code": "class Foo(Bar):\n    async def bar(self):\n        await self.baz(True, False, None)\n        yield 0x1F, 1.5e-3, 2j\n",
+        "output": "[keyword]class[/keyword][class] [/class][title]Foo[/title][class]([/class][params]Bar[/params][class]):[/class]\n[default]    [/default][keyword]async[/keyword][default] [/default][keyword]def[/keyword][function] [/function][title]bar[/title][function]([/function][params]self[/params][function]):[/function]\n[default]        [/default][keyword]await[/keyword][default] self.baz([/default][literal]True[/literal][default], [/default][literal]False[/literal][default], [/default][literal]None[/literal][default])[/default]\n[default]        [/default][keyword]yield[/keyword][default] [/default][number]0x1F[/number][default], [/default][number]1.5e-3[/number][default], [/default][number]2j[/number]\n"
+      },
+      {
+        "code": "class Foo(Bar, metaclass=Meta):\n    def method(self):\n        pass\n",
+        "output": "[keyword]class[/keyword][class] [/class][title]Foo[/title][class]([/class][params]Bar, metaclass=Meta[/params][class]):[/class]\n[default]    [/default][keyword]def[/keyword][function] [/function][title]method[/title][function]([/function][params]self[/params][function]):[/function]\n[default]        [/default][keyword]pass[/keyword]\n"
+      }
+    ],
+    "java": [
+      {
+        "code": "package com.example;\nimport java.util.*;\n\npublic class Foo<T> implements Bar {\n    private static final int X = 0x1F;\n    @Override\n    public void run() {\n        System.out.println(\"hi \" + X);\n    }\n}\n",
+        "output": "[keyword]package[/keyword][default] com.example;[/default]\n[keyword]import[/keyword][default] java.util.*;[/default]\n\n[keyword]public[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class]<[/class][title]T[/title][class]> [/class][keyword]implements[/keyword][class] [/class][title]Bar[/title][class] [/class][default]{[/default]\n[default]    [/default][keyword]private[/keyword][default] [/default][keyword]static[/keyword][default] [/default][keyword]final[/keyword][default] [/default][keyword]int[/keyword][default] X = [/default][number]0x1F[/number][default];[/default]\n[default]    [/default][meta]@Override[/meta]\n[default]    [/default][keyword]public[/keyword][function] [/function][keyword]void[/keyword][function] [/function][title]run[/title][params]()[/params][function] [/function][default]{[/default]\n[default]        System.out.println([/default][string]\"hi \"[/string][default] + X);[/default]\n[default]    }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "public final class Foo extends Bar implements Baz, Qux {\n  private int x;\n}\n",
+        "output": "[keyword]public[/keyword][default] [/default][keyword]final[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] [/class][keyword]implements[/keyword][class] [/class][title]Baz[/title][class], [/class][title]Qux[/title][class] [/class][default]{[/default]\n[default]  [/default][keyword]private[/keyword][default] [/default][keyword]int[/keyword][default] x;[/default]\n[default]}[/default]\n"
+      }
+    ],
+    "go": [
+      {
+        "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tx := 42\n\ts := `raw`\n\tfmt.Println(\"hello\", x, s)\n}\n",
+        "output": "[keyword]package[/keyword][default] main[/default]\n\n[keyword]import[/keyword][default] [/default][string]\"fmt\"[/string]\n\n[keyword]func[/keyword][function] [/function][title]main[/title][params]()[/params][default] {[/default]\n[default]\tx := [/default][number]42[/number]\n[default]\ts := [/default][string]`raw`[/string]\n[default]\tfmt.Println([/default][string]\"hello\"[/string][default], x, s)[/default]\n[default]}[/default]\n"
+      }
+    ],
+    "javascript": [
+      {
+        "code": "const re = /ab+c/gi;\nfunction foo(a, ...rest) {\n  // comment\n  const s = `tpl ${a} x`;\n  return a?.b ?? null;\n}\nclass Bar extends Baz { #priv = 1; }\n",
+        "output": "[keyword]const[/keyword][default] re = [/default][regexp]/ab+c/gi[/regexp][default];[/default]\n[keyword]function[/keyword][function] [/function][title]foo[/title][function]([/function][params]a, ...rest[/params][function]) [/function][default]{[/default]\n[default]  [/default][comment]// comment[/comment]\n[default]  [/default][keyword]const[/keyword][default] s = [/default][string]`tpl [/string][subst]${a}[/subst][string] x`[/string][default];[/default]\n[default]  [/default][keyword]return[/keyword][default] a?.b ?? [/default][literal]null[/literal][default];[/default]\n[default]}[/default]\n[keyword]class[/keyword][class] [/class][title]Bar[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]Baz[/title][class] [/class][default]{ #priv = [/default][number]1[/number][default]; }[/default]\n"
+      },
+      {
+        "code": "class A {}\nclass B extends A {}\nconst c = class extends A {};\n",
+        "output": "[keyword]class[/keyword][class] [/class][title]A[/title][class] [/class][default]{}[/default]\n[keyword]class[/keyword][class] [/class][title]B[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]A[/title][class] [/class][default]{}[/default]\n[keyword]const[/keyword][default] c = [/default][keyword]class[/keyword][class] [/class][keyword]extends[/keyword][class] [/class][title]A[/title][class] [/class][default]{};[/default]\n"
+      }
+    ],
+    "json": [
+      {
+        "code": "{\"a\": 1, \"b\": [true, false, null], \"c\": {\"d\": -1.5e3}}\n",
+        "output": "[default]{[/default][attr]\"a\"[/attr][default]: [/default][number]1[/number][default], [/default][attr]\"b\"[/attr][default]: [[/default][literal]true[/literal][default], [/default][literal]false[/literal][default], [/default][literal]null[/literal][default]], [/default][attr]\"c\"[/attr][default]: {[/default][attr]\"d\"[/attr][default]: [/default][number]-1.5e3[/number][default]}}[/default]\n"
+      },
+      {
+        "code": "{\"a\": [1, {\"b\": null}]}\n",
+        "output": "[default]{[/default][attr]\"a\"[/attr][default]: [[/default][number]1[/number][default], {[/default][attr]\"b\"[/attr][default]: [/default][literal]null[/literal][default]}]}[/default]\n"
+      }
+    ],
+    "cpp": [
+      {
+        "code": "#include <iostream>\nnamespace ns {\ntemplate <typename T>\nclass Foo : public Bar {\n public:\n  int x = 0x1f;\n  void run() { std::cout << \"hi\" << x; }\n};\n}\n",
+        "output": "[meta]#[/meta][meta-keyword]include[/meta-keyword][meta] [/meta][meta-string]<iostream>[/meta-string]\n[keyword]namespace[/keyword][default] ns {[/default]\n[keyword]template[/keyword][default] <[/default][keyword]typename[/keyword][default] T>[/default]\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class] :[/class][default] [/default][keyword]public[/keyword][default] Bar {[/default]\n[default] [/default][keyword]public[/keyword][default]:[/default]\n[default]  [/default][keyword]int[/keyword][default] x = [/default][number]0x1f[/number][default];[/default]\n[default]  [/default][keyword]void[/keyword][function] [/function][title]run[/title][params]()[/params][function] [/function][default]{ std::cout << [/default][string]\"hi\"[/string][default] << x; }[/default]\n[default]};[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "template <typename T>\nstruct Foo : public Bar {\n  T x;\n};\n",
+        "output": "[keyword]template[/keyword][default] <[/default][keyword]typename[/keyword][default] T>[/default]\n[keyword]struct[/keyword][class] [/class][title]Foo[/title][class] :[/class][default] [/default][keyword]public[/keyword][default] Bar {[/default]\n[default]  T x;[/default]\n[default]};[/default]\n"
+      },
+      {
+        "code": "class Foo final : public Bar {};\n",
+        "output": "[keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]final[/keyword][class] :[/class][default] [/default][keyword]public[/keyword][default] Bar {};[/default]\n"
+      }
+    ],
+    "typescript": [
+      {
+        "code": "interface Foo<T> extends Bar {\n  readonly x?: number;\n}\nexport async function run(a: string): Promise<void> {\n  const v = a as unknown as Foo<string>;\n  await fetch(`/x/${a}`);\n}\n",
+        "output": "[keyword]interface[/keyword][default] Foo<T> [/default][keyword]extends[/keyword][default] Bar {[/default]\n[default]  [/default][keyword]readonly[/keyword][default] x?: [/default][built_in]number[/built_in][default];[/default]\n[default]}[/default]\n[keyword]export[/keyword][default] [/default][keyword]async[/keyword][default] [/default][keyword]function[/keyword][function] [/function][title]run[/title][function]([/function][params]a: [/params][built_in]string[/built_in][function]): [/function][title]Promise[/title][function]<[/function][title]void[/title][function]> [/function][default]{[/default]\n[default]  [/default][keyword]const[/keyword][default] v = a [/default][keyword]as[/keyword][default] unknown [/default][keyword]as[/keyword][default] Foo<[/default][built_in]string[/built_in][default]>;[/default]\n[default]  [/default][keyword]await[/keyword][default] fetch([/default][string]`/x/[/string][subst]${a}[/subst][string]`[/string][default]);[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "export class Foo<T> extends Bar implements Baz {\n  private x?: number;\n}\n",
+        "output": "[keyword]export[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class]<[/class][title]T[/title][class]> [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] [/class][title]implements[/title][class] [/class][title]Baz[/title][class] [/class][default]{[/default]\n[default]  [/default][keyword]private[/keyword][default] x?: [/default][built_in]number[/built_in][default];[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "interface A {}\nclass B {}\nfunction f(): void {}\n",
+        "output": "[keyword]interface[/keyword][default] A {}[/default]\n[keyword]class[/keyword][class] [/class][title]B[/title][class] [/class][default]{}[/default]\n[keyword]function[/keyword][function] [/function][title]f[/title][function]([/function][function]): [/function][title]void[/title][function] [/function][default]{}[/default]\n"
+      }
+    ],
+    "php": [
+      {
+        "code": "<?php\nnamespace App;\n\nclass Foo extends Bar {\n    public function run(): void {\n        $x = 0x1F;\n        echo \"hi $x\";\n    }\n}\n",
+        "output": "[meta]<?php[/meta]\n[keyword]namespace[/keyword][default] [/default][title]App[/title][default];[/default]\n\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] [/class][default]{[/default]\n[default]    [/default][keyword]public[/keyword][default] [/default][keyword]function[/keyword][function] [/function][title]run[/title][function]([/function][function]): [/function][title]void[/title][function] [/function][default]{[/default]\n[default]        [/default][variable]$x[/variable][default] = [/default][number]0x1F[/number][default];[/default]\n[default]        [/default][keyword]echo[/keyword][default] [/default][string]\"hi [/string][subst]$x[/subst][string]\"[/string][default];[/default]\n[default]    }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "final class Foo extends Bar implements Baz {}\nuse App\\Model;\n",
+        "output": "[keyword]final[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] [/class][keyword]implements[/keyword][class] [/class][title]Baz[/title][class] [/class][default]{}[/default]\n[keyword]use[/keyword][default] [/default][title]App[/title][default]\\[/default][title]Model[/title][default];[/default]\n"
+      }
+    ],
+    "ruby": [
+      {
+        "code": "require \"json\"\n\nclass Foo < Bar\n  def run(a = 1, *rest)\n    @x = :sym\n    puts \"hi #{a}\"\n  end\nend\n",
+        "output": "[keyword]require[/keyword][default] [/default][string]\"json\"[/string]\n\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class] < Bar[/class]\n[default]  [/default][keyword]def[/keyword][function] [/function][title]run[/title][params](a = [/params][number]1[/number][params], *rest)[/params]\n[default]    [/default][variable]@x[/variable][default] = [/default][symbol]:sym[/symbol]\n[default]    puts [/default][string]\"hi [/string][subst]#{a}[/subst][string]\"[/string]\n[default]  [/default][keyword]end[/keyword]\n[keyword]end[/keyword]\n"
+      },
+      {
+        "code": "module M\n  class C < Base\n  end\nend\n",
+        "output": "[keyword]module[/keyword][class] [/class][title]M[/title]\n[default]  [/default][keyword]class[/keyword][class] [/class][title]C[/title][class] < Base[/class]\n[default]  [/default][keyword]end[/keyword]\n[keyword]end[/keyword]\n"
+      }
+    ],
+    "c": [
+      {
+        "code": "#include <stdio.h>\n#define X 1\n\nint main(void) {\n  char *s = \"hi\";\n  printf(\"%s %d\\n\", s, 0x1f);\n  return 0;\n}\n",
+        "output": "[meta]#[/meta][meta-keyword]include[/meta-keyword][meta] [/meta][meta-string]<stdio.h>[/meta-string]\n[meta]#[/meta][meta-keyword]define[/meta-keyword][meta] X 1[/meta]\n\n[keyword]int[/keyword][function] [/function][title]main[/title][params]([/params][keyword]void[/keyword][params])[/params][function] [/function][default]{[/default]\n[default]  [/default][keyword]char[/keyword][default] *s = [/default][string]\"hi\"[/string][default];[/default]\n[default]  [/default][built_in]printf[/built_in][default]([/default][string]\"%s %d\\n\"[/string][default], s, [/default][number]0x1f[/number][default]);[/default]\n[default]  [/default][keyword]return[/keyword][default] [/default][number]0[/number][default];[/default]\n[default]}[/default]\n"
+      }
+    ],
+    "csharp": [
+      {
+        "code": "using System;\nnamespace Ns {\n  public class Foo<T> : Bar {\n    public void Run() { Console.WriteLine($\"hi {x}\"); }\n  }\n}\n",
+        "output": "[keyword]using[/keyword][default] System;[/default]\n[keyword]namespace[/keyword][default] [/default][title]Ns[/title][default] {[/default]\n[default]  [/default][keyword]public[/keyword][default] [/default][keyword]class[/keyword][default] [/default][title]Foo[/title][default]<[/default][title]T[/title][default]> : [/default][title]Bar[/title][default] {[/default]\n[default]    [/default][keyword]public[/keyword][function] [/function][keyword]void[/keyword][function] [/function][title]Run[/title][function]([/function][function])[/function][default] { Console.WriteLine([/default][string]$\"hi [/string][subst]{x}[/subst][string]\"[/string][default]); }[/default]\n[default]  }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "public sealed class Foo<T> : Bar where T : class {\n  public int X { get; set; }\n}\n",
+        "output": "[keyword]public[/keyword][default] [/default][keyword]sealed[/keyword][default] [/default][keyword]class[/keyword][default] [/default][title]Foo[/title][default]<[/default][title]T[/title][default]> : [/default][title]Bar[/title][default] [/default][keyword]where[/keyword][default] [/default][title]T[/title][default] : [/default][keyword]class[/keyword][default] {[/default]\n[default]  [/default][keyword]public[/keyword][default] [/default][built_in]int[/built_in][default] X { [/default][keyword]get[/keyword][default]; [/default][keyword]set[/keyword][default]; }[/default]\n[default]}[/default]\n"
+      }
+    ],
+    "nix": [
+      {
+        "code": "{ pkgs ? import <nixpkgs> {} }:\nlet\n  x = \"hi\";\nin pkgs.mkShell {\n  buildInputs = [ pkgs.go ];\n}\n",
+        "output": "[default]{ pkgs ? [/default][built_in]import[/built_in][default] <nixpkgs> {} }:[/default]\n[keyword]let[/keyword]\n[default]  [/default][attr]x[/attr][default] = [/default][string]\"hi\"[/string][default];[/default]\n[keyword]in[/keyword][default] pkgs.mkShell {[/default]\n[default]  [/default][attr]buildInputs[/attr][default] = [ pkgs.go ];[/default]\n[default]}[/default]\n"
+      }
+    ],
+    "bash": [
+      {
+        "code": "#!/usr/bin/env bash\nset -euo pipefail\nfor f in *.txt; do\n  echo \"file: $f\" | grep -q x || exit 1\ndone\n",
+        "output": "[meta]#!/usr/bin/env bash[/meta]\n[built_in]set[/built_in][default] -euo pipefail[/default]\n[keyword]for[/keyword][default] f [/default][keyword]in[/keyword][default] *.txt; [/default][keyword]do[/keyword]\n[default]  [/default][built_in]echo[/built_in][default] [/default][string]\"file: [/string][variable]$f[/variable][string]\"[/string][default] | grep -q x || [/default][built_in]exit[/built_in][default] 1[/default]\n[keyword]done[/keyword]\n"
+      }
+    ],
+    "rust": [
+      {
+        "code": "use std::collections::HashMap;\n\n#[derive(Debug)]\npub struct Foo<'a, T> { x: &'a T }\n\nimpl<'a, T> Foo<'a, T> {\n    pub fn run(&self) -> Option<i32> {\n        let v = vec![1u8, 0x1f];\n        Some(1)\n    }\n}\n",
+        "output": "[keyword]use[/keyword][default] std::collections::HashMap;[/default]\n\n[meta]#[derive(Debug)][/meta]\n[keyword]pub[/keyword][default] [/default][keyword]struct[/keyword][class] [/class][title]Foo[/title][default]<[/default][symbol]'a[/symbol][default], T> { x: &[/default][symbol]'a[/symbol][default] T }[/default]\n\n[keyword]impl[/keyword][default]<[/default][symbol]'a[/symbol][default], T> Foo<[/default][symbol]'a[/symbol][default], T> {[/default]\n[default]    [/default][keyword]pub[/keyword][default] [/default][keyword]fn[/keyword][function] [/function][title]run[/title][default](&[/default][keyword]self[/keyword][default]) -> [/default][built_in]Option[/built_in][default]<[/default][built_in]i32[/built_in][default]> {[/default]\n[default]        [/default][keyword]let[/keyword][default] v = [/default][built_in]vec![/built_in][default][[/default][number]1u8[/number][default], [/default][number]0x1f[/number][default]];[/default]\n[default]        [/default][literal]Some[/literal][default]([/default][number]1[/number][default])[/default]\n[default]    }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "pub enum E<T> { A(T) }\npub trait Tr {}\npub type Alias = Vec<u8>;\npub union U { a: u8 }\n",
+        "output": "[keyword]pub[/keyword][default] [/default][keyword]enum[/keyword][class] [/class][title]E[/title][default]<T> { A(T) }[/default]\n[keyword]pub[/keyword][default] [/default][keyword]trait[/keyword][class] [/class][title]Tr[/title][default] {}[/default]\n[keyword]pub[/keyword][default] [/default][keyword]type[/keyword][class] [/class][title]Alias[/title][default] = [/default][built_in]Vec[/built_in][default]<[/default][built_in]u8[/built_in][default]>;[/default]\n[keyword]pub[/keyword][default] [/default][keyword]union[/keyword][class] [/class][title]U[/title][default] { a: [/default][built_in]u8[/built_in][default] }[/default]\n"
+      }
+    ],
+    "scala": [
+      {
+        "code": "package example\n\ncase class Foo(x: Int)\n\nobject Main extends App {\n  val s = s\"hi $x\"\n  def run[T](a: T): Unit = println(a)\n}\n",
+        "output": "[keyword]package[/keyword][default] example[/default]\n\n[keyword]case[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class]([/class][params]x: [/params][type]Int[/type][class])[/class]\n\n[keyword]object[/keyword][class] [/class][title]Main[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]App[/title][class] [/class][default]{[/default]\n[default]  [/default][keyword]val[/keyword][default] s = [/default][string]s\"hi [/string][subst]$x[/subst][string]\"[/string]\n[default]  [/default][keyword]def[/keyword][function] [/function][title]run[/title][default][[/default][type]T[/type][default]](a: [/default][type]T[/type][default]): [/default][type]Unit[/type][default] = println(a)[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "sealed trait T\ncase object O extends T\nclass C(val x: Int) extends T\n",
+        "output": "[keyword]sealed[/keyword][default] [/default][keyword]trait[/keyword][class] [/class][title]T[/title]\n[keyword]case[/keyword][default] [/default][keyword]object[/keyword][class] [/class][title]O[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]T[/title]\n[keyword]class[/keyword][class] [/class][title]C[/title][class]([/class][params]val x: [/params][type]Int[/type][class]) [/class][keyword]extends[/keyword][class] [/class][title]T[/title]\n"
+      }
+    ],
+    "kotlin": [
+      {
+        "code": "package example\n\nclass Foo<T>(val x: Int) : Bar {\n    fun run() {\n        val s = \"hi $x\"\n        println(s)\n    }\n}\n",
+        "output": "[keyword]package[/keyword][default] example[/default]\n\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class]<[/class][type]T[/type][class]>[/class][default]([/default][keyword]val[/keyword][default] x: [/default][built_in]Int[/built_in][default]) : Bar {[/default]\n[default]    [/default][keyword]fun[/keyword][function] [/function][title]run[/title][params]()[/params][default] {[/default]\n[default]        [/default][keyword]val[/keyword][default] s = [/default][string]\"hi [/string][variable]$x[/variable][string]\"[/string]\n[default]        println(s)[/default]\n[default]    }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "data class Foo(val x: Int) : Bar()\n",
+        "output": "[keyword]data[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][default]([/default][keyword]val[/keyword][default] x: [/default][built_in]Int[/built_in][default]) : Bar()[/default]\n"
+      }
+    ],
+    "dart": [
+      {
+        "code": "import 'dart:io';\n\nclass Foo<T> extends Bar {\n  final int x;\n  void run() {\n    var s = 'hi $x';\n    print(s);\n  }\n}\n",
+        "output": "[keyword]import[/keyword][default] [/default][string]'dart:io'[/string][default];[/default]\n\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class]<[/class][title]T[/title][class]> [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] [/class][default]{[/default]\n[default]  [/default][keyword]final[/keyword][default] [/default][built_in]int[/built_in][default] x;[/default]\n[default]  [/default][keyword]void[/keyword][default] run() {[/default]\n[default]    [/default][keyword]var[/keyword][default] s = [/default][string]'hi [/string][subst]$x[/subst][string]'[/string][default];[/default]\n[default]    [/default][built_in]print[/built_in][default](s);[/default]\n[default]  }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "abstract class Foo<T> implements Bar {}\n",
+        "output": "[keyword]abstract[/keyword][default] [/default][keyword]class[/keyword][class] [/class][title]Foo[/title][class]<[/class][title]T[/title][class]> [/class][keyword]implements[/keyword][class] [/class][title]Bar[/title][class] [/class][default]{}[/default]\n"
+      }
+    ],
+    "groovy": [
+      {
+        "code": "package example\n\nclass Foo extends Bar {\n    def run() {\n        def s = \"hi ${x}\"\n        println s\n    }\n}\n",
+        "output": "[keyword]package[/keyword][default] example[/default]\n\n[keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]extends[/keyword][class] [/class][title]Bar[/title][class] {[/class]\n[default]    [/default][keyword]def[/keyword][default] run() {[/default]\n[default]        [/default][keyword]def[/keyword][default] s = [/default][string]\"hi ${x}\"[/string]\n[default]        println s[/default]\n[default]    }[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "class Foo implements Bar {}\n",
+        "output": "[keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][keyword]implements[/keyword][class] [/class][title]Bar[/title][class] {[/class][default]}[/default]\n"
+      }
+    ],
+    "perl": [
+      {
+        "code": "use strict;\nuse warnings;\n\nmy $x = 42;\nsub run {\n    my ($a) = @_;\n    print \"hi $a\\n\";\n}\n",
+        "output": "[keyword]use[/keyword][default] strict;[/default]\n[keyword]use[/keyword][default] warnings;[/default]\n\n[keyword]my[/keyword][default] $x = [/default][number]42[/number][default];[/default]\n[keyword]sub[/keyword][function] [/function][title]run[/title][function] [/function][default]{[/default]\n[default]    [/default][keyword]my[/keyword][default] ($a) = @_;[/default]\n[default]    [/default][keyword]print[/keyword][default] [/default][string]\"hi $a\\n\"[/string][default];[/default]\n[default]}[/default]\n"
+      },
+      {
+        "code": "package Foo;\nsub new { my $class = shift; }\n",
+        "output": "[keyword]package[/keyword][default] Foo;[/default]\n[keyword]sub[/keyword][function] [/function][title]new[/title][function] [/function][default]{ [/default][keyword]my[/keyword][default] $class = [/default][keyword]shift[/keyword][default]; }[/default]\n"
+      }
+    ],
+    "lua": [
+      {
+        "code": "local x = 42\nfunction foo(a, ...)\n  local s = \"hi \" .. a\n  print(s)\nend\n",
+        "output": "[keyword]local[/keyword][default] x = [/default][number]42[/number]\n[keyword]function[/keyword][function] [/function][title]foo[/title][params](a, ...)[/params]\n[default]  [/default][keyword]local[/keyword][default] s = [/default][string]\"hi \"[/string][default] .. a[/default]\n[default]  [/default][built_in]print[/built_in][default](s)[/default]\n[keyword]end[/keyword]\n"
+      },
+      {
+        "code": "local M = {}\nfunction M.foo(a, b)\n  return a\nend\n",
+        "output": "[keyword]local[/keyword][default] M = {}[/default]\n[keyword]function[/keyword][function] [/function][title]M.foo[/title][params](a, b)[/params]\n[default]  [/default][keyword]return[/keyword][default] a[/default]\n[keyword]end[/keyword]\n"
+      }
+    ]
+  },
+  "render": [
+    {
+      "html": "<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">f</span>(x):\n    <span class=\"hljs-string\">&quot;hi &amp; bye&quot;</span>\n",
+      "output": "[keyword]def[/keyword][default] [/default][title]f[/title][default](x):[/default]\n[default]    [/default][string]\"hi & bye\"[/string]\n"
+    },
+    {
+      "html": "a &lt; b &amp;&amp; c &gt; d\n",
+      "output": "[default]a < b && c > d[/default]\n"
+    },
+    {
+      "html": "<span class=\"hljs-attr\">k</span>: <span class=\"hljs-number\">1</span>",
+      "output": "[attr]k[/attr][default]: [/default][number]1[/number]"
+    },
+    {
+      "html": "<span class=\"hljs-string\">a\nb</span>",
+      "output": "[string]a[/string]\n[string]b[/string]"
+    },
+    {
+      "html": "<span>no class</span><span class=\"x hljs-title class_\">T</span>",
+      "output": "[default]no class[/default][title]T[/title]"
+    },
+    {
+      "html": "<span class=\"hljs-keyword\">x</span><span class=\"hljs-string\">y</span>",
+      "output": "[keyword]x[/keyword][string]y[/string]"
+    },
+    {
+      "html": "text < spanner & notanentity; &amp; &#x27; end",
+      "output": "[default]text < spanner & notanentity; & ' end[/default]"
+    }
+  ]
+}

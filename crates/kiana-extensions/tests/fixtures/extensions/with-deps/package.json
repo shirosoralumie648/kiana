@@ -1,0 +1,12 @@
+{
+  "name": "kiana-extension-with-deps",
+  "private": true,
+  "version": "1.4.0",
+  "type": "module",
+  "kiana": {
+    "extensions": ["./index.ts"]
+  },
+  "dependencies": {
+    "ms": "2.1.3"
+  }
+}

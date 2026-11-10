@@ -1,0 +1,2 @@
+{"type":"session","version":3,"id":"leaf-id-session","timestamp":"2026-01-01T00:00:00.000Z","cwd":"/tmp/kiana-leaf"}
+{"type":"message","id":["x"],"parentId":null,"timestamp":"1970-01-01T00:00:00.001Z","message":{"role":"user","content":"hello","timestamp":1}}

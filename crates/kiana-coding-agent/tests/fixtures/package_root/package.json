@@ -1,0 +1,10 @@
+{
+  "name": "@earendil-works/kiana-coding-agent",
+  "version": "1.4.0",
+  "bin": { "kiana": "dist/bundle/cli.js" },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "import": "./dist/index.js", "types": "./dist/index.d.ts" },
+    "./rpc-entry": { "import": "./dist/bundle/rpc-entry.js" }
+  }
+}

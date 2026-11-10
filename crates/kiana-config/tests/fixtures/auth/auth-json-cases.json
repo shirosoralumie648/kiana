@@ -1,0 +1,85 @@
+[
+  {
+    "name": "simple api key",
+    "input": {
+      "anthropic": {
+        "type": "api_key",
+        "key": "sk-test"
+      }
+    },
+    "expected": "{\n  \"anthropic\": {\n    \"type\": \"api_key\",\n    \"key\": \"sk-test\"\n  }\n}"
+  },
+  {
+    "name": "integer-like provider ids come first in ascending order",
+    "input": {
+      "2": {
+        "type": "api_key",
+        "key": "two"
+      },
+      "10": {
+        "type": "api_key",
+        "key": "ten"
+      },
+      "beta": {
+        "type": "api_key",
+        "key": "b"
+      },
+      "alpha": {
+        "type": "api_key",
+        "key": "a"
+      }
+    },
+    "expected": "{\n  \"2\": {\n    \"type\": \"api_key\",\n    \"key\": \"two\"\n  },\n  \"10\": {\n    \"type\": \"api_key\",\n    \"key\": \"ten\"\n  },\n  \"beta\": {\n    \"type\": \"api_key\",\n    \"key\": \"b\"\n  },\n  \"alpha\": {\n    \"type\": \"api_key\",\n    \"key\": \"a\"\n  }\n}"
+  },
+  {
+    "name": "env map, unknown fields, oauth numbers and unicode",
+    "input": {
+      "プロバイダ": {
+        "type": "api_key",
+        "key": "$SCOPED_KEY",
+        "env": {
+          "SCOPED_KEY": "値",
+          "REGION": "test-region"
+        },
+        "gatewayConfig": {
+          "nested": [
+            1,
+            2,
+            {
+              "deep": true
+            }
+          ],
+          "empty": {}
+        }
+      },
+      "github": {
+        "type": "oauth",
+        "access": "ACCESS_TOKEN",
+        "refresh": "REFRESH_TOKEN",
+        "expires": 1767225600000,
+        "accountId": "acct_1",
+        "scopes": [
+          "openid",
+          "profile"
+        ]
+      },
+      "empty": {}
+    },
+    "expected": "{\n  \"プロバイダ\": {\n    \"type\": \"api_key\",\n    \"key\": \"$SCOPED_KEY\",\n    \"env\": {\n      \"SCOPED_KEY\": \"値\",\n      \"REGION\": \"test-region\"\n    },\n    \"gatewayConfig\": {\n      \"nested\": [\n        1,\n        2,\n        {\n          \"deep\": true\n        }\n      ],\n      \"empty\": {}\n    }\n  },\n  \"github\": {\n    \"type\": \"oauth\",\n    \"access\": \"ACCESS_TOKEN\",\n    \"refresh\": \"REFRESH_TOKEN\",\n    \"expires\": 1767225600000,\n    \"accountId\": \"acct_1\",\n    \"scopes\": [\n      \"openid\",\n      \"profile\"\n    ]\n  },\n  \"empty\": {}\n}"
+  },
+  {
+    "name": "empty object",
+    "input": {},
+    "expected": "{}"
+  },
+  {
+    "name": "string escapes",
+    "input": {
+      "p": {
+        "type": "api_key",
+        "key": "quote\"backslash\\tab\tnewline\n"
+      }
+    },
+    "expected": "{\n  \"p\": {\n    \"type\": \"api_key\",\n    \"key\": \"quote\\\"backslash\\\\tab\\tnewline\\n\"\n  }\n}"
+  }
+]

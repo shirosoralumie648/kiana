@@ -1,0 +1,435 @@
+{
+  "completionsModel": {
+    "id": "golden-model",
+    "name": "Golden",
+    "api": "openai-completions",
+    "provider": "golden",
+    "baseUrl": "https://example.com/v1",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 1,
+      "output": 2,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 128000,
+    "maxTokens": 8192,
+    "compat": {
+      "supportsStore": false,
+      "supportsDeveloperRole": false,
+      "supportsReasoningEffort": true,
+      "supportsUsageInStreaming": true,
+      "supportsFinishReason": true,
+      "maxTokensField": "max_completion_tokens",
+      "requiresToolResultName": true,
+      "requiresAssistantAfterToolResult": true,
+      "requiresThinkingAsText": false,
+      "requiresReasoningContentOnAssistantMessages": true,
+      "thinkingFormat": "openai",
+      "openRouterRouting": {},
+      "vercelGatewayRouting": {},
+      "chatTemplateKwargs": {},
+      "chatTemplateArgs": {},
+      "zaiToolStream": false,
+      "supportsThinkingTokenBudget": false,
+      "supportsStrictMode": true,
+      "supportsOpenAIGrammarTools": true,
+      "supportsMidConvoSystemMessages": false,
+      "supportsMidConvoToolAdditions": false,
+      "cacheControlFormat": "anthropic",
+      "sendSessionAffinityHeaders": false,
+      "sessionAffinityFormat": "openai",
+      "supportsLongCacheRetention": true
+    }
+  },
+  "responsesModel": {
+    "id": "golden-model",
+    "name": "Golden",
+    "api": "openai-responses",
+    "provider": "golden",
+    "baseUrl": "https://example.com/v1",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 1,
+      "output": 2,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "contextWindow": 128000,
+    "maxTokens": 8192,
+    "thinkingLevelMap": {
+      "off": "none",
+      "minimal": null,
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": null,
+      "max": null
+    }
+  },
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "System prompt",
+        "toolsAdded": [
+          {
+            "name": "read",
+            "description": "Read a file",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "query",
+            "description": "Grammar tool",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "input"
+              ]
+            },
+            "constrainedSampling": {
+              "type": "grammar",
+              "variants": {
+                "openai_lark": "start: /.+/"
+              }
+            }
+          }
+        ],
+        "timestamp": 0
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read it"
+          },
+          {
+            "type": "image",
+            "data": "ZmFrZQ==",
+            "mimeType": "image/png"
+          }
+        ],
+        "timestamp": 1700000000001
+      },
+      {
+        "role": "assistant",
+        "api": "openai-completions",
+        "provider": "golden",
+        "model": "golden-model",
+        "content": [
+          {
+            "type": "thinking",
+            "thinking": "reasoning",
+            "thinkingSignature": "reasoning_content"
+          },
+          {
+            "type": "text",
+            "text": "visible",
+            "textSignature": "{\"v\":1,\"id\":\"msg_1\"}"
+          },
+          {
+            "type": "toolCall",
+            "id": "call_1",
+            "name": "read",
+            "arguments": {
+              "path": "README.md"
+            }
+          },
+          {
+            "type": "toolCall",
+            "id": "call_2",
+            "name": "query",
+            "arguments": {
+              "input": "abc"
+            }
+          }
+        ],
+        "usage": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 0,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        },
+        "stopReason": "toolUse",
+        "timestamp": 1700000000002,
+        "providerThinkingLevel": "high"
+      },
+      {
+        "role": "toolResult",
+        "toolCallId": "call_1",
+        "toolName": "read",
+        "content": [
+          {
+            "type": "text",
+            "text": "text result"
+          },
+          {
+            "type": "image",
+            "data": "aW1n",
+            "mimeType": "image/jpeg"
+          }
+        ],
+        "isError": false,
+        "timestamp": 1700000000003
+      },
+      {
+        "role": "toolResult",
+        "toolCallId": "call_2",
+        "toolName": "query",
+        "content": [
+          {
+            "type": "text",
+            "text": "grammar result"
+          }
+        ],
+        "isError": false,
+        "timestamp": 1700000000004
+      },
+      {
+        "role": "user",
+        "content": "Thanks",
+        "timestamp": 1700000000005
+      }
+    ]
+  },
+  "completions": {
+    "compat": {
+      "supportsStore": false,
+      "supportsDeveloperRole": false,
+      "supportsReasoningEffort": true,
+      "supportsUsageInStreaming": true,
+      "supportsFinishReason": true,
+      "maxTokensField": "max_completion_tokens",
+      "requiresToolResultName": true,
+      "requiresAssistantAfterToolResult": true,
+      "requiresThinkingAsText": false,
+      "requiresReasoningContentOnAssistantMessages": true,
+      "thinkingFormat": "openai",
+      "openRouterRouting": {},
+      "vercelGatewayRouting": {},
+      "chatTemplateKwargs": {},
+      "chatTemplateArgs": {},
+      "zaiToolStream": false,
+      "supportsThinkingTokenBudget": false,
+      "supportsStrictMode": true,
+      "supportsOpenAIGrammarTools": true,
+      "supportsMidConvoSystemMessages": false,
+      "supportsMidConvoToolAdditions": false,
+      "cacheControlFormat": "anthropic",
+      "sendSessionAffinityHeaders": false,
+      "sessionAffinityFormat": "openai",
+      "supportsLongCacheRetention": true
+    },
+    "grammarToolInputProperties": {
+      "query": "input"
+    },
+    "messages": [
+      {
+        "role": "system",
+        "content": "System prompt"
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Read it"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,ZmFrZQ=="
+            }
+          }
+        ]
+      },
+      {
+        "role": "assistant",
+        "content": "visible",
+        "reasoning_content": "reasoning",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "read",
+              "arguments": "{\"path\":\"README.md\"}"
+            }
+          },
+          {
+            "id": "call_2",
+            "type": "custom",
+            "custom": {
+              "name": "query",
+              "input": "abc"
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "content": "text result",
+        "tool_call_id": "call_1",
+        "name": "read"
+      },
+      {
+        "role": "tool",
+        "content": "grammar result",
+        "tool_call_id": "call_2",
+        "name": "query"
+      },
+      {
+        "role": "assistant",
+        "content": "I have processed the tool results."
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Attached image(s) from tool result:"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/jpeg;base64,aW1n"
+            }
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "Thanks"
+      }
+    ]
+  },
+  "responses": {
+    "allowedToolCallProviders": [
+      "openai",
+      "golden"
+    ],
+    "supportsMidConvoSystemMessages": true,
+    "supportsAdditionalTools": false,
+    "supportsToolSearch": false,
+    "toolOptions": {
+      "supportsStrictMode": true,
+      "supportsOpenAIGrammarTools": false
+    },
+    "configurationUpdateEffort": "high",
+    "grammarToolInputProperties": {
+      "query": "input"
+    },
+    "input": [
+      {
+        "role": "developer",
+        "content": "System prompt"
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Read it"
+          },
+          {
+            "type": "input_image",
+            "detail": "auto",
+            "image_url": "data:image/png;base64,ZmFrZQ=="
+          }
+        ]
+      },
+      {
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "visible",
+            "annotations": []
+          }
+        ],
+        "status": "completed",
+        "id": "msg_kiana_1"
+      },
+      {
+        "type": "function_call",
+        "call_id": "call_1",
+        "name": "read",
+        "arguments": "{\"path\":\"README.md\"}"
+      },
+      {
+        "type": "custom_tool_call",
+        "call_id": "call_2",
+        "name": "query",
+        "input": "abc"
+      },
+      {
+        "type": "function_call_output",
+        "call_id": "call_1",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "text result"
+          },
+          {
+            "type": "input_image",
+            "detail": "auto",
+            "image_url": "data:image/jpeg;base64,aW1n"
+          }
+        ]
+      },
+      {
+        "type": "custom_tool_call_output",
+        "call_id": "call_2",
+        "output": "grammar result"
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Thanks"
+          }
+        ]
+      },
+      {
+        "type": "configuration_update",
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    ]
+  }
+}

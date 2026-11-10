@@ -1,0 +1,106 @@
+{
+	"collects-from-multiple-extensions": [
+		[
+			"cmd-a",
+			"cmd-a",
+			"Test command"
+		],
+		[
+			"cmd-b",
+			"cmd-b",
+			"Test command"
+		]
+	],
+	"single-command": [
+		[
+			"my-cmd",
+			"my-cmd",
+			"My command"
+		]
+	],
+	"duplicate-in-insertion-order": [
+		[
+			"shared-cmd",
+			"shared-cmd:1",
+			"First command"
+		],
+		[
+			"shared-cmd",
+			"shared-cmd:2",
+			"Second command"
+		]
+	],
+	"literal-name-collision": [
+		[
+			"x",
+			"x:1",
+			"first x"
+		],
+		[
+			"x:1",
+			"x:1:2",
+			"literal x:1"
+		],
+		[
+			"x",
+			"x:2",
+			"second x"
+		]
+	],
+	"three-duplicates": [
+		[
+			"dup",
+			"dup:1",
+			"one"
+		],
+		[
+			"dup",
+			"dup:2",
+			"two"
+		],
+		[
+			"dup",
+			"dup:3",
+			"three"
+		]
+	],
+	"unique-names": [
+		[
+			"alpha",
+			"alpha",
+			"a"
+		],
+		[
+			"beta",
+			"beta",
+			"b"
+		],
+		[
+			"gamma",
+			"gamma",
+			"c"
+		]
+	],
+	"get-command-lookup": [
+		[
+			"x",
+			null
+		],
+		[
+			"x:1",
+			"first x"
+		],
+		[
+			"x:1:2",
+			"literal x:1"
+		],
+		[
+			"x:2",
+			"second x"
+		],
+		[
+			"nope",
+			null
+		]
+	]
+}

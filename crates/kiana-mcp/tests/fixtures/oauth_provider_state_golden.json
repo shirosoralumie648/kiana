@@ -1,0 +1,148 @@
+{
+	"note": "由 TS 参照实现（packages/mcp/src/oauth/provider.ts，Node 26）生成；随机 oauthState 与时刻相关的 tokensExpireAt 归一化为占位符。",
+	"serverUrl": "https://example.example/mcp",
+	"redirectUrl": "http://127.0.0.1:1234/callback",
+	"clientMetadata": {
+		"client_name": "test",
+		"redirect_uris": [
+			"http://127.0.0.1:1234/callback"
+		],
+		"grant_types": [
+			"authorization_code",
+			"refresh_token"
+		],
+		"response_types": [
+			"code"
+		],
+		"token_endpoint_auth_method": "none"
+	},
+	"clientMetadataKeys": [
+		"client_name",
+		"redirect_uris",
+		"grant_types",
+		"response_types",
+		"token_endpoint_auth_method"
+	],
+	"codeVerifierError": "No OAuth PKCE code verifier is stored",
+	"stateLength": 64,
+	"stateIsLowerHex": true,
+	"afterClientAndVerifier": {
+		"serverUrl": "https://example.example/mcp",
+		"clientInformation": {
+			"client_id": "c",
+			"client_secret": "s"
+		},
+		"codeVerifier": "verifier",
+		"oauthState": "<state>"
+	},
+	"afterTokensKeys": [
+		"serverUrl",
+		"clientInformation",
+		"codeVerifier",
+		"oauthState",
+		"tokens",
+		"tokensExpireAt"
+	],
+	"afterTokens": {
+		"serverUrl": "https://example.example/mcp",
+		"clientInformation": {
+			"client_id": "c",
+			"client_secret": "s"
+		},
+		"codeVerifier": "verifier",
+		"oauthState": "<state>",
+		"tokens": {
+			"access_token": "a",
+			"token_type": "Bearer",
+			"expires_in": 3600
+		},
+		"tokensExpireAt": "<tokensExpireAt>"
+	},
+	"afterDiscoveryKeys": [
+		"serverUrl",
+		"clientInformation",
+		"codeVerifier",
+		"oauthState",
+		"tokens",
+		"tokensExpireAt",
+		"discovery"
+	],
+	"afterInvalidateTokensKeys": [
+		"serverUrl",
+		"clientInformation",
+		"codeVerifier",
+		"oauthState",
+		"discovery"
+	],
+	"afterInvalidateTokens": {
+		"serverUrl": "https://example.example/mcp",
+		"clientInformation": {
+			"client_id": "c",
+			"client_secret": "s"
+		},
+		"codeVerifier": "verifier",
+		"oauthState": "<state>",
+		"discovery": {
+			"authorizationServerUrl": "https://example.example"
+		}
+	},
+	"afterInvalidateAll": {
+		"serverUrl": "https://example.example/mcp"
+	},
+	"configuredClient": {
+		"client_id": "client",
+		"client_secret": "secret"
+	},
+	"configuredClientAfterSave": {
+		"client_id": "client",
+		"client_secret": "secret"
+	},
+	"secretOnlyMetadata": {
+		"redirect_uris": [
+			"http://127.0.0.1/callback"
+		],
+		"grant_types": [
+			"authorization_code",
+			"refresh_token"
+		],
+		"response_types": [
+			"code"
+		],
+		"token_endpoint_auth_method": "client_secret_post"
+	},
+	"secretOnlyMetadataKeys": [
+		"redirect_uris",
+		"grant_types",
+		"response_types",
+		"token_endpoint_auth_method"
+	],
+	"explicitMetadata": {
+		"redirect_uris": [
+			"https://app.example/cb"
+		],
+		"grant_types": [
+			"authorization_code"
+		],
+		"response_types": [
+			"code"
+		],
+		"token_endpoint_auth_method": "client_secret_basic"
+	},
+	"explicitMetadataKeys": [
+		"redirect_uris",
+		"grant_types",
+		"response_types",
+		"token_endpoint_auth_method"
+	],
+	"invalidUrl": {
+		"name": "TypeError",
+		"message": "Invalid URL"
+	},
+	"poison": [
+		"disk full",
+		"disk full",
+		"disk full",
+		"disk full"
+	],
+	"poisonSaves": 1
+}

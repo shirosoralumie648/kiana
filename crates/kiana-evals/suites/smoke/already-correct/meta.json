@@ -1,0 +1,19 @@
+{
+  "id": "already-correct",
+  "language": "shell",
+  "testCommand": ["sh", "-c", "grep -qx 42 answer.txt"],
+  "timeoutMs": 30000,
+  "maxAttempts": 2,
+  "instructions": "The answer file must contain 42. Verify it and finish.",
+  "files": [
+    {"path": "solution/answer.txt", "role": "solution"},
+    {"path": "tests/check.sh", "role": "test"},
+    {"path": "examples/example.txt", "role": "example"}
+  ],
+  "mock": {
+    "path": "answer.txt",
+    "initial": "42",
+    "repair": "42",
+    "finalText": "already correct"
+  }
+}

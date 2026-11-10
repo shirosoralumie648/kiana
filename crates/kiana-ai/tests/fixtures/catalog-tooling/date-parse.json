@@ -1,0 +1,890 @@
+[
+ {
+  "input": "2026/07/23",
+  "expected": 1784764800000
+ },
+ {
+  "input": "July 23, 2026",
+  "expected": 1784764800000
+ },
+ {
+  "input": "2026.01.01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Jan 1 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "-1",
+  "expected": 978307200000
+ },
+ {
+  "input": "Mon, 23 Jul 2026 10:00:00 GMT",
+  "expected": 1784800800000
+ },
+ {
+  "input": "2026-01-01T24:00:01Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T23:59:60Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+02",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+2",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+02:00 ",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+24:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+123",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+12345",
+  "expected": null
+ },
+ {
+  "input": "éé/3/2026",
+  "expected": null
+ },
+ {
+  "input": "éé/3/2026 10:00",
+  "expected": null
+ },
+ {
+  "input": "ππ/3/2026",
+  "expected": null
+ },
+ {
+  "input": "漢字/1/2",
+  "expected": 978393600000
+ },
+ {
+  "input": "é/1/2",
+  "expected": 978393600000
+ },
+ {
+  "input": "éé/1",
+  "expected": 978307200000
+ },
+ {
+  "input": "éé",
+  "expected": null
+ },
+ {
+  "input": "ééé",
+  "expected": null
+ },
+ {
+  "input": "",
+  "expected": null
+ },
+ {
+  "input": "  ",
+  "expected": null
+ },
+ {
+  "input": "\t\n",
+  "expected": null
+ },
+ {
+  "input": "()",
+  "expected": null
+ },
+ {
+  "input": "(",
+  "expected": null
+ },
+ {
+  "input": ")",
+  "expected": null
+ },
+ {
+  "input": "(())",
+  "expected": null
+ },
+ {
+  "input": "a",
+  "expected": null
+ },
+ {
+  "input": "zzz",
+  "expected": null
+ },
+ {
+  "input": "2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-1-1",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01T00:00:00Z",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01T24:00:00Z",
+  "expected": 1767312000000
+ },
+ {
+  "input": "2026-01-01T24:00:00.000Z",
+  "expected": 1767312000000
+ },
+ {
+  "input": "2026-01-01T24:00:00.001Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01t10:00:00z",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-13-01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-32",
+  "expected": null
+ },
+ {
+  "input": "2026-02-30",
+  "expected": 1772409600000
+ },
+ {
+  "input": "1970-01-01T00:00:00.000Z",
+  "expected": 0
+ },
+ {
+  "input": "1970-01-01T00:00:00.001Z",
+  "expected": 1
+ },
+ {
+  "input": "1970-01-01T00:00:00.1Z",
+  "expected": 100
+ },
+ {
+  "input": "2026-01-01T10:00:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.123456789Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01T10:00:00.1234567890Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "0000-01-01",
+  "expected": -62167219200000
+ },
+ {
+  "input": "0001-01-01",
+  "expected": -62135596800000
+ },
+ {
+  "input": "9999-12-31",
+  "expected": 253402214400000
+ },
+ {
+  "input": "+002026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "-000001-01-01",
+  "expected": -62198755200000
+ },
+ {
+  "input": "+002026-01-01T00:00:00Z",
+  "expected": 1767225600000
+ },
+ {
+  "input": "-000000-01-01",
+  "expected": 978307200000
+ },
+ {
+  "input": "+275760-09-13T00:00:00.000Z",
+  "expected": 8640000000000000
+ },
+ {
+  "input": "-271821-04-20T00:00:00.000Z",
+  "expected": -8640000000000000
+ },
+ {
+  "input": "275760-09-13T00:00:00.000Z",
+  "expected": null
+ },
+ {
+  "input": "+275760-09-13T00:00:00.001Z",
+  "expected": null
+ },
+ {
+  "input": "-271821-04-20T00:00:00.001Z",
+  "expected": -8639999999999999
+ },
+ {
+  "input": "+100000-01-01",
+  "expected": 3093527980800000
+ },
+ {
+  "input": "-100000-01-01",
+  "expected": -3217862419200000
+ },
+ {
+  "input": "2026-01-01T10:00:00+00:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00-00:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00+0000",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00-0800",
+  "expected": 1767290400000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:30",
+  "expected": 1767256200000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000-01:30",
+  "expected": 1767267000000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+0130",
+  "expected": 1767256200000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+013",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:3",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+1:30",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+0:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+000000",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+9999",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000-2400",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000-2360",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+23:59",
+  "expected": 1767175260000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+00:60",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+00:59",
+  "expected": 1767258060000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000z",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000Z ",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000 Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:30x",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:30 ",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+24:00x",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000-24:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+0000x",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+00:00:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+ 01:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000 +01:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:0",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+001",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+1",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000-",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00Z(comment)",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00Z+01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00Z-01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.00Z",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+05:30",
+  "expected": 1767241800000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+0530",
+  "expected": 1767241800000
+ },
+ {
+  "input": "2026-01-01T10:00:00+01:00x",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00+01:00",
+  "expected": 1767258000000
+ },
+ {
+  "input": "2026-01-01T10:00:00Zx",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00 Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00GMT",
+  "expected": null
+ },
+ {
+  "input": "Jan 1, 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "january 1 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "JAN 1 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "1 Jan 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026 Jan 1",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Jan 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Jan 1",
+  "expected": 978307200000
+ },
+ {
+  "input": "12/31/2026",
+  "expected": 1798675200000
+ },
+ {
+  "input": "31/12/2026",
+  "expected": null
+ },
+ {
+  "input": "2026/12/31",
+  "expected": 1798675200000
+ },
+ {
+  "input": "12-31-2026",
+  "expected": 1798675200000
+ },
+ {
+  "input": "31-12-2026",
+  "expected": null
+ },
+ {
+  "input": "2026/07/23",
+  "expected": 1784764800000
+ },
+ {
+  "input": "2026-01-01 10:00:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01 10:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01 10:00:00.123",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01T10:00:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "10:00:00 2026-01-01",
+  "expected": 1767261600000
+ },
+ {
+  "input": "10:00 2026-01-01",
+  "expected": 1767261600000
+ },
+ {
+  "input": "10:00:00",
+  "expected": null
+ },
+ {
+  "input": "10:00",
+  "expected": null
+ },
+ {
+  "input": "10:",
+  "expected": null
+ },
+ {
+  "input": "10::00",
+  "expected": null
+ },
+ {
+  "input": "1:2:3",
+  "expected": null
+ },
+ {
+  "input": "10:00:00.5",
+  "expected": null
+ },
+ {
+  "input": "10:00.5",
+  "expected": null
+ },
+ {
+  "input": "Mon Jan 01 2026 10:00:00 GMT+0000",
+  "expected": 1767261600000
+ },
+ {
+  "input": "Mon Jan 01 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01T10:00:00 GMT",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00 UTC",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00 PST",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00 EST",
+  "expected": null
+ },
+ {
+  "input": "Thu, 01 Jan 2026 00:00:00 GMT",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Thu Jan 01 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+  "expected": 1767225600000
+ },
+ {
+  "input": "(comment)2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01 (comment)",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01 (comment) (more)",
+  "expected": 1767225600000
+ },
+ {
+  "input": "(a(b)c)2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "1",
+  "expected": 978307200000
+ },
+ {
+  "input": "0",
+  "expected": 946684800000
+ },
+ {
+  "input": "+1",
+  "expected": 978307200000
+ },
+ {
+  "input": "12",
+  "expected": 1007164800000
+ },
+ {
+  "input": "13",
+  "expected": null
+ },
+ {
+  "input": "32",
+  "expected": 1956528000000
+ },
+ {
+  "input": "99",
+  "expected": 915148800000
+ },
+ {
+  "input": "100",
+  "expected": -59011459200000
+ },
+ {
+  "input": "1000",
+  "expected": -30610224000000
+ },
+ {
+  "input": "2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "49",
+  "expected": 2493072000000
+ },
+ {
+  "input": "50",
+  "expected": -631152000000
+ },
+ {
+  "input": "-49",
+  "expected": 2493072000000
+ },
+ {
+  "input": "abc 12",
+  "expected": 1007164800000
+ },
+ {
+  "input": "12 abc",
+  "expected": null
+ },
+ {
+  "input": "12 13 14",
+  "expected": 1418428800000
+ },
+ {
+  "input": "12 13 14 15",
+  "expected": null
+ },
+ {
+  "input": "2026.1.1",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026.13.1",
+  "expected": null
+ },
+ {
+  "input": "13.1.2026",
+  "expected": null
+ },
+ {
+  "input": "2026/13/01",
+  "expected": null
+ },
+ {
+  "input": "2026/01/32",
+  "expected": null
+ },
+ {
+  "input": "2026/02/30",
+  "expected": 1772409600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000+01:2",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00 +01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00.0+01",
+  "expected": null
+ },
+ {
+  "input": "2026/07/23 10:00",
+  "expected": 1784800800000
+ },
+ {
+  "input": "2026/07/23T10:00:00Z",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01T10:00:00+01:00x",
+  "expected": null
+ },
+ {
+  "input": " 2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01 ",
+  "expected": 1767225600000
+ },
+ {
+  "input": "\t2026-01-01\n",
+  "expected": 1767225600000
+ },
+ {
+  "input": " 2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "﻿2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.000 Z",
+  "expected": null
+ },
+ {
+  "input": " 2026-01-01",
+  "expected": null
+ },
+ {
+  "input": "　2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "2026-01-01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01",
+  "expected": null
+ },
+ {
+  "input": "Jan 1 2026 10:00 PM",
+  "expected": 1767304800000
+ },
+ {
+  "input": "Jan 1 2026 10:00 PM 5",
+  "expected": 1767304800000
+ },
+ {
+  "input": "Jan 1 2026 12:00 am",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Jan 1 2026 12:00 pm",
+  "expected": 1767268800000
+ },
+ {
+  "input": "Jan 1 2026 13:00 pm",
+  "expected": null
+ },
+ {
+  "input": "Jan 1 2026 0:30 am",
+  "expected": 1767227400000
+ },
+ {
+  "input": "2026-01-01 10:00 pm",
+  "expected": 1767304800000
+ },
+ {
+  "input": "10 pm",
+  "expected": null
+ },
+ {
+  "input": "pm 10",
+  "expected": 1001894400000
+ },
+ {
+  "input": "Mon 2026-01-01",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Monday, January 1, 2026",
+  "expected": 1767225600000
+ },
+ {
+  "input": "foo bar",
+  "expected": null
+ },
+ {
+  "input": "foo 12",
+  "expected": 1007164800000
+ },
+ {
+  "input": "12 foo",
+  "expected": null
+ },
+ {
+  "input": "2026 Jan 1 10:00",
+  "expected": 1767261600000
+ },
+ {
+  "input": "Jan 2026 1",
+  "expected": 1767225600000
+ },
+ {
+  "input": "1 2026 Jan",
+  "expected": 1767225600000
+ },
+ {
+  "input": "Jan 1 2026 10:00:00 GMT+0100",
+  "expected": 1767258000000
+ },
+ {
+  "input": "2026 Jan 1 10:00:00 GMT+0100",
+  "expected": 1767258000000
+ },
+ {
+  "input": "01 Jan 2026 10:00:00 +0100",
+  "expected": 1767258000000
+ },
+ {
+  "input": "2026-01-01T10:00:00.0001Z",
+  "expected": 1767261600000
+ },
+ {
+  "input": "2026-01-01T10:00:00.1Z",
+  "expected": 1767261600100
+ },
+ {
+  "input": "2026-01-01T10:00:00.12Z",
+  "expected": 1767261600120
+ },
+ {
+  "input": "2026-01-01T10:00:00.123Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01T10:00:00.1234Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01T10:00:00.12345Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01T10:00:00.123456789012Z",
+  "expected": 1767261600123
+ },
+ {
+  "input": "2026-01-01 24:00:00",
+  "expected": 1767312000000
+ },
+ {
+  "input": "2026-01-01 24:00:01",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01 24:01:00",
+  "expected": null
+ },
+ {
+  "input": "2026-01-01 25:00:00",
+  "expected": null
+ }
+]

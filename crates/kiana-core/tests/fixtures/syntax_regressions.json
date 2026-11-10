@@ -1,0 +1,174 @@
+{
+  "cases": [
+    {
+      "language": "typescript",
+      "code": "function f<T>(x: T): T { return x; }\n",
+      "output": "[keyword]function[/keyword][function] [/function][title]f[/title][function]<[/function][title]T[/title][function]>([/function][params]x: T[/params][function]): [/function][title]T[/title][function] [/function][default]{ [/default][keyword]return[/keyword][default] x; }[/default]\n"
+    },
+    {
+      "language": "typescript",
+      "code": "constructor(public readonly y: string) {}\n",
+      "output": "[title]constructor[/title][function]([/function][keyword]public[/keyword][params] [/params][keyword]readonly[/keyword][params] y: [/params][built_in]string[/built_in][function])[/function][default] {}[/default]\n"
+    },
+    {
+      "language": "typescript",
+      "code": "class Foo { constructor(public readonly y: string) {} }\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]Foo[/title][class] [/class][default]{ [/default][title]constructor[/title][function]([/function][keyword]public[/keyword][params] [/params][keyword]readonly[/keyword][params] y: [/params][built_in]string[/built_in][function])[/function][default] {} }[/default]\n"
+    },
+    {
+      "language": "typescript",
+      "code": "class A { static s() { return 1; } }\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]A[/title][class] [/class][default]{ [/default][keyword]static[/keyword][default] [/default][title]s[/title][function]([/function][function])[/function][default] { [/default][keyword]return[/keyword][default] [/default][number]1[/number][default]; } }[/default]\n"
+    },
+    {
+      "language": "typescript",
+      "code": "const o = { get x() { return 1; }, set x(v) {} };\n",
+      "output": "[keyword]const[/keyword][default] o = { [/default][keyword]get[/keyword][default] [/default][title]x[/title][default]() { [/default][keyword]return[/keyword][default] [/default][number]1[/number][default]; }, [/default][keyword]set[/keyword][default] [/default][title]x[/title][default]([/default][params]v[/params][default]) {} };[/default]\n"
+    },
+    {
+      "language": "javascript",
+      "code": "class A { static s() { return 1; } }\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]A[/title][class] [/class][default]{ [/default][keyword]static[/keyword][default] [/default][title]s[/title][function]([/function][function])[/function][default] { [/default][keyword]return[/keyword][default] [/default][number]1[/number][default]; } }[/default]\n"
+    },
+    {
+      "language": "javascript",
+      "code": "const o = { get x() { return 1; } };\n",
+      "output": "[keyword]const[/keyword][default] o = { [/default][keyword]get[/keyword][default] [/default][title]x[/title][default]() { [/default][keyword]return[/keyword][default] [/default][number]1[/number][default]; } };[/default]\n"
+    },
+    {
+      "language": "javascript",
+      "code": "function f<T>(x) { return x; }\n",
+      "output": "[keyword]function[/keyword][function] [/function][title]f[/title][function]<[/function][title]T[/title][function]>([/function][params]x[/params][function]) [/function][default]{ [/default][keyword]return[/keyword][default] x; }[/default]\n"
+    },
+    {
+      "language": "python",
+      "code": "class P:\n    pass\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]P[/title][class]:[/class]\n[default]    [/default][keyword]pass[/keyword]\n"
+    },
+    {
+      "language": "python",
+      "code": "class P(object):\n    pass\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]P[/title][class]([/class][built_in]object[/built_in][class]):[/class]\n[default]    [/default][keyword]pass[/keyword]\n"
+    },
+    {
+      "language": "kotlin",
+      "code": "class C : B(), I\n",
+      "output": "[keyword]class[/keyword][class] [/class][title]C[/title][class] : [/class][type]B[/type][default](), I[/default]\n"
+    },
+    {
+      "language": "kotlin",
+      "code": "fun <T> f(x: T): T = x\n",
+      "output": "[keyword]fun[/keyword][function] [/function][type]<T>[/type][function] [/function][title]f[/title][params](x: [/params][type]T[/type][params])[/params][default]: T = x[/default]\n"
+    },
+    {
+      "language": "kotlin",
+      "code": "fun <T> f(x: T): T { return x }\n",
+      "output": "[keyword]fun[/keyword][function] [/function][type]<T>[/type][function] [/function][title]f[/title][params](x: [/params][type]T[/type][params])[/params][default]: T { [/default][keyword]return[/keyword][default] x }[/default]\n"
+    },
+    {
+      "language": "kotlin",
+      "code": "fun Foo.bar(x: Int) {}\n",
+      "output": "[keyword]fun[/keyword][function] Foo.[/function][title]bar[/title][params](x: [/params][type]Int[/type][params])[/params][default] {}[/default]\n"
+    },
+    {
+      "language": "kotlin",
+      "code": "fun <reified T> f() {}\n",
+      "output": "[keyword]fun[/keyword][function] [/function][type]<[/type][keyword]reified[/keyword][type] T>[/type][function] [/function][title]f[/title][params]()[/params][default] {}[/default]\n"
+    },
+    {
+      "language": "c",
+      "code": "void f(size_t n) { }\n",
+      "output": "[keyword]void[/keyword][function] [/function][title]f[/title][params]([/params][keyword]size_t[/keyword][params] n)[/params][function] [/function][default]{ }[/default]\n"
+    },
+    {
+      "language": "c",
+      "code": "size_t f(void) { return 0; }\n",
+      "output": "[keyword]size_t[/keyword][function] [/function][title]f[/title][params]([/params][keyword]void[/keyword][params])[/params][function] [/function][default]{ [/default][keyword]return[/keyword][default] [/default][number]0[/number][default]; }[/default]\n"
+    },
+    {
+      "language": "csharp",
+      "code": "Task<int> M(string s) { return null; }\n",
+      "output": "[function]Task<[/function][built_in]int[/built_in][function]> [/function][title]M[/title][function]([/function][built_in]string[/built_in][params] s[/params][function])[/function][default] { [/default][keyword]return[/keyword][default] [/default][literal]null[/literal][default]; }[/default]\n"
+    },
+    {
+      "language": "csharp",
+      "code": "public Task<int> M(string s) { return null; }\n",
+      "output": "[keyword]public[/keyword][function] Task<[/function][built_in]int[/built_in][function]> [/function][title]M[/title][function]([/function][built_in]string[/built_in][params] s[/params][function])[/function][default] { [/default][keyword]return[/keyword][default] [/default][literal]null[/literal][default]; }[/default]\n"
+    },
+    {
+      "language": "csharp",
+      "code": "T M<T>(T x) { return x; }\n",
+      "output": "[function]T [/function][title]M[/title][function]<[/function][title]T[/title][function]>([/function][params]T x[/params][function])[/function][default] { [/default][keyword]return[/keyword][default] x; }[/default]\n"
+    },
+    {
+      "language": "cpp",
+      "code": "std::vector<int> f() { return {}; }\n",
+      "output": "[function]std::vector<[/function][keyword]int[/keyword][function]> [/function][title]f[/title][params]()[/params][function] [/function][default]{ [/default][keyword]return[/keyword][default] {}; }[/default]\n"
+    },
+    {
+      "language": "ruby",
+      "code": "f(a: 1, b: 2)\n",
+      "output": "[default]f([/default][symbol]a:[/symbol][default] [/default][number]1[/number][default], [/default][symbol]b:[/symbol][default] [/default][number]2[/number][default])[/default]\n"
+    },
+    {
+      "language": "ruby",
+      "code": "def f(a:, b: 2) end\n",
+      "output": "[keyword]def[/keyword][function] [/function][title]f[/title][params]([/params][symbol]a:[/symbol][params], [/params][symbol]b:[/symbol][params] [/params][number]2[/number][params])[/params][default] [/default][keyword]end[/keyword]\n"
+    },
+    {
+      "language": "ruby",
+      "code": "def f?(x) end\n",
+      "output": "[keyword]def[/keyword][function] [/function][title]f?[/title][params](x)[/params][default] [/default][keyword]end[/keyword]\n"
+    },
+    {
+      "language": "php",
+      "code": "<?php\n$x = \"{$y}\";\n",
+      "output": "[meta]<?php[/meta]\n[variable]$x[/variable][default] = [/default][string]\"[/string][subst]{$y}[/subst][string]\"[/string][default];[/default]\n"
+    },
+    {
+      "language": "perl",
+      "code": "$x =~ /^a/;\n",
+      "output": "[default]$x =~ [/default][regexp]/^a/[/regexp][default];[/default]\n"
+    },
+    {
+      "language": "perl",
+      "code": "if ($x =~ m/^a/i) { }\n",
+      "output": "[keyword]if[/keyword][default] ($x =~ [/default][regexp]m/^a/i[/regexp][default]) { }[/default]\n"
+    },
+    {
+      "language": "perl",
+      "code": "$y =~ s/foo/bar/g;\n",
+      "output": "[default]$y =~ [/default][regexp]s/foo/bar/g[/regexp][default];[/default]\n"
+    },
+    {
+      "language": "groovy",
+      "code": "def m = [a: 1, b: 2]\n",
+      "output": "[keyword]def[/keyword][default] m = [[/default][attr]a:[/attr][default] [/default][number]1[/number][default], [/default][attr]b:[/attr][default] [/default][number]2[/number][default]][/default]\n"
+    },
+    {
+      "language": "groovy",
+      "code": "def c = x ? y : z\n",
+      "output": "[keyword]def[/keyword][default] c = x ? y : z[/default]\n"
+    },
+    {
+      "language": "dart",
+      "code": "var s = \"${b + 1}\";\n",
+      "output": "[keyword]var[/keyword][default] s = [/default][string]\"[/string][subst]${b + [/subst][number]1[/number][subst]}[/subst][string]\"[/string][default];[/default]\n"
+    },
+    {
+      "language": "go",
+      "code": "x := 1_000i\n",
+      "output": "[default]x := [/default][number]1[/number][default]_000i[/default]\n"
+    },
+    {
+      "language": "go",
+      "code": "x := 1_000\n",
+      "output": "[default]x := [/default][number]1[/number][default]_000[/default]\n"
+    },
+    {
+      "language": "go",
+      "code": "y := 1_000.5\n",
+      "output": "[default]y := [/default][number]1[/number][default]_000[/default][number].5[/number]\n"
+    }
+  ]
+}

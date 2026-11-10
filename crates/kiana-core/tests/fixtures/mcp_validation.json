@@ -1,0 +1,1628 @@
+{
+ "validate": [
+  {
+   "case": "basic",
+   "server": "s",
+   "input": {
+    "command": "x"
+   },
+   "ok": {
+    "command": "x"
+   }
+  },
+  {
+   "case": "stdio-all-base",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": "direct",
+    "description": "d",
+    "toolExposure": {
+     "a": "deferred"
+    },
+    "enabled": false,
+    "timeout": 60
+   },
+   "ok": {
+    "command": "x",
+    "exposure": "direct",
+    "description": "d",
+    "toolExposure": {
+     "a": "deferred"
+    },
+    "enabled": false,
+    "timeout": 60
+   }
+  },
+  {
+   "case": "stdio-type",
+   "server": "s",
+   "input": {
+    "type": "stdio",
+    "command": "x",
+    "args": [
+     "a",
+     "b"
+    ],
+    "env": {
+     "A": "1"
+    },
+    "cwd": "/tmp"
+   },
+   "ok": {
+    "type": "stdio",
+    "command": "x",
+    "args": [
+     "a",
+     "b"
+    ],
+    "env": {
+     "A": "1"
+    },
+    "cwd": "/tmp"
+   }
+  },
+  {
+   "case": "http-basic",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp"
+   },
+   "ok": {
+    "url": "https://example.com/mcp"
+   }
+  },
+  {
+   "case": "http-type",
+   "server": "s",
+   "input": {
+    "type": "http",
+    "url": "https://example.com/mcp",
+    "headers": {
+     "Authorization": "Bearer ${TOKEN}"
+    }
+   },
+   "ok": {
+    "type": "http",
+    "url": "https://example.com/mcp",
+    "headers": {
+     "Authorization": "Bearer ${TOKEN}"
+    }
+   }
+  },
+  {
+   "case": "http-streamable",
+   "server": "s",
+   "input": {
+    "type": "streamable-http",
+    "url": "https://example.com/mcp"
+   },
+   "ok": {
+    "type": "streamable-http",
+    "url": "https://example.com/mcp"
+   }
+  },
+  {
+   "case": "http-oauth-ok",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost:8080/callback",
+     "scope": "a b"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost:8080/callback",
+     "scope": "a b"
+    }
+   }
+  },
+  {
+   "case": "http-oauth-ipv6",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://[::1]/cb",
+     "callbackPort": 9000
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://[::1]/cb",
+     "callbackPort": 9000
+    }
+   }
+  },
+  {
+   "case": "http-oauth-same-port",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://127.0.0.1:2/cb",
+     "callbackPort": 2
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://127.0.0.1:2/cb",
+     "callbackPort": 2
+    }
+   }
+  },
+  {
+   "case": "http-oauth-named",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientId": "id",
+     "clientSecret": "sec",
+     "clientName": "Claude Code",
+     "clientRegistration": "dcr"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientId": "id",
+     "clientSecret": "sec",
+     "clientName": "Claude Code",
+     "clientRegistration": "dcr"
+    }
+   }
+  },
+  {
+   "case": "http-oauth-metadata",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "https://idp.example/m"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "https://idp.example/m"
+    }
+   }
+  },
+  {
+   "case": "http-oauth-cimd",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "callbackUrl": "http://localhost/callback"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "callbackUrl": "http://localhost/callback"
+    }
+   }
+  },
+  {
+   "case": "http-auth-https",
+   "server": "s",
+   "input": {
+    "url": "https://radius.example/mcp",
+    "auth": {
+     "provider": "radius"
+    }
+   },
+   "ok": {
+    "url": "https://radius.example/mcp",
+    "auth": {
+     "provider": "radius"
+    }
+   }
+  },
+  {
+   "case": "http-auth-loopback",
+   "server": "s",
+   "input": {
+    "url": "http://localhost:8788/mcp",
+    "auth": {
+     "provider": "radius-dev"
+    }
+   },
+   "ok": {
+    "url": "http://localhost:8788/mcp",
+    "auth": {
+     "provider": "radius-dev"
+    }
+   }
+  },
+  {
+   "case": "http-auth-ipv6",
+   "server": "s",
+   "input": {
+    "url": "http://[::1]/mcp",
+    "auth": {
+     "provider": "p"
+    }
+   },
+   "ok": {
+    "url": "http://[::1]/mcp",
+    "auth": {
+     "provider": "p"
+    }
+   }
+  },
+  {
+   "case": "timeout-fraction",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": 0.5
+   },
+   "ok": {
+    "command": "x",
+    "timeout": 0.5
+   }
+  },
+  {
+   "case": "aliases",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": "codemode-deferred",
+    "toolExposure": {
+     "a": "codemode-deferred",
+     "b": "hidden"
+    }
+   },
+   "ok": {
+    "command": "x",
+    "exposure": "codemode",
+    "toolExposure": {
+     "a": "codemode",
+     "b": "hidden"
+    }
+   }
+  },
+  {
+   "case": "bad-name",
+   "server": "bad name",
+   "input": {
+    "command": "x"
+   },
+   "error": "invalid server name \"bad name\" (use letters, digits, \"_\" and \"-\")"
+  },
+  {
+   "case": "empty-name",
+   "server": "",
+   "input": {
+    "command": "x"
+   },
+   "error": "invalid server name \"\" (use letters, digits, \"_\" and \"-\")"
+  },
+  {
+   "case": "name-dots",
+   "server": "a.b",
+   "input": {
+    "command": "x"
+   },
+   "error": "invalid server name \"a.b\" (use letters, digits, \"_\" and \"-\")"
+  },
+  {
+   "case": "array",
+   "server": "s",
+   "input": [],
+   "error": "server \"s\" must be an object"
+  },
+  {
+   "case": "null",
+   "server": "s",
+   "input": null,
+   "error": "server \"s\" must be an object"
+  },
+  {
+   "case": "string",
+   "server": "s",
+   "input": "nope",
+   "error": "server \"s\" must be an object"
+  },
+  {
+   "case": "number",
+   "server": "s",
+   "input": 3,
+   "error": "server \"s\" must be an object"
+  },
+  {
+   "case": "exposure-wrong",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": "model-only"
+   },
+   "error": "server \"s\": exposure must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "exposure-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": null
+   },
+   "error": "server \"s\": exposure must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "exposure-alias-only",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": "codemode-deferred"
+   },
+   "ok": {
+    "command": "x",
+    "exposure": "codemode"
+   }
+  },
+  {
+   "case": "toolExposure-not-object",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": []
+   },
+   "error": "server \"s\": toolExposure must map tool names to exposures"
+  },
+  {
+   "case": "toolExposure-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": null
+   },
+   "error": "server \"s\": toolExposure must map tool names to exposures"
+  },
+  {
+   "case": "toolExposure-bad-value",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": {
+     "a": "visible"
+    }
+   },
+   "error": "server \"s\": toolExposure \"a\" must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "toolExposure-null-value",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": {
+     "a": null
+    }
+   },
+   "error": "server \"s\": toolExposure \"a\" must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "enabled-string",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "enabled": "yes"
+   },
+   "error": "server \"s\": enabled must be a boolean"
+  },
+  {
+   "case": "enabled-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "enabled": null
+   },
+   "error": "server \"s\": enabled must be a boolean"
+  },
+  {
+   "case": "description-number",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "description": 1
+   },
+   "error": "server \"s\": description must be a string"
+  },
+  {
+   "case": "description-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "description": null
+   },
+   "error": "server \"s\": description must be a string"
+  },
+  {
+   "case": "timeout-zero",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": 0
+   },
+   "error": "server \"s\": timeout must be a positive number of seconds"
+  },
+  {
+   "case": "timeout-negative",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": -1
+   },
+   "error": "server \"s\": timeout must be a positive number of seconds"
+  },
+  {
+   "case": "timeout-string",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": "60"
+   },
+   "error": "server \"s\": timeout must be a positive number of seconds"
+  },
+  {
+   "case": "timeout-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": null
+   },
+   "error": "server \"s\": timeout must be a positive number of seconds"
+  },
+  {
+   "case": "sse",
+   "server": "s",
+   "input": {
+    "type": "sse",
+    "url": "https://example.com/sse"
+   },
+   "error": "server \"s\": legacy SSE transport is not supported; use the streamable HTTP URL"
+  },
+  {
+   "case": "bad-url",
+   "server": "s",
+   "input": {
+    "url": "example.com/mcp"
+   },
+   "error": "server \"s\": url must be an http or https URL"
+  },
+  {
+   "case": "ftp-url",
+   "server": "s",
+   "input": {
+    "url": "ftp://example.com/mcp"
+   },
+   "error": "server \"s\": url must be an http or https URL"
+  },
+  {
+   "case": "url-null",
+   "server": "s",
+   "input": {
+    "url": null
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "problem-no-transport",
+   "server": "s",
+   "input": {
+    "args": [
+     "no command"
+    ]
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "http-empty",
+   "server": "s",
+   "input": {},
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-bogus",
+   "server": "s",
+   "input": {
+    "type": "bogus",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-bogus-url",
+   "server": "s",
+   "input": {
+    "type": "bogus",
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-stdio-with-url",
+   "server": "s",
+   "input": {
+    "type": "stdio",
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-http-with-command",
+   "server": "s",
+   "input": {
+    "type": "http",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "headers-bad",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "headers": {
+     "A": 1
+    }
+   },
+   "error": "server \"s\": headers must map names to strings"
+  },
+  {
+   "case": "headers-null",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "headers": null
+   },
+   "error": "server \"s\": headers must map names to strings"
+  },
+  {
+   "case": "args-not-array",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "args": "a"
+   },
+   "error": "server \"s\": args must be an array of strings"
+  },
+  {
+   "case": "args-mixed",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "args": [
+     "a",
+     1
+    ]
+   },
+   "error": "server \"s\": args must be an array of strings"
+  },
+  {
+   "case": "args-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "args": null
+   },
+   "error": "server \"s\": args must be an array of strings"
+  },
+  {
+   "case": "env-bad",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "env": {
+     "A": 1
+    }
+   },
+   "error": "server \"s\": env must map names to strings"
+  },
+  {
+   "case": "env-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "env": null
+   },
+   "error": "server \"s\": env must map names to strings"
+  },
+  {
+   "case": "cwd-number",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "cwd": 1
+   },
+   "error": "server \"s\": cwd must be a string"
+  },
+  {
+   "case": "cwd-null",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "cwd": null
+   },
+   "error": "server \"s\": cwd must be a string"
+  },
+  {
+   "case": "oauth-not-object",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": []
+   },
+   "error": "server \"s\": oauth must be an object"
+  },
+  {
+   "case": "oauth-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": null
+   },
+   "error": "server \"s\": oauth must be an object"
+  },
+  {
+   "case": "oauth-clientId-number",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientId": 1
+    }
+   },
+   "error": "server \"s\": oauth.clientId must be a string"
+  },
+  {
+   "case": "oauth-clientSecret-number",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientSecret": 1
+    }
+   },
+   "error": "server \"s\": oauth.clientSecret must be a string"
+  },
+  {
+   "case": "oauth-port-zero",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackPort": 0
+    }
+   },
+   "error": "server \"s\": oauth.callbackPort must be a port number"
+  },
+  {
+   "case": "oauth-port-high",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackPort": 65536
+    }
+   },
+   "error": "server \"s\": oauth.callbackPort must be a port number"
+  },
+  {
+   "case": "oauth-port-fraction",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackPort": 1.5
+    }
+   },
+   "error": "server \"s\": oauth.callbackPort must be a port number"
+  },
+  {
+   "case": "oauth-port-string",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackPort": "8080"
+    }
+   },
+   "error": "server \"s\": oauth.callbackPort must be a port number"
+  },
+  {
+   "case": "oauth-port-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackPort": null
+    }
+   },
+   "error": "server \"s\": oauth.callbackPort must be a port number"
+  },
+  {
+   "case": "oauth-callback-remote",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "https://example.com/callback"
+    }
+   },
+   "error": "server \"s\": oauth.callbackUrl must be an http URI on localhost, 127.0.0.1, or [::1] without query or fragment"
+  },
+  {
+   "case": "oauth-callback-query",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb?x=1"
+    }
+   },
+   "error": "server \"s\": oauth.callbackUrl must be an http URI on localhost, 127.0.0.1, or [::1] without query or fragment"
+  },
+  {
+   "case": "oauth-callback-fragment",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb#x"
+    }
+   },
+   "error": "server \"s\": oauth.callbackUrl must be an http URI on localhost, 127.0.0.1, or [::1] without query or fragment"
+  },
+  {
+   "case": "oauth-callback-empty-query",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb?"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb?"
+    }
+   }
+  },
+  {
+   "case": "oauth-callback-empty-fragment",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb#"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb#"
+    }
+   }
+  },
+  {
+   "case": "oauth-callback-port-mismatch",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://127.0.0.1:1/cb",
+     "callbackPort": 2
+    }
+   },
+   "error": "server \"s\": oauth.callbackUrl and oauth.callbackPort name different ports"
+  },
+  {
+   "case": "oauth-callback-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": null
+    }
+   },
+   "error": "server \"s\": oauth.callbackUrl must be an http URI on localhost, 127.0.0.1, or [::1] without query or fragment"
+  },
+  {
+   "case": "oauth-scope-array",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "scope": [
+      "a"
+     ]
+    }
+   },
+   "error": "server \"s\": oauth.scope must be a string"
+  },
+  {
+   "case": "oauth-scope-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "scope": null
+    }
+   },
+   "error": "server \"s\": oauth.scope must be a string"
+  },
+  {
+   "case": "oauth-clientName-blank",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientName": " "
+    }
+   },
+   "error": "server \"s\": oauth.clientName must be a non-empty string"
+  },
+  {
+   "case": "oauth-clientName-empty",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientName": ""
+    }
+   },
+   "error": "server \"s\": oauth.clientName must be a non-empty string"
+  },
+  {
+   "case": "oauth-clientName-number",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientName": 1
+    }
+   },
+   "error": "server \"s\": oauth.clientName must be a non-empty string"
+  },
+  {
+   "case": "oauth-registration-bad",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "auto"
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration must be \"dcr\" or \"cimd\""
+  },
+  {
+   "case": "oauth-registration-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": null
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration must be \"dcr\" or \"cimd\""
+  },
+  {
+   "case": "oauth-cimd-client",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "clientId": "x"
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration \"cimd\" cannot be combined with oauth.clientId or oauth.clientName"
+  },
+  {
+   "case": "oauth-cimd-name",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "clientName": "x"
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration \"cimd\" cannot be combined with oauth.clientId or oauth.clientName"
+  },
+  {
+   "case": "oauth-cimd-path",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "callbackUrl": "http://127.0.0.1/cb"
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration \"cimd\" requires oauth.callbackUrl on localhost or 127.0.0.1 with path /callback"
+  },
+  {
+   "case": "oauth-cimd-ipv6",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "clientRegistration": "cimd",
+     "callbackUrl": "http://[::1]/callback"
+    }
+   },
+   "error": "server \"s\": oauth.clientRegistration \"cimd\" requires oauth.callbackUrl on localhost or 127.0.0.1 with path /callback"
+  },
+  {
+   "case": "oauth-metadata-http",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "http://idp.example/m"
+    }
+   },
+   "error": "server \"s\": oauth.authServerMetadataUrl must be an https URL, or http on localhost, 127.0.0.1, or [::1]"
+  },
+  {
+   "case": "oauth-metadata-loopback",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "http://localhost:9/m"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "http://localhost:9/m"
+    }
+   }
+  },
+  {
+   "case": "oauth-metadata-garbage",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "nope"
+    }
+   },
+   "error": "server \"s\": oauth.authServerMetadataUrl must be an https URL, or http on localhost, 127.0.0.1, or [::1]"
+  },
+  {
+   "case": "oauth-metadata-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": null
+    }
+   },
+   "error": "server \"s\": oauth.authServerMetadataUrl must be an https URL, or http on localhost, 127.0.0.1, or [::1]"
+  },
+  {
+   "case": "auth-not-object",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "auth": []
+   },
+   "error": "server \"s\": auth.provider must be a provider name"
+  },
+  {
+   "case": "auth-null",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "auth": null
+   },
+   "error": "server \"s\": auth.provider must be a provider name"
+  },
+  {
+   "case": "auth-empty-provider",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "auth": {
+     "provider": ""
+    }
+   },
+   "error": "server \"s\": auth.provider must be a provider name"
+  },
+  {
+   "case": "auth-missing-provider",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "auth": {}
+   },
+   "error": "server \"s\": auth.provider must be a provider name"
+  },
+  {
+   "case": "auth-number-provider",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "auth": {
+     "provider": 1
+    }
+   },
+   "error": "server \"s\": auth.provider must be a provider name"
+  },
+  {
+   "case": "auth-http-remote",
+   "server": "s",
+   "input": {
+    "url": "http://radius.example/mcp",
+    "auth": {
+     "provider": "radius"
+    }
+   },
+   "error": "server \"s\": auth requires an https URL, or http on localhost, 127.0.0.1, or [::1]"
+  },
+  {
+   "case": "type-null-url",
+   "server": "s",
+   "input": {
+    "type": null,
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-null-command",
+   "server": "s",
+   "input": {
+    "type": null,
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-number-url",
+   "server": "s",
+   "input": {
+    "type": 5,
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-number-command",
+   "server": "s",
+   "input": {
+    "type": 5,
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-object-url",
+   "server": "s",
+   "input": {
+    "type": {
+     "a": 1
+    },
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-array-command",
+   "server": "s",
+   "input": {
+    "type": [],
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-true-command",
+   "server": "s",
+   "input": {
+    "type": true,
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-empty-url",
+   "server": "s",
+   "input": {
+    "type": "",
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-empty-command",
+   "server": "s",
+   "input": {
+    "type": "",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-uppercase-command",
+   "server": "s",
+   "input": {
+    "type": "STDIO",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-http-command",
+   "server": "s",
+   "input": {
+    "type": "http",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "type-stdio-url",
+   "server": "s",
+   "input": {
+    "type": "stdio",
+    "url": "https://example.com/mcp"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "both-transports",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "url": "https://example.com/mcp"
+   },
+   "ok": {
+    "command": "x",
+    "url": "https://example.com/mcp"
+   }
+  },
+  {
+   "case": "unknown-http-fields",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "command": null,
+    "x-custom": {
+     "a": [
+      1,
+      true
+     ]
+    },
+    "cwd": 5
+   },
+   "ok": {
+    "url": "https://example.com/mcp",
+    "command": null,
+    "x-custom": {
+     "a": [
+      1,
+      true
+     ]
+    },
+    "cwd": 5
+   }
+  },
+  {
+   "case": "unknown-oauth-fields",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "oauth": {
+     "clientId": "id",
+     "x-oauth": 1,
+     "nested": {
+      "a": true
+     }
+    }
+   },
+   "ok": {
+    "url": "https://example.com/mcp",
+    "oauth": {
+     "clientId": "id",
+     "x-oauth": 1,
+     "nested": {
+      "a": true
+     }
+    }
+   }
+  },
+  {
+   "case": "unknown-auth-fields",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "auth": {
+     "provider": "p",
+     "x-auth": [
+      1
+     ]
+    }
+   },
+   "ok": {
+    "url": "https://example.com/mcp",
+    "auth": {
+     "provider": "p",
+     "x-auth": [
+      1
+     ]
+    }
+   }
+  },
+  {
+   "case": "unknown-stdio-fields",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "url": 5,
+    "headers": null,
+    "x-custom": "v",
+    "oauth": 3
+   },
+   "ok": {
+    "command": "x",
+    "url": 5,
+    "headers": null,
+    "x-custom": "v",
+    "oauth": 3
+   }
+  },
+  {
+   "case": "both-transports-stdio",
+   "server": "s",
+   "input": {
+    "type": "stdio",
+    "command": "x",
+    "url": "https://example.com/mcp"
+   },
+   "ok": {
+    "type": "stdio",
+    "command": "x",
+    "url": "https://example.com/mcp"
+   }
+  },
+  {
+   "case": "empty-headers",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/mcp",
+    "headers": {}
+   },
+   "ok": {
+    "url": "https://example.com/mcp",
+    "headers": {}
+   }
+  },
+  {
+   "case": "empty-env",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "env": {}
+   },
+   "ok": {
+    "command": "x",
+    "env": {}
+   }
+  },
+  {
+   "case": "empty-args",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "args": []
+   },
+   "ok": {
+    "command": "x",
+    "args": []
+   }
+  },
+  {
+   "case": "empty-toolExposure",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": {}
+   },
+   "ok": {
+    "command": "x",
+    "toolExposure": {}
+   }
+  },
+  {
+   "case": "name-unicode",
+   "server": "sérver",
+   "input": {
+    "command": "x"
+   },
+   "error": "invalid server name \"sérver\" (use letters, digits, \"_\" and \"-\")"
+  },
+  {
+   "case": "name-underscore",
+   "server": "a_b-c9",
+   "input": {
+    "command": "x"
+   },
+   "ok": {
+    "command": "x"
+   }
+  },
+  {
+   "case": "timeout-large",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": 1e+21
+   },
+   "ok": {
+    "command": "x",
+    "timeout": 1e+21
+   }
+  },
+  {
+   "case": "url-special-scheme",
+   "server": "s",
+   "input": {
+    "url": "https:example.com/mcp"
+   },
+   "ok": {
+    "url": "https:example.com/mcp"
+   }
+  },
+  {
+   "case": "url-uppercase",
+   "server": "s",
+   "input": {
+    "url": "HTTP://EXAMPLE.COM/mcp"
+   },
+   "ok": {
+    "url": "HTTP://EXAMPLE.COM/mcp"
+   }
+  },
+  {
+   "case": "url-relative",
+   "server": "s",
+   "input": {
+    "url": "//example.com/mcp"
+   },
+   "error": "server \"s\": url must be an http or https URL"
+  },
+  {
+   "case": "url-mailto",
+   "server": "s",
+   "input": {
+    "url": "mailto:x@y"
+   },
+   "error": "server \"s\": url must be an http or https URL"
+  },
+  {
+   "case": "url-with-space",
+   "server": "s",
+   "input": {
+    "url": "https://example.com/a b"
+   },
+   "ok": {
+    "url": "https://example.com/a b"
+   }
+  },
+  {
+   "case": "metadata-special-scheme",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "https:example.com"
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "authServerMetadataUrl": "https:example.com"
+    }
+   }
+  },
+  {
+   "case": "callback-default-port-80",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost:80/cb",
+     "callbackPort": 80
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost:80/cb",
+     "callbackPort": 80
+    }
+   }
+  },
+  {
+   "case": "callback-port-without-url-port",
+   "server": "s",
+   "input": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb",
+     "callbackPort": 80
+    }
+   },
+   "ok": {
+    "url": "https://a.example/mcp",
+    "oauth": {
+     "callbackUrl": "http://localhost/cb",
+     "callbackPort": 80
+    }
+   }
+  },
+  {
+   "case": "exposure-empty",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "exposure": ""
+   },
+   "error": "server \"s\": exposure must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "toolExposure-empty-value",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "toolExposure": {
+     "a": ""
+    }
+   },
+   "error": "server \"s\": toolExposure \"a\" must be one of \"codemode\", \"deferred\", \"direct\", \"hidden\""
+  },
+  {
+   "case": "timeout-true",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "timeout": true
+   },
+   "error": "server \"s\": timeout must be a positive number of seconds"
+  },
+  {
+   "case": "enabled-zero",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "enabled": 0
+   },
+   "error": "server \"s\": enabled must be a boolean"
+  },
+  {
+   "case": "description-array",
+   "server": "s",
+   "input": {
+    "command": "x",
+    "description": []
+   },
+   "error": "server \"s\": description must be a string"
+  },
+  {
+   "case": "streamable-with-command",
+   "server": "s",
+   "input": {
+    "type": "streamable-http",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  },
+  {
+   "case": "http-with-command-type",
+   "server": "s",
+   "input": {
+    "type": "http",
+    "command": "x"
+   },
+   "error": "server \"s\" needs either \"command\" (stdio) or \"url\" (streamable HTTP)"
+  }
+ ],
+ "exposure": [
+  {
+   "case": "gh",
+   "input": {
+    "command": "x",
+    "exposure": "deferred",
+    "toolExposure": {
+     "get_*": "codemode",
+     "get_me": "direct",
+     "*delete*": "hidden",
+     "get_file.*": "direct"
+    }
+   },
+   "tools": {
+    "get_me": "direct",
+    "get_issue": "codemode",
+    "get_delete_hint": "codemode",
+    "delete_repo": "hidden",
+    "list_issues": "deferred",
+    "get_file_x": "codemode",
+    "get_file.x": "codemode",
+    "xget_me": "deferred"
+   }
+  },
+  {
+   "case": "no-overrides",
+   "input": {
+    "command": "x"
+   },
+   "tools": {
+    "anything": "codemode"
+   }
+  },
+  {
+   "case": "exposure-only",
+   "input": {
+    "command": "x",
+    "exposure": "hidden"
+   },
+   "tools": {
+    "anything": "hidden"
+   }
+  },
+  {
+   "case": "empty-overrides",
+   "input": {
+    "command": "x",
+    "toolExposure": {}
+   },
+   "tools": {
+    "anything": "codemode"
+   }
+  },
+  {
+   "case": "patterns-order",
+   "input": {
+    "command": "x",
+    "toolExposure": {
+     "a*": "direct",
+     "*b": "hidden"
+    }
+   },
+   "tools": {
+    "ab": "direct",
+    "acb": "direct",
+    "zb": "hidden"
+   }
+  },
+  {
+   "case": "escaped-dot",
+   "input": {
+    "command": "x",
+    "toolExposure": {
+     "get_file.*": "direct"
+    }
+   },
+   "tools": {
+    "get_file_x": "codemode",
+    "get_file.x": "direct",
+    "get_fileX": "codemode"
+   }
+  }
+ ]
+}

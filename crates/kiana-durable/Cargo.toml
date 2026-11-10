@@ -1,0 +1,182 @@
+[package]
+name = "kiana-durable"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/durable：documents/entries/search/tasks、harness 模块树、env 编解码、存储与 testing。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-chord = { workspace = true }
+kiana-codemode = { workspace = true }
+kiana-telemetry = { workspace = true }
+kiana-json = { workspace = true }
+futures = { workspace = true }
+# `env/{decode,line_scan,node}.rs`：WHATWG UTF-8 解码与 StreamDecoder（§6.3）。kiana-env-client
+# 复用同一实现，故两个 crate 都直接依赖同一个 pin。
+encoding_rs = { workspace = true }
+# `env/node.rs`（写入临时文件名的 randomUUID）与 `env/node-watch.ts`（sha256 轮询哈希）。
+uuid = { workspace = true }
+sha2 = { workspace = true }
+# `tools/edit-diff.ts` 的 NFKC 归一化与 `tools/path-utils.ts` 的 NFD 路径变体。
+unicode-normalization = { workspace = true }
+# `env/node.rs` 的 node:path posix/win32 语义、fileURLToPath、homedir/tmpdir 解析。
+dirs = { workspace = true }
+url = { workspace = true }
+# `env/node_watch.rs` 的 `fs.watch` 等价物（notify 8）与 `env/node.rs` 的 POSIX 进程组 kill /
+# `statfs` 文件系统识别（libc）。两者都已在根 Cargo.toml 精确 pin。
+notify = { workspace = true }
+libc = { workspace = true }
+# `images/node.ts` 的 Photon 等价物（原生 photon-rs，§8 第 20 条）与 EXIF 方向。
+photon-rs = { workspace = true, optional = true }
+image = { workspace = true, optional = true }
+# photon-rs 内部解码用的 image 版本：`prepare` 用它做可失败解码，避免 `unwrap()` panic 写 stderr。
+image024 = { workspace = true, optional = true }
+# 只为固定 photon-rs 的 image 0.24 所用的 JPEG 解码器版本与解码路径（与 TS 的 wasm 构建一致）。
+jpeg-decoder = { workspace = true, optional = true, features = ["platform_independent"] }
+kamadak-exif = { workspace = true, optional = true }
+
+rusqlite = { workspace = true, optional = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+
+[features]
+default = []
+sqlite = ["dep:rusqlite", "kiana-chord/sqlite-node"]
+# Cloudflare DurableObjectStorage / Workers：不移植（ARCHITECTURE.md §8 第 3 条）。开启后
+# storage/sqlite/cloudflare.rs 与 images/cloudflare.rs 的占位实现返回明确的 not supported 错误。
+cloudflare = []
+# 图像预处理（Photon 等价物）。原生 photon-rs 用与参考实现相同的 Photon 0.3.x 源码编译，
+# 因此 PNG/JPEG 输出一致或仅差末位舍入（见 ARCHITECTURE.md §8 第 20 条）。
+images = ["dep:image", "dep:image024", "dep:jpeg-decoder", "dep:kamadak-exif", "dep:photon-rs"]
+# 原生实现：kiana-tui 同款后端选择。
+node = []
+# 非浏览器构建的 wasm 后端（IndexedDB 占位；见 ARCHITECTURE.md §8 第 2 条）。
+wasm = []
+# 示例依赖 session/storage 单元的完整实现；合并后启用本 feature 才会构建 examples/。
+examples = []
+
+[[example]]
+name = "00_conversation"
+path = "examples/00_conversation.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "01_documents"
+path = "examples/01_documents.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "02_forks"
+path = "examples/02_forks.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "03_owned_conversations"
+path = "examples/03_owned_conversations.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "04_watches"
+path = "examples/04_watches.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "06_configuration"
+path = "examples/06_configuration.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "08_context"
+path = "examples/08_context.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "14_system_prompt"
+path = "examples/14_system_prompt.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "16_coding_tools"
+path = "examples/16_coding_tools.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "19_inbox"
+path = "examples/19_inbox.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "25_coding_agent"
+path = "examples/25_coding_agent.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "26_plan_mode"
+path = "examples/26_plan_mode.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "27_reviewer"
+path = "examples/27_reviewer.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "29_tool_override"
+path = "examples/29_tool_override.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "05_harness"
+path = "examples/05_harness.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "07_harness_conversations"
+path = "examples/07_harness_conversations.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "09_registry_reload"
+path = "examples/09_registry_reload.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "10_extension_state"
+path = "examples/10_extension_state.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "13_chat"
+path = "examples/13_chat.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "17_print"
+path = "examples/17_print.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "18_json"
+path = "examples/18_json.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "20_late_join"
+path = "examples/20_late_join.rs"
+required-features = ["examples"]
+
+[[example]]
+name = "28_sandbox_per_conversation"
+path = "examples/28_sandbox_per_conversation.rs"
+required-features = ["examples"]

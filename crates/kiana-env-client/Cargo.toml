@@ -1,0 +1,41 @@
+[package]
+name = "kiana-env-client"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Remote execution environments for Kiana Durable: a small daemon deployed over SSH and its ExecutionEnv client"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-chord = { workspace = true }
+kiana-durable = { workspace = true }
+# ssh.ts 的 `createHash("sha256")`（上传校验）与 `Buffer.from(script,"utf16le").toString("base64")`
+# （PowerShell -EncodedCommand）、`randomBytes(16)`（serve token）—— G1.4。
+sha2 = { workspace = true }
+base64 = { workspace = true }
+hex = { workspace = true }
+getrandom = { workspace = true }
+# connection.ts / remote-env.ts 的 node:path + fileURLToPath（posix/win32 两套语义的
+# 唯一实现放在 kiana-durable::env::node，见 ARCHITECTURE.md §4.9，这里只复用）。
+url = { workspace = true }
+# `spawn <program> ENOENT`（Node 的 libuv errno 名）与 `child.kill()` 的 SIGTERM 语义。
+libc = { workspace = true }
+# `String(number)` 的最短往返表示（与 kiana_json::js_num 同一算法；该 crate 不在本 crate 的
+# 依赖边内，见 ARCHITECTURE.md §2.2）。
+ryu = { workspace = true }
+
+[dev-dependencies]
+# 测试用临时目录与 `catch_unwind` 组合子（G1.4 的测试面；见 ARCHITECTURE.md §4.8）。
+tempfile = { workspace = true }
+futures = { workspace = true }
+# differential.test.ts 的 `gives the same read and bash tool results`：`ToolExecutionApi::models()`
+# 的签名里出现 `kiana_ai::models::Models`（继承自 kiana-durable 的 harness trait），测试替身必须命名它。
+kiana-ai = { workspace = true }

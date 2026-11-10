@@ -1,0 +1,170 @@
+[
+  {
+    "header": "Bearer SCOPE=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": "x",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer ſcope=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Key=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer ERROR=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Error=\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Årror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer érror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=a b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=a b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=ab",
+    "resourceMetadataUrl": null,
+    "scope": "ab",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"ab\"",
+    "resourceMetadataUrl": null,
+    "scope": "ab",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearererror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer᠎error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer​error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer﻿error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer　error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=é",
+    "resourceMetadataUrl": null,
+    "scope": "é",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"é\"",
+    "resourceMetadataUrl": null,
+    "scope": "é",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=éé",
+    "resourceMetadataUrl": null,
+    "scope": "éé",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=İ",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "İ",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=ı",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "ı",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Σcope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "cases": [
+    {
+      "name": "preserves externally added enabledModels when changing thinking level",
+      "initial": "{\"theme\":\"dark\",\"defaultModel\":\"claude-sonnet\",\"enabledModels\":[\"claude-opus-4-5\"]}",
+      "project": null,
+      "actions": [
+        {
+          "type": "setDefaultThinkingLevel",
+          "value": "high"
+        }
+      ],
+      "expectedGlobal": "{\n  \"theme\": \"dark\",\n  \"defaultModel\": \"claude-sonnet\",\n  \"enabledModels\": [\n    \"claude-opus-4-5\"\n  ],\n  \"defaultThinkingLevel\": \"high\"\n}",
+      "expectedProject": null
+    },
+    {
+      "name": "nested modification keeps current file key order and appends modified fields",
+      "initial": "{\"theme\":\"dark\",\"compaction\":{\"reserveTokens\":8192,\"custom\":true,\"modelOverrides\":{\"provider/family/model\":{\"reserveTokens\":400000,\"keepRecentTokens\":30000}}},\"zeta\":{\"nested\":[1,2,3]}}",
+      "project": null,
+      "actions": [
+        {
+          "type": "setCompactionEnabled",
+          "value": false
+        }
+      ],
+      "expectedGlobal": "{\n  \"theme\": \"dark\",\n  \"compaction\": {\n    \"reserveTokens\": 8192,\n    \"custom\": true,\n    \"modelOverrides\": {\n      \"provider/family/model\": {\n        \"reserveTokens\": 400000,\n        \"keepRecentTokens\": 30000\n      }\n    },\n    \"enabled\": false\n  },\n  \"zeta\": {\n    \"nested\": [\n      1,\n      2,\n      3\n    ]\n  }\n}",
+      "expectedProject": null
+    },
+    {
+      "name": "migrates legacy keys when persisting",
+      "initial": "{\"queueMode\":\"all\",\"websockets\":true,\"retry\":{\"maxDelayMs\":5000,\"enabled\":false,\"provider\":{\"maxRetries\":2}},\"skills\":{\"enableSkillCommands\":false,\"customDirectories\":[\"/skills/a\",\"/skills/b\"]},\"theme\":\"dark\"}",
+      "project": null,
+      "actions": [
+        {
+          "type": "setTheme",
+          "value": "light"
+        }
+      ],
+      "expectedGlobal": "{\n  \"retry\": {\n    \"enabled\": false,\n    \"provider\": {\n      \"maxRetries\": 2,\n      \"maxRetryDelayMs\": 5000\n    }\n  },\n  \"skills\": [\n    \"/skills/a\",\n    \"/skills/b\"\n  ],\n  \"theme\": \"light\",\n  \"steeringMode\": \"all\",\n  \"transport\": \"websocket\",\n  \"enableSkillCommands\": false\n}",
+      "expectedProject": null
+    },
+    {
+      "name": "project nested update preserves external project fields",
+      "initial": "{\"theme\":\"global\"}",
+      "project": "{\"extensions\":[\"./old-extension.ts\"],\"prompts\":[\"./old-prompt.md\"],\"zeta\":1}",
+      "actions": [
+        {
+          "type": "setProjectExtensionPaths",
+          "value": [
+            "./updated-extension.ts"
+          ]
+        }
+      ],
+      "expectedGlobal": "{\"theme\":\"global\"}",
+      "expectedProject": "{\n  \"extensions\": [\n    \"./updated-extension.ts\"\n  ],\n  \"prompts\": [\n    \"./old-prompt.md\"\n  ],\n  \"zeta\": 1\n}"
+    },
+    {
+      "name": "multiple modified fields append in insertion order",
+      "initial": "{\"theme\":\"dark\",\"extra\":{\"a\":1}}",
+      "project": null,
+      "actions": [
+        {
+          "type": "setCompactionEnabled",
+          "value": false
+        },
+        {
+          "type": "setShowImages",
+          "value": false
+        },
+        {
+          "type": "setMermaidRenderingMode",
+          "value": "final"
+        },
+        {
+          "type": "setHttpIdleTimeoutMs",
+          "value": 45000
+        },
+        {
+          "type": "setModelThinkingLevel",
+          "provider": "anthropic",
+          "modelId": "claude",
+          "value": "high"
+        }
+      ],
+      "expectedGlobal": "{\n  \"theme\": \"dark\",\n  \"extra\": {\n    \"a\": 1\n  },\n  \"compaction\": {\n    \"enabled\": false\n  },\n  \"terminal\": {\n    \"showImages\": false\n  },\n  \"markdown\": {\n    \"mermaid\": \"final\"\n  },\n  \"httpIdleTimeoutMs\": 45000,\n  \"modelThinkingLevels\": {\n    \"anthropic/claude\": \"high\"\n  }\n}",
+      "expectedProject": null
+    },
+    {
+      "name": "model override entries merge per field",
+      "initial": "{\"compaction\":{\"reserveTokens\":8192,\"modelOverrides\":{\"provider/family/model\":{\"reserveTokens\":400000,\"keepRecentTokens\":30000},\"provider/other\":{\"keepRecentTokens\":4096}}}}",
+      "project": null,
+      "actions": [
+        {
+          "type": "setRetryEnabled",
+          "value": false
+        }
+      ],
+      "expectedGlobal": "{\n  \"compaction\": {\n    \"reserveTokens\": 8192,\n    \"modelOverrides\": {\n      \"provider/family/model\": {\n        \"reserveTokens\": 400000,\n        \"keepRecentTokens\": 30000\n      },\n      \"provider/other\": {\n        \"keepRecentTokens\": 4096\n      }\n    }\n  },\n  \"retry\": {\n    \"enabled\": false\n  }\n}",
+      "expectedProject": null
+    }
+  ]
+}

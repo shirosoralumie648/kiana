@@ -1,0 +1,5596 @@
+{
+  "normalize": [
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": ".",
+      "output": "."
+    },
+    {
+      "input": "..",
+      "output": ".."
+    },
+    {
+      "input": "./a",
+      "output": "./a"
+    },
+    {
+      "input": "a/./b",
+      "output": "a/./b"
+    },
+    {
+      "input": "a//b",
+      "output": "a//b"
+    },
+    {
+      "input": "a/../b",
+      "output": "a/../b"
+    },
+    {
+      "input": "/abs/path",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/../path",
+      "output": "/abs/../path"
+    },
+    {
+      "input": "//double/lead",
+      "output": "//double/lead"
+    },
+    {
+      "input": "///triple",
+      "output": "///triple"
+    },
+    {
+      "input": "~/x",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~user/x",
+      "output": "~user/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "a b/c",
+      "output": "a b/c"
+    },
+    {
+      "input": "  spaced  ",
+      "output": "  spaced  "
+    },
+    {
+      "input": " nbsp ",
+      "output": " nbsp "
+    },
+    {
+      "input": "@file",
+      "output": "@file"
+    },
+    {
+      "input": "@@file",
+      "output": "@@file"
+    },
+    {
+      "input": "file:///tmp/x",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://host/share/x",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file:///c|/x",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:////x",
+      "output": "//x"
+    },
+    {
+      "input": "file:///a/../../b",
+      "output": "/b"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "http://example.com/x",
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "npm:pkg",
+      "output": "npm:pkg"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "github:x/y",
+      "output": "github:x/y"
+    },
+    {
+      "input": "builtin:foo",
+      "output": "builtin:foo"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "//server/share",
+      "output": "//server/share"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "/c/Users/x",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "\\foo\\bar",
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/😀",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "a b",
+      "output": "a b"
+    }
+  ],
+  "normalize_opts": [
+    {
+      "input": "",
+      "opts": {},
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "trim": true
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": ""
+    },
+    {
+      "input": "",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": ""
+    },
+    {
+      "input": ".",
+      "opts": {},
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "trim": true
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "."
+    },
+    {
+      "input": ".",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "."
+    },
+    {
+      "input": "..",
+      "opts": {},
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "trim": true
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": ".."
+    },
+    {
+      "input": "..",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": ".."
+    },
+    {
+      "input": "./a",
+      "opts": {},
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "trim": true
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "./a"
+    },
+    {
+      "input": "./a",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "./a"
+    },
+    {
+      "input": "a/./b",
+      "opts": {},
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "trim": true
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a/./b",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "a/./b"
+    },
+    {
+      "input": "a//b",
+      "opts": {},
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "trim": true
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a//b",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "a//b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {},
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "trim": true
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "a/../b",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "a/../b"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {},
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "trim": true
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {},
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "trim": true
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "/abs/../path",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/abs/../path"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {},
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "trim": true
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "//double/lead"
+    },
+    {
+      "input": "///triple",
+      "opts": {},
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "trim": true
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "///triple",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "///triple"
+    },
+    {
+      "input": "~/x",
+      "opts": {},
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "~/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/home/tester/x"
+    },
+    {
+      "input": "~/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "~/x"
+    },
+    {
+      "input": "~",
+      "opts": {},
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "trim": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "~"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/home/tester"
+    },
+    {
+      "input": "~",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "~"
+    },
+    {
+      "input": "~/",
+      "opts": {},
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "trim": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "~/"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/home/tester"
+    },
+    {
+      "input": "~/",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "~/"
+    },
+    {
+      "input": "~user/x",
+      "opts": {},
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "~user/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "~user/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {},
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "a b/c",
+      "opts": {},
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "trim": true
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "a b/c",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "a b/c"
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {},
+      "output": "  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "trim": true
+      },
+      "output": "spaced"
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "spaced"
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "  spaced  "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {},
+      "output": " nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "trim": true
+      },
+      "output": "nbsp"
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": " nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": " nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": " nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "nbsp"
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": " nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": " nbsp "
+    },
+    {
+      "input": "@file",
+      "opts": {},
+      "output": "@file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "trim": true
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@file",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {},
+      "output": "@@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "trim": true
+      },
+      "output": "@@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "@@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "@@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "@@file"
+    },
+    {
+      "input": "@@file",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "@@file"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {},
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {},
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {},
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "trim": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "expandTilde": false
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {},
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {},
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "trim": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {},
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {},
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "trim": true
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:////x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "//x"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {},
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "trim": true
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/b"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {},
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "trim": true
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "expandTilde": false
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {},
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {},
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "trim": true
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "npm:pkg"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {},
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "trim": true
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {},
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "trim": true
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "github:x/y"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {},
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "trim": true
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "builtin:foo"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {},
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "//server/share",
+      "opts": {},
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "trim": true
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "//server/share",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "//server/share"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {},
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {},
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "trim": true
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {},
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {},
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "trim": true
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {},
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "trim": true
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {},
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {},
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "trim": true
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "a b",
+      "opts": {},
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "trim": true
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "expandTilde": false
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "stripAtPrefix": true
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "trim": true,
+        "stripAtPrefix": true,
+        "normalizeUnicodeSpaces": true
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "homeDir": "/home/tester"
+      },
+      "output": "a b"
+    },
+    {
+      "input": "a b",
+      "opts": {
+        "homeDir": "/home/tester",
+        "expandTilde": false
+      },
+      "output": "a b"
+    }
+  ],
+  "resolve": [
+    {
+      "input": "",
+      "base": "/tmp/base",
+      "output": "/tmp/base"
+    },
+    {
+      "input": "",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub"
+    },
+    {
+      "input": "",
+      "base": "/",
+      "output": "/"
+    },
+    {
+      "input": "",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other"
+    },
+    {
+      "input": "",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base"
+    },
+    {
+      "input": ".",
+      "base": "/tmp/base",
+      "output": "/tmp/base"
+    },
+    {
+      "input": ".",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub"
+    },
+    {
+      "input": ".",
+      "base": "/",
+      "output": "/"
+    },
+    {
+      "input": ".",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other"
+    },
+    {
+      "input": ".",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base"
+    },
+    {
+      "input": "..",
+      "base": "/tmp/base",
+      "output": "/tmp"
+    },
+    {
+      "input": "..",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base"
+    },
+    {
+      "input": "..",
+      "base": "/",
+      "output": "/"
+    },
+    {
+      "input": "..",
+      "base": "/tmp/base/../other",
+      "output": "/tmp"
+    },
+    {
+      "input": "..",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative"
+    },
+    {
+      "input": "./a",
+      "base": "/tmp/base",
+      "output": "/tmp/base/a"
+    },
+    {
+      "input": "./a",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/a"
+    },
+    {
+      "input": "./a",
+      "base": "/",
+      "output": "/a"
+    },
+    {
+      "input": "./a",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/a"
+    },
+    {
+      "input": "./a",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/a"
+    },
+    {
+      "input": "a/./b",
+      "base": "/tmp/base",
+      "output": "/tmp/base/a/b"
+    },
+    {
+      "input": "a/./b",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/a/b"
+    },
+    {
+      "input": "a/./b",
+      "base": "/",
+      "output": "/a/b"
+    },
+    {
+      "input": "a/./b",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/a/b"
+    },
+    {
+      "input": "a/./b",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/a/b"
+    },
+    {
+      "input": "a//b",
+      "base": "/tmp/base",
+      "output": "/tmp/base/a/b"
+    },
+    {
+      "input": "a//b",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/a/b"
+    },
+    {
+      "input": "a//b",
+      "base": "/",
+      "output": "/a/b"
+    },
+    {
+      "input": "a//b",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/a/b"
+    },
+    {
+      "input": "a//b",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/a/b"
+    },
+    {
+      "input": "a/../b",
+      "base": "/tmp/base",
+      "output": "/tmp/base/b"
+    },
+    {
+      "input": "a/../b",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/b"
+    },
+    {
+      "input": "a/../b",
+      "base": "/",
+      "output": "/b"
+    },
+    {
+      "input": "a/../b",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/b"
+    },
+    {
+      "input": "a/../b",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/b"
+    },
+    {
+      "input": "/abs/path",
+      "base": "/tmp/base",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "base": "/tmp/base/sub",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "base": "/",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "base": "/tmp/base/../other",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/path",
+      "base": "relative/base",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/../path",
+      "base": "/tmp/base",
+      "output": "/path"
+    },
+    {
+      "input": "/abs/../path",
+      "base": "/tmp/base/sub",
+      "output": "/path"
+    },
+    {
+      "input": "/abs/../path",
+      "base": "/",
+      "output": "/path"
+    },
+    {
+      "input": "/abs/../path",
+      "base": "/tmp/base/../other",
+      "output": "/path"
+    },
+    {
+      "input": "/abs/../path",
+      "base": "relative/base",
+      "output": "/path"
+    },
+    {
+      "input": "//double/lead",
+      "base": "/tmp/base",
+      "output": "/double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "base": "/tmp/base/sub",
+      "output": "/double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "base": "/",
+      "output": "/double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "base": "/tmp/base/../other",
+      "output": "/double/lead"
+    },
+    {
+      "input": "//double/lead",
+      "base": "relative/base",
+      "output": "/double/lead"
+    },
+    {
+      "input": "///triple",
+      "base": "/tmp/base",
+      "output": "/triple"
+    },
+    {
+      "input": "///triple",
+      "base": "/tmp/base/sub",
+      "output": "/triple"
+    },
+    {
+      "input": "///triple",
+      "base": "/",
+      "output": "/triple"
+    },
+    {
+      "input": "///triple",
+      "base": "/tmp/base/../other",
+      "output": "/triple"
+    },
+    {
+      "input": "///triple",
+      "base": "relative/base",
+      "output": "/triple"
+    },
+    {
+      "input": "~/x",
+      "base": "/tmp/base",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "base": "/tmp/base/sub",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "base": "/",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "base": "/tmp/base/../other",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~/x",
+      "base": "relative/base",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "input": "~",
+      "base": "/tmp/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "base": "/tmp/base/sub",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "base": "/",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "base": "/tmp/base/../other",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~",
+      "base": "relative/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "base": "/tmp/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "base": "/tmp/base/sub",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "base": "/",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "base": "/tmp/base/../other",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~/",
+      "base": "relative/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "input": "~user/x",
+      "base": "/tmp/base",
+      "output": "/tmp/base/~user/x"
+    },
+    {
+      "input": "~user/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/~user/x"
+    },
+    {
+      "input": "~user/x",
+      "base": "/",
+      "output": "/~user/x"
+    },
+    {
+      "input": "~user/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/~user/x"
+    },
+    {
+      "input": "~user/x",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/~user/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "base": "/tmp/base",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "base": "/",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "base": "relative/base",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "a b/c",
+      "base": "/tmp/base",
+      "output": "/tmp/base/a b/c"
+    },
+    {
+      "input": "a b/c",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/a b/c"
+    },
+    {
+      "input": "a b/c",
+      "base": "/",
+      "output": "/a b/c"
+    },
+    {
+      "input": "a b/c",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/a b/c"
+    },
+    {
+      "input": "a b/c",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/a b/c"
+    },
+    {
+      "input": "  spaced  ",
+      "base": "/tmp/base",
+      "output": "/tmp/base/  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "base": "/",
+      "output": "/  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/  spaced  "
+    },
+    {
+      "input": "  spaced  ",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/  spaced  "
+    },
+    {
+      "input": " nbsp ",
+      "base": "/tmp/base",
+      "output": "/tmp/base/ nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/ nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "base": "/",
+      "output": "/ nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/ nbsp "
+    },
+    {
+      "input": " nbsp ",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/ nbsp "
+    },
+    {
+      "input": "@file",
+      "base": "/tmp/base",
+      "output": "/tmp/base/@file"
+    },
+    {
+      "input": "@file",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/@file"
+    },
+    {
+      "input": "@file",
+      "base": "/",
+      "output": "/@file"
+    },
+    {
+      "input": "@file",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/@file"
+    },
+    {
+      "input": "@file",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/@file"
+    },
+    {
+      "input": "@@file",
+      "base": "/tmp/base",
+      "output": "/tmp/base/@@file"
+    },
+    {
+      "input": "@@file",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/@@file"
+    },
+    {
+      "input": "@@file",
+      "base": "/",
+      "output": "/@@file"
+    },
+    {
+      "input": "@@file",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/@@file"
+    },
+    {
+      "input": "@@file",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/@@file"
+    },
+    {
+      "input": "file:///tmp/x",
+      "base": "/tmp/base",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "base": "/",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x",
+      "base": "relative/base",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "base": "/tmp/base",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "base": "/",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "base": "relative/base",
+      "output": "/tmp/x y"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "base": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "base": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "base": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "base": "/tmp/base/../other",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "base": "relative/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "base": "/tmp/base",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "base": "/",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "base": "relative/base",
+      "output": "/tmp/x"
+    },
+    {
+      "input": "file://host/share/x",
+      "base": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "base": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "base": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "base": "/tmp/base/../other",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file://host/share/x",
+      "base": "relative/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "input": "file:///c|/x",
+      "base": "/tmp/base",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "base": "/tmp/base/sub",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "base": "/",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "base": "/tmp/base/../other",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "base": "relative/base",
+      "output": "/c:/x"
+    },
+    {
+      "input": "file:////x",
+      "base": "/tmp/base",
+      "output": "/x"
+    },
+    {
+      "input": "file:////x",
+      "base": "/tmp/base/sub",
+      "output": "/x"
+    },
+    {
+      "input": "file:////x",
+      "base": "/",
+      "output": "/x"
+    },
+    {
+      "input": "file:////x",
+      "base": "/tmp/base/../other",
+      "output": "/x"
+    },
+    {
+      "input": "file:////x",
+      "base": "relative/base",
+      "output": "/x"
+    },
+    {
+      "input": "file:///a/../../b",
+      "base": "/tmp/base",
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "base": "/tmp/base/sub",
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "base": "/",
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "base": "/tmp/base/../other",
+      "output": "/b"
+    },
+    {
+      "input": "file:///a/../../b",
+      "base": "relative/base",
+      "output": "/b"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "base": "/tmp/base",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "base": "/tmp/base/sub",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "base": "/",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "base": "/tmp/base/../other",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "base": "relative/base",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "input": "http://example.com/x",
+      "base": "/tmp/base",
+      "output": "/tmp/base/http:/example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/http:/example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "base": "/",
+      "output": "/http:/example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/http:/example.com/x"
+    },
+    {
+      "input": "http://example.com/x",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/http:/example.com/x"
+    },
+    {
+      "input": "npm:pkg",
+      "base": "/tmp/base",
+      "output": "/tmp/base/npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "base": "/",
+      "output": "/npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/npm:pkg"
+    },
+    {
+      "input": "npm:pkg",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/npm:pkg"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "base": "/tmp/base",
+      "output": "/tmp/base/git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "base": "/",
+      "output": "/git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/git:github.com/x/y"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/git:github.com/x/y"
+    },
+    {
+      "input": "github:x/y",
+      "base": "/tmp/base",
+      "output": "/tmp/base/github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "base": "/",
+      "output": "/github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/github:x/y"
+    },
+    {
+      "input": "github:x/y",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/github:x/y"
+    },
+    {
+      "input": "builtin:foo",
+      "base": "/tmp/base",
+      "output": "/tmp/base/builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "base": "/",
+      "output": "/builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/builtin:foo"
+    },
+    {
+      "input": "builtin:foo",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/builtin:foo"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "base": "/tmp/base",
+      "output": "/tmp/base/ssh:/git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/ssh:/git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "base": "/",
+      "output": "/ssh:/git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/ssh:/git@host/x"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/ssh:/git@host/x"
+    },
+    {
+      "input": "//server/share",
+      "base": "/tmp/base",
+      "output": "/server/share"
+    },
+    {
+      "input": "//server/share",
+      "base": "/tmp/base/sub",
+      "output": "/server/share"
+    },
+    {
+      "input": "//server/share",
+      "base": "/",
+      "output": "/server/share"
+    },
+    {
+      "input": "//server/share",
+      "base": "/tmp/base/../other",
+      "output": "/server/share"
+    },
+    {
+      "input": "//server/share",
+      "base": "relative/base",
+      "output": "/server/share"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "base": "/tmp/base",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "base": "/tmp/base/sub",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "base": "/",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "base": "/tmp/base/../other",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "base": "relative/base",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "base": "/tmp/base",
+      "output": "/tmp/base/C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "base": "/",
+      "output": "/C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/C:\\Users\\x"
+    },
+    {
+      "input": "/c/Users/x",
+      "base": "/tmp/base",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "base": "/tmp/base/sub",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "base": "/",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "base": "/tmp/base/../other",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/c/Users/x",
+      "base": "relative/base",
+      "output": "/c/Users/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "base": "/tmp/base",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "base": "/tmp/base/sub",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "base": "/",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "base": "/tmp/base/../other",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "base": "relative/base",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "input": "\\foo\\bar",
+      "base": "/tmp/base",
+      "output": "/tmp/base/\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "base": "/",
+      "output": "/\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/\\foo\\bar"
+    },
+    {
+      "input": "\\foo\\bar",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/\\foo\\bar"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "base": "/tmp/base",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "base": "/",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "base": "relative/base",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/😀",
+      "base": "/tmp/base",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "base": "/",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "/tmp/😀",
+      "base": "relative/base",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "a b",
+      "base": "/tmp/base",
+      "output": "/tmp/base/a b"
+    },
+    {
+      "input": "a b",
+      "base": "/tmp/base/sub",
+      "output": "/tmp/base/sub/a b"
+    },
+    {
+      "input": "a b",
+      "base": "/",
+      "output": "/a b"
+    },
+    {
+      "input": "a b",
+      "base": "/tmp/base/../other",
+      "output": "/tmp/other/a b"
+    },
+    {
+      "input": "a b",
+      "base": "relative/base",
+      "output": "/home/ctyun/kiana-work/upstream-reference/packages/coding-agent/relative/base/a b"
+    }
+  ],
+  "relative": [
+    {
+      "filePath": "",
+      "cwd": "/tmp/base",
+      "output": "."
+    },
+    {
+      "filePath": "",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": "",
+      "cwd": "/tmp/base/sub",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/tmp/base",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/tmp/base/sub",
+      "output": "."
+    },
+    {
+      "filePath": "..",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "..",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": "..",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/tmp/base",
+      "output": "a"
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/",
+      "output": "a"
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/tmp/base/sub",
+      "output": "a"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/tmp/base",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/tmp/base/sub",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/tmp/base",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/tmp/base/sub",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/tmp/base",
+      "output": "b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/",
+      "output": "b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/tmp/base/sub",
+      "output": "b"
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/",
+      "output": "abs/path"
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/",
+      "output": "path"
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/",
+      "output": "double/lead"
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/",
+      "output": "triple"
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/",
+      "output": "home/ctyun/x"
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "~",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "~",
+      "cwd": "/",
+      "output": "home/ctyun"
+    },
+    {
+      "filePath": "~",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/",
+      "output": "home/ctyun"
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/tmp/base",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/tmp/base/sub",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/",
+      "output": "tmp/~/x"
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/tmp/base",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/tmp/base/sub",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/tmp/base",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/tmp/base/sub",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/tmp/base",
+      "output": " nbsp "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/",
+      "output": " nbsp "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/tmp/base/sub",
+      "output": " nbsp "
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/tmp/base",
+      "output": "@file"
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/",
+      "output": "@file"
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/tmp/base/sub",
+      "output": "@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/tmp/base",
+      "output": "@@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/",
+      "output": "@@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/tmp/base/sub",
+      "output": "@@file"
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/",
+      "output": "tmp/x"
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/",
+      "output": "tmp/x y"
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/",
+      "output": "tmp/x"
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/",
+      "output": "c:/x"
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/",
+      "output": "x"
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/",
+      "output": "b"
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/tmp/base",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/tmp/base/sub",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/tmp/base",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/tmp/base/sub",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/tmp/base",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/tmp/base/sub",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/tmp/base",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/tmp/base/sub",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/tmp/base",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/tmp/base/sub",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/tmp/base",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/tmp/base/sub",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/tmp/base",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/tmp/base/sub",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/",
+      "output": "server/share"
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/",
+      "output": "mnt/c/Users/x"
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/tmp/base",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/tmp/base/sub",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/",
+      "output": "c/Users/x"
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/",
+      "output": "cygdrive/c/x"
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/tmp/base",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/tmp/base/sub",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/",
+      "output": "tmp/é/ü"
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/tmp/base",
+      "output": null
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/",
+      "output": "tmp/😀"
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/tmp/base/sub",
+      "output": null
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/tmp/base",
+      "output": "a b"
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/",
+      "output": "a b"
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/tmp/base/sub",
+      "output": "a b"
+    }
+  ],
+  "format": [
+    {
+      "filePath": "",
+      "cwd": "/tmp/base",
+      "output": "."
+    },
+    {
+      "filePath": "",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": "",
+      "cwd": "/tmp/base/sub",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/tmp/base",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": ".",
+      "cwd": "/tmp/base/sub",
+      "output": "."
+    },
+    {
+      "filePath": "..",
+      "cwd": "/tmp/base",
+      "output": "/tmp"
+    },
+    {
+      "filePath": "..",
+      "cwd": "/",
+      "output": "."
+    },
+    {
+      "filePath": "..",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/base"
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/tmp/base",
+      "output": "a"
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/",
+      "output": "a"
+    },
+    {
+      "filePath": "./a",
+      "cwd": "/tmp/base/sub",
+      "output": "a"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/tmp/base",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/./b",
+      "cwd": "/tmp/base/sub",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/tmp/base",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a//b",
+      "cwd": "/tmp/base/sub",
+      "output": "a/b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/tmp/base",
+      "output": "b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/",
+      "output": "b"
+    },
+    {
+      "filePath": "a/../b",
+      "cwd": "/tmp/base/sub",
+      "output": "b"
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/tmp/base",
+      "output": "/abs/path"
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/",
+      "output": "abs/path"
+    },
+    {
+      "filePath": "/abs/path",
+      "cwd": "/tmp/base/sub",
+      "output": "/abs/path"
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/tmp/base",
+      "output": "/path"
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/",
+      "output": "path"
+    },
+    {
+      "filePath": "/abs/../path",
+      "cwd": "/tmp/base/sub",
+      "output": "/path"
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/tmp/base",
+      "output": "/double/lead"
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/",
+      "output": "double/lead"
+    },
+    {
+      "filePath": "//double/lead",
+      "cwd": "/tmp/base/sub",
+      "output": "/double/lead"
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/tmp/base",
+      "output": "/triple"
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/",
+      "output": "triple"
+    },
+    {
+      "filePath": "///triple",
+      "cwd": "/tmp/base/sub",
+      "output": "/triple"
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/tmp/base",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/",
+      "output": "home/ctyun/x"
+    },
+    {
+      "filePath": "~/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/home/ctyun/x"
+    },
+    {
+      "filePath": "~",
+      "cwd": "/tmp/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "filePath": "~",
+      "cwd": "/",
+      "output": "home/ctyun"
+    },
+    {
+      "filePath": "~",
+      "cwd": "/tmp/base/sub",
+      "output": "/home/ctyun"
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/tmp/base",
+      "output": "/home/ctyun"
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/",
+      "output": "home/ctyun"
+    },
+    {
+      "filePath": "~/",
+      "cwd": "/tmp/base/sub",
+      "output": "/home/ctyun"
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/tmp/base",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "~user/x",
+      "cwd": "/tmp/base/sub",
+      "output": "~user/x"
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/tmp/base",
+      "output": "/tmp/~/x"
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/",
+      "output": "tmp/~/x"
+    },
+    {
+      "filePath": "/tmp/~/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/~/x"
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/tmp/base",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "a b/c",
+      "cwd": "/tmp/base/sub",
+      "output": "a b/c"
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/tmp/base",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": "  spaced  ",
+      "cwd": "/tmp/base/sub",
+      "output": "  spaced  "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/tmp/base",
+      "output": " nbsp "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/",
+      "output": " nbsp "
+    },
+    {
+      "filePath": " nbsp ",
+      "cwd": "/tmp/base/sub",
+      "output": " nbsp "
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/tmp/base",
+      "output": "@file"
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/",
+      "output": "@file"
+    },
+    {
+      "filePath": "@file",
+      "cwd": "/tmp/base/sub",
+      "output": "@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/tmp/base",
+      "output": "@@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/",
+      "output": "@@file"
+    },
+    {
+      "filePath": "@@file",
+      "cwd": "/tmp/base/sub",
+      "output": "@@file"
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/tmp/base",
+      "output": "/tmp/x"
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/",
+      "output": "tmp/x"
+    },
+    {
+      "filePath": "file:///tmp/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/x"
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/tmp/base",
+      "output": "/tmp/x y"
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/",
+      "output": "tmp/x y"
+    },
+    {
+      "filePath": "file:///tmp/x%20y",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/x y"
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file:///a%2Fb",
+      "cwd": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_PATH"
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/tmp/base",
+      "output": "/tmp/x"
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/",
+      "output": "tmp/x"
+    },
+    {
+      "filePath": "file://localhost/tmp/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/x"
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/tmp/base",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file://host/share/x",
+      "cwd": "/tmp/base/sub",
+      "error": "TypeError: ERR_INVALID_FILE_URL_HOST"
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/tmp/base",
+      "output": "/c:/x"
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/",
+      "output": "c:/x"
+    },
+    {
+      "filePath": "file:///c|/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/c:/x"
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/tmp/base",
+      "output": "/x"
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/",
+      "output": "x"
+    },
+    {
+      "filePath": "file:////x",
+      "cwd": "/tmp/base/sub",
+      "output": "/x"
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/tmp/base",
+      "output": "/b"
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/",
+      "output": "b"
+    },
+    {
+      "filePath": "file:///a/../../b",
+      "cwd": "/tmp/base/sub",
+      "output": "/b"
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/tmp/base",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "file:///tmp/%E0%A4%A",
+      "cwd": "/tmp/base/sub",
+      "error": "URIError: URI malformed"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/tmp/base",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "http://example.com/x",
+      "cwd": "/tmp/base/sub",
+      "output": "http:/example.com/x"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/tmp/base",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "npm:pkg",
+      "cwd": "/tmp/base/sub",
+      "output": "npm:pkg"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/tmp/base",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "git:github.com/x/y",
+      "cwd": "/tmp/base/sub",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/tmp/base",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "github:x/y",
+      "cwd": "/tmp/base/sub",
+      "output": "github:x/y"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/tmp/base",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "builtin:foo",
+      "cwd": "/tmp/base/sub",
+      "output": "builtin:foo"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/tmp/base",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "ssh://git@host/x",
+      "cwd": "/tmp/base/sub",
+      "output": "ssh:/git@host/x"
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/tmp/base",
+      "output": "/server/share"
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/",
+      "output": "server/share"
+    },
+    {
+      "filePath": "//server/share",
+      "cwd": "/tmp/base/sub",
+      "output": "/server/share"
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/tmp/base",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/",
+      "output": "mnt/c/Users/x"
+    },
+    {
+      "filePath": "/mnt/c/Users/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/mnt/c/Users/x"
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/tmp/base",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "C:\\Users\\x",
+      "cwd": "/tmp/base/sub",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/tmp/base",
+      "output": "/c/Users/x"
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/",
+      "output": "c/Users/x"
+    },
+    {
+      "filePath": "/c/Users/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/c/Users/x"
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/tmp/base",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/",
+      "output": "cygdrive/c/x"
+    },
+    {
+      "filePath": "/cygdrive/c/x",
+      "cwd": "/tmp/base/sub",
+      "output": "/cygdrive/c/x"
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/tmp/base",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "\\foo\\bar",
+      "cwd": "/tmp/base/sub",
+      "output": "\\foo\\bar"
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/tmp/base",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/",
+      "output": "tmp/é/ü"
+    },
+    {
+      "filePath": "/tmp/é/ü",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/tmp/base",
+      "output": "/tmp/😀"
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/",
+      "output": "tmp/😀"
+    },
+    {
+      "filePath": "/tmp/😀",
+      "cwd": "/tmp/base/sub",
+      "output": "/tmp/😀"
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/tmp/base",
+      "output": "a b"
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/",
+      "output": "a b"
+    },
+    {
+      "filePath": "a b",
+      "cwd": "/tmp/base/sub",
+      "output": "a b"
+    }
+  ],
+  "local": [
+    {
+      "input": "",
+      "output": true
+    },
+    {
+      "input": ".",
+      "output": true
+    },
+    {
+      "input": "..",
+      "output": true
+    },
+    {
+      "input": "./a",
+      "output": true
+    },
+    {
+      "input": "a/./b",
+      "output": true
+    },
+    {
+      "input": "a//b",
+      "output": true
+    },
+    {
+      "input": "a/../b",
+      "output": true
+    },
+    {
+      "input": "/abs/path",
+      "output": true
+    },
+    {
+      "input": "/abs/../path",
+      "output": true
+    },
+    {
+      "input": "//double/lead",
+      "output": true
+    },
+    {
+      "input": "///triple",
+      "output": true
+    },
+    {
+      "input": "~/x",
+      "output": true
+    },
+    {
+      "input": "~",
+      "output": true
+    },
+    {
+      "input": "~/",
+      "output": true
+    },
+    {
+      "input": "~user/x",
+      "output": true
+    },
+    {
+      "input": "/tmp/~/x",
+      "output": true
+    },
+    {
+      "input": "a b/c",
+      "output": true
+    },
+    {
+      "input": "  spaced  ",
+      "output": true
+    },
+    {
+      "input": " nbsp ",
+      "output": true
+    },
+    {
+      "input": "@file",
+      "output": true
+    },
+    {
+      "input": "@@file",
+      "output": true
+    },
+    {
+      "input": "file:///tmp/x",
+      "output": true
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "output": true
+    },
+    {
+      "input": "file:///a%2Fb",
+      "output": true
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "output": true
+    },
+    {
+      "input": "file://host/share/x",
+      "output": true
+    },
+    {
+      "input": "file:///c|/x",
+      "output": true
+    },
+    {
+      "input": "file:////x",
+      "output": true
+    },
+    {
+      "input": "file:///a/../../b",
+      "output": true
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "output": true
+    },
+    {
+      "input": "http://example.com/x",
+      "output": false
+    },
+    {
+      "input": "npm:pkg",
+      "output": false
+    },
+    {
+      "input": "git:github.com/x/y",
+      "output": false
+    },
+    {
+      "input": "github:x/y",
+      "output": false
+    },
+    {
+      "input": "builtin:foo",
+      "output": false
+    },
+    {
+      "input": "ssh://git@host/x",
+      "output": false
+    },
+    {
+      "input": "//server/share",
+      "output": true
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "output": true
+    },
+    {
+      "input": "C:\\Users\\x",
+      "output": true
+    },
+    {
+      "input": "/c/Users/x",
+      "output": true
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "output": true
+    },
+    {
+      "input": "\\foo\\bar",
+      "output": true
+    },
+    {
+      "input": "/tmp/é/ü",
+      "output": true
+    },
+    {
+      "input": "/tmp/😀",
+      "output": true
+    },
+    {
+      "input": "a b",
+      "output": true
+    }
+  ],
+  "winshell": [
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": ".",
+      "output": "."
+    },
+    {
+      "input": "..",
+      "output": ".."
+    },
+    {
+      "input": "./a",
+      "output": "./a"
+    },
+    {
+      "input": "a/./b",
+      "output": "a/./b"
+    },
+    {
+      "input": "a//b",
+      "output": "a//b"
+    },
+    {
+      "input": "a/../b",
+      "output": "a/../b"
+    },
+    {
+      "input": "/abs/path",
+      "output": "/abs/path"
+    },
+    {
+      "input": "/abs/../path",
+      "output": "/abs/../path"
+    },
+    {
+      "input": "//double/lead",
+      "output": "//double/lead"
+    },
+    {
+      "input": "///triple",
+      "output": "///triple"
+    },
+    {
+      "input": "~/x",
+      "output": "~/x"
+    },
+    {
+      "input": "~",
+      "output": "~"
+    },
+    {
+      "input": "~/",
+      "output": "~/"
+    },
+    {
+      "input": "~user/x",
+      "output": "~user/x"
+    },
+    {
+      "input": "/tmp/~/x",
+      "output": "/tmp/~/x"
+    },
+    {
+      "input": "a b/c",
+      "output": "a b/c"
+    },
+    {
+      "input": "  spaced  ",
+      "output": "  spaced  "
+    },
+    {
+      "input": " nbsp ",
+      "output": " nbsp "
+    },
+    {
+      "input": "@file",
+      "output": "@file"
+    },
+    {
+      "input": "@@file",
+      "output": "@@file"
+    },
+    {
+      "input": "file:///tmp/x",
+      "output": "file:///tmp/x"
+    },
+    {
+      "input": "file:///tmp/x%20y",
+      "output": "file:///tmp/x%20y"
+    },
+    {
+      "input": "file:///a%2Fb",
+      "output": "file:///a%2Fb"
+    },
+    {
+      "input": "file://localhost/tmp/x",
+      "output": "file://localhost/tmp/x"
+    },
+    {
+      "input": "file://host/share/x",
+      "output": "file://host/share/x"
+    },
+    {
+      "input": "file:///c|/x",
+      "output": "file:///c|/x"
+    },
+    {
+      "input": "file:////x",
+      "output": "file:////x"
+    },
+    {
+      "input": "file:///a/../../b",
+      "output": "file:///a/../../b"
+    },
+    {
+      "input": "file:///tmp/%E0%A4%A",
+      "output": "file:///tmp/%E0%A4%A"
+    },
+    {
+      "input": "http://example.com/x",
+      "output": "http://example.com/x"
+    },
+    {
+      "input": "npm:pkg",
+      "output": "npm:pkg"
+    },
+    {
+      "input": "git:github.com/x/y",
+      "output": "git:github.com/x/y"
+    },
+    {
+      "input": "github:x/y",
+      "output": "github:x/y"
+    },
+    {
+      "input": "builtin:foo",
+      "output": "builtin:foo"
+    },
+    {
+      "input": "ssh://git@host/x",
+      "output": "ssh://git@host/x"
+    },
+    {
+      "input": "//server/share",
+      "output": "//server/share"
+    },
+    {
+      "input": "/mnt/c/Users/x",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "C:\\Users\\x",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "/c/Users/x",
+      "output": "C:\\Users\\x"
+    },
+    {
+      "input": "/cygdrive/c/x",
+      "output": "C:\\x"
+    },
+    {
+      "input": "\\foo\\bar",
+      "output": "\\foo\\bar"
+    },
+    {
+      "input": "/tmp/é/ü",
+      "output": "/tmp/é/ü"
+    },
+    {
+      "input": "/tmp/😀",
+      "output": "/tmp/😀"
+    },
+    {
+      "input": "a b",
+      "output": "a b"
+    }
+  ]
+}

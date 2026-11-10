@@ -1,0 +1,620 @@
+{
+ "note": "value = JSON.stringify(parseStreamingJson(input)); value_kind records JS-level shape. non_finite_number: value is NaN/Infinity (Rust cannot represent it; JSON text is \"null\"). undefined_result: value is undefined.",
+ "cases": [
+  {
+   "input": "",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "   ",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "null",
+   "value": "null",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": true,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "true",
+   "value": "true",
+   "undefined_result": false,
+   "type": "boolean",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "false",
+   "value": "false",
+   "undefined_result": false,
+   "type": "boolean",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "123",
+   "value": "123",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "\"abc\"",
+   "value": "\"abc\"",
+   "undefined_result": false,
+   "type": "string",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "[1,2]",
+   "value": "[1,2]",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": true,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "[1,2",
+   "value": "[1,2]",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": true,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "{\"a\":1}",
+   "value": "{\"a\":1}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":1,}",
+   "value": "{\"a\":1}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":1 \"b\":2}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\":1,\"b\":",
+   "value": "{\"a\":1}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\": [1,2",
+   "value": "{\"a\":[1,2]}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "12.",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": ".5",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"text\":\"ab\\u00",
+   "value": "{\"text\":\"ab\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "text"
+   ]
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "value": "{\"a\":\"x\\ny\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "nul",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "tru",
+   "value": "true",
+   "undefined_result": false,
+   "type": "boolean",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "NaN",
+   "value": "null",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": true,
+   "object_keys": null
+  },
+  {
+   "input": "Infinity",
+   "value": "null",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": true,
+   "object_keys": null
+  },
+  {
+   "input": "{\"__proto__\":1,\"a\":2}",
+   "value": "{\"__proto__\":1,\"a\":2}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "__proto__",
+    "a"
+   ]
+  },
+  {
+   "input": "{\"b\":1,\"2\":2,\"a\":3,\"1\":4}",
+   "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "1",
+    "2",
+    "b",
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":1,\"a\":2}",
+   "value": "{\"a\":2}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":1} trailing",
+   "value": "{\"a\":1}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":\"\\url{x}\"}",
+   "value": "{\"a\":\"\\\\url{x}\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "12.e",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\",\"time\":.5}]}",
+   "value": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\"}]}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "action",
+    "actions"
+   ]
+  },
+  {
+   "input": "{\"kind\":\"seek\",\"clipId\":\"clip-fl",
+   "value": "{\"kind\":\"seek\",\"clipId\":\"clip-fl\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "kind",
+    "clipId"
+   ]
+  },
+  {
+   "input": "]]]}}}{",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\":01,\"b\":1.,\"c\":.5,\"d\":+1,\"e\":0x10,\"f\":1e}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\": tru, \"b\": nulll, \"c\": falsey}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\":{\"b\":{\"c\":",
+   "value": "{\"a\":{\"b\":{}}}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\\\": 1}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "\"unterminated \\",
+   "value": "\"unterminated \"",
+   "undefined_result": false,
+   "type": "string",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "// comment\n{\"a\":1}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "[[[",
+   "value": "[[[]]]",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": true,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "{\"a\":[{\"b\":\"c",
+   "value": "{\"a\":[{\"b\":\"c\"}]}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "undefined",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "Inf",
+   "value": "null",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": true,
+   "object_keys": null
+  },
+  {
+   "input": "-Inf",
+   "value": "null",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": true,
+   "object_keys": null
+  },
+  {
+   "input": "{\"a\":NaN,\"b\":Infinity,\"c\":-Infinity,\"d\":undefined,\"e\":1}",
+   "value": "{\"a\":null,\"b\":null,\"c\":null}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a",
+    "b",
+    "c"
+   ]
+  },
+  {
+   "input": "[1 2, , 3,]",
+   "value": "[]",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": true,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "{\"a\":[1,2}, \"b\":3]",
+   "value": "{\"a\":[1,2]}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":\"x\"} trailing garbage {\"b\":2}",
+   "value": "{\"a\":\"x\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "\u0000{\u0001\"a\"\u0002:\u00031}",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\":\"x\"}}}]]]",
+   "value": "{\"a\":\"x\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"__proto__\":{\"x\":1},\"a\":2}",
+   "value": "{\"__proto__\":{\"x\":1},\"a\":2}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "__proto__",
+    "a"
+   ]
+  },
+  {
+   "input": "12",
+   "value": "12",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "fals",
+   "value": "false",
+   "undefined_result": false,
+   "type": "boolean",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": null
+  },
+  {
+   "input": "Na",
+   "value": "null",
+   "undefined_result": false,
+   "type": "number",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": true,
+   "object_keys": null
+  },
+  {
+   "input": "-",
+   "value": "{}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": []
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "value": "{\"a\":\"x\\ny\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":\"\\uD83D\\uDE00\"}",
+   "value": "{\"a\":\"😀\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  },
+  {
+   "input": "{\"a\":\"\\uD8\"}",
+   "value": "{\"a\":\"\\\\uD8\"}",
+   "undefined_result": false,
+   "type": "object",
+   "is_array": false,
+   "is_null": false,
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ]
+  }
+ ]
+}

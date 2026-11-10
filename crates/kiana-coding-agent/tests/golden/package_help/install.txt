@@ -1,0 +1,18 @@
+Usage:
+  kiana install <source> [-l] [--approve|--no-approve]
+
+Install a package and add it to settings.
+
+Options:
+  -l, --local       Install project-locally (.kiana/settings.json)
+  -a, --approve     Trust project-local files for this command
+  -na, --no-approve Ignore project-local files for this command
+
+Examples:
+  kiana install npm:@foo/bar
+  kiana install git:github.com/user/repo
+  kiana install git:git@github.com:user/repo
+  kiana install https://github.com/user/repo
+  kiana install ssh://git@github.com/user/repo
+  kiana install ./local/path
+

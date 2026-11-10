@@ -1,0 +1,169 @@
+{
+  "cases": [
+    {
+      "name": "add_and_delete",
+      "patch": "*** Begin Patch\n*** Add File: new.txt\n+hello\n+world\n*** Delete File: old.txt\n*** End Patch\n",
+      "files": {
+        "old.txt": "old content\n"
+      },
+      "expectedFiles": {
+        "new.txt": "hello\nworld\n"
+      },
+      "absent": [
+        "old.txt"
+      ],
+      "summaryContains": [
+        "A new.txt",
+        "D old.txt"
+      ]
+    },
+    {
+      "name": "update_multi_hunk",
+      "patch": "*** Begin Patch\n*** Update File: code.py\n@@ def alpha():\n-    return 1\n+    return 10\n@@ def beta():\n-    return 2\n+    return 20\n*** End Patch\n",
+      "files": {
+        "code.py": "def alpha():\n    return 1\n\ndef beta():\n    return 2\n"
+      },
+      "expectedFiles": {
+        "code.py": "def alpha():\n    return 10\n\ndef beta():\n    return 20\n"
+      },
+      "summaryContains": [
+        "M code.py"
+      ]
+    },
+    {
+      "name": "move_file",
+      "patch": "*** Begin Patch\n*** Update File: src/old_name.py\n*** Move to: src/new_name.py\n@@\n-old = True\n+old = False\n*** End Patch\n",
+      "files": {
+        "src/old_name.py": "old = True\n"
+      },
+      "expectedFiles": {
+        "src/new_name.py": "old = False\n"
+      },
+      "absent": [
+        "src/old_name.py"
+      ],
+      "summaryContains": [
+        "src/new_name.py (moved)"
+      ]
+    },
+    {
+      "name": "multi_file",
+      "patch": "*** Begin Patch\n*** Update File: a.txt\n@@\n-a\n+A\n*** Update File: b.txt\n@@\n-b\n+B\n*** End Patch\n",
+      "files": {
+        "a.txt": "a\n",
+        "b.txt": "b\n"
+      },
+      "expectedFiles": {
+        "a.txt": "A\n",
+        "b.txt": "B\n"
+      },
+      "summaryContains": [
+        "M a.txt",
+        "M b.txt"
+      ]
+    },
+    {
+      "name": "crlf_preserved",
+      "patch": "*** Begin Patch\n*** Update File: win.txt\n@@\n-second\n+SECOND\n*** End Patch\n",
+      "files": {
+        "win.txt": "first\r\nsecond\r\nthird\r\n"
+      },
+      "expectedFiles": {
+        "win.txt": "first\r\nSECOND\r\nthird\r\n"
+      },
+      "summaryContains": [
+        "M win.txt"
+      ]
+    },
+    {
+      "name": "unicode_punctuation",
+      "patch": "*** Begin Patch\n*** Update File: quotes.txt\n@@\n-const msg = \"hello\";\n+const msg = \"goodbye\";\n*** End Patch\n",
+      "files": {
+        "quotes.txt": "const msg = “hello”;\n"
+      },
+      "expectedFiles": {
+        "quotes.txt": "const msg = \"goodbye\";\n"
+      },
+      "summaryContains": [
+        "M quotes.txt"
+      ]
+    },
+    {
+      "name": "eof_anchor",
+      "patch": "*** Begin Patch\n*** Update File: eof.txt\n@@\n+tail\n*** End of File\n*** End Patch\n",
+      "files": {
+        "eof.txt": "a\nb\n"
+      },
+      "expectedFiles": {
+        "eof.txt": "a\nb\ntail\n"
+      },
+      "summaryContains": [
+        "M eof.txt"
+      ]
+    },
+    {
+      "name": "duplicate_context",
+      "patch": "*** Begin Patch\n*** Update File: dup.txt\n@@ block\n same\n-block\n+BLOCK\n@@ block\n same\n-block\n+BLOCK2\n*** End Patch\n",
+      "files": {
+        "dup.txt": "block\nsame\nblock\n---\nblock\nsame\nblock\n"
+      },
+      "expectedFiles": {
+        "dup.txt": "block\nsame\nBLOCK\n---\nblock\nsame\nBLOCK2\n"
+      },
+      "summaryContains": [
+        "M dup.txt"
+      ]
+    },
+    {
+      "name": "empty_patch",
+      "patch": "*** Begin Patch\n*** End Patch\n",
+      "files": {
+        "untouched.txt": "keep me\n"
+      },
+      "expectedFiles": {
+        "untouched.txt": "keep me\n"
+      },
+      "summaryContains": [
+        "No files were modified."
+      ]
+    },
+    {
+      "name": "lenient_heredoc",
+      "patch": "<<'EOF'\n*** Begin Patch\n*** Add File: heredoc.txt\n+from heredoc\n*** End Patch\nEOF\n",
+      "files": {},
+      "expectedFiles": {
+        "heredoc.txt": "from heredoc\n"
+      },
+      "summaryContains": [
+        "A heredoc.txt"
+      ]
+    },
+    {
+      "name": "add_multiple_files",
+      "patch": "*** Begin Patch\n*** Add File: one.txt\n+1\n*** Add File: dir/two.txt\n+2\n*** End Patch\n",
+      "files": {},
+      "expectedFiles": {
+        "one.txt": "1\n",
+        "dir/two.txt": "2\n"
+      },
+      "summaryContains": [
+        "A one.txt",
+        "A dir/two.txt"
+      ]
+    },
+    {
+      "name": "delete_only",
+      "patch": "*** Begin Patch\n*** Delete File: gone.txt\n*** End Patch\n",
+      "files": {
+        "gone.txt": "bye\n"
+      },
+      "expectedFiles": {},
+      "absent": [
+        "gone.txt"
+      ],
+      "summaryContains": [
+        "D gone.txt"
+      ]
+    }
+  ]
+}

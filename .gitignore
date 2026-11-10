@@ -1,0 +1,22 @@
+# Rust build artifacts
+/target
+
+# 测试快照（insta 的待审快照；.snap 本身要提交）
+**/*.snap.new
+
+# 参照实现：各上游项目的完整克隆（含各自的 .git），约 12 GB，不入库
+/reference_project
+
+# 参考论文：PDF 与 arXiv 源码包，约 89 MB，不入库
+/reference_paper
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 发布产物（各约 81MB）
+/dist/
+
+# 本地 harness 配置与审计证据（不入库）
+/.claude/
+/reports/architecture-audit/

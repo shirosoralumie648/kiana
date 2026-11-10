@@ -1,0 +1,1 @@
+{"type":"compaction","id":"compact","parentId":"system","timestamp":"2026-01-02T03:04:05.006Z","summary":"summary","firstKeptEntryId":"system","tokensBefore":42,"systemMessage":{"role":"system","content":"prompt","sections":{"base":"prompt"},"toolsAdded":[{"name":"read","description":"Read","parameters":{"type":"object"}}],"timestamp":1767323045006}}

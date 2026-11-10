@@ -1,0 +1,57 @@
+{
+ "bigHex": {
+  "spanId": "0x2cc8a8ecf4c441340a84cf45a8209b86516720db",
+  "recordedParentIdJson": "2.5567045845198085e+47",
+  "recordedParentIdString": "2.5567045845198085e+47"
+ },
+ "hexShort": {
+  "spanId": "0x10",
+  "recordedParentIdJson": "16",
+  "recordedParentIdString": "16"
+ },
+ "hexU128Max": {
+  "spanId": "0xffffffffffffffffffffffffffffffff",
+  "recordedParentIdJson": "3.402823669209385e+38",
+  "recordedParentIdString": "3.402823669209385e+38"
+ },
+ "hexJustOverU128": {
+  "spanId": "0x100000000000000000000000000000000",
+  "recordedParentIdJson": "3.402823669209385e+38",
+  "recordedParentIdString": "3.402823669209385e+38"
+ },
+ "spaces": {
+  "spanId": " 7 ",
+  "recordedParentIdJson": "7",
+  "recordedParentIdString": "7"
+ },
+ "dec": {
+  "spanId": "123456789012345678901234567890",
+  "recordedParentIdJson": "1.2345678901234568e+29",
+  "recordedParentIdString": "1.2345678901234568e+29"
+ },
+ "binary": {
+  "spanId": "0b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+  "recordedParentIdJson": "5.192296858534828e+33",
+  "recordedParentIdString": "5.192296858534828e+33"
+ },
+ "octalLong": {
+  "spanId": "0o7777777777777777777777777777777777777777777",
+  "recordedParentIdJson": "6.80564733841877e+38",
+  "recordedParentIdString": "6.80564733841877e+38"
+ },
+ "namedInfinity": {
+  "spanId": "Infinity",
+  "recordedParentIdJson": "null",
+  "recordedParentIdString": "Infinity"
+ },
+ "overflowHex": {
+  "spanId": "0x1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "recordedParentIdJson": "null",
+  "recordedParentIdString": "Infinity"
+ },
+ "nano": {
+  "spanId": "0x1",
+  "recordedParentIdJson": "1",
+  "recordedParentIdString": "1"
+ }
+}

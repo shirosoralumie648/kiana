@@ -1,0 +1,2123 @@
+[
+ {
+  "input": "name: demo\ndescription: Test",
+  "ok": true,
+  "value": {
+   "name": "demo",
+   "description": "Test"
+  }
+ },
+ {
+  "input": "name: \"skill-name\"\ndescription: 'A desc'\nfoo-bar: value",
+  "ok": true,
+  "value": {
+   "name": "skill-name",
+   "description": "A desc",
+   "foo-bar": "value"
+  }
+ },
+ {
+  "input": "description: |\n  Line one\n  Line two",
+  "ok": true,
+  "value": {
+   "description": "Line one\nLine two\n"
+  }
+ },
+ {
+  "input": "description: |-\n  Line one\n  Line two\n",
+  "ok": true,
+  "value": {
+   "description": "Line one\nLine two"
+  }
+ },
+ {
+  "input": "description: |+\n  a\n\n\n",
+  "ok": true,
+  "value": {
+   "description": "a\n\n\n"
+  }
+ },
+ {
+  "input": "description: >\n  folded line one\n  folded line two\n",
+  "ok": true,
+  "value": {
+   "description": "folded line one folded line two\n"
+  }
+ },
+ {
+  "input": "a: 1\nb: true\nc: yes\nd: null\ne:\nf: 1.5\ng: 0x10",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": true,
+   "c": "yes",
+   "d": null,
+   "e": null,
+   "f": 1.5,
+   "g": 16
+  }
+ },
+ {
+  "input": "a: 0b1010\nb: 0o17\nc: 077\nd: .5\ne: 1e3\nf: .inf\ng: -.Inf\nh: .NaN\ni: 2020-01-01\nj: +1\nk: 1_000",
+  "ok": true,
+  "value": {
+   "a": "0b1010",
+   "b": 15,
+   "c": 77,
+   "d": 0.5,
+   "e": 1000,
+   "f": null,
+   "g": null,
+   "h": null,
+   "i": "2020-01-01",
+   "j": 1,
+   "k": "1_000"
+  }
+ },
+ {
+  "input": "yes: 1\nno: 2\non: 3\noff: 4\ntrue: 5\n1: 6\nnull: 7",
+  "ok": true,
+  "value": {
+   "1": 6,
+   "yes": 1,
+   "no": 2,
+   "on": 3,
+   "off": 4,
+   "true": 5,
+   "": 7
+  }
+ },
+ {
+  "input": "2: a\n1: b\nx: d",
+  "ok": true,
+  "value": {
+   "1": "b",
+   "2": "a",
+   "x": "d"
+  }
+ },
+ {
+  "input": "list:\n  - one\n  - two\nnested:\n  child:\n    grand: x",
+  "ok": true,
+  "value": {
+   "list": [
+    "one",
+    "two"
+   ],
+   "nested": {
+    "child": {
+     "grand": "x"
+    }
+   }
+  }
+ },
+ {
+  "input": "list: [one, two, 3]\nmap: {a: 1, b: two}",
+  "ok": true,
+  "value": {
+   "list": [
+    "one",
+    "two",
+    3
+   ],
+   "map": {
+    "a": 1,
+    "b": "two"
+   }
+  }
+ },
+ {
+  "input": "items:\n  - name: a\n    value: 1\n  - name: b\n    value: 2",
+  "ok": true,
+  "value": {
+   "items": [
+    {
+     "name": "a",
+     "value": 1
+    },
+    {
+     "name": "b",
+     "value": 2
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: \"line1\\nline2\"\nb: 'it''s'\nc: \"tab\\there\"",
+  "ok": true,
+  "value": {
+   "a": "line1\nline2",
+   "b": "it's",
+   "c": "tab\there"
+  }
+ },
+ {
+  "input": "a: \"\\u0041\\x42\\U0001F600\"",
+  "ok": true,
+  "value": {
+   "a": "AB😀"
+  }
+ },
+ {
+  "input": "key with spaces: value with spaces",
+  "ok": true,
+  "value": {
+   "key with spaces": "value with spaces"
+  }
+ },
+ {
+  "input": "\"quoted key\": 1\n'another': 2",
+  "ok": true,
+  "value": {
+   "quoted key": 1,
+   "another": 2
+  }
+ },
+ {
+  "input": "description: This is a long\n  continued value\n  over lines",
+  "ok": true,
+  "value": {
+   "description": "This is a long continued value over lines"
+  }
+ },
+ {
+  "input": "a:\n  - x\n  - y\nb: z",
+  "ok": true,
+  "value": {
+   "a": [
+    "x",
+    "y"
+   ],
+   "b": "z"
+  }
+ },
+ {
+  "input": "a: 1 # trailing comment\n# full comment\nb: 2",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": 2
+  }
+ },
+ {
+  "input": "a: value # comment",
+  "ok": true,
+  "value": {
+   "a": "value"
+  }
+ },
+ {
+  "input": "a: 'value # not comment'\nb: \"x # y\"",
+  "ok": true,
+  "value": {
+   "a": "value # not comment",
+   "b": "x # y"
+  }
+ },
+ {
+  "input": "nested:\n  - name: x\n    tags:\n      - t1\n      - t2",
+  "ok": true,
+  "value": {
+   "nested": [
+    {
+     "name": "x",
+     "tags": [
+      "t1",
+      "t2"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: []\nb: {}\nc: [[]]\nd: [a, [b, c]]",
+  "ok": true,
+  "value": {
+   "a": [],
+   "b": {},
+   "c": [
+    []
+   ],
+   "d": [
+    "a",
+    [
+     "b",
+     "c"
+    ]
+   ]
+  }
+ },
+ {
+  "input": "---\na: 1",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "a: 1\n...",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "empty: \"\"\nnullval: ~",
+  "ok": true,
+  "value": {
+   "empty": "",
+   "nullval": null
+  }
+ },
+ {
+  "input": "a: http://example.com\nb: user@host",
+  "ok": true,
+  "value": {
+   "a": "http://example.com",
+   "b": "user@host"
+  }
+ },
+ {
+  "input": "# only comment",
+  "ok": true,
+  "value": null
+ },
+ {
+  "input": "",
+  "ok": true,
+  "value": null
+ },
+ {
+  "input": "   ",
+  "ok": true,
+  "value": null
+ },
+ {
+  "input": "a:\n  b:\nc: 1",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": null
+   },
+   "c": 1
+  }
+ },
+ {
+  "input": "a: |2\n    indented\n   more",
+  "ok": true,
+  "value": {
+   "a": "  indented\n more\n"
+  }
+ },
+ {
+  "input": "a: >-\n  one\n  two\n\n  three",
+  "ok": true,
+  "value": {
+   "a": "one two\nthree"
+  }
+ },
+ {
+  "input": "a: 'multi\n  line single'",
+  "ok": true,
+  "value": {
+   "a": "multi line single"
+  }
+ },
+ {
+  "input": "a: \"multi\n  line double\"",
+  "ok": true,
+  "value": {
+   "a": "multi line double"
+  }
+ },
+ {
+  "input": "flag: Yes\nother: NO",
+  "ok": true,
+  "value": {
+   "flag": "Yes",
+   "other": "NO"
+  }
+ },
+ {
+  "input": "a: true\nb: False\nc: TRUE\nd: tRUE",
+  "ok": true,
+  "value": {
+   "a": true,
+   "b": false,
+   "c": true,
+   "d": "tRUE"
+  }
+ },
+ {
+  "input": "a: 9007199254740993\nb: 1e400\nc: -1e400\nd: .inf\ne: .nan",
+  "ok": true,
+  "value": {
+   "a": 9007199254740992,
+   "b": null,
+   "c": null,
+   "d": null,
+   "e": null
+  }
+ },
+ {
+  "input": "a: 0o777\nb: -0x10\nc: +0x10\nd: 0.0\ne: -0.0\nf: 1e-3\ng: 1E3\nh: .5\ni: 5.\nj: 1.5e+2",
+  "ok": true,
+  "value": {
+   "a": 511,
+   "b": "-0x10",
+   "c": "+0x10",
+   "d": 0,
+   "e": 0,
+   "f": 0.001,
+   "g": 1000,
+   "h": 0.5,
+   "i": 5,
+   "j": 150
+  }
+ },
+ {
+  "input": "a: 0b101\nb: 0B101\nc: 0X1F\nd: 0O17\ne: 1__0\nf: 1_\ng: 0x_1",
+  "ok": true,
+  "value": {
+   "a": "0b101",
+   "b": "0B101",
+   "c": "0X1F",
+   "d": "0O17",
+   "e": "1__0",
+   "f": "1_",
+   "g": "0x_1"
+  }
+ },
+ {
+  "input": "a: 12:34\nb: 1:2:3\nc: -12:34",
+  "ok": true,
+  "value": {
+   "a": "12:34",
+   "b": "1:2:3",
+   "c": "-12:34"
+  }
+ },
+ {
+  "input": "a: '1'\nb: \"true\"",
+  "ok": true,
+  "value": {
+   "a": "1",
+   "b": "true"
+  }
+ },
+ {
+  "input": "a: 你好\nb: emoji 😀\nc: \"\\U0001F600\"",
+  "ok": true,
+  "value": {
+   "a": "你好",
+   "b": "emoji 😀",
+   "c": "😀"
+  }
+ },
+ {
+  "input": "- name: |\n    text",
+  "ok": true,
+  "value": [
+   {
+    "name": "text\n"
+   }
+  ]
+ },
+ {
+  "input": "a:\n- b\n- c",
+  "ok": true,
+  "value": {
+   "a": [
+    "b",
+    "c"
+   ]
+  }
+ },
+ {
+  "input": "a:\n- b: 1\n  c: 2",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "b": 1,
+     "c": 2
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: [a: b]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "a": "b"
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: [a: b, c: d]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "a": "b"
+    },
+    {
+     "c": "d"
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: plain\n\n  continued after blank",
+  "ok": true,
+  "value": {
+   "a": "plain\ncontinued after blank"
+  }
+ },
+ {
+  "input": "a: plain\n\n\n  two blanks",
+  "ok": true,
+  "value": {
+   "a": "plain\n\ntwo blanks"
+  }
+ },
+ {
+  "input": "a: 'q\n\n  q2'",
+  "ok": true,
+  "value": {
+   "a": "q\nq2"
+  }
+ },
+ {
+  "input": "a: |\n  x\ny: 1",
+  "ok": true,
+  "value": {
+   "a": "x\n",
+   "y": 1
+  }
+ },
+ {
+  "input": "a: |+\n  x",
+  "ok": true,
+  "value": {
+   "a": "x\n"
+  }
+ },
+ {
+  "input": "a: |-\n  x",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a:#comment",
+  "ok": true,
+  "value": "a:#comment"
+ },
+ {
+  "input": "a : 1",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "a: 1\n  # comment\nb: 2",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": 2
+  }
+ },
+ {
+  "input": "a: # comment\n  b: 1",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1
+   }
+  }
+ },
+ {
+  "input": "a: | # comment\n  x",
+  "ok": true,
+  "value": {
+   "a": "x\n"
+  }
+ },
+ {
+  "input": "a: \"x\" # c",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: [1, 2] # c",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "input": "a: \n  b: 1\n",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1
+   }
+  }
+ },
+ {
+  "input": "a: 1\nb:\n  - x",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": [
+    "x"
+   ]
+  }
+ },
+ {
+  "input": "a:\n    b: 1\nc: 2",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1
+   },
+   "c": 2
+  }
+ },
+ {
+  "input": "a: [\"x y\", 'z']",
+  "ok": true,
+  "value": {
+   "a": [
+    "x y",
+    "z"
+   ]
+  }
+ },
+ {
+  "input": "a: [01, 0x1F, 0o10, 1.0, -.5, +2]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    31,
+    8,
+    1,
+    -0.5,
+    2
+   ]
+  }
+ },
+ {
+  "input": "a: [true, false, null, ~, yes]",
+  "ok": true,
+  "value": {
+   "a": [
+    true,
+    false,
+    null,
+    null,
+    "yes"
+   ]
+  }
+ },
+ {
+  "input": "a: [{b: 1}, [2]]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "b": 1
+    },
+    [
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "input": "a: {b: [1, 2], c: {d: 1}}",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": [
+     1,
+     2
+    ],
+    "c": {
+     "d": 1
+    }
+   }
+  }
+ },
+ {
+  "input": "a: {b}",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": null
+   }
+  }
+ },
+ {
+  "input": "a: [b]",
+  "ok": true,
+  "value": {
+   "a": [
+    "b"
+   ]
+  }
+ },
+ {
+  "input": "a: 'x''y'",
+  "ok": true,
+  "value": {
+   "a": "x'y"
+  }
+ },
+ {
+  "input": "a: \"x\\\"y\"",
+  "ok": true,
+  "value": {
+   "a": "x\"y"
+  }
+ },
+ {
+  "input": "a: x #y\nb: z",
+  "ok": true,
+  "value": {
+   "a": "x",
+   "b": "z"
+  }
+ },
+ {
+  "input": "a: x#y",
+  "ok": true,
+  "value": {
+   "a": "x#y"
+  }
+ },
+ {
+  "input": "a: x # y",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: >\n  one\n\n  two",
+  "ok": true,
+  "value": {
+   "a": "one\ntwo\n"
+  }
+ },
+ {
+  "input": "a: >\n  one\n    indented\n  two",
+  "ok": true,
+  "value": {
+   "a": "one\n  indented\ntwo\n"
+  }
+ },
+ {
+  "input": "a: |\n  one\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "one\n"
+  }
+ },
+ {
+  "input": "- name: |\n   text",
+  "ok": true,
+  "value": [
+   {
+    "name": "text\n"
+   }
+  ]
+ },
+ {
+  "input": "- - a\n  - b",
+  "ok": true,
+  "value": [
+   [
+    "a",
+    "b"
+   ]
+  ]
+ },
+ {
+  "input": "- - a\n- b",
+  "ok": true,
+  "value": [
+   [
+    "a"
+   ],
+   "b"
+  ]
+ },
+ {
+  "input": "- a: 1\n  b: 2",
+  "ok": true,
+  "value": [
+   {
+    "a": 1,
+    "b": 2
+   }
+  ]
+ },
+ {
+  "input": "a: x\n  # comment\nb: 2",
+  "ok": true,
+  "value": {
+   "a": "x",
+   "b": 2
+  }
+ },
+ {
+  "input": "a:\n  b: 1\n  # c\n  d: 2",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1,
+    "d": 2
+   }
+  }
+ },
+ {
+  "input": "a:\n  - x\n  # c\n  - y",
+  "ok": true,
+  "value": {
+   "a": [
+    "x",
+    "y"
+   ]
+  }
+ },
+ {
+  "input": "a: 1\n# c\nb: 2",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": 2
+  }
+ },
+ {
+  "input": "a: |\n  x\n  # not comment",
+  "ok": true,
+  "value": {
+   "a": "x\n# not comment\n"
+  }
+ },
+ {
+  "input": "a: 'x\n\n  y'",
+  "ok": true,
+  "value": {
+   "a": "x\ny"
+  }
+ },
+ {
+  "input": "a: \"x\\\n  y\"",
+  "ok": true,
+  "value": {
+   "a": "xy"
+  }
+ },
+ {
+  "input": "a: plain\n    more indented\n  less",
+  "ok": true,
+  "value": {
+   "a": "plain more indented less"
+  }
+ },
+ {
+  "input": "key:\n  - a: 1\n    b: 2\n  - c: 3",
+  "ok": true,
+  "value": {
+   "key": [
+    {
+     "a": 1,
+     "b": 2
+    },
+    {
+     "c": 3
+    }
+   ]
+  }
+ },
+ {
+  "input": "\n\na: 1\n",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "a: 1\n\n",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "a: [1,\n  # comment\n  2]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "input": "a: {b: 1,\n  c: 2}",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1,
+    "c": 2
+   }
+  }
+ },
+ {
+  "input": "a: [1,\n   2]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "input": "  a: 1\n  b: 2",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": 2
+  }
+ },
+ {
+  "input": "a: 1\n  ",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "a:\n  - b\n  - c\nd: 4",
+  "ok": true,
+  "value": {
+   "a": [
+    "b",
+    "c"
+   ],
+   "d": 4
+  }
+ },
+ {
+  "input": "a: >\n\n  x",
+  "ok": true,
+  "value": {
+   "a": "\nx\n"
+  }
+ },
+ {
+  "input": "a: >\n\n\n  x",
+  "ok": true,
+  "value": {
+   "a": "\n\nx\n"
+  }
+ },
+ {
+  "input": "a: >\n  x\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "x\n"
+  }
+ },
+ {
+  "input": "a: >+\n  x\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "x\n\n\n"
+  }
+ },
+ {
+  "input": "a: >-\n  x\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: >\n  x  \n  y",
+  "ok": true,
+  "value": {
+   "a": "x   y\n"
+  }
+ },
+ {
+  "input": "a: |\n  x  \n  y",
+  "ok": true,
+  "value": {
+   "a": "x  \ny\n"
+  }
+ },
+ {
+  "input": "a: |\n  x\n   \n  y",
+  "ok": true,
+  "value": {
+   "a": "x\n \ny\n"
+  }
+ },
+ {
+  "input": "a: >\n  x\n   \n  y",
+  "ok": true,
+  "value": {
+   "a": "x\n \ny\n"
+  }
+ },
+ {
+  "input": "a: |+\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "\n\n"
+  }
+ },
+ {
+  "input": "a: >+\n\n\n",
+  "ok": true,
+  "value": {
+   "a": "\n\n"
+  }
+ },
+ {
+  "input": "a: |\n",
+  "ok": true,
+  "value": {
+   "a": ""
+  }
+ },
+ {
+  "input": "a: >\n",
+  "ok": true,
+  "value": {
+   "a": ""
+  }
+ },
+ {
+  "input": "a: |-\n",
+  "ok": true,
+  "value": {
+   "a": ""
+  }
+ },
+ {
+  "input": "a: |\n\n  x",
+  "ok": true,
+  "value": {
+   "a": "\nx\n"
+  }
+ },
+ {
+  "input": "a: >\n\n  x\n",
+  "ok": true,
+  "value": {
+   "a": "\nx\n"
+  }
+ },
+ {
+  "input": "a: >\n  one\n    ind\n\n    ind2\n  two",
+  "ok": true,
+  "value": {
+   "a": "one\n  ind\n\n  ind2\ntwo\n"
+  }
+ },
+ {
+  "input": "a: |2\n  x\n   y",
+  "ok": true,
+  "value": {
+   "a": "x\n y\n"
+  }
+ },
+ {
+  "input": "a: |1\n x\n  y",
+  "ok": true,
+  "value": {
+   "a": "x\n y\n"
+  }
+ },
+ {
+  "input": "a: |-3\n   x",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: |2-\n  x",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: |-2\n  x",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: >2\n  x\n   y",
+  "ok": true,
+  "value": {
+   "a": "x\n y\n"
+  }
+ },
+ {
+  "input": "a: |\n  # hi\n",
+  "ok": true,
+  "value": {
+   "a": "# hi\n"
+  }
+ },
+ {
+  "input": "- |\n  x",
+  "ok": true,
+  "value": [
+   "x\n"
+  ]
+ },
+ {
+  "input": "- >\n  x\n  y",
+  "ok": true,
+  "value": [
+   "x y\n"
+  ]
+ },
+ {
+  "input": "a: [1,2,]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "input": "a: {b: 1,}",
+  "ok": true,
+  "value": {
+   "a": {
+    "b": 1
+   }
+  }
+ },
+ {
+  "input": "a: [1;2]",
+  "ok": true,
+  "value": {
+   "a": [
+    "1;2"
+   ]
+  }
+ },
+ {
+  "input": "a: [http://x]",
+  "ok": true,
+  "value": {
+   "a": [
+    "http://x"
+   ]
+  }
+ },
+ {
+  "input": "a: [x# y]",
+  "ok": true,
+  "value": {
+   "a": [
+    "x# y"
+   ]
+  }
+ },
+ {
+  "input": "a: [{b: 1}]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "b": 1
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: ['x', \"y\"]",
+  "ok": true,
+  "value": {
+   "a": [
+    "x",
+    "y"
+   ]
+  }
+ },
+ {
+  "input": "a: [multi\n  word, 2]",
+  "ok": true,
+  "value": {
+   "a": [
+    "multi word",
+    2
+   ]
+  }
+ },
+ {
+  "input": "a: [multi\n\n  word]",
+  "ok": true,
+  "value": {
+   "a": [
+    "multi\nword"
+   ]
+  }
+ },
+ {
+  "input": "a: 'x\n  y\n\n  z'",
+  "ok": true,
+  "value": {
+   "a": "x y\nz"
+  }
+ },
+ {
+  "input": "a: \"x\\\n  y\"",
+  "ok": true,
+  "value": {
+   "a": "xy"
+  }
+ },
+ {
+  "input": "a: \"x\\ \n  y\"",
+  "ok": true,
+  "value": {
+   "a": "x  y"
+  }
+ },
+ {
+  "input": "a: [a:]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "a": null
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: [:,]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "": null
+    }
+   ]
+  }
+ },
+ {
+  "input": "a: [ ]",
+  "ok": true,
+  "value": {
+   "a": []
+  }
+ },
+ {
+  "input": "a: { }",
+  "ok": true,
+  "value": {
+   "a": {}
+  }
+ },
+ {
+  "input": "a: {b 1}",
+  "ok": true,
+  "value": {
+   "a": {
+    "b 1": null
+   }
+  }
+ },
+ {
+  "input": "a: [1 2]",
+  "ok": true,
+  "value": {
+   "a": [
+    "1 2"
+   ]
+  }
+ },
+ {
+  "input": "a: 1\na:",
+  "ok": false,
+  "message": "Map keys must be unique at line 2, column 1:"
+ },
+ {
+  "input": "a: |\n no indent",
+  "ok": true,
+  "value": {
+   "a": "no indent\n"
+  }
+ },
+ {
+  "input": "a: |\n  x\n\ty",
+  "ok": false,
+  "message": "Block scalar lines must not be less indented than their first line at line 3, column 1:"
+ },
+ {
+  "input": "a: |\n\tx",
+  "ok": false,
+  "message": "Block scalar values in collections must be indented at line 2, column 1:"
+ },
+ {
+  "input": "a: |0\n  x",
+  "ok": false,
+  "message": "Block scalar header includes extra characters: |0 at line 1, column 5:"
+ },
+ {
+  "input": "a: |10\n  x",
+  "ok": false,
+  "message": "Block scalar header includes extra characters: |10 at line 1, column 6:"
+ },
+ {
+  "input": "a: |x\n  y",
+  "ok": false,
+  "message": "Block scalar header includes extra characters: |x at line 1, column 5:"
+ },
+ {
+  "input": "foo: [bar",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 1, column 10:"
+ },
+ {
+  "input": "description: Broken: unquoted colon",
+  "ok": false,
+  "message": "Nested mappings are not allowed in compact mappings at line 1, column 14:"
+ },
+ {
+  "input": "a: \"unterminated",
+  "ok": false,
+  "message": "Missing closing \"quote at line 1, column 17:"
+ },
+ {
+  "input": "a: 'unterminated",
+  "ok": false,
+  "message": "Missing closing 'quote at line 1, column 17:"
+ },
+ {
+  "input": "\ta: 1",
+  "ok": false,
+  "message": "Tabs are not allowed as indentation at line 1, column 1:"
+ },
+ {
+  "input": "a: 1\na: 2",
+  "ok": false,
+  "message": "Map keys must be unique at line 2, column 1:"
+ },
+ {
+  "input": "a:\n  b: 1\n c: 2",
+  "ok": false,
+  "message": "All mapping items must start at the same column at line 3, column 1:"
+ },
+ {
+  "input": "a: [1, 2\nb: 3",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 2, column 1:"
+ },
+ {
+  "input": "a: {b: 1\nc: 2",
+  "ok": false,
+  "message": "Flow map in block collection must be sufficiently indented and end with a } at line 2, column 1:"
+ },
+ {
+  "input": "a: \"\\q\"",
+  "ok": false,
+  "message": "Invalid escape sequence \\q at line 1, column 5:"
+ },
+ {
+  "input": "a: [1,,2]",
+  "ok": false,
+  "message": "Unexpected , in flow sequence at line 1, column 7:"
+ },
+ {
+  "input": "a: [1, 2] x",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 1, column 11:"
+ },
+ {
+  "input": "a: {b: 1} x",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 1, column 11:"
+ },
+ {
+  "input": "a: 'x' 'y'",
+  "ok": false,
+  "message": "Unexpected single-quoted-scalar at node end at line 1, column 8:"
+ },
+ {
+  "input": "a: \"x\" y",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 1, column 8:"
+ },
+ {
+  "input": "a: @b",
+  "ok": false,
+  "message": "Plain value cannot start with reserved character @ at line 1, column 4:"
+ },
+ {
+  "input": "a: `b",
+  "ok": false,
+  "message": "Plain value cannot start with reserved character ` at line 1, column 4:"
+ },
+ {
+  "input": "a: ? b",
+  "ok": false,
+  "message": "Nested mappings are not allowed in compact mappings at line 1, column 4:"
+ },
+ {
+  "input": "a: - b",
+  "ok": false,
+  "message": "Unexpected block-seq-ind on same line with key at line 1, column 4:"
+ },
+ {
+  "input": "- a\n- b\nc: 1",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 3, column 1:"
+ },
+ {
+  "input": "- a\nb: 1",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nplain",
+  "ok": false,
+  "message": "Implicit map keys need to be followed by map values at line 2, column 1:"
+ },
+ {
+  "input": "a: [x # y]",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 1, column 11:"
+ },
+ {
+  "input": "a: [multi\nword]",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 2, column 1:"
+ },
+ {
+  "input": "a: 'x\ny'",
+  "ok": false,
+  "message": "Missing closing 'quote at line 1, column 6:"
+ },
+ {
+  "input": "a: \"x\ny\"",
+  "ok": false,
+  "message": "Missing closing \"quote at line 1, column 6:"
+ },
+ {
+  "input": "a: [1,\n",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 2, column 1:"
+ },
+ {
+  "input": "a: [1,",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 1, column 7:"
+ },
+ {
+  "input": "a:\n  - b\n  c: 1",
+  "ok": false,
+  "message": "All mapping items must start at the same column at line 3, column 1:"
+ },
+ {
+  "input": "  a: 1\n b: 2",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 2, column 2:"
+ },
+ {
+  "input": "a: {'k': 1}",
+  "ok": true,
+  "value": {
+   "a": {
+    "k": 1
+   }
+  }
+ },
+ {
+  "input": "a: {'k' 1}",
+  "ok": false,
+  "message": "Missing , or : between flow map items at line 1, column 9:"
+ },
+ {
+  "input": "a: [a: b, c]",
+  "ok": true,
+  "value": {
+   "a": [
+    {
+     "a": "b"
+    },
+    "c"
+   ]
+  }
+ },
+ {
+  "input": "a: [a: b: c]",
+  "ok": false,
+  "message": "Block collections are not allowed within flow collections at line 1, column 8:"
+ },
+ {
+  "input": "a: {[1]: 2}",
+  "ok": true,
+  "value": {
+   "a": {
+    "[ 1 ]": 2
+   }
+  }
+ },
+ {
+  "input": "name: invalid-yaml\ndescription: [unclosed bracket",
+  "ok": false,
+  "message": "Flow sequence in block collection must be sufficiently indented and end with a ] at line 2, column 31:"
+ },
+ {
+  "input": "alpha: \n  |2\n      \n    line one",
+  "ok": true,
+  "value": {
+   "alpha": "    \n  line one\n"
+  }
+ },
+ {
+  "input": "outer:\n  inner: |2\n      a\n",
+  "ok": true,
+  "value": {
+   "outer": {
+    "inner": "  a\n"
+   }
+  }
+ },
+ {
+  "input": "outer:\n  inner:\n    |2\n      a\n",
+  "ok": true,
+  "value": {
+   "outer": {
+    "inner": "  a\n"
+   }
+  }
+ },
+ {
+  "input": "outer:\n  - |2\n      a\n",
+  "ok": true,
+  "value": {
+   "outer": [
+    "  a\n"
+   ]
+  }
+ },
+ {
+  "input": "a: |2\n    \n  x\n",
+  "ok": true,
+  "value": {
+   "a": "  \nx\n"
+  }
+ },
+ {
+  "input": "a: |2\n    x\n",
+  "ok": true,
+  "value": {
+   "a": "  x\n"
+  }
+ },
+ {
+  "input": "a: |2\n   x\n",
+  "ok": true,
+  "value": {
+   "a": " x\n"
+  }
+ },
+ {
+  "input": "a: |+\n  x\n  \n  ",
+  "ok": true,
+  "value": {
+   "a": "x\n\n"
+  }
+ },
+ {
+  "input": "a: |+\n  x\n  \n",
+  "ok": true,
+  "value": {
+   "a": "x\n\n"
+  }
+ },
+ {
+  "input": "a: |\n  x\n  \n",
+  "ok": true,
+  "value": {
+   "a": "x\n"
+  }
+ },
+ {
+  "input": "a: |-\n  x\n  \n",
+  "ok": true,
+  "value": {
+   "a": "x"
+  }
+ },
+ {
+  "input": "a: |+\n",
+  "ok": true,
+  "value": {
+   "a": ""
+  }
+ },
+ {
+  "input": "a: |\n\n\n",
+  "ok": true,
+  "value": {
+   "a": ""
+  }
+ },
+ {
+  "input": "a: |+\n  x\n    \n",
+  "ok": true,
+  "value": {
+   "a": "x\n  \n"
+  }
+ },
+ {
+  "input": "a: |+\n  x\n    ",
+  "ok": true,
+  "value": {
+   "a": "x\n  \n"
+  }
+ },
+ {
+  "input": "a: >\n  line one\n    \n    deeper\n",
+  "ok": true,
+  "value": {
+   "a": "line one\n  \n  deeper\n"
+  }
+ },
+ {
+  "input": "a: >\n  x\n\n  y\n",
+  "ok": true,
+  "value": {
+   "a": "x\ny\n"
+  }
+ },
+ {
+  "input": "a: |\n    \n  x\n",
+  "ok": false,
+  "message": "Block scalars with more-indented leading empty lines must use an explicit indentation indicator at line 3, column 3:"
+ },
+ {
+  "input": "a: |-\n    \n  x\n",
+  "ok": false,
+  "message": "Block scalars with more-indented leading empty lines must use an explicit indentation indicator at line 3, column 3:"
+ },
+ {
+  "input": "a: |\n  \n  x\n",
+  "ok": true,
+  "value": {
+   "a": "\nx\n"
+  }
+ },
+ {
+  "input": "-0: >-\n   \tTab\n    \tTab\n      deeper\n",
+  "ok": true,
+  "value": {
+   "0": "\tTab\n \tTab\n   deeper"
+  }
+ },
+ {
+  "input": "'beta': \n  >\n  \tTab\n    \n  ",
+  "ok": true,
+  "value": {
+   "beta": "\tTab\n  \n"
+  }
+ },
+ {
+  "input": "a: |2\n   \tx\n",
+  "ok": true,
+  "value": {
+   "a": " \tx\n"
+  }
+ },
+ {
+  "input": "a: |\n \tx\n",
+  "ok": true,
+  "value": {
+   "a": "\tx\n"
+  }
+ },
+ {
+  "input": "a: |\n\tx\n",
+  "ok": false,
+  "message": "Block scalar values in collections must be indented at line 2, column 1:"
+ },
+ {
+  "input": "a: |\n  x\n \ty\n",
+  "ok": false,
+  "message": "Block scalar lines must not be less indented than their first line at line 3, column 2:"
+ },
+ {
+  "input": "a: |\n  x\n  \ty\n",
+  "ok": true,
+  "value": {
+   "a": "x\n\ty\n"
+  }
+ },
+ {
+  "input": "null: 1\n\"\": 2\n",
+  "ok": true,
+  "value": {
+   "": 2
+  }
+ },
+ {
+  "input": "1: a\n\"1\": b\n",
+  "ok": true,
+  "value": {
+   "1": "b"
+  }
+ },
+ {
+  "input": ".inf: a\n\"Infinity\": b\n",
+  "ok": true,
+  "value": {
+   "Infinity": "b"
+  }
+ },
+ {
+  "input": ".nan: a\n.nan: b\n",
+  "ok": true,
+  "value": {
+   "NaN": "b"
+  }
+ },
+ {
+  "input": "true: a\n\"true\": b\n",
+  "ok": true,
+  "value": {
+   "true": "b"
+  }
+ },
+ {
+  "input": "-0: a\n0: b\n",
+  "ok": false,
+  "message": "Map keys must be unique at line 2, column 1:"
+ },
+ {
+  "input": ".inf: 1\n",
+  "ok": true,
+  "value": {
+   "Infinity": 1
+  }
+ },
+ {
+  "input": ".nan: 1\n",
+  "ok": true,
+  "value": {
+   "NaN": 1
+  }
+ },
+ {
+  "input": "{null: 1, \"\": 2}",
+  "ok": true,
+  "value": {
+   "": 2
+  }
+ },
+ {
+  "input": "{1: a, \"1\": b}",
+  "ok": true,
+  "value": {
+   "1": "b"
+  }
+ },
+ {
+  "input": "{[1]: a, [1]: b}",
+  "ok": true,
+  "value": {
+   "[ 1 ]": "b"
+  }
+ },
+ {
+  "input": "alpha\n\n...\n",
+  "ok": true,
+  "value": "alpha"
+ },
+ {
+  "input": "a: alpha\n...\n",
+  "ok": true,
+  "value": {
+   "a": "alpha"
+  }
+ },
+ {
+  "input": "---\na: 1\n...\n",
+  "ok": true,
+  "value": {
+   "a": 1
+  }
+ },
+ {
+  "input": "---\n12\n   \n...\n",
+  "ok": true,
+  "value": 12
+ },
+ {
+  "input": "a: 1\nfoo\nbar: 2\n",
+  "ok": false,
+  "message": "Implicit keys need to be on a single line at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nfoo\n  bar\n",
+  "ok": false,
+  "message": "Implicit keys need to be on a single line at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nfoo\n",
+  "ok": false,
+  "message": "Implicit map keys need to be followed by map values at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nfoo\n# c\nbar: 2\n",
+  "ok": false,
+  "message": "Implicit map keys need to be followed by map values at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nfoo\n\nbar: 2\n",
+  "ok": false,
+  "message": "Implicit keys need to be on a single line at line 2, column 1:"
+ },
+ {
+  "input": "a: 1\nfoo\n  bar: 2\n",
+  "ok": false,
+  "message": "Implicit keys need to be on a single line at line 2, column 1:"
+ },
+ {
+  "input": "a:\n  foo\n  bar\nb: 2\n",
+  "ok": true,
+  "value": {
+   "a": "foo bar",
+   "b": 2
+  }
+ },
+ {
+  "input": "a: 1\n  foo\n",
+  "ok": true,
+  "value": {
+   "a": "1 foo"
+  }
+ },
+ {
+  "input": "a: 1\n\n  foo\n",
+  "ok": true,
+  "value": {
+   "a": "1\nfoo"
+  }
+ },
+ {
+  "input": "root scalar\n  continued\n",
+  "ok": true,
+  "value": "root scalar continued"
+ },
+ {
+  "input": "a: 1\né\n",
+  "ok": false,
+  "message": "Implicit map keys need to be followed by map values at line 2, column 1:"
+ },
+ {
+  "input": "|\nx\n",
+  "ok": true,
+  "value": "x\n"
+ },
+ {
+  "input": "|\n\tx\n",
+  "ok": true,
+  "value": "\tx\n"
+ },
+ {
+  "input": "|\n x\n",
+  "ok": true,
+  "value": "x\n"
+ },
+ {
+  "input": "|2\n x\n",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 2, column 2:"
+ },
+ {
+  "input": "|2\n  x\n",
+  "ok": true,
+  "value": "x\n"
+ },
+ {
+  "input": ">-\n  a\n  b\n",
+  "ok": true,
+  "value": "a b"
+ },
+ {
+  "input": "|+\n\n",
+  "ok": true,
+  "value": "\n"
+ },
+ {
+  "input": "- |\nx\n",
+  "ok": false,
+  "message": "Unexpected scalar at node end at line 2, column 1:"
+ },
+ {
+  "input": "- |\n x\n",
+  "ok": true,
+  "value": [
+   "x\n"
+  ]
+ },
+ {
+  "input": "a: |\n x\n",
+  "ok": true,
+  "value": {
+   "a": "x\n"
+  }
+ },
+ {
+  "input": "---\n|\nx\n...\n",
+  "ok": true,
+  "value": "x\n"
+ },
+ {
+  "input": "allowed-tools: [Read, Grep,\n  Glob\n]",
+  "ok": true,
+  "value": {
+   "allowed-tools": [
+    "Read",
+    "Grep",
+    "Glob"
+   ]
+  }
+ },
+ {
+  "input": "a: [1, 2,\n  3\n  ]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2,
+    3
+   ]
+  }
+ },
+ {
+  "input": "a: [1,\n  2,\n]",
+  "ok": true,
+  "value": {
+   "a": [
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "input": "allowed-tools: [Read, Grep,\n  Glob,\n  Bash\n  ]",
+  "ok": true,
+  "value": {
+   "allowed-tools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Bash"
+   ]
+  }
+ },
+ {
+  "input": "tools:\n  - \"multi\n   line\"",
+  "ok": true,
+  "value": {
+   "tools": [
+    "multi line"
+   ]
+  }
+ },
+ {
+  "input": "tools:\n  - 'multi\n   line'",
+  "ok": true,
+  "value": {
+   "tools": [
+    "multi line"
+   ]
+  }
+ },
+ {
+  "input": "tools:\n  - \"multi\n\n   line\"",
+  "ok": true,
+  "value": {
+   "tools": [
+    "multi\nline"
+   ]
+  }
+ },
+ {
+  "input": "description: ?foo",
+  "ok": true,
+  "value": {
+   "description": "?foo"
+  }
+ },
+ {
+  "input": "description: :foo",
+  "ok": true,
+  "value": {
+   "description": ":foo"
+  }
+ },
+ {
+  "input": "name: :-)",
+  "ok": true,
+  "value": {
+   "name": ":-)"
+  }
+ },
+ {
+  "input": "name: &anchor Some text",
+  "ok": true,
+  "value": {
+   "name": "Some text"
+  }
+ },
+ {
+  "input": "a: &x 1\nb: *x",
+  "ok": true,
+  "value": {
+   "a": 1,
+   "b": 1
+  }
+ },
+ {
+  "input": "name: *alias",
+  "ok": false,
+  "message": "Unresolved alias (the anchor must be set before the alias): alias"
+ },
+ {
+  "input": "name: !!str 123",
+  "ok": true,
+  "value": {
+   "name": "123"
+  }
+ },
+ {
+  "input": "name: !bang",
+  "ok": true,
+  "value": {
+   "name": ""
+  }
+ },
+ {
+  "input": "base: &b\n  x: 1\nchild:\n  <<: *b\n  y: 2",
+  "ok": true,
+  "value": {
+   "base": {
+    "x": 1
+   },
+   "child": {
+    "<<": {
+     "x": 1
+    },
+    "y": 2
+   }
+  }
+ },
+ {
+  "input": "1e400: v",
+  "ok": true,
+  "value": {
+   "Infinity": "v"
+  }
+ },
+ {
+  "input": "-1e400: v",
+  "ok": true,
+  "value": {
+   "-Infinity": "v"
+  }
+ },
+ {
+  "input": "a: \"\\uD83D\\uDE00\"",
+  "ok": true,
+  "value": {
+   "a": "😀"
+  }
+ },
+ {
+  "input": "a: \"\\U00110000\"",
+  "ok": false,
+  "message": "Invalid escape sequence \\U00110000 at line 1, column 5:"
+ },
+ {
+  "input": "a: \"\\x4\"",
+  "ok": false,
+  "message": "Invalid escape sequence \\x4\" at line 1, column 5:"
+ },
+ {
+  "input": "a: \"x\\\"",
+  "ok": true,
+  "value": {
+   "a": "x\""
+  }
+ },
+ {
+  "input": "...\ndescription: x",
+  "ok": false,
+  "message": "Source contains multiple documents; please use YAML.parseAllDocuments() at line 2, column 1:"
+ },
+ {
+  "input": " a: |\n b",
+  "ok": false,
+  "message": "Implicit map keys need to be followed by map values at line 2, column 2:"
+ },
+ {
+  "input": "a: 1\n- 2: 3",
+  "ok": false,
+  "message": "Implicit keys need to be on a single line at line 2, column 1:"
+ },
+ {
+  "input": "@foo: 1",
+  "ok": false,
+  "message": "Plain value cannot start with reserved character @ at line 1, column 1:"
+ },
+ {
+  "input": "a: [- ]",
+  "ok": false,
+  "message": "Block collections are not allowed within flow collections at line 1, column 5:"
+ },
+ {
+  "input": "name: a\nname: b",
+  "ok": false,
+  "message": "Map keys must be unique at line 2, column 1:"
+ },
+ {
+  "input": "name: \"😀",
+  "ok": false,
+  "message": "Missing closing \"quote at line 1, column 10:"
+ }
+]

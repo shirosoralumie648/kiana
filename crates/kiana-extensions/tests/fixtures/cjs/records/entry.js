@@ -1,0 +1,14 @@
+exports.selfInCache = require.cache[__filename] === module;
+exports.file = __filename;
+exports.dir = __dirname;
+exports.moduleId = module.id;
+exports.moduleFilename = module.filename;
+exports.modulePath = module.path;
+exports.loadedDuringEval = module.loaded;
+exports.requireType = typeof module.require;
+exports.childrenBefore = module.children.length;
+var child = require("./child.js");
+exports.childParentIsEntry = child.moduleRecord.parent === module;
+exports.childrenAfter = module.children.length;
+exports.selfSame = require("./entry.js") === module.exports;
+exports.cacheExportsSame = require.cache[__filename].exports === module.exports;

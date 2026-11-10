@@ -1,0 +1,49 @@
+[package]
+name = "kiana-evals"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/evals（私有）：docker 化评测运行器与报告。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-coding-agent = { workspace = true }
+# 原生 task suite 的模型命令与测试命令统一走 `kiana-sandbox`。
+kiana-sandbox = { workspace = true }
+# `cli.ts` 的 `JSON.parse(await readFile(...))` 与 `docker.ts` 的 `JSON.parse(readFileSync(...))`：
+# 错误消息必须逐字对齐 V8 的 `SyntaxError`，且接受孤立代理项转义与数值溢出。
+kiana-json = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+uuid = { workspace = true }
+glob = { workspace = true }
+chrono = { workspace = true }
+libc = { workspace = true }
+dirs = { workspace = true }
+futures = { workspace = true }
+ryu = { workspace = true }
+# `report.rs` 的 `difference`（`Number(x.toPrecision(15))`）需要精确十进制展开；
+# num-bigint 已由根 `[workspace.dependencies]` 固定（kiana-json 的 js_num 使用同一版本）。
+num-bigint = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+reqwest = { workspace = true }
+hyper = { workspace = true, features = ["http1", "server"] }
+hyper-util = { workspace = true, features = ["tokio"] }
+http-body-util = { workspace = true }
+http = { workspace = true }
+
+[[bin]]
+name = "kiana-evals"
+path = "src/main.rs"

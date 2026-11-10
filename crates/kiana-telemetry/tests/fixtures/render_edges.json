@@ -1,0 +1,261 @@
+[
+  {
+    "name": "duration-nan",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": "__NaN",
+        "attributes": {},
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (NaNms)"
+  },
+  {
+    "name": "duration-infinity",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": "__Infinity",
+        "attributes": {},
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (Infinityms)"
+  },
+  {
+    "name": "duration-negative-infinity",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": "__-Infinity",
+        "attributes": {},
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (-Infinityms)"
+  },
+  {
+    "name": "event-nan",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {},
+        "events": [
+          {
+            "name": "e",
+            "timeMs": "__NaN",
+            "attributes": {}
+          }
+        ],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (10ms)\n  · e (+NaNms)"
+  },
+  {
+    "name": "event-infinity",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {},
+        "events": [
+          {
+            "name": "e",
+            "timeMs": "__Infinity",
+            "attributes": {}
+          }
+        ],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (10ms)\n  · e (+Infinityms)"
+  },
+  {
+    "name": "event-negative-infinity",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {},
+        "events": [
+          {
+            "name": "e",
+            "timeMs": "__-Infinity",
+            "attributes": {}
+          }
+        ],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (10ms)\n  · e (+-Infinityms)"
+  },
+  {
+    "name": "integer-keys",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {
+          "2": 2,
+          "b": 1
+        },
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s 2=2 b=1 (10ms)"
+  },
+  {
+    "name": "integer-keys-mixed",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {
+          "2": 3,
+          "10": 1,
+          "b": 2,
+          "a": 4,
+          "01": 5,
+          "4294967295": 6
+        },
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s 2=3 10=1 b=2 a=4 01=5 4294967295=6 (10ms)"
+  },
+  {
+    "name": "attribute-non-finite-numbers",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {
+          "nan": "__NaN",
+          "inf": "__Infinity",
+          "ninf": "__-Infinity"
+        },
+        "events": [],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s nan=null inf=null ninf=null (10ms)"
+  },
+  {
+    "name": "event-attributes-integer-keys",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {},
+        "events": [
+          {
+            "name": "e",
+            "timeMs": 1.5,
+            "attributes": {
+              "0": 2,
+              "z": 1
+            }
+          }
+        ],
+        "links": [],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (10ms)\n  · e 0=2 z=1 (+1.5ms)"
+  },
+  {
+    "name": "link-attributes-integer-keys",
+    "spans": [
+      {
+        "id": "s:1",
+        "traceId": "t",
+        "name": "s",
+        "startedMs": 0,
+        "endedMs": 10,
+        "attributes": {},
+        "events": [],
+        "links": [
+          {
+            "traceId": "tt",
+            "spanId": "ss",
+            "attributes": {
+              "0": 2,
+              "z": 1
+            }
+          }
+        ],
+        "status": {
+          "status": "ok"
+        }
+      }
+    ],
+    "expected": "s (10ms)\n  → link trace tt span ss 0=2 z=1"
+  }
+]

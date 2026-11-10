@@ -1,0 +1,308 @@
+{
+ "ansi": [
+  {
+   "name": "plain",
+   "input": "hello",
+   "html": "hello"
+  },
+  {
+   "name": "empty",
+   "input": "",
+   "html": ""
+  },
+  {
+   "name": "escape_html",
+   "input": "<&>\"'",
+   "html": "&lt;&amp;&gt;&quot;&#039;"
+  },
+  {
+   "name": "fg_30_37",
+   "input": "\u001b[30m0\u001b[0m\u001b[31m1\u001b[0m\u001b[32m2\u001b[0m\u001b[33m3\u001b[0m\u001b[34m4\u001b[0m\u001b[35m5\u001b[0m\u001b[36m6\u001b[0m\u001b[37m7\u001b[0m",
+   "html": "<span style=\"color:#000000\">0</span><span style=\"color:#800000\">1</span><span style=\"color:#008000\">2</span><span style=\"color:#808000\">3</span><span style=\"color:#000080\">4</span><span style=\"color:#800080\">5</span><span style=\"color:#008080\">6</span><span style=\"color:#c0c0c0\">7</span>"
+  },
+  {
+   "name": "fg_bright",
+   "input": "\u001b[90m0\u001b[0m\u001b[91m1\u001b[0m\u001b[92m2\u001b[0m\u001b[93m3\u001b[0m\u001b[94m4\u001b[0m\u001b[95m5\u001b[0m\u001b[96m6\u001b[0m\u001b[97m7\u001b[0m",
+   "html": "<span style=\"color:#808080\">0</span><span style=\"color:#ff0000\">1</span><span style=\"color:#00ff00\">2</span><span style=\"color:#ffff00\">3</span><span style=\"color:#0000ff\">4</span><span style=\"color:#ff00ff\">5</span><span style=\"color:#00ffff\">6</span><span style=\"color:#ffffff\">7</span>"
+  },
+  {
+   "name": "bg_40_47",
+   "input": "\u001b[40m0\u001b[0m\u001b[41m1\u001b[0m\u001b[42m2\u001b[0m\u001b[43m3\u001b[0m\u001b[44m4\u001b[0m\u001b[45m5\u001b[0m\u001b[46m6\u001b[0m\u001b[47m7\u001b[0m",
+   "html": "<span style=\"background-color:#000000\">0</span><span style=\"background-color:#800000\">1</span><span style=\"background-color:#008000\">2</span><span style=\"background-color:#808000\">3</span><span style=\"background-color:#000080\">4</span><span style=\"background-color:#800080\">5</span><span style=\"background-color:#008080\">6</span><span style=\"background-color:#c0c0c0\">7</span>"
+  },
+  {
+   "name": "bg_bright",
+   "input": "\u001b[100m0\u001b[0m\u001b[101m1\u001b[0m\u001b[102m2\u001b[0m\u001b[103m3\u001b[0m\u001b[104m4\u001b[0m\u001b[105m5\u001b[0m\u001b[106m6\u001b[0m\u001b[107m7\u001b[0m",
+   "html": "<span style=\"background-color:#808080\">0</span><span style=\"background-color:#ff0000\">1</span><span style=\"background-color:#00ff00\">2</span><span style=\"background-color:#ffff00\">3</span><span style=\"background-color:#0000ff\">4</span><span style=\"background-color:#ff00ff\">5</span><span style=\"background-color:#00ffff\">6</span><span style=\"background-color:#ffffff\">7</span>"
+  },
+  {
+   "name": "styles",
+   "input": "\u001b[1;2;3;4mX",
+   "html": "<span style=\"font-weight:bold;opacity:0.6;font-style:italic;text-decoration:underline\">X</span>"
+  },
+  {
+   "name": "style_resets",
+   "input": "\u001b[1;2;3;4mX\u001b[22mY\u001b[23mZ\u001b[24mW",
+   "html": "<span style=\"font-weight:bold;opacity:0.6;font-style:italic;text-decoration:underline\">X</span><span style=\"font-style:italic;text-decoration:underline\">Y</span><span style=\"text-decoration:underline\">Z</span>W"
+  },
+  {
+   "name": "reset",
+   "input": "\u001b[1;31;44mX\u001b[0mY",
+   "html": "<span style=\"color:#800000;background-color:#000080;font-weight:bold\">X</span>Y"
+  },
+  {
+   "name": "default_fg_bg",
+   "input": "\u001b[31;41mX\u001b[39mY\u001b[49mZ",
+   "html": "<span style=\"color:#800000;background-color:#800000\">X</span><span style=\"background-color:#800000\">Y</span>Z"
+  },
+  {
+   "name": "empty_params",
+   "input": "\u001b[mX",
+   "html": "X"
+  },
+  {
+   "name": "semicolon_empty",
+   "input": "\u001b[1;;3mX",
+   "html": "<span style=\"font-style:italic\">X</span>"
+  },
+  {
+   "name": "unknown_codes",
+   "input": "\u001b[5;6;7;8;9;21;25;26;27;28;29mX",
+   "html": "X"
+  },
+  {
+   "name": "adjacent_spans",
+   "input": "\u001b[31m\u001b[32mX\u001b[0m",
+   "html": "<span style=\"color:#800000\"></span><span style=\"color:#008000\">X</span>"
+  },
+  {
+   "name": "empty_between",
+   "input": "\u001b[31m\u001b[32m\u001b[0m",
+   "html": "<span style=\"color:#800000\"></span><span style=\"color:#008000\"></span>"
+  },
+  {
+   "name": "span_at_end_unclosed",
+   "input": "\u001b[31mX",
+   "html": "<span style=\"color:#800000\">X</span>"
+  },
+  {
+   "name": "ansi_256_0",
+   "input": "\u001b[38;5;0mX",
+   "html": "<span style=\"color:#000000\">X</span>"
+  },
+  {
+   "name": "ansi_256_15",
+   "input": "\u001b[38;5;15mX",
+   "html": "<span style=\"color:#ffffff\">X</span>"
+  },
+  {
+   "name": "ansi_256_16",
+   "input": "\u001b[38;5;16mX",
+   "html": "<span style=\"color:#000000\">X</span>"
+  },
+  {
+   "name": "ansi_256_231",
+   "input": "\u001b[38;5;231mX",
+   "html": "<span style=\"color:#ffffff\">X</span>"
+  },
+  {
+   "name": "ansi_256_232",
+   "input": "\u001b[38;5;232mX",
+   "html": "<span style=\"color:#080808\">X</span>"
+  },
+  {
+   "name": "ansi_256_255",
+   "input": "\u001b[38;5;255mX",
+   "html": "<span style=\"color:#eeeeee\">X</span>"
+  },
+  {
+   "name": "ansi_256_999",
+   "input": "\u001b[38;5;999mX",
+   "html": "<span style=\"color:#1dfe1dfe1dfe\">X</span>"
+  },
+  {
+   "name": "ansi_256_300",
+   "input": "\u001b[38;5;300mX",
+   "html": "<span style=\"color:#2b02b02b0\">X</span>"
+  },
+  {
+   "name": "ansi_256_fg_bg",
+   "input": "\u001b[38;5;0;48;5;255mX",
+   "html": "<span style=\"color:#000000;background-color:#eeeeee\">X</span>"
+  },
+  {
+   "name": "ansi_256_bg",
+   "input": "\u001b[48;5;196mX",
+   "html": "<span style=\"background-color:#ff0000\">X</span>"
+  },
+  {
+   "name": "rgb_fg",
+   "input": "\u001b[38;2;255;0;0mX",
+   "html": "<span style=\"color:rgb(255,0,0)\">X</span>"
+  },
+  {
+   "name": "rgb_bg",
+   "input": "\u001b[48;2;1;2;3mX",
+   "html": "<span style=\"background-color:rgb(1,2,3)\">X</span>"
+  },
+  {
+   "name": "rgb_zero",
+   "input": "\u001b[38;2;0;0;0mX",
+   "html": "<span style=\"color:rgb(0,0,0)\">X</span>"
+  },
+  {
+   "name": "rgb_big",
+   "input": "\u001b[38;2;300;99999;0mX",
+   "html": "<span style=\"color:rgb(300,99999,0)\">X</span>"
+  },
+  {
+   "name": "rgb_insufficient",
+   "input": "\u001b[38;2;1;2mX",
+   "html": "<span style=\"font-weight:bold;opacity:0.6\">X</span>"
+  },
+  {
+   "name": "ansi256_insufficient",
+   "input": "\u001b[38;5mX",
+   "html": "X"
+  },
+  {
+   "name": "bg_rgb_insufficient",
+   "input": "\u001b[48;2;1;2;3mX",
+   "html": "<span style=\"background-color:rgb(1,2,3)\">X</span>"
+  },
+  {
+   "name": "bg_ansi256_insufficient",
+   "input": "\u001b[48;5mX",
+   "html": "X"
+  },
+  {
+   "name": "ext_after_insufficient",
+   "input": "\u001b[38;5;31mX",
+   "html": "<span style=\"color:#0087af\">X</span>"
+  },
+  {
+   "name": "csi_other",
+   "input": "\u001b[2J\u001b[?25l\u001b[1;1H»X",
+   "html": "\u001b[2J\u001b[?25l\u001b[1;1H»X"
+  },
+  {
+   "name": "osc",
+   "input": "\u001b]0;title\u0007X",
+   "html": "\u001b]0;title\u0007X"
+  },
+  {
+   "name": "unterminated",
+   "input": "\u001b[31",
+   "html": "\u001b[31"
+  },
+  {
+   "name": "lone_esc",
+   "input": "\u001b",
+   "html": "\u001b"
+  },
+  {
+   "name": "esc_bracket",
+   "input": "\u001b[",
+   "html": "\u001b["
+  },
+  {
+   "name": "non_sgr_m",
+   "input": "\u001b[31XmY",
+   "html": "\u001b[31XmY"
+  },
+  {
+   "name": "unicode",
+   "input": "é😀\u001b[31m中\u001b[0m文",
+   "html": "é😀<span style=\"color:#800000\">中</span>文"
+  },
+  {
+   "name": "multi_params",
+   "input": "\u001b[1;31;44mX",
+   "html": "<span style=\"color:#800000;background-color:#000080;font-weight:bold\">X</span>"
+  },
+  {
+   "name": "dim_only",
+   "input": "\u001b[2mX",
+   "html": "<span style=\"opacity:0.6\">X</span>"
+  },
+  {
+   "name": "italic_only",
+   "input": "\u001b[3mX",
+   "html": "<span style=\"font-style:italic\">X</span>"
+  },
+  {
+   "name": "underline_only",
+   "input": "\u001b[4mX",
+   "html": "<span style=\"text-decoration:underline\">X</span>"
+  },
+  {
+   "name": "bold_only",
+   "input": "\u001b[1mX",
+   "html": "<span style=\"font-weight:bold\">X</span>"
+  },
+  {
+   "name": "fg_after_reset_span",
+   "input": "\u001b[31ma\u001b[32mb\u001b[39mc\u001b[0md",
+   "html": "<span style=\"color:#800000\">a</span><span style=\"color:#008000\">b</span>cd"
+  },
+  {
+   "name": "code_38_alone",
+   "input": "\u001b[38mX",
+   "html": "X"
+  },
+  {
+   "name": "code_48_alone",
+   "input": "\u001b[48mX",
+   "html": "X"
+  },
+  {
+   "name": "code_38_5_at_end",
+   "input": "\u001b[1;38;5mX",
+   "html": "<span style=\"font-weight:bold\">X</span>"
+  },
+  {
+   "name": "code_38_2_rgb_then_code",
+   "input": "\u001b[38;2;1;2;3;1mX",
+   "html": "<span style=\"color:rgb(1,2,3);font-weight:bold\">X</span>"
+  }
+ ],
+ "lines": [
+  {
+   "name": "lines_two",
+   "input": [
+    "one",
+    "two"
+   ],
+   "html": "<div class=\"ansi-line\">one</div><div class=\"ansi-line\">two</div>"
+  },
+  {
+   "name": "lines_empty",
+   "input": [
+    "",
+    ""
+   ],
+   "html": "<div class=\"ansi-line\">&nbsp;</div><div class=\"ansi-line\">&nbsp;</div>"
+  },
+  {
+   "name": "lines_mixed",
+   "input": [
+    "one",
+    "",
+    "\u001b[31mtwo\u001b[0m"
+   ],
+   "html": "<div class=\"ansi-line\">one</div><div class=\"ansi-line\">&nbsp;</div><div class=\"ansi-line\"><span style=\"color:#800000\">two</span></div>"
+  },
+  {
+   "name": "lines_none",
+   "input": [],
+   "html": ""
+  },
+  {
+   "name": "lines_single_empty",
+   "input": [
+    ""
+   ],
+   "html": "<div class=\"ansi-line\">&nbsp;</div>"
+  }
+ ]
+}

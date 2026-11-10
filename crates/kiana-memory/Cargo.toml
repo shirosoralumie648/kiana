@@ -1,0 +1,23 @@
+[package]
+name = "kiana-memory"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "跨会话持久记忆的存储、召回、抽取与整合。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+regex = { workspace = true }
+libc = { workspace = true }
+sha2 = { workspace = true }
+dirs = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+filetime = { workspace = true }

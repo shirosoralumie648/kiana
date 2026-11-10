@@ -1,0 +1,22 @@
+Usage:
+  kiana update [source|self|kiana] [--self|--extensions|--models|--all] [--extension <source>] [--approve|--no-approve] [--force]
+
+Update kiana, installed packages, or model catalogs.
+
+Options:
+  --self                  Update kiana only (default when no target is given)
+  --extensions            Update installed packages only
+  --models                Refresh model catalogs only
+  --all                   Update kiana and installed packages
+  --extension <source>    Update one package only
+  -a, --approve           Trust project-local files for this command
+  -na, --no-approve       Ignore project-local files for this command
+  --force                 Reinstall kiana even if the current version is latest
+
+Short forms:
+  kiana update                Update kiana only
+  kiana update --all          Update kiana and all extensions
+  kiana update --models       Refresh model catalogs only
+  kiana update <source>       Update one package
+  kiana update kiana             Update kiana only (self works as alias to kiana)
+

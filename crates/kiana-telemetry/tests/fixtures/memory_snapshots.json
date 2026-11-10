@@ -1,0 +1,770 @@
+{
+ "getSpans": [
+  {
+   "id": 1,
+   "parentId": null,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "1",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:1"
+   },
+   "parentContext": null,
+   "links": [],
+   "name": "root",
+   "attributes": {
+    "2": 2,
+    "b": 1,
+    "a": 3,
+    "listed": [
+     "x"
+    ],
+    "flag": true,
+    "extra": 1.5
+   },
+   "events": [
+    {
+     "name": "evt",
+     "attributes": {
+      "10": 1,
+      "z": 2
+     }
+    }
+   ],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 3
+  },
+  {
+   "id": 2,
+   "parentId": 1,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "2",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:1"
+   },
+   "parentContext": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "1",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:1"
+   },
+   "links": [],
+   "name": "child",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "error",
+    "error": {
+     "name": "Expected",
+     "message": "boom"
+    }
+   },
+   "settled": true,
+   "endSequence": 1
+  },
+  {
+   "id": 3,
+   "parentId": 1,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "3",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:1"
+   },
+   "parentContext": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "1",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:1"
+   },
+   "links": [],
+   "name": "second-child",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 2
+  },
+  {
+   "id": 4,
+   "parentId": null,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "4",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:4"
+   },
+   "parentContext": null,
+   "links": [],
+   "name": "other-root",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 5
+  },
+  {
+   "id": 5,
+   "parentId": 4,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "5",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:4"
+   },
+   "parentContext": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "4",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:4"
+   },
+   "links": [],
+   "name": "nested",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 4
+  },
+  {
+   "id": 6,
+   "parentId": null,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "6",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:6"
+   },
+   "parentContext": null,
+   "links": [],
+   "name": "late-root",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 6
+  },
+  {
+   "id": 7,
+   "parentId": null,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "7",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:7"
+   },
+   "parentContext": null,
+   "links": [],
+   "name": "linker",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 7
+  },
+  {
+   "id": 8,
+   "parentId": null,
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "8",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:8"
+   },
+   "parentContext": null,
+   "links": [],
+   "name": "exemplar",
+   "attributes": {},
+   "events": [],
+   "status": {
+    "status": "ok"
+   },
+   "settled": true,
+   "endSequence": 8
+  }
+ ],
+ "getMetrics": [
+  {
+   "kind": "counter",
+   "name": "calls",
+   "description": "Count",
+   "unit": "1",
+   "value": 2,
+   "attributes": {
+    "10": 9,
+    "b": 1,
+    "a": "x"
+   },
+   "context": null
+  },
+  {
+   "kind": "upDownCounter",
+   "name": "active",
+   "value": -1,
+   "attributes": {},
+   "context": null
+  },
+  {
+   "kind": "histogram",
+   "name": "duration",
+   "unit": "ms",
+   "boundaries": [
+    1,
+    10
+   ],
+   "value": 5,
+   "attributes": {
+    "method": "read"
+   },
+   "context": null
+  },
+  {
+   "kind": "histogram",
+   "name": "duration",
+   "boundaries": [
+    1,
+    10
+   ],
+   "value": 7,
+   "attributes": {
+    "m": 1
+   },
+   "context": {
+    "kiana-memory-scope": "00000000-0000-4000-8000-000000000000",
+    "kiana-memory-span": "8",
+    "kiana-memory-trace": "00000000-0000-4000-8000-000000000000:8"
+   }
+  }
+ ],
+ "findTraces": {
+  "default": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:6",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:6",
+       "traceId": "00000000-0000-4000-8000-000000000000:6",
+       "name": "late-root",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:7",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:7",
+       "traceId": "00000000-0000-4000-8000-000000000000:7",
+       "name": "linker",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:8",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:8",
+       "traceId": "00000000-0000-4000-8000-000000000000:8",
+       "name": "exemplar",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:4",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:4",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "other-root",
+       "startedMs": 20001,
+       "endedMs": 20003,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:5",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "parentId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "nested",
+       "startedMs": 20001,
+       "endedMs": 20001,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:1",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:1",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "root",
+       "startedMs": 20000,
+       "endedMs": 20015,
+       "attributes": {
+        "2": 2,
+        "b": 1,
+        "a": 3,
+        "listed": [
+         "x"
+        ],
+        "flag": true,
+        "extra": 1.5
+       },
+       "events": [
+        {
+         "name": "evt",
+         "timeMs": 5,
+         "attributes": {
+          "10": 1,
+          "z": 2
+         }
+        }
+       ],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:2",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "child",
+       "startedMs": 20000,
+       "endedMs": 20002,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "error",
+        "error": {
+         "name": "Expected",
+         "message": "boom"
+        }
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:3",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "second-child",
+       "startedMs": 20000,
+       "endedMs": 20000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "errors": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:1",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:1",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "root",
+       "startedMs": 20000,
+       "endedMs": 20015,
+       "attributes": {
+        "2": 2,
+        "b": 1,
+        "a": 3,
+        "listed": [
+         "x"
+        ],
+        "flag": true,
+        "extra": 1.5
+       },
+       "events": [
+        {
+         "name": "evt",
+         "timeMs": 5,
+         "attributes": {
+          "10": 1,
+          "z": 2
+         }
+        }
+       ],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:2",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "child",
+       "startedMs": 20000,
+       "endedMs": 20002,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "error",
+        "error": {
+         "name": "Expected",
+         "message": "boom"
+        }
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:3",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "second-child",
+       "startedMs": 20000,
+       "endedMs": 20000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "attributes": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:1",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:1",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "root",
+       "startedMs": 20000,
+       "endedMs": 20015,
+       "attributes": {
+        "2": 2,
+        "b": 1,
+        "a": 3,
+        "listed": [
+         "x"
+        ],
+        "flag": true,
+        "extra": 1.5
+       },
+       "events": [
+        {
+         "name": "evt",
+         "timeMs": 5,
+         "attributes": {
+          "10": 1,
+          "z": 2
+         }
+        }
+       ],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:2",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "child",
+       "startedMs": 20000,
+       "endedMs": 20002,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "error",
+        "error": {
+         "name": "Expected",
+         "message": "boom"
+        }
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:3",
+       "traceId": "00000000-0000-4000-8000-000000000000:1",
+       "parentId": "00000000-0000-4000-8000-000000000000:1",
+       "name": "second-child",
+       "startedMs": 20000,
+       "endedMs": 20000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "name": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:4",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:4",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "other-root",
+       "startedMs": 20001,
+       "endedMs": 20003,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:5",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "parentId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "nested",
+       "startedMs": 20001,
+       "endedMs": 20001,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "startMin": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:6",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:6",
+       "traceId": "00000000-0000-4000-8000-000000000000:6",
+       "name": "late-root",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:7",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:7",
+       "traceId": "00000000-0000-4000-8000-000000000000:7",
+       "name": "linker",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:8",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:8",
+       "traceId": "00000000-0000-4000-8000-000000000000:8",
+       "name": "exemplar",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:4",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:4",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "other-root",
+       "startedMs": 20001,
+       "endedMs": 20003,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      },
+      {
+       "id": "00000000-0000-4000-8000-000000000000:5",
+       "traceId": "00000000-0000-4000-8000-000000000000:4",
+       "parentId": "00000000-0000-4000-8000-000000000000:4",
+       "name": "nested",
+       "startedMs": 20001,
+       "endedMs": 20001,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "limit2": {
+   "traces": [
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:6",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:6",
+       "traceId": "00000000-0000-4000-8000-000000000000:6",
+       "name": "late-root",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    },
+    {
+     "traceId": "00000000-0000-4000-8000-000000000000:7",
+     "spans": [
+      {
+       "id": "00000000-0000-4000-8000-000000000000:7",
+       "traceId": "00000000-0000-4000-8000-000000000000:7",
+       "name": "linker",
+       "startedMs": 30000,
+       "endedMs": 30000,
+       "attributes": {},
+       "events": [],
+       "links": [],
+       "status": {
+        "status": "ok"
+       }
+      }
+     ]
+    }
+   ],
+   "cursor": "[30000,\"00000000-0000-4000-8000-000000000000:7\"]"
+  },
+  "limit2page2": {
+   "traces": [
+    {
+     "spans": [
+      {
+       "name": "exemplar"
+      }
+     ]
+    },
+    {
+     "spans": [
+      {
+       "name": "other-root"
+      }
+     ]
+    }
+   ],
+   "cursor": "[20001,\"00000000-0000-4000-8000-000000000000:4\"]"
+  }
+ },
+ "findMetrics": {
+  "calls": [
+   {
+    "intervalMs": 30000,
+    "name": "calls",
+    "kind": "counter",
+    "unit": "1",
+    "attributes": {
+     "10": 9,
+     "b": 1,
+     "a": "x"
+    },
+    "count": 1,
+    "sum": 2,
+    "min": 2,
+    "max": 2
+   }
+  ],
+  "callsAttr": [
+   {
+    "intervalMs": 30000,
+    "name": "calls",
+    "kind": "counter",
+    "unit": "1",
+    "attributes": {
+     "10": 9,
+     "b": 1,
+     "a": "x"
+    },
+    "count": 1,
+    "sum": 2,
+    "min": 2,
+    "max": 2
+   }
+  ],
+  "window": []
+ },
+ "scope": "00000000-0000-4000-8000-000000000000"
+}

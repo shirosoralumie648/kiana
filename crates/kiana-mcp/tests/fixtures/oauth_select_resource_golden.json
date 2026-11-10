@@ -1,0 +1,124 @@
+[
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": null,
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": true,
+      "value": null
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": {
+      "resource": "https://x.example/mcp"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": true,
+      "value": "https://x.example/mcp"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": {
+      "resource": "https://x.example/mcp/"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": true,
+      "value": "https://x.example/mcp/"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": {
+      "resource": "https://x.example"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": true,
+      "value": "https://x.example"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": {
+      "resource": "https://x.example/mcp/deeper"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": false,
+      "name": "Error",
+      "message": "Protected resource https://x.example/mcp/deeper does not match MCP server https://x.example/mcp"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp",
+    "metadata": {
+      "resource": "https://y.example/other"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": false,
+      "name": "Error",
+      "message": "Protected resource https://y.example/other does not match MCP server https://x.example/mcp"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcpx",
+    "metadata": {
+      "resource": "https://x.example/mcp"
+    },
+    "requested": "https://x.example/mcpx",
+    "result": {
+      "ok": false,
+      "name": "Error",
+      "message": "Protected resource https://x.example/mcp does not match MCP server https://x.example/mcpx"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp#frag",
+    "metadata": {
+      "resource": "https://x.example/mcp"
+    },
+    "requested": "https://x.example/mcp",
+    "result": {
+      "ok": true,
+      "value": "https://x.example/mcp"
+    }
+  },
+  {
+    "serverUrl": "https://x.example/mcp?x=1",
+    "metadata": {
+      "resource": "https://x.example/mcp"
+    },
+    "requested": "https://x.example/mcp?x=1",
+    "result": {
+      "ok": true,
+      "value": "https://x.example/mcp"
+    }
+  },
+  {
+    "serverUrl": "http://127.0.0.1:8080/mcp",
+    "metadata": {
+      "resource": "http://127.0.0.1:8080/mcp"
+    },
+    "requested": "http://127.0.0.1:8080/mcp",
+    "result": {
+      "ok": true,
+      "value": "http://127.0.0.1:8080/mcp"
+    }
+  },
+  {
+    "serverUrl": "https://x.example",
+    "metadata": {
+      "resource": "https://x.example"
+    },
+    "requested": "https://x.example/",
+    "result": {
+      "ok": true,
+      "value": "https://x.example"
+    }
+  }
+]

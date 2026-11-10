@@ -1,0 +1,1052 @@
+[
+ {
+  "input": "https://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo.git",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo.git",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "http://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "http://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "ssh://git@github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "ssh://git@github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https:////github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo@v1.0.0",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo#v1.0.0",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#v1.0.0",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree/main",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree/main",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://gitlab.com/group/sub/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/group/sub/repo",
+   "host": "gitlab.com",
+   "path": "group/sub/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gitlab.com/group/sub/repo@v1",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/group/sub/repo",
+   "host": "gitlab.com",
+   "path": "group/sub/repo",
+   "ref": "v1",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://bitbucket.org/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://bitbucket.org/user/repo",
+   "host": "bitbucket.org",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gist.github.com/user/abc123",
+  "result": {
+   "type": "git",
+   "repo": "https://gist.github.com/user/abc123",
+   "host": "gist.github.com",
+   "path": "user/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gist.github.com/abc123",
+  "result": {
+   "type": "git",
+   "repo": "https://gist.github.com/abc123",
+   "host": "gist.github.com",
+   "path": "null/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://git.sr.ht/~user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://git.sr.ht/~user/repo",
+   "host": "git.sr.ht",
+   "path": "~user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git@github.com:user/repo",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git@github.com:user/repo@v1.0.0",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:github.com/user/repo@v1.0.0",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:github.com/user/repo#v1.0.0",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#v1.0.0",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:gitlab.com/group/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/group/repo",
+   "host": "gitlab.com",
+   "path": "group/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:bitbucket.org/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://bitbucket.org/user/repo",
+   "host": "bitbucket.org",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:gist.github.com/abc123",
+  "result": {
+   "type": "git",
+   "repo": "https://gist.github.com/abc123",
+   "host": "github.com",
+   "path": "gist.github.com/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git@gitlab.com:group/sub/repo",
+  "result": {
+   "type": "git",
+   "repo": "git@gitlab.com:group/sub/repo",
+   "host": "gitlab.com",
+   "path": "group/sub/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git@github.com:user/repo",
+  "result": null
+ },
+ {
+  "input": "github.com/user/repo",
+  "result": null
+ },
+ {
+  "input": "user/repo",
+  "result": null
+ },
+ {
+  "input": "https://evil.example/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://evil.example/user/repo",
+   "host": "evil.example",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://evil.example/user/repo@v1",
+  "result": {
+   "type": "git",
+   "repo": "https://evil.example/user/repo",
+   "host": "evil.example",
+   "path": "user/repo",
+   "ref": "v1",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:evil.example/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://evil.example/user/repo",
+   "host": "evil.example",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:evil.example:user/repo",
+  "result": null
+ },
+ {
+  "input": "git:localhost/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://localhost/user/repo",
+   "host": "localhost",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git@evil.example:../../victim/repo",
+  "result": null
+ },
+ {
+  "input": "https://evil.example/..%2F..%2Fvictim/repo",
+  "result": null
+ },
+ {
+  "input": "https://evil.example/..%2F..%2Fvictim/repo%",
+  "result": null
+ },
+ {
+  "input": "git:git@evil.example:/absolute/repo",
+  "result": null
+ },
+ {
+  "input": "git:git@evil.example:user\\repo/name",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/repo/",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo@",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo@",
+   "host": "github.com",
+   "path": "user/repo@",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo@a@b",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "a@b",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://www.github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://www.github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git+https://github.com/user/repo",
+  "result": null
+ },
+ {
+  "input": "git+ssh://git@github.com/user/repo",
+  "result": null
+ },
+ {
+  "input": "https://github.com/User/Repo.GIT",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/User/Repo.GIT",
+   "host": "github.com",
+   "path": "User/Repo.GIT",
+   "pinned": false
+  }
+ },
+ {
+  "input": "HTTPS://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://HTTPS://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "ssh://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "ssh://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "  https://github.com/user/repo  ",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:  git@github.com:user/repo  ",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo.git#main",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo.git#main",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/raw/main/file",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/raw/main/file",
+   "host": "github.com",
+   "path": "user/repo/raw/main/file",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/blob/main/x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/blob/main/x",
+   "host": "github.com",
+   "path": "user/repo/blob/main/x",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gitlab.com/user/repo/-/tree/main",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/user/repo/-/tree/main",
+   "host": "gitlab.com",
+   "path": "user/repo/-/tree/main",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gitlab.com/user/repo/archive.tar.gz",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/user/repo/archive.tar.gz",
+   "host": "gitlab.com",
+   "path": "user/repo/archive.tar.gz",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://bitbucket.org/user/repo/get/main.tar.gz",
+  "result": {
+   "type": "git",
+   "repo": "https://bitbucket.org/user/repo/get/main.tar.gz",
+   "host": "bitbucket.org",
+   "path": "user/repo/get/main.tar.gz",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gist.github.com/user/abc123/raw/x",
+  "result": {
+   "type": "git",
+   "repo": "https://gist.github.com/user/abc123/raw/x",
+   "host": "gist.github.com",
+   "path": "user/abc123/raw/x",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo@v1.0.0#frag",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#frag",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "frag#v1.0.0",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:github.com/user/repo@v1.0.0#frag",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0#frag",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:git@github.com:user/repo@v1.0.0#frag",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1.0.0#frag",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com:8443/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com:8443/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user",
+  "result": null
+ },
+ {
+  "input": "https://github.com/",
+  "result": null
+ },
+ {
+  "input": "https://github.com",
+  "result": null
+ },
+ {
+  "input": "git:github.com/user",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user",
+   "host": "github.com",
+   "path": "github.com/user",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "undefined",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree/",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree/",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree/main",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree/main",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/blob/main/x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/blob/main/x",
+   "host": "github.com",
+   "path": "user/repo/blob/main/x",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree/main/sub",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree/main/sub",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:git+https://github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://git+https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git+ssh://git@github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://git+ssh://git@github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:gist:abc123",
+  "result": {
+   "type": "git",
+   "repo": "https://gist:abc123",
+   "host": "gist.github.com",
+   "path": "null/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:gist:user/abc123",
+  "result": {
+   "type": "git",
+   "repo": "https://gist:user/abc123",
+   "host": "gist.github.com",
+   "path": "user/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:sourcehut:~user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://sourcehut:~user/repo",
+   "host": "git.sr.ht",
+   "path": "~user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git.sr.ht/~user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://git.sr.ht/~user/repo",
+   "host": "git.sr.ht",
+   "path": "~user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gist.github.com/abc123/",
+  "result": {
+   "type": "git",
+   "repo": "https://gist.github.com/abc123/",
+   "host": "gist.github.com",
+   "path": "null/abc123",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gist.github.com/",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/",
+   "host": "github.com",
+   "path": "user/",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo.git/",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo.git/",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo@v1/x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1/x",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo%20x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo%20x",
+   "host": "github.com",
+   "path": "user/repo x",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user%2Frepo",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/repo#",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo#main",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#main",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree#x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree#x",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "undefined",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://gitlab.com/group/sub/repo.git",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/group/sub/repo.git",
+   "host": "gitlab.com",
+   "path": "group/sub/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gitlab.com/group/sub/repo/-/blob/main/x",
+  "result": {
+   "type": "git",
+   "repo": "https://gitlab.com/group/sub/repo/-/blob/main/x",
+   "host": "gitlab.com",
+   "path": "group/sub/repo/-/blob/main/x",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://gitlab.com/repo",
+  "result": null
+ },
+ {
+  "input": "https://bitbucket.org/user/repo/src/main",
+  "result": {
+   "type": "git",
+   "repo": "https://bitbucket.org/user/repo/src/main",
+   "host": "bitbucket.org",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://git.sr.ht/~user/repo/archive/main.tar.gz",
+  "result": {
+   "type": "git",
+   "repo": "https://git.sr.ht/~user/repo/archive/main.tar.gz",
+   "host": "git.sr.ht",
+   "path": "~user/repo/archive/main.tar.gz",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:",
+  "result": null
+ },
+ {
+  "input": "git:   ",
+  "result": null
+ },
+ {
+  "input": "",
+  "result": null
+ },
+ {
+  "input": "  ",
+  "result": null
+ },
+ {
+  "input": "ssh://git@gitlab.com:2222/group/repo",
+  "result": {
+   "type": "git",
+   "repo": "ssh://git@gitlab.com:2222/group/repo",
+   "host": "gitlab.com",
+   "path": "group/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://user:pass@github.com/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://user:pass@github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git@gitlab.com:group/sub/repo.git",
+  "result": null
+ },
+ {
+  "input": "git:git@bitbucket.org:user/repo.git",
+  "result": {
+   "type": "git",
+   "repo": "git@bitbucket.org:user/repo.git",
+   "host": "bitbucket.org",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo/tree/main/sub/dir",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo/tree/main/sub/dir",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "main",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com/user/repo%2F.git",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo%2F.git",
+   "host": "github.com",
+   "path": "user/repo/",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:github.com/user/repo.git@v1",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo.git",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "v1",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:git@github.com:user/repo.git",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo.git",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/a-b_c/repo.name",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/a-b_c/repo.name",
+   "host": "github.com",
+   "path": "a-b_c/repo.name",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/a.b/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/a.b/repo",
+   "host": "github.com",
+   "path": "a.b/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:192.168.1.1/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://192.168.1.1/user/repo",
+   "host": "192.168.1.1",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://192.168.1.1/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://192.168.1.1/user/repo",
+   "host": "192.168.1.1",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://[::1]/user/repo",
+  "result": {
+   "type": "git",
+   "repo": "https://[::1]/user/repo",
+   "host": "[::1]",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:[::1]/user/repo",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/repo?x=1",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo?x=1",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "https://github.com/user/repo#a@b",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo#a@b",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "a@b",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:git@github.com:user/repo@",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/repo@",
+   "host": "github.com",
+   "path": "user/repo@",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:git@github.com:user/@v1",
+  "result": {
+   "type": "git",
+   "repo": "git@github.com:user/",
+   "host": "github.com",
+   "path": "user/",
+   "ref": "v1",
+   "pinned": true
+  }
+ },
+ {
+  "input": "git:github.com/@v1",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/repo@/x",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "ref": "/x",
+   "pinned": true
+  }
+ },
+ {
+  "input": "https://github.com//repo",
+  "result": null
+ },
+ {
+  "input": "git:github.com//repo",
+  "result": null
+ },
+ {
+  "input": "git:git@github.com:/repo",
+  "result": null
+ },
+ {
+  "input": "git:git@github.com:.",
+  "result": null
+ },
+ {
+  "input": "git:git@github.com:..",
+  "result": null
+ },
+ {
+  "input": "https://github.com/../repo",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/..",
+  "result": null
+ },
+ {
+  "input": "https://github.com/user/./repo",
+  "result": {
+   "type": "git",
+   "repo": "https://github.com/user/./repo",
+   "host": "github.com",
+   "path": "user/repo",
+   "pinned": false
+  }
+ },
+ {
+  "input": "git:github.com/..",
+  "result": null
+ },
+ {
+  "input": "git:github.com/../repo",
+  "result": null
+ },
+ {
+  "input": "git:github.com/user/../repo",
+  "result": null
+ }
+]

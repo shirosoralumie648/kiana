@@ -1,0 +1,468 @@
+[
+  {
+    "name": "crlf-comments-ids-multiline",
+    "maxEventBytes": null,
+    "chunks": [
+      "OiBrZWVwYWxpdmUNCmlkOiA3DQpkYXRhOiB7Im9uZSI6DQo=",
+      "ZGF0YTogMX0NCg0K"
+    ],
+    "events": [
+      {
+        "data": "{\"one\":\n1}",
+        "id": "7"
+      }
+    ],
+    "ids": [
+      "7"
+    ],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "id-without-data-then-data",
+    "maxEventBytes": null,
+    "chunks": [
+      "aWQ6IGEKCg==",
+      "aWQ6IGIKZGF0YTogeAoK"
+    ],
+    "events": [
+      {
+        "data": "x",
+        "id": "b"
+      }
+    ],
+    "ids": [
+      "a",
+      "b"
+    ],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "empty-id",
+    "maxEventBytes": null,
+    "chunks": [
+      "aWQ6IApkYXRhOiB4Cgo="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [
+      ""
+    ],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "nul-id",
+    "maxEventBytes": null,
+    "chunks": [
+      "aWQ6IGEAYgpkYXRhOiB4Cgo="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-non-numeric",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6IDF4CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-plus",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6ICs1CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-decimal",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6IDUuMApkYXRhOiB4Cgo="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-leading-space-value",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6ICA1CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-negative",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6IC01CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "retry-leading-zeros",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6IDAwNwpkYXRhOiB4Cgo="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [
+      7
+    ],
+    "error": null
+  },
+  {
+    "name": "retry-huge",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6IDk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTkKZGF0YTogeAoK"
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [
+      "Infinity"
+    ],
+    "error": null
+  },
+  {
+    "name": "retry-empty",
+    "maxEventBytes": null,
+    "chunks": [
+      "cmV0cnk6CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "data-without-colon",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YQoK"
+    ],
+    "events": [
+      {
+        "data": ""
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "custom-event",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZXZlbnQ6IGN1c3RvbQpkYXRhOiB4Cgo="
+    ],
+    "events": [
+      {
+        "event": "custom",
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "event-empty",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZXZlbnQ6CmRhdGE6IHgKCg=="
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "eof-flush",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogeQ=="
+    ],
+    "events": [
+      {
+        "data": "y"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "comment-only",
+    "maxEventBytes": null,
+    "chunks": [
+      "OiBoaQoK"
+    ],
+    "events": [],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "id-cleared-after-dispatch",
+    "maxEventBytes": null,
+    "chunks": [
+      "aWQ6IGEKZGF0YTogMQoK",
+      "ZGF0YTogMgoK"
+    ],
+    "events": [
+      {
+        "data": "1",
+        "id": "a"
+      },
+      {
+        "data": "2"
+      }
+    ],
+    "ids": [
+      "a"
+    ],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "multi-space-after-colon",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogIHR3byBzcGFjZXMKCg=="
+    ],
+    "events": [
+      {
+        "data": " two spaces"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "tab-after-colon",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YToJdGFiCgo="
+    ],
+    "events": [
+      {
+        "data": "\ttab"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "bare-cr-lines",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogYQ1kYXRhOiBiDQ0="
+    ],
+    "events": [
+      {
+        "data": "a\rdata: b\r"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "double-cr",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogYQ0NCg0K"
+    ],
+    "events": [
+      {
+        "data": "a\r"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "unknown-field",
+    "maxEventBytes": null,
+    "chunks": [
+      "Zm9vOiBiYXIKZGF0YTogeAoK"
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "utf8-split-across-chunks",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogY2Fmw6kg5LitCgo="
+    ],
+    "events": [
+      {
+        "data": "café 中"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "field-with-empty-value-retry",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YToKCg=="
+    ],
+    "events": [
+      {
+        "data": ""
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "leading-bom",
+    "maxEventBytes": null,
+    "chunks": [
+      "77u/ZGF0YTogeAoK"
+    ],
+    "events": [
+      {
+        "data": "x"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "crlf-only-lines",
+    "maxEventBytes": null,
+    "chunks": [
+      "DQoNCg=="
+    ],
+    "events": [],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "no-trailing-newline-multi",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogYQpkYXRhOiBi"
+    ],
+    "events": [
+      {
+        "data": "a\nb"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "split-multibyte",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTogY2Fmww==",
+      "qQoK"
+    ],
+    "events": [
+      {
+        "data": "café"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  },
+  {
+    "name": "invalid-utf8",
+    "maxEventBytes": null,
+    "chunks": [
+      "ZGF0YTog/woK"
+    ],
+    "events": [
+      {
+        "data": "�"
+      }
+    ],
+    "ids": [],
+    "retries": [],
+    "error": null
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "basic decisions",
+    "entries": [
+      [
+        "/tmp/z",
+        true
+      ],
+      [
+        "/tmp/a",
+        false
+      ],
+      [
+        "/tmp/m",
+        null
+      ]
+    ],
+    "expected": "{\n  \"/tmp/a\": false,\n  \"/tmp/m\": null,\n  \"/tmp/z\": true\n}\n"
+  },
+  {
+    "name": "utf-16 code unit order (astral before bmp fullwidth)",
+    "entries": [
+      [
+        "/tmp/～",
+        true
+      ],
+      [
+        "/tmp/😀",
+        false
+      ]
+    ],
+    "expected": "{\n  \"/tmp/😀\": false,\n  \"/tmp/～\": true\n}\n"
+  },
+  {
+    "name": "empty",
+    "entries": [],
+    "expected": "{}\n"
+  }
+]

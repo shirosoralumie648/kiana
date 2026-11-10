@@ -1,0 +1,6 @@
+# 使用 stable 通道而不是写死版本号：rustup 对 "1.99.1" 会当成独立 toolchain 并尝试重新下载，
+# 本机默认源（static.rust-lang.org）不通。版本下限由 workspace 的 rust-version = "1.97" 保证。
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy", "rust-analyzer"]
+profile = "default"

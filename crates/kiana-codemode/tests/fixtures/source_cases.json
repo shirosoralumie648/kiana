@@ -1,0 +1,381 @@
+[
+ {
+  "input": "",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "Expected JavaScript source text (non-empty). Provide JS only, optionally with a first line `// @options: {\"max_output_tokens\": 1000}`."
+ },
+ {
+  "input": " ",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "Expected JavaScript source text (non-empty). Provide JS only, optionally with a first line `// @options: {\"max_output_tokens\": 1000}`."
+ },
+ {
+  "input": "\t\n\r\n ",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "Expected JavaScript source text (non-empty). Provide JS only, optionally with a first line `// @options: {\"max_output_tokens\": 1000}`."
+ },
+ {
+  "input": " ",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "Expected JavaScript source text (non-empty). Provide JS only, optionally with a first line `// @options: {\"max_output_tokens\": 1000}`."
+ },
+ {
+  "input": "﻿",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "Expected JavaScript source text (non-empty). Provide JS only, optionally with a first line `// @options: {\"max_output_tokens\": 1000}`."
+ },
+ {
+  "input": "",
+  "ok": true,
+  "code": "",
+  "options": {}
+ },
+ {
+  "input": "x",
+  "ok": true,
+  "code": "x",
+  "options": {}
+ },
+ {
+  "input": "// @options: {}",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "// @options:{}\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "// @options: {}\n\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "// @options:\ncode",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": "// @options:   \ncode",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\": 1}\r\ncode",
+  "ok": true,
+  "code": "\ncode",
+  "options": {
+   "timeoutMs": 1
+  }
+ },
+ {
+  "input": "// @options: {\"timeout_ms\": 1}\rcode",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":1,\"max_output_tokens\":2}",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":0}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 0
+  }
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":1.0}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 1
+  }
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":1e3}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 1000
+  }
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":1e400}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":true}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":\"1\"}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":null}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":null}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":-1}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":2147483647}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "timeoutMs": 2147483647
+  }
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":2147483648}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":1.5}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":1e400}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options:  {\"timeout_ms\": 1}  \nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "timeoutMs": 1
+  }
+ },
+ {
+  "input": "　// @options: {}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {}
+ },
+ {
+  "input": "// @options: {}\r\n\r\nx",
+  "ok": true,
+  "code": "\n\r\nx",
+  "options": {}
+ },
+ {
+  "input": "a\n// @options: {}\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The // @options: line must be the first line of the input; found one on line 2"
+ },
+ {
+  "input": "a\n \t// @options:{}\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The // @options: line must be the first line of the input; found one on line 2"
+ },
+ {
+  "input": "// @options: {}\n// @options: {}\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The // @options: line must be the first line of the input; found one on line 2"
+ },
+ {
+  "input": "//@options: {}\nx",
+  "ok": true,
+  "code": "//@options: {}\nx",
+  "options": {}
+ },
+ {
+  "input": "// @options: {} x",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "text(1)\n",
+  "ok": true,
+  "code": "text(1)\n",
+  "options": {}
+ },
+ {
+  "input": "text(1)\r\n",
+  "ok": true,
+  "code": "text(1)\r\n",
+  "options": {}
+ },
+ {
+  "input": "// @options: {\"1\":1,\"b\":2}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options only supports `max_output_tokens` and `timeout_ms`; got `1`"
+ },
+ {
+  "input": "// @options: {\"b\":1,\"1\":2}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options only supports `max_output_tokens` and `timeout_ms`; got `1`"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":-0}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":-0}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 0
+  }
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":0,\"timeout_ms\":1}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 0,
+   "timeoutMs": 1
+  }
+ },
+ {
+  "input": "// @options: {\"yield\":1,\"timeout_ms\":0}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options only supports `max_output_tokens` and `timeout_ms`; got `yield`"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":1,\"yield\":1}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options only supports `max_output_tokens` and `timeout_ms`; got `yield`"
+ },
+ {
+  "input": "// @options: {}\n﻿",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The @options line must be followed by JavaScript source on subsequent lines"
+ },
+ {
+  "input": "﻿// @options: {}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {}
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":9007199254740991}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {
+   "maxOutputTokens": 9007199254740991
+  }
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":9007199254740992}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"timeout_ms\":\"1\"}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `timeout_ms` must be a positive integer up to 2147483647"
+ },
+ {
+  "input": "// @options: 1\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": "// @options: true\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": "// @options: \"s\"\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":[]}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: {\"max_output_tokens\":{}}\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options field `max_output_tokens` must be a non-negative safe integer"
+ },
+ {
+  "input": "// @options: [\"a\"]\nx",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "@options must be a JSON object with supported fields `max_output_tokens` and `timeout_ms`"
+ },
+ {
+  "input": " // @options: {}\nx",
+  "ok": true,
+  "code": "\nx",
+  "options": {}
+ },
+ {
+  "input": "\t// @options: {}\ncode",
+  "ok": true,
+  "code": "\ncode",
+  "options": {}
+ },
+ {
+  "input": "// @options: {}\n  \ncode",
+  "ok": true,
+  "code": "\n  \ncode",
+  "options": {}
+ },
+ {
+  "input": "code\n\n// @options: {}\n",
+  "ok": false,
+  "name": "CodemodeSourceError",
+  "message": "The // @options: line must be the first line of the input; found one on line 3"
+ }
+]

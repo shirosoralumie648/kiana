@@ -1,0 +1,1269 @@
+{
+ "note": "expected = JSON.stringify(input) (quotes included). JS never escapes U+2028/U+2029 and never \\/ escapes.",
+ "cases": [
+  {
+   "input": "",
+   "expected": "\"\""
+  },
+  {
+   "input": "a",
+   "expected": "\"a\""
+  },
+  {
+   "input": "a\"b",
+   "expected": "\"a\\\"b\""
+  },
+  {
+   "input": "a\\b",
+   "expected": "\"a\\\\b\""
+  },
+  {
+   "input": "\b\f\n\r\t",
+   "expected": "\"\\b\\f\\n\\r\\t\""
+  },
+  {
+   "input": "\u0000\u0001\u001f",
+   "expected": "\"\\u0000\\u0001\\u001f\""
+  },
+  {
+   "input": "",
+   "expected": "\"\""
+  },
+  {
+   "input": "é",
+   "expected": "\"é\""
+  },
+  {
+   "input": "😀",
+   "expected": "\"😀\""
+  },
+  {
+   "input": "  ",
+   "expected": "\"  \""
+  },
+  {
+   "input": " ",
+   "expected": "\" \""
+  },
+  {
+   "input": "",
+   "expected": "\"\""
+  },
+  {
+   "input": "a/b",
+   "expected": "\"a/b\""
+  },
+  {
+   "input": "</script>",
+   "expected": "\"</script>\""
+  },
+  {
+   "input": "\u001b[31m",
+   "expected": "\"\\u001b[31m\""
+  },
+  {
+   "input": "line1\nline2",
+   "expected": "\"line1\\nline2\""
+  },
+  {
+   "input": "\\\"",
+   "expected": "\"\\\\\\\"\""
+  },
+  {
+   "input": "\"\"",
+   "expected": "\"\\\"\\\"\""
+  },
+  {
+   "input": "\\\\",
+   "expected": "\"\\\\\\\\\""
+  },
+  {
+   "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\u0001",
+   "expected": "\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\u0001\""
+  },
+  {
+   "input": "a \"{a\taé",
+   "expected": "\"a \\\"{a\\taé\""
+  },
+  {
+   "input": "é0\u0001}Za\u0001\n }Z",
+   "expected": "\"é0\\u0001}Za\\u0001\\n }Z\""
+  },
+  {
+   "input": "/\t\né/\\",
+   "expected": "\"/\\t\\né/\\\\\""
+  },
+  {
+   "input": "\n 😀  [",
+   "expected": "\"\\n 😀  [\""
+  },
+  {
+   "input": "  \ra[ Z",
+   "expected": "\"  \\ra[ Z\""
+  },
+  {
+   "input": "\t\"[ \\  ",
+   "expected": "\"\\t\\\"[ \\\\  \""
+  },
+  {
+   "input": "\r \t",
+   "expected": "\"\\r \\t\""
+  },
+  {
+   "input": "\t\u001f }Z\n\t \\ \t",
+   "expected": "\"\\t\\u001f }Z\\n\\t \\\\ \\t\""
+  },
+  {
+   "input": "😀 ",
+   "expected": "\"😀 \""
+  },
+  {
+   "input": "[0[",
+   "expected": "\"[0[\""
+  },
+  {
+   "input": "Z/\\\u001f{\n ]\t/ ",
+   "expected": "\"Z/\\\\\\u001f{\\n ]\\t/ \""
+  },
+  {
+   "input": "\r0[\u001f{a\u0001/\u0001 [",
+   "expected": "\"\\r0[\\u001f{a\\u0001/\\u0001 [\""
+  },
+  {
+   "input": "\u0001\"é  \"[ \t é",
+   "expected": "\"\\u0001\\\"é  \\\"[ \\t é\""
+  },
+  {
+   "input": "é ",
+   "expected": "\"é \""
+  },
+  {
+   "input": "\\}\t",
+   "expected": "\"\\\\}\\t\""
+  },
+  {
+   "input": "\ra\\😀\\\n[😀\t\"",
+   "expected": "\"\\ra\\\\😀\\\\\\n[😀\\t\\\"\""
+  },
+  {
+   "input": "[aZ\u001fZ\"{",
+   "expected": "\"[aZ\\u001fZ\\\"{\""
+  },
+  {
+   "input": " a[]Z}é\"\u0001\u001f\t",
+   "expected": "\" a[]Z}é\\\"\\u0001\\u001f\\t\""
+  },
+  {
+   "input": "\t] ",
+   "expected": "\"\\t] \""
+  },
+  {
+   "input": " 0{/[ \t",
+   "expected": "\" 0{/[ \\t\""
+  },
+  {
+   "input": "\u00010{",
+   "expected": "\"\\u00010{\""
+  },
+  {
+   "input": " } ",
+   "expected": "\" } \""
+  },
+  {
+   "input": "[\"{0{\n[0 😀\r",
+   "expected": "\"[\\\"{0{\\n[0 😀\\r\""
+  },
+  {
+   "input": "\\0\r\n\\/\u0001😀\r/ ",
+   "expected": "\"\\\\0\\r\\n\\\\/\\u0001😀\\r/ \""
+  },
+  {
+   "input": " }{",
+   "expected": "\" }{\""
+  },
+  {
+   "input": "{😀 ",
+   "expected": "\"{😀 \""
+  },
+  {
+   "input": "😀",
+   "expected": "\"😀\""
+  },
+  {
+   "input": "{😀[",
+   "expected": "\"{😀[\""
+  },
+  {
+   "input": "\u0001 é",
+   "expected": "\"\\u0001 é\""
+  },
+  {
+   "input": "\r\u001f\u0001 {}  \\😀[",
+   "expected": "\"\\r\\u001f\\u0001 {}  \\\\😀[\""
+  },
+  {
+   "input": "  Z é \t😀Z\n ",
+   "expected": "\"  Z é \\t😀Z\\n \""
+  },
+  {
+   "input": "  Z/\\a[",
+   "expected": "\"  Z/\\\\a[\""
+  },
+  {
+   "input": " \u001f{",
+   "expected": "\" \\u001f{\""
+  },
+  {
+   "input": " \u001f\u0001aé\"\r",
+   "expected": "\" \\u001f\\u0001aé\\\"\\r\""
+  },
+  {
+   "input": "é\u001f{]\ta\t/\u0001\"\u0001",
+   "expected": "\"é\\u001f{]\\ta\\t/\\u0001\\\"\\u0001\""
+  },
+  {
+   "input": "é]\\aZa\r",
+   "expected": "\"é]\\\\aZa\\r\""
+  },
+  {
+   "input": "Za\t\nZ Z",
+   "expected": "\"Za\\t\\nZ Z\""
+  },
+  {
+   "input": "\r \u0001",
+   "expected": "\"\\r \\u0001\""
+  },
+  {
+   "input": "é {a \n] }[",
+   "expected": "\"é {a \\n] }[\""
+  },
+  {
+   "input": "\t\"Z\u001f  \r",
+   "expected": "\"\\t\\\"Z\\u001f  \\r\""
+  },
+  {
+   "input": " \nZ",
+   "expected": "\" \\nZ\""
+  },
+  {
+   "input": "  \r",
+   "expected": "\"  \\r\""
+  },
+  {
+   "input": "\u0001\u001f\t0\u0001 [",
+   "expected": "\"\\u0001\\u001f\\t0\\u0001 [\""
+  },
+  {
+   "input": "a \t \\\n\\}",
+   "expected": "\"a \\t \\\\\\n\\\\}\""
+  },
+  {
+   "input": "Z0 ",
+   "expected": "\"Z0 \""
+  },
+  {
+   "input": " ]\ta[😀{",
+   "expected": "\" ]\\ta[😀{\""
+  },
+  {
+   "input": "[ {",
+   "expected": "\"[ {\""
+  },
+  {
+   "input": "\t//\u0001} ",
+   "expected": "\"\\t//\\u0001} \""
+  },
+  {
+   "input": "Z}",
+   "expected": "\"Z}\""
+  },
+  {
+   "input": "]\\\né \u0001",
+   "expected": "\"]\\\\\\né \\u0001\""
+  },
+  {
+   "input": "Za\u0001}😀\u0001",
+   "expected": "\"Za\\u0001}😀\\u0001\""
+  },
+  {
+   "input": " }\u0001\"\t\n[ é  ",
+   "expected": "\" }\\u0001\\\"\\t\\n[ é  \""
+  },
+  {
+   "input": "\"\u0001}\t 😀\\\u001f{",
+   "expected": "\"\\\"\\u0001}\\t 😀\\\\\\u001f{\""
+  },
+  {
+   "input": "Z\n",
+   "expected": "\"Z\\n\""
+  },
+  {
+   "input": "[\u001fZ/\\a ",
+   "expected": "\"[\\u001fZ/\\\\a \""
+  },
+  {
+   "input": " }Z]{]{/a\r",
+   "expected": "\" }Z]{]{/a\\r\""
+  },
+  {
+   "input": "\\a\u0001\u001f\n\t",
+   "expected": "\"\\\\a\\u0001\\u001f\\n\\t\""
+  },
+  {
+   "input": "{]é\né\u001f[/\r][",
+   "expected": "\"{]é\\né\\u001f[/\\r][\""
+  },
+  {
+   "input": "{ \n\t\u001f\u0001😀Z\"Z",
+   "expected": "\"{ \\n\\t\\u001f\\u0001😀Z\\\"Z\""
+  },
+  {
+   "input": "é \\ [}[",
+   "expected": "\"é \\\\ [}[\""
+  },
+  {
+   "input": "😀Z][\u001f ",
+   "expected": "\"😀Z][\\u001f \""
+  },
+  {
+   "input": " \u001f\r",
+   "expected": "\" \\u001f\\r\""
+  },
+  {
+   "input": "\r\"Z\"\r}Z😀\r]é",
+   "expected": "\"\\r\\\"Z\\\"\\r}Z😀\\r]é\""
+  },
+  {
+   "input": "[}\u0001 [\u001f{  0é",
+   "expected": "\"[}\\u0001 [\\u001f{  0é\""
+  },
+  {
+   "input": "\\a\u0001]\ra\u0001/\\/é",
+   "expected": "\"\\\\a\\u0001]\\ra\\u0001/\\\\/é\""
+  },
+  {
+   "input": "aé",
+   "expected": "\"aé\""
+  },
+  {
+   "input": " 😀 / \"éa /",
+   "expected": "\" 😀 / \\\"éa /\""
+  },
+  {
+   "input": "\r😀\\",
+   "expected": "\"\\r😀\\\\\""
+  },
+  {
+   "input": "é\n \u001f[0[ {}[",
+   "expected": "\"é\\n \\u001f[0[ {}[\""
+  },
+  {
+   "input": "\r0\\\n\r\u001f ",
+   "expected": "\"\\r0\\\\\\n\\r\\u001f \""
+  },
+  {
+   "input": "Za\u0001",
+   "expected": "\"Za\\u0001\""
+  },
+  {
+   "input": "\t\n{] \u001f \u001f\u001fZ",
+   "expected": "\"\\t\\n{] \\u001f \\u001f\\u001fZ\""
+  },
+  {
+   "input": "{]",
+   "expected": "\"{]\""
+  },
+  {
+   "input": "\t } \n ",
+   "expected": "\"\\t } \\n \""
+  },
+  {
+   "input": "Z] ",
+   "expected": "\"Z] \""
+  },
+  {
+   "input": "\n \r \r/\\0",
+   "expected": "\"\\n \\r \\r/\\\\0\""
+  },
+  {
+   "input": "\t \\\u001fZ Z",
+   "expected": "\"\\t \\\\\\u001fZ Z\""
+  },
+  {
+   "input": "[ \u0001]{aé",
+   "expected": "\"[ \\u0001]{aé\""
+  },
+  {
+   "input": "\\\"",
+   "expected": "\"\\\\\\\"\""
+  },
+  {
+   "input": "  é",
+   "expected": "\"  é\""
+  },
+  {
+   "input": "\u00010\u0001",
+   "expected": "\"\\u00010\\u0001\""
+  },
+  {
+   "input": "{😀\\\u001f[a\\",
+   "expected": "\"{😀\\\\\\u001f[a\\\\\""
+  },
+  {
+   "input": "{\n{",
+   "expected": "\"{\\n{\""
+  },
+  {
+   "input": "😀\" \u001fZ",
+   "expected": "\"😀\\\" \\u001fZ\""
+  },
+  {
+   "input": "\u0001\"\r\"[aé",
+   "expected": "\"\\u0001\\\"\\r\\\"[aé\""
+  },
+  {
+   "input": "\\/Z😀{\n\t\"\r] ",
+   "expected": "\"\\\\/Z😀{\\n\\t\\\"\\r] \""
+  },
+  {
+   "input": "\\]é",
+   "expected": "\"\\\\]é\""
+  },
+  {
+   "input": "😀 \n \n[\n[a\\",
+   "expected": "\"😀 \\n \\n[\\n[a\\\\\""
+  },
+  {
+   "input": "\t]{a  \\\nZ é",
+   "expected": "\"\\t]{a  \\\\\\nZ é\""
+  },
+  {
+   "input": "\u0001\"é",
+   "expected": "\"\\u0001\\\"é\""
+  },
+  {
+   "input": "\\ ",
+   "expected": "\"\\\\ \""
+  },
+  {
+   "input": "\r/\r",
+   "expected": "\"\\r/\\r\""
+  },
+  {
+   "input": " /\\ é] ",
+   "expected": "\" /\\\\ é] \""
+  },
+  {
+   "input": " }Z\né}\u0001",
+   "expected": "\" }Z\\né}\\u0001\""
+  },
+  {
+   "input": "[ é",
+   "expected": "\"[ é\""
+  },
+  {
+   "input": "é\"[}\\ \t",
+   "expected": "\"é\\\"[}\\\\ \\t\""
+  },
+  {
+   "input": "{0\u00010 \u001f{/ \n\r",
+   "expected": "\"{0\\u00010 \\u001f{/ \\n\\r\""
+  },
+  {
+   "input": "\u0001\u001f\t",
+   "expected": "\"\\u0001\\u001f\\t\""
+  },
+  {
+   "input": "0\t",
+   "expected": "\"0\\t\""
+  },
+  {
+   "input": "\\\"\\😀\r} ",
+   "expected": "\"\\\\\\\"\\\\😀\\r} \""
+  },
+  {
+   "input": "\\😀   \n{\" ]\r",
+   "expected": "\"\\\\😀   \\n{\\\" ]\\r\""
+  },
+  {
+   "input": " /{ \\]{",
+   "expected": "\" /{ \\\\]{\""
+  },
+  {
+   "input": "é\u001f[",
+   "expected": "\"é\\u001f[\""
+  },
+  {
+   "input": "[ \t/\\   \u0001a\r",
+   "expected": "\"[ \\t/\\\\   \\u0001a\\r\""
+  },
+  {
+   "input": "aZa{\"{",
+   "expected": "\"aZa{\\\"{\""
+  },
+  {
+   "input": "  Z\u001f  \t",
+   "expected": "\"  Z\\u001f  \\t\""
+  },
+  {
+   "input": "{\u001f ",
+   "expected": "\"{\\u001f \""
+  },
+  {
+   "input": "{\n\r\"{]\\",
+   "expected": "\"{\\n\\r\\\"{]\\\\\""
+  },
+  {
+   "input": "\r [ \\\n\u0001",
+   "expected": "\"\\r [ \\\\\\n\\u0001\""
+  },
+  {
+   "input": "\ta Z0 ",
+   "expected": "\"\\ta Z0 \""
+  },
+  {
+   "input": "é😀\r",
+   "expected": "\"é😀\\r\""
+  },
+  {
+   "input": " 0\r0Z\u001f[",
+   "expected": "\" 0\\r0Z\\u001f[\""
+  },
+  {
+   "input": "\t} [ \\",
+   "expected": "\"\\t} [ \\\\\""
+  },
+  {
+   "input": "[}\r😀[a[",
+   "expected": "\"[}\\r😀[a[\""
+  },
+  {
+   "input": "\t\"\t \u0001/{",
+   "expected": "\"\\t\\\"\\t \\u0001/{\""
+  },
+  {
+   "input": "\\ \\\né\n ",
+   "expected": "\"\\\\ \\\\\\né\\n \""
+  },
+  {
+   "input": "/\n{}\r",
+   "expected": "\"/\\n{}\\r\""
+  },
+  {
+   "input": "[]  {/é/ }\t",
+   "expected": "\"[]  {/é/ }\\t\""
+  },
+  {
+   "input": "\\\n0\u00010éa{\"\\",
+   "expected": "\"\\\\\\n0\\u00010éa{\\\"\\\\\""
+  },
+  {
+   "input": "é\" \u001f\r/\u0001",
+   "expected": "\"é\\\" \\u001f\\r/\\u0001\""
+  },
+  {
+   "input": " \u001f\u0001/ 😀 ",
+   "expected": "\" \\u001f\\u0001/ 😀 \""
+  },
+  {
+   "input": "[0[0 0[aZ \u0001",
+   "expected": "\"[0[0 0[aZ \\u0001\""
+  },
+  {
+   "input": "Z\"[]\u0001\u001fé",
+   "expected": "\"Z\\\"[]\\u0001\\u001fé\""
+  },
+  {
+   "input": "\r\"ZaZ}\r",
+   "expected": "\"\\r\\\"ZaZ}\\r\""
+  },
+  {
+   "input": "\\ \\",
+   "expected": "\"\\\\ \\\\\""
+  },
+  {
+   "input": " ]a  \t}Z0\\",
+   "expected": "\" ]a  \\t}Z0\\\\\""
+  },
+  {
+   "input": " ]\\",
+   "expected": "\" ]\\\\\""
+  },
+  {
+   "input": "\t0   a 😀[/Z",
+   "expected": "\"\\t0   a 😀[/Z\""
+  },
+  {
+   "input": "Za{",
+   "expected": "\"Za{\""
+  },
+  {
+   "input": "/{\u001f[  ",
+   "expected": "\"/{\\u001f[  \""
+  },
+  {
+   "input": "\r\n 0\\\"\u0001 \u0001}é",
+   "expected": "\"\\r\\n 0\\\\\\\"\\u0001 \\u0001}é\""
+  },
+  {
+   "input": " \"   ] ",
+   "expected": "\" \\\"   ] \""
+  },
+  {
+   "input": "  [ é\n[ \\}\\",
+   "expected": "\"  [ é\\n[ \\\\}\\\\\""
+  },
+  {
+   "input": "\\a\u0001\"\\}\\0[😀[",
+   "expected": "\"\\\\a\\u0001\\\"\\\\}\\\\0[😀[\""
+  },
+  {
+   "input": " \u001f\u0001",
+   "expected": "\" \\u001f\\u0001\""
+  },
+  {
+   "input": "  \né\u001f\\\u001f }{",
+   "expected": "\"  \\né\\u001f\\\\\\u001f }{\""
+  },
+  {
+   "input": "0\u0001",
+   "expected": "\"0\\u0001\""
+  },
+  {
+   "input": "Z\né0[]é \\ {",
+   "expected": "\"Z\\né0[]é \\\\ {\""
+  },
+  {
+   "input": "\t]é \t\"\\\u001f{\"{",
+   "expected": "\"\\t]é \\t\\\"\\\\\\u001f{\\\"{\""
+  },
+  {
+   "input": "\t} 0é é\"\t é",
+   "expected": "\"\\t} 0é é\\\"\\t é\""
+  },
+  {
+   "input": "\u00010 😀 [\"\r \t",
+   "expected": "\"\\u00010 😀 [\\\"\\r \\t\""
+  },
+  {
+   "input": "\u0001a/}{a \u001f",
+   "expected": "\"\\u0001a/}{a \\u001f\""
+  },
+  {
+   "input": "{\n \u0001}\t [}\r",
+   "expected": "\"{\\n \\u0001}\\t [}\\r\""
+  },
+  {
+   "input": "{/ \u001f[\u001f\\",
+   "expected": "\"{/ \\u001f[\\u001f\\\\\""
+  },
+  {
+   "input": "é/Z0  {a[\n\u0001",
+   "expected": "\"é/Z0  {a[\\n\\u0001\""
+  },
+  {
+   "input": "]\\😀é\"[ é é",
+   "expected": "\"]\\\\😀é\\\"[ é é\""
+  },
+  {
+   "input": "\\😀Z\u001f   ",
+   "expected": "\"\\\\😀Z\\u001f   \""
+  },
+  {
+   "input": " }é}[ \\]\r [",
+   "expected": "\" }é}[ \\\\]\\r [\""
+  },
+  {
+   "input": " \u001f[a\\0é",
+   "expected": "\" \\u001f[a\\\\0é\""
+  },
+  {
+   "input": "[\n[]\n\\",
+   "expected": "\"[\\n[]\\n\\\\\""
+  },
+  {
+   "input": "\\\u001f\r",
+   "expected": "\"\\\\\\u001f\\r\""
+  },
+  {
+   "input": "}\\a\\  ",
+   "expected": "\"}\\\\a\\\\  \""
+  },
+  {
+   "input": "éaZ\"é]Z",
+   "expected": "\"éaZ\\\"é]Z\""
+  },
+  {
+   "input": "{\"é/é]\r😀{  ",
+   "expected": "\"{\\\"é/é]\\r😀{  \""
+  },
+  {
+   "input": " / 😀\\\n\\",
+   "expected": "\" / 😀\\\\\\n\\\\\""
+  },
+  {
+   "input": "   ",
+   "expected": "\"   \""
+  },
+  {
+   "input": "ZaZ",
+   "expected": "\"ZaZ\""
+  },
+  {
+   "input": "\u0001\n\u0001 éa\n /",
+   "expected": "\"\\u0001\\n\\u0001 éa\\n /\""
+  },
+  {
+   "input": " 0[",
+   "expected": "\" 0[\""
+  },
+  {
+   "input": "Z}Z/{/ 0 }{",
+   "expected": "\"Z}Z/{/ 0 }{\""
+  },
+  {
+   "input": " 0 } \"",
+   "expected": "\" 0 } \\\"\""
+  },
+  {
+   "input": "\t\"Z😀\\/\ra\t}[",
+   "expected": "\"\\t\\\"Z😀\\\\/\\ra\\t}[\""
+  },
+  {
+   "input": "{  ]Z} ",
+   "expected": "\"{  ]Z} \""
+  },
+  {
+   "input": "\n\r",
+   "expected": "\"\\n\\r\""
+  },
+  {
+   "input": " \"[a  [",
+   "expected": "\" \\\"[a  [\""
+  },
+  {
+   "input": "Z😀 \n\\\u001f\r0\u00010[",
+   "expected": "\"Z😀 \\n\\\\\\u001f\\r0\\u00010[\""
+  },
+  {
+   "input": "Z]\u0001",
+   "expected": "\"Z]\\u0001\""
+  },
+  {
+   "input": "\t \\\n } \"\"",
+   "expected": "\"\\t \\\\\\n } \\\"\\\"\""
+  },
+  {
+   "input": "é\"\\\n\t \r",
+   "expected": "\"é\\\"\\\\\\n\\t \\r\""
+  },
+  {
+   "input": "Z é]é0 [ Z",
+   "expected": "\"Z é]é0 [ Z\""
+  },
+  {
+   "input": "a\\}\t\" ",
+   "expected": "\"a\\\\}\\t\\\" \""
+  },
+  {
+   "input": "\r]\r\"\t]\t",
+   "expected": "\"\\r]\\r\\\"\\t]\\t\""
+  },
+  {
+   "input": "\r]\\\n\r\"\\",
+   "expected": "\"\\r]\\\\\\n\\r\\\"\\\\\""
+  },
+  {
+   "input": "é {}[ \u00010 \n\t",
+   "expected": "\"é {}[ \\u00010 \\n\\t\""
+  },
+  {
+   "input": "Za 😀 0 ",
+   "expected": "\"Za 😀 0 \""
+  },
+  {
+   "input": " ]\u0001}{ \t\nZ😀Z",
+   "expected": "\" ]\\u0001}{ \\t\\nZ😀Z\""
+  },
+  {
+   "input": "{\" ][/{",
+   "expected": "\"{\\\" ][/{\""
+  },
+  {
+   "input": "{/\\a{\u001fZ0é\u001f[",
+   "expected": "\"{/\\\\a{\\u001fZ0é\\u001f[\""
+  },
+  {
+   "input": "\r {",
+   "expected": "\"\\r {\""
+  },
+  {
+   "input": "é} ",
+   "expected": "\"é} \""
+  },
+  {
+   "input": "\t\u001f\t\n\r/é\n\u0001😀\r",
+   "expected": "\"\\t\\u001f\\t\\n\\r/é\\n\\u0001😀\\r\""
+  },
+  {
+   "input": "{ Z\n  \\]Z😀{",
+   "expected": "\"{ Z\\n  \\\\]Z😀{\""
+  },
+  {
+   "input": " \n\t]{0\\  0\u0001",
+   "expected": "\" \\n\\t]{0\\\\  0\\u0001\""
+  },
+  {
+   "input": "\\😀\u0001\n \n\\",
+   "expected": "\"\\\\😀\\u0001\\n \\n\\\\\""
+  },
+  {
+   "input": "\u00010é \t}{ Z  ",
+   "expected": "\"\\u00010é \\t}{ Z  \""
+  },
+  {
+   "input": "\u0001a{",
+   "expected": "\"\\u0001a{\""
+  },
+  {
+   "input": "é \u0001}{\"é",
+   "expected": "\"é \\u0001}{\\\"é\""
+  },
+  {
+   "input": " \u001f\\",
+   "expected": "\" \\u001f\\\\\""
+  },
+  {
+   "input": "\u001fé\"\t0{ \t/{",
+   "expected": "\"\\u001fé\\\"\\t0{ \\t/{\""
+  },
+  {
+   "input": "\\}\\",
+   "expected": "\"\\\\}\\\\\""
+  },
+  {
+   "input": "é}é {0Za[/Z",
+   "expected": "\"é}é {0Za[/Z\""
+  },
+  {
+   "input": "\t]{/é]\ta\r \t",
+   "expected": "\"\\t]{/é]\\ta\\r \\t\""
+  },
+  {
+   "input": "  é",
+   "expected": "\"  é\""
+  },
+  {
+   "input": "\\😀\r",
+   "expected": "\"\\\\😀\\r\""
+  },
+  {
+   "input": "{ \u0001",
+   "expected": "\"{ \\u0001\""
+  },
+  {
+   "input": " /\u001fZ0\u0001😀/{",
+   "expected": "\" /\\u001fZ0\\u0001😀/{\""
+  },
+  {
+   "input": "{}",
+   "expected": "\"{}\""
+  },
+  {
+   "input": " Z}\\\n\t",
+   "expected": "\" Z}\\\\\\n\\t\""
+  },
+  {
+   "input": "\"\r",
+   "expected": "\"\\\"\\r\""
+  },
+  {
+   "input": "\u00010    \t",
+   "expected": "\"\\u00010    \\t\""
+  },
+  {
+   "input": "\u0001a\t",
+   "expected": "\"\\u0001a\\t\""
+  },
+  {
+   "input": "\r\n\t",
+   "expected": "\"\\r\\n\\t\""
+  },
+  {
+   "input": "/{😀\t😀\u0001\n /é",
+   "expected": "\"/{😀\\t😀\\u0001\\n /é\""
+  },
+  {
+   "input": " }{\u001f a\u0001",
+   "expected": "\" }{\\u001f a\\u0001\""
+  },
+  {
+   "input": "\t [/\\]Z",
+   "expected": "\"\\t [/\\\\]Z\""
+  },
+  {
+   "input": "\\😀é [/ ",
+   "expected": "\"\\\\😀é [/ \""
+  },
+  {
+   "input": "\t \t}\r]\ta\t\n\\",
+   "expected": "\"\\t \\t}\\r]\\ta\\t\\n\\\\\""
+  },
+  {
+   "input": "é0 \u001fé\u001f]\\\"",
+   "expected": "\"é0 \\u001fé\\u001f]\\\\\\\"\""
+  },
+  {
+   "input": "\u0001😀\r]}\u0001a\u0001/",
+   "expected": "\"\\u0001😀\\r]}\\u0001a\\u0001/\""
+  },
+  {
+   "input": "é\nZ",
+   "expected": "\"é\\nZ\""
+  },
+  {
+   "input": "Z\u001fZ",
+   "expected": "\"Z\\u001fZ\""
+  },
+  {
+   "input": "Z\" ",
+   "expected": "\"Z\\\" \""
+  },
+  {
+   "input": "Z\né}\\\n\r",
+   "expected": "\"Z\\né}\\\\\\n\\r\""
+  },
+  {
+   "input": " ]0  \u00010\\0{",
+   "expected": "\" ]0  \\u00010\\\\0{\""
+  },
+  {
+   "input": "\\\" \n  [",
+   "expected": "\"\\\\\\\" \\n  [\""
+  },
+  {
+   "input": "é]  \u001f[]\u0001}\u0001",
+   "expected": "\"é]  \\u001f[]\\u0001}\\u0001\""
+  },
+  {
+   "input": "😀\t",
+   "expected": "\"😀\\t\""
+  },
+  {
+   "input": "Z0\r \ra\t0\u0001\n{",
+   "expected": "\"Z0\\r \\ra\\t0\\u0001\\n{\""
+  },
+  {
+   "input": "\u0001\nZ/  ",
+   "expected": "\"\\u0001\\nZ/  \""
+  },
+  {
+   "input": "\raé",
+   "expected": "\"\\raé\""
+  },
+  {
+   "input": "\u0001\"é0\r\"[",
+   "expected": "\"\\u0001\\\"é0\\r\\\"[\""
+  },
+  {
+   "input": "\t\"\r",
+   "expected": "\"\\t\\\"\\r\""
+  },
+  {
+   "input": "{/",
+   "expected": "\"{/\""
+  },
+  {
+   "input": "\t/\r }\\😀[0\u0001",
+   "expected": "\"\\t/\\r }\\\\😀[0\\u0001\""
+  },
+  {
+   "input": " \u001f[/{0\t\n{0\t",
+   "expected": "\" \\u001f[/{0\\t\\n{0\\t\""
+  },
+  {
+   "input": "\u00010  é] ",
+   "expected": "\"\\u00010  é] \""
+  },
+  {
+   "input": "\\a[\u001fZ0{",
+   "expected": "\"\\\\a[\\u001fZ0{\""
+  },
+  {
+   "input": "Z]\u0001 \t😀{ {/ ",
+   "expected": "\"Z]\\u0001 \\t😀{ {/ \""
+  },
+  {
+   "input": "[\u001f\u0001 \u0001] ",
+   "expected": "\"[\\u001f\\u0001 \\u0001] \""
+  },
+  {
+   "input": "{}\\",
+   "expected": "\"{}\\\\\""
+  },
+  {
+   "input": "[/é",
+   "expected": "\"[/é\""
+  },
+  {
+   "input": "\\  ",
+   "expected": "\"\\\\  \""
+  },
+  {
+   "input": "é é\n\u0001]\t\"{😀\\",
+   "expected": "\"é é\\n\\u0001]\\t\\\"{😀\\\\\""
+  },
+  {
+   "input": " 😀\t😀\\]\\a{ \\",
+   "expected": "\" 😀\\t😀\\\\]\\\\a{ \\\\\""
+  },
+  {
+   "input": "}\\aé\"\r/Z\" ",
+   "expected": "\"}\\\\aé\\\"\\r/Z\\\" \""
+  },
+  {
+   "input": "éa\u0001/Z\u001f\u00010{}Z",
+   "expected": "\"éa\\u0001/Z\\u001f\\u00010{}Z\""
+  },
+  {
+   "input": "\t0  \t0\u0001",
+   "expected": "\"\\t0  \\t0\\u0001\""
+  },
+  {
+   "input": "\r}\u0001",
+   "expected": "\"\\r}\\u0001\""
+  },
+  {
+   "input": "]{",
+   "expected": "\"]{\""
+  },
+  {
+   "input": "\"Z/é\"\\",
+   "expected": "\"\\\"Z/é\\\"\\\\\""
+  },
+  {
+   "input": " \"\t\"{ \\",
+   "expected": "\" \\\"\\t\\\"{ \\\\\""
+  },
+  {
+   "input": "\raZ",
+   "expected": "\"\\raZ\""
+  },
+  {
+   "input": "[\"   ",
+   "expected": "\"[\\\"   \""
+  },
+  {
+   "input": "[0\\",
+   "expected": "\"[0\\\\\""
+  },
+  {
+   "input": "\r😀\t",
+   "expected": "\"\\r😀\\t\""
+  },
+  {
+   "input": "[\u001fZ0\r}\r \u0001a\r",
+   "expected": "\"[\\u001fZ0\\r}\\r \\u0001a\\r\""
+  },
+  {
+   "input": "\r\u001f{}\u0001\n\\",
+   "expected": "\"\\r\\u001f{}\\u0001\\n\\\\\""
+  },
+  {
+   "input": "{😀 ",
+   "expected": "\"{😀 \""
+  },
+  {
+   "input": "é]{\"{ \r}\r]Z",
+   "expected": "\"é]{\\\"{ \\r}\\r]Z\""
+  },
+  {
+   "input": "\\}\u0001a  ",
+   "expected": "\"\\\\}\\u0001a  \""
+  },
+  {
+   "input": "\t0 ",
+   "expected": "\"\\t0 \""
+  },
+  {
+   "input": "\t0\\",
+   "expected": "\"\\t0\\\\\""
+  },
+  {
+   "input": "\\]\n\u0001}\\\"\t]\\",
+   "expected": "\"\\\\]\\n\\u0001}\\\\\\\"\\t]\\\\\""
+  },
+  {
+   "input": "{ \u0001]{ \t\n\\0",
+   "expected": "\"{ \\u0001]{ \\t\\n\\\\0\""
+  },
+  {
+   "input": " a\r",
+   "expected": "\" a\\r\""
+  },
+  {
+   "input": " ]Z0 😀[0\t\u001f\r",
+   "expected": "\" ]Z0 😀[0\\t\\u001f\\r\""
+  },
+  {
+   "input": "{ é",
+   "expected": "\"{ é\""
+  },
+  {
+   "input": "é [0\u0001] ",
+   "expected": "\"é [0\\u0001] \""
+  },
+  {
+   "input": "[😀[",
+   "expected": "\"[😀[\""
+  },
+  {
+   "input": " \"",
+   "expected": "\" \\\"\""
+  },
+  {
+   "input": "[😀Z/\t}[}\\\"[",
+   "expected": "\"[😀Z/\\t}[}\\\\\\\"[\""
+  },
+  {
+   "input": "{0 a{\"éa\\ ",
+   "expected": "\"{0 a{\\\"éa\\\\ \""
+  },
+  {
+   "input": "\t/{",
+   "expected": "\"\\t/{\""
+  },
+  {
+   "input": "\\\u001fé😀[\nZ\n[\u001f\\",
+   "expected": "\"\\\\\\u001fé😀[\\nZ\\n[\\u001f\\\\\""
+  },
+  {
+   "input": "[\"\u0001/{}\t",
+   "expected": "\"[\\\"\\u0001/{}\\t\""
+  },
+  {
+   "input": " 😀\t",
+   "expected": "\" 😀\\t\""
+  },
+  {
+   "input": "\r/  }\u0001",
+   "expected": "\"\\r/  }\\u0001\""
+  },
+  {
+   "input": "\t]é\n\t}😀é\"é",
+   "expected": "\"\\t]é\\n\\t}😀é\\\"é\""
+  },
+  {
+   "input": "[ [}Z😀 ",
+   "expected": "\"[ [}Z😀 \""
+  },
+  {
+   "input": "\\ \t/\r\n ",
+   "expected": "\"\\\\ \\t/\\r\\n \""
+  },
+  {
+   "input": "\r  \r]é\n\t\u001f\t",
+   "expected": "\"\\r  \\r]é\\n\\t\\u001f\\t\""
+  },
+  {
+   "input": " ]{0é/\t",
+   "expected": "\" ]{0é/\\t\""
+  },
+  {
+   "input": "Z😀{",
+   "expected": "\"Z😀{\""
+  },
+  {
+   "input": "é\"",
+   "expected": "\"é\\\"\""
+  },
+  {
+   "input": "\r0 \" \n\n  \t",
+   "expected": "\"\\r0 \\\" \\n\\n  \\t\""
+  },
+  {
+   "input": "é\"é",
+   "expected": "\"é\\\"é\""
+  },
+  {
+   "input": " / ",
+   "expected": "\" / \""
+  },
+  {
+   "input": "é\n{]\r\u001f é]\t",
+   "expected": "\"é\\n{]\\r\\u001f é]\\t\""
+  },
+  {
+   "input": "a\t\" aé0 /Z",
+   "expected": "\"a\\t\\\" aé0 /Z\""
+  },
+  {
+   "input": "\u0001 { Z \r",
+   "expected": "\"\\u0001 { Z \\r\""
+  },
+  {
+   "input": "  \\]Z😀é",
+   "expected": "\"  \\\\]Z😀é\""
+  },
+  {
+   "input": "\\\u001f  é\u001fé",
+   "expected": "\"\\\\\\u001f  é\\u001fé\""
+  },
+  {
+   "input": "\r\u001fZ",
+   "expected": "\"\\r\\u001fZ\""
+  },
+  {
+   "input": "\\😀 ",
+   "expected": "\"\\\\😀 \""
+  },
+  {
+   "input": " \n ",
+   "expected": "\" \\n \""
+  },
+  {
+   "input": "Z/\u0001",
+   "expected": "\"Z/\\u0001\""
+  },
+  {
+   "input": "\\a\u0001\n{0 ",
+   "expected": "\"\\\\a\\u0001\\n{0 \""
+  },
+  {
+   "input": " \u001f \né éa \"é",
+   "expected": "\" \\u001f \\né éa \\\"é\""
+  },
+  {
+   "input": "é\u001fZa{ [/\t]\r",
+   "expected": "\"é\\u001fZa{ [/\\t]\\r\""
+  },
+  {
+   "input": "\u0001\" / 0 aé \\",
+   "expected": "\"\\u0001\\\" / 0 aé \\\\\""
+  },
+  {
+   "input": "\\a\t}é}{\n}\\",
+   "expected": "\"\\\\a\\t}é}{\\n}\\\\\""
+  },
+  {
+   "input": "\"\\",
+   "expected": "\"\\\"\\\\\""
+  },
+  {
+   "input": "😀\\0é}  \t\"\u0001",
+   "expected": "\"😀\\\\0é}  \\t\\\"\\u0001\""
+  },
+  {
+   "input": "[\u001f/éa  [/\r",
+   "expected": "\"[\\u001f/éa  [/\\r\""
+  },
+  {
+   "input": "\t\u001fé",
+   "expected": "\"\\t\\u001fé\""
+  },
+  {
+   "input": "\n\\",
+   "expected": "\"\\n\\\\\""
+  }
+ ]
+}

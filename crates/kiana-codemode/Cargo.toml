@@ -1,0 +1,50 @@
+[package]
+name = "kiana-codemode"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/codemode：脚本语法、声明生成、quickjs-wasi 沙箱与 worker/remote 执行。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-json = { workspace = true }
+
+# VM 后端（feature `wasm`，见 spec/agent-codemode.md §8.1 的推荐方案）：直接嵌入 TS 侧
+# 同一份 `quickjs-wasi` 3.6.2 的 quickjs.wasm，指纹里的引擎版本字符串因此可逐字复现。
+# wasmtime 只跑一个 core module，不需要 component model / WASI preview1 组件层。
+# 骨架期默认关闭：它是最重的可选依赖（编译约 3–5 分钟），阶段 1 末由 codemode-team 打开。
+wasmtime = { workspace = true, optional = true, default-features = false, features = ["cranelift", "runtime", "std", "addr2line"] }
+# 备选后端：原生 QuickJS 绑定（spec/agent-codemode.md §8.1 的备选方案），暂不启用。
+rquickjs = { workspace = true, optional = true }
+
+# `readFile` 的错误文案需要 libuv 的 errno → 名字表（`ENOTDIR`、`ELOOP`、`ENAMETOOLONG` …）。
+# errno 的数值各平台不同，所以用 libc 常量而不是硬编码；只在 unix 上需要。
+[target.'cfg(unix)'.dependencies]
+libc = { workspace = true }
+
+[dev-dependencies]
+# 测试里校验 prelude.js 与 quickjs.wasm 的指纹（spec §2.2.7 / ARCHITECTURE.md §8 第 22 条）。
+sha2 = { workspace = true }
+
+[features]
+# 阶段 1 的验收里程碑（§8.4 第 3 步）要求 `wasm` 后端：`tests/vm.rs` 直接驱动
+# `start_vm`，只有打开它才会跑。骨架期曾为 `default = []`（ARCHITECTURE.md §8 第 22 条
+# 明说"阶段 1 末把 `wasm` 加进 default"），现在按该条打开。
+default = ["wasm"]
+# wasmtime + 嵌入的 quickjs.wasm（src/runtime/vm.rs）。
+wasm = ["dep:wasmtime"]
+# 原生 rquickjs 后端（仅备选，不实现）。
+quickjs = ["dep:rquickjs"]
+# Cloudflare Workers 适配（src/cloudflare.rs）：不移植（ARCHITECTURE.md §8 第 3 条）。
+# 占位模块**无条件编译**（与骨架和 kiana-durable/kiana-chord 的同批占位一致）：常量 + 逐字
+# not supported 错误的构造入口。本 feature 保留为空开关，供阶段 8 之后引入 wasm32 目标时
+# 替换实现；打开与否不改变公开面。
+cloudflare = []

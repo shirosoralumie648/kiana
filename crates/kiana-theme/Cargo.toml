@@ -1,0 +1,25 @@
+[package]
+name = "kiana-theme"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 modes/interactive/theme：Theme 类、system 主题、主题 JSON 校验（syntax highlight 委托 kiana-core）。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+regex = { workspace = true }
+tokio = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-core = { workspace = true }
+kiana-config = { workspace = true }
+# `parseThemeJsonContent()` 的 `JSON.parse`：V8 的错误文案/接受度（§8 第 31/32 条）。
+# 这是 §2.2 依赖表之外新增的一条边（kiana-json 是 L0，无 kiana-* 依赖）。
+kiana-json = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

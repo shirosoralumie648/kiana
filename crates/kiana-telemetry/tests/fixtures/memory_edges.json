@@ -1,0 +1,113 @@
+{
+ "localIds": {
+  "abc": {
+   "recorded": "{\"id\":1,\"parentId\":null,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:abc\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"abc\",\"kiana-memory-trace\":\"T:abc\"},\"links\":[],\"name\":\"child-abc\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": true,
+   "parentIdJson": "null",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:abc\",\"parentId\":\"<uuid>:abc\",\"name\":\"child-abc\",\"startedMs\":1793053404530,\"endedMs\":1793053404530.0588,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"abc\",\"kiana-memory-trace\":\"T:abc\"}"
+  },
+  "spaced": {
+   "recorded": "{\"id\":1,\"parentId\":7,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:spaced\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\" 7 \",\"kiana-memory-trace\":\"T:spaced\"},\"links\":[],\"name\":\"child-spaced\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": false,
+   "parentIdJson": "7",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:spaced\",\"parentId\":\"<uuid>: 7 \",\"name\":\"child-spaced\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0137,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\" 7 \",\"kiana-memory-trace\":\"T:spaced\"}"
+  },
+  "hex": {
+   "recorded": "{\"id\":1,\"parentId\":16,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:hex\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"0x10\",\"kiana-memory-trace\":\"T:hex\"},\"links\":[],\"name\":\"child-hex\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": false,
+   "parentIdJson": "16",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:hex\",\"parentId\":\"<uuid>:0x10\",\"name\":\"child-hex\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0107,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"0x10\",\"kiana-memory-trace\":\"T:hex\"}"
+  },
+  "empty": {
+   "recorded": "{\"id\":1,\"parentId\":0,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:empty\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"\",\"kiana-memory-trace\":\"T:empty\"},\"links\":[],\"name\":\"child-empty\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": false,
+   "parentIdJson": "0",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:empty\",\"parentId\":\"<uuid>:\",\"name\":\"child-empty\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0068,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"\",\"kiana-memory-trace\":\"T:empty\"}"
+  },
+  "exp": {
+   "recorded": "{\"id\":1,\"parentId\":1000,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:exp\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1e3\",\"kiana-memory-trace\":\"T:exp\"},\"links\":[],\"name\":\"child-exp\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": false,
+   "parentIdJson": "1000",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:exp\",\"parentId\":\"<uuid>:1e3\",\"name\":\"child-exp\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0083,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1e3\",\"kiana-memory-trace\":\"T:exp\"}"
+  },
+  "negative": {
+   "recorded": "{\"id\":1,\"parentId\":-1,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:negative\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"-1\",\"kiana-memory-trace\":\"T:negative\"},\"links\":[],\"name\":\"child-negative\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": false,
+   "parentIdJson": "-1",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:negative\",\"parentId\":\"<uuid>:-1\",\"name\":\"child-negative\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0178,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"-1\",\"kiana-memory-trace\":\"T:negative\"}"
+  },
+  "trailing": {
+   "recorded": "{\"id\":1,\"parentId\":null,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"T:trailing\"},\"parentContext\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"12abc\",\"kiana-memory-trace\":\"T:trailing\"},\"links\":[],\"name\":\"child-trailing\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+   "parentIdIsNaN": true,
+   "parentIdJson": "null",
+   "stored": "{\"id\":\"<uuid>:1\",\"traceId\":\"T:trailing\",\"parentId\":\"<uuid>:12abc\",\"name\":\"child-trailing\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.0095,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}",
+   "injectParent": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"12abc\",\"kiana-memory-trace\":\"T:trailing\"}"
+  }
+ },
+ "emptyCarrier": {
+  "isRoot": false,
+  "injectParent": "{\"kiana-memory-scope\":\"\",\"kiana-memory-span\":\"\",\"kiana-memory-trace\":\"\"}",
+  "recorded": "{\"id\":1,\"parentId\":null,\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"\"},\"parentContext\":{\"kiana-memory-scope\":\"\",\"kiana-memory-span\":\"\",\"kiana-memory-trace\":\"\"},\"links\":[],\"name\":\"child\",\"attributes\":{},\"events\":[],\"status\":{\"status\":\"ok\"},\"settled\":true,\"endSequence\":1}",
+  "storedTraceId": "",
+  "storedTrace": "{\"traceId\":\"\",\"spans\":[{\"id\":\"<uuid>:1\",\"traceId\":\"\",\"parentId\":\":\",\"name\":\"child\",\"startedMs\":1793053404532,\"endedMs\":1793053404532.028,\"attributes\":{},\"events\":[],\"links\":[],\"status\":{\"status\":\"ok\"}}]}"
+ },
+ "crossInstance": {
+  "injectFromB": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"}",
+  "injectFromA": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"}",
+  "injectExtractedFromB": "{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"}",
+  "links": "[{\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"},\"attributes\":{\"why\":\"cross\"}}]",
+  "exemplarContexts": "[[1,{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"}],[2,{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"2\",\"kiana-memory-trace\":\"<uuid>:2\"}]]",
+  "rootInjectIsUndefined": true
+ },
+ "inert": {
+  "childIsNoopContext": false,
+  "nestedIsNoopContext": false,
+  "metricsSameAsRecorder": true,
+  "propagationSameAsRecorder": true,
+  "spanNames": "[[\"settled\",true],[\"linker\",true]]",
+  "linkerLinks": "[]"
+ },
+ "selfLink": "[{\"context\":{\"kiana-memory-scope\":\"<uuid>\",\"kiana-memory-span\":\"1\",\"kiana-memory-trace\":\"<uuid>:1\"},\"attributes\":{}}]",
+ "renderSelfParent": "",
+ "renderCycle": "root (1ms)\n  c (1ms)",
+ "renderEmptyParent": "p (1ms)\n  q (1ms)",
+ "filters": {
+  "stringTag": [
+   2
+  ],
+  "arrayTag": [],
+  "bool": [
+   4
+  ],
+  "number": [
+   8
+  ],
+  "numberString": [
+   16
+  ]
+ },
+ "traceFilters": {
+  "arrayTag": [],
+  "bool": [
+   "arr"
+  ],
+  "number": [],
+  "numberString": [],
+  "stringTag": [],
+  "numberAttr": [
+   "arr"
+  ]
+ },
+ "mergeOrder": "{\"1\":4,\"2\":2,\"z\":6,\"a\":3,\"b\":5}",
+ "noop": {
+  "extractUndefinedIsSingleton": true,
+  "extractUnknownIsSingleton": true,
+  "injectIsUndefined": true
+ }
+}

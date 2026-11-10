@@ -1,0 +1,232 @@
+[
+ {
+  "name": "tools and globals",
+  "tools": [
+   {
+    "name": "read",
+    "description": "Read a file.\nSecond line.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "path": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "path"
+     ]
+    },
+    "outputSchema": {
+     "type": "string"
+    }
+   },
+   {
+    "name": "remote-api"
+   }
+  ],
+  "globals": [
+   {
+    "name": "attach",
+    "description": "Attach it.",
+    "inputSchema": {
+     "type": "string"
+    }
+   }
+  ],
+  "expected": "declare const tools: {\n  /**\n   * Read a file.\n   * Second line.\n   */\n  read(args: { path: string; }): Promise<string>;\n  remote_api(args: unknown): Promise<unknown>;\n};\n\n/** Attach it. */\ndeclare function attach(args: string): Promise<unknown>;"
+ },
+ {
+  "name": "namespaced globals and explicit signatures",
+  "tools": [],
+  "globals": [
+   {
+    "name": "models.list",
+    "description": "List models.",
+    "signature": "(type: string): Promise<string[]>"
+   },
+   {
+    "name": "models.get",
+    "inputSchema": {
+     "type": "string"
+    }
+   },
+   {
+    "name": "plain",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare function plain(): void;\n\ndeclare const models: {\n  /** List models. */\n  list(type: string): Promise<string[]>;\n  get(args: string): Promise<unknown>;\n};"
+ },
+ {
+  "name": "escapes comment terminators in descriptions",
+  "tools": [
+   {
+    "name": "x",
+    "description": "a */ b"
+   }
+  ],
+  "globals": [],
+  "expected": "declare const tools: {\n  /** a *\\/ b */\n  x(args: unknown): Promise<unknown>;\n};"
+ },
+ {
+  "name": "empty",
+  "tools": [],
+  "globals": [],
+  "expected": ""
+ },
+ {
+  "name": "namespace first-dot grouping and insertion order",
+  "tools": [],
+  "globals": [
+   {
+    "name": "a.b.c",
+    "signature": "(): void"
+   },
+   {
+    "name": "solo",
+    "signature": "(): void"
+   },
+   {
+    "name": "a.b.d",
+    "signature": "(x: number): void"
+   },
+   {
+    "name": ".leading",
+    "signature": "(): void"
+   },
+   {
+    "name": "trailing.",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare function solo(): void;\n\ndeclare const a: {\n  b.c(): void;\n  b.d(x: number): void;\n};\n\ndeclare const : {\n  leading(): void;\n};\n\ndeclare const trailing: {\n  (): void;\n};"
+ },
+ {
+  "name": "multi-line doc comment",
+  "tools": [
+   {
+    "name": "t",
+    "description": "First.\n\n  Third with spaces.  \r\nFourth.\n"
+   }
+  ],
+  "globals": [
+   {
+    "name": "ns.g",
+    "description": "G1\nG2",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare const tools: {\n  /**\n   * First.\n   *\n   *   Third with spaces.  \n   * Fourth.\n   */\n  t(args: unknown): Promise<unknown>;\n};\n\ndeclare const ns: {\n  /**\n   * G1\n   * G2\n   */\n  g(): void;\n};"
+ },
+ {
+  "name": "tool with description and schema tags",
+  "tools": [
+   {
+    "name": "do-it",
+    "description": "Do it.",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "type": "integer",
+       "minimum": 2,
+       "description": "Count."
+      }
+     }
+    },
+    "outputSchema": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  ],
+  "globals": [],
+  "expected": "declare const tools: {\n  /** Do it. */\n  do_it(args: {\n  // Count.\n  // @integer @minimum 2\n  n?: number;\n}): Promise<Array<string>>;\n};"
+ },
+ {
+  "name": "global without description",
+  "tools": [],
+  "globals": [
+   {
+    "name": "g",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare function g(): void;"
+ },
+ {
+  "name": "empty signature strings",
+  "tools": [],
+  "globals": [
+   {
+    "name": "g",
+    "signature": ""
+   },
+   {
+    "name": "ns.h",
+    "signature": ""
+   }
+  ],
+  "expected": "declare function g;\n\ndeclare const ns: {\n  h;\n};"
+ },
+ {
+  "name": "description trim differences",
+  "tools": [
+   {
+    "name": "t",
+    "description": "﻿bom﻿"
+   },
+   {
+    "name": "u",
+    "description": "\r\nmulti\r\n"
+   },
+   {
+    "name": "v",
+    "description": "a\rb"
+   },
+   {
+    "name": "w",
+    "description": "*/"
+   }
+  ],
+  "globals": [
+   {
+    "name": "g",
+    "description": "",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare const tools: {\n  /** bom﻿ */\n  t(args: unknown): Promise<unknown>;\n  /** multi */\n  u(args: unknown): Promise<unknown>;\n  /** a\rb */\n  v(args: unknown): Promise<unknown>;\n  /** *\\/ */\n  w(args: unknown): Promise<unknown>;\n};\n\n/**  */\ndeclare function g(): void;"
+ },
+ {
+  "name": "tool over input budget and namespaced dot leading",
+  "tools": [
+   {
+    "name": "x",
+    "description": "d",
+    "inputSchema": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "type": "integer",
+       "minimum": 1
+      }
+     }
+    }
+   }
+  ],
+  "globals": [
+   {
+    "name": "a.b",
+    "signature": "(): void"
+   },
+   {
+    "name": "a.c",
+    "signature": "(): void"
+   }
+  ],
+  "expected": "declare const tools: {\n  /** d */\n  x(args: {\n  // @integer @minimum 1\n  n?: number;\n}): Promise<unknown>;\n};\n\ndeclare const a: {\n  b(): void;\n  c(): void;\n};"
+ }
+]

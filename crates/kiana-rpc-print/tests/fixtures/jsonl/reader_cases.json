@@ -1,0 +1,351 @@
+{
+  "node": "v26.12.1",
+  "cases": [
+    {
+      "name": "crlf",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "7b2261223a317d0d0a7b2262223a327d0d0a"
+        }
+      ],
+      "lines": [
+        "{\"a\":1}",
+        "{\"b\":2}"
+      ]
+    },
+    {
+      "name": "cr_cr_lf",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "610d0d0a620d0a"
+        }
+      ],
+      "lines": [
+        "a\r",
+        "b"
+      ]
+    },
+    {
+      "name": "empty_lines",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "0a0a410a0a"
+        }
+      ],
+      "lines": [
+        "",
+        "",
+        "A",
+        ""
+      ]
+    },
+    {
+      "name": "u2028_u2029",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "7b2274223a2261e280a862e280a963227d0a"
+        }
+      ],
+      "lines": [
+        "{\"t\":\"a b c\"}"
+      ]
+    },
+    {
+      "name": "unterminated_tail",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "7b2261223a317d"
+        }
+      ],
+      "lines": [
+        "{\"a\":1}"
+      ]
+    },
+    {
+      "name": "split_crlf",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "7b2261223a317d0d"
+        },
+        {
+          "kind": "text",
+          "text": "\n"
+        }
+      ],
+      "lines": [
+        "{\"a\":1}"
+      ]
+    },
+    {
+      "name": "split_multibyte",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "7b2274223a22"
+        },
+        {
+          "kind": "bytes",
+          "hex": "f09f"
+        },
+        {
+          "kind": "bytes",
+          "hex": "9880"
+        },
+        {
+          "kind": "bytes",
+          "hex": "227d0a"
+        }
+      ],
+      "lines": [
+        "{\"t\":\"😀\"}"
+      ]
+    },
+    {
+      "name": "e2_82_then_41",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e282"
+        },
+        {
+          "kind": "bytes",
+          "hex": "4142"
+        }
+      ],
+      "lines": [
+        "�AB"
+      ]
+    },
+    {
+      "name": "e2_82_then_a9",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e282"
+        },
+        {
+          "kind": "bytes",
+          "hex": "a90a"
+        }
+      ],
+      "lines": [
+        "₩"
+      ]
+    },
+    {
+      "name": "e2_82_then_str_a",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e282"
+        },
+        {
+          "kind": "text",
+          "text": "a\n"
+        }
+      ],
+      "lines": [
+        "a",
+        "�"
+      ]
+    },
+    {
+      "name": "f0_9f_92_then_41",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "f09f92"
+        },
+        {
+          "kind": "bytes",
+          "hex": "410a"
+        }
+      ],
+      "lines": [
+        "�A"
+      ]
+    },
+    {
+      "name": "invalid_bytes",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "ffff0a"
+        }
+      ],
+      "lines": [
+        "��"
+      ]
+    },
+    {
+      "name": "e2_28",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e2280a"
+        }
+      ],
+      "lines": [
+        "�("
+      ]
+    },
+    {
+      "name": "overlong_c0_af",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "c0af0a"
+        }
+      ],
+      "lines": [
+        "��"
+      ]
+    },
+    {
+      "name": "overlong_e0_80_80",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e080800a"
+        }
+      ],
+      "lines": [
+        "���"
+      ]
+    },
+    {
+      "name": "surrogate_ed_a0_80",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "eda0800a"
+        }
+      ],
+      "lines": [
+        "���"
+      ]
+    },
+    {
+      "name": "overlong_f0_80_80_80",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "f08080800a"
+        }
+      ],
+      "lines": [
+        "����"
+      ]
+    },
+    {
+      "name": "out_of_range_f4_90_80_80",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "f49080800a"
+        }
+      ],
+      "lines": [
+        "����"
+      ]
+    },
+    {
+      "name": "truncated_f0_9f_at_eof",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "f09f"
+        }
+      ],
+      "lines": [
+        "�"
+      ]
+    },
+    {
+      "name": "truncated_c2_at_eof",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "c2"
+        }
+      ],
+      "lines": [
+        "�"
+      ]
+    },
+    {
+      "name": "lone_continuation",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "800a"
+        }
+      ],
+      "lines": [
+        "�"
+      ]
+    },
+    {
+      "name": "string_chunk",
+      "chunks": [
+        {
+          "kind": "text",
+          "text": "{\"a\":1}\n{\"b\":2}"
+        }
+      ],
+      "lines": [
+        "{\"a\":1}",
+        "{\"b\":2}"
+      ]
+    },
+    {
+      "name": "string_then_buffer",
+      "chunks": [
+        {
+          "kind": "text",
+          "text": "first\r\n"
+        },
+        {
+          "kind": "bytes",
+          "hex": "7365636f6e640a"
+        }
+      ],
+      "lines": [
+        "first",
+        "second"
+      ]
+    },
+    {
+      "name": "multiple_lines_one_chunk",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "610a620a63"
+        }
+      ],
+      "lines": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "e2_82_without_end",
+      "chunks": [
+        {
+          "kind": "bytes",
+          "hex": "e282"
+        }
+      ],
+      "lines": [
+        "�"
+      ]
+    }
+  ]
+}

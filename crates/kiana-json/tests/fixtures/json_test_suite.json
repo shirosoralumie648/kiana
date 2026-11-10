@@ -1,0 +1,2343 @@
+{
+ "note": "JSONTestSuite (https://github.com/nst/JSONTestSuite, MIT, (c) 2016 Nicolas Seriot). text = Node readFileSync(...).toString(\"utf8\") of the base64 bytes (invalid UTF-8 becomes U+FFFD). ok/value/message are V8 JSON.parse results on that text.",
+ "cases": [
+  {
+   "name": "i_number_double_huge_neg_exp.json",
+   "text": "[123.456e-789]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_huge_exp.json",
+   "text": "[0.4e00669999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999969999999006]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_neg_int_huge_exp.json",
+   "text": "[-1e+9999]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_pos_double_huge_exp.json",
+   "text": "[1.5e+9999]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_real_neg_overflow.json",
+   "text": "[-123123e100000]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_real_pos_overflow.json",
+   "text": "[123123e100000]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_real_underflow.json",
+   "text": "[123e-10000000]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_too_big_neg_int.json",
+   "text": "[-123123123123123123123123123123]",
+   "ok": true,
+   "value": "[-1.2312312312312312e+29]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_too_big_pos_int.json",
+   "text": "[100000000000000000000]",
+   "ok": true,
+   "value": "[100000000000000000000]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_number_very_big_negative_int.json",
+   "text": "[-237462374673276894279832749832423479823246327846]",
+   "ok": true,
+   "value": "[-2.374623746732769e+47]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_object_key_lone_2nd_surrogate.json",
+   "text": "{\"\\uDFAA\":0}",
+   "ok": true,
+   "value": null,
+   "value_fffd": "{\"�\":0}",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_1st_surrogate_but_2nd_missing.json",
+   "text": "[\"\\uDADA\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_1st_valid_surrogate_2nd_invalid.json",
+   "text": "[\"\\uD888\\u1234\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�ሴ\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_UTF-16LE_with_BOM.json",
+   "text": "��[\u0000\"\u0000�\u0000\"\u0000]\u0000",
+   "ok": false,
+   "message": "Unexpected token '�', \"��[\u0000\"\u0000�\u0000\"\u0000]\u0000\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "i_string_UTF-8_invalid_sequence.json",
+   "text": "[\"日ш�\"]",
+   "ok": true,
+   "value": "[\"日ш�\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_UTF8_surrogate_U+D800.json",
+   "text": "[\"���\"]",
+   "ok": true,
+   "value": "[\"���\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_incomplete_surrogate_and_escape_valid.json",
+   "text": "[\"\\uD800\\n\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�\\n\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_incomplete_surrogate_pair.json",
+   "text": "[\"\\uDd1ea\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�a\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_incomplete_surrogates_escape_valid.json",
+   "text": "[\"\\uD800\\uD800\\n\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"��\\n\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_invalid_lonely_surrogate.json",
+   "text": "[\"\\ud800\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_invalid_surrogate.json",
+   "text": "[\"\\ud800abc\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�abc\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_invalid_utf-8.json",
+   "text": "[\"�\"]",
+   "ok": true,
+   "value": "[\"�\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_inverted_surrogates_U+1D11E.json",
+   "text": "[\"\\uDd1e\\uD834\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"��\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_iso_latin_1.json",
+   "text": "[\"�\"]",
+   "ok": true,
+   "value": "[\"�\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_lone_second_surrogate.json",
+   "text": "[\"\\uDFAA\"]",
+   "ok": true,
+   "value": null,
+   "value_fffd": "[\"�\"]",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "name": "i_string_lone_utf8_continuation_byte.json",
+   "text": "[\"�\"]",
+   "ok": true,
+   "value": "[\"�\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_not_in_unicode_range.json",
+   "text": "[\"����\"]",
+   "ok": true,
+   "value": "[\"����\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_overlong_sequence_2_bytes.json",
+   "text": "[\"��\"]",
+   "ok": true,
+   "value": "[\"��\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_overlong_sequence_6_bytes.json",
+   "text": "[\"������\"]",
+   "ok": true,
+   "value": "[\"������\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_overlong_sequence_6_bytes_null.json",
+   "text": "[\"������\"]",
+   "ok": true,
+   "value": "[\"������\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_truncated-utf-8.json",
+   "text": "[\"��\"]",
+   "ok": true,
+   "value": "[\"��\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_string_utf16BE_no_BOM.json",
+   "text": "\u0000[\u0000\"\u0000�\u0000\"\u0000]",
+   "ok": false,
+   "message": "Unexpected token '\u0000', \"\u0000[\u0000\"\u0000�\u0000\"\u0000]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "i_string_utf16LE_no_BOM.json",
+   "text": "[\u0000\"\u0000�\u0000\"\u0000]\u0000",
+   "ok": false,
+   "message": "Unexpected token '\u0000', \"[\u0000\"\u0000�\u0000\"\u0000]\u0000\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "i_structure_500_nested_arrays.json",
+   "text": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+   "ok": true,
+   "value": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "i_structure_UTF-8_BOM_empty_object.json",
+   "text": "﻿{}",
+   "ok": false,
+   "message": "Unexpected token '﻿', \"﻿{}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_1_true_without_comma.json",
+   "text": "[1 true]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_a_invalid_utf8.json",
+   "text": "[a�]",
+   "ok": false,
+   "message": "Unexpected token 'a', \"[a�]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_colon_instead_of_comma.json",
+   "text": "[\"\": 1]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_comma_after_close.json",
+   "text": "[\"\"],",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_comma_and_number.json",
+   "text": "[,1]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[,1]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_double_comma.json",
+   "text": "[1,,2]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[1,,2]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_double_extra_comma.json",
+   "text": "[\"x\",,]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[\"x\",,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_extra_close.json",
+   "text": "[\"x\"]]",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_extra_comma.json",
+   "text": "[\"\",]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[\"\",]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_incomplete.json",
+   "text": "[\"x\"",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_incomplete_invalid_value.json",
+   "text": "[x",
+   "ok": false,
+   "message": "Unexpected token 'x', \"[x\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_inner_array_no_comma.json",
+   "text": "[3[4]]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_invalid_utf8.json",
+   "text": "[�]",
+   "ok": false,
+   "message": "Unexpected token '�', \"[�]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_items_separated_by_semicolon.json",
+   "text": "[1:2]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_just_comma.json",
+   "text": "[,]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_just_minus.json",
+   "text": "[-]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_missing_value.json",
+   "text": "[   , \"\"]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[   , \"\"]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_newlines_unclosed.json",
+   "text": "[\"a\",\n4\n,1,",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_number_and_comma.json",
+   "text": "[1,]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[1,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_number_and_several_commas.json",
+   "text": "[1,,]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[1,,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_spaces_vertical_tab_formfeed.json",
+   "text": "[\"\u000ba\"\\f]",
+   "ok": false,
+   "message": "Bad control character in string literal in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_star_inside.json",
+   "text": "[*]",
+   "ok": false,
+   "message": "Unexpected token '*', \"[*]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_unclosed.json",
+   "text": "[\"\"",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_unclosed_trailing_comma.json",
+   "text": "[1,",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_unclosed_with_new_lines.json",
+   "text": "[1,\n1\n,1",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 8 (line 3 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_array_unclosed_with_object_inside.json",
+   "text": "[{}",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_incomplete_false.json",
+   "text": "[fals]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[fals]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_incomplete_null.json",
+   "text": "[nul]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[nul]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_incomplete_true.json",
+   "text": "[tru]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[tru]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_multidigit_number_then_00.json",
+   "text": "123\u0000",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_++.json",
+   "text": "[++1234]",
+   "ok": false,
+   "message": "Unexpected token '+', \"[++1234]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_+1.json",
+   "text": "[+1]",
+   "ok": false,
+   "message": "Unexpected token '+', \"[+1]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_+Inf.json",
+   "text": "[+Inf]",
+   "ok": false,
+   "message": "Unexpected token '+', \"[+Inf]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_-01.json",
+   "text": "[-01]",
+   "ok": false,
+   "message": "Unexpected number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_-1.0..json",
+   "text": "[-1.0.]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_-2..json",
+   "text": "[-2.]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_-NaN.json",
+   "text": "[-NaN]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_.-1.json",
+   "text": "[.-1]",
+   "ok": false,
+   "message": "Unexpected token '.', \"[.-1]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_.2e-3.json",
+   "text": "[.2e-3]",
+   "ok": false,
+   "message": "Unexpected token '.', \"[.2e-3]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0.1.2.json",
+   "text": "[0.1.2]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0.3e+.json",
+   "text": "[0.3e+]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 6 (line 1 column 7)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0.3e.json",
+   "text": "[0.3e]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0.e1.json",
+   "text": "[0.e1]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0_capital_E+.json",
+   "text": "[0E+]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0_capital_E.json",
+   "text": "[0E]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0e+.json",
+   "text": "[0e+]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_0e.json",
+   "text": "[0e]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_1.0e+.json",
+   "text": "[1.0e+]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 6 (line 1 column 7)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_1.0e-.json",
+   "text": "[1.0e-]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 6 (line 1 column 7)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_1.0e.json",
+   "text": "[1.0e]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_1_000.json",
+   "text": "[1 000.0]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_1eE2.json",
+   "text": "[1eE2]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_2.e+3.json",
+   "text": "[2.e+3]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_2.e-3.json",
+   "text": "[2.e-3]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_2.e3.json",
+   "text": "[2.e3]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_9.e+.json",
+   "text": "[9.e+]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_Inf.json",
+   "text": "[Inf]",
+   "ok": false,
+   "message": "Unexpected token 'I', \"[Inf]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_NaN.json",
+   "text": "[NaN]",
+   "ok": false,
+   "message": "Unexpected token 'N', \"[NaN]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_U+FF11_fullwidth_digit_one.json",
+   "text": "[１]",
+   "ok": false,
+   "message": "Unexpected token '１', \"[１]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_expression.json",
+   "text": "[1+2]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_hex_1_digit.json",
+   "text": "[0x1]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_hex_2_digits.json",
+   "text": "[0x42]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_infinity.json",
+   "text": "[Infinity]",
+   "ok": false,
+   "message": "Unexpected token 'I', \"[Infinity]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_invalid+-.json",
+   "text": "[0e+-1]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_invalid-negative-real.json",
+   "text": "[-123.123foo]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_invalid-utf-8-in-bigger-int.json",
+   "text": "[123�]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_invalid-utf-8-in-exponent.json",
+   "text": "[1e1�]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_invalid-utf-8-in-int.json",
+   "text": "[0�]\n",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_minus_infinity.json",
+   "text": "[-Infinity]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_minus_sign_with_trailing_garbage.json",
+   "text": "[-foo]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_minus_space_1.json",
+   "text": "[- 1]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_neg_int_starting_with_zero.json",
+   "text": "[-012]",
+   "ok": false,
+   "message": "Unexpected number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_neg_real_without_int_part.json",
+   "text": "[-.123]",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_neg_with_garbage_at_end.json",
+   "text": "[-1x]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_real_garbage_after_e.json",
+   "text": "[1ea]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_real_with_invalid_utf8_after_e.json",
+   "text": "[1e�]",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_real_without_fractional_part.json",
+   "text": "[1.]",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_starting_with_dot.json",
+   "text": "[.123]",
+   "ok": false,
+   "message": "Unexpected token '.', \"[.123]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_with_alpha.json",
+   "text": "[1.2a-3]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_with_alpha_char.json",
+   "text": "[1.8011670033376514H-308]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 19 (line 1 column 20)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_number_with_leading_zero.json",
+   "text": "[012]",
+   "ok": false,
+   "message": "Unexpected number in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_bad_value.json",
+   "text": "[\"x\", truth]",
+   "ok": false,
+   "message": "Unexpected token 't', \"[\"x\", truth]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_bracket_key.json",
+   "text": "{[: \"x\"}\n",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_comma_instead_of_colon.json",
+   "text": "{\"x\", null}",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_double_colon.json",
+   "text": "{\"x\"::\"b\"}",
+   "ok": false,
+   "message": "Unexpected token ':', \"{\"x\"::\"b\"}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_emoji.json",
+   "text": "{🇨🇭}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_garbage_at_end.json",
+   "text": "{\"a\":\"a\" 123}",
+   "ok": false,
+   "message": "Expected ',' or '}' after property value in JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_key_with_single_quotes.json",
+   "text": "{key: 'value'}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_lone_continuation_byte_in_key_and_trailing_comma.json",
+   "text": "{\"�\":\"0\",}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_missing_colon.json",
+   "text": "{\"a\" b}",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_missing_key.json",
+   "text": "{:\"b\"}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_missing_semicolon.json",
+   "text": "{\"a\" \"b\"}",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_missing_value.json",
+   "text": "{\"a\":",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_no-colon.json",
+   "text": "{\"a\"",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_non_string_key.json",
+   "text": "{1:1}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_non_string_key_but_huge_number_instead.json",
+   "text": "{9999E9999:1}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_repeated_null_null.json",
+   "text": "{null:null,null:null}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_several_trailing_commas.json",
+   "text": "{\"id\":0,,,,,}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 8 (line 1 column 9)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_single_quote.json",
+   "text": "{'a':0}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_trailing_comma.json",
+   "text": "{\"id\":0,}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 8 (line 1 column 9)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_trailing_comment.json",
+   "text": "{\"a\":\"b\"}/**/",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_trailing_comment_open.json",
+   "text": "{\"a\":\"b\"}/**//",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_trailing_comment_slash_open.json",
+   "text": "{\"a\":\"b\"}//",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_trailing_comment_slash_open_incomplete.json",
+   "text": "{\"a\":\"b\"}/",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_two_commas_in_a_row.json",
+   "text": "{\"a\":\"b\",,\"c\":\"d\"}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_unquoted_key.json",
+   "text": "{a: \"b\"}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_unterminated-value.json",
+   "text": "{\"a\":\"a",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_with_single_string.json",
+   "text": "{ \"foo\" : \"bar\", \"a\" }",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 21 (line 1 column 22)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_object_with_trailing_garbage.json",
+   "text": "{\"a\":\"b\"}#",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_single_space.json",
+   "text": " ",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_1_surrogate_then_escape.json",
+   "text": "[\"\\uD800\\\"]",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 11 (line 1 column 12)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_1_surrogate_then_escape_u.json",
+   "text": "[\"\\uD800\\u\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 10 (line 1 column 11)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_1_surrogate_then_escape_u1.json",
+   "text": "[\"\\uD800\\u1\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 11 (line 1 column 12)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_1_surrogate_then_escape_u1x.json",
+   "text": "[\"\\uD800\\u1x\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 11 (line 1 column 12)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_accentuated_char_no_quotes.json",
+   "text": "[é]",
+   "ok": false,
+   "message": "Unexpected token 'é', \"[é]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_backslash_00.json",
+   "text": "[\"\\\u0000\"]",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_escape_x.json",
+   "text": "[\"\\x00\"]",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_escaped_backslash_bad.json",
+   "text": "[\"\\\\\\\"]",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_escaped_ctrl_char_tab.json",
+   "text": "[\"\\\t\"]",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_escaped_emoji.json",
+   "text": "[\"\\🌀\"]",
+   "ok": false,
+   "message": "Unexpected token '�', \"[\"\\🌀\"]\" is not valid JSON",
+   "lone_surrogate_token": true
+  },
+  {
+   "name": "n_string_incomplete_escape.json",
+   "text": "[\"\\\"]",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_incomplete_escaped_character.json",
+   "text": "[\"\\u00A\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_incomplete_surrogate.json",
+   "text": "[\"\\uD834\\uDd\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 12 (line 1 column 13)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_incomplete_surrogate_escape_invalid.json",
+   "text": "[\"\\uD800\\uD800\\x\"]",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 15 (line 1 column 16)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_invalid-utf-8-in-escape.json",
+   "text": "[\"\\u�\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_invalid_backslash_esc.json",
+   "text": "[\"\\a\"]",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_invalid_unicode_escape.json",
+   "text": "[\"\\uqqqq\"]",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_invalid_utf8_after_escape.json",
+   "text": "[\"\\�\"]",
+   "ok": false,
+   "message": "Unexpected token '�', \"[\"\\�\"]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_leading_uescaped_thinspace.json",
+   "text": "[\\u0020\"asd\"]",
+   "ok": false,
+   "message": "Unexpected token '\\', \"[\\u0020\"asd\"]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_no_quotes_with_bad_escape.json",
+   "text": "[\\n]",
+   "ok": false,
+   "message": "Unexpected token '\\', \"[\\n]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_single_doublequote.json",
+   "text": "\"",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_single_quote.json",
+   "text": "['single quote']",
+   "ok": false,
+   "message": "Unexpected token ''', \"['single quote']\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_single_string_no_double_quotes.json",
+   "text": "abc",
+   "ok": false,
+   "message": "Unexpected token 'a', \"abc\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_start_escape_unclosed.json",
+   "text": "[\"\\",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_unescaped_ctrl_char.json",
+   "text": "[\"a\u0000a\"]",
+   "ok": false,
+   "message": "Bad control character in string literal in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_unescaped_newline.json",
+   "text": "[\"new\nline\"]",
+   "ok": false,
+   "message": "Bad control character in string literal in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_unescaped_tab.json",
+   "text": "[\"\t\"]",
+   "ok": false,
+   "message": "Bad control character in string literal in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_unicode_CapitalU.json",
+   "text": "\"\\UA66D\"",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_string_with_trailing_garbage.json",
+   "text": "\"\"x",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_U+2060_word_joined.json",
+   "text": "[⁠]",
+   "ok": false,
+   "message": "Unexpected token '⁠', \"[⁠]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_UTF8_BOM_no_data.json",
+   "text": "﻿",
+   "ok": false,
+   "message": "Unexpected token '﻿', \"﻿\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_angle_bracket_..json",
+   "text": "<.>",
+   "ok": false,
+   "message": "Unexpected token '<', \"<.>\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_angle_bracket_null.json",
+   "text": "[<null>]",
+   "ok": false,
+   "message": "Unexpected token '<', \"[<null>]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_array_trailing_garbage.json",
+   "text": "[1]x",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_array_with_extra_array_close.json",
+   "text": "[1]]",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_array_with_unclosed_string.json",
+   "text": "[\"asd]",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 6 (line 1 column 7)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_ascii-unicode-identifier.json",
+   "text": "aå",
+   "ok": false,
+   "message": "Unexpected token 'a', \"aå\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_capitalized_True.json",
+   "text": "[True]",
+   "ok": false,
+   "message": "Unexpected token 'T', \"[True]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_close_unopened_array.json",
+   "text": "1]",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_comma_instead_of_closing_brace.json",
+   "text": "{\"x\": true,",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 11 (line 1 column 12)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_double_array.json",
+   "text": "[][]",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_end_array.json",
+   "text": "]",
+   "ok": false,
+   "message": "Unexpected token ']', \"]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_incomplete_UTF8_BOM.json",
+   "text": "�{}",
+   "ok": false,
+   "message": "Unexpected token '�', \"�{}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_lone-invalid-utf-8.json",
+   "text": "�",
+   "ok": false,
+   "message": "Unexpected token '�', \"�\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_lone-open-bracket.json",
+   "text": "[",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_no_data.json",
+   "text": "",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_null-byte-outside-string.json",
+   "text": "[\u0000]",
+   "ok": false,
+   "message": "Unexpected token '\u0000', \"[\u0000]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_number_with_trailing_garbage.json",
+   "text": "2@",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_object_followed_by_closing_object.json",
+   "text": "{}}",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_object_unclosed_no_value.json",
+   "text": "{\"\":",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_object_with_comment.json",
+   "text": "{\"a\":/*comment*/\"b\"}",
+   "ok": false,
+   "message": "Unexpected token '/', \"{\"a\":/*comment*/\"b\"}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_object_with_trailing_garbage.json",
+   "text": "{\"a\": true} \"x\"",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 12 (line 1 column 13)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_array_apostrophe.json",
+   "text": "['",
+   "ok": false,
+   "message": "Unexpected token ''', \"['\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_array_comma.json",
+   "text": "[,",
+   "ok": false,
+   "message": "Unexpected token ',', \"[,\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_array_open_object.json",
+   "text": "[{",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_array_open_string.json",
+   "text": "[\"a",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_array_string.json",
+   "text": "[\"a\"",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object.json",
+   "text": "{",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object_close_array.json",
+   "text": "{]",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object_comma.json",
+   "text": "{,",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object_open_array.json",
+   "text": "{[",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object_open_string.json",
+   "text": "{\"a",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_object_string_with_apostrophes.json",
+   "text": "{'a'",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_open_open.json",
+   "text": "[\"\\{[\"\\{[\"\\{[\"\\{",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_single_eacute.json",
+   "text": "�",
+   "ok": false,
+   "message": "Unexpected token '�', \"�\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_single_star.json",
+   "text": "*",
+   "ok": false,
+   "message": "Unexpected token '*', \"*\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_trailing_#.json",
+   "text": "{\"a\":\"b\"}#{}",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_uescaped_LF_before_string.json",
+   "text": "[\\u000A\"\"]",
+   "ok": false,
+   "message": "Unexpected token '\\', \"[\\u000A\"\"]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unclosed_array.json",
+   "text": "[1",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unclosed_array_partial_null.json",
+   "text": "[ false, nul",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unclosed_array_unfinished_false.json",
+   "text": "[ true, fals",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unclosed_array_unfinished_true.json",
+   "text": "[ false, tru",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unclosed_object.json",
+   "text": "{\"asd\":\"asd\"",
+   "ok": false,
+   "message": "Expected ',' or '}' after property value in JSON at position 12 (line 1 column 13)",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_unicode-identifier.json",
+   "text": "å",
+   "ok": false,
+   "message": "Unexpected token 'å', \"å\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_whitespace_U+2060_word_joiner.json",
+   "text": "[⁠]",
+   "ok": false,
+   "message": "Unexpected token '⁠', \"[⁠]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "n_structure_whitespace_formfeed.json",
+   "text": "[\f]",
+   "ok": false,
+   "message": "Unexpected token '\f', \"[\f]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "name": "y_array_arraysWithSpaces.json",
+   "text": "[[]   ]",
+   "ok": true,
+   "value": "[[]]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_empty-string.json",
+   "text": "[\"\"]",
+   "ok": true,
+   "value": "[\"\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_empty.json",
+   "text": "[]",
+   "ok": true,
+   "value": "[]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_ending_with_newline.json",
+   "text": "[\"a\"]",
+   "ok": true,
+   "value": "[\"a\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_false.json",
+   "text": "[false]",
+   "ok": true,
+   "value": "[false]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_heterogeneous.json",
+   "text": "[null, 1, \"1\", {}]",
+   "ok": true,
+   "value": "[null,1,\"1\",{}]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_null.json",
+   "text": "[null]",
+   "ok": true,
+   "value": "[null]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_with_1_and_newline.json",
+   "text": "[1\n]",
+   "ok": true,
+   "value": "[1]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_with_leading_space.json",
+   "text": " [1]",
+   "ok": true,
+   "value": "[1]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_with_several_null.json",
+   "text": "[1,null,null,null,2]",
+   "ok": true,
+   "value": "[1,null,null,null,2]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_array_with_trailing_space.json",
+   "text": "[2] ",
+   "ok": true,
+   "value": "[2]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number.json",
+   "text": "[123e65]",
+   "ok": true,
+   "value": "[1.23e+67]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_0e+1.json",
+   "text": "[0e+1]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_0e1.json",
+   "text": "[0e1]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_after_space.json",
+   "text": "[ 4]",
+   "ok": true,
+   "value": "[4]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_double_close_to_zero.json",
+   "text": "[-0.000000000000000000000000000000000000000000000000000000000000000000000000000001]\n",
+   "ok": true,
+   "value": "[-1e-78]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_int_with_exp.json",
+   "text": "[20e1]",
+   "ok": true,
+   "value": "[200]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_minus_zero.json",
+   "text": "[-0]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_negative_int.json",
+   "text": "[-123]",
+   "ok": true,
+   "value": "[-123]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_negative_one.json",
+   "text": "[-1]",
+   "ok": true,
+   "value": "[-1]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_negative_zero.json",
+   "text": "[-0]",
+   "ok": true,
+   "value": "[0]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_capital_e.json",
+   "text": "[1E22]",
+   "ok": true,
+   "value": "[1e+22]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_capital_e_neg_exp.json",
+   "text": "[1E-2]",
+   "ok": true,
+   "value": "[0.01]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_capital_e_pos_exp.json",
+   "text": "[1E+2]",
+   "ok": true,
+   "value": "[100]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_exponent.json",
+   "text": "[123e45]",
+   "ok": true,
+   "value": "[1.23e+47]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_fraction_exponent.json",
+   "text": "[123.456e78]",
+   "ok": true,
+   "value": "[1.23456e+80]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_neg_exp.json",
+   "text": "[1e-2]",
+   "ok": true,
+   "value": "[0.01]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_real_pos_exponent.json",
+   "text": "[1e+2]",
+   "ok": true,
+   "value": "[100]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_simple_int.json",
+   "text": "[123]",
+   "ok": true,
+   "value": "[123]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_number_simple_real.json",
+   "text": "[123.456789]",
+   "ok": true,
+   "value": "[123.456789]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object.json",
+   "text": "{\"asd\":\"sdf\", \"dfg\":\"fgh\"}",
+   "ok": true,
+   "value": "{\"asd\":\"sdf\",\"dfg\":\"fgh\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_basic.json",
+   "text": "{\"asd\":\"sdf\"}",
+   "ok": true,
+   "value": "{\"asd\":\"sdf\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_duplicated_key.json",
+   "text": "{\"a\":\"b\",\"a\":\"c\"}",
+   "ok": true,
+   "value": "{\"a\":\"c\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_duplicated_key_and_value.json",
+   "text": "{\"a\":\"b\",\"a\":\"b\"}",
+   "ok": true,
+   "value": "{\"a\":\"b\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_empty.json",
+   "text": "{}",
+   "ok": true,
+   "value": "{}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_empty_key.json",
+   "text": "{\"\":0}",
+   "ok": true,
+   "value": "{\"\":0}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_escaped_null_in_key.json",
+   "text": "{\"foo\\u0000bar\": 42}",
+   "ok": true,
+   "value": "{\"foo\\u0000bar\":42}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_extreme_numbers.json",
+   "text": "{ \"min\": -1.0e+28, \"max\": 1.0e+28 }",
+   "ok": true,
+   "value": "{\"min\":-1e+28,\"max\":1e+28}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_long_strings.json",
+   "text": "{\"x\":[{\"id\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}], \"id\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}",
+   "ok": true,
+   "value": "{\"x\":[{\"id\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}],\"id\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_simple.json",
+   "text": "{\"a\":[]}",
+   "ok": true,
+   "value": "{\"a\":[]}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_string_unicode.json",
+   "text": "{\"title\":\"\\u041f\\u043e\\u043b\\u0442\\u043e\\u0440\\u0430 \\u0417\\u0435\\u043c\\u043b\\u0435\\u043a\\u043e\\u043f\\u0430\" }",
+   "ok": true,
+   "value": "{\"title\":\"Полтора Землекопа\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_object_with_newlines.json",
+   "text": "{\n\"a\": \"b\"\n}",
+   "ok": true,
+   "value": "{\"a\":\"b\"}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_1_2_3_bytes_UTF-8_sequences.json",
+   "text": "[\"\\u0060\\u012a\\u12AB\"]",
+   "ok": true,
+   "value": "[\"`Īካ\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_accepted_surrogate_pair.json",
+   "text": "[\"\\uD801\\udc37\"]",
+   "ok": true,
+   "value": "[\"𐐷\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_accepted_surrogate_pairs.json",
+   "text": "[\"\\ud83d\\ude39\\ud83d\\udc8d\"]",
+   "ok": true,
+   "value": "[\"😹💍\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_allowed_escapes.json",
+   "text": "[\"\\\"\\\\\\/\\b\\f\\n\\r\\t\"]",
+   "ok": true,
+   "value": "[\"\\\"\\\\/\\b\\f\\n\\r\\t\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_backslash_and_u_escaped_zero.json",
+   "text": "[\"\\\\u0000\"]",
+   "ok": true,
+   "value": "[\"\\\\u0000\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_backslash_doublequotes.json",
+   "text": "[\"\\\"\"]",
+   "ok": true,
+   "value": "[\"\\\"\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_comments.json",
+   "text": "[\"a/*b*/c/*d//e\"]",
+   "ok": true,
+   "value": "[\"a/*b*/c/*d//e\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_double_escape_a.json",
+   "text": "[\"\\\\a\"]",
+   "ok": true,
+   "value": "[\"\\\\a\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_double_escape_n.json",
+   "text": "[\"\\\\n\"]",
+   "ok": true,
+   "value": "[\"\\\\n\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_escaped_control_character.json",
+   "text": "[\"\\u0012\"]",
+   "ok": true,
+   "value": "[\"\\u0012\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_escaped_noncharacter.json",
+   "text": "[\"\\uFFFF\"]",
+   "ok": true,
+   "value": "[\"￿\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_in_array.json",
+   "text": "[\"asd\"]",
+   "ok": true,
+   "value": "[\"asd\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_in_array_with_leading_space.json",
+   "text": "[ \"asd\"]",
+   "ok": true,
+   "value": "[\"asd\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_last_surrogates_1_and_2.json",
+   "text": "[\"\\uDBFF\\uDFFF\"]",
+   "ok": true,
+   "value": "[\"􏿿\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_nbsp_uescaped.json",
+   "text": "[\"new\\u00A0line\"]",
+   "ok": true,
+   "value": "[\"new line\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_nonCharacterInUTF-8_U+10FFFF.json",
+   "text": "[\"􏿿\"]",
+   "ok": true,
+   "value": "[\"􏿿\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_nonCharacterInUTF-8_U+FFFF.json",
+   "text": "[\"￿\"]",
+   "ok": true,
+   "value": "[\"￿\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_null_escape.json",
+   "text": "[\"\\u0000\"]",
+   "ok": true,
+   "value": "[\"\\u0000\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_one-byte-utf-8.json",
+   "text": "[\"\\u002c\"]",
+   "ok": true,
+   "value": "[\",\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_kiana.json",
+   "text": "[\"π\"]",
+   "ok": true,
+   "value": "[\"π\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_reservedCharacterInUTF-8_U+1BFFF.json",
+   "text": "[\"𛿿\"]",
+   "ok": true,
+   "value": "[\"𛿿\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_simple_ascii.json",
+   "text": "[\"asd \"]",
+   "ok": true,
+   "value": "[\"asd \"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_space.json",
+   "text": "\" \"",
+   "ok": true,
+   "value": "\" \"",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json",
+   "text": "[\"\\uD834\\uDd1e\"]",
+   "ok": true,
+   "value": "[\"𝄞\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_three-byte-utf-8.json",
+   "text": "[\"\\u0821\"]",
+   "ok": true,
+   "value": "[\"ࠡ\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_two-byte-utf-8.json",
+   "text": "[\"\\u0123\"]",
+   "ok": true,
+   "value": "[\"ģ\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_u+2028_line_sep.json",
+   "text": "[\" \"]",
+   "ok": true,
+   "value": "[\" \"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_u+2029_par_sep.json",
+   "text": "[\" \"]",
+   "ok": true,
+   "value": "[\" \"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_uEscape.json",
+   "text": "[\"\\u0061\\u30af\\u30EA\\u30b9\"]",
+   "ok": true,
+   "value": "[\"aクリス\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_uescaped_newline.json",
+   "text": "[\"new\\u000Aline\"]",
+   "ok": true,
+   "value": "[\"new\\nline\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unescaped_char_delete.json",
+   "text": "[\"\"]",
+   "ok": true,
+   "value": "[\"\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode.json",
+   "text": "[\"\\uA66D\"]",
+   "ok": true,
+   "value": "[\"ꙭ\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicodeEscapedBackslash.json",
+   "text": "[\"\\u005C\"]",
+   "ok": true,
+   "value": "[\"\\\\\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_2.json",
+   "text": "[\"⍂㈴⍂\"]",
+   "ok": true,
+   "value": "[\"⍂㈴⍂\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+10FFFE_nonchar.json",
+   "text": "[\"\\uDBFF\\uDFFE\"]",
+   "ok": true,
+   "value": "[\"􏿾\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+1FFFE_nonchar.json",
+   "text": "[\"\\uD83F\\uDFFE\"]",
+   "ok": true,
+   "value": "[\"🿾\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+200B_ZERO_WIDTH_SPACE.json",
+   "text": "[\"\\u200B\"]",
+   "ok": true,
+   "value": "[\"​\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+2064_invisible_plus.json",
+   "text": "[\"\\u2064\"]",
+   "ok": true,
+   "value": "[\"⁤\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+FDD0_nonchar.json",
+   "text": "[\"\\uFDD0\"]",
+   "ok": true,
+   "value": "[\"﷐\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_U+FFFE_nonchar.json",
+   "text": "[\"\\uFFFE\"]",
+   "ok": true,
+   "value": "[\"￾\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_unicode_escaped_double_quote.json",
+   "text": "[\"\\u0022\"]",
+   "ok": true,
+   "value": "[\"\\\"\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_utf8.json",
+   "text": "[\"€𝄞\"]",
+   "ok": true,
+   "value": "[\"€𝄞\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_string_with_del_character.json",
+   "text": "[\"aa\"]",
+   "ok": true,
+   "value": "[\"aa\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_false.json",
+   "text": "false",
+   "ok": true,
+   "value": "false",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_int.json",
+   "text": "42",
+   "ok": true,
+   "value": "42",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_negative_real.json",
+   "text": "-0.1",
+   "ok": true,
+   "value": "-0.1",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_null.json",
+   "text": "null",
+   "ok": true,
+   "value": "null",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_string.json",
+   "text": "\"asd\"",
+   "ok": true,
+   "value": "\"asd\"",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_lonely_true.json",
+   "text": "true",
+   "ok": true,
+   "value": "true",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_string_empty.json",
+   "text": "\"\"",
+   "ok": true,
+   "value": "\"\"",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_trailing_newline.json",
+   "text": "[\"a\"]\n",
+   "ok": true,
+   "value": "[\"a\"]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_true_in_array.json",
+   "text": "[true]",
+   "ok": true,
+   "value": "[true]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "name": "y_structure_whitespace_array.json",
+   "text": " [] ",
+   "ok": true,
+   "value": "[]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+{"type":"session","version":3,"id":"unknown-fields","timestamp":"2026-01-01T00:00:00.000Z","cwd":"/tmp/kiana-u","extraHeader":42}
+{"type":"message","id":"e1","parentId":null,"timestamp":"1970-01-01T00:00:00.001Z","extraEntry":"keep-me","message":{"role":"user","content":"hi","timestamp":1,"extraMessage":true}}
+{"type":"label","id":"l1","parentId":"e1","timestamp":"1970-01-01T00:00:00.002Z","targetId":"e1","label":"x","extraLabel":7}
+{"type":"mystery","id":"m1","parentId":"l1","timestamp":"1970-01-01T00:00:00.003Z","foo":"bar"}

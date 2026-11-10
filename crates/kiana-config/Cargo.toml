@@ -1,0 +1,49 @@
+[package]
+name = "kiana-config"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-config-models 单元：settings/auth/model-runtime/provider-composer/keybindings/trust。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+uuid = { workspace = true }
+regex = { workspace = true }
+semver = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-core = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-json = { workspace = true }
+# CredentialStore / ModelsStore / Models 的 async trait 实现（auth、models、trust 单元）。
+async-trait = { workspace = true }
+# 远程 catalog 的 HTTP 请求（复用 kiana-core 的共享 Client）。
+reqwest = { workspace = true }
+# catalog URL 处理与校验。
+url = { workspace = true }
+# resolver 的 minimatch 模式匹配。
+globset = { workspace = true }
+# HTTP `Last-Modified` 解析。
+chrono = { workspace = true }
+# auth/lock.rs：把 io::Error 的 errno 映射成 Node/libuv 的 `EACCES: permission denied, ...`
+# 文案（ARCHITECTURE §4.1；workspace 已固定 =0.2.190）。
+libc = { workspace = true }
+# trust-manager.ts 的 `homedir()`（`$HOME` 未设置时的回退，Windows 上也有值）。
+dirs = { workspace = true }
+# model-runtime：并发等待可用性检查（`Promise.all` 的等价物）与按 provider 的 join。
+futures = { workspace = true }
+# 分层配置的 canonical JSON SHA256（layers.rs；与 codex `version_for_toml` 同一做法）。
+sha2 = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+wiremock = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

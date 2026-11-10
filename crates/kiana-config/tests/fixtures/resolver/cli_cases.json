@@ -1,0 +1,1243 @@
+{
+  "cases": [
+    {
+      "name": "does not strip invalid :suffix as thinking level in --model (treat as raw id)",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": "openai",
+      "cliModel": "gpt-4o:extended",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "openai",
+          "id": "gpt-4o:extended",
+          "reasoning": false
+        },
+        "thinkingLevel": null,
+        "warning": "Model \"gpt-4o:extended\" not found for provider \"openai\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "allows custom model ids for explicit providers without double prefixing",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": "openrouter",
+      "cliModel": "openrouter/openai/ghost-model",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "openrouter",
+          "id": "openai/ghost-model",
+          "reasoning": true
+        },
+        "thinkingLevel": null,
+        "warning": "Model \"openai/ghost-model\" not found for provider \"openrouter\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "returns a clear error when there are no models",
+      "models": [],
+      "configuredProviders": [],
+      "cliProvider": "openai",
+      "cliModel": "gpt-4o",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": null,
+        "thinkingLevel": null,
+        "warning": null,
+        "error": "No models available. Check your installation or add models to models.json."
+      }
+    },
+    {
+      "name": "duplicate raw ids selects the authenticated gateway",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "vercel-ai-gateway",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [
+        "vercel-ai-gateway"
+      ],
+      "cliProvider": null,
+      "cliModel": "anthropic/claude-opus-5.5",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "vercel-ai-gateway",
+          "id": "anthropic/claude-opus-5.5",
+          "reasoning": true
+        },
+        "thinkingLevel": null,
+        "warning": null,
+        "error": null
+      }
+    },
+    {
+      "name": "duplicate raw ids selects the authenticated gateway with thinking suffix",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "vercel-ai-gateway",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [
+        "vercel-ai-gateway"
+      ],
+      "cliProvider": null,
+      "cliModel": "anthropic/claude-opus-5.5:high",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "vercel-ai-gateway",
+          "id": "anthropic/claude-opus-5.5",
+          "reasoning": true
+        },
+        "thinkingLevel": "high",
+        "warning": null,
+        "error": null
+      }
+    },
+    {
+      "name": "duplicate raw ids reports ambiguity instead of choosing by catalog order",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "vercel-ai-gateway",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "anthropic/claude-opus-5.5",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": null,
+        "thinkingLevel": null,
+        "warning": null,
+        "error": "Model \"anthropic/claude-opus-5.5\" is ambiguous across providers: openrouter/anthropic/claude-opus-5.5, vercel-ai-gateway/anthropic/claude-opus-5.5. No matching provider is authenticated. Use --provider or provider/model."
+      }
+    },
+    {
+      "name": "does not let stored credentials choose the provider for --api-key",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "vercel-ai-gateway",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [
+        "vercel-ai-gateway"
+      ],
+      "cliProvider": null,
+      "cliModel": "anthropic/claude-opus-5.5",
+      "cliThinking": null,
+      "inlineApiKey": true,
+      "expected": {
+        "model": null,
+        "thinkingLevel": null,
+        "warning": null,
+        "error": "Model \"anthropic/claude-opus-5.5\" is ambiguous across providers: openrouter/anthropic/claude-opus-5.5, vercel-ai-gateway/anthropic/claude-opus-5.5. --api-key does not choose a provider. Use --provider or provider/model."
+      }
+    },
+    {
+      "name": "strips :thinking suffix from custom model id in fallback path",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "neuralwatt/zai-org/GLM-5.1-FP8:high",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8",
+          "reasoning": true
+        },
+        "thinkingLevel": "high",
+        "warning": "Model \"zai-org/GLM-5.1-FP8\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "custom model without thinking suffix works normally in fallback path",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "neuralwatt/zai-org/GLM-5.1-FP8",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8",
+          "reasoning": false
+        },
+        "thinkingLevel": null,
+        "warning": "Model \"zai-org/GLM-5.1-FP8\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "all valid thinking levels work in fallback path",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "neuralwatt/zai-org/GLM-5.1-FP8:off",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8",
+          "reasoning": false
+        },
+        "thinkingLevel": "off",
+        "warning": "Model \"zai-org/GLM-5.1-FP8\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "invalid thinking suffix on custom model is treated as part of model id",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "neuralwatt/zai-org/GLM-5.1-FP8:banana",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8:banana",
+          "reasoning": false
+        },
+        "thinkingLevel": null,
+        "warning": "Model \"zai-org/GLM-5.1-FP8:banana\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "explicit --provider with custom model:thinking strips suffix correctly",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": "neuralwatt",
+      "cliModel": "zai-org/GLM-5.1-FP8:high",
+      "cliThinking": null,
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8",
+          "reasoning": true
+        },
+        "thinkingLevel": "high",
+        "warning": "Model \"zai-org/GLM-5.1-FP8\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    },
+    {
+      "name": "with explicit --thinking, :suffix is kept as part of model id",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "some-base-model",
+          "name": "Some Base Model",
+          "api": "anthropic-messages",
+          "provider": "neuralwatt",
+          "baseUrl": "https://api.neuralwatt.com",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "configuredProviders": [],
+      "cliProvider": null,
+      "cliModel": "neuralwatt/zai-org/GLM-5.1-FP8:high",
+      "cliThinking": "medium",
+      "inlineApiKey": false,
+      "expected": {
+        "model": {
+          "provider": "neuralwatt",
+          "id": "zai-org/GLM-5.1-FP8:high",
+          "reasoning": true
+        },
+        "thinkingLevel": null,
+        "warning": "Model \"zai-org/GLM-5.1-FP8:high\" not found for provider \"neuralwatt\". Using custom model id.",
+        "error": null
+      }
+    }
+  ]
+}

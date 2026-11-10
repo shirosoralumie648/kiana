@@ -1,0 +1,77 @@
+{
+  "steps": [
+    {
+      "piece": "{\"name\": \"ba",
+      "args": {
+        "name": "ba"
+      }
+    },
+    {
+      "piece": "sh\", \"args\": {\"comm",
+      "args": {
+        "name": "bash",
+        "args": {}
+      }
+    },
+    {
+      "piece": "and\": \"ls -la\", \"nested\": [1, 2",
+      "args": {
+        "name": "bash",
+        "args": {
+          "command": "ls -la",
+          "nested": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "piece": "3]}}",
+      "args": {
+        "name": "bash",
+        "args": {
+          "command": "ls -la",
+          "nested": [
+            1,
+            23
+          ]
+        }
+      }
+    },
+    {
+      "replace": "{\"name\": \"bash\", \"args\": {\"command\": \"ls -la\", \"nested\": [1, 2, 3]}}"
+    }
+  ],
+  "replaced": {
+    "arguments": {
+      "name": "bash",
+      "args": {
+        "command": "ls -la",
+        "nested": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "text": "{\"name\": \"bash\", \"args\": {\"command\": \"ls -la\", \"nested\": [1, 2, 3]}}",
+  "finish": {
+    "arguments": {
+      "name": "bash",
+      "args": {
+        "command": "ls -la",
+        "nested": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "malformed": {
+    "arguments": {},
+    "argumentsError": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\": 1"
+  }
+}

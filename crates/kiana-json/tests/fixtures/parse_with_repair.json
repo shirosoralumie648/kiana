@@ -1,0 +1,101 @@
+{
+ "note": "parseJsonWithRepair(input): on failure the thrown message is from the REPAIRED text when repair changed it, otherwise from the original. Use with repair.json.",
+ "cases": [
+  {
+   "input": "{\"a\":\"\\url\"}",
+   "ok": true,
+   "value": "{\"a\":\"\\\\url\"}"
+  },
+  {
+   "input": "{\"a\":1,}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":\"\\u12\"}",
+   "ok": true,
+   "value": "{\"a\":\"\\\\u12\"}"
+  },
+  {
+   "input": "{\"a\":\"x\\ny\"}",
+   "ok": true,
+   "value": "{\"a\":\"x\\ny\"}"
+  },
+  {
+   "input": "{\"a\":1 \"b\":2}",
+   "ok": false,
+   "message": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":.5}",
+   "ok": false,
+   "message": "Unexpected token '.', \"{\"a\":.5}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":\"caf\\u00e9 \\url\"}",
+   "ok": true,
+   "value": "{\"a\":\"café \\\\url\"}"
+  },
+  {
+   "input": "{\"text\":\"ab\\u00",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 16 (line 1 column 17)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[1,2]",
+   "ok": true,
+   "value": "[1,2]"
+  },
+  {
+   "input": "{\"a\":\"\\u1234\"}",
+   "ok": true,
+   "value": "{\"a\":\"ሴ\"}"
+  },
+  {
+   "input": "{\"a\":\"\\uZZZZ\"}",
+   "ok": true,
+   "value": "{\"a\":\"\\\\uZZZZ\"}"
+  },
+  {
+   "input": "{\"a\":\"\\\\\"}",
+   "ok": true,
+   "value": "{\"a\":\"\\\\\"}"
+  },
+  {
+   "input": "null",
+   "ok": true,
+   "value": "null"
+  },
+  {
+   "input": "\"str\"",
+   "ok": true,
+   "value": "\"str\""
+  },
+  {
+   "input": "12",
+   "ok": true,
+   "value": "12"
+  },
+  {
+   "input": "{\"a\":\"x\"}",
+   "ok": true,
+   "value": "{\"a\":\"x\"}"
+  },
+  {
+   "input": "{\"a\":\"x\"",
+   "ok": false,
+   "message": "Expected ',' or '}' after property value in JSON at position 8 (line 1 column 9)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":1,}\"",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  }
+ ]
+}

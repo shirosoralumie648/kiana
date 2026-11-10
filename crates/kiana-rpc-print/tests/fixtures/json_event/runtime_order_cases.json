@@ -1,0 +1,859 @@
+{
+  "node": "v26.12.1",
+  "source": "TS runtime construction order (agent-loop.ts, anthropic-messages.ts, event-stream.ts, faux.ts, provider-composer.ts)",
+  "events": [
+    {
+      "name": "message_start_anthropic",
+      "event": {
+        "type": "message_start",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            },
+            {
+              "type": "toolCall",
+              "id": "call_1",
+              "name": "write",
+              "arguments": {
+                "path": "a.txt"
+              }
+            }
+          ],
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "model": "claude-fable-5",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            },
+            "cacheWrite1h": 5,
+            "reasoning": 3
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "providerThinkingLevel": "high"
+        }
+      },
+      "line": "{\"type\":\"message_start\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"},{\"type\":\"toolCall\",\"id\":\"call_1\",\"name\":\"write\",\"arguments\":{\"path\":\"a.txt\"}}],\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"model\":\"claude-fable-5\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"providerThinkingLevel\":\"high\"}}\n"
+    },
+    {
+      "name": "message_end_anthropic",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            },
+            {
+              "type": "toolCall",
+              "id": "call_1",
+              "name": "write",
+              "arguments": {
+                "path": "a.txt"
+              }
+            }
+          ],
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "model": "claude-fable-5",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            },
+            "cacheWrite1h": 5,
+            "reasoning": 3
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "providerThinkingLevel": "high",
+          "responseId": "msg_01ABC",
+          "responseModel": "claude-fable-5-20260101",
+          "rawStopReason": "end_turn",
+          "durationMs": 42,
+          "thinkingLevel": "high"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"},{\"type\":\"toolCall\",\"id\":\"call_1\",\"name\":\"write\",\"arguments\":{\"path\":\"a.txt\"}}],\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"model\":\"claude-fable-5\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"providerThinkingLevel\":\"high\",\"responseId\":\"msg_01ABC\",\"responseModel\":\"claude-fable-5-20260101\",\"rawStopReason\":\"end_turn\",\"durationMs\":42,\"thinkingLevel\":\"high\"}}\n"
+    },
+    {
+      "name": "message_end_anthropic_error",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            },
+            {
+              "type": "toolCall",
+              "id": "call_1",
+              "name": "write",
+              "arguments": {
+                "path": "a.txt"
+              }
+            }
+          ],
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "model": "claude-fable-5",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            },
+            "cacheWrite1h": 5,
+            "reasoning": 3
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "providerThinkingLevel": "high",
+          "responseId": "msg_01ABC",
+          "responseModel": "claude-fable-5-20260101",
+          "rawStopReason": "error",
+          "errorMessage": "Overloaded",
+          "durationMs": 42,
+          "thinkingLevel": "high"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"},{\"type\":\"toolCall\",\"id\":\"call_1\",\"name\":\"write\",\"arguments\":{\"path\":\"a.txt\"}}],\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"model\":\"claude-fable-5\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"providerThinkingLevel\":\"high\",\"responseId\":\"msg_01ABC\",\"responseModel\":\"claude-fable-5-20260101\",\"rawStopReason\":\"error\",\"errorMessage\":\"Overloaded\",\"durationMs\":42,\"thinkingLevel\":\"high\"}}\n"
+    },
+    {
+      "name": "message_update_anthropic_usage",
+      "event": {
+        "type": "message_update",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            },
+            {
+              "type": "toolCall",
+              "id": "call_1",
+              "name": "write",
+              "arguments": {
+                "path": "a.txt"
+              }
+            }
+          ],
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "model": "claude-fable-5",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            },
+            "cacheWrite1h": 5,
+            "reasoning": 3
+          },
+          "stopReason": "pending",
+          "timestamp": 1700000000000
+        },
+        "assistantMessageEvent": {
+          "type": "text_delta",
+          "contentIndex": 0,
+          "delta": "hi",
+          "partial": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "hello"
+              },
+              {
+                "type": "toolCall",
+                "id": "call_1",
+                "name": "write",
+                "arguments": {
+                  "path": "a.txt"
+                }
+              }
+            ],
+            "api": "anthropic-messages",
+            "provider": "anthropic",
+            "model": "claude-fable-5",
+            "usage": {
+              "input": 12,
+              "output": 34,
+              "cacheRead": 7,
+              "cacheWrite": 8,
+              "totalTokens": 61,
+              "cost": {
+                "input": 0.01,
+                "output": 0.02,
+                "cacheRead": 0.03,
+                "cacheWrite": 0.04,
+                "total": 0.1
+              },
+              "cacheWrite1h": 5,
+              "reasoning": 3
+            },
+            "stopReason": "stop",
+            "timestamp": 1700000000000,
+            "providerThinkingLevel": "high",
+            "responseId": "msg_01ABC",
+            "responseModel": "claude-fable-5-20260101",
+            "rawStopReason": "end_turn",
+            "durationMs": 42,
+            "thinkingLevel": "high"
+          }
+        }
+      },
+      "line": "{\"type\":\"message_update\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"assistantMessageEvent\":{\"type\":\"text_delta\",\"contentIndex\":0,\"delta\":\"hi\"}}\n"
+    },
+    {
+      "name": "message_end_openai_completions",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            }
+          ],
+          "api": "openai-completions",
+          "provider": "openai",
+          "model": "gpt-5",
+          "usage": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 3,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "responseId": "chatcmpl-1",
+          "rawStopReason": "stop",
+          "durationMs": 42,
+          "thinkingLevel": "off"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"}],\"api\":\"openai-completions\",\"provider\":\"openai\",\"model\":\"gpt-5\",\"usage\":{\"input\":1,\"output\":2,\"cacheRead\":0,\"cacheWrite\":0,\"reasoning\":0,\"totalTokens\":3,\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0,\"total\":0}},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"responseId\":\"chatcmpl-1\",\"rawStopReason\":\"stop\",\"durationMs\":42,\"thinkingLevel\":\"off\"}}\n"
+    },
+    {
+      "name": "message_end_openai_responses",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            }
+          ],
+          "api": "openai-responses",
+          "provider": "openai",
+          "model": "gpt-5",
+          "usage": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 4,
+            "totalTokens": 3,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0
+            }
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "responseId": "resp_1",
+          "rawStopReason": "completed",
+          "durationMs": 42,
+          "thinkingLevel": "off"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"}],\"api\":\"openai-responses\",\"provider\":\"openai\",\"model\":\"gpt-5\",\"usage\":{\"input\":1,\"output\":2,\"cacheRead\":0,\"cacheWrite\":0,\"reasoning\":4,\"totalTokens\":3,\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0,\"total\":0}},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"responseId\":\"resp_1\",\"rawStopReason\":\"completed\",\"durationMs\":42,\"thinkingLevel\":\"off\"}}\n"
+    },
+    {
+      "name": "message_end_faux_scripted_error",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "scripted"
+            }
+          ],
+          "api": "faux",
+          "provider": "faux",
+          "model": "faux",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "stopReason": "error",
+          "errorMessage": "scripted failure",
+          "responseId": "msg_1",
+          "timestamp": 1700000000000,
+          "durationMs": 3,
+          "thinkingLevel": "off"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"scripted\"}],\"api\":\"faux\",\"provider\":\"faux\",\"model\":\"faux\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"stopReason\":\"error\",\"errorMessage\":\"scripted failure\",\"responseId\":\"msg_1\",\"timestamp\":1700000000000,\"durationMs\":3,\"thinkingLevel\":\"off\"}}\n"
+    },
+    {
+      "name": "message_end_faux_deferred",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "scripted"
+            }
+          ],
+          "api": "faux",
+          "provider": "faux",
+          "model": "faux",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "stopReason": "deferred",
+          "deferred": {
+            "provider": "faux",
+            "modelId": "faux",
+            "api": "faux",
+            "id": "deferred_1"
+          },
+          "timestamp": 1700000000000
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"scripted\"}],\"api\":\"faux\",\"provider\":\"faux\",\"model\":\"faux\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"stopReason\":\"deferred\",\"deferred\":{\"provider\":\"faux\",\"modelId\":\"faux\",\"api\":\"faux\",\"id\":\"deferred_1\"},\"timestamp\":1700000000000}}\n"
+    },
+    {
+      "name": "message_end_faux_aborted",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "scripted"
+            }
+          ],
+          "api": "faux",
+          "provider": "faux",
+          "model": "faux",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "stopReason": "aborted",
+          "timestamp": 1700000000000,
+          "errorMessage": "Request was aborted",
+          "durationMs": 0,
+          "thinkingLevel": "off"
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"scripted\"}],\"api\":\"faux\",\"provider\":\"faux\",\"model\":\"faux\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"stopReason\":\"aborted\",\"timestamp\":1700000000000,\"errorMessage\":\"Request was aborted\",\"durationMs\":0,\"thinkingLevel\":\"off\"}}\n"
+    },
+    {
+      "name": "message_start_tool_result",
+      "event": {
+        "type": "message_start",
+        "message": {
+          "role": "toolResult",
+          "toolCallId": "call_1",
+          "toolName": "write",
+          "content": [
+            {
+              "type": "text",
+              "text": "ok"
+            }
+          ],
+          "details": {
+            "bytes": 2
+          },
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "isError": false,
+          "durationMs": 12,
+          "timestamp": 1700000000000
+        }
+      },
+      "line": "{\"type\":\"message_start\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"call_1\",\"toolName\":\"write\",\"content\":[{\"type\":\"text\",\"text\":\"ok\"}],\"details\":{\"bytes\":2},\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"isError\":false,\"durationMs\":12,\"timestamp\":1700000000000}}\n"
+    },
+    {
+      "name": "message_end_tool_result",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "toolResult",
+          "toolCallId": "call_1",
+          "toolName": "write",
+          "content": [
+            {
+              "type": "text",
+              "text": "ok"
+            }
+          ],
+          "details": {
+            "bytes": 2
+          },
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "isError": false,
+          "durationMs": 12,
+          "timestamp": 1700000000000
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"call_1\",\"toolName\":\"write\",\"content\":[{\"type\":\"text\",\"text\":\"ok\"}],\"details\":{\"bytes\":2},\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"isError\":false,\"durationMs\":12,\"timestamp\":1700000000000}}\n"
+    },
+    {
+      "name": "message_end_tool_result_nested",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "toolResult",
+          "toolCallId": "call_1",
+          "toolName": "write",
+          "content": [
+            {
+              "type": "text",
+              "text": "ok"
+            }
+          ],
+          "details": {
+            "bytes": 2
+          },
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            }
+          },
+          "isError": false,
+          "durationMs": 12,
+          "timestamp": 1700000000000,
+          "nestedCalls": {
+            "calls": [
+              {
+                "name": "read",
+                "arguments": {
+                  "path": "a.txt"
+                }
+              }
+            ],
+            "complete": true
+          }
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"call_1\",\"toolName\":\"write\",\"content\":[{\"type\":\"text\",\"text\":\"ok\"}],\"details\":{\"bytes\":2},\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"isError\":false,\"durationMs\":12,\"timestamp\":1700000000000,\"nestedCalls\":{\"calls\":[{\"name\":\"read\",\"arguments\":{\"path\":\"a.txt\"}}],\"complete\":true}}}\n"
+    },
+    {
+      "name": "message_end_tool_result_error",
+      "event": {
+        "type": "message_end",
+        "message": {
+          "role": "toolResult",
+          "toolCallId": "call_2",
+          "toolName": "bash",
+          "content": [
+            {
+              "type": "text",
+              "text": "boom"
+            }
+          ],
+          "details": {},
+          "isError": true,
+          "timestamp": 1700000000000
+        }
+      },
+      "line": "{\"type\":\"message_end\",\"message\":{\"role\":\"toolResult\",\"toolCallId\":\"call_2\",\"toolName\":\"bash\",\"content\":[{\"type\":\"text\",\"text\":\"boom\"}],\"details\":{},\"isError\":true,\"timestamp\":1700000000000}}\n"
+    },
+    {
+      "name": "turn_end_mixed",
+      "event": {
+        "type": "turn_end",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "hello"
+            },
+            {
+              "type": "toolCall",
+              "id": "call_1",
+              "name": "write",
+              "arguments": {
+                "path": "a.txt"
+              }
+            }
+          ],
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "model": "claude-fable-5",
+          "usage": {
+            "input": 12,
+            "output": 34,
+            "cacheRead": 7,
+            "cacheWrite": 8,
+            "totalTokens": 61,
+            "cost": {
+              "input": 0.01,
+              "output": 0.02,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.04,
+              "total": 0.1
+            },
+            "cacheWrite1h": 5,
+            "reasoning": 3
+          },
+          "stopReason": "stop",
+          "timestamp": 1700000000000,
+          "providerThinkingLevel": "high",
+          "responseId": "msg_01ABC",
+          "responseModel": "claude-fable-5-20260101",
+          "rawStopReason": "end_turn",
+          "durationMs": 42,
+          "thinkingLevel": "high"
+        },
+        "toolResults": [
+          {
+            "role": "toolResult",
+            "toolCallId": "call_1",
+            "toolName": "write",
+            "content": [
+              {
+                "type": "text",
+                "text": "ok"
+              }
+            ],
+            "details": {
+              "bytes": 2
+            },
+            "usage": {
+              "input": 12,
+              "output": 34,
+              "cacheRead": 7,
+              "cacheWrite": 8,
+              "totalTokens": 61,
+              "cost": {
+                "input": 0.01,
+                "output": 0.02,
+                "cacheRead": 0.03,
+                "cacheWrite": 0.04,
+                "total": 0.1
+              }
+            },
+            "isError": false,
+            "durationMs": 12,
+            "timestamp": 1700000000000
+          }
+        ]
+      },
+      "line": "{\"type\":\"turn_end\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"},{\"type\":\"toolCall\",\"id\":\"call_1\",\"name\":\"write\",\"arguments\":{\"path\":\"a.txt\"}}],\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"model\":\"claude-fable-5\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"providerThinkingLevel\":\"high\",\"responseId\":\"msg_01ABC\",\"responseModel\":\"claude-fable-5-20260101\",\"rawStopReason\":\"end_turn\",\"durationMs\":42,\"thinkingLevel\":\"high\"},\"toolResults\":[{\"role\":\"toolResult\",\"toolCallId\":\"call_1\",\"toolName\":\"write\",\"content\":[{\"type\":\"text\",\"text\":\"ok\"}],\"details\":{\"bytes\":2},\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"isError\":false,\"durationMs\":12,\"timestamp\":1700000000000}]}\n"
+    },
+    {
+      "name": "agent_end_mixed",
+      "event": {
+        "type": "agent_end",
+        "messages": [
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "hello"
+              },
+              {
+                "type": "toolCall",
+                "id": "call_1",
+                "name": "write",
+                "arguments": {
+                  "path": "a.txt"
+                }
+              }
+            ],
+            "api": "anthropic-messages",
+            "provider": "anthropic",
+            "model": "claude-fable-5",
+            "usage": {
+              "input": 12,
+              "output": 34,
+              "cacheRead": 7,
+              "cacheWrite": 8,
+              "totalTokens": 61,
+              "cost": {
+                "input": 0.01,
+                "output": 0.02,
+                "cacheRead": 0.03,
+                "cacheWrite": 0.04,
+                "total": 0.1
+              },
+              "cacheWrite1h": 5,
+              "reasoning": 3
+            },
+            "stopReason": "stop",
+            "timestamp": 1700000000000,
+            "providerThinkingLevel": "high",
+            "responseId": "msg_01ABC",
+            "responseModel": "claude-fable-5-20260101",
+            "rawStopReason": "end_turn",
+            "durationMs": 42,
+            "thinkingLevel": "high"
+          },
+          {
+            "role": "toolResult",
+            "toolCallId": "call_1",
+            "toolName": "write",
+            "content": [
+              {
+                "type": "text",
+                "text": "ok"
+              }
+            ],
+            "details": {
+              "bytes": 2
+            },
+            "usage": {
+              "input": 12,
+              "output": 34,
+              "cacheRead": 7,
+              "cacheWrite": 8,
+              "totalTokens": 61,
+              "cost": {
+                "input": 0.01,
+                "output": 0.02,
+                "cacheRead": 0.03,
+                "cacheWrite": 0.04,
+                "total": 0.1
+              }
+            },
+            "isError": false,
+            "durationMs": 12,
+            "timestamp": 1700000000000
+          }
+        ],
+        "willRetry": false
+      },
+      "line": "{\"type\":\"agent_end\",\"messages\":[{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"hello\"},{\"type\":\"toolCall\",\"id\":\"call_1\",\"name\":\"write\",\"arguments\":{\"path\":\"a.txt\"}}],\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"model\":\"claude-fable-5\",\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1},\"cacheWrite1h\":5,\"reasoning\":3},\"stopReason\":\"stop\",\"timestamp\":1700000000000,\"providerThinkingLevel\":\"high\",\"responseId\":\"msg_01ABC\",\"responseModel\":\"claude-fable-5-20260101\",\"rawStopReason\":\"end_turn\",\"durationMs\":42,\"thinkingLevel\":\"high\"},{\"role\":\"toolResult\",\"toolCallId\":\"call_1\",\"toolName\":\"write\",\"content\":[{\"type\":\"text\",\"text\":\"ok\"}],\"details\":{\"bytes\":2},\"usage\":{\"input\":12,\"output\":34,\"cacheRead\":7,\"cacheWrite\":8,\"totalTokens\":61,\"cost\":{\"input\":0.01,\"output\":0.02,\"cacheRead\":0.03,\"cacheWrite\":0.04,\"total\":0.1}},\"isError\":false,\"durationMs\":12,\"timestamp\":1700000000000}],\"willRetry\":false}\n"
+    }
+  ],
+  "models": [
+    {
+      "name": "custom_model",
+      "model": {
+        "id": "my-model",
+        "name": "My Model",
+        "api": "openai-completions",
+        "provider": "my-provider",
+        "baseUrl": "https://example.test/v1",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "high": "high"
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "inputLimits": {
+          "maxRequestBytes": 1000,
+          "images": {
+            "maxPerRequest": 2
+          }
+        },
+        "cost": {
+          "input": 1,
+          "output": 2,
+          "cacheRead": 0.5,
+          "cacheWrite": 0.7
+        },
+        "promptCache": {
+          "short": 300
+        },
+        "contextWindow": 200000,
+        "maxTokens": 8192,
+        "samplingParams": {
+          "temperature": 0.3
+        },
+        "samplingParamsByThinkingLevel": {
+          "high": {
+            "temperature": 0.7
+          }
+        },
+        "compat": {
+          "supportsDeveloperRole": false
+        }
+      },
+      "line": "{\"id\":\"my-model\",\"name\":\"My Model\",\"api\":\"openai-completions\",\"provider\":\"my-provider\",\"baseUrl\":\"https://example.test/v1\",\"reasoning\":true,\"thinkingLevelMap\":{\"off\":null,\"high\":\"high\"},\"input\":[\"text\",\"image\"],\"inputLimits\":{\"maxRequestBytes\":1000,\"images\":{\"maxPerRequest\":2}},\"cost\":{\"input\":1,\"output\":2,\"cacheRead\":0.5,\"cacheWrite\":0.7},\"promptCache\":{\"short\":300},\"contextWindow\":200000,\"maxTokens\":8192,\"samplingParams\":{\"temperature\":0.3},\"samplingParamsByThinkingLevel\":{\"high\":{\"temperature\":0.7}},\"compat\":{\"supportsDeveloperRole\":false}}\n"
+    },
+    {
+      "name": "custom_model_minimal",
+      "model": {
+        "id": "tiny",
+        "name": "tiny",
+        "api": "openai-completions",
+        "provider": "custom",
+        "baseUrl": "https://example.test/v1",
+        "reasoning": false,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 128000,
+        "maxTokens": 16384
+      },
+      "line": "{\"id\":\"tiny\",\"name\":\"tiny\",\"api\":\"openai-completions\",\"provider\":\"custom\",\"baseUrl\":\"https://example.test/v1\",\"reasoning\":false,\"input\":[\"text\"],\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0},\"contextWindow\":128000,\"maxTokens\":16384}\n"
+    },
+    {
+      "name": "custom_model_builtin_id",
+      "model": {
+        "id": "claude-fable-5",
+        "name": "Claude Fable 5",
+        "api": "anthropic-messages",
+        "provider": "anthropic",
+        "baseUrl": "https://proxy.example.test",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 10,
+          "output": 50,
+          "cacheRead": 1,
+          "cacheWrite": 12.5
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 128000
+      },
+      "line": "{\"id\":\"claude-fable-5\",\"name\":\"Claude Fable 5\",\"api\":\"anthropic-messages\",\"provider\":\"anthropic\",\"baseUrl\":\"https://proxy.example.test\",\"reasoning\":true,\"input\":[\"text\",\"image\"],\"cost\":{\"input\":10,\"output\":50,\"cacheRead\":1,\"cacheWrite\":12.5},\"contextWindow\":1000000,\"maxTokens\":128000}\n"
+    }
+  ]
+}

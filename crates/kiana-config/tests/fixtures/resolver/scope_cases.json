@@ -1,0 +1,745 @@
+{
+  "cases": [
+    {
+      "name": "diagnostics",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "patterns": [
+        "sonnet:high",
+        "gpt-4o:invalid",
+        "missing"
+      ],
+      "scopedModels": [
+        {
+          "model": "anthropic/claude-sonnet-4-5",
+          "thinkingLevel": "high"
+        },
+        {
+          "model": "openai/gpt-4o",
+          "thinkingLevel": null
+        }
+      ],
+      "diagnostics": [
+        {
+          "type": "warning",
+          "code": "invalid-thinking-level",
+          "message": "Invalid thinking level \"invalid\" in pattern \"gpt-4o:invalid\". Using default instead.",
+          "pattern": "gpt-4o:invalid"
+        },
+        {
+          "type": "warning",
+          "code": "no-match",
+          "message": "No models match pattern \"missing\"",
+          "pattern": "missing"
+        }
+      ]
+    },
+    {
+      "name": "same id across providers high",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "azure",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "gpt-4o-mini",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai-codex",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "patterns": [
+        "gpt-4o:high"
+      ],
+      "scopedModels": [
+        {
+          "model": "openai/gpt-4o",
+          "thinkingLevel": "high"
+        },
+        {
+          "model": "azure/gpt-4o",
+          "thinkingLevel": "high"
+        }
+      ],
+      "diagnostics": [
+        {
+          "type": "warning",
+          "code": "ambiguous",
+          "message": "Pattern \"gpt-4o:high\" matches several providers: azure, openai. Use provider/id to choose one.",
+          "pattern": "gpt-4o:high"
+        }
+      ]
+    },
+    {
+      "name": "same id across providers case-insensitive",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "azure",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "gpt-4o-mini",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai-codex",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "patterns": [
+        "GPT-4o"
+      ],
+      "scopedModels": [
+        {
+          "model": "openai/gpt-4o",
+          "thinkingLevel": null
+        },
+        {
+          "model": "azure/gpt-4o",
+          "thinkingLevel": null
+        }
+      ],
+      "diagnostics": [
+        {
+          "type": "warning",
+          "code": "ambiguous",
+          "message": "Pattern \"GPT-4o\" matches several providers: azure, openai. Use provider/id to choose one.",
+          "pattern": "GPT-4o"
+        }
+      ]
+    },
+    {
+      "name": "bracketed exact",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "bracketed-model[1m]",
+          "name": "Bracketed Model",
+          "api": "anthropic-messages",
+          "provider": "custom",
+          "baseUrl": "https://example.invalid",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "patterns": [
+        "custom/bracketed-model[1m]"
+      ],
+      "scopedModels": [
+        {
+          "model": "custom/bracketed-model[1m]",
+          "thinkingLevel": null
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "bracketed exact with thinking",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "bracketed-model[1m]",
+          "name": "Bracketed Model",
+          "api": "anthropic-messages",
+          "provider": "custom",
+          "baseUrl": "https://example.invalid",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "patterns": [
+        "custom/bracketed-model[1m]:high"
+      ],
+      "scopedModels": [
+        {
+          "model": "custom/bracketed-model[1m]",
+          "thinkingLevel": "high"
+        }
+      ],
+      "diagnostics": []
+    },
+    {
+      "name": "globs",
+      "models": [
+        {
+          "id": "claude-sonnet-4-5",
+          "name": "Claude Sonnet 4.5",
+          "api": "anthropic-messages",
+          "provider": "anthropic",
+          "baseUrl": "https://api.anthropic.com",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.3,
+            "cacheWrite": 3.75
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "api": "anthropic-messages",
+          "provider": "openai",
+          "baseUrl": "https://api.openai.com",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "qwen/qwen3-coder:exacto",
+          "name": "Qwen3 Coder Exacto",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "GPT-4o Extended",
+          "api": "anthropic-messages",
+          "provider": "openrouter",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 128000,
+          "maxTokens": 4096
+        }
+      ],
+      "patterns": [
+        "*sonnet*",
+        "openai/gpt-*",
+        "{anthropic,openai}/*",
+        "qwen*"
+      ],
+      "scopedModels": [
+        {
+          "model": "anthropic/claude-sonnet-4-5",
+          "thinkingLevel": null
+        },
+        {
+          "model": "openai/gpt-4o",
+          "thinkingLevel": null
+        },
+        {
+          "model": "openrouter/openai/gpt-4o:extended",
+          "thinkingLevel": null
+        }
+      ],
+      "diagnostics": [
+        {
+          "type": "warning",
+          "code": "no-match",
+          "message": "No models match pattern \"qwen*\"",
+          "pattern": "qwen*"
+        }
+      ]
+    }
+  ]
+}

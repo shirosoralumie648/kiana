@@ -1,0 +1,100 @@
+{
+ "cases": [
+  {
+   "literal": "null",
+   "string": "null",
+   "typeof": "object",
+   "truthy": false
+  },
+  {
+   "literal": "true",
+   "string": "true",
+   "typeof": "boolean",
+   "truthy": true
+  },
+  {
+   "literal": "false",
+   "string": "false",
+   "typeof": "boolean",
+   "truthy": false
+  },
+  {
+   "literal": "0",
+   "string": "0",
+   "typeof": "number",
+   "truthy": false
+  },
+  {
+   "literal": "-0",
+   "string": "0",
+   "typeof": "number",
+   "truthy": false
+  },
+  {
+   "literal": "1",
+   "string": "1",
+   "typeof": "number",
+   "truthy": true
+  },
+  {
+   "literal": "-1.5",
+   "string": "-1.5",
+   "typeof": "number",
+   "truthy": true
+  },
+  {
+   "literal": "\"\"",
+   "string": "",
+   "typeof": "string",
+   "truthy": false
+  },
+  {
+   "literal": "\"a\"",
+   "string": "a",
+   "typeof": "string",
+   "truthy": true
+  },
+  {
+   "literal": "[]",
+   "string": "",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "[1,\"a\",null,true,[2]]",
+   "string": "1,a,,true,2",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "{}",
+   "string": "[object Object]",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "{\"a\":1}",
+   "string": "[object Object]",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "[null]",
+   "string": "",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "[[]]",
+   "string": "",
+   "typeof": "object",
+   "truthy": true
+  },
+  {
+   "literal": "[{}]",
+   "string": "[object Object]",
+   "typeof": "object",
+   "truthy": true
+  }
+ ]
+}

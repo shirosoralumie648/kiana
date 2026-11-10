@@ -1,0 +1,46 @@
+[package]
+name = "kiana-resources"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-resources：包管理、资源加载、skills、prompt templates、system prompt、bug report、footer、crash log。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+glob = { workspace = true }
+globset = { workspace = true }
+semver = { workspace = true }
+dirs = { workspace = true }
+chrono = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-permissions = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-extensions = { workspace = true }
+kiana-tui = { workspace = true }
+url = { workspace = true }
+reqwest = { workspace = true }
+notify = { workspace = true }
+kiana-json = { workspace = true }
+tracing = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+insta = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

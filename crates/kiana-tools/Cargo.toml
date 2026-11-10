@@ -1,0 +1,37 @@
+[package]
+name = "kiana-tools"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-tools-compaction-export 的工具部分：8 个内置工具 + 截断 + bash 执行器。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+unicode-normalization = { workspace = true }
+encoding_rs = { workspace = true }
+# `fs.access` 用真正的 access(2)（Node/libuv 同一 syscall）；`std` 没有对应封装。
+libc = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-json = { workspace = true }
+kiana-sandbox = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-ui-kit = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

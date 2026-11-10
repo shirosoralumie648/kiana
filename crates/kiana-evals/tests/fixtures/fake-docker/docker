@@ -1,0 +1,85 @@
+#!/bin/sh
+# 假的 `docker` 可执行文件（测试专用）。
+#
+# 行为：
+# - 把每次调用的 argv 以「行数 + 每行一个参数」追加到 $FAKE_DOCKER_LOG；
+# - `build`：退出码 $FAKE_DOCKER_BUILD_STATUS（默认 0）；
+# - `image inspect --format {{.Id}} <name>`：输出 `fake-id-<name>`；
+# - `run`：按需在 `source=<dir>,target=/artifacts` 的挂载目录里写发现/报告文件，
+#   退出码 $FAKE_DOCKER_RUN_STATUS（默认 0）。
+#
+# 环境变量：
+# - FAKE_DOCKER_DISCOVERY_JSON：`run` 参数含 `--discover` 时写入 discovered-tests.json；
+# - FAKE_DOCKER_CREATE_VITEST=1：非发现运行时写入 vitest.json（内容 FAKE_DOCKER_VITEST_JSON）。
+set -u
+
+log="${FAKE_DOCKER_LOG:?FAKE_DOCKER_LOG is required}"
+{
+    printf '%s\n' "$#"
+    for argument in "$@"; do
+        printf '%s\n' "$argument"
+    done
+} >> "$log"
+
+case "${1:-}" in
+    build)
+        exit "${FAKE_DOCKER_BUILD_STATUS:-0}"
+        ;;
+    image)
+        # image inspect --format <template> <name>
+        case "${FAKE_DOCKER_INSPECT_MODE:-ok}" in
+            empty)
+                exit 0
+                ;;
+            fail)
+                exit 7
+                ;;
+        esac
+        shift 4
+        if [ -n "${FAKE_DOCKER_IMAGE_ID:-}" ]; then
+            printf '%s\n' "$FAKE_DOCKER_IMAGE_ID"
+        else
+            printf 'fake-id-%s\n' "${1:-}"
+        fi
+        exit 0
+        ;;
+    run)
+        shift
+        source_directory=""
+        discovered=0
+        while [ "$#" -gt 0 ]; do
+            case "$1" in
+                --discover)
+                    discovered=1
+                    shift
+                    ;;
+                --mount)
+                    case "${2:-}" in
+                        type=bind,source=*,target=/artifacts)
+                            rest=${2#type=bind,source=}
+                            source_directory=${rest%,target=/artifacts}
+                            ;;
+                    esac
+                    shift 2
+                    ;;
+                *)
+                    shift
+                    ;;
+            esac
+        done
+        if [ -n "$source_directory" ]; then
+            if [ "$discovered" -eq 1 ] && [ -n "${FAKE_DOCKER_DISCOVERY_JSON:-}" ]; then
+                printf '%s' "$FAKE_DOCKER_DISCOVERY_JSON" > "$source_directory/discovered-tests.json"
+            elif [ "${FAKE_DOCKER_CREATE_VITEST:-0}" = "1" ]; then
+                vitest_json="${FAKE_DOCKER_VITEST_JSON-}"
+                if [ -z "$vitest_json" ]; then
+                    vitest_json='{}'
+                fi
+                printf '%s' "$vitest_json" > "$source_directory/vitest.json"
+            fi
+        fi
+        exit "${FAKE_DOCKER_RUN_STATUS:-0}"
+        ;;
+esac
+
+exit 0

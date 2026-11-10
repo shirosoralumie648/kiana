@@ -1,0 +1,147 @@
+[
+  {
+    "input": "https://x.example",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/mcp",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/mcp",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/mcp",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/mcp/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/mcp/",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/mcp",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/mcp",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/mcp/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/mcp//",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/mcp/",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/mcp/",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/mcp//.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/tenant/",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/tenant",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/tenant",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/tenant/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "https://x.example/a/../b",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/b",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/b",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/b/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "HTTPS://X.EXAMPLE:443/a",
+    "urls": [
+      {
+        "href": "https://x.example/.well-known/oauth-authorization-server/a",
+        "type": "oauth"
+      },
+      {
+        "href": "https://x.example/.well-known/openid-configuration/a",
+        "type": "oidc"
+      },
+      {
+        "href": "https://x.example/a/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  },
+  {
+    "input": "http://127.0.0.1:8080/a/b",
+    "urls": [
+      {
+        "href": "http://127.0.0.1:8080/.well-known/oauth-authorization-server/a/b",
+        "type": "oauth"
+      },
+      {
+        "href": "http://127.0.0.1:8080/.well-known/openid-configuration/a/b",
+        "type": "oidc"
+      },
+      {
+        "href": "http://127.0.0.1:8080/a/b/.well-known/openid-configuration",
+        "type": "oidc"
+      }
+    ]
+  }
+]

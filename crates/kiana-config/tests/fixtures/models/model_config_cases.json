@@ -1,0 +1,503 @@
+{
+  "errors": [
+    {
+      "name": "empty object",
+      "content": "{}",
+      "error": "Invalid models.json schema:\n  - providers: must have required properties providers\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "no providers",
+      "content": "{\"$schema\":\"x\"}",
+      "error": "Invalid models.json schema:\n  - providers: must have required properties providers\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "providers wrong type",
+      "content": "{\"providers\":[]}",
+      "error": "Invalid models.json schema:\n  - providers: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "providers value array",
+      "content": "{\"providers\":{\"demo\":[]}}",
+      "error": "Invalid models.json schema:\n  - providers.demo: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "provider models id empty",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.id: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "model no id",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.id: must have required properties id\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "model id number",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":42}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.id: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "model name empty",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"name\":\"\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.name: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "token zero",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"contextWindow\":0}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.contextWindow: must be > 0\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "token neg override",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"maxTokens\":-1}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.m.maxTokens: must be > 0\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "contextWindow string",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"contextWindow\":\"128000\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.contextWindow: must be number\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "compat bad bool",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"supportsLongCacheRetention\":\"yes\"}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.supportsLongCacheRetention: must be boolean\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "compat routing wrong",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"openRouterRouting\":{\"only\":\"a\"}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.openRouterRouting.only: must be array\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "compat session affinity wrong",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"sessionAffinityFormat\":\"nope\"}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must match a schema in anyOf\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "compat chatTemplateKwargs wrong",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"chatTemplateKwargs\":[]}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.chatTemplateKwargs: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "oauth bad",
+      "content": "{\"providers\":{\"demo\":{\"oauth\":\"nope\"}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.oauth: must be equal to constant\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "schema number",
+      "content": "{\"$schema\":42,\"providers\":{}}",
+      "error": "Invalid models.json schema:\n  - $schema: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "headers bad",
+      "content": "{\"providers\":{\"demo\":{\"headers\":{\"a\":1}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.headers.a: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "input bad",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"input\":[\"audio\"]}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.input.0: must be equal to one of the allowed values\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "input not array",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"input\":\"text\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.input: must be array\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "thinking bad",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"thinkingLevelMap\":{\"low\":3}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.thinkingLevelMap.low: must be string\n  - providers.demo.models.0.thinkingLevelMap.low: must be null\n  - providers.demo.models.0.thinkingLevelMap.low: must match a schema in anyOf\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "cost missing rates",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"cost\":{\"input\":1}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.cost.output: must have required properties output, cacheRead, cacheWrite\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "cost extra field",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"cost\":{\"input\":1,\"output\":2,\"cacheRead\":3,\"cacheWrite\":4,\"extra\":true}}]}}}",
+      "error": null
+    },
+    {
+      "name": "cost negative",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"cost\":{\"input\":-1,\"output\":2,\"cacheRead\":3,\"cacheWrite\":4}}]}}}",
+      "error": null
+    },
+    {
+      "name": "tiers missing",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"cost\":{\"input\":1,\"output\":2,\"cacheRead\":3,\"cacheWrite\":4,\"tiers\":[{\"input\":1}]}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.cost.tiers.0.inputTokensAbove: must have required properties inputTokensAbove, output, cacheRead, cacheWrite\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "modelOverrides bad",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"reasoning\":\"yes\"}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.m.reasoning: must be boolean\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "override cost partial",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"cost\":{\"input\":1}}}}}}",
+      "error": null
+    },
+    {
+      "name": "modelOverrides not object",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":[]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "promptCache zero",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"promptCache\":{\"short\":0}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.promptCache.short: must be > 0\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "inputLimits bad",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"images\":{\"resize\":{\"jpegQuality\":101}}}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.inputLimits.images.resize.jpegQuality: must be <= 100\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "inputLimits maxRequestBytes 0",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"maxRequestBytes\":0}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.inputLimits.maxRequestBytes: must be >= 1\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "inputLimits maxRequestBytes 1.5",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"maxRequestBytes\":1.5}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.inputLimits.maxRequestBytes: must be integer\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "sampling value non-object",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"samplingParams\":5}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.samplingParams: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "authHeader bad",
+      "content": "{\"providers\":{\"demo\":{\"authHeader\":\"yes\"}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.authHeader: must be boolean\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "provider name empty",
+      "content": "{\"providers\":{\"demo\":{\"name\":\"\"}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.name: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "api empty",
+      "content": "{\"providers\":{\"demo\":{\"api\":\"\"}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.api: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "baseUrl empty",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"baseUrl\":\"\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.baseUrl: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "multiple errors",
+      "content": "{\"providers\":{\"demo\":{\"name\":\"\",\"authHeader\":1,\"models\":[{\"id\":3,\"reasoning\":\"x\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.name: must not have fewer than 1 characters\n  - providers.demo.authHeader: must be boolean\n  - providers.demo.models.0.id: must be string\n  - providers.demo.models.0.reasoning: must be boolean\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "provider models wrong",
+      "content": "{\"providers\":{\"demo\":{\"models\":{}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models: must be array\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "missing id with bad name",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"name\":\"\"}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.id: must have required properties id\n  - providers.demo.models.0.name: must not have fewer than 1 characters\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "integer string",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"maxRequestBytes\":\"x\"}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.inputLimits.maxRequestBytes: must be integer\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "override value array",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":[]}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.m: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "header null",
+      "content": "{\"providers\":{\"demo\":{\"headers\":{\"a\":null}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.headers.a: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "baseUrl null",
+      "content": "{\"providers\":{\"demo\":{\"baseUrl\":null}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.baseUrl: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "input item null",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"input\":[null]}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.input.0: must be equal to one of the allowed values\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "number bool",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"contextWindow\":true}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.contextWindow: must be number\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "thinking null",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"thinkingLevelMap\":{\"low\":null}}]}}}",
+      "error": null
+    },
+    {
+      "name": "badjson",
+      "content": "{",
+      "error": "Failed to parse models.json: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "blockcomment",
+      "content": "{/*x*/}",
+      "error": "Failed to parse models.json: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "singlequote",
+      "content": "{ 'providers': {} }",
+      "error": "Failed to parse models.json: Expected property name or '}' in JSON at position 2 (line 1 column 3)\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "max errors cap",
+      "content": "{\"providers\":{\"demo\":{\"name\":5,\"baseUrl\":5,\"apiKey\":5,\"api\":5,\"authHeader\":5,\"headers\":{\"a\":5},\"compat\":{\"supportsStore\":5},\"models\":[{\"id\":5}],\"modelOverrides\":{\"m\":{\"reasoning\":5}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.name: must be string\n  - providers.demo.baseUrl: must be string\n  - providers.demo.apiKey: must be string\n  - providers.demo.api: must be string\n  - providers.demo.headers.a: must be string\n  - providers.demo.compat.supportsStore: must be boolean\n  - providers.demo.authHeader: must be boolean\n  - providers.demo.models.0.id: must be string\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "oauth const after type error",
+      "content": "{\"providers\":{\"demo\":{\"oauth\":5}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.oauth: must be string\n  - providers.demo.oauth: must be equal to constant\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "oauth const after type error null",
+      "content": "{\"providers\":{\"demo\":{\"oauth\":null}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.oauth: must be string\n  - providers.demo.oauth: must be equal to constant\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "union const after type error",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"sessionAffinityFormat\":5}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.sessionAffinityFormat: must be string\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must be string\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must be string\n  - providers.demo.compat.sessionAffinityFormat: must be equal to constant\n  - providers.demo.compat.sessionAffinityFormat: must match a schema in anyOf\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "union const after type error thinking budget",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"thinkingTokenBudgetField\":5}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.thinkingTokenBudgetField: must be string\n  - providers.demo.compat.thinkingTokenBudgetField: must be equal to constant\n  - providers.demo.compat.thinkingTokenBudgetField: must be string\n  - providers.demo.compat.thinkingTokenBudgetField: must be equal to constant\n  - providers.demo.compat.thinkingTokenBudgetField: must be string\n  - providers.demo.compat.thinkingTokenBudgetField: must be equal to constant\n  - providers.demo.compat.thinkingTokenBudgetField: must match a schema in anyOf\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "thinking level map known key wrong type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"thinkingLevelMap\":{\"low\":5}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.thinkingLevelMap.low: must be string\n  - providers.demo.models.0.thinkingLevelMap.low: must be null\n  - providers.demo.models.0.thinkingLevelMap.low: must match a schema in anyOf\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "prompt cache known key wrong type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"promptCache\":{\"short\":\"x\"}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.promptCache.short: must be number\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "sampling params known level wrong type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"samplingParamsByThinkingLevel\":{\"low\":\"x\"}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.samplingParamsByThinkingLevel.low: must be object\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "input limits non integer",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"maxRequestBytes\":1.5}}]}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.models.0.inputLimits.maxRequestBytes: must be integer\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "max items provider compat",
+      "content": "{\"providers\":{\"demo\":{\"compat\":{\"allowedFallbackModels\":[{\"provider\":\"a\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"b\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"c\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"d\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}}]}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.compat.allowedFallbackModels: must not have more than 3 items\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "max items model override compat",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"compat\":{\"allowedFallbackModels\":[{\"provider\":\"a\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"b\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"c\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}},{\"provider\":\"d\",\"model\":\"m\",\"cost\":{\"input\":0,\"output\":0,\"cacheRead\":0,\"cacheWrite\":0}}]}}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.m.compat.allowedFallbackModels: must not have more than 3 items\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "raw path slash",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"a/b\":{\"reasoning\":5}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.a.b.reasoning: must be boolean\n\nFile: __DIR__/models.json"
+    },
+    {
+      "name": "raw path tilde",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"a~b\":{\"reasoning\":5}}}}}",
+      "error": "Invalid models.json schema:\n  - providers.demo.modelOverrides.a~b.reasoning: must be boolean\n\nFile: __DIR__/models.json"
+    }
+  ],
+  "success": [
+    {
+      "name": "compat custom",
+      "content": "{\"providers\":{\"demo\":{\"api\":\"custom-api\",\"compat\":{\"customOption\":\"value\",\"supportsStore\":true}}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "api": "custom-api",
+        "compat": {
+          "customOption": "value",
+          "supportsStore": true
+        }
+      }
+    },
+    {
+      "name": "compat nested",
+      "content": "{\"providers\":{\"demo\":{\"baseUrl\":\"http://x\",\"compat\":{\"openRouterRouting\":{\"only\":[\"a\"],\"bogus\":1}}}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "baseUrl": "http://x",
+        "compat": {
+          "openRouterRouting": {
+            "only": [
+              "a"
+            ],
+            "bogus": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "extra fields",
+      "content": "{\"providers\":{\"demo\":{\"custom\":1,\"models\":[{\"id\":\"m\",\"custom\":1}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "custom": 1,
+        "models": [
+          {
+            "id": "m",
+            "custom": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "sampling unknown level",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"samplingParamsByThinkingLevel\":{\"bogus\":{}}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "models": [
+          {
+            "id": "m",
+            "samplingParamsByThinkingLevel": {
+              "bogus": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "thinking unknown key",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"thinkingLevelMap\":{\"bogus\":\"x\"}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "models": [
+          {
+            "id": "m",
+            "thinkingLevelMap": {
+              "bogus": "x"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "full model",
+      "content": "{\"providers\":{\"demo\":{\"name\":\"Demo\",\"baseUrl\":\"http://localhost/v1\",\"api\":\"openai-completions\",\"apiKey\":\"$DEMO_KEY\",\"headers\":{\"a\":\"1\"},\"authHeader\":true,\"models\":[{\"id\":\"m\",\"name\":\"M\",\"reasoning\":true,\"input\":[\"text\",\"image\"],\"contextWindow\":128000,\"maxTokens\":1024,\"thinkingLevelMap\":{\"low\":\"low\"}}],\"modelOverrides\":{\"m\":{\"cost\":{\"input\":1}}}}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": {
+        "name": "Demo",
+        "baseUrl": "http://localhost/v1",
+        "api": "openai-completions",
+        "apiKey": "$DEMO_KEY",
+        "headers": {
+          "a": "1"
+        },
+        "authHeader": true,
+        "models": [
+          {
+            "id": "m",
+            "name": "M",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 128000,
+            "maxTokens": 1024,
+            "thinkingLevelMap": {
+              "low": "low"
+            }
+          }
+        ],
+        "modelOverrides": {
+          "m": {
+            "cost": {
+              "input": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "thinking level map unknown value type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"thinkingLevelMap\":{\"weird\":5,\"low\":\"low\"}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    },
+    {
+      "name": "prompt cache unknown value type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"promptCache\":{\"weird\":\"x\",\"short\":60}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    },
+    {
+      "name": "sampling levels unknown value type",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"samplingParamsByThinkingLevel\":{\"weird\":\"x\",\"low\":{\"temperature\":0.5}}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    },
+    {
+      "name": "override unknown value types",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"thinkingLevelMap\":{\"weird\":5},\"promptCache\":{\"weird\":\"x\"},\"samplingParamsByThinkingLevel\":{\"weird\":\"x\"}}}}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    },
+    {
+      "name": "input limits huge integer",
+      "content": "{\"providers\":{\"demo\":{\"models\":[{\"id\":\"m\",\"inputLimits\":{\"maxRequestBytes\":100000000000000000000,\"images\":{\"maxPerMessage\":1e+300}}}]}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    },
+    {
+      "name": "input limits huge integer override",
+      "content": "{\"providers\":{\"demo\":{\"modelOverrides\":{\"m\":{\"inputLimits\":{\"maxRequestBytes\":100000000000000000000}}}}}}",
+      "error": null,
+      "providerIds": [
+        "demo"
+      ],
+      "provider": null
+    }
+  ]
+}

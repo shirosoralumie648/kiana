@@ -1,0 +1,15 @@
+Usage:
+  kiana remove <source> [-l] [--approve|--no-approve]
+
+Remove a package and its source from settings.
+Alias: kiana uninstall <source> [-l]
+
+Options:
+  -l, --local       Remove from project settings (.kiana/settings.json)
+  -a, --approve     Trust project-local files for this command
+  -na, --no-approve Ignore project-local files for this command
+
+Examples:
+  kiana remove npm:@foo/bar
+  kiana uninstall npm:@foo/bar
+

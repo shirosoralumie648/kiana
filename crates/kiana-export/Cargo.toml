@@ -1,0 +1,26 @@
+[package]
+name = "kiana-export"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 core/export-html：单文件自包含 HTML 导出（模板/CSS/vendored JS 原样嵌入）。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+base64 = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-json = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-ext-api = { workspace = true }
+
+[dev-dependencies]
+regex = { workspace = true }
+sha2 = { workspace = true }
+tempfile = { workspace = true }

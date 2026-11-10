@@ -1,0 +1,144 @@
+{
+  "note": "formUrlencoded / atobSamples 由 Node 26 生成。credentials 按冻结的 Rust Credential 序列化顺序（access、refresh、expires、extra）书写：auth/types.rs 已把 access-first 记录为 spec/ai-auth.md §4.1 示例形态（有意优先于 TS 的插入序）。TS 的 anthropic/meta/github-copilot 以 refresh 开头，因此这里的 github-copilot 条目是 Rust 形态，不是 TS 的逐字节快照。",
+  "formUrlencoded": [
+    {
+      "pairs": [
+        [
+          "code",
+          "true"
+        ],
+        [
+          "client_id",
+          "9d1c250a-e61b-44d9-88ed-5944d1962f5e"
+        ],
+        [
+          "response_type",
+          "code"
+        ],
+        [
+          "redirect_uri",
+          "http://localhost:53692/callback"
+        ],
+        [
+          "scope",
+          "org:create_api_key user:profile user:inference"
+        ],
+        [
+          "code_challenge",
+          "c"
+        ],
+        [
+          "code_challenge_method",
+          "S256"
+        ],
+        [
+          "state",
+          "v"
+        ]
+      ],
+      "expected": "code=true&client_id=9d1c250a-e61b-44d9-88ed-5944d1962f5e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A53692%2Fcallback&scope=org%3Acreate_api_key+user%3Aprofile+user%3Ainference&code_challenge=c&code_challenge_method=S256&state=v"
+    },
+    {
+      "pairs": [
+        [
+          "client_id",
+          "Iv1.b507a08c87ecfe98"
+        ],
+        [
+          "scope",
+          "read:user"
+        ]
+      ],
+      "expected": "client_id=Iv1.b507a08c87ecfe98&scope=read%3Auser"
+    },
+    {
+      "pairs": [
+        [
+          "grant_type",
+          "urn:ietf:params:oauth:grant-type:device_code"
+        ],
+        [
+          "client_id",
+          "kiana-gateway"
+        ],
+        [
+          "device_code",
+          "device-code"
+        ]
+      ],
+      "expected": "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code&client_id=kiana-gateway&device_code=device-code"
+    },
+    {
+      "pairs": [
+        [
+          "code",
+          "a b+c~d*e'f(g)h!"
+        ],
+        [
+          "code_challenge_method",
+          "S256"
+        ]
+      ],
+      "expected": "code=a+b%2Bc%7Ed*e%27f%28g%29h%21&code_challenge_method=S256"
+    }
+  ],
+  "credentials": {
+    "openai-codex": "{\"type\":\"oauth\",\"access\":\"access\",\"refresh\":\"refresh\",\"expires\":1779238800000,\"accountId\":\"acct\"}",
+    "openai-chatgpt": "{\"type\":\"oauth\",\"access\":\"access\",\"refresh\":\"refresh\",\"expires\":1779238800000,\"clientId\":\"oaiapp\",\"scopes\":[\"openid\",\"profile\"]}",
+    "openrouter": "{\"type\":\"oauth\",\"access\":\"sk-or\",\"refresh\":\"\",\"expires\":9007199254740991}",
+    "radius": "{\"type\":\"oauth\",\"access\":\"access\",\"refresh\":\"refresh\",\"expires\":1779238740000,\"scope\":\"gateway offline_access\"}",
+    "xai": "{\"type\":\"oauth\",\"access\":\"access\",\"refresh\":\"refresh\",\"expires\":1779238500000}",
+    "kimi-coding": "{\"type\":\"oauth\",\"access\":\"access\",\"refresh\":\"refresh\",\"expires\":1779238800000}",
+    "github-copilot": "{\"type\":\"oauth\",\"access\":\"tid=t;exp=1;proxy-ep=proxy.individual.githubcopilot.com;\",\"refresh\":\"ghu\",\"expires\":9999996990000,\"enterpriseUrl\":\"company.ghe.com\",\"availableModelIds\":[\"a\",\"b\"]}"
+  },
+  "atobSamples": [
+    [
+      "YQ",
+      "a"
+    ],
+    [
+      "YWI",
+      "ab"
+    ],
+    [
+      "YQ==",
+      "a"
+    ],
+    [
+      "YQ===",
+      null
+    ],
+    [
+      "YQ=",
+      null
+    ],
+    [
+      "Y",
+      null
+    ],
+    [
+      "YWJjZA=",
+      null
+    ],
+    [
+      "YW Jj",
+      "abc"
+    ],
+    [
+      "AAA=",
+      "\u0000\u0000"
+    ],
+    [
+      "AAAAA",
+      null
+    ],
+    [
+      "AAAAA=",
+      null
+    ],
+    [
+      "AAAA==",
+      null
+    ]
+  ]
+}

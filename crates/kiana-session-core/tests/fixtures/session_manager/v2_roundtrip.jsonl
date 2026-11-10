@@ -1,0 +1,4 @@
+{"type":"session","id":"v2-session","timestamp":"2026-01-01T00:00:00.000Z","cwd":"/tmp/fixture","version":2}
+{"type":"message","id":"m1","parentId":null,"timestamp":"2026-01-01T00:00:01.000Z","extraField":{"keep":true},"message":{"role":"hookMessage","customType":"x","content":"hi","display":true,"timestamp":5,"messageExtra":7}}
+{"type":"custom","id":"c1","parentId":"m1","timestamp":"2026-01-01T00:00:02.000Z","customType":"ext","data":{"z":1},"customExtra":"keep?"}
+{"type":"weird_future_type","id":"w1","parentId":"c1","timestamp":"2026-01-01T00:00:03.000Z","payload":[1,2]}

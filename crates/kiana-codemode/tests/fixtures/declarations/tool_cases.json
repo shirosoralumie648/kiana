@@ -1,0 +1,207 @@
+[
+ {
+  "name": "hidden-dynamic-tool",
+  "description": null,
+  "inputSchema": {
+   "type": "object",
+   "properties": {
+    "city": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "city"
+   ],
+   "additionalProperties": false
+  },
+  "outputSchema": {
+   "type": "object",
+   "properties": {
+    "ok": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "ok"
+   ]
+  },
+  "inputMaxChars": null,
+  "signature": "hidden_dynamic_tool(args: { city: string; }): Promise<{ ok: boolean; }>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { hidden_dynamic_tool(args: { city: string; }): Promise<{ ok: boolean; }>; };\n```",
+  "outputType": "{ ok: boolean; }"
+ },
+ {
+  "name": "free",
+  "description": null,
+  "inputSchema": null,
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "free(args: unknown): Promise<unknown>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { free(args: unknown): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "plain",
+  "description": null,
+  "inputSchema": {
+   "type": "object",
+   "properties": {}
+  },
+  "outputSchema": {
+   "type": "object",
+   "properties": {
+    "content": {
+     "type": "array",
+     "items": {
+      "type": "object"
+     }
+    },
+    "isError": {
+     "type": "boolean"
+    },
+    "_meta": {
+     "type": "object"
+    }
+   },
+   "required": [
+    "content"
+   ]
+  },
+  "inputMaxChars": null,
+  "signature": "plain(args: { [key: string]: unknown; }): Promise<{ _meta?: { [key: string]: unknown; }; content: Array<{ [key: string]: unknown; }>; isError?: boolean; }>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { plain(args: { [key: string]: unknown; }): Promise<{ _meta?: { [key: string]: unknown; }; content: Array<{ [key: string]: unknown; }>; isError?: boolean; }>; };\n```",
+  "outputType": "{ _meta?: { [key: string]: unknown; }; content: Array<{ [key: string]: unknown; }>; isError?: boolean; }"
+ },
+ {
+  "name": "foo",
+  "description": "bar",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "foo(args: string): Promise<unknown>;",
+  "sample": "bar\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { foo(args: string): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "foo",
+  "description": "  padded \n",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": {
+   "type": "number"
+  },
+  "inputMaxChars": null,
+  "signature": "foo(args: string): Promise<number>;",
+  "sample": "padded\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { foo(args: string): Promise<number>; };\n```",
+  "outputType": "number"
+ },
+ {
+  "name": "no-doc",
+  "description": null,
+  "inputSchema": null,
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "no_doc(args: unknown): Promise<unknown>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { no_doc(args: unknown): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "blank-doc",
+  "description": "   ",
+  "inputSchema": null,
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "blank_doc(args: unknown): Promise<unknown>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { blank_doc(args: unknown): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "big",
+  "description": null,
+  "inputSchema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "outputSchema": null,
+  "inputMaxChars": 20,
+  "signature": "big(args: { n?: number; }): Promise<unknown>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { big(args: { n?: number; }): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "trim",
+  "description": "﻿bar﻿",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "trim(args: string): Promise<unknown>;",
+  "sample": "bar\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { trim(args: string): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "nel",
+  "description": "bar",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "nel(args: string): Promise<unknown>;",
+  "sample": "bar\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { nel(args: string): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "crlf",
+  "description": "a\r\nb\rc",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "crlf(args: string): Promise<unknown>;",
+  "sample": "a\r\nb\rc\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { crlf(args: string): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "empty",
+  "description": "",
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": null,
+  "inputMaxChars": null,
+  "signature": "empty(args: string): Promise<unknown>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { empty(args: string): Promise<unknown>; };\n```",
+  "outputType": "unknown"
+ },
+ {
+  "name": "big-out",
+  "description": null,
+  "inputSchema": {
+   "type": "string"
+  },
+  "outputSchema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "inputMaxChars": null,
+  "signature": "big_out(args: string): Promise<{\n  // @integer @minimum 1\n  a?: number;\n}>;",
+  "sample": "\n\ncodemode tool declaration:\n```ts\ndeclare const tools: { big_out(args: string): Promise<{\n  // @integer @minimum 1\n  a?: number;\n}>; };\n```",
+  "outputType": "{\n  // @integer @minimum 1\n  a?: number;\n}"
+ }
+]

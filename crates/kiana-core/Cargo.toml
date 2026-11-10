@@ -1,0 +1,68 @@
+[package]
+name = "kiana-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "coding-agent 基础层：config 路径/常量、utils/*、启动期基础设施。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+glob = { workspace = true }
+globset = { workspace = true }
+ignore = { workspace = true }
+semver = { workspace = true }
+dirs = { workspace = true }
+chrono = { workspace = true }
+mime = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-tui = { workspace = true }
+
+# `http_dispatcher.rs`（ClientBuilder：read_timeout/Proxy/happy_eyeballs_timeout）与
+# `management_http.rs`（redirect: manual + AbortSignal 预算）。G1.1：骨架缺依赖，已由架构者补齐。
+reqwest = { workspace = true }
+# `clipboard.rs` 的 OSC 52 与 data URL、`zip.rs` 的 `deflateRawSync`/`crc32`。
+base64 = { workspace = true }
+flate2 = { workspace = true }
+crc32fast = { workspace = true }
+# `image_process.rs` 的 Photon 等价物（原生 photon-rs，§8 第 20 条）与 EXIF 方向。
+photon-rs = { workspace = true, optional = true }
+image = { workspace = true, optional = true }
+kamadak-exif = { workspace = true, optional = true }
+# `net_update.rs` 的 deprecation 日志与 `event_bus.rs` 的 §4.4 tracing 契约。
+# G1.1 审计发现骨架漏了 tracing，已由本单元补进依赖（workspace pin 已存在）。
+tracing = { workspace = true }
+# `fs_watch.rs` 的 fs.watch 等价物（notify 8）。
+notify = { workspace = true }
+# `paths.rs` 的 `file://` 解析（URL 语义与 Node 的 WHATWG URL 一致）。
+url = { workspace = true }
+# `paths.rs` 的非 ASCII 处理与其它 utils 的 id 生成。
+uuid = { workspace = true }
+percent-encoding = { workspace = true }
+# `config.rs::detect_install_change` 的 JS `String(v)`/truthiness/Number::toString
+# （`installed.version !== VERSION` 是 JS 严格不等：非字符串永远不相等）。
+kiana-json = { workspace = true }
+# `paths.rs` 的 access(W_OK) 自更新可写性检查、`shell.rs` 的 kill(-pgid) 与 `exec.rs` 的信号。
+libc = { workspace = true }
+# `output_files.rs` 的 `crypto.randomBytes(8)`（16 位小写 hex 文件名）。
+getrandom = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+wiremock = { workspace = true }
+# `regressions_5303_bash_output_truncation` 需要 `tokio::time::pause` 虚拟时间。
+tokio = { workspace = true, features = ["test-util"] }
+
+[features]
+# ARCHITECTURE.md §8 第 16 条：阶段 2 起 `images` 进 default。
+default = ["images"]
+# 图片处理（`image_process.rs`）：Photon 等价物 + 编解码 + EXIF 方向。
+images = ["dep:photon-rs", "dep:image", "dep:kamadak-exif"]

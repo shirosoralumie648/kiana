@@ -1,0 +1,204 @@
+{
+	"conflicts-with-built-in": {
+		"keys": [],
+		"entries": [],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut 'ctrl+c' from /extensions/conflict.ts conflicts with built-in shortcut. Skipping.",
+				"path": "/extensions/conflict.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut 'ctrl+c' from /extensions/conflict.ts conflicts with built-in shortcut. Skipping."
+		]
+	},
+	"allows-freed-reserved-key": {
+		"keys": [
+			"ctrl+p"
+		],
+		"entries": [
+			[
+				"ctrl+p",
+				{
+					"description": "Uses freed default",
+					"extensionPath": "/extensions/rebinding.ts"
+				}
+			]
+		],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+p' is built-in shortcut for app.models.toggleProvider and /extensions/rebinding.ts. Using /extensions/rebinding.ts.",
+				"path": "/extensions/rebinding.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut conflict: 'ctrl+p' is built-in shortcut for app.models.toggleProvider and /extensions/rebinding.ts. Using /extensions/rebinding.ts."
+		]
+	},
+	"non-reserved-built-in": {
+		"keys": [
+			"ctrl+v"
+		],
+		"entries": [
+			[
+				"ctrl+v",
+				{
+					"description": "Overrides non-reserved",
+					"extensionPath": "/extensions/non-reserved.ts"
+				}
+			]
+		],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/non-reserved.ts. Using /extensions/non-reserved.ts.",
+				"path": "/extensions/non-reserved.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/non-reserved.ts. Using /extensions/non-reserved.ts."
+		]
+	},
+	"rebound-reserved": {
+		"keys": [],
+		"entries": [],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut 'ctrl+x' from /extensions/rebound-reserved.ts conflicts with built-in shortcut. Skipping.",
+				"path": "/extensions/rebound-reserved.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut 'ctrl+x' from /extensions/rebound-reserved.ts conflicts with built-in shortcut. Skipping."
+		]
+	},
+	"shared-reserved": {
+		"keys": [],
+		"entries": [],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut 'ctrl+p' from /extensions/shared-reserved.ts conflicts with built-in shortcut. Skipping.",
+				"path": "/extensions/shared-reserved.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut 'ctrl+p' from /extensions/shared-reserved.ts conflicts with built-in shortcut. Skipping."
+		]
+	},
+	"multi-reserved": {
+		"keys": [],
+		"entries": [],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut 'ctrl+y' from /extensions/multi-reserved.ts conflicts with built-in shortcut. Skipping.",
+				"path": "/extensions/multi-reserved.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut 'ctrl+y' from /extensions/multi-reserved.ts conflicts with built-in shortcut. Skipping."
+		]
+	},
+	"multi-non-reserved": {
+		"keys": [
+			"ctrl+y"
+		],
+		"entries": [
+			[
+				"ctrl+y",
+				{
+					"description": "Overrides multi-key non-reserved",
+					"extensionPath": "/extensions/multi-non-reserved.ts"
+				}
+			]
+		],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+y' is built-in shortcut for app.clipboard.pasteImage and /extensions/multi-non-reserved.ts. Using /extensions/multi-non-reserved.ts.",
+				"path": "/extensions/multi-non-reserved.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut conflict: 'ctrl+y' is built-in shortcut for app.clipboard.pasteImage and /extensions/multi-non-reserved.ts. Using /extensions/multi-non-reserved.ts."
+		]
+	},
+	"same-shortcut-two-extensions": {
+		"keys": [
+			"ctrl+shift+x"
+		],
+		"entries": [
+			[
+				"ctrl+shift+x",
+				{
+					"description": "Second extension",
+					"extensionPath": "/extensions/ext2.ts"
+				}
+			]
+		],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+shift+x' registered by both /extensions/ext1.ts and /extensions/ext2.ts. Using /extensions/ext2.ts.",
+				"path": "/extensions/ext2.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut conflict: 'ctrl+shift+x' registered by both /extensions/ext1.ts and /extensions/ext2.ts. Using /extensions/ext2.ts."
+		]
+	},
+	"builtin-and-extension-duplicate": {
+		"keys": [
+			"ctrl+v"
+		],
+		"entries": [
+			[
+				"ctrl+v",
+				{
+					"description": "Second paste override",
+					"extensionPath": "/extensions/paste-b.ts"
+				}
+			]
+		],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/paste-a.ts. Using /extensions/paste-a.ts.",
+				"path": "/extensions/paste-a.ts"
+			},
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/paste-b.ts. Using /extensions/paste-b.ts.",
+				"path": "/extensions/paste-b.ts"
+			},
+			{
+				"type": "warning",
+				"message": "Extension shortcut conflict: 'ctrl+v' registered by both /extensions/paste-a.ts and /extensions/paste-b.ts. Using /extensions/paste-b.ts.",
+				"path": "/extensions/paste-b.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/paste-a.ts. Using /extensions/paste-a.ts.",
+			"Extension shortcut conflict: 'ctrl+v' is built-in shortcut for app.clipboard.pasteImage and /extensions/paste-b.ts. Using /extensions/paste-b.ts.",
+			"Extension shortcut conflict: 'ctrl+v' registered by both /extensions/paste-a.ts and /extensions/paste-b.ts. Using /extensions/paste-b.ts."
+		]
+	},
+	"lowercases-extension-key": {
+		"keys": [],
+		"entries": [],
+		"diagnostics": [
+			{
+				"type": "warning",
+				"message": "Extension shortcut 'CTRL+C' from /extensions/uppercase.ts conflicts with built-in shortcut. Skipping.",
+				"path": "/extensions/uppercase.ts"
+			}
+		],
+		"warnings": [
+			"Extension shortcut 'CTRL+C' from /extensions/uppercase.ts conflicts with built-in shortcut. Skipping."
+		]
+	}
+}

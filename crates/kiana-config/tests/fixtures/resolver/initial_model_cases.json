@@ -1,0 +1,147 @@
+{
+  "savedDeepSeekModel": {
+    "id": "deepseek-v4-flash",
+    "name": "DeepSeek V4 Flash",
+    "api": "anthropic-messages",
+    "provider": "deepseek",
+    "baseUrl": "https://api.deepseek.com",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 1,
+      "output": 2,
+      "cacheRead": 0.1,
+      "cacheWrite": 1
+    },
+    "contextWindow": 128000,
+    "maxTokens": 8192
+  },
+  "localDeepSeekModel": {
+    "id": "deepseek-v4-flash",
+    "name": "DeepSeek V4 Flash",
+    "api": "anthropic-messages",
+    "provider": "spark-two",
+    "baseUrl": "http://spark-two:8000/v1",
+    "reasoning": true,
+    "input": [
+      "text"
+    ],
+    "cost": {
+      "input": 1,
+      "output": 2,
+      "cacheRead": 0.1,
+      "cacheWrite": 1
+    },
+    "contextWindow": 128000,
+    "maxTokens": 8192
+  },
+  "aiGatewayModel": {
+    "id": "anthropic/claude-opus-4-6",
+    "name": "Claude Opus 4.6",
+    "api": "anthropic-messages",
+    "provider": "vercel-ai-gateway",
+    "baseUrl": "https://ai-gateway.vercel.sh",
+    "reasoning": true,
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 5,
+      "output": 15,
+      "cacheRead": 0.5,
+      "cacheWrite": 5
+    },
+    "contextWindow": 200000,
+    "maxTokens": 8192
+  },
+  "cases": [
+    {
+      "name": "selects ai-gateway default when available",
+      "getModel": null,
+      "configuredProviders": [],
+      "availableSnapshot": [
+        {
+          "id": "anthropic/claude-opus-4-6",
+          "name": "Claude Opus 4.6",
+          "api": "anthropic-messages",
+          "provider": "vercel-ai-gateway",
+          "baseUrl": "https://ai-gateway.vercel.sh",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 15,
+            "cacheRead": 0.5,
+            "cacheWrite": 5
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        }
+      ],
+      "options": {
+        "scopedModels": [],
+        "isContinuing": false
+      },
+      "expected": {
+        "model": {
+          "provider": "vercel-ai-gateway",
+          "id": "anthropic/claude-opus-4-6"
+        },
+        "thinkingLevel": "medium",
+        "fallbackMessage": null
+      }
+    },
+    {
+      "name": "ignores an unauthenticated saved default",
+      "getModel": {
+        "provider": "deepseek",
+        "id": "deepseek-v4-flash",
+        "available": true
+      },
+      "configuredProviders": [
+        "spark-two"
+      ],
+      "availableSnapshot": [
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "api": "anthropic-messages",
+          "provider": "spark-two",
+          "baseUrl": "http://spark-two:8000/v1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 1,
+            "output": 2,
+            "cacheRead": 0.1,
+            "cacheWrite": 1
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ],
+      "options": {
+        "scopedModels": [],
+        "isContinuing": false,
+        "defaultProvider": "deepseek",
+        "defaultModelId": "deepseek-v4-flash"
+      },
+      "expected": {
+        "model": {
+          "provider": "spark-two",
+          "id": "deepseek-v4-flash"
+        },
+        "thinkingLevel": "medium",
+        "fallbackMessage": null
+      }
+    }
+  ]
+}

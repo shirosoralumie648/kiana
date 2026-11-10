@@ -1,0 +1,2395 @@
+{
+ "note": "Golden vectors generated from the TS reference (node 26, packages/ai/src/utils/json-parse.ts + partial-json@0.1.7) at /home/ctyun/kiana-work/upstream-reference. Each case records every observable of the kiana-json API for one input. Deviations that the Rust port must make (lone surrogates -> U+FFFD, non-finite numbers -> null) are pre-applied here, EXCEPT where `lone_surrogate` marks the case (then Rust is expected to differ and the test skips the string column).",
+ "cases": [
+  {
+   "input": "{\"text\":\"\\url{x}\"}",
+   "lone_surrogate": false,
+   "repair": "{\"text\":\"\\\\url{x}\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 11 (line 1 column 12)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"text\":\"\\\\url{x}\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"text\":\"\\\\url{x}\"}",
+    "keys": [
+     "text"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"text\":\"\\\\url{x}\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"path\":\"a.tex\",\"content\":\"\\usepackage{x}\",\"mode\":\"w\"}",
+   "lone_surrogate": false,
+   "repair": "{\"path\":\"a.tex\",\"content\":\"\\\\usepackage{x}\",\"mode\":\"w\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 29 (line 1 column 30)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"path\":\"a.tex\",\"content\":\"\\\\usepackage{x}\",\"mode\":\"w\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"path\":\"a.tex\",\"content\":\"\\\\usepackage{x}\",\"mode\":\"w\"}",
+    "keys": [
+     "path",
+     "content",
+     "mode"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"path\":\"a.tex\",\"content\":\"\\\\usepackage{x}\",\"mode\":\"w\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"text\":\"café \\url\"}",
+   "lone_surrogate": false,
+   "repair": "{\"text\":\"café \\\\url\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 16 (line 1 column 17)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"text\":\"café \\\\url\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"text\":\"café \\\\url\"}",
+    "keys": [
+     "text"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"text\":\"café \\\\url\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"text\":\"ab\\u00",
+   "lone_surrogate": false,
+   "repair": "{\"text\":\"ab\\\\u00",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 15 (line 1 column 16)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 16 (line 1 column 17)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"text\":\"ab\"}",
+    "keys": [
+     "text"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 16 (line 1 column 17)\n\nReceived arguments:\n{\"text\":\"ab\\u00"
+   }
+  },
+  {
+   "input": "{\"kind\":\"seek\",\"note\":\"\\url\"}",
+   "lone_surrogate": false,
+   "repair": "{\"kind\":\"seek\",\"note\":\"\\\\url\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 25 (line 1 column 26)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"kind\":\"seek\",\"note\":\"\\\\url\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"kind\":\"seek\",\"note\":\"\\\\url\"}",
+    "keys": [
+     "kind",
+     "note"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"kind\":\"seek\",\"note\":\"\\\\url\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "",
+   "lone_surrogate": false,
+   "repair": "",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "   ",
+   "lone_surrogate": false,
+   "repair": "   ",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\",\"time\":.5}]}",
+   "lone_surrogate": false,
+   "repair": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\",\"time\":.5}]}",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token '.', ...\"k\",\"time\":.5}]}\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token '.', ...\"k\",\"time\":.5}]}\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\"}]}",
+    "keys": [
+     "action",
+     "actions"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token '.', ...\"k\",\"time\":.5}]}\" is not valid JSON\n\nReceived arguments:\n{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\",\"time\":.5}]}"
+   }
+  },
+  {
+   "input": "{\"kind\":\"seek\",\"clipId\":\"clip-fl",
+   "lone_surrogate": false,
+   "repair": "{\"kind\":\"seek\",\"clipId\":\"clip-fl",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 32 (line 1 column 33)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 32 (line 1 column 33)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"kind\":\"seek\",\"clipId\":\"clip-fl\"}",
+    "keys": [
+     "kind",
+     "clipId"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 32 (line 1 column 33)\n\nReceived arguments:\n{\"kind\":\"seek\",\"clipId\":\"clip-fl"
+   }
+  },
+  {
+   "input": "[1,2]",
+   "lone_surrogate": false,
+   "repair": "[1,2]",
+   "parse": {
+    "ok": true,
+    "value": "[1,2]",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "[1,2]"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[1,2]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n[1,2]"
+   }
+  },
+  {
+   "input": "{\"a\":\"\\d\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\\\d\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad escaped character in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\d\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\d\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"\\\\d\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"\\u12\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\\\u12\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 10 (line 1 column 11)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\u12\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\u12\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"\\\\u12\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"\\u12G4\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\\\u12G4\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad Unicode escape in JSON at position 10 (line 1 column 11)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\u12G4\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\u12G4\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"\\\\u12G4\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"\\uABCD\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\uABCD\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"ꯍ\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"\\uabcd\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\uabcd\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"ꯍ\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"ꯍ\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"a\\\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"a\\\"}",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 10 (line 1 column 11)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 10 (line 1 column 11)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"a\\\"}\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 10 (line 1 column 11)\n\nReceived arguments:\n{\"a\":\"a\\\"}"
+   }
+  },
+  {
+   "input": "\"a\\",
+   "lone_surrogate": false,
+   "repair": "\"a\\\\",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 4 (line 1 column 5)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "\"a\"",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 4 (line 1 column 5)\n\nReceived arguments:\n\"a\\"
+   }
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x\\ny\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad control character in string literal in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"x\\ny\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x\\ny\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"x\\ny\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"x\u0001y\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x\\u0001y\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad control character in string literal in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"x\\u0001y\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x\\u0001y\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"x\\u0001y\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"x\u001fy\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x\\u001fy\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad control character in string literal in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"x\\u001fy\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x\\u001fy\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"x\\u001fy\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"xy\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"xy\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"xy\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"xy\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"xy\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"xy\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"x\b\f\r\ty\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x\\b\\f\\r\\ty\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad control character in string literal in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"x\\b\\f\\r\\ty\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x\\b\\f\\r\\ty\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"x\\b\\f\\r\\ty\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"x/y\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x/y\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"x/y\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"x/y\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x/y\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"x/y\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "plain text",
+   "lone_surrogate": false,
+   "repair": "plain text",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token 'p', \"plain text\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token 'p', \"plain text\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token 'p', \"plain text\" is not valid JSON\n\nReceived arguments:\nplain text"
+   }
+  },
+  {
+   "input": "{\"a\":1,}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1,}",
+   "parse": {
+    "ok": false,
+    "error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":1,}"
+   }
+  },
+  {
+   "input": "[1,2,]",
+   "lone_surrogate": false,
+   "repair": "[1,2,]",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token ']', \"[1,2,]\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token ']', \"[1,2,]\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[1,2]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token ']', \"[1,2,]\" is not valid JSON\n\nReceived arguments:\n[1,2,]"
+   }
+  },
+  {
+   "input": "{\"a\":1,}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1,}",
+   "parse": {
+    "ok": false,
+    "error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":1,}"
+   }
+  },
+  {
+   "input": "{\"a\" 1}",
+   "lone_surrogate": false,
+   "repair": "{\"a\" 1}",
+   "parse": {
+    "ok": false,
+    "error": "Expected ':' after property name in JSON at position 5 (line 1 column 6)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ':' after property name in JSON at position 5 (line 1 column 6)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ':' after property name in JSON at position 5 (line 1 column 6)\n\nReceived arguments:\n{\"a\" 1}"
+   }
+  },
+  {
+   "input": "{\"a\":1 \"b\":2}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1 \"b\":2}",
+   "parse": {
+    "ok": false,
+    "error": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":1 \"b\":2}"
+   }
+  },
+  {
+   "input": "12.",
+   "lone_surrogate": false,
+   "repair": "12.",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated fractional number in JSON at position 3 (line 1 column 4)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated fractional number in JSON at position 3 (line 1 column 4)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated fractional number in JSON at position 3 (line 1 column 4)\n\nReceived arguments:\n12."
+   }
+  },
+  {
+   "input": ".5",
+   "lone_surrogate": false,
+   "repair": ".5",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token '.', \".5\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token '.', \".5\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token '.', \".5\" is not valid JSON\n\nReceived arguments:\n.5"
+   }
+  },
+  {
+   "input": "+1",
+   "lone_surrogate": false,
+   "repair": "+1",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token '+', \"+1\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token '+', \"+1\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token '+', \"+1\" is not valid JSON\n\nReceived arguments:\n+1"
+   }
+  },
+  {
+   "input": "0x10",
+   "lone_surrogate": false,
+   "repair": "0x10",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)\n\nReceived arguments:\n0x10"
+   }
+  },
+  {
+   "input": "{\"a\":\"\\q\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\\\q\"}",
+   "parse": {
+    "ok": false,
+    "error": "Bad escaped character in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\q\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"\\\\q\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"\\\\q\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "[object Object]",
+   "lone_surrogate": false,
+   "repair": "[object Object]",
+   "parse": {
+    "ok": false,
+    "error": "\"[object Object]\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "\"[object Object]\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "\"[object Object]\" is not valid JSON\n\nReceived arguments:\n[object Object]"
+   }
+  },
+  {
+   "input": "undefined",
+   "lone_surrogate": false,
+   "repair": "undefined",
+   "parse": {
+    "ok": false,
+    "error": "\"undefined\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "\"undefined\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "\"undefined\" is not valid JSON\n\nReceived arguments:\nundefined"
+   }
+  },
+  {
+   "input": "NaN",
+   "lone_surrogate": false,
+   "repair": "NaN",
+   "parse": {
+    "ok": false,
+    "error": "\"NaN\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "\"NaN\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "null",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": true
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "\"NaN\" is not valid JSON\n\nReceived arguments:\nNaN"
+   }
+  },
+  {
+   "input": "Infinity",
+   "lone_surrogate": false,
+   "repair": "Infinity",
+   "parse": {
+    "ok": false,
+    "error": "\"Infinity\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "\"Infinity\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "null",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": true
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "\"Infinity\" is not valid JSON\n\nReceived arguments:\nInfinity"
+   }
+  },
+  {
+   "input": "{\"a\":1}x",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1}x",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected non-whitespace character after JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":1}x"
+   }
+  },
+  {
+   "input": "{\"a\":1}\n x",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1}\n x",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 9 (line 2 column 2)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 9 (line 2 column 2)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected non-whitespace character after JSON at position 9 (line 2 column 2)\n\nReceived arguments:\n{\"a\":1}\n x"
+   }
+  },
+  {
+   "input": "",
+   "lone_surrogate": false,
+   "repair": "",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": " ",
+   "lone_surrogate": false,
+   "repair": " ",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "\n",
+   "lone_surrogate": false,
+   "repair": "\n",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "tru",
+   "lone_surrogate": false,
+   "repair": "tru",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "true",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected end of JSON input\n\nReceived arguments:\ntru"
+   }
+  },
+  {
+   "input": "nul",
+   "lone_surrogate": false,
+   "repair": "nul",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected end of JSON input\n\nReceived arguments:\nnul"
+   }
+  },
+  {
+   "input": "\"unterminated",
+   "lone_surrogate": false,
+   "repair": "\"unterminated",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 13 (line 1 column 14)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 13 (line 1 column 14)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "\"unterminated\"",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 13 (line 1 column 14)\n\nReceived arguments:\n\"unterminated"
+   }
+  },
+  {
+   "input": "\"a\nb\"",
+   "lone_surrogate": false,
+   "repair": "\"a\\nb\"",
+   "parse": {
+    "ok": false,
+    "error": "Bad control character in string literal in JSON at position 2 (line 1 column 3)"
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "\"a\\nb\""
+   },
+   "streaming": {
+    "ok": true,
+    "value": "\"a\\nb\"",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n\"a\nb\""
+   }
+  },
+  {
+   "input": "[\"a\" \"b\"]",
+   "lone_surrogate": false,
+   "repair": "[\"a\" \"b\"]",
+   "parse": {
+    "ok": false,
+    "error": "Expected ',' or ']' after array element in JSON at position 5 (line 1 column 6)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ',' or ']' after array element in JSON at position 5 (line 1 column 6)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[\"a\",\"b\"]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ',' or ']' after array element in JSON at position 5 (line 1 column 6)\n\nReceived arguments:\n[\"a\" \"b\"]"
+   }
+  },
+  {
+   "input": "[1 2]",
+   "lone_surrogate": false,
+   "repair": "[1 2]",
+   "parse": {
+    "ok": false,
+    "error": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ',' or ']' after array element in JSON at position 3 (line 1 column 4)\n\nReceived arguments:\n[1 2]"
+   }
+  },
+  {
+   "input": "{\"a\":}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":}",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token '}', \"{\"a\":}\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token '}', \"{\"a\":}\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token '}', \"{\"a\":}\" is not valid JSON\n\nReceived arguments:\n{\"a\":}"
+   }
+  },
+  {
+   "input": "{\"a\":1",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1",
+   "parse": {
+    "ok": false,
+    "error": "Expected ',' or '}' after property value in JSON at position 6 (line 1 column 7)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ',' or '}' after property value in JSON at position 6 (line 1 column 7)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ',' or '}' after property value in JSON at position 6 (line 1 column 7)\n\nReceived arguments:\n{\"a\":1"
+   }
+  },
+  {
+   "input": "{\"a\":",
+   "lone_surrogate": false,
+   "repair": "{\"a\":",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected end of JSON input\n\nReceived arguments:\n{\"a\":"
+   }
+  },
+  {
+   "input": "{\"a\"",
+   "lone_surrogate": false,
+   "repair": "{\"a\"",
+   "parse": {
+    "ok": false,
+    "error": "Expected ':' after property name in JSON at position 4 (line 1 column 5)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Expected ':' after property name in JSON at position 4 (line 1 column 5)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Expected ':' after property name in JSON at position 4 (line 1 column 5)\n\nReceived arguments:\n{\"a\""
+   }
+  },
+  {
+   "input": "{\"a\":\"x",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"x",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"x\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":\"x"
+   }
+  },
+  {
+   "input": "{\"a\":tru",
+   "lone_surrogate": false,
+   "repair": "{\"a\":tru",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":true}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected end of JSON input\n\nReceived arguments:\n{\"a\":tru"
+   }
+  },
+  {
+   "input": "{\"a\":nul",
+   "lone_surrogate": false,
+   "repair": "{\"a\":nul",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected end of JSON input"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected end of JSON input\n\nReceived arguments:\n{\"a\":nul"
+   }
+  },
+  {
+   "input": "{\"a\":NaN",
+   "lone_surrogate": false,
+   "repair": "{\"a\":NaN",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token 'N', \"{\"a\":NaN\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token 'N', \"{\"a\":NaN\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token 'N', \"{\"a\":NaN\" is not valid JSON\n\nReceived arguments:\n{\"a\":NaN"
+   }
+  },
+  {
+   "input": "{\"a\":Inf",
+   "lone_surrogate": false,
+   "repair": "{\"a\":Inf",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token 'I', \"{\"a\":Inf\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token 'I', \"{\"a\":Inf\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token 'I', \"{\"a\":Inf\" is not valid JSON\n\nReceived arguments:\n{\"a\":Inf"
+   }
+  },
+  {
+   "input": "{\"a\":-Inf",
+   "lone_surrogate": false,
+   "repair": "{\"a\":-Inf",
+   "parse": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 6 (line 1 column 7)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 6 (line 1 column 7)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "No number after minus sign in JSON at position 6 (line 1 column 7)\n\nReceived arguments:\n{\"a\":-Inf"
+   }
+  },
+  {
+   "input": "{\"a\":1e",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1e",
+   "parse": {
+    "ok": false,
+    "error": "Exponent part is missing a number in JSON at position 7 (line 1 column 8)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Exponent part is missing a number in JSON at position 7 (line 1 column 8)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Exponent part is missing a number in JSON at position 7 (line 1 column 8)\n\nReceived arguments:\n{\"a\":1e"
+   }
+  },
+  {
+   "input": "{\"a\":1e+",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1e+",
+   "parse": {
+    "ok": false,
+    "error": "Exponent part is missing a number in JSON at position 8 (line 1 column 9)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Exponent part is missing a number in JSON at position 8 (line 1 column 9)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Exponent part is missing a number in JSON at position 8 (line 1 column 9)\n\nReceived arguments:\n{\"a\":1e+"
+   }
+  },
+  {
+   "input": "{\"a\":.5",
+   "lone_surrogate": false,
+   "repair": "{\"a\":.5",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected token '.', \"{\"a\":.5\" is not valid JSON"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected token '.', \"{\"a\":.5\" is not valid JSON"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected token '.', \"{\"a\":.5\" is not valid JSON\n\nReceived arguments:\n{\"a\":.5"
+   }
+  },
+  {
+   "input": "{\"a\":01",
+   "lone_surrogate": false,
+   "repair": "{\"a\":01",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected number in JSON at position 6 (line 1 column 7)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected number in JSON at position 6 (line 1 column 7)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected number in JSON at position 6 (line 1 column 7)\n\nReceived arguments:\n{\"a\":01"
+   }
+  },
+  {
+   "input": "{\"a\":-",
+   "lone_surrogate": false,
+   "repair": "{\"a\":-",
+   "parse": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 6 (line 1 column 7)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 6 (line 1 column 7)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "No number after minus sign in JSON at position 6 (line 1 column 7)\n\nReceived arguments:\n{\"a\":-"
+   }
+  },
+  {
+   "input": "-",
+   "lone_surrogate": false,
+   "repair": "-",
+   "parse": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 1 (line 1 column 2)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "No number after minus sign in JSON at position 1 (line 1 column 2)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "No number after minus sign in JSON at position 1 (line 1 column 2)\n\nReceived arguments:\n-"
+   }
+  },
+  {
+   "input": "1e400e",
+   "lone_surrogate": false,
+   "repair": "1e400e",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 5 (line 1 column 6)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 5 (line 1 column 6)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "null",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": true
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected non-whitespace character after JSON at position 5 (line 1 column 6)\n\nReceived arguments:\n1e400e"
+   }
+  },
+  {
+   "input": "12e0e",
+   "lone_surrogate": false,
+   "repair": "12e0e",
+   "parse": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 4 (line 1 column 5)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unexpected non-whitespace character after JSON at position 4 (line 1 column 5)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "12",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unexpected non-whitespace character after JSON at position 4 (line 1 column 5)\n\nReceived arguments:\n12e0e"
+   }
+  },
+  {
+   "input": "{\"__proto__\":{\"x\":1},\"a\":2}",
+   "lone_surrogate": false,
+   "repair": "{\"__proto__\":{\"x\":1},\"a\":2}",
+   "parse": {
+    "ok": true,
+    "value": "{\"__proto__\":{\"x\":1},\"a\":2}",
+    "keys": [
+     "__proto__",
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"__proto__\":{\"x\":1},\"a\":2}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"__proto__\":{\"x\":1},\"a\":2}",
+    "keys": [
+     "__proto__",
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"__proto__\":{\"x\":1},\"a\":2}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"b\":1,\"2\":2,\"a\":3,\"1\":4}",
+   "lone_surrogate": false,
+   "repair": "{\"b\":1,\"2\":2,\"a\":3,\"1\":4}",
+   "parse": {
+    "ok": true,
+    "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+    "keys": [
+     "1",
+     "2",
+     "b",
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+    "keys": [
+     "1",
+     "2",
+     "b",
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":{\"b\":[1,{\"c\":\"d",
+   "lone_surrogate": false,
+   "repair": "{\"a\":{\"b\":[1,{\"c\":\"d",
+   "parse": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 20 (line 1 column 21)"
+   },
+   "with_repair": {
+    "ok": false,
+    "error": "Unterminated string in JSON at position 20 (line 1 column 21)"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":{\"b\":[1,{\"c\":\"d\"}]}}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Unterminated string in JSON at position 20 (line 1 column 21)\n\nReceived arguments:\n{\"a\":{\"b\":[1,{\"c\":\"d"
+   }
+  },
+  {
+   "input": "{\"a\":\"\\uD83D\\uDE00\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\uD83D\\uDE00\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"😀\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"😀\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"😀\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"😀\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":\"\\uD800\"}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":\"\\uD800\"}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":\"�\"}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":\"�\"}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":\"�\"}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":\"�\"}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":9007199254740993}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":9007199254740993}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":9007199254740992}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":9007199254740992}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":9007199254740992}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":9007199254740992}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":1e400}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":1e400}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":null}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":null}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "1.55e-9223372036854775807",
+   "lone_surrogate": false,
+   "repair": "1.55e-9223372036854775807",
+   "parse": {
+    "ok": true,
+    "value": "0",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "0"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "0",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n1.55e-9223372036854775807"
+   }
+  },
+  {
+   "input": "1.55e9223372036854775807",
+   "lone_surrogate": false,
+   "repair": "1.55e9223372036854775807",
+   "parse": {
+    "ok": true,
+    "value": "null",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "null"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "null",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": true
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n1.55e9223372036854775807"
+   }
+  },
+  {
+   "input": "null",
+   "lone_surrogate": false,
+   "repair": "null",
+   "parse": {
+    "ok": true,
+    "value": "null",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "null"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "null",
+    "keys": null,
+    "is_null": true,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\nnull"
+   }
+  },
+  {
+   "input": "true",
+   "lone_surrogate": false,
+   "repair": "true",
+   "parse": {
+    "ok": true,
+    "value": "true",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "true"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "true",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\ntrue"
+   }
+  },
+  {
+   "input": "123",
+   "lone_surrogate": false,
+   "repair": "123",
+   "parse": {
+    "ok": true,
+    "value": "123",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "123"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "123",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n123"
+   }
+  },
+  {
+   "input": "\"abc\"",
+   "lone_surrogate": false,
+   "repair": "\"abc\"",
+   "parse": {
+    "ok": true,
+    "value": "\"abc\"",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "\"abc\""
+   },
+   "streaming": {
+    "ok": true,
+    "value": "\"abc\"",
+    "keys": null,
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n\"abc\""
+   }
+  },
+  {
+   "input": "{}",
+   "lone_surrogate": false,
+   "repair": "{}",
+   "parse": {
+    "ok": true,
+    "value": "{}",
+    "keys": []
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{}",
+    "keys": [],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "[]",
+   "lone_surrogate": false,
+   "repair": "[]",
+   "parse": {
+    "ok": true,
+    "value": "[]",
+    "keys": null
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "[]"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "[]",
+    "keys": null,
+    "is_null": false,
+    "is_array": true,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{}",
+    "arguments_error": "Tool arguments must be a JSON object\n\nReceived arguments:\n[]"
+   }
+  },
+  {
+   "input": "{\"a\":null}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":null}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":null}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":null}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":null}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": "{\"a\":{\"b\":1}}",
+   "lone_surrogate": false,
+   "repair": "{\"a\":{\"b\":1}}",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":{\"b\":1}}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":{\"b\":1}}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":{\"b\":1}}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":{\"b\":1}}",
+    "arguments_error": null
+   }
+  },
+  {
+   "input": " \t\n{\"a\":1} ",
+   "lone_surrogate": false,
+   "repair": " \t\n{\"a\":1} ",
+   "parse": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ]
+   },
+   "with_repair": {
+    "ok": true,
+    "value": "{\"a\":1}"
+   },
+   "streaming": {
+    "ok": true,
+    "value": "{\"a\":1}",
+    "keys": [
+     "a"
+    ],
+    "is_null": false,
+    "is_array": false,
+    "non_finite_number": false
+   },
+   "tool_call": {
+    "arguments": "{\"a\":1}",
+    "arguments_error": null
+   }
+  }
+ ],
+ "allow_cases": [
+  {
+   "input": "[{\"a\": 1, \"b\": 2}, {\"a\": 3,",
+   "mask_name": "ARR",
+   "mask": 4,
+   "ok": true,
+   "value": "[{\"a\":1,\"b\":2}]"
+  },
+  {
+   "input": "[{\"a\": 1, \"b\": 2}, {\"a\": 3,",
+   "mask_name": "OBJ",
+   "mask": 8,
+   "ok": false,
+   "error": "Expected ']' at end of array at position 27",
+   "kind": "PartialJSON"
+  },
+  {
+   "input": "[{\"a\": 1, \"b\": 2}, {\"a\": 3,",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "[{\"a\":1,\"b\":2},{\"a\":3}]"
+  },
+  {
+   "input": "[\"complete string\", \"incompl",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "[\"complete string\",\"incompl\"]"
+  },
+  {
+   "input": "[\"complete string\", \"incompl",
+   "mask_name": "ALL_WITHOUT_STR",
+   "mask": 510,
+   "ok": true,
+   "value": "[\"complete string\"]"
+  },
+  {
+   "input": "[123., 4",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "[123., 4",
+   "mask_name": "ALL_WITHOUT_NUM",
+   "mask": 509,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "[tru, nul",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "[tru, nul",
+   "mask_name": "ALL_WITHOUT_BOOL",
+   "mask": 479,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "[Na, Inf, -Inf",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "[Na, Inf, -Inf",
+   "mask_name": "ALL_WITHOUT_NAN",
+   "mask": 447,
+   "ok": true,
+   "value": "[]"
+  },
+  {
+   "input": "{\"a\":1,\"b\":",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "{\"a\":1}"
+  },
+  {
+   "input": "{\"a\":1,\"b\":",
+   "mask_name": "ALL_WITHOUT_OBJ",
+   "mask": 503,
+   "ok": false,
+   "error": "Expected '}' at end of object at position 11",
+   "kind": "PartialJSON"
+  },
+  {
+   "input": "{\"a\":1,\"b\":",
+   "mask_name": "ARR",
+   "mask": 4,
+   "ok": false,
+   "error": "Expected '}' at end of object at position 11",
+   "kind": "PartialJSON"
+  },
+  {
+   "input": "\"hello \\u12",
+   "mask_name": "ALL",
+   "mask": 511,
+   "ok": true,
+   "value": "\"hello \""
+  },
+  {
+   "input": "\"hello \\u12",
+   "mask_name": "ALL_WITHOUT_STR",
+   "mask": 510,
+   "ok": false,
+   "error": "Unterminated string literal at position 11",
+   "kind": "PartialJSON"
+  }
+ ]
+}

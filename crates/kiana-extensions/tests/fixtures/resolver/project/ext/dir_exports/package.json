@@ -1,0 +1,4 @@
+{
+  "name": "dir-exports",
+  "exports": { ".": { "import": "./esm.js", "require": "./cjs.cjs" } }
+}

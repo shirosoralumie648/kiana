@@ -1,0 +1,59 @@
+[
+  {
+    "input": "hello world",
+    "visibleWidth": 11,
+    "render": [
+      "hello world         "
+    ],
+    "truncate": "hello world",
+    "truncateWidth": 11
+  },
+  {
+    "input": "\u001b[31mred\u001b[0m text",
+    "visibleWidth": 8,
+    "render": [
+      "\u001b[31mred\u001b[0m text            "
+    ],
+    "truncate": "\u001b[31mred\u001b[0m text",
+    "truncateWidth": 8
+  },
+  {
+    "input": "漢字かなカナ한글",
+    "visibleWidth": 16,
+    "render": [
+      "漢字かなカナ한글    "
+    ],
+    "truncate": "漢字かなカナ한글",
+    "truncateWidth": 16
+  },
+  {
+    "input": "a👍🏽b👨‍👩‍👧",
+    "visibleWidth": 6,
+    "render": [
+      "a👍🏽b👨‍👩‍👧              "
+    ],
+    "truncate": "a👍🏽b👨‍👩‍👧",
+    "truncateWidth": 6
+  },
+  {
+    "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "visibleWidth": 60,
+    "render": [
+      "xxxxxxxxxxxxxxxxxxxx",
+      "xxxxxxxxxxxxxxxxxxxx",
+      "xxxxxxxxxxxxxxxxxxxx"
+    ],
+    "truncate": "xxxxxxxxxxxxxxxxx\u001b[0m…\u001b[0m",
+    "truncateWidth": 18
+  },
+  {
+    "input": "line1\nline2\ttab",
+    "visibleWidth": 16,
+    "render": [
+      "line1               ",
+      "line2   tab         "
+    ],
+    "truncate": "line1\nline2\ttab",
+    "truncateWidth": 16
+  }
+]

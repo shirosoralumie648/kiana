@@ -1,0 +1,90 @@
+﻿category,priority,area,crate,path,line,kind,is_test,matched,excerpt,suggested_action
+A,high,root,,CLAUDE.md,41,markdown,no,"保真, TS源, packages/",2. **`TS 源：packages/...` 注释不是遗留代码**，是保真溯源。不要删除或“清理”它。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,crates,kiana-session,crates/kiana-session/src/background/tool.rs,39,rust-line,no,必须与TS,// 只有 continuity 开启时才把 `background` 加进工具声明：基础 bash schema 必须与 TS,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,crates,kiana-ui-kit,crates/kiana-ui-kit/src/diff.rs,142,rust-doc,no,逐字一致,/// `parseDiffLine` 的结果（字段名与上游实现逐字对应）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,crates,kiana-ui-kit,crates/kiana-ui-kit/src/visual_truncate.rs,106,rust-doc,no,逐字一致,/// `VisualLinePreviewOptions`（字段与上游接口逐字对应）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/ARCHITECTURE_OVERVIEW.md,211,markdown,no,"逐字节一致, TS的",6. **Photon 用原生 `photon-rs`**：与 TS 的 wasm 构建同源，JPEG 逐字节一致、PNG 允许末位差异。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/ARCHITECTURE_OVERVIEW.md,239,markdown,no,"保真, TS源",- 源码里的 `TS 源：...` 注释是保真溯源，不是过时信息；修改行为前先查对应 spec 与测试。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/COMMENT_STYLE.md,44,markdown,no,保真,否则保留原有精确的 TS 对应关系、字节级保真说明等内容，在其上补充教学式解释。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/COMMENT_STYLE.md,203,markdown,no,TS等价物,- 用“优化性能”“线程安全”“等价于 TS”作为没有依据的结论。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/DEBUGGING_GUIDE.md,103,markdown,no,"必须与TS, TS的",错误文本必须与 TS 的 `error.message` 一致。若错误文本“看起来像 reqwest 的”，,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/EXECUTION_FLOW.md,209,markdown,no,与TS一致,- 这两条路径保证“用户可以在任务中途插话”，且消息顺序与 TS 一致。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/EXECUTION_FLOW.md,231,markdown,no,必须与TS,`AssistantMessageEvent`；错误文本与事件顺序必须与 TS 对齐。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/START_HERE.md,26,markdown,no,"保真, TS源, packages/",`TS 源：packages/...` 这样的溯源注释——它们是保真约束，不是冗余信息。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/UNDERSTANDING_GUIDE.md,170,markdown,no,逐字节一致,- **职责**：把会话快照导出成与 TS 原版逐字节一致的单文件自包含 HTML（模板/CSS/JS 内嵌）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/history/porting/fix-passes/pass-6-phases-11b-12b.md,48,markdown,no,逐字节一致,`kiana-tools` 的 bash schema 保持与 TS 黄金 fixture 逐字节一致；`background` 属性只在,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,docs,,docs/history/porting/plan.md,5,markdown,no,"完全一致, 参照/母本",> 前提：与旧 TypeScript 参照实现“行为完全一致”的要求已经作废。Kiana 可以直接换掉不好的设计，只保留还有用户价值的历史会话/配置格式。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/GAPS.md,130,markdown,no,与TS一致,同时确认 §4.9 的 `HttpClient` trait 是否需要 `reqwest::Error` 的转换（错误文本要与 TS 一致，,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/GAPS.md,572,markdown,no,逐字一致,16. **`crates/kiana-env-client/Cargo.toml`**：description 与 TS `package.json` 逐字一致（`spec/env-evals-durable-testing.md` §2.2.1）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/PROGRESS.md,73,markdown,no,与TS一致,"| gate:m1-verification | all | verified | M1 verifier pass 2026-10-30: `cargo fmt --all --check`, `cargo check --workspace --all-targets`, `cargo clippy --workspace --all-targets -- -D warnings` clean; `cargo test --w…",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/agent-codemode.md,161,markdown,no,逐字节一致,约定：签名用 TypeScript 原文；行为按实现顺序；所有字符串字面量逐字给出（Rust 必须逐字节一致）；,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-anthropic-openai.md,4455,markdown,no,逐字一致,### 5.1 本单元消费的类型（必须由上游单元提供，逐字一致）,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-anthropic-openai.md,5516,markdown,no,与TS一致,"序列化时必须**省略 `None`** 且键序与 TS 一致（`model, messages, max_tokens, stream, betas, system,",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-other.md,5,markdown,no,逐字节一致,> 环境变量、超时/重试语义全部与 TypeScript 实现**逐字节一致**。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-other.md,3080,markdown,no,逐字一致,`mistral-conversations.ts` 自己有一份**逐字相同**的私有 `safeJsonStringify`（不是从 utils import）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-other.md,3880,markdown,no,"TS等价物, TS的",│ │ │ │ └── registry.rs # 全部 *.lazy.ts 的等价物,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-api-other.md,4588,markdown,no,完全一致,"Rust 移植后这些字符串**无法**与 TS 版完全一致，规格应明确它们属于""尽力对齐""而非""逐字节""：",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-auth.md,136,markdown,no,完全一致,"约定：签名用 TypeScript 原文；""行为""按实现顺序描述；所有字符串字面量逐字给出（Rust 必须完全一致）。",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-auth.md,2882,markdown,no,"与TS一致, 完全一致",- `AuthPrompt`/`AuthEvent` 的字段名与 TS 完全一致（`intervalSeconds`、`expiresInSeconds`、`verificationUri`、,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-core.md,128,markdown,no,完全一致,"约定：签名用 TypeScript 原文；""行为""按实现顺序描述；所有字符串字面量逐字给出（Rust 需完全一致）。",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-core.md,2018,markdown,no,完全一致,#### 2.3.3 每个 `<provider>.models.ts` 分片（42 个文件，各 **14** 行，模板完全一致）,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-core.md,2397,markdown,no,"必须与TS, 逐字节一致",等价校验可作为 CI 门禁。**但生成的 JSON 数据（`src/providers/data/*.json`）必须与 TS 生成器逐字节一致**，,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ai-core.md,2431,markdown,no,强约束,- `readModelDataStructure`：provider id 与 `providers/*.models.ts` 文件名集合必须一致（否则,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-builtin-extensions.md,7283,markdown,no,必须与TS,- `proper-lockfile` 的目录锁与 mtime 心跳必须与 TS 版互操作（同一 `~/.kiana/agent`）；,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-cli.md,2627,markdown,no,逐字节一致,对 `args.ts` 模板字面量与 §2.5.3 代码块做机械 diff（把 `${APP_NAME}`→`kiana`、`${CONFIG_DIR_NAME}`→`.kiana`、两个 `padEnd(32)` 的环境变量行展开、去掉 chalk 包装、去掉 `${extensionFlagsText}` 占位），**其余 195 行逐字节一致**。唯一差异是 §2.5.3 用 `<扩展段>` 标注插入点。chalk.bold…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-config-models.md,4173,markdown,no,"必须与TS, 逐字一致, TS的",**与其它 crate 的边界**：`kiana-ai`（`Models`/`Provider`/`Model`/`Usage`/`calculateCost`/`lazy_stream`/`ModelsError`）、`kiana_ai::auth`（**不是独立 crate**；`Credential`/`CredentialStore`/`ApiKeyAuth`/`OAuthAuth`，`ARCHITECTURE.md` §…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-components.md,5351,markdown,no,"必须与TS, 与TS一致, 完全一致",逐字符比对（Rust 必须与 TS 完全一致，含 `Float32` 舍入）。见 §8.3。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-components.md,9634,markdown,no,"必须与TS, 与TS一致, 完全一致",- `strip_ansi(s)` 与 `visible_width(s)` 必须与 TS 完全一致（用于断言）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-components.md,9794,markdown,no,与TS一致,这样 `async` 回调可以直接改状态，与 TS 一致。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-components.md,9811,markdown,no,逐位一致,#### ★★★★★ 1. `easter-egg-3d.ts`（1292 行）的逐位一致,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-mode.md,4779,markdown,no,逐字一致,> `THINKING_DESCRIPTIONS` 与 §2.40 `thinking-selector.ts` 的 `LEVEL_DESCRIPTIONS` **内容完全相同**（两处独立定义，移植时可共享一个常量，但字符串必须逐字一致）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-mode.md,6084,markdown,no,必须与TS,| `tui-core` | `TUI` trait（`request_render`、`set_focus`、`get_width`、`get_height`、`set_program_status`、`add_overlay`…）、`TuiMainScreen`、`TuiAltScreen`、`Component` trait（`render(width) -> Vec<String>`、`handle_input(&str)…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-mode.md,6085,markdown,no,与TS一致,| `tui-components` | `SelectListTheme`、`SettingsListTheme`、`SettingItem`、`SelectItem`、`SelectListLayoutOptions`、`AutocompleteProvider`、`SlashCommand`、`MarkdownTheme`、`EditorTheme` | `SettingsList` 的 `enableSearch` 行为、…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-mode.md,7093,markdown,no,"与TS一致, 完全一致","4. **`fuzzyMatch` / `fuzzyFilter` 的 score 数值**：`session-selector-search` 的排序直接依赖 `fuzzyMatch(...).score` 的**数值**（`tierScore(TIER_NAME, fuzzyMatch(value, name).score)`）。这属于 `tui-core` 单元，但本单元对其数值敏感。必须确认 `tui-core` 移植后的…",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-interactive-mode.md,7097,markdown,no,逐字节一致,8. **`diff.ts`**：`diff` 包（jsdiff）的 `diffLines`/`diffWords` 输出**具体分块**由 Myers 算法 + 特定 tie-break 决定。Rust `similar` 的默认算法与 jsdiff 不同，可能产生不同分块。需要逐字节一致时，建议移植 jsdiff 的 `diffLines` 实现（含 `newlineIsToken`、`ignoreWhitespace` 等选…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-resources.md,439,markdown,no,逐字一致,#### 2.6.2 ignore 相关内部函数（与 `package-manager.ts` 中同名函数**逐字相同**）,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-resources.md,4581,markdown,no,"逐字节一致, TS版本",(b) 若要与 TS 版本**逐字节一致**（例如 CI 快照或用户比对），按上表复刻，并注意 zlib 输出差异（见 §6.2）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-resources.md,5173,markdown,no,"必须与TS, 与TS一致",| `yaml` | 2.9.0 | frontmatter | `yaml-rust2` 或 `serde_yaml`（已废弃）/ `saphyr` | `yaml` 包是 YAML 1.2；`serde_yaml` 是 1.1 且已停维。`saphyr`/`yaml-rust2` 更接近 1.2。差异点：重复键、`yes/no`（1.1 是布尔，1.2 是字符串）、多行折叠标量、日期。**frontmatter 里 `disa…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-resources.md,5906,markdown,no,"必须与TS, 与TS一致","- `PathMetadata` 不加 `Serialize`（不落盘）；若需要，键名必须与 TS 一致（`source`,`scope`,`origin`,`baseDir`,`packageRoot`）。",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-rpc-print.md,533,markdown,no,与TS一致,旧订阅在新订阅建立前退订，因此重绑期间事件会丢失（与 TS 一致）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-rpc-print.md,1637,markdown,no,与TS一致,于是变成 unhandled rejection）。Rust 侧应记录此边界并与 TS 一致（至少不崩溃地静默）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-session.md,2849,markdown,no,"必须与TS, 与TS一致, 完全一致",但**文本与 JSON 字段名**必须与 TS 完全一致。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-session.md,4009,markdown,no,必须与TS,会话文件必须与 TS 逐字节可比（至少字段顺序、数字格式、转义）。这要求 serde 自定义序列化器：,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-session.md,4061,markdown,no,逐字一致,`KIANA_PACKAGE_DIR`、auth-guidance 逐字文本、`retry.provider` 默认值、`core/index.ts` 完整再导出清单、,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,2659,markdown,no,完全一致,缩进规则（与 `tree-selector.ts` 完全一致）：,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,2915,markdown,no,逐字一致,依赖模板自己的 `parseLineNumber(value)`（**与 `render-utils.ts` 的同名私有函数逐字一致**）：,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,3075,markdown,no,"必须与TS, 与TS一致",`vendor/*` 内含的 `{{` 出现次数必须与 TS 一致（实测：`template.js` 0 处；`vendor/marked.min.js` 0 处；,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,3078,markdown,no,必须与TS,替换顺序若不同，`{{JS}}` 里的字面 `{{...}}` 不会误伤（实测没有），但**顺序仍必须与 TS 相同**以便审计。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,4045,markdown,no,必须与TS,Rust 无需实现（但导出数据里的 `timestamp` 字符串必须与 TS 相同：ISO 8601 `YYYY-MM-DDTHH:mm:ss.sssZ`）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,4102,markdown,no,逐字一致,| `tool-system-prompt-contributions.test.ts` | 44 | 8 个定义的 `promptSnippet`/`promptGuidelines` 与导出的 contribution 常量逐字一致；bash/powershell 在 `exposeSessionEnvironment:false` 时 guidelines 为 undefined。 |,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,4396,markdown,no,与TS一致,12. **`grep`/`find` 的 fd/rg 外部依赖**：Rust 必须调用外部 `rg`/`fd`（与 TS 一致），,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,4454,markdown,no,逐字节一致,- [ ] 8 个工具的 schema（含描述、required、additionalProperties）与 TS 逐字节一致。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/ca-tools-compaction-export.md,4471,markdown,no,逐字节一致,- [ ] `ansiToHtml`/`ansiLinesToHtml` 与 TS 逐字节一致（含 256 色/RGB/多 span）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/chord-core.md,2263,markdown,no,"必须与TS, TS版本",| `typebox`（`Type.*`、`Value.Check/Errors/Clean/Default/Clone`、`Static`） | 契约 schema 的构造与校验 | `serde_json::Value` 承载 schema + 自研 JSON Schema 子集校验器（`jsonschema` crate 可作为底座，但需支持 TypeBox 的 `default`、`additionalProperties…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/chord-core.md,2477,markdown,no,"与TS一致, TS:","- **但** `DescriptionSchema`（`hold.token` 的内容）里有两个分支**确实**写了 `additionalProperties: false`：`PlacementSchema` 的 `{name}` 与 `{prefix,key}`（`src/contract.ts:140,143`）。其余 `DescriptionSchema` 字段（`name`/`scope`/`version`/`in…",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/chord-rest.md,13,markdown,no,完全一致,> 约定：文中所有标识符、字段名、错误文案、用户可见字符串均按 TypeScript 源码**逐字**抄录。Rust 实现必须输出完全一致的文本与字节。中文用于解释语义。凡标 **【逐字】** 的字符串/JSON/SQL，测试会逐字节比对。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/chord-rest.md,2881,markdown,no,逐字一致,"- number → `entry.type IN ('integer', 'real')` 且 `entry.value = ?`（**逗号后有一个空格**，与 `store.ts` 第 55 行逐字一致；traces 与 metrics 共用同一个 `attributesSql`，全文**只有**这一个写法）；",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/chord-rest.md,3037,markdown,no,强约束,| `node:sqlite`（`DatabaseSync`） | sqlite/node.ts | `rusqlite`（bundled） | `DatabaseSync` 的 `timeout` 选项 → `busy_timeout`；`PRAGMA` 语句序列必须一致；`statement.all()` 的行对象键名与 BLOB 类型（Uint8Array）需映射。 |,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime-risk-first.md,4,markdown,no,"逐字一致, packages/",TypeScript 扩展，扩展 API 与 `packages/coding-agent/src/core/extensions/types.ts` 逐字一致**。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime-risk-first.md,853,markdown,no,完全一致,必须保证「同一 token 的 ANSI 与 Rust TUI 渲染的完全一致」（`theme.ts` 已有 Rust 侧实现）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime-rquickjs-native-bindings.md,1341,markdown,no,"必须与TS, 逐字一致",**构造签名必须与 TS 逐字一致**（默认值也要一致），因为扩展直接 `new Text(...)`：,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime.md,9,markdown,no,"逐字一致, packages/",`packages/coding-agent/src/core/extensions/types.ts` 逐字一致；事件合并规则、错误文案、UI 对话框语义,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime.md,20,markdown,no,保真,评分口径：兼容性 = 不改一行 TS 能跑多少语料；保真度 = 事件/合并/文案/渲染字节的可观察等价度；,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/design-extension-runtime.md,570,markdown,no,"逐字一致, TS:","| 扩展注册的工具（`registerTool({ parameters: Type.* })`），以及扩展用 `create*ToolDefinition` 展开重注册的内建工具 | **JS 侧 typebox**：Rust 在调用 `execute` 前调用 `__kiana.validateToolArgs(handleId, args)`，JS 内用 `WeakMap<schema, Compile>` 缓存（与 `va…",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,19,markdown,no,完全一致,> 约定：文中所有标识符、字段名、错误文案、用户可见字符串均按 TypeScript 源码**逐字**抄录。Rust 实现必须输出完全一致的文本（除另有说明）。中文用于解释语义。凡标 **【逐字】** 的字符串/JSON/正则，测试会逐字节比对。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,193,markdown,no,"与TS一致, 完全一致","纯类型文件。Rust 侧 `kiana-durable-harness/src/types.rs`，全部 `serde` 结构，JSON 字段名与 TS 完全一致（camelCase，`serde(rename_all = ""camelCase"")` 仅用于 snake_case 字段；本文件里已全是 camelCase）。",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,5514,markdown,no,逐字一致,**`test/examples/`（31 个可运行脚本，非 vitest 测试）**：`00-conversation.ts`、`01-documents.ts`、`02-forks.ts`、`03-owned-conversations.ts`、`04-watches.ts`、`05-harness.ts`、`06-configuration.ts`、`07-harness-conversations.ts`、`08-cont…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,6598,markdown,no,强约束,"2. **索引的有界性与丢弃/重载**（`#relist`/`#release`/`#dropIfUnneeded`/`#sweep`/`#loadChain`/`#unloaded`）。`harness-scheduler-indexes.test.ts` 与 `harness-scheduler-retention.test.ts` 断言 `indexSizes` 的具体数值与""深层链（>调用栈深度）""的正确性。`#relis…",改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,6622,markdown,no,逐字一致,- [ ] 31 个 `test/examples/*.ts` 的 Rust 等价物输出逐字一致。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-harness.md,6624,markdown,no,逐字一致,- [ ] 全部错误消息（§3.2 的 47 个构造点 / 去重后的模板，其中 §2.15 的 `scheduler.ts` 占 22 个构造点、19 条模板）逐字一致，包括数字/字符串插值格式。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-rest.md,12,markdown,no,完全一致,> 约定：文中所有标识符、字段名、错误文案、用户可见字符串均按 TypeScript 源码**逐字**抄录，Rust 实现必须输出完全一致的文本（除另有说明）。中文用于解释语义。凡标 **【逐字】** 的字符串，测试会逐字节比对。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/durable-rest.md,5214,markdown,no,逐字一致,**要求**：所有 `Message` 变体的文本必须逐字一致；测试直接比对 `to_string()`。**不要**把 `source` 拼进 `Display`（TS 只用 `error.message`）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/env-evals-durable-testing.md,12,markdown,no,完全一致,本规范描述如何把这些 TypeScript/Rust 代码原样重写为 Rust（工作区 `/home/ctyun/code/kiana_rev/kiana`）。要求：功能、CLI 参数、磁盘文件格式、线协议、环境变量、退出码、错误文本、渲染文本与顺序完全一致。所有英文标识符、JSON 字段名、错误字符串、注释中的用户可见文案都按原文字面保留。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/env-evals-durable-testing.md,587,markdown,no,"强约束, packages/",- `daemon/Cargo.lock` 已签入（`version = 4`，约 12.3 KB、55 个 `[[package]]`），`npm run build:daemon` 用 `--locked`。Rust 工作区不复制这份 lock（`crates/kiana-env` 是 workspace 成员，共用根 `Cargo.lock`）；pin 以 workspace 为准，见上一条。`ignore`/`notify…,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-components.md,12,markdown,no,完全一致,> 约定：文中所有标识符、字段名、错误文案、用户可见字符串均按 TypeScript 源码**逐字**抄录，Rust 实现必须输出完全一致的文本（除另有说明）。中文用于解释语义。凡标 **【逐字】** 的字符串，测试会逐字节比对。`\x1b` 表示 U+001B。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-components.md,1838,markdown,no,TS等价物,- 在 TUI 之外单独渲染 `Editor`/`Input`（例如 Rust 单元测试）时，若要与“屏幕文本”比对，必须先剥离 `\x1b_kiana:fc\x07`/`\x1b_kiana:/fc\x07`（等价于 TS 侧 `stripTerminalSequences()` 的行为）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-core.md,5756,markdown,no,"与TS一致, 完全一致",Rust 侧建议以 trait 形式提供，字段语义与 TS 完全一致：,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-core.md,6608,markdown,no,与TS一致,- 涉及 native 的用例（X11/剪贴板）在没有 `DISPLAY` 时应自动 skip（与 TS 一致）。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-core.md,6767,markdown,no,"必须与TS, 与TS一致, 完全一致",Kitty 预留行前后移动、`\x1b[?2026h/l` 位置）必须与 TS 完全一致，否则 xterm 视口比较会失败。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-text.md,12,markdown,no,完全一致,> 约定：文中所有标识符、字段名、错误文案、用户可见字符串、ANSI 序列均按 TypeScript 源码**逐字**抄录。Rust 实现必须输出完全一致的文本与字节序列（除另有说明）。中文用于解释语义。凡标 **【逐字】** 的字符串/序列，测试会逐字节比对。,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由
+A,high,spec,,spec/tui-text.md,4248,markdown,no,逐位一致,| `Math.atan2` / `Math.cos` / `Math.sin` | OKLCH/OKHSL | `f64::atan2` / `cos` / `sin` | 同 libm 差异；`oklab.ts` 的 round-trip 测试（colors.test.ts）用 `strictEqual` 断言浮点**完全相等**，必须逐位一致，否则测试失败 |,改写为当前设计约束（写清技术原因），或删除；不要再用 TS 作为理由

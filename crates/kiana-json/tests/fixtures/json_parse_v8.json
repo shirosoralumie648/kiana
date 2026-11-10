@@ -1,0 +1,316 @@
+{
+ "note": "ok + value (JSON.stringify of the JSON.parse result) or the exact V8 SyntaxError message. message_fffd replaces unpaired surrogates with U+FFFD (Rust strings cannot hold them); lone_surrogate_token marks those cases.",
+ "cases": [
+  {
+   "input": "{\"a\":1,}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\" 1}",
+   "ok": false,
+   "message": "Expected ':' after property name in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":1 \"b\":2}",
+   "ok": false,
+   "message": "Expected ',' or '}' after property value in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"text\":\"\u0001\"}",
+   "ok": false,
+   "message": "Bad control character in string literal in JSON at position 9 (line 1 column 10)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "12.",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": ".5",
+   "ok": false,
+   "message": "Unexpected token '.', \".5\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "+1",
+   "ok": false,
+   "message": "Unexpected token '+', \"+1\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "0x10",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "01",
+   "ok": false,
+   "message": "Unexpected number in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "1e",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\": tru}",
+   "ok": false,
+   "message": "Unexpected token '}', \"{\"a\": tru}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "   ",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "null",
+   "ok": true,
+   "value": "null",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"a\":1} trailing",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 8 (line 1 column 9)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[1,]",
+   "ok": false,
+   "message": "Unexpected token ']', \"[1,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{,}",
+   "ok": false,
+   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[,]",
+   "ok": false,
+   "message": "Unexpected token ',', \"[,]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":1,,}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[\n1\n2]",
+   "ok": false,
+   "message": "Expected ',' or ']' after array element in JSON at position 4 (line 3 column 1)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "\"\\x\"",
+   "ok": false,
+   "message": "Bad escaped character in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "\"\\u12\"",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 5 (line 1 column 6)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "\"\\uZZZZ\"",
+   "ok": false,
+   "message": "Bad Unicode escape in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "\"abc",
+   "ok": false,
+   "message": "Unterminated string in JSON at position 4 (line 1 column 5)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":\"\\uD800\"}",
+   "ok": true,
+   "value": "{\"a\":\"\\ud800\"}",
+   "value_fffd": "{\"a\":\"�\"}",
+   "lone_surrogate_in_value": true
+  },
+  {
+   "input": "tru",
+   "ok": false,
+   "message": "Unexpected end of JSON input",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "tRuE",
+   "ok": false,
+   "message": "Unexpected token 'R', \"tRuE\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":1}{\"b\":2}",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 7 (line 1 column 8)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "1 2",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "-01",
+   "ok": false,
+   "message": "Unexpected number in JSON at position 2 (line 1 column 3)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "- 1",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "1e+",
+   "ok": false,
+   "message": "Exponent part is missing a number in JSON at position 3 (line 1 column 4)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "-.5",
+   "ok": false,
+   "message": "No number after minus sign in JSON at position 1 (line 1 column 2)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "1e400",
+   "ok": true,
+   "value": "null",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "-1e400",
+   "ok": true,
+   "value": "null",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "1e-400",
+   "ok": true,
+   "value": "0",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"a\": 1.}",
+   "ok": false,
+   "message": "Unterminated fractional number in JSON at position 8 (line 1 column 9)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[1,2]",
+   "ok": true,
+   "value": "[1,2]",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"b\":1,\"2\":2,\"a\":3,\"1\":4}",
+   "ok": true,
+   "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"a\":1,\"b\":2,\"a\":3}",
+   "ok": true,
+   "value": "{\"a\":3,\"b\":2}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"__proto__\":1,\"a\":2}",
+   "ok": true,
+   "value": "{\"__proto__\":1,\"a\":2}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "﻿{}",
+   "ok": false,
+   "message": "Unexpected token '﻿', \"﻿{}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "\u000b{}",
+   "ok": false,
+   "message": "Unexpected token '\u000b', \"\u000b{}\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "{\"a\":\"😀\",x}",
+   "ok": false,
+   "message": "Expected double-quoted property name in JSON at position 10 (line 1 column 11)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "😀 x",
+   "ok": false,
+   "message": "Unexpected token '�', \"😀 x\" is not valid JSON",
+   "lone_surrogate_token": true
+  },
+  {
+   "input": "{\"a\":1}\n\n😀",
+   "ok": false,
+   "message": "Unexpected non-whitespace character after JSON at position 9 (line 3 column 1)",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,x]",
+   "ok": false,
+   "message": "Unexpected token 'x', \"[1,1,1,1,1,1,1,x]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": "[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,x]",
+   "ok": false,
+   "message": "Unexpected token 'x', ...\"1,1,1,1,1,x]\" is not valid JSON",
+   "lone_surrogate_token": false
+  },
+  {
+   "input": " \n\t{\"a\":1}",
+   "ok": true,
+   "value": "{\"a\":1}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  },
+  {
+   "input": "{\"a\":1}\n",
+   "ok": true,
+   "value": "{\"a\":1}",
+   "value_fffd": null,
+   "lone_surrogate_in_value": false
+  }
+ ]
+}

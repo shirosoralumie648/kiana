@@ -1,0 +1,2252 @@
+[
+  {
+    "result": "\\\\s1\\share\\a",
+    "search": "\\\\s2\\share\\b",
+    "expected": "//s1/share/a"
+  },
+  {
+    "result": "\\\\s2\\share\\b",
+    "search": "\\\\s1\\share\\a",
+    "expected": "//s2/share/b"
+  },
+  {
+    "result": "\\\\s1\\share\\a",
+    "search": "\\\\s1\\share\\b",
+    "expected": "../a"
+  },
+  {
+    "result": "\\\\s1\\share\\dir\\a",
+    "search": "\\\\s1\\share\\b",
+    "expected": "../dir/a"
+  },
+  {
+    "result": "\\\\s1\\share1\\a",
+    "search": "\\\\s1\\share2\\b",
+    "expected": "../../share1/a"
+  },
+  {
+    "result": "\\\\s1\\share2\\b",
+    "search": "\\\\s1\\share1\\a",
+    "expected": "../../share2/b"
+  },
+  {
+    "result": "\\\\s1\\share\\",
+    "search": "\\\\s1\\share\\b",
+    "expected": "../"
+  },
+  {
+    "result": "\\\\s1\\share\\b",
+    "search": "\\\\s1\\share\\",
+    "expected": "b"
+  },
+  {
+    "result": "\\\\s1\\share",
+    "search": "\\\\s1\\share\\b",
+    "expected": ".."
+  },
+  {
+    "result": "\\\\s1\\share\\b",
+    "search": "\\\\s1\\share",
+    "expected": "b"
+  },
+  {
+    "result": "\\\\s1\\other\\b",
+    "search": "\\\\s1\\share\\a",
+    "expected": "../../other/b"
+  },
+  {
+    "result": "\\\\s1share\\a",
+    "search": "\\\\s1\\other\\b",
+    "expected": "//s1share/a/"
+  },
+  {
+    "result": "\\\\host\\c$\\dir\\file.txt",
+    "search": "\\\\host\\c$\\dir",
+    "expected": "file.txt"
+  },
+  {
+    "result": "\\\\HOST\\C$\\dir\\file.txt",
+    "search": "\\\\host\\c$\\dir",
+    "expected": "file.txt"
+  },
+  {
+    "result": "\\\\host\\c$\\dir\\file.txt",
+    "search": "\\\\HOST\\C$\\other",
+    "expected": "../dir/file.txt"
+  },
+  {
+    "result": "\\\\host\\c$\\dir\\",
+    "search": "\\\\host\\c$\\dir",
+    "expected": "/"
+  },
+  {
+    "result": "C:\\a\\x",
+    "search": "\\\\s1\\share\\b",
+    "expected": "C:/a/x"
+  },
+  {
+    "result": "\\\\s1\\share\\b",
+    "search": "C:\\a\\x",
+    "expected": "//s1/share/b"
+  },
+  {
+    "result": "D:\\b\\y",
+    "search": "C:\\a\\x",
+    "expected": "D:/b/y"
+  },
+  {
+    "result": "I:\\AI\\Models\\TextGen\\gemma4\\",
+    "search": "I:\\",
+    "expected": "AI/Models/TextGen/gemma4/"
+  },
+  {
+    "result": "I:/AI/Models/TextGen/gemma4/",
+    "search": "I:\\",
+    "expected": "AI/Models/TextGen/gemma4/"
+  },
+  {
+    "result": "I:\\AI\\Models\\",
+    "search": "I:\\AI",
+    "expected": "Models/"
+  },
+  {
+    "result": "I:\\AI\\Models2\\file.txt",
+    "search": "I:\\AI\\Models",
+    "expected": "../Models2/file.txt"
+  },
+  {
+    "result": "AI\\Models\\TextGen\\gemma4\\",
+    "search": "I:\\",
+    "expected": "AI/Models/TextGen/gemma4/"
+  },
+  {
+    "result": "C:\\",
+    "search": "C:\\foo",
+    "expected": "../"
+  },
+  {
+    "result": "C:\\foo",
+    "search": "C:\\",
+    "expected": "foo"
+  },
+  {
+    "result": "C:\\foo\\",
+    "search": "C:\\",
+    "expected": "foo/"
+  },
+  {
+    "result": "C:\\a",
+    "search": "C:\\a",
+    "expected": ""
+  },
+  {
+    "result": "C:\\a\\",
+    "search": "C:\\a",
+    "expected": "/"
+  },
+  {
+    "result": "C:\\A\\B",
+    "search": "c:\\a\\b",
+    "expected": ""
+  },
+  {
+    "result": "C:\\a\\..\\b",
+    "search": "C:\\",
+    "expected": "b"
+  },
+  {
+    "result": "C:\\a\\.\\b",
+    "search": "C:\\a",
+    "expected": "b"
+  },
+  {
+    "result": "\\\\s1\\share\\a\\..\\b",
+    "search": "\\\\s1\\share",
+    "expected": "b"
+  },
+  {
+    "result": "\\\\s1\\share\\.\\x\\b",
+    "search": "\\\\s1\\share",
+    "expected": "x/b"
+  },
+  {
+    "result": "\\\\s1\\share\\x\\y\\..\\z",
+    "search": "\\\\s1\\share\\x",
+    "expected": "z"
+  },
+  {
+    "result": "\\\\s1\\s\\",
+    "search": "\\\\s1\\s",
+    "expected": "/"
+  },
+  {
+    "result": "\\\\s1\\s",
+    "search": "\\\\s1\\s\\",
+    "expected": ""
+  },
+  {
+    "result": "\\\\s1\\s\\x",
+    "search": "\\\\s1\\s\\",
+    "expected": "x"
+  },
+  {
+    "result": "\\\\s1\\s\\x\\",
+    "search": "\\\\s1\\s",
+    "expected": "x/"
+  },
+  {
+    "result": "E:\\x\\y",
+    "search": "E:\\x",
+    "expected": "y"
+  },
+  {
+    "result": "E:\\x",
+    "search": "E:\\x\\y",
+    "expected": ".."
+  },
+  {
+    "result": "E:\\x\\",
+    "search": "E:\\x\\y\\",
+    "expected": "../"
+  },
+  {
+    "result": "E:\\x\\y\\",
+    "search": "E:\\x\\",
+    "expected": "y/"
+  },
+  {
+    "result": "\\\\server\\share\\a\\b\\",
+    "search": "\\\\server\\share\\a",
+    "expected": "b/"
+  },
+  {
+    "result": "\\\\s1\\share\\..",
+    "search": "\\\\s1\\share\\x",
+    "expected": ".."
+  },
+  {
+    "result": "\\\\s1\\share\\..\\x",
+    "search": "\\\\s1\\share",
+    "expected": "x"
+  },
+  {
+    "result": "\\\\s1\\..\\share\\a",
+    "search": "\\\\s1\\share",
+    "expected": "../../share/a"
+  },
+  {
+    "result": "\\\\s1\\share\\..\\..\\a",
+    "search": "\\\\s1\\share",
+    "expected": "a"
+  },
+  {
+    "result": "\\\\s1\\share\\.",
+    "search": "\\\\s1\\share",
+    "expected": ""
+  },
+  {
+    "result": "\\\\s1\\share\\..",
+    "search": "\\\\s2\\share\\x",
+    "expected": "//s1/share/"
+  },
+  {
+    "result": "E:\\n2\\dir\\b",
+    "search": "E:\\dir",
+    "expected": "../n2/dir/b"
+  },
+  {
+    "result": "E:\\a\\b",
+    "search": "\\\\s1\\data\\n1\\dir",
+    "expected": "E:/a/b"
+  },
+  {
+    "result": "\\\\HOST\\c$",
+    "search": "\\\\s2\\data/n1",
+    "expected": "//HOST/c$/"
+  },
+  {
+    "result": "E:\\n2",
+    "search": "\\\\s1\\share\\dir",
+    "expected": "E:/n2"
+  },
+  {
+    "result": "C:\\x.txt",
+    "search": "c:\\File.TXT\\dir",
+    "expected": "../../x.txt"
+  },
+  {
+    "result": "E:\\a\\File.TXT\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "E:/a/File.TXT/File.TXT"
+  },
+  {
+    "result": "\\\\s1\\Share/n2/dir",
+    "search": "\\\\srv3\\data\\File.TXT\\n1",
+    "expected": "//s1/Share/n2/dir"
+  },
+  {
+    "result": "c:\\",
+    "search": "\\\\s2\\c$\\b",
+    "expected": "c:/"
+  },
+  {
+    "result": "\\\\HOST\\c$",
+    "search": "\\\\s2\\share\\b",
+    "expected": "//HOST/c$/"
+  },
+  {
+    "result": "D:\\",
+    "search": "\\\\s2\\Share\\",
+    "expected": "D:/"
+  },
+  {
+    "result": "C:\\dir\\a\\b",
+    "search": "E:\\",
+    "expected": "C:/dir/a/b"
+  },
+  {
+    "result": "\\\\s1\\c$\\dir\\x.txt\\",
+    "search": "\\\\srv3\\data\\n1\\dir",
+    "expected": "//s1/c$/dir/x.txt/"
+  },
+  {
+    "result": "\\\\s1\\data",
+    "search": "E:\\",
+    "expected": "//s1/data/"
+  },
+  {
+    "result": "File.TXT\\File.TXT",
+    "search": "n1\\n2",
+    "expected": "File.TXT/File.TXT"
+  },
+  {
+    "result": "E:\\",
+    "search": "E:\\b\\a\\",
+    "expected": "../../"
+  },
+  {
+    "result": "\\\\HOST\\Share\\x.txt\\a",
+    "search": "\\\\s2\\share\\sub",
+    "expected": "//HOST/Share/x.txt/a"
+  },
+  {
+    "result": "\\\\srv3\\share",
+    "search": "D:\\b",
+    "expected": "//srv3/share/"
+  },
+  {
+    "result": "D:\\a\\",
+    "search": "\\\\host\\share/a/sub/",
+    "expected": "D:/a/"
+  },
+  {
+    "result": "\\\\s1\\share",
+    "search": "C:\\b",
+    "expected": "//s1/share/"
+  },
+  {
+    "result": "E:\\sub\\dir",
+    "search": "\\\\host\\c$\\a\\b\\dir",
+    "expected": "E:/sub/dir"
+  },
+  {
+    "result": "\\\\s1\\share",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/share/"
+  },
+  {
+    "result": "\\\\s2\\data\\dir",
+    "search": "D:\\dir\\dir\\",
+    "expected": "//s2/data/dir"
+  },
+  {
+    "result": "File.TXT",
+    "search": "D:\\n2",
+    "expected": "File.TXT"
+  },
+  {
+    "result": "D:\\b",
+    "search": "\\\\srv3\\share/x.txt/n1/",
+    "expected": "D:/b"
+  },
+  {
+    "result": "c:\\a",
+    "search": "\\\\host\\c$\\x.txt\\dir\\b",
+    "expected": "c:/a"
+  },
+  {
+    "result": "\\\\srv3\\data\\n1\\File.TXT",
+    "search": "C:\\x.txt\\",
+    "expected": "//srv3/data/n1/File.TXT"
+  },
+  {
+    "result": "\\\\srv3\\c$\\File.TXT\\dir\\a",
+    "search": "\\\\s2\\Share\\dir\\dir\\n1",
+    "expected": "//srv3/c$/File.TXT/dir/a"
+  },
+  {
+    "result": "c:\\sub\\sub\\b",
+    "search": "c:\\sub",
+    "expected": "sub/b"
+  },
+  {
+    "result": "D:\\",
+    "search": "D:\\x.txt\\a",
+    "expected": "../../"
+  },
+  {
+    "result": "n1",
+    "search": "\\\\HOST\\data/x.txt",
+    "expected": "n1"
+  },
+  {
+    "result": "\\\\s1\\Share\\sub\\dir",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/Share/sub/dir"
+  },
+  {
+    "result": "\\\\s1\\c$\\",
+    "search": "D:\\x.txt",
+    "expected": "//s1/c$/"
+  },
+  {
+    "result": "\\\\host\\data\\b",
+    "search": "C:\\workspace\\project",
+    "expected": "//host/data/b"
+  },
+  {
+    "result": "c:\\n2\\n1",
+    "search": "\\\\s2\\data",
+    "expected": "c:/n2/n1"
+  },
+  {
+    "result": "File.TXT\\n1",
+    "search": "D:\\sub\\n2\\n1",
+    "expected": "File.TXT/n1"
+  },
+  {
+    "result": "D:\\a\\b\\a",
+    "search": "D:\\dir\\x.txt\\",
+    "expected": "../../a/b/a"
+  },
+  {
+    "result": "\\\\s1\\Share",
+    "search": "\\\\s1\\data\\b",
+    "expected": "../../Share"
+  },
+  {
+    "result": "\\\\srv3\\share\\dir\\sub",
+    "search": "\\\\HOST\\share/n1/a/",
+    "expected": "//srv3/share/dir/sub"
+  },
+  {
+    "result": "D:\\n1\\a",
+    "search": "\\\\srv3\\Share\\b",
+    "expected": "D:/n1/a"
+  },
+  {
+    "result": "\\\\s1\\share",
+    "search": "\\\\s1\\Share/b/a/a",
+    "expected": "../../.."
+  },
+  {
+    "result": "c:\\b\\a\\x.txt",
+    "search": "\\\\s2\\c$\\n2\\n2\\b",
+    "expected": "c:/b/a/x.txt"
+  },
+  {
+    "result": "D:\\dir\\dir",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/dir/dir"
+  },
+  {
+    "result": "c:\\File.TXT\\a",
+    "search": "c:\\",
+    "expected": "File.TXT/a"
+  },
+  {
+    "result": "\\\\s2\\Share\\n1\\",
+    "search": "D:\\x.txt\\n1\\n1\\",
+    "expected": "//s2/Share/n1/"
+  },
+  {
+    "result": "c:\\",
+    "search": "E:\\n1\\a",
+    "expected": "c:/"
+  },
+  {
+    "result": "c:\\a",
+    "search": "c:\\b\\dir",
+    "expected": "../../a"
+  },
+  {
+    "result": "\\\\host\\share/n1/dir",
+    "search": "c:\\dir\\a\\b",
+    "expected": "//host/share/n1/dir"
+  },
+  {
+    "result": "E:\\n2",
+    "search": "E:\\a",
+    "expected": "../n2"
+  },
+  {
+    "result": "\\\\s1\\data\\n2\\n2\\n2",
+    "search": "\\\\HOST\\c$\\n2\\n2\\x.txt",
+    "expected": "//s1/data/n2/n2/n2"
+  },
+  {
+    "result": "\\\\s1\\Share\\File.TXT\\a\\dir",
+    "search": "D:\\File.TXT\\n2\\dir",
+    "expected": "//s1/Share/File.TXT/a/dir"
+  },
+  {
+    "result": "D:\\dir",
+    "search": "\\\\s1\\Share\\b",
+    "expected": "D:/dir"
+  },
+  {
+    "result": "E:\\n1\\File.TXT\\dir",
+    "search": "C:\\workspace\\project",
+    "expected": "E:/n1/File.TXT/dir"
+  },
+  {
+    "result": "\\\\host\\data\\b\\",
+    "search": "\\\\host\\Share/File.TXT/dir/",
+    "expected": "../../../data/b/"
+  },
+  {
+    "result": "D:\\sub\\x.txt\\",
+    "search": "D:\\n2\\b\\a",
+    "expected": "../../../sub/x.txt/"
+  },
+  {
+    "result": "\\\\host\\share/",
+    "search": "D:\\n2",
+    "expected": "//host/share/"
+  },
+  {
+    "result": "\\\\srv3\\Share\\",
+    "search": "\\\\host\\Share\\",
+    "expected": "//srv3/Share/"
+  },
+  {
+    "result": "\\\\s1\\share\\File.TXT\\dir\\sub",
+    "search": "\\\\srv3\\c$/",
+    "expected": "//s1/share/File.TXT/dir/sub"
+  },
+  {
+    "result": "n2\\sub\\dir",
+    "search": "c:\\",
+    "expected": "n2/sub/dir"
+  },
+  {
+    "result": "n2\\n2\\n2",
+    "search": "C:\\",
+    "expected": "n2/n2/n2"
+  },
+  {
+    "result": "dir\\x.txt",
+    "search": "E:\\n1/a",
+    "expected": "dir/x.txt"
+  },
+  {
+    "result": "E:\\",
+    "search": "C:\\x.txt\\x.txt\\",
+    "expected": "E:/"
+  },
+  {
+    "result": "\\\\HOST\\Share\\b",
+    "search": "D:\\a\\b\\x.txt",
+    "expected": "//HOST/Share/b"
+  },
+  {
+    "result": "\\\\HOST\\data\\n1\\a",
+    "search": "\\\\srv3\\Share\\x.txt\\",
+    "expected": "//HOST/data/n1/a"
+  },
+  {
+    "result": "\\\\srv3\\c$\\dir\\dir",
+    "search": "E:\\n2\\",
+    "expected": "//srv3/c$/dir/dir"
+  },
+  {
+    "result": "\\\\host\\data\\b\\n2\\a\\",
+    "search": "C:\\n2/File.TXT",
+    "expected": "//host/data/b/n2/a/"
+  },
+  {
+    "result": "c:\\",
+    "search": "\\\\s2\\share\\b",
+    "expected": "c:/"
+  },
+  {
+    "result": "\\\\host\\Share",
+    "search": "D:\\",
+    "expected": "//host/Share/"
+  },
+  {
+    "result": "File.TXT\\x.txt\\sub",
+    "search": "n2\\dir\\n1",
+    "expected": "File.TXT/x.txt/sub"
+  },
+  {
+    "result": "dir",
+    "search": "\\\\s1\\share\\a",
+    "expected": "dir"
+  },
+  {
+    "result": "\\\\s2\\share",
+    "search": "D:\\",
+    "expected": "//s2/share/"
+  },
+  {
+    "result": "sub\\x.txt\\a",
+    "search": "E:\\sub\\dir\\",
+    "expected": "sub/x.txt/a"
+  },
+  {
+    "result": "D:\\",
+    "search": "\\\\srv3\\c$\\a",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\s1\\data/dir/x.txt/",
+    "search": "\\\\HOST\\c$\\n1\\n2",
+    "expected": "//s1/data/dir/x.txt/"
+  },
+  {
+    "result": "c:\\a\\sub\\b\\",
+    "search": "c:\\sub",
+    "expected": "../a/sub/b/"
+  },
+  {
+    "result": "\\\\s1\\data\\n1",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/data/n1"
+  },
+  {
+    "result": "\\\\srv3\\share\\x.txt\\File.TXT\\n1",
+    "search": "c:\\a",
+    "expected": "//srv3/share/x.txt/File.TXT/n1"
+  },
+  {
+    "result": "E:\\n2\\n1\\n2\\",
+    "search": "\\\\HOST\\data/n2/",
+    "expected": "E:/n2/n1/n2/"
+  },
+  {
+    "result": "dir\\n2",
+    "search": "c:\\File.TXT\\",
+    "expected": "dir/n2"
+  },
+  {
+    "result": "a\\n1\\n2",
+    "search": "\\\\host\\data\\File.TXT\\a\\x.txt\\",
+    "expected": "a/n1/n2"
+  },
+  {
+    "result": "\\\\s1\\data/dir/n1",
+    "search": "\\\\s1\\c$\\dir",
+    "expected": "../../data/dir/n1"
+  },
+  {
+    "result": "\\\\host\\data\\a",
+    "search": "E:\\b\\n1",
+    "expected": "//host/data/a"
+  },
+  {
+    "result": "D:\\sub",
+    "search": "\\\\srv3\\data\\a\\dir",
+    "expected": "D:/sub"
+  },
+  {
+    "result": "D:\\sub/n2",
+    "search": "\\\\HOST\\data\\n1\\dir",
+    "expected": "D:/sub/n2"
+  },
+  {
+    "result": "E:\\",
+    "search": "\\\\host\\c$",
+    "expected": "E:/"
+  },
+  {
+    "result": "D:\\n2\\",
+    "search": "\\\\s1\\c$\\x.txt",
+    "expected": "D:/n2/"
+  },
+  {
+    "result": "\\\\host\\Share",
+    "search": "c:\\",
+    "expected": "//host/Share/"
+  },
+  {
+    "result": "\\\\s2\\data\\dir\\x.txt",
+    "search": "c:\\b\\dir",
+    "expected": "//s2/data/dir/x.txt"
+  },
+  {
+    "result": "C:\\sub\\",
+    "search": "\\\\srv3\\Share/b/b",
+    "expected": "C:/sub/"
+  },
+  {
+    "result": "n1",
+    "search": "\\\\s1\\Share\\",
+    "expected": "n1"
+  },
+  {
+    "result": "File.TXT\\sub\\n2",
+    "search": "c:\\a\\",
+    "expected": "File.TXT/sub/n2"
+  },
+  {
+    "result": "C:\\",
+    "search": "\\\\s2\\Share",
+    "expected": "C:/"
+  },
+  {
+    "result": "\\\\host\\c$\\sub\\",
+    "search": "\\\\s2\\data\\dir",
+    "expected": "//host/c$/sub/"
+  },
+  {
+    "result": "File.TXT",
+    "search": "\\\\s2\\c$\\a\\sub\\a",
+    "expected": "File.TXT"
+  },
+  {
+    "result": "D:\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/"
+  },
+  {
+    "result": "C:\\dir\\dir",
+    "search": "\\\\srv3\\data\\x.txt\\File.TXT\\b",
+    "expected": "C:/dir/dir"
+  },
+  {
+    "result": "c:\\File.TXT",
+    "search": "C:\\a/",
+    "expected": "../File.TXT"
+  },
+  {
+    "result": "n2\\b",
+    "search": "C:\\sub",
+    "expected": "n2/b"
+  },
+  {
+    "result": "C:\\dir\\File.TXT\\n1\\",
+    "search": "E:\\a\\dir\\n1",
+    "expected": "C:/dir/File.TXT/n1/"
+  },
+  {
+    "result": "E:\\File.TXT\\n2",
+    "search": "\\\\HOST\\Share\\",
+    "expected": "E:/File.TXT/n2"
+  },
+  {
+    "result": "E:\\",
+    "search": "\\\\s1\\data/a/n2/x.txt/",
+    "expected": "E:/"
+  },
+  {
+    "result": "\\\\s2\\c$\\n1\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//s2/c$/n1/"
+  },
+  {
+    "result": "\\\\s2\\c$\\File.TXT",
+    "search": "\\\\srv3\\c$",
+    "expected": "//s2/c$/File.TXT"
+  },
+  {
+    "result": "\\\\s1\\data\\b\\b\\x.txt",
+    "search": "\\\\HOST\\c$/a/x.txt",
+    "expected": "//s1/data/b/b/x.txt"
+  },
+  {
+    "result": "E:\\",
+    "search": "\\\\host\\Share/x.txt/a/b",
+    "expected": "E:/"
+  },
+  {
+    "result": "c:\\a\\x.txt",
+    "search": "\\\\host\\share\\File.TXT",
+    "expected": "c:/a/x.txt"
+  },
+  {
+    "result": "C:\\n2",
+    "search": "\\\\s2\\Share\\n1\\x.txt",
+    "expected": "C:/n2"
+  },
+  {
+    "result": "\\\\host\\data",
+    "search": "\\\\host\\c$\\a\\File.TXT",
+    "expected": "../../../data"
+  },
+  {
+    "result": "a\\dir\\File.TXT",
+    "search": "x.txt\\b\\File.TXT",
+    "expected": "a/dir/File.TXT"
+  },
+  {
+    "result": "c:\\",
+    "search": "C:\\",
+    "expected": "/"
+  },
+  {
+    "result": "\\\\s2\\share",
+    "search": "C:\\",
+    "expected": "//s2/share/"
+  },
+  {
+    "result": "D:\\x.txt",
+    "search": "\\\\srv3\\share\\x.txt",
+    "expected": "D:/x.txt"
+  },
+  {
+    "result": "c:\\",
+    "search": "E:\\b\\File.TXT\\dir",
+    "expected": "c:/"
+  },
+  {
+    "result": "E:\\File.TXT",
+    "search": "C:\\",
+    "expected": "E:/File.TXT"
+  },
+  {
+    "result": "D:\\",
+    "search": "E:\\",
+    "expected": "D:/"
+  },
+  {
+    "result": "E:\\dir\\n2\\n1",
+    "search": "D:\\x.txt/b/n1/",
+    "expected": "E:/dir/n2/n1"
+  },
+  {
+    "result": "\\\\host\\data\\sub",
+    "search": "\\\\s1\\Share",
+    "expected": "//host/data/sub"
+  },
+  {
+    "result": "File.TXT",
+    "search": "\\\\s2\\c$/sub/n2",
+    "expected": "File.TXT"
+  },
+  {
+    "result": "E:\\x.txt\\dir\\dir",
+    "search": "\\\\s1\\c$",
+    "expected": "E:/x.txt/dir/dir"
+  },
+  {
+    "result": "\\\\srv3\\c$\\a\\dir",
+    "search": "c:\\dir\\sub\\a",
+    "expected": "//srv3/c$/a/dir"
+  },
+  {
+    "result": "C:\\File.TXT",
+    "search": "c:\\a\\sub",
+    "expected": "../../File.TXT"
+  },
+  {
+    "result": "E:\\sub",
+    "search": "D:\\sub\\n2\\a\\",
+    "expected": "E:/sub"
+  },
+  {
+    "result": "a\\b\\x.txt",
+    "search": "C:\\n2\\b\\n1",
+    "expected": "a/b/x.txt"
+  },
+  {
+    "result": "C:\\sub\\File.TXT\\File.TXT",
+    "search": "\\\\HOST\\data/a",
+    "expected": "C:/sub/File.TXT/File.TXT"
+  },
+  {
+    "result": "c:\\a\\dir",
+    "search": "\\\\s1\\Share\\a",
+    "expected": "c:/a/dir"
+  },
+  {
+    "result": "E:\\x.txt\\a",
+    "search": "C:\\workspace\\project",
+    "expected": "E:/x.txt/a"
+  },
+  {
+    "result": "c:\\a\\dir\\n1",
+    "search": "\\\\s2\\share",
+    "expected": "c:/a/dir/n1"
+  },
+  {
+    "result": "c:\\dir",
+    "search": "E:\\",
+    "expected": "c:/dir"
+  },
+  {
+    "result": "\\\\srv3\\share\\",
+    "search": "C:\\",
+    "expected": "//srv3/share/"
+  },
+  {
+    "result": "D:\\n2\\x.txt",
+    "search": "D:\\a\\n2",
+    "expected": "../../n2/x.txt"
+  },
+  {
+    "result": "C:\\sub\\a",
+    "search": "c:\\File.TXT/x.txt",
+    "expected": "../../sub/a"
+  },
+  {
+    "result": "c:\\",
+    "search": "C:\\",
+    "expected": "/"
+  },
+  {
+    "result": "C:\\a\\dir\\",
+    "search": "c:\\n1",
+    "expected": "../a/dir/"
+  },
+  {
+    "result": "D:\\dir\\n2\\a",
+    "search": "E:\\b\\File.TXT",
+    "expected": "D:/dir/n2/a"
+  },
+  {
+    "result": "\\\\srv3\\Share\\dir\\",
+    "search": "c:\\x.txt\\File.TXT\\x.txt",
+    "expected": "//srv3/Share/dir/"
+  },
+  {
+    "result": "\\\\srv3\\share\\dir",
+    "search": "D:\\sub\\sub\\sub",
+    "expected": "//srv3/share/dir"
+  },
+  {
+    "result": "\\\\host\\c$\\n2\\sub",
+    "search": "E:\\File.TXT\\x.txt\\",
+    "expected": "//host/c$/n2/sub"
+  },
+  {
+    "result": "C:\\x.txt\\File.TXT",
+    "search": "C:\\a",
+    "expected": "../x.txt/File.TXT"
+  },
+  {
+    "result": "C:\\x.txt\\n1",
+    "search": "\\\\srv3\\c$",
+    "expected": "C:/x.txt/n1"
+  },
+  {
+    "result": "\\\\host\\share\\x.txt",
+    "search": "C:\\",
+    "expected": "//host/share/x.txt"
+  },
+  {
+    "result": "D:\\",
+    "search": "C:\\",
+    "expected": "D:/"
+  },
+  {
+    "result": "D:\\a\\x.txt\\b\\",
+    "search": "E:\\",
+    "expected": "D:/a/x.txt/b/"
+  },
+  {
+    "result": "\\\\s2\\Share\\sub",
+    "search": "\\\\s1\\Share\\x.txt\\n1\\x.txt",
+    "expected": "//s2/Share/sub"
+  },
+  {
+    "result": "D:\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/"
+  },
+  {
+    "result": "c:\\n2\\n1\\sub",
+    "search": "D:\\b\\sub\\sub",
+    "expected": "c:/n2/n1/sub"
+  },
+  {
+    "result": "E:\\dir\\n2\\n1",
+    "search": "\\\\s2\\c$/sub/sub/File.TXT",
+    "expected": "E:/dir/n2/n1"
+  },
+  {
+    "result": "E:\\n2/x.txt/b/",
+    "search": "C:\\dir\\dir\\n2",
+    "expected": "E:/n2/x.txt/b/"
+  },
+  {
+    "result": "\\\\host\\Share\\dir\\dir\\",
+    "search": "E:\\x.txt\\sub",
+    "expected": "//host/Share/dir/dir/"
+  },
+  {
+    "result": "\\\\srv3\\Share/sub/File.TXT/sub/",
+    "search": "c:\\",
+    "expected": "//srv3/Share/sub/File.TXT/sub/"
+  },
+  {
+    "result": "\\\\host\\c$\\n2\\File.TXT",
+    "search": "\\\\HOST\\share\\n2\\b\\",
+    "expected": "../../../c$/n2/File.TXT"
+  },
+  {
+    "result": "n2\\sub\\x.txt",
+    "search": "\\\\host\\share\\n1",
+    "expected": "n2/sub/x.txt"
+  },
+  {
+    "result": "E:\\n1\\b\\sub\\",
+    "search": "\\\\host\\Share\\x.txt",
+    "expected": "E:/n1/b/sub/"
+  },
+  {
+    "result": "n1\\n2\\n1",
+    "search": "D:\\dir\\b\\a",
+    "expected": "n1/n2/n1"
+  },
+  {
+    "result": "C:\\b",
+    "search": "\\\\host\\data\\File.TXT\\sub\\a",
+    "expected": "C:/b"
+  },
+  {
+    "result": "c:\\",
+    "search": "D:\\b\\n1\\n2",
+    "expected": "c:/"
+  },
+  {
+    "result": "\\\\host\\c$\\b\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//host/c$/b/"
+  },
+  {
+    "result": "\\\\srv3\\data",
+    "search": "\\\\host\\Share\\a\\a\\x.txt\\",
+    "expected": "//srv3/data/"
+  },
+  {
+    "result": "sub",
+    "search": "\\\\host\\data",
+    "expected": "sub"
+  },
+  {
+    "result": "\\\\srv3\\c$\\",
+    "search": "D:\\b/",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "\\\\HOST\\Share\\x.txt\\a\\n1",
+    "search": "C:\\",
+    "expected": "//HOST/Share/x.txt/a/n1"
+  },
+  {
+    "result": "\\\\host\\Share",
+    "search": "c:\\File.TXT\\",
+    "expected": "//host/Share/"
+  },
+  {
+    "result": "n2",
+    "search": "C:\\n1/n2/File.TXT",
+    "expected": "n2"
+  },
+  {
+    "result": "n2",
+    "search": "C:\\n2\\n1",
+    "expected": "n2"
+  },
+  {
+    "result": "C:\\",
+    "search": "C:\\",
+    "expected": "/"
+  },
+  {
+    "result": "b\\n1\\n2",
+    "search": "C:\\",
+    "expected": "b/n1/n2"
+  },
+  {
+    "result": "\\\\srv3\\share/n1/dir",
+    "search": "D:\\dir\\b",
+    "expected": "//srv3/share/n1/dir"
+  },
+  {
+    "result": "c:\\a",
+    "search": "\\\\host\\share\\",
+    "expected": "c:/a"
+  },
+  {
+    "result": "File.TXT",
+    "search": "c:\\b\\File.TXT",
+    "expected": "File.TXT"
+  },
+  {
+    "result": "\\\\srv3\\share\\b\\n2\\x.txt",
+    "search": "D:\\b\\",
+    "expected": "//srv3/share/b/n2/x.txt"
+  },
+  {
+    "result": "\\\\s2\\c$\\b",
+    "search": "C:\\workspace\\project",
+    "expected": "//s2/c$/b"
+  },
+  {
+    "result": "\\\\host\\data",
+    "search": "E:\\x.txt",
+    "expected": "//host/data/"
+  },
+  {
+    "result": "C:\\x.txt",
+    "search": "\\\\HOST\\Share",
+    "expected": "C:/x.txt"
+  },
+  {
+    "result": "\\\\s1\\share\\n1\\File.TXT\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/share/n1/File.TXT/"
+  },
+  {
+    "result": "E:\\dir/File.TXT",
+    "search": "C:\\b\\x.txt",
+    "expected": "E:/dir/File.TXT"
+  },
+  {
+    "result": "E:\\n1",
+    "search": "c:\\",
+    "expected": "E:/n1"
+  },
+  {
+    "result": "E:\\",
+    "search": "C:\\n2",
+    "expected": "E:/"
+  },
+  {
+    "result": "D:\\File.TXT",
+    "search": "c:\\sub\\dir",
+    "expected": "D:/File.TXT"
+  },
+  {
+    "result": "n2\\b\\a",
+    "search": "\\\\s2\\c$\\b\\n2\\n1",
+    "expected": "n2/b/a"
+  },
+  {
+    "result": "C:\\n1/File.TXT/sub",
+    "search": "\\\\srv3\\Share\\sub",
+    "expected": "C:/n1/File.TXT/sub"
+  },
+  {
+    "result": "n2\\File.TXT\\n1",
+    "search": "c:\\",
+    "expected": "n2/File.TXT/n1"
+  },
+  {
+    "result": "\\\\HOST\\share/n2/File.TXT",
+    "search": "E:\\b\\sub\\x.txt\\",
+    "expected": "//HOST/share/n2/File.TXT"
+  },
+  {
+    "result": "x.txt\\n1\\dir",
+    "search": "C:\\a",
+    "expected": "x.txt/n1/dir"
+  },
+  {
+    "result": "c:\\b\\a",
+    "search": "\\\\s2\\Share\\sub\\b",
+    "expected": "c:/b/a"
+  },
+  {
+    "result": "\\\\HOST\\Share\\n2",
+    "search": "D:\\x.txt",
+    "expected": "//HOST/Share/n2"
+  },
+  {
+    "result": "D:\\dir\\a\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/dir/a/"
+  },
+  {
+    "result": "\\\\s1\\c$\\dir\\File.TXT\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/c$/dir/File.TXT/"
+  },
+  {
+    "result": "b\\x.txt\\a",
+    "search": "c:\\dir\\dir\\",
+    "expected": "b/x.txt/a"
+  },
+  {
+    "result": "C:\\n1\\b",
+    "search": "\\\\host\\c$/n1/dir/n2",
+    "expected": "C:/n1/b"
+  },
+  {
+    "result": "C:\\n2\\a\\",
+    "search": "C:\\",
+    "expected": "n2/a/"
+  },
+  {
+    "result": "C:\\dir/n1",
+    "search": "E:\\",
+    "expected": "C:/dir/n1"
+  },
+  {
+    "result": "\\\\s2\\Share\\a",
+    "search": "D:\\x.txt\\sub",
+    "expected": "//s2/Share/a"
+  },
+  {
+    "result": "\\\\srv3\\share",
+    "search": "\\\\s2\\data\\x.txt\\sub",
+    "expected": "//srv3/share/"
+  },
+  {
+    "result": "\\\\HOST\\data\\n2\\n1\\sub",
+    "search": "c:\\n2",
+    "expected": "//HOST/data/n2/n1/sub"
+  },
+  {
+    "result": "\\\\host\\Share/n2",
+    "search": "C:\\x.txt/dir/n1",
+    "expected": "//host/Share/n2"
+  },
+  {
+    "result": "E:\\",
+    "search": "\\\\s2\\data\\n1\\File.TXT",
+    "expected": "E:/"
+  },
+  {
+    "result": "dir\\b\\b",
+    "search": "\\\\srv3\\share",
+    "expected": "dir/b/b"
+  },
+  {
+    "result": "c:\\n2\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "../../n2/File.TXT"
+  },
+  {
+    "result": "\\\\s2\\c$\\File.TXT\\sub",
+    "search": "\\\\s2\\c$\\n1\\dir",
+    "expected": "../../File.TXT/sub"
+  },
+  {
+    "result": "\\\\srv3\\c$\\",
+    "search": "E:\\n1\\a\\x.txt\\",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "D:\\",
+    "search": "\\\\host\\Share",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\HOST\\c$\\sub\\b",
+    "search": "\\\\s2\\Share\\",
+    "expected": "//HOST/c$/sub/b"
+  },
+  {
+    "result": "\\\\host\\data",
+    "search": "c:\\n2\\sub",
+    "expected": "//host/data/"
+  },
+  {
+    "result": "E:\\",
+    "search": "D:\\",
+    "expected": "E:/"
+  },
+  {
+    "result": "D:\\File.TXT\\dir",
+    "search": "E:\\",
+    "expected": "D:/File.TXT/dir"
+  },
+  {
+    "result": "\\\\host\\data\\n1\\",
+    "search": "\\\\s2\\c$\\n2\\File.TXT\\a\\",
+    "expected": "//host/data/n1/"
+  },
+  {
+    "result": "E:\\",
+    "search": "D:\\",
+    "expected": "E:/"
+  },
+  {
+    "result": "\\\\s1\\Share\\dir\\n1",
+    "search": "C:\\dir",
+    "expected": "//s1/Share/dir/n1"
+  },
+  {
+    "result": "C:\\dir\\sub",
+    "search": "c:\\File.TXT\\dir",
+    "expected": "../../dir/sub"
+  },
+  {
+    "result": "\\\\s2\\share\\sub\\sub\\File.TXT",
+    "search": "C:\\dir",
+    "expected": "//s2/share/sub/sub/File.TXT"
+  },
+  {
+    "result": "\\\\host\\share\\a\\sub",
+    "search": "D:\\a/a/",
+    "expected": "//host/share/a/sub"
+  },
+  {
+    "result": "C:\\File.TXT",
+    "search": "C:\\sub/",
+    "expected": "../File.TXT"
+  },
+  {
+    "result": "D:\\dir/sub/sub",
+    "search": "E:\\b\\sub\\",
+    "expected": "D:/dir/sub/sub"
+  },
+  {
+    "result": "File.TXT",
+    "search": "\\\\s2\\Share\\a",
+    "expected": "File.TXT"
+  },
+  {
+    "result": "E:\\b\\",
+    "search": "D:\\",
+    "expected": "E:/b/"
+  },
+  {
+    "result": "\\\\host\\Share\\n1\\n1\\b",
+    "search": "D:\\File.TXT",
+    "expected": "//host/Share/n1/n1/b"
+  },
+  {
+    "result": "\\\\s2\\c$\\",
+    "search": "D:\\",
+    "expected": "//s2/c$/"
+  },
+  {
+    "result": "c:\\n1/File.TXT",
+    "search": "c:\\",
+    "expected": "n1/File.TXT"
+  },
+  {
+    "result": "\\\\host\\Share\\File.TXT\\x.txt\\",
+    "search": "C:\\",
+    "expected": "//host/Share/File.TXT/x.txt/"
+  },
+  {
+    "result": "File.TXT\\n1",
+    "search": "C:\\a\\b",
+    "expected": "File.TXT/n1"
+  },
+  {
+    "result": "C:\\",
+    "search": "c:\\b",
+    "expected": "../"
+  },
+  {
+    "result": "\\\\srv3\\c$/File.TXT/x.txt/x.txt/",
+    "search": "C:\\workspace\\project",
+    "expected": "//srv3/c$/File.TXT/x.txt/x.txt/"
+  },
+  {
+    "result": "\\\\host\\share\\File.TXT",
+    "search": "C:\\n2/n2/n1",
+    "expected": "//host/share/File.TXT"
+  },
+  {
+    "result": "C:\\x.txt",
+    "search": "\\\\host\\Share\\n2\\b\\n2",
+    "expected": "C:/x.txt"
+  },
+  {
+    "result": "\\\\s1\\share\\a\\File.TXT\\",
+    "search": "\\\\host\\c$\\n2\\a\\x.txt\\",
+    "expected": "//s1/share/a/File.TXT/"
+  },
+  {
+    "result": "\\\\s2\\share\\n1\\File.TXT",
+    "search": "\\\\host\\data",
+    "expected": "//s2/share/n1/File.TXT"
+  },
+  {
+    "result": "C:\\n1",
+    "search": "C:\\b\\x.txt\\",
+    "expected": "../../n1"
+  },
+  {
+    "result": "D:\\File.TXT\\b",
+    "search": "C:\\n2\\sub",
+    "expected": "D:/File.TXT/b"
+  },
+  {
+    "result": "\\\\srv3\\c$\\n2\\a\\",
+    "search": "\\\\s2\\data\\b",
+    "expected": "//srv3/c$/n2/a/"
+  },
+  {
+    "result": "\\\\s1\\share",
+    "search": "\\\\s1\\share/sub/b",
+    "expected": "../.."
+  },
+  {
+    "result": "D:\\a\\File.TXT\\a",
+    "search": "E:\\",
+    "expected": "D:/a/File.TXT/a"
+  },
+  {
+    "result": "\\\\HOST\\Share\\b\\dir",
+    "search": "\\\\s2\\Share/a/",
+    "expected": "//HOST/Share/b/dir"
+  },
+  {
+    "result": "\\\\HOST\\Share",
+    "search": "\\\\s1\\share\\File.TXT\\n1\\n1\\",
+    "expected": "//HOST/Share/"
+  },
+  {
+    "result": "c:\\dir\\",
+    "search": "E:\\File.TXT\\dir\\n1",
+    "expected": "c:/dir/"
+  },
+  {
+    "result": "E:\\",
+    "search": "D:\\",
+    "expected": "E:/"
+  },
+  {
+    "result": "E:\\File.TXT\\b\\b",
+    "search": "E:\\dir",
+    "expected": "../File.TXT/b/b"
+  },
+  {
+    "result": "D:\\x.txt\\sub\\",
+    "search": "c:\\",
+    "expected": "D:/x.txt/sub/"
+  },
+  {
+    "result": "\\\\host\\Share\\dir\\a\\a",
+    "search": "C:\\dir",
+    "expected": "//host/Share/dir/a/a"
+  },
+  {
+    "result": "c:\\",
+    "search": "D:\\b\\sub\\",
+    "expected": "c:/"
+  },
+  {
+    "result": "\\\\s2\\Share\\sub\\File.TXT\\n2",
+    "search": "c:\\n1\\x.txt",
+    "expected": "//s2/Share/sub/File.TXT/n2"
+  },
+  {
+    "result": "\\\\s1\\data\\n2\\sub\\",
+    "search": "\\\\srv3\\Share",
+    "expected": "//s1/data/n2/sub/"
+  },
+  {
+    "result": "C:\\x.txt\\sub",
+    "search": "\\\\s1\\Share\\b\\x.txt\\a",
+    "expected": "C:/x.txt/sub"
+  },
+  {
+    "result": "D:\\a\\n1",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/a/n1"
+  },
+  {
+    "result": "\\\\host\\data\\sub",
+    "search": "D:\\",
+    "expected": "//host/data/sub"
+  },
+  {
+    "result": "D:\\a\\File.TXT\\",
+    "search": "c:\\",
+    "expected": "D:/a/File.TXT/"
+  },
+  {
+    "result": "C:\\dir\\a",
+    "search": "c:\\sub\\a\\x.txt\\",
+    "expected": "../../../dir/a"
+  },
+  {
+    "result": "\\\\srv3\\share\\sub",
+    "search": "\\\\s1\\c$/n1/n1",
+    "expected": "//srv3/share/sub"
+  },
+  {
+    "result": "\\\\HOST\\Share\\File.TXT",
+    "search": "\\\\s2\\data",
+    "expected": "//HOST/Share/File.TXT"
+  },
+  {
+    "result": "\\\\srv3\\data\\",
+    "search": "C:\\n1\\dir",
+    "expected": "//srv3/data/"
+  },
+  {
+    "result": "n2",
+    "search": "\\\\s2\\share\\x.txt\\dir\\a",
+    "expected": "n2"
+  },
+  {
+    "result": "\\\\HOST\\c$\\n1\\b",
+    "search": "C:\\sub\\File.TXT\\n2",
+    "expected": "//HOST/c$/n1/b"
+  },
+  {
+    "result": "D:\\dir\\n1\\sub",
+    "search": "\\\\s2\\data\\",
+    "expected": "D:/dir/n1/sub"
+  },
+  {
+    "result": "\\\\host\\c$\\dir\\sub\\n2\\",
+    "search": "D:\\",
+    "expected": "//host/c$/dir/sub/n2/"
+  },
+  {
+    "result": "\\\\s1\\c$",
+    "search": "D:\\n1\\n1",
+    "expected": "//s1/c$/"
+  },
+  {
+    "result": "C:\\dir\\x.txt",
+    "search": "D:\\x.txt\\b\\dir",
+    "expected": "C:/dir/x.txt"
+  },
+  {
+    "result": "c:\\a\\",
+    "search": "\\\\s1\\share",
+    "expected": "c:/a/"
+  },
+  {
+    "result": "E:\\n2",
+    "search": "c:\\n2\\sub",
+    "expected": "E:/n2"
+  },
+  {
+    "result": "\\\\s1\\data\\b\\",
+    "search": "\\\\s2\\Share/a/File.TXT",
+    "expected": "//s1/data/b/"
+  },
+  {
+    "result": "\\\\host\\share",
+    "search": "C:\\workspace\\project",
+    "expected": "//host/share/"
+  },
+  {
+    "result": "C:\\b",
+    "search": "E:\\b\\sub\\",
+    "expected": "C:/b"
+  },
+  {
+    "result": "C:\\",
+    "search": "\\\\srv3\\Share\\x.txt\\dir",
+    "expected": "C:/"
+  },
+  {
+    "result": "\\\\srv3\\data",
+    "search": "c:\\n2\\x.txt",
+    "expected": "//srv3/data/"
+  },
+  {
+    "result": "\\\\srv3\\Share/x.txt",
+    "search": "\\\\s2\\share\\x.txt",
+    "expected": "//srv3/Share/x.txt"
+  },
+  {
+    "result": "c:\\",
+    "search": "c:\\",
+    "expected": "/"
+  },
+  {
+    "result": "\\\\s2\\Share\\x.txt\\dir",
+    "search": "\\\\HOST\\Share",
+    "expected": "//s2/Share/x.txt/dir"
+  },
+  {
+    "result": "D:\\n2\\dir\\dir",
+    "search": "\\\\srv3\\Share\\b\\dir\\n1",
+    "expected": "D:/n2/dir/dir"
+  },
+  {
+    "result": "c:\\sub",
+    "search": "E:\\",
+    "expected": "c:/sub"
+  },
+  {
+    "result": "b\\b\\b",
+    "search": "\\\\srv3\\share\\sub\\n1\\b",
+    "expected": "b/b/b"
+  },
+  {
+    "result": "c:\\b\\n1\\a",
+    "search": "\\\\host\\data\\sub",
+    "expected": "c:/b/n1/a"
+  },
+  {
+    "result": "c:\\dir",
+    "search": "\\\\HOST\\data\\",
+    "expected": "c:/dir"
+  },
+  {
+    "result": "\\\\HOST\\Share\\b\\",
+    "search": "\\\\srv3\\c$/n2/n1",
+    "expected": "//HOST/Share/b/"
+  },
+  {
+    "result": "D:\\File.TXT\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/File.TXT/File.TXT"
+  },
+  {
+    "result": "x.txt\\n1",
+    "search": "c:\\File.TXT\\",
+    "expected": "x.txt/n1"
+  },
+  {
+    "result": "\\\\s1\\Share\\a",
+    "search": "\\\\host\\Share\\sub\\File.TXT",
+    "expected": "//s1/Share/a"
+  },
+  {
+    "result": "E:\\a",
+    "search": "\\\\HOST\\Share\\b\\b",
+    "expected": "E:/a"
+  },
+  {
+    "result": "D:\\File.TXT\\sub",
+    "search": "D:\\dir\\x.txt",
+    "expected": "../../File.TXT/sub"
+  },
+  {
+    "result": "\\\\host\\share",
+    "search": "\\\\HOST\\data",
+    "expected": "../share"
+  },
+  {
+    "result": "C:\\File.TXT\\x.txt\\sub",
+    "search": "D:\\sub\\sub",
+    "expected": "C:/File.TXT/x.txt/sub"
+  },
+  {
+    "result": "\\\\srv3\\Share\\n2\\x.txt\\sub",
+    "search": "\\\\s1\\Share\\a\\dir\\",
+    "expected": "//srv3/Share/n2/x.txt/sub"
+  },
+  {
+    "result": "\\\\s1\\Share\\File.TXT\\dir",
+    "search": "\\\\s2\\c$\\n1\\n1",
+    "expected": "//s1/Share/File.TXT/dir"
+  },
+  {
+    "result": "\\\\srv3\\data",
+    "search": "\\\\srv3\\share/sub/b",
+    "expected": "../../../data"
+  },
+  {
+    "result": "\\\\srv3\\data",
+    "search": "\\\\host\\c$/",
+    "expected": "//srv3/data/"
+  },
+  {
+    "result": "\\\\s1\\data\\n1",
+    "search": "\\\\s2\\Share/b",
+    "expected": "//s1/data/n1"
+  },
+  {
+    "result": "\\\\srv3\\data\\dir\\sub",
+    "search": "\\\\s1\\c$\\b\\n2",
+    "expected": "//srv3/data/dir/sub"
+  },
+  {
+    "result": "\\\\s1\\data",
+    "search": "\\\\s2\\share\\File.TXT\\b",
+    "expected": "//s1/data/"
+  },
+  {
+    "result": "\\\\s1\\c$\\n1\\b\\File.TXT",
+    "search": "D:\\sub\\File.TXT\\File.TXT",
+    "expected": "//s1/c$/n1/b/File.TXT"
+  },
+  {
+    "result": "c:\\x.txt\\a\\",
+    "search": "\\\\host\\c$",
+    "expected": "c:/x.txt/a/"
+  },
+  {
+    "result": "\\\\host\\Share/File.TXT/sub",
+    "search": "C:\\sub\\n1",
+    "expected": "//host/Share/File.TXT/sub"
+  },
+  {
+    "result": "c:\\n2\\dir\\n2",
+    "search": "E:\\sub\\n1",
+    "expected": "c:/n2/dir/n2"
+  },
+  {
+    "result": "x.txt\\File.TXT\\dir",
+    "search": "D:\\",
+    "expected": "x.txt/File.TXT/dir"
+  },
+  {
+    "result": "\\\\host\\data\\",
+    "search": "\\\\host\\c$\\dir",
+    "expected": "../../data/"
+  },
+  {
+    "result": "\\\\s2\\Share\\dir\\b\\b",
+    "search": "\\\\s2\\c$",
+    "expected": "../Share/dir/b/b"
+  },
+  {
+    "result": "C:\\sub\\n2",
+    "search": "C:\\workspace\\project",
+    "expected": "../../sub/n2"
+  },
+  {
+    "result": "\\\\srv3\\c$\\a\\dir\\n1",
+    "search": "C:\\workspace\\project",
+    "expected": "//srv3/c$/a/dir/n1"
+  },
+  {
+    "result": "\\\\srv3\\c$",
+    "search": "\\\\srv3\\c$/File.TXT",
+    "expected": ".."
+  },
+  {
+    "result": "E:\\b/n1/b",
+    "search": "C:\\dir",
+    "expected": "E:/b/n1/b"
+  },
+  {
+    "result": "\\\\srv3\\c$\\x.txt\\x.txt\\a",
+    "search": "\\\\s2\\data",
+    "expected": "//srv3/c$/x.txt/x.txt/a"
+  },
+  {
+    "result": "\\\\srv3\\c$",
+    "search": "\\\\host\\c$\\b\\x.txt",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "n2",
+    "search": "\\\\HOST\\c$\\b",
+    "expected": "n2"
+  },
+  {
+    "result": "n2\\n1",
+    "search": "C:\\b",
+    "expected": "n2/n1"
+  },
+  {
+    "result": "E:\\File.TXT\\n1\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "E:/File.TXT/n1/File.TXT"
+  },
+  {
+    "result": "E:\\",
+    "search": "E:\\n1\\File.TXT\\b",
+    "expected": "../../../"
+  },
+  {
+    "result": "C:\\n2\\x.txt",
+    "search": "\\\\s1\\share/a",
+    "expected": "C:/n2/x.txt"
+  },
+  {
+    "result": "\\\\srv3\\c$\\File.TXT",
+    "search": "D:\\sub",
+    "expected": "//srv3/c$/File.TXT"
+  },
+  {
+    "result": "\\\\s2\\data/File.TXT/n2/n2",
+    "search": "\\\\srv3\\Share\\a\\sub",
+    "expected": "//s2/data/File.TXT/n2/n2"
+  },
+  {
+    "result": "C:\\",
+    "search": "c:\\x.txt\\sub\\a",
+    "expected": "../../../"
+  },
+  {
+    "result": "D:\\b\\sub",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/b/sub"
+  },
+  {
+    "result": "D:\\x.txt\\a\\a",
+    "search": "\\\\HOST\\c$",
+    "expected": "D:/x.txt/a/a"
+  },
+  {
+    "result": "c:\\",
+    "search": "C:\\",
+    "expected": "/"
+  },
+  {
+    "result": "\\\\s1\\c$\\x.txt\\sub\\a",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/c$/x.txt/sub/a"
+  },
+  {
+    "result": "c:\\a\\",
+    "search": "\\\\s2\\share\\File.TXT\\x.txt\\n1",
+    "expected": "c:/a/"
+  },
+  {
+    "result": "D:\\File.TXT",
+    "search": "\\\\s2\\share\\n2\\a\\dir",
+    "expected": "D:/File.TXT"
+  },
+  {
+    "result": "\\\\s2\\c$\\a\\x.txt",
+    "search": "C:\\workspace\\project",
+    "expected": "//s2/c$/a/x.txt"
+  },
+  {
+    "result": "\\\\s1\\share\\x.txt\\b\\",
+    "search": "C:\\a\\n2",
+    "expected": "//s1/share/x.txt/b/"
+  },
+  {
+    "result": "E:\\",
+    "search": "\\\\s1\\data\\n1\\n1",
+    "expected": "E:/"
+  },
+  {
+    "result": "\\\\srv3\\share\\File.TXT\\n1",
+    "search": "C:\\n1",
+    "expected": "//srv3/share/File.TXT/n1"
+  },
+  {
+    "result": "D:\\b\\b\\",
+    "search": "\\\\HOST\\data/dir/b/a",
+    "expected": "D:/b/b/"
+  },
+  {
+    "result": "c:\\",
+    "search": "\\\\host\\c$/b",
+    "expected": "c:/"
+  },
+  {
+    "result": "c:\\dir",
+    "search": "\\\\srv3\\data",
+    "expected": "c:/dir"
+  },
+  {
+    "result": "\\\\s1\\c$\\File.TXT",
+    "search": "c:\\sub\\n1",
+    "expected": "//s1/c$/File.TXT"
+  },
+  {
+    "result": "n2\\b\\File.TXT",
+    "search": "\\\\s1\\Share\\sub\\x.txt",
+    "expected": "n2/b/File.TXT"
+  },
+  {
+    "result": "C:\\x.txt\\dir\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "../../x.txt/dir/File.TXT"
+  },
+  {
+    "result": "D:\\",
+    "search": "D:\\sub\\a\\dir",
+    "expected": "../../../"
+  },
+  {
+    "result": "E:\\x.txt\\x.txt\\File.TXT\\",
+    "search": "c:\\sub\\x.txt\\sub",
+    "expected": "E:/x.txt/x.txt/File.TXT/"
+  },
+  {
+    "result": "\\\\srv3\\c$\\x.txt\\dir",
+    "search": "c:\\",
+    "expected": "//srv3/c$/x.txt/dir"
+  },
+  {
+    "result": "E:\\sub",
+    "search": "\\\\srv3\\data",
+    "expected": "E:/sub"
+  },
+  {
+    "result": "\\\\srv3\\c$\\a\\File.TXT\\",
+    "search": "c:\\dir\\x.txt",
+    "expected": "//srv3/c$/a/File.TXT/"
+  },
+  {
+    "result": "c:\\File.TXT",
+    "search": "E:\\",
+    "expected": "c:/File.TXT"
+  },
+  {
+    "result": "\\\\s1\\data",
+    "search": "\\\\HOST\\Share\\x.txt",
+    "expected": "//s1/data/"
+  },
+  {
+    "result": "E:\\dir\\dir\\b\\",
+    "search": "c:\\",
+    "expected": "E:/dir/dir/b/"
+  },
+  {
+    "result": "\\\\s2\\c$\\dir\\x.txt\\dir",
+    "search": "E:\\File.TXT\\b\\x.txt",
+    "expected": "//s2/c$/dir/x.txt/dir"
+  },
+  {
+    "result": "\\\\HOST\\data\\b\\n2",
+    "search": "c:\\b\\n1\\n1\\",
+    "expected": "//HOST/data/b/n2"
+  },
+  {
+    "result": "D:\\sub\\",
+    "search": "c:\\File.TXT/n1",
+    "expected": "D:/sub/"
+  },
+  {
+    "result": "\\\\srv3\\c$",
+    "search": "D:\\x.txt\\a\\b",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "\\\\host\\c$\\File.TXT\\b",
+    "search": "\\\\s1\\share",
+    "expected": "//host/c$/File.TXT/b"
+  },
+  {
+    "result": "D:\\",
+    "search": "c:\\sub\\File.TXT",
+    "expected": "D:/"
+  },
+  {
+    "result": "c:\\",
+    "search": "\\\\srv3\\Share",
+    "expected": "c:/"
+  },
+  {
+    "result": "\\\\s2\\c$\\n1\\x.txt\\b",
+    "search": "c:\\n2",
+    "expected": "//s2/c$/n1/x.txt/b"
+  },
+  {
+    "result": "D:\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\s2\\share\\sub",
+    "search": "C:\\workspace\\project",
+    "expected": "//s2/share/sub"
+  },
+  {
+    "result": "D:\\b\\File.TXT\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/b/File.TXT/"
+  },
+  {
+    "result": "E:\\n2/a",
+    "search": "\\\\srv3\\Share\\File.TXT\\a",
+    "expected": "E:/n2/a"
+  },
+  {
+    "result": "E:\\a\\x.txt",
+    "search": "C:\\",
+    "expected": "E:/a/x.txt"
+  },
+  {
+    "result": "E:\\n1/",
+    "search": "\\\\srv3\\share\\n1",
+    "expected": "E:/n1/"
+  },
+  {
+    "result": "c:\\dir",
+    "search": "\\\\s1\\Share/dir",
+    "expected": "c:/dir"
+  },
+  {
+    "result": "\\\\s2\\c$\\",
+    "search": "C:\\n1\\b\\a\\",
+    "expected": "//s2/c$/"
+  },
+  {
+    "result": "D:\\sub",
+    "search": "D:\\dir",
+    "expected": "../sub"
+  },
+  {
+    "result": "\\\\srv3\\c$",
+    "search": "C:\\workspace\\project",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "\\\\HOST\\share",
+    "search": "C:\\workspace\\project",
+    "expected": "//HOST/share/"
+  },
+  {
+    "result": "\\\\HOST\\c$\\File.TXT",
+    "search": "\\\\host\\data\\File.TXT\\n2",
+    "expected": "../../../c$/File.TXT"
+  },
+  {
+    "result": "D:\\",
+    "search": "c:\\a",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\HOST\\share\\",
+    "search": "c:\\a",
+    "expected": "//HOST/share/"
+  },
+  {
+    "result": "D:\\",
+    "search": "C:\\workspace\\project",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\s1\\data\\",
+    "search": "c:\\x.txt\\n2\\n1",
+    "expected": "//s1/data/"
+  },
+  {
+    "result": "C:\\",
+    "search": "D:\\",
+    "expected": "C:/"
+  },
+  {
+    "result": "C:\\dir",
+    "search": "c:\\n2",
+    "expected": "../dir"
+  },
+  {
+    "result": "\\\\s1\\share\\a\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//s1/share/a/"
+  },
+  {
+    "result": "\\\\host\\Share\\",
+    "search": "\\\\s1\\data\\",
+    "expected": "//host/Share/"
+  },
+  {
+    "result": "b",
+    "search": "sub\\a\\a",
+    "expected": "b"
+  },
+  {
+    "result": "E:\\b\\dir",
+    "search": "\\\\s2\\Share\\sub\\dir\\dir",
+    "expected": "E:/b/dir"
+  },
+  {
+    "result": "\\\\s2\\Share\\b\\b\\",
+    "search": "C:\\workspace\\project",
+    "expected": "//s2/Share/b/b/"
+  },
+  {
+    "result": "D:\\a\\n1\\sub",
+    "search": "E:\\x.txt\\a\\a",
+    "expected": "D:/a/n1/sub"
+  },
+  {
+    "result": "c:\\",
+    "search": "C:\\workspace\\project",
+    "expected": "../../"
+  },
+  {
+    "result": "\\\\HOST\\data\\n2",
+    "search": "E:\\",
+    "expected": "//HOST/data/n2"
+  },
+  {
+    "result": "D:\\",
+    "search": "E:\\File.TXT\\",
+    "expected": "D:/"
+  },
+  {
+    "result": "\\\\s1\\c$/x.txt",
+    "search": "C:\\",
+    "expected": "//s1/c$/x.txt"
+  },
+  {
+    "result": "\\\\srv3\\c$\\n2",
+    "search": "\\\\host\\c$\\n2\\b\\b",
+    "expected": "//srv3/c$/n2"
+  },
+  {
+    "result": "D:\\",
+    "search": "\\\\s2\\data\\n2",
+    "expected": "D:/"
+  },
+  {
+    "result": "C:\\a\\",
+    "search": "C:\\workspace\\project",
+    "expected": "../../a/"
+  },
+  {
+    "result": "\\\\host\\Share\\dir\\x.txt\\x.txt\\",
+    "search": "D:\\n2",
+    "expected": "//host/Share/dir/x.txt/x.txt/"
+  },
+  {
+    "result": "\\\\srv3\\c$\\n2\\x.txt",
+    "search": "C:\\",
+    "expected": "//srv3/c$/n2/x.txt"
+  },
+  {
+    "result": "\\\\s2\\c$\\b\\File.TXT\\sub",
+    "search": "\\\\s2\\Share",
+    "expected": "../c$/b/File.TXT/sub"
+  },
+  {
+    "result": "\\\\srv3\\c$",
+    "search": "c:\\File.TXT\\",
+    "expected": "//srv3/c$/"
+  },
+  {
+    "result": "C:\\b",
+    "search": "\\\\s2\\c$\\x.txt\\dir\\File.TXT",
+    "expected": "C:/b"
+  },
+  {
+    "result": "\\\\srv3\\share\\n2\\a\\sub",
+    "search": "\\\\HOST\\share\\File.TXT",
+    "expected": "//srv3/share/n2/a/sub"
+  },
+  {
+    "result": "\\\\HOST\\data\\n2\\b\\a",
+    "search": "D:\\File.TXT",
+    "expected": "//HOST/data/n2/b/a"
+  },
+  {
+    "result": "D:\\b",
+    "search": "D:\\a\\",
+    "expected": "../b"
+  },
+  {
+    "result": "\\\\s1\\c$\\n2\\",
+    "search": "D:\\sub\\x.txt",
+    "expected": "//s1/c$/n2/"
+  },
+  {
+    "result": "\\\\s2\\data\\sub\\a\\File.TXT",
+    "search": "\\\\srv3\\share\\",
+    "expected": "//s2/data/sub/a/File.TXT"
+  },
+  {
+    "result": "\\\\HOST\\Share\\sub\\b",
+    "search": "\\\\s2\\data\\",
+    "expected": "//HOST/Share/sub/b"
+  },
+  {
+    "result": "D:\\a\\a\\x.txt",
+    "search": "\\\\HOST\\c$\\a\\File.TXT",
+    "expected": "D:/a/a/x.txt"
+  },
+  {
+    "result": "c:\\n2/a/sub",
+    "search": "c:\\a\\b\\File.TXT\\",
+    "expected": "../../../n2/a/sub"
+  },
+  {
+    "result": "sub",
+    "search": "\\\\host\\share/b/n2",
+    "expected": "sub"
+  },
+  {
+    "result": "\\\\HOST\\share",
+    "search": "\\\\HOST\\data\\dir",
+    "expected": "../../share"
+  },
+  {
+    "result": "\\\\s1\\data",
+    "search": "\\\\s1\\share",
+    "expected": "../data"
+  },
+  {
+    "result": "\\\\srv3\\c$\\n2\\b\\x.txt",
+    "search": "\\\\srv3\\c$",
+    "expected": "n2/b/x.txt"
+  },
+  {
+    "result": "C:\\x.txt\\File.TXT",
+    "search": "C:\\workspace\\project",
+    "expected": "../../x.txt/File.TXT"
+  },
+  {
+    "result": "C:\\dir\\n2",
+    "search": "\\\\s2\\c$\\n2\\n2\\b",
+    "expected": "C:/dir/n2"
+  },
+  {
+    "result": "C:\\b\\File.TXT\\a",
+    "search": "D:\\",
+    "expected": "C:/b/File.TXT/a"
+  },
+  {
+    "result": "\\\\s2\\share",
+    "search": "\\\\HOST\\share\\",
+    "expected": "//s2/share/"
+  },
+  {
+    "result": "E:\\dir",
+    "search": "\\\\host\\c$\\n2\\n1\\n2\\",
+    "expected": "E:/dir"
+  },
+  {
+    "result": "E:\\n1\\a\\File.TXT",
+    "search": "D:\\",
+    "expected": "E:/n1/a/File.TXT"
+  },
+  {
+    "result": "\\\\srv3\\share\\File.TXT\\n1\\x.txt",
+    "search": "c:\\File.TXT",
+    "expected": "//srv3/share/File.TXT/n1/x.txt"
+  },
+  {
+    "result": "n1",
+    "search": "\\\\s2\\share\\sub\\dir",
+    "expected": "n1"
+  },
+  {
+    "result": "\\\\host\\Share",
+    "search": "\\\\HOST\\share\\n2\\sub\\x.txt",
+    "expected": "../../.."
+  },
+  {
+    "result": "E:\\File.TXT\\a\\sub",
+    "search": "\\\\srv3\\data\\",
+    "expected": "E:/File.TXT/a/sub"
+  },
+  {
+    "result": "\\\\srv3\\share\\sub\\a\\",
+    "search": "c:\\",
+    "expected": "//srv3/share/sub/a/"
+  },
+  {
+    "result": "E:\\n2\\dir\\sub",
+    "search": "C:\\workspace\\project",
+    "expected": "E:/n2/dir/sub"
+  },
+  {
+    "result": "a\\b\\n1",
+    "search": "\\\\s1\\Share\\b\\dir",
+    "expected": "a/b/n1"
+  },
+  {
+    "result": "D:\\a",
+    "search": "\\\\HOST\\Share/File.TXT/",
+    "expected": "D:/a"
+  },
+  {
+    "result": "File.TXT\\sub",
+    "search": "D:\\",
+    "expected": "File.TXT/sub"
+  },
+  {
+    "result": "C:\\b",
+    "search": "\\\\s2\\data\\b\\b",
+    "expected": "C:/b"
+  }
+]

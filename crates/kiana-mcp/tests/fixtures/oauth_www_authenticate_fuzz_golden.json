@@ -1,0 +1,5616 @@
+[
+  {
+    "header": "DPoP,error_description=repo , scope==\"x\"scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error=x resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , error=insufficient_scope,ERROR=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror_description=x=y , ERROR = ",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": "dpop  resource_metadata=\"insufficient_scope\" Scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearerresource_metadata=\"a\"b, ERROR=\"unterminated, xerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=x=yerror = \"https://a.example/meta\"\nerror_description=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "x=yerror",
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "bearer  error_description=not a url\terror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": "not"
+  },
+  {
+    "header": "bearer error_description=repo\nscope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": "repo"
+  },
+  {
+    "header": " , error = \"insufficient_scope\",scope=\"a b\" Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, Scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,  resource_metadata=insufficient_scope, resource_metadata=insufficient_scope , resource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER, error=not a url  error=\"\" , Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop , xerror=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPxerror=not a url\nerror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop , error = a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP Scope=\"repo read\"scope=",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, ERROR=\"\"\txerror=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\tERROR=\" error=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": " error=",
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , resource_metadata=\terror_description=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a b"
+  },
+  {
+    "header": "Basic\txerror=https://a.example/meta xerror=https://a.example/metaxerror = https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nscope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer xerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP error=x=y\tscope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": "x=y",
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearererror_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  error_description=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , Scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERresource_metadata= resource_metadata=\"repo read\"\tscope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , ERROR=insufficient_scope xerror = https://a.example/meta , error==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER  ERROR=\"repo\\\"  scope=\"a b\" resource_metadata=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": " , error_description=x\nScope=\"a\"b Scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\terror_description=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer,error_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nscope=\"repo\\\" , resource_metadata=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " error=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, error_description=insufficient_scope, Scope=\"a b\"ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nerror=\"unterminated scope = not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"unterminated",
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpopxerror=\"https://a.example/meta\"\nerror==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearerresource_metadata=\"a\"b scope=\"repo\\\"ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nerror=x=y\tscope=\" Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "ERROR=a,b  scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\txerror=\"a b\" , resource_metadata=a,b, error=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x=y",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER ERROR=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,xerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , Scope=\"insufficient_scope\" Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " xerror=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER, ERROR=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,scope=repo , Scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , scope=\"repo read\" xerror=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER error_description==\"x\"  ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": "=\"x\""
+  },
+  {
+    "header": "dpop xerror==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tscope=\"a\"b , scope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , xerror=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "BEARER\tERROR=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\nerror=\"unterminated ERROR=\"repo read\" , xerror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, scope=x Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  resource_metadata=x=yscope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,Scope=\"a b\",error=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,xerror=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,resource_metadata==\"x\"\nERROR=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error=\"unterminated , error_description=repo  error = x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"unterminated",
+    "errorDescription": "repo"
+  },
+  {
+    "header": "Bearer,\terror_description=not a url\terror_description=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,resource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror_description = \"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "xerror=\"insufficient_scope\"\nERROR=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearerscope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\tScope=x  Scope=\"insufficient_scope\"error_description=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "x",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\tERROR==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nScope=\"",
+    "resourceMetadataUrl": null,
+    "scope": "\"",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\terror_description=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "BEARER\nxerror=\tERROR = a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer resource_metadata=\txerror=\"\" resource_metadata=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BearerERROR=\"repo\\\"\nscope=\"a\"b\nxerror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tERROR=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"unterminated",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  ERROR=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\txerror=a,b\nerror=\"repo read\"\nscope=\"",
+    "resourceMetadataUrl": null,
+    "scope": "\"",
+    "error": "repo read",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nERROR=\"https://a.example/meta\", resource_metadata = x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "  BearerScope=https://a.example/meta, resource_metadata=\"\"\tresource_metadata=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer, ERROR=\"a\"b,resource_metadata=insufficient_scope error_description=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP error_description=\"unterminated  Scope = \"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "unterminated  Scope = "
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearerERROR=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  scope=repo\nresource_metadata=",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror_description=a,b  error_description=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "BEARER resource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, ERROR=not a url\txerror=not a url,Scope = \"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nERROR=https://a.example/meta\nScope==\"x\"\tERROR=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "=\"x\"",
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  resource_metadata==\"x\"  xerror=x=y , Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basicerror_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER error_description = a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, , error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearerERROR=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer error_description==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "=\"x\""
+  },
+  {
+    "header": "  Bearer, scope=\"  scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nerror=\"insufficient_scope\"error_description = x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic error=insufficient_scope error_description=repo  scope = \"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\nresource_metadata=\"a\"b ERROR=a,b  xerror=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "bearerERROR=\"insufficient_scope\", resource_metadata= , xerror=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearererror_description=\"repo read\"xerror=\"insufficient_scope\"  scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\txerror=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , scope=\"repo\\\" error=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER , error=https://a.example/meta  error_description=https://a.example/meta\nScope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": "https://a.example/meta",
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "Basic,scope=\"insufficient_scope\",Scope=repo  xerror=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tresource_metadata=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,xerror=\"repo read\"  error_description=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Scope=\"\"xerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\tScope=repo , Scope=\"repo read\"error=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearerscope=\"insufficient_scope\"\nscope=\"\", error = https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nscope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER , ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic,error=insufficient_scope\tERROR=x,ERROR=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  resource_metadata=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearerresource_metadata==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nERROR=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer xerror = \"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nresource_metadata=\"error = x=y error_description=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "Bearer , ERROR==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nxerror=repoerror_description=\"repo read\"  error=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,  xerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,ERROR = https://a.example/meta\tERROR=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\nscope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer,ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ", resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, xerror=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop, resource_metadata= Scope = \"unterminated\tScope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"repo read\" scope=https://a.example/meta resource_metadata = x",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER scope=\"\" , error_description=not a url error_description=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "not"
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER  error_description=insufficient_scope , error=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "\tBearer, ERROR=a,b, resource_metadata=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic error_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , error=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nerror_description=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "Bearer resource_metadata=x  ERROR=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR = \"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP xerror=a,b\nscope=not a url  xerror=x",
+    "resourceMetadataUrl": null,
+    "scope": "not",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer resource_metadata=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,error=not a url\terror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nxerror==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearerresource_metadata=\"a\"b resource_metadata = insufficient_scope  ERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nxerror = insufficient_scope\nscope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tERROR=\"https://a.example/meta\", Scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearerScope=\"repo read\" error_description=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, Scope =  ERROR = \"repo read\"  error_description==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,error_description= resource_metadata=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer xerror=repo\nscope=insufficient_scope,resource_metadata=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BearerERROR=x=y,Scope=\"repo read\"\nerror_description = not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERxerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,Scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  xerror=x=y, Scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, , error=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\tScope=repo resource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo read"
+  },
+  {
+    "header": "  Bearer,resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nresource_metadata=not a url Scope=\"a b\"resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, error=\"a\"berror_description= xerror=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpopERROR=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer xerror = \tresource_metadata=\"\", xerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "dpop , scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer , scope=\"  scope=\"repo read\"  Scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "  scope=",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer, scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , error_description=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "Bearer,\nscope==\"x\"\nscope = a,b resource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop xerror = a,b\nerror=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\nscope=,ERROR=\"a b\" resource_metadata = https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a b",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,Scope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nresource_metadata=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer ERROR=\"unterminated, error_description=not a url  xerror=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "unterminated, error_description=not a url  xerror=",
+    "errorDescription": "not"
+  },
+  {
+    "header": "Bearer  Scope = repo  ERROR=\" , scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": " , scope=",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,error_description=\"https://a.example/meta\" , error_description=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop , Scope=insufficient_scope xerror=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  error_description=\"insufficient_scope\"\terror_description=\"https://a.example/meta\" error_description=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "\tBearer  error_description=repo ERROR=\"https://a.example/meta\" ERROR=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": "repo"
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,  ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer, error_description=not a url Scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,error_description=\"repo\\\" error=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  Scope=x=y  Scope=repo\terror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, , resource_metadata=https://a.example/meta xerror=\"a\"b  ERROR = \"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\tscope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer ERROR=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, scope=\"insufficient_scope\"error=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,error=x=y,resource_metadata=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  scope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic ERROR=insufficient_scope, error=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,Scope=a,b error_description==\"x\"error=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nscope = \"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, error=not a url error_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  xerror=x=y  xerror=\" , error_description=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  scope=\"https://a.example/meta\" error=\tresource_metadata=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP,ERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,resource_metadata=not a urlERROR=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER resource_metadata=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nScope=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic ERROR=a,bScope=\"\", ERROR=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, resource_metadata=\"\"\nxerror=https://a.example/meta, ERROR=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\txerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,ERROR=\"a b\",ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,xerror=repo , resource_metadata=insufficient_scope , xerror=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, xerror=not a urlresource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer, scope=\"insufficient_scope\"\tScope==\"x\" , resource_metadata=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error=\"\nerror=\"a\"b error==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\nerror=",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ", ERROR=\"insufficient_scope\" Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  Scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer, resource_metadata=\"https://a.example/meta\"xerror=\" xerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " scope=\nscope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic Scope=\"repo\\\" , ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo read"
+  },
+  {
+    "header": "\tBearer scope=\"a b\" scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,resource_metadata=insufficient_scope\nScope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, error_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,Scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , error_description=insufficient_scoperesource_metadata=insufficient_scope ERROR = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scoperesource_metadata=insufficient_scope"
+  },
+  {
+    "header": "Bearer,  xerror=\"xerror=\",xerror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nERROR=\"\tscope = repo  ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,resource_metadata= , scope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, xerror=\"scope==\"x\" scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR=\"https://a.example/meta\" scope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": "\"unterminated",
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPscope = \"repo read\"\nerror=https://a.example/meta xerror = \"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,resource_metadata = \"https://a.example/meta\"xerror=\"repo\\\"scope = \"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tERROR=https://a.example/meta, scope=not a url scope=",
+    "resourceMetadataUrl": null,
+    "scope": "not",
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "dpopERROR=x=y resource_metadata=\"a b\"\nerror=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\nScope=\"repo read\" , resource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , xerror=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop , xerror=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer, Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpopERROR=\"unterminated  resource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tERROR=\"\"  error_description=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  error==\"x\", Scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "dpopScope=\"repo\\\"xerror=\"\"  error=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tScope= , ERROR==\"x\"\nScope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, resource_metadata=\"repo\\\" scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , xerror=\"unterminated xerror = a,b  scope = \"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tScope=\"a\"b, scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer Scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP , error=\"  error=\"unterminated  ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "  error=",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER  error_description=a,bscope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "BEARER  scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": "not",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  ERROR=x=y\tresource_metadata=a,b,xerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x=y",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\tscope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,scope=x=y resource_metadata=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , resource_metadata=,error=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\tscope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\tERROR=\" , resource_metadata=\"repo read\"\tscope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": " , resource_metadata=",
+    "errorDescription": null
+  },
+  {
+    "header": "\tERROR = not a url , Scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "insufficient_scope"
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " resource_metadata=\"a b\"\nerror=\"repo\\\"\nerror_description=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER , Scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\txerror=not a urlScope=\"insufficient_scope\"\txerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,scope=\"a\"b  scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ",Scope=, xerror=\"unterminated\nresource_metadata=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpopscope= , xerror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nERROR=\"unterminated  error=\"insufficient_scope\"Scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "unterminated  error=",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop resource_metadata=a,b,error= error_description=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x"
+  },
+  {
+    "header": "Basic , ERROR=\"a b\"error = x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, error_description=not a url\nscope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  Scope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " error_description=\"insufficient_scope\" error=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer scope=\"repo read\", error=",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer error_description=not a url,error_description=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "not"
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer, scope=https://a.example/meta  Scope = insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\nerror_description=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": " scope=\"repo read\"\nscope=\"\"  resource_metadata=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,error = \"a\"b xerror==\"x\", Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpoperror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, Scope = x , xerror=a,berror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description=xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "xerror=repo"
+  },
+  {
+    "header": "\tBearerERROR=\"unterminated  Scope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " xerror=\", error=\"https://a.example/meta\"\nERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nscope=insufficient_scope\nxerror=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\txerror=\"\" , Scope=\"https://a.example/meta\" error_description=\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": "\""
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , error_description=\terror = insufficient_scope , resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": "https://a.example/meta",
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER error_description=, ERROR=\"\",resource_metadata=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nerror_description=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "Bearer,, error==\"x\"  error_description=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , error_description=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer, xerror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , error_description = repo,scope=\"a\"bScope = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,xerror=\"\nresource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , error_description=not a url,scope=https://a.example/meta\tScope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , error=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  Scope=x=y,Scope=",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , Scope=x=y , resource_metadata= error=repo",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": "repo",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearerresource_metadata=https://a.example/meta,Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearerERROR=\"a\"b, Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\tERROR==\"x\"\nerror = \"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nERROR=\"repo\\\" Scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "  Scope=\"a b\" xerror=\"a b\",Scope=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, Scope=\"repo read\"\nxerror=\"https://a.example/meta\", resource_metadata=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  Scope=\"\" , error_description=\"repo read\" , resource_metadata=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo read"
+  },
+  {
+    "header": "  Bearer , error=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\terror_description=not a url resource_metadata=\"repo\\\" resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "not"
+  },
+  {
+    "header": "Bearer, , ERROR=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic,resource_metadata==\"x\" xerror = a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER error_description = repo  ERROR = =\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ",ERROR=\"repo\\\"  ERROR=\", Scope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,ERROR=x=y\nerror=\"  error_description=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP,xerror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , scope=\", error = not a url Scope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": ", error = not a url Scope=",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\tscope=\"\tresource_metadata=\"insufficient_scope\" error = \"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "\tresource_metadata=",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,Scope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nScope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nERROR=, xerror=insufficient_scopeerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ", scope=insufficient_scope, scope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  scope=x\tresource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": "https://a.example/meta",
+    "scope": "x",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nERROR=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, error_description=\"unterminated , xerror=\"repo\\\"  error=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,resource_metadata=\"a b\"  error=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, ERROR=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic resource_metadata=\"\" ERROR=\"a\"b\tERROR=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR=  resource_metadata=xxerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\tresource_metadata=repo resource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERerror=\txerror=\"a\"b  Scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop, error=x=y error_description = \"a b\" error=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=\"repo read\" xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo read"
+  },
+  {
+    "header": "Bearer\terror_description=\"repo\\\"\terror_description=\"unterminated  ERROR=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "Basic scope = \"insufficient_scope\"\tERROR=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPScope=\" , ERROR=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,xerror=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer ERROR=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\nerror=\"insufficient_scope\"resource_metadata=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\tresource_metadata==\"x\"scope=\"a b\" Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,error=repo,error_description=\terror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPresource_metadata=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , scope = x=y Scope = \"a\"b  error=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a b",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer,scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERscope=insufficient_scope\tERROR=insufficient_scopeerror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer resource_metadata=insufficient_scope, scope=\"repo\\\",error_description=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": null,
+    "errorDescription": "repo"
+  },
+  {
+    "header": "\tBearer  xerror=repo , Scope = \"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  error=x\nerror=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP , Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tresource_metadata=\"repo read\"\nxerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER resource_metadata=a,b,error_description= Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic Scope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop Scope=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nerror_description=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  xerror=\"\"\nscope=a,b,resource_metadata=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tscope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\terror_description=\"\"\terror=\"insufficient_scope\", ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoPresource_metadata=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , error=\"unterminatedScope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,ERROR==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, scope=\"a b\" Scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERresource_metadata=x\nerror=\"a b\" Scope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer error_description=\"https://a.example/meta\", xerror=insufficient_scope,error_description=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "Bearer,Scope=\"https://a.example/meta\"Scope=\"a b\"  Scope = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\terror==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer , error_description=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x"
+  },
+  {
+    "header": "BEARER ERROR=not a url\nERROR=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  Scope = not a url  xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nERROR==\"x\"\tERROR=x=y, scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,Scope=\"https://a.example/meta\", ERROR=insufficient_scope\tERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " , ERROR=x=yerror_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nxerror = \"repo read\",error=\"https://a.example/meta\", error=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\terror_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, , error=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BearerERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER ERROR=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, Scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror==\"x\"Scope=\"https://a.example/meta\" , xerror=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "=\"x\"Scope=\"https://a.example/meta\"",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\nERROR=\"repo read\"resource_metadata=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo read",
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,scope=repo\tERROR==\"x\" , xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, error=\" xerror=\"https://a.example/meta\"\nscope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,  error_description=\", xerror = repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearererror_description=x=y , ERROR=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic , error_description=\"repo read\", error_description=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\nxerror=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer scope=\"repo read\" error=x , error=not a url",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\tScope=\"unterminated\nresource_metadata = \"repo read\"error_description=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "unterminated\nresource_metadata = ",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\nresource_metadata=\"repo\\\",resource_metadata = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\txerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\nresource_metadata=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ",resource_metadata=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , error_description=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a b"
+  },
+  {
+    "header": " , ERROR=a,berror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\tScope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearerresource_metadata=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nerror_description=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nERROR = insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,ERROR=repo Scope = a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tERROR=\"insufficient_scope\"Scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , Scope=https://a.example/meta  ERROR=xerror=\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": "xerror=\"",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,Scope =  error_description=\"Scope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  resource_metadata=x , xerror = =\"x\"Scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,error=x=y, scope = \"\"\txerror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , Scope=\"https://a.example/meta\" , scope = \"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  Scope=\"a b\"  ERROR==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": "=\"x\"",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer xerror = https://a.example/meta , Scope=\"insufficient_scope\" resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": "https://a.example/meta",
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, ERROR=a,b\nScope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  error_description=\"repo\\\" Scope=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "Basic\tERROR=a,b  error_description= error=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\nscope = not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, error = https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,ERROR=\"unterminatedresource_metadata=\"https://a.example/meta\" ERROR==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer scope=\"  scope=\"https://a.example/meta\", ERROR=a,b",
+    "resourceMetadataUrl": null,
+    "scope": "  scope=",
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,ERROR=insufficient_scope , Scope=repo Scope=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER Scope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": "=\"x\"",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer resource_metadata==\"x\"  xerror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "resource_metadata=\"repo read\"  scope=\"repo read\",error=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\terror_description=not a url resource_metadata=https://a.example/meta,error_description=",
+    "resourceMetadataUrl": "https://a.example/meta",
+    "scope": null,
+    "error": null,
+    "errorDescription": "not"
+  },
+  {
+    "header": "Bearer,, error_description=\"a\"b, Scope=\"repo read\", xerror=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP,ERROR=\"repo read\"error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " ERROR=a,bscope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\terror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER, error=\"\nerror_description=https://a.example/meta Scope=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER scope=\"repo\\\"  Scope=\"insufficient_scope\"\nerror=x",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer , resource_metadata = =\"x\",resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  resource_metadata=\"repo\\\"\tresource_metadata = x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop resource_metadata=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,Scope=\nScope=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror_description = https://a.example/meta, scope=x",
+    "resourceMetadataUrl": null,
+    "scope": "x",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic error=x=yScope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ",ERROR=\"\nscope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,error_description==\"x\" ERROR=\"repo\\\", scope = \"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpoperror_description==\"x\" , error_description==\"x\", scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , resource_metadata=x=y error_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "not"
+  },
+  {
+    "header": "\tBearerxerror=\"\"  xerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer resource_metadata = \"a b\", Scope=\"repo read\"\tERROR=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": "a b",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer xerror=\"repo read\"xerror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\tScope==\"x\" , Scope = \"\" error=",
+    "resourceMetadataUrl": null,
+    "scope": "=\"x\"",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic error_description==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer\nxerror==\"x\" xerror=\"unterminated scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo\\",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"unterminated",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\terror=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer scope=  scope=a,b, xerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, Scope=\"unterminated , error=\"unterminatedERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer , resource_metadata=\" , resource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nScope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "error_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tScope=\"unterminated\terror_description=\"a b\", error=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,  ERROR=\"repo read\" , scope==\"x\"\nScope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nerror = x , Scope=\"\"\tERROR=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\txerror=x=y,resource_metadata=insufficient_scope  error_description=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": "DPoP resource_metadata = =\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer xerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , error_description==\"x\" ERROR=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "=\"x\""
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  ERROR=\nresource_metadata=x=y, error=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a b",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,scope=x=y ERROR=\nresource_metadata=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  xerror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer resource_metadata=x\tscope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": "not",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic ERROR=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  xerror=a,b\tresource_metadata=\nscope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "x=y",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\terror_description = repo, scope=\"insufficient_scope\",ERROR = \"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,resource_metadata=\"\tresource_metadata=x=y, ERROR=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic,xerror=x=y\nerror=x=y,resource_metadata=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nScope = \"unterminated , xerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,xerror = \"a b\",scope=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,error=\"repo read\",error_description=repo,xerror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearererror_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\tresource_metadata=repo\nScope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER, xerror=repo, Scope=\"repo read\"  ERROR=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " ERROR = \"a b\"\nERROR=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearerscope=repoScope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer xerror=\"https://a.example/meta\" scope=\"unterminatedxerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "\"unterminatedxerror=x=y",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP ERROR=not a url  error_description=\"repo\\\",error=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "Bearer,, scope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\nerror_description=\" , resource_metadata=\"\" Scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": " , resource_metadata="
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description=https://a.example/meta\nresource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  error_description=\"a\"b error_description=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\terror=a,b\terror=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER  scope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": "=\"x\"",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer,xerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop error=\"\"\nxerror=x=y,Scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer ERROR=\"repo read\" , resource_metadata=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo read",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP , ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER  xerror=\"unterminated\terror_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer , xerror = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer,resource_metadata=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,scope=\"a b\"Scope=\"insufficient_scope\",scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, ERROR = insufficient_scope, xerror=\"a b\" xerror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearerresource_metadata=\"  error_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\txerror=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer  ERROR=\"\nScope=\"  Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "  Scope=",
+    "error": "\nScope=",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP, resource_metadata=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  scope=\" Scope=repo Scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nscope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  xerror=\nScope=\" xerror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": " xerror=",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "  error=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER Scope=not a url , xerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": "not",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  error_description=\"repo\\\" ERROR=not a url\tERROR=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "not",
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  scope=a,b , scope=x",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  error_description=\",scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, resource_metadata=x=y\tscope=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ",ERROR=x=y\tERROR=\"a b\" resource_metadata=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER ERROR=repo  ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo",
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER ERROR=\"a b\" resource_metadata=\"\"scope = repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "a b",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic error=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, scope=x\nerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  scope=\"insufficient_scope\" error=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " Scope=\"\", Scope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " error_description=\"https://a.example/meta\", error_description=insufficient_scope  error_description==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic  ERROR=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP\tScope=x",
+    "resourceMetadataUrl": null,
+    "scope": "x",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP scope=\"a\"b , resource_metadata=a,b error_description=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "dpop , ERROR=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearerxerror=a,b error=\"insufficient_scope\"resource_metadata=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP,scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  error=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer error = \"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tresource_metadata=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer\nresource_metadata=x=y\terror_description=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "\"unterminated"
+  },
+  {
+    "header": "Bearer,scope=\"a\"b,scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": ", Scope=\" , resource_metadata=x=y , xerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,Scope=insufficient_scopescope=x=yxerror=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,Scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description=\tresource_metadata=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearerscope=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\nerror=x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic resource_metadata=repo\nerror_description==\"x\"ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop,ERROR=\"repo\\\" scope=\"https://a.example/meta\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\terror_description=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "  Bearer error_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": " resource_metadata=\"unterminated\nscope=\", error=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\terror=\"unterminated,error_description=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "unterminated,error_description=",
+    "errorDescription": "repo\\"
+  },
+  {
+    "header": "dpop  error=\"a\"b,scope=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": "insufficient_scope",
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , resource_metadata==\"x\"resource_metadata=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic Scope = insufficient_scopeERROR=\"a\"b  error_description=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\nerror_description=\"repo read\" ERROR=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  xerror=insufficient_scope, Scope=\"Scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": "Scope=",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer  error_description = not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\nxerror=repo\tscope=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": "a",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  resource_metadata==\"x\" error_description=x=y , error = x=y",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": "BEARER\txerror=,xerror=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basicscope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop  Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER,scope=\"repo read\" error_description=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP  ERROR=\"  Scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": "  Scope=",
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\terror=\"unterminated\tresource_metadata=not a url\tscope=repo",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": "\"unterminated",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP , Scope=\" xerror==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": " xerror==",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\terror=https://a.example/meta , error_description=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tScope=x, xerror = \"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic ERROR=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,ERROR==\"x\",scope=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop error=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARERerror_description=\"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer resource_metadata=x=y\terror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer , Scope=\"a b\"\nERROR=\"repo\\\" , resource_metadata=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": "a b",
+    "error": "repo\\",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer  error=repo,ERROR=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, Scope=a,b ERROR = \"a b\",xerror=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, Scope=\"repo\\\"  resource_metadata=\"repo\\\",scope=\"repo read\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basicscope=x error=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\nScope=",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER , error=\"repo read\",Scope = \"a b\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "repo read",
+    "errorDescription": null
+  },
+  {
+    "header": "Basic, error_description=repo  xerror=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, Scope==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer, ERROR=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,,scope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer,Scope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer Scope==\"x\" , scope=\" error=x",
+    "resourceMetadataUrl": null,
+    "scope": "=\"x\"",
+    "error": "x",
+    "errorDescription": null
+  },
+  {
+    "header": "bearer, xerror = insufficient_scope resource_metadata=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer resource_metadata=a,b error_description=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "\""
+  },
+  {
+    "header": "DPoP\txerror=\"a b\"\nerror_description=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "\""
+  },
+  {
+    "header": "DPoP",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer error_description=\"https://a.example/meta\" , error=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "https://a.example/meta",
+    "errorDescription": "https://a.example/meta"
+  },
+  {
+    "header": "Basic  xerror=\"insufficient_scope\", Scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,, error_description==\"x\" error=insufficient_scope , xerror=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP scope=\"repo read\" Scope=not a url",
+    "resourceMetadataUrl": null,
+    "scope": "repo read",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Basic\tscope=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer  error_description=x  xerror=a,b  xerror=\"repo\\\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x"
+  },
+  {
+    "header": "Bearer  error_description=x=y , error_description=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "x=y"
+  },
+  {
+    "header": "\tBearer\nxerror=\"repo read\" , xerror=a,b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer,\nresource_metadata=not a url,scope=repo",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, ERROR=xxerror=insufficient_scope, error=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer\nresource_metadata==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "bearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "dpop\tscope=\"\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP,error=not a url Scope=\"\" ERROR=x",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP xerror=x , scope=repo  scope=x=y",
+    "resourceMetadataUrl": null,
+    "scope": "repo",
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error_description = x\nerror=insufficient_scope , error=insufficient_scope",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "insufficient_scope",
+    "errorDescription": null
+  },
+  {
+    "header": "DPoP error_description=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "a"
+  },
+  {
+    "header": "Bearer ERROR=\"a\"b\nERROR=\"a\"b scope=https://a.example/meta",
+    "resourceMetadataUrl": null,
+    "scope": "https://a.example/meta",
+    "error": "a",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer\tresource_metadata=\"unterminated",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "BEARER\nxerror=\"insufficient_scope\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer error_description==\"x\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": "=\"x\""
+  },
+  {
+    "header": "  Bearer, error_description=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "  Bearer error=\"",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": "\"",
+    "errorDescription": null
+  },
+  {
+    "header": "Bearer, scope=repo\terror=\"a\"b",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "\tBearer",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": null,
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  },
+  {
+    "header": "",
+    "resourceMetadataUrl": null,
+    "scope": null,
+    "error": null,
+    "errorDescription": null
+  }
+]

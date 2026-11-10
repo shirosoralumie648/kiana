@@ -1,0 +1,53 @@
+[package]
+name = "kiana-agent-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/agent：Agent 状态机、agent loop、stream fn、事件。"
+
+[dependencies]
+serde = { workspace = true }
+# `float_roundtrip`：`AgentMessage`/`AgentToolResult` 的 `Deserialize` 用 serde_json 解析
+# 会话文件里 17 位有效数字的小数（如 `0.00024375000000000002`）。默认解析器不保证正确舍入
+# （差 1 ULP，会把该值变成 `0.00024375`），开启后与 JS `JSON.parse` 的位模式逐位一致。
+serde_json = { workspace = true, features = ["float_roundtrip"] }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+# proxy.rs 的未知事件告警（TS 的 `console.warn`），见 spec/agent-codemode.md §3.6。
+tracing = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-telemetry = { workspace = true }
+# `types.rs` 的 JsonValue 字段按 JS `JSON.stringify` 语义写出（ARCHITECTURE.md §4.3 第 3、4 条）。
+kiana-json = { workspace = true }
+# loop_guard.rs 的 `repeat_key = sha256(tool_name + canonical_json(args))`。
+sha2 = { workspace = true }
+hex = { workspace = true }
+
+# `streamProxy`（src/proxy.rs）与 provider 无关地直连 `${proxyUrl}/api/stream`：TS 用全局
+# `fetch`，Rust 侧保留同样的“不经过 provider 注入点”的形状，故直接依赖 reqwest
+# （ARCHITECTURE.md §8 第 18 条 / G1.2 决策 a）。
+reqwest = { workspace = true }
+# `response.statusText`：hyper 把与标准短语不同的 HTTP/1.x reason phrase 存进响应扩展
+# （`hyper::ext::ReasonPhrase`），proxy.rs 用它逐字复刻 Node 的 `response.statusText`。
+hyper = { workspace = true, features = ["http1"] }
+
+# 测试用（所有单元共用；骨架规定的一次性清单，依赖版本全部来自根 `[workspace.dependencies]`）。
+[dev-dependencies]
+tokio = { workspace = true, features = ["test-util"] }
+futures = { workspace = true }
+serde_json = { workspace = true }
+insta = { workspace = true }
+wiremock = { workspace = true }
+tempfile = { workspace = true }
+kiana-ai = { workspace = true }
+# `tests/util/get_current_time.rs`：`en-US` 的 `dateStyle:"full", timeStyle:"long"` 文本由
+# ICU4X 的 CLDR 数据逐字复刻（spec/agent-codemode.md §6：``Date` / `toLocaleString`（测试工具）
+# → `chrono`/`time` + `icu`）。仅测试目标使用，不构成 crate 的公开依赖边。
+icu_datetime = { workspace = true }
+icu_time = { workspace = true }
+icu_locale = { workspace = true }

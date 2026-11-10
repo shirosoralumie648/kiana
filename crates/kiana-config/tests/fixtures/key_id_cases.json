@@ -1,0 +1,579 @@
+{
+  "values": [
+    {
+      "value": "a",
+      "valid": true
+    },
+    {
+      "value": "z",
+      "valid": true
+    },
+    {
+      "value": "0",
+      "valid": true
+    },
+    {
+      "value": "9",
+      "valid": true
+    },
+    {
+      "value": "pageUp",
+      "valid": true
+    },
+    {
+      "value": "+",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+x",
+      "valid": true
+    },
+    {
+      "value": "alt+ctrl+?",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+alt+super+f12",
+      "valid": true
+    },
+    {
+      "value": "",
+      "valid": false
+    },
+    {
+      "value": "Ctrl+x",
+      "valid": false
+    },
+    {
+      "value": "control+x",
+      "valid": false
+    },
+    {
+      "value": "ctrl+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+x",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+alt+super+ctrl+x",
+      "valid": false
+    },
+    {
+      "value": "ctrl++",
+      "valid": true
+    },
+    {
+      "value": "ctrl+-",
+      "valid": true
+    },
+    {
+      "value": "escape",
+      "valid": true
+    },
+    {
+      "value": "esc",
+      "valid": true
+    },
+    {
+      "value": "enter",
+      "valid": true
+    },
+    {
+      "value": "return",
+      "valid": true
+    },
+    {
+      "value": "tab",
+      "valid": true
+    },
+    {
+      "value": "space",
+      "valid": true
+    },
+    {
+      "value": "backspace",
+      "valid": true
+    },
+    {
+      "value": "delete",
+      "valid": true
+    },
+    {
+      "value": "insert",
+      "valid": true
+    },
+    {
+      "value": "clear",
+      "valid": true
+    },
+    {
+      "value": "home",
+      "valid": true
+    },
+    {
+      "value": "end",
+      "valid": true
+    },
+    {
+      "value": "pageUp",
+      "valid": true
+    },
+    {
+      "value": "pageDown",
+      "valid": true
+    },
+    {
+      "value": "up",
+      "valid": true
+    },
+    {
+      "value": "down",
+      "valid": true
+    },
+    {
+      "value": "left",
+      "valid": true
+    },
+    {
+      "value": "right",
+      "valid": true
+    },
+    {
+      "value": "f1",
+      "valid": true
+    },
+    {
+      "value": "f10",
+      "valid": true
+    },
+    {
+      "value": "f12",
+      "valid": true
+    },
+    {
+      "value": "f13",
+      "valid": false
+    },
+    {
+      "value": "F1",
+      "valid": false
+    },
+    {
+      "value": "`",
+      "valid": true
+    },
+    {
+      "value": "-",
+      "valid": true
+    },
+    {
+      "value": "=",
+      "valid": true
+    },
+    {
+      "value": "[",
+      "valid": true
+    },
+    {
+      "value": "]",
+      "valid": true
+    },
+    {
+      "value": "\\",
+      "valid": true
+    },
+    {
+      "value": ";",
+      "valid": true
+    },
+    {
+      "value": "'",
+      "valid": true
+    },
+    {
+      "value": ",",
+      "valid": true
+    },
+    {
+      "value": ".",
+      "valid": true
+    },
+    {
+      "value": "/",
+      "valid": true
+    },
+    {
+      "value": "!",
+      "valid": true
+    },
+    {
+      "value": "@",
+      "valid": true
+    },
+    {
+      "value": "#",
+      "valid": true
+    },
+    {
+      "value": "$",
+      "valid": true
+    },
+    {
+      "value": "%",
+      "valid": true
+    },
+    {
+      "value": "^",
+      "valid": true
+    },
+    {
+      "value": "&",
+      "valid": true
+    },
+    {
+      "value": "*",
+      "valid": true
+    },
+    {
+      "value": "(",
+      "valid": true
+    },
+    {
+      "value": ")",
+      "valid": true
+    },
+    {
+      "value": "_",
+      "valid": true
+    },
+    {
+      "value": "+",
+      "valid": true
+    },
+    {
+      "value": "|",
+      "valid": true
+    },
+    {
+      "value": "~",
+      "valid": true
+    },
+    {
+      "value": "{",
+      "valid": true
+    },
+    {
+      "value": "}",
+      "valid": true
+    },
+    {
+      "value": ":",
+      "valid": true
+    },
+    {
+      "value": "<",
+      "valid": true
+    },
+    {
+      "value": ">",
+      "valid": true
+    },
+    {
+      "value": "?",
+      "valid": true
+    },
+    {
+      "value": "Escape",
+      "valid": false
+    },
+    {
+      "value": "super+a",
+      "valid": true
+    },
+    {
+      "value": "super+super+a",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl",
+      "valid": false
+    },
+    {
+      "value": "ctrl+",
+      "valid": false
+    },
+    {
+      "value": "++++",
+      "valid": false
+    },
+    {
+      "value": "ctrl++++",
+      "valid": false
+    },
+    {
+      "value": "ctrl+a+\n",
+      "valid": false
+    },
+    {
+      "value": " ctrl+a",
+      "valid": false
+    },
+    {
+      "value": "ctrl+a ",
+      "valid": false
+    },
+    {
+      "value": "ctrL+a",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+p",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+p",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+o",
+      "valid": true
+    },
+    {
+      "value": "alt+enter",
+      "valid": true
+    },
+    {
+      "value": "ctrl+enter",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+up",
+      "valid": true
+    },
+    {
+      "value": "ctrl+left",
+      "valid": true
+    },
+    {
+      "value": "shift+l",
+      "valid": true
+    },
+    {
+      "value": "shift+t",
+      "valid": true
+    },
+    {
+      "value": "ctrl+backspace",
+      "valid": true
+    },
+    {
+      "value": "alt+up",
+      "valid": true
+    },
+    {
+      "value": "ctrl+?",
+      "valid": true
+    },
+    {
+      "value": "ctrl+]",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+]",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+f",
+      "valid": true
+    },
+    {
+      "value": "ctrl+\\",
+      "valid": true
+    },
+    {
+      "value": "ctrl+super+a",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+alt+super+a",
+      "valid": true
+    },
+    {
+      "value": "shift+alt+ctrl+x",
+      "valid": true
+    },
+    {
+      "value": "super+alt+ctrl+x",
+      "valid": true
+    },
+    {
+      "value": "ctrl++x",
+      "valid": false
+    },
+    {
+      "value": "+x",
+      "valid": false
+    },
+    {
+      "value": "x+",
+      "valid": false
+    },
+    {
+      "value": "ctrL",
+      "valid": false
+    },
+    {
+      "value": "ctrl",
+      "valid": false
+    },
+    {
+      "value": "shift",
+      "valid": false
+    },
+    {
+      "value": "alt",
+      "valid": false
+    },
+    {
+      "value": "super",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+shift+x",
+      "valid": true
+    },
+    {
+      "value": "ctrl+a+b",
+      "valid": false
+    },
+    {
+      "value": "ctrl+escape",
+      "valid": true
+    },
+    {
+      "value": "alt+f12",
+      "valid": true
+    },
+    {
+      "value": "alt+pageDown",
+      "valid": true
+    },
+    {
+      "value": "super+{",
+      "valid": true
+    },
+    {
+      "value": "super+}",
+      "valid": true
+    },
+    {
+      "value": "super+|",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+super+shift+?",
+      "valid": true
+    },
+    {
+      "value": "ct",
+      "valid": false
+    },
+    {
+      "value": "ctrlshifta",
+      "valid": false
+    },
+    {
+      "value": "ctrl+Shift+x",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ pageUp",
+      "valid": false
+    },
+    {
+      "value": [
+        "a"
+      ],
+      "valid": true
+    },
+    {
+      "value": [],
+      "valid": true
+    },
+    {
+      "value": [
+        "a",
+        "ctrl+ctrl+x"
+      ],
+      "valid": false
+    },
+    {
+      "value": [
+        1
+      ],
+      "valid": false
+    },
+    {
+      "value": [
+        "a",
+        1
+      ],
+      "valid": false
+    },
+    {
+      "value": null,
+      "valid": false
+    },
+    {
+      "value": 1,
+      "valid": false
+    },
+    {
+      "value": 0,
+      "valid": false
+    },
+    {
+      "value": true,
+      "valid": false
+    },
+    {
+      "value": false,
+      "valid": false
+    },
+    {
+      "value": {},
+      "valid": false
+    },
+    {
+      "value": {
+        "type": "string"
+      },
+      "valid": false
+    },
+    {
+      "value": [
+        [
+          "a"
+        ]
+      ],
+      "valid": false
+    },
+    {
+      "value": [
+        "a",
+        "b",
+        "c"
+      ],
+      "valid": true
+    },
+    {
+      "value": [
+        "ctrl+shift+alt+super+f12",
+        "f1"
+      ],
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,1299 @@
+{
+  "build": [
+    {
+      "input": "https://x.example",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/mcp",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/mcp",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/mcp",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/mcp/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/mcp/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/mcp",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/mcp",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/mcp/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example//mcp",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server//mcp",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration//mcp",
+            "type": "oidc"
+          },
+          {
+            "href": "https://mcp/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example//",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/",
+            "type": "oidc"
+          },
+          {
+            "href": "https://.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example///x",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server///x",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration///x",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example////x",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server////x",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration////x",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example//a%20b",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example//%2F",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example//:1234/x",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example//a%0Ab",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example//xn--a/x",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server//xn--a/x",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration//xn--a/x",
+            "type": "oidc"
+          },
+          {
+            "href": "https://xn--a/x/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://x.example//u@h/p",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server//u@h/p",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration//u@h/p",
+            "type": "oidc"
+          },
+          {
+            "href": "https://u@h/p/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example//h:99/p",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server//h:99/p",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration//h:99/p",
+            "type": "oidc"
+          },
+          {
+            "href": "https://h:99/p/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example//a\\b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server//a/b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration//a/b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://a/b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "http://x.example//mcp",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "http://x.example/.well-known/oauth-authorization-server//mcp",
+            "type": "oauth"
+          },
+          {
+            "href": "http://x.example/.well-known/openid-configuration//mcp",
+            "type": "oidc"
+          },
+          {
+            "href": "http://mcp/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://u:p@x.example:8443//mcp",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example:8443/.well-known/oauth-authorization-server//mcp",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example:8443/.well-known/openid-configuration//mcp",
+            "type": "oidc"
+          },
+          {
+            "href": "https://mcp/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "foo://x.example//mcp",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example/a^b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%5Eb",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%5Eb",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%5Eb/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a^b/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%5Eb",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%5Eb",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%5Eb/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/%5E",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/%5E",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/%5E",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/%5E/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a%5eb",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%5eb",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%5eb",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%5eb/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a^b?q=^#^",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%5Eb",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%5Eb",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%5Eb/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/tenant/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/tenant",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/tenant",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/tenant/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a/../b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a/./b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a/b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a/b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a/b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "HTTPS://X.EXAMPLE:443/a",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "http://127.0.0.1:8080/a/b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "http://127.0.0.1:8080/.well-known/oauth-authorization-server/a/b",
+            "type": "oauth"
+          },
+          {
+            "href": "http://127.0.0.1:8080/.well-known/openid-configuration/a/b",
+            "type": "oidc"
+          },
+          {
+            "href": "http://127.0.0.1:8080/a/b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/ünïcode",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/%C3%BCn%C3%AFcode",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/%C3%BCn%C3%AFcode",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/%C3%BCn%C3%AFcode/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%20b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%20b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%20b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a|b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a|b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a|b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a|b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a{b}",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%7Bb%7D",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%7Bb%7D",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%7Bb%7D/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a[b]",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a[b]",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a[b]",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a[b]/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a'b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a'b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a'b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a'b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a\"b",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a%22b",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a%22b",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a%22b/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "not a url",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://xn--a.example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://xn--a.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://xn--a.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://xn--.example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://xn--.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://xn--.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://xn--a..example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://xn--a..example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://xn--a..example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://xn--ab-.example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://xn--ab-.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://xn--ab-.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://aࡰ.example/",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://xn--a-fld.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://xn--a-fld.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "https://a՘.example/",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      },
+      "rust": "accepts"
+    },
+    {
+      "input": "https://x.example:99999/",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "https://x.example:0/a",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example:0/.well-known/oauth-authorization-server/a",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example:0/.well-known/openid-configuration/a",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example:0/a/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example:/a",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a?",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/a#",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server/a",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration/a",
+            "type": "oidc"
+          },
+          {
+            "href": "https://x.example/a/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "https://x.example/?#",
+      "result": {
+        "ok": true,
+        "value": [
+          {
+            "href": "https://x.example/.well-known/oauth-authorization-server",
+            "type": "oauth"
+          },
+          {
+            "href": "https://x.example/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    }
+  ],
+  "www": [
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a^b\"",
+      "resourceMetadataUrl": "https://x.example/a%5Eb",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a^b?q=1\"",
+      "resourceMetadataUrl": "https://x.example/a%5Eb?q=1",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a%5eb\"",
+      "resourceMetadataUrl": "https://x.example/a%5eb",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a%5Eb\"",
+      "resourceMetadataUrl": "https://x.example/a%5Eb",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a%20b\"",
+      "resourceMetadataUrl": "https://x.example/a%20b",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a b\"",
+      "resourceMetadataUrl": "https://x.example/a%20b",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a#^\"",
+      "resourceMetadataUrl": "https://x.example/a#^",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"foo://x.example/a^b\"",
+      "resourceMetadataUrl": "foo://x.example/a%5Eb",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"foo:a^b\"",
+      "resourceMetadataUrl": "foo:a^b",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a\\b\"",
+      "resourceMetadataUrl": "https://x.example/a/b",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/~!*'()\"",
+      "resourceMetadataUrl": "https://x.example/~!*'()",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/é\"",
+      "resourceMetadataUrl": "https://x.example/%C3%A9",
+      "scope": null,
+      "error": null,
+      "errorDescription": null
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://xn--a.example/m\"",
+      "resourceMetadataUrl": "https://xn--a.example/m",
+      "scope": null,
+      "error": null,
+      "errorDescription": null,
+      "rust": "typeError"
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://aࡰ.example/m\"",
+      "resourceMetadataUrl": "https://xn--a-fld.example/m",
+      "scope": null,
+      "error": null,
+      "errorDescription": null,
+      "rust": "typeError"
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://a՘.example/m\"",
+      "resourceMetadataUrl": null,
+      "scope": null,
+      "error": null,
+      "errorDescription": null,
+      "rust": "accepts"
+    },
+    {
+      "header": "Bearer resource_metadata=\"https://x.example/a^b\", scope=\"a^b\"",
+      "resourceMetadataUrl": "https://x.example/a%5Eb",
+      "scope": "a^b",
+      "error": null,
+      "errorDescription": null
+    }
+  ],
+  "resources": [
+    {
+      "input": "https://x.example/a^b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      }
+    },
+    {
+      "input": "https://x.example/a^b?q=^#^",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb?q=^"
+      }
+    },
+    {
+      "input": "https://x.example/a%5eb",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5eb"
+      }
+    },
+    {
+      "input": "https://x.example/a%20b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%20b"
+      }
+    },
+    {
+      "input": "https://x.example/a b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%20b"
+      }
+    },
+    {
+      "input": "foo://x.example/a^b",
+      "result": {
+        "ok": true,
+        "value": "foo://x.example/a%5Eb"
+      }
+    },
+    {
+      "input": "foo:a^b",
+      "result": {
+        "ok": true,
+        "value": "foo:a^b"
+      }
+    },
+    {
+      "input": "https://x.example/a\\b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a/b"
+      }
+    },
+    {
+      "input": "https://x.example/a|b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a|b"
+      }
+    },
+    {
+      "input": "https://x.example/a{b}",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%7Bb%7D"
+      }
+    },
+    {
+      "input": "https://x.example/a[b]",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a[b]"
+      }
+    },
+    {
+      "input": "https://x.example/a'b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a'b"
+      }
+    },
+    {
+      "input": "https://x.example/a\"b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%22b"
+      }
+    },
+    {
+      "input": "https://x.example/~!*'()",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/~!*'()"
+      }
+    },
+    {
+      "input": "https://x.example/é",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/%C3%A9"
+      }
+    },
+    {
+      "input": "https://x.example/mcp#frag?q=1",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      }
+    },
+    {
+      "input": "https://x.example/mcp?a=1#frag",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/mcp?a=1"
+      }
+    },
+    {
+      "input": "https://xn--a.example/",
+      "result": {
+        "ok": true,
+        "value": "https://xn--a.example/"
+      },
+      "rust": "typeError"
+    },
+    {
+      "input": "not a url",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    }
+  ],
+  "select": [
+    {
+      "serverUrl": "https://x.example/a^b",
+      "metadata": {
+        "resource": "https://x.example/a%5Eb"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/a%5Eb",
+      "metadata": {
+        "resource": "https://x.example/a^b"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a^b"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/a^b/mcp",
+      "metadata": {
+        "resource": "https://x.example/a%5Eb"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb/mcp"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/a^b",
+      "metadata": {
+        "resource": "https://x.example/a^c"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      },
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://x.example/a^c does not match MCP server https://x.example/a%5Eb"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/a b",
+      "metadata": {
+        "resource": "https://x.example/a%20b"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%20b"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%20b"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcp",
+      "metadata": {
+        "resource": "https://x.example/mcp"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcp",
+      "metadata": {
+        "resource": "https://x.example/mcp/"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/mcp/"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcp",
+      "metadata": {
+        "resource": "https://x.example"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcp",
+      "metadata": {
+        "resource": "https://x.example/mcp/deeper"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      },
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://x.example/mcp/deeper does not match MCP server https://x.example/mcp"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcpx",
+      "metadata": {
+        "resource": "https://x.example/mcp"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcpx"
+      },
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://x.example/mcp does not match MCP server https://x.example/mcpx"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/mcp#frag",
+      "metadata": {
+        "resource": "https://x.example/mcp"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      },
+      "result": {
+        "ok": true,
+        "value": "https://x.example/mcp"
+      }
+    },
+    {
+      "serverUrl": "https://x.example/a^b",
+      "metadata": {
+        "resource": "https://y.example/a^b"
+      },
+      "requested": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      },
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://y.example/a^b does not match MCP server https://x.example/a%5Eb"
+      }
+    }
+  ]
+}

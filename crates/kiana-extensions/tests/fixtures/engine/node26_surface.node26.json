@@ -1,0 +1,298 @@
+{
+  "globals": [
+    [
+      "AbortController",
+      false
+    ],
+    [
+      "AbortSignal",
+      false
+    ],
+    [
+      "DOMException",
+      false
+    ],
+    [
+      "setTimeout",
+      true
+    ],
+    [
+      "setInterval",
+      true
+    ],
+    [
+      "queueMicrotask",
+      true
+    ]
+  ],
+  "timerValidation": [
+    [
+      "string",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type string ('x')",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "number",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type number (3)",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "null",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received null",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "object",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received an instance of Object",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "array",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received an instance of Array",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "bool",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type boolean (true)",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "symbol",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type symbol (Symbol(s))",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "bigint",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type bigint (1n)",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "undefined",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received undefined",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "immediate-number",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type number (1)",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "microtask-number",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received type number (2)",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "microtask-null",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"callback\" argument must be of type function. Received null",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ]
+  ],
+  "anyValidation": [
+    [
+      "noargs",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals cannot be converted to sequence.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "object",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals cannot be converted to sequence.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "number",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals cannot be converted to sequence.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "string",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals cannot be converted to sequence.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "nullElement",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals[0] is not of type AbortSignal.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "objectElement",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals[0] is not of type AbortSignal.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "secondElement",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "signals[1] is not of type AbortSignal.",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "empty",
+      {
+        "ok": true,
+        "type": "boolean"
+      }
+    ]
+  ],
+  "constructor": {
+    "ok": false,
+    "name": "TypeError",
+    "message": "Illegal constructor",
+    "code": "ERR_ILLEGAL_CONSTRUCTOR"
+  },
+  "constructorCode": "ERR_ILLEGAL_CONSTRUCTOR",
+  "timeoutValidation": [
+    [
+      "neg",
+      {
+        "ok": false,
+        "name": "RangeError",
+        "message": "The value of \"delay\" is out of range. It must be >= 0 && <= 4294967295. Received -1",
+        "code": "ERR_OUT_OF_RANGE"
+      }
+    ],
+    [
+      "fraction",
+      {
+        "ok": false,
+        "name": "RangeError",
+        "message": "The value of \"delay\" is out of range. It must be an integer. Received 1.5",
+        "code": "ERR_OUT_OF_RANGE"
+      }
+    ],
+    [
+      "string",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"delay\" argument must be of type number. Received type string ('5')",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "null",
+      {
+        "ok": false,
+        "name": "TypeError",
+        "message": "The \"delay\" argument must be of type number. Received null",
+        "code": "ERR_INVALID_ARG_TYPE"
+      }
+    ],
+    [
+      "big",
+      {
+        "ok": false,
+        "name": "RangeError",
+        "message": "The value of \"delay\" is out of range. It must be >= 0 && <= 4294967295. Received 4294967296",
+        "code": "ERR_OUT_OF_RANGE"
+      }
+    ]
+  ],
+  "abortOrder": [
+    "listener",
+    "onabort:true:abort"
+  ],
+  "onabortNull": true,
+  "reason": [
+    "DOMException",
+    "AbortError",
+    20,
+    true,
+    true,
+    "[object DOMException]",
+    "AbortError: This operation was aborted",
+    []
+  ],
+  "timeoutReason": "undefined",
+  "immediate": [
+    "object",
+    "Immediate",
+    "function",
+    "function",
+    "function",
+    true,
+    true
+  ],
+  "timeoutHandle": [
+    "object",
+    "Timeout",
+    true,
+    true,
+    1.9,
+    true,
+    "function"
+  ]
+}

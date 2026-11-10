@@ -1,0 +1,499 @@
+{
+ "width": 20,
+ "foreground": [
+  200,
+  201,
+  202
+ ],
+ "background": [
+  10,
+  11,
+  12
+ ],
+ "cases": [
+  {
+   "name": "esc-e-acute",
+   "lines": [
+    "a\u001bé b"
+   ],
+   "cells": [
+    [
+     {
+      "text": "a",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": " ",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "b",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "esc-cjk",
+   "lines": [
+    "a\u001b你 b"
+   ],
+   "cells": [
+    [
+     {
+      "text": "a",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": " ",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "b",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "esc-emoji",
+   "lines": [
+    "a\u001b😀b"
+   ],
+   "cells": [
+    [
+     {
+      "text": "a",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "b",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "esc-at-end",
+   "lines": [
+    "a\u001b"
+   ],
+   "cells": [
+    [
+     {
+      "text": "a",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "esc-two-multibyte",
+   "lines": [
+    "\u001béx\u001b你y"
+   ],
+   "cells": [
+    [
+     {
+      "text": "x",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "y",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-truncated-38-2-1-2",
+   "lines": [
+    "\u001b[38;2;1;2mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-truncated-38-2-1",
+   "lines": [
+    "\u001b[38;2;1mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-truncated-38-2",
+   "lines": [
+    "\u001b[38;2mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-truncated-48-2-1-2",
+   "lines": [
+    "\u001b[48;2;1;2mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-full-38-2",
+   "lines": [
+    "\u001b[38;2;1;2;3mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-full-48-2",
+   "lines": [
+    "\u001b[48;2;40;50;60mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ],
+      "bg": [
+       40,
+       50,
+       60
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-nan-channel",
+   "lines": [
+    "\u001b[38;2;;1;2mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       null,
+       1,
+       2
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-indexed-1-5",
+   "lines": [
+    "\u001b[38;5;1.5mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       128,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-indexed-good",
+   "lines": [
+    "\u001b[38;5;9mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       255,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-indexed-no-second",
+   "lines": [
+    "\u001b[38;5mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-colon-truecolor",
+   "lines": [
+    "\u001b[38:2::1:2:3mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       1,
+       2,
+       3
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-colon-indexed",
+   "lines": [
+    "\u001b[38:5:9mX"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       255,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-osc-then-esc",
+   "lines": [
+    "\u001b]8;;http://x\u0007link\u001b]8;;\u0007\u001béZ"
+   ],
+   "cells": [
+    [
+     {
+      "text": "l",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "i",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "n",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "k",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "Z",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "name": "sgr-dim-inverse",
+   "lines": [
+    "\u001b[2;7mX\u001b[22;27mY"
+   ],
+   "cells": [
+    [
+     {
+      "text": "X",
+      "width": 1,
+      "fg": [
+       86,
+       87,
+       88
+      ],
+      "bg": [
+       200,
+       201,
+       202
+      ]
+     },
+     {
+      "text": "Y",
+      "width": 1,
+      "fg": [
+       200,
+       201,
+       202
+      ]
+     }
+    ]
+   ]
+  }
+ ],
+ "throws": [
+  {
+   "name": "indexed-missing",
+   "message": "Error: ANSI color index must be an integer from 0 to 255: NaN"
+  },
+  {
+   "name": "indexed-256",
+   "message": "Error: ANSI color index must be an integer from 0 to 255: 300"
+  },
+  {
+   "name": "indexed-nan-kind",
+   "message": "Error: ANSI color index must be an integer from 0 to 255: NaN"
+  }
+ ]
+}

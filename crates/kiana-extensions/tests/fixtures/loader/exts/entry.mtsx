@@ -1,0 +1,4 @@
+export const x: number = 1;
+export default function factory(): number {
+	return 42;
+}

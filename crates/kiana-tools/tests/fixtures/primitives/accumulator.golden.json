@@ -1,0 +1,3302 @@
+[
+  {
+    "name": "empty",
+    "chunks": [],
+    "options": {},
+    "content": "",
+    "truncation": {
+      "content": "",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 0,
+      "totalBytes": 0,
+      "outputLines": 0,
+      "outputBytes": 0,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "",
+      "truncated": false
+    }
+  },
+  {
+    "name": "trailing_newline",
+    "chunks": [
+      [
+        97,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "a\n",
+    "truncation": {
+      "content": "a\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 2,
+      "outputLines": 1,
+      "outputBytes": 2,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "a\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "split_emoji",
+    "chunks": [
+      [
+        240,
+        159
+      ],
+      [
+        152,
+        128
+      ]
+    ],
+    "options": {},
+    "content": "😀",
+    "truncation": {
+      "content": "😀",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "😀",
+      "truncated": false
+    }
+  },
+  {
+    "name": "invalid_utf8",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        65
+      ]
+    ],
+    "options": {},
+    "content": "�A",
+    "truncation": {
+      "content": "�A",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�A",
+      "truncated": false
+    }
+  },
+  {
+    "name": "small_bytes",
+    "chunks": [
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 16
+    },
+    "content": "0123456789abcdef",
+    "truncation": {
+      "content": "0123456789abcdef",
+      "truncated": true,
+      "truncatedBy": "lines",
+      "totalLines": 10,
+      "totalBytes": 170,
+      "outputLines": 1,
+      "outputBytes": 16,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 16
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "0123456789ab\n\n[... 146 bytes omitted ...]\n\n56789abcdef\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "small_lines",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        45,
+        48,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        50,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        51,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        52,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        53,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        54,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        55,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        56,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        57,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        48,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        49,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        50,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        51,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        52,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        53,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        54,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        55,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        56,
+        10,
+        108,
+        105,
+        110,
+        101,
+        45,
+        49,
+        57,
+        10
+      ]
+    ],
+    "options": {
+      "maxLines": 5
+    },
+    "content": "line-15\nline-16\nline-17\nline-18\nline-19",
+    "truncation": {
+      "content": "line-15\nline-16\nline-17\nline-18\nline-19",
+      "truncated": true,
+      "truncatedBy": "lines",
+      "totalLines": 20,
+      "totalBytes": 150,
+      "outputLines": 5,
+      "outputBytes": 39,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 5,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "line-0\nline-\n\n[... 126 bytes omitted ...]\n\n-18\nline-19\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "tiny_rolling",
+    "chunks": [
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        48,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        49,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        50,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        51,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        52,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        53,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        54,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        55,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        56,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        57,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        49,
+        48,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ],
+      [
+        99,
+        104,
+        117,
+        110,
+        107,
+        45,
+        49,
+        49,
+        45,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 8
+    },
+    "content": "",
+    "truncation": {
+      "content": "",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 12,
+      "totalBytes": 206,
+      "outputLines": 0,
+      "outputBytes": 0,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 8
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "chunk-0-abcd\n\n[... 182 bytes omitted ...]\n\n11-abcdefgh\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-0",
+    "chunks": [
+      [
+        240,
+        159,
+        152,
+        128
+      ]
+    ],
+    "options": {},
+    "content": "😀",
+    "truncation": {
+      "content": "😀",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "😀",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-1",
+    "chunks": [
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "0123456789\n",
+    "truncation": {
+      "content": "0123456789\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 11,
+      "outputLines": 1,
+      "outputBytes": 11,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "0123456789\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-2",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        10
+      ]
+    ],
+    "options": {
+      "maxLines": 3
+    },
+    "content": "�éhello world\ntailaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+    "truncation": {
+      "content": "�éhello world\ntailaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 62,
+      "outputLines": 2,
+      "outputBytes": 62,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�éhello world\ntailaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-3",
+    "chunks": [
+      [
+        240,
+        159,
+        152
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        0,
+        65
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        255
+      ],
+      [
+        0,
+        65
+      ]
+    ],
+    "options": {
+      "maxBytes": 8
+    },
+    "content": "�\u0000A",
+    "truncation": {
+      "content": "�\u0000A",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 3,
+      "totalBytes": 28,
+      "outputLines": 1,
+      "outputBytes": 5,
+      "lastLinePartial": true,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 8
+    },
+    "lastLineBytes": 14,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "�\r\nline tw\n\n[... 2 bytes omitted ...]\n\nabc\u0000A😀�\u0000A",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-4",
+    "chunks": [
+      [
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        10
+      ]
+    ],
+    "options": {},
+    "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nhello world\nline two\nline one\ntail\n",
+    "truncation": {
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nhello world\nline two\nline one\ntail\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 5,
+      "totalBytes": 76,
+      "outputLines": 5,
+      "outputBytes": 76,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nhello world\nline two\nline one\ntail\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-5",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        10
+      ],
+      [
+        10
+      ]
+    ],
+    "options": {},
+    "content": "line one\nhello world\ntail\n\n",
+    "truncation": {
+      "content": "line one\nhello world\ntail\n\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 4,
+      "totalBytes": 27,
+      "outputLines": 4,
+      "outputBytes": 27,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "line one\nhello world\ntail\n\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-6",
+    "chunks": [
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        0,
+        65
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        97,
+        98,
+        99
+      ]
+    ],
+    "options": {},
+    "content": "tail€\u0000Aline two\n€abc",
+    "truncation": {
+      "content": "tail€\u0000Aline two\n€abc",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 24,
+      "outputLines": 2,
+      "outputBytes": 24,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 6,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "tail€\u0000Aline two\n€abc",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-7",
+    "chunks": [
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ]
+    ],
+    "options": {},
+    "content": "😀line one\nline two\n€€abc😀",
+    "truncation": {
+      "content": "😀line one\nline two\n€€abc😀",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 3,
+      "totalBytes": 35,
+      "outputLines": 3,
+      "outputBytes": 35,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 13,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "😀line one\nline two\n€€abc😀",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-8",
+    "chunks": [
+      [
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        10
+      ]
+    ],
+    "options": {
+      "maxLines": 5
+    },
+    "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+    "truncation": {
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 41,
+      "outputLines": 1,
+      "outputBytes": 41,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 5,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-9",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        10
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        13,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 64,
+      "maxLines": 5
+    },
+    "content": "line one\n\n0123456789\n\r\n",
+    "truncation": {
+      "content": "line one\n\n0123456789\n\r\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 4,
+      "totalBytes": 23,
+      "outputLines": 4,
+      "outputBytes": 23,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 5,
+      "maxBytes": 64
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "line one\n\n0123456789\n\r\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-10",
+    "chunks": [
+      [
+        13,
+        10
+      ],
+      [
+        255
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        240,
+        159,
+        152
+      ]
+    ],
+    "options": {
+      "maxBytes": 32,
+      "maxLines": 2
+    },
+    "content": "\r\n�é�",
+    "truncation": {
+      "content": "\r\n�é�",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 10,
+      "outputLines": 2,
+      "outputBytes": 10,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2,
+      "maxBytes": 32
+    },
+    "lastLineBytes": 8,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "\r\n�é�",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-11",
+    "chunks": [
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        195
+      ],
+      [
+        195
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        97,
+        98,
+        99
+      ]
+    ],
+    "options": {
+      "maxBytes": 8
+    },
+    "content": "�abc",
+    "truncation": {
+      "content": "�abc",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 3,
+      "totalBytes": 34,
+      "outputLines": 1,
+      "outputBytes": 6,
+      "lastLinePartial": true,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 8
+    },
+    "lastLineBytes": 11,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "hello world\n\n\n[... 2 bytes omitted ...]\n\n��\r\né��abc",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-12",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        195
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        195,
+        169
+      ]
+    ],
+    "options": {
+      "maxBytes": 32,
+      "maxLines": 3
+    },
+    "content": "�hello world\nhello world\né",
+    "truncation": {
+      "content": "�hello world\nhello world\né",
+      "truncated": true,
+      "truncatedBy": "lines",
+      "totalLines": 6,
+      "totalBytes": 54,
+      "outputLines": 3,
+      "outputBytes": 29,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 32
+    },
+    "lastLineBytes": 2,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "line one\nabc\n\n[... 28 bytes omitted ...]\n\nllo world\né",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-13",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        0,
+        65
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        97,
+        98,
+        99
+      ]
+    ],
+    "options": {
+      "maxBytes": 64
+    },
+    "content": "�line one\n😀\u0000A😀abc",
+    "truncation": {
+      "content": "�line one\n😀\u0000A😀abc",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 25,
+      "outputLines": 2,
+      "outputBytes": 25,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 64
+    },
+    "lastLineBytes": 13,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�line one\n😀\u0000A😀abc",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-14",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        10
+      ],
+      [
+        240,
+        159,
+        152
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        195,
+        169
+      ]
+    ],
+    "options": {},
+    "content": "line one\n€\n�étailé",
+    "truncation": {
+      "content": "line one\n€\n�étailé",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 3,
+      "totalBytes": 24,
+      "outputLines": 3,
+      "outputBytes": 24,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 11,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "line one\n€\n�étailé",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-15",
+    "chunks": [
+      [
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 16,
+      "maxLines": 3
+    },
+    "content": "\nhello world\n",
+    "truncation": {
+      "content": "\nhello world\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 13,
+      "outputLines": 2,
+      "outputBytes": 13,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 16
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "\nhello world\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-16",
+    "chunks": [
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        255
+      ],
+      [
+        226,
+        130
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "hello world\n��\r\nhello world\n",
+    "truncation": {
+      "content": "hello world\n��\r\nhello world\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 3,
+      "totalBytes": 32,
+      "outputLines": 3,
+      "outputBytes": 32,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "hello world\n��\r\nhello world\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-17",
+    "chunks": [
+      [
+        0,
+        65
+      ]
+    ],
+    "options": {},
+    "content": "\u0000A",
+    "truncation": {
+      "content": "\u0000A",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 2,
+      "outputLines": 1,
+      "outputBytes": 2,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 2,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "\u0000A",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-18",
+    "chunks": [
+      [
+        195,
+        169
+      ],
+      [
+        0,
+        65
+      ]
+    ],
+    "options": {
+      "maxLines": 3
+    },
+    "content": "é\u0000A",
+    "truncation": {
+      "content": "é\u0000A",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "é\u0000A",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-19",
+    "chunks": [
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        195
+      ],
+      [
+        195,
+        169
+      ]
+    ],
+    "options": {
+      "maxLines": 5
+    },
+    "content": "tailline one\n€�é",
+    "truncation": {
+      "content": "tailline one\n€�é",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 21,
+      "outputLines": 2,
+      "outputBytes": 21,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 5,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 8,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "tailline one\n€�é",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-20",
+    "chunks": [
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 8
+    },
+    "content": "line two",
+    "truncation": {
+      "content": "line two",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 2,
+      "totalBytes": 28,
+      "outputLines": 1,
+      "outputBytes": 8,
+      "lastLinePartial": true,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 8
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "line one\n\n\n[... 4 bytes omitted ...]\n\nléline two\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-21",
+    "chunks": [
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        195
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 32
+    },
+    "content": "hello world\nÀ�hello world",
+    "truncation": {
+      "content": "hello world\nÀ�hello world",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 3,
+      "totalBytes": 37,
+      "outputLines": 2,
+      "outputBytes": 28,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 32
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "abc€\r\nhell\n\n[... 11 bytes omitted ...]\n\nhello world\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-22",
+    "chunks": [
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ]
+    ],
+    "options": {},
+    "content": "tail\r\n€",
+    "truncation": {
+      "content": "tail\r\n€",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 9,
+      "outputLines": 2,
+      "outputBytes": 9,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 3,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "tail\r\n€",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-23",
+    "chunks": [
+      [
+        240,
+        159,
+        152,
+        128
+      ]
+    ],
+    "options": {
+      "maxLines": 5
+    },
+    "content": "😀",
+    "truncation": {
+      "content": "😀",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 5,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "😀",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-24",
+    "chunks": [
+      [
+        226,
+        130
+      ],
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "�abchello world\n",
+    "truncation": {
+      "content": "�abchello world\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 18,
+      "outputLines": 1,
+      "outputBytes": 18,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�abchello world\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-25",
+    "chunks": [
+      [
+        97,
+        98,
+        99
+      ]
+    ],
+    "options": {
+      "maxLines": 3
+    },
+    "content": "abc",
+    "truncation": {
+      "content": "abc",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 3,
+      "outputLines": 1,
+      "outputBytes": 3,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 3,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "abc",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-26",
+    "chunks": [
+      [
+        240,
+        159,
+        152,
+        128
+      ]
+    ],
+    "options": {},
+    "content": "😀",
+    "truncation": {
+      "content": "😀",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 4,
+      "outputLines": 1,
+      "outputBytes": 4,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 4,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "😀",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-27",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        13,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 32,
+      "maxLines": 2
+    },
+    "content": "�0123456789\n€\r\n",
+    "truncation": {
+      "content": "�0123456789\n€\r\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 19,
+      "outputLines": 2,
+      "outputBytes": 19,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2,
+      "maxBytes": 32
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�0123456789\n€\r\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-28",
+    "chunks": [
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        97,
+        98,
+        99
+      ],
+      [
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ]
+    ],
+    "options": {
+      "maxLines": 3
+    },
+    "content": "0123456789\n😀😀abc\n😀0123456789\n",
+    "truncation": {
+      "content": "0123456789\n😀😀abc\n😀0123456789\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 3,
+      "totalBytes": 38,
+      "outputLines": 3,
+      "outputBytes": 38,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 3,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "0123456789\n😀😀abc\n😀0123456789\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-29",
+    "chunks": [
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        13,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "hello world\ntailline one\nline two\n€\r\n\r\n",
+    "truncation": {
+      "content": "hello world\ntailline one\nline two\n€\r\n\r\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 5,
+      "totalBytes": 41,
+      "outputLines": 5,
+      "outputBytes": 41,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "hello world\ntailline one\nline two\n€\r\n\r\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-30",
+    "chunks": [
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        116,
+        119,
+        111,
+        10
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        10
+      ]
+    ],
+    "options": {},
+    "content": "tailline two\né😀ééhello world\n\n",
+    "truncation": {
+      "content": "tailline two\né😀ééhello world\n\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 3,
+      "totalBytes": 36,
+      "outputLines": 3,
+      "outputBytes": 36,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "tailline two\né😀ééhello world\n\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-31",
+    "chunks": [
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        10
+      ],
+      [
+        10
+      ],
+      [
+        195
+      ],
+      [
+        226,
+        130
+      ]
+    ],
+    "options": {
+      "maxBytes": 64
+    },
+    "content": "€0123456789\n😀\n\n��",
+    "truncation": {
+      "content": "€0123456789\n😀\n\n��",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 4,
+      "totalBytes": 26,
+      "outputLines": 4,
+      "outputBytes": 26,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 64
+    },
+    "lastLineBytes": 6,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "€0123456789\n😀\n\n��",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-32",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 64
+    },
+    "content": "line one\né\r\nline one\nhello world",
+    "truncation": {
+      "content": "line one\né\r\nline one\nhello world",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 5,
+      "totalBytes": 78,
+      "outputLines": 4,
+      "outputBytes": 33,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 64
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "�aaaaaaaaaaa\n\n[... 52 bytes omitted ...]\n\nhello world\n",
+      "truncated": true
+    }
+  },
+  {
+    "name": "random-33",
+    "chunks": [
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        226,
+        130
+      ],
+      [
+        116,
+        97,
+        105,
+        108
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        0,
+        65
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        97,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "hello world\n\r\n�tailline one\n\u0000A\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+    "truncation": {
+      "content": "hello world\n\r\n�tailline one\n\u0000A\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 5,
+      "totalBytes": 75,
+      "outputLines": 5,
+      "outputBytes": 75,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "hello world\n\r\n�tailline one\n\u0000A\r\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-34",
+    "chunks": [
+      [
+        0,
+        65
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        226,
+        130,
+        172
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        195
+      ]
+    ],
+    "options": {},
+    "content": "\u0000A€€😀0123456789\n�",
+    "truncation": {
+      "content": "\u0000A€€😀0123456789\n�",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 26,
+      "outputLines": 2,
+      "outputBytes": 26,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 3,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "\u0000A€€😀0123456789\n�",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-35",
+    "chunks": [
+      [
+        13,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 16
+    },
+    "content": "\r\n",
+    "truncation": {
+      "content": "\r\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 2,
+      "outputLines": 1,
+      "outputBytes": 2,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 16
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "\r\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-36",
+    "chunks": [
+      [
+        255
+      ],
+      [
+        108,
+        105,
+        110,
+        101,
+        32,
+        111,
+        110,
+        101,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ]
+    ],
+    "options": {
+      "maxBytes": 8
+    },
+    "content": "lo world",
+    "truncation": {
+      "content": "lo world",
+      "truncated": true,
+      "truncatedBy": "bytes",
+      "totalLines": 2,
+      "totalBytes": 24,
+      "outputLines": 1,
+      "outputBytes": 8,
+      "lastLinePartial": true,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 8
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": true,
+    "persistedHasPath": true,
+    "fullOutput": {
+      "content": "�line one\nhello world\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-37",
+    "chunks": [
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ]
+    ],
+    "options": {},
+    "content": "0123456789\n��0123456789\n",
+    "truncation": {
+      "content": "0123456789\n��0123456789\n",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 2,
+      "totalBytes": 28,
+      "outputLines": 2,
+      "outputBytes": 28,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 0,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "0123456789\n��0123456789\n",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-38",
+    "chunks": [
+      [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        10
+      ],
+      [
+        104,
+        101,
+        108,
+        108,
+        111,
+        32,
+        119,
+        111,
+        114,
+        108,
+        100,
+        10
+      ],
+      [
+        240,
+        159,
+        152,
+        128
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        195,
+        169
+      ],
+      [
+        195
+      ],
+      [
+        195,
+        169
+      ]
+    ],
+    "options": {},
+    "content": "0123456789\nhello world\n😀\r\néé�é",
+    "truncation": {
+      "content": "0123456789\nhello world\n😀\r\néé�é",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 4,
+      "totalBytes": 38,
+      "outputLines": 4,
+      "outputBytes": 38,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 9,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "0123456789\nhello world\n😀\r\néé�é",
+      "truncated": false
+    }
+  },
+  {
+    "name": "random-39",
+    "chunks": [
+      [
+        195
+      ]
+    ],
+    "options": {},
+    "content": "�",
+    "truncation": {
+      "content": "�",
+      "truncated": false,
+      "truncatedBy": null,
+      "totalLines": 1,
+      "totalBytes": 3,
+      "outputLines": 1,
+      "outputBytes": 3,
+      "lastLinePartial": false,
+      "firstLineExceedsLimit": false,
+      "maxLines": 2000,
+      "maxBytes": 51200
+    },
+    "lastLineBytes": 3,
+    "hasFullOutputPath": false,
+    "persistedHasPath": false,
+    "fullOutput": {
+      "content": "�",
+      "truncated": false
+    }
+  }
+]

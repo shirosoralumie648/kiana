@@ -1,0 +1,1115 @@
+{
+ "parameters": {
+  "type": "object",
+  "required": [
+   "path",
+   "metadata"
+  ],
+  "properties": {
+   "path": {
+    "type": "string"
+   },
+   "offset": {
+    "type": "number"
+   },
+   "metadata": {
+    "type": "object",
+    "properties": {
+     "enabled": {
+      "type": "boolean"
+     }
+    }
+   },
+   "nullable": {
+    "anyOf": [
+     {
+      "type": "string"
+     },
+     {
+      "type": "null"
+     }
+    ]
+   }
+  }
+ },
+ "parametersString": "{\"type\":\"object\",\"required\":[\"path\",\"metadata\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"type\":\"number\"},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"type\":\"boolean\"}}},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}}}",
+ "strictString": "{\"type\":\"object\",\"required\":[\"path\",\"offset\",\"metadata\",\"nullable\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"anyOf\":[{\"type\":\"boolean\"},{\"type\":\"null\"}]}},\"required\":[\"enabled\"],\"additionalProperties\":false},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"additionalProperties\":false}",
+ "strictAfterInputString": "{\"type\":\"object\",\"required\":[\"path\",\"metadata\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"type\":\"number\"},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"type\":\"boolean\"}}},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}}}",
+ "cases": [
+  {
+   "name": "additionalProperties",
+   "parameters": {
+    "type": "object",
+    "required": [
+     "metadata"
+    ],
+    "properties": {
+     "metadata": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "error": "schema-valued or true additionalProperties is unsupported"
+  },
+  {
+   "name": "allOf",
+   "parameters": {
+    "allOf": [
+     {
+      "type": "object",
+      "required": [
+       "a"
+      ],
+      "properties": {
+       "a": {
+        "type": "string"
+       }
+      }
+     },
+     {
+      "type": "object",
+      "required": [
+       "b"
+      ],
+      "properties": {
+       "b": {
+        "type": "number"
+       }
+      }
+     }
+    ]
+   },
+   "error": "allOf schemas are unsupported"
+  },
+  {
+   "name": "union",
+   "parameters": {
+    "type": "object",
+    "required": [
+     "value"
+    ],
+    "properties": {
+     "value": {
+      "anyOf": [
+       {
+        "type": "object",
+        "required": [
+         "nested"
+        ],
+        "properties": {
+         "nested": {
+          "type": "string"
+         }
+        }
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   },
+   "error": "object and array unions are unsupported"
+  },
+  {
+   "name": "ref",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "child": {
+      "$ref": "https://example.com/child.json"
+     }
+    },
+    "required": [
+     "child"
+    ]
+   },
+   "error": "$ref schemas are unsupported"
+  },
+  {
+   "name": "defs",
+   "parameters": {
+    "type": "object",
+    "$defs": {
+     "a": {
+      "type": "string"
+     }
+    }
+   },
+   "error": "$defs schemas are unsupported"
+  },
+  {
+   "name": "boolean",
+   "parameters": true,
+   "error": "root schema must have type object"
+  },
+  {
+   "name": "rootArray",
+   "parameters": {
+    "type": "array",
+    "items": {
+     "type": "string"
+    }
+   },
+   "error": "root schema must have type object"
+  },
+  {
+   "name": "noProps",
+   "parameters": {
+    "type": "object"
+   },
+   "resultString": "{\"type\":\"object\",\"required\":[],\"additionalProperties\":false}"
+  },
+  {
+   "name": "propsNoType",
+   "parameters": {
+    "properties": {
+     "a": {
+      "type": "string"
+     }
+    }
+   },
+   "error": "properties require type object"
+  },
+  {
+   "name": "addlNull",
+   "parameters": {
+    "type": "object",
+    "additionalProperties": null
+   },
+   "error": "schema-valued or true additionalProperties is unsupported"
+  },
+  {
+   "name": "requiredUnknown",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "b"
+    ]
+   },
+   "error": "required contains an unknown property"
+  },
+  {
+   "name": "requiredNotArray",
+   "parameters": {
+    "type": "object",
+    "required": "a"
+   },
+   "error": "object required must be a string array"
+  },
+  {
+   "name": "anyOfEmpty",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "anyOf": []
+     }
+    }
+   },
+   "error": "anyOf must contain at least one schema"
+  },
+  {
+   "name": "anyOfObj",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "anyOf": [
+       {
+        "type": "object"
+       }
+      ]
+     }
+    }
+   },
+   "error": "object and array unions are unsupported"
+  },
+  {
+   "name": "itemsTuple",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "array",
+      "items": [
+       {
+        "type": "string"
+       }
+      ]
+     }
+    }
+   },
+   "error": "tuple schemas are unsupported"
+  },
+  {
+   "name": "itemsRecurse",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "b": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"b\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"required\":[\"b\"],\"additionalProperties\":false}},{\"type\":\"null\"}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "nestedRequired",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "object",
+      "properties": {
+       "x": {
+        "type": "string"
+       },
+       "y": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "x"
+      ]
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"object\",\"properties\":{\"x\":{\"type\":\"string\"},\"y\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"required\":[\"x\",\"y\"],\"additionalProperties\":false},{\"type\":\"null\"}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "stringRoot",
+   "parameters": {
+    "type": "string"
+   },
+   "error": "root schema must have type object"
+  },
+  {
+   "name": "addlFalse",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"additionalProperties\":false,\"required\":[\"a\"]}"
+  },
+  {
+   "name": "arrayUnionType",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"type\":[\"string\",\"null\"]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "integerPropertyNames",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "0": {
+      "type": "string"
+     },
+     "1": {
+      "type": "boolean"
+     },
+     "2": {
+      "type": "number"
+     },
+     "b": {
+      "type": "string"
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"0\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]},\"1\":{\"anyOf\":[{\"type\":\"boolean\"},{\"type\":\"null\"}]},\"2\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]},\"b\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"required\":[\"0\",\"1\",\"2\",\"b\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "enumAllowsNull",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string",
+      "enum": [
+       "x",
+       null
+      ]
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"type\":\"string\",\"enum\":[\"x\",null]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "constNull",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "const": null
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"const\":null}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "typeArrayNullFirst",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": [
+       "null",
+       "string"
+      ]
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"type\":[\"null\",\"string\"]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "duplicateRequired",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string"
+     },
+     "b": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "a",
+     "a"
+    ]
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"type\":\"string\"},\"b\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"required\":[\"a\",\"b\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "nestedAnyOfNull",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "anyOf": [
+         {
+          "type": "null"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"string\"},{\"anyOf\":[{\"type\":\"null\"}]}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "nonObjectWithAdditionalProperties",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string",
+      "additionalProperties": true
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"string\",\"additionalProperties\":true},{\"type\":\"null\"}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "propertiesNotMap",
+   "parameters": {
+    "type": "object",
+    "properties": "x"
+   },
+   "error": "object properties must be a schema map"
+  },
+  {
+   "name": "propertiesNull",
+   "parameters": {
+    "type": "object",
+    "properties": null
+   },
+   "error": "object properties must be a schema map"
+  },
+  {
+   "name": "requiredNonString",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string"
+     }
+    },
+    "required": [
+     1
+    ]
+   },
+   "error": "object required must be a string array"
+  },
+  {
+   "name": "additionalPropertiesZero",
+   "parameters": {
+    "type": "object",
+    "additionalProperties": 0
+   },
+   "error": "schema-valued or true additionalProperties is unsupported"
+  },
+  {
+   "name": "emptyObject",
+   "parameters": {},
+   "error": "root schema must have type object"
+  },
+  {
+   "name": "emptyPropsObject",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{},\"required\":[],\"additionalProperties\":false}"
+  },
+  {
+   "name": "nestedItemsArrayOfObject",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "array",
+      "items": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"array\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},{\"type\":\"null\"}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  },
+  {
+   "name": "refInsideAnyOf",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "anyOf": [
+       {
+        "$ref": "#/x"
+       }
+      ]
+     }
+    }
+   },
+   "error": "$ref schemas are unsupported"
+  },
+  {
+   "name": "customKeywordOrder",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "string",
+      "zz": 1,
+      "aa": 2
+     }
+    }
+   },
+   "resultString": "{\"type\":\"object\",\"properties\":{\"a\":{\"anyOf\":[{\"type\":\"string\",\"zz\":1,\"aa\":2},{\"type\":\"null\"}]}},\"required\":[\"a\"],\"additionalProperties\":false}"
+  }
+ ],
+ "customKeyword": {
+  "error": "x: {\"y\":1} is unsupported"
+ },
+ "customKeywordOrder": {
+  "error": "zz: 1 is unsupported"
+ },
+ "customKeywordPass": {
+  "resultString": "{\"type\":\"object\",\"properties\":{\"b\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]}},\"required\":[\"b\"],\"additionalProperties\":false}"
+ },
+ "resolve": {
+  "prefer": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "json_schema",
+     "strict": "prefer"
+    }
+   },
+   "expected": {
+    "ok": true
+   }
+  },
+  "preferNoStrictSupport": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "json_schema",
+     "strict": "prefer"
+    }
+   },
+   "expected": {}
+  },
+  "requireNoStrictSupport": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "json_schema",
+     "strict": "require"
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" requires JSON-schema constrained sampling, but strict tools are unsupported."
+   }
+  },
+  "preferUnsupported": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "a": {
+       "$ref": "x"
+      }
+     }
+    },
+    "constrainedSampling": {
+     "type": "json_schema",
+     "strict": "prefer"
+    }
+   },
+   "expected": {}
+  },
+  "requireUnsupported": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "a": {
+       "$ref": "x"
+      }
+     }
+    },
+    "constrainedSampling": {
+     "type": "json_schema",
+     "strict": "require"
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" requires JSON-schema constrained sampling, but $ref schemas are unsupported."
+   }
+  },
+  "noConfig": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "expected": {}
+  },
+  "disabled": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": false
+   },
+   "expected": {}
+  }
+ },
+ "grammar": {
+  "lark": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "start: /[a-z]+/"
+     }
+    }
+   },
+   "expected": {
+    "ok": {
+     "format": "lark",
+     "definition": "start: /[a-z]+/",
+     "inputProperty": "payload"
+    }
+   }
+  },
+  "regex": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_regex": "^a+$",
+      "openai_lark": "  "
+     }
+    }
+   },
+   "expected": {
+    "ok": {
+     "format": "regex",
+     "definition": "^a+$",
+     "inputProperty": "payload"
+    }
+   }
+  },
+  "larkPreferred": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_regex": "^a+$",
+      "openai_lark": "lark"
+     }
+    }
+   },
+   "expected": {
+    "ok": {
+     "format": "lark",
+     "definition": "lark",
+     "inputProperty": "payload"
+    }
+   }
+  },
+  "none": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {}
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: no supported grammar variant was provided."
+   }
+  },
+  "unsupported": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {}
+    }
+   },
+   "expected": {}
+  },
+  "badSchema": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {},
+     "required": []
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling requires exactly one required string property."
+   }
+  },
+  "noProps": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ]
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling requires a properties entry for payload."
+   }
+  },
+  "notString": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "payload": {
+       "type": "number"
+      }
+     },
+     "required": [
+      "payload"
+     ]
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling property payload must have type string."
+   }
+  },
+  "twoRequired": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "a": {
+       "type": "string"
+      },
+      "b": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "a",
+      "b"
+     ]
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling requires exactly one required string property."
+   }
+  },
+  "propertiesEntryFalse": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "payload": false
+     },
+     "required": [
+      "payload"
+     ]
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling requires a properties entry for payload."
+   }
+  },
+  "notObjectParameters": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": true,
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": {
+      "openai_lark": "x"
+     }
+    }
+   },
+   "expected": {
+    "error": "Tool \"sample_tool\" cannot use grammar constrained sampling: grammar constrained sampling requires an object parameter schema."
+   }
+  },
+  "createMap": [
+   [
+    "sample_tool",
+    "payload"
+   ]
+  ],
+  "createMapNone": [],
+  "missingVariants": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar"
+    }
+   },
+   "expected": {
+    "error": "Cannot read properties of undefined (reading 'openai_lark')"
+   }
+  },
+  "nullVariants": {
+   "tool": {
+    "name": "sample_tool",
+    "description": "Sample tool",
+    "parameters": {
+     "type": "object",
+     "required": [
+      "payload"
+     ],
+     "properties": {
+      "payload": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "constrainedSampling": {
+     "type": "grammar",
+     "variants": null
+    }
+   },
+   "expected": {
+    "error": "Cannot read properties of null (reading 'openai_lark')"
+   }
+  }
+ },
+ "grammarBuffer": {
+  "steps": [
+   {
+    "op": "append",
+    "delta": "a\"",
+    "result": "{\"payload\":\"a\\\""
+   },
+   {
+    "op": "appendEmpty",
+    "delta": "",
+    "result": null
+   },
+   {
+    "op": "close",
+    "finalInput": "a\"\nb",
+    "result": "\\nb\"}"
+   },
+   {
+    "op": "closeAgain",
+    "finalInput": "a\"\nb",
+    "result": null
+   }
+  ],
+  "stateAfter": {
+   "input": "a\"\nb",
+   "started": true,
+   "closed": true
+  },
+  "changed": "grammar tool input for property \"payload\" changed after it was closed",
+  "appended": "grammar tool input for property \"payload\" changed after it was closed"
+ },
+ "grammarBufferEmptyClose": {
+  "result": "{\"payload\":\"\"}",
+  "stateAfter": {
+   "input": "",
+   "started": true,
+   "closed": true
+  }
+ },
+ "grammarBufferNonMonotonic": {
+  "error": "grammar tool input for property \"payload\" changed non-monotonically"
+ },
+ "grammarBufferUnicode": {
+  "a": "{\"p\":\"é😀",
+  "b": "\"}"
+ },
+ "getGrammarToolInput": {
+  "string": {
+   "ok": "abc"
+  },
+  "number": {
+   "error": "Grammar tool call \"sample_tool\" requires argument \"payload\" to be a string."
+  },
+  "missing": {
+   "error": "Grammar tool call \"sample_tool\" requires argument \"payload\" to be a string."
+  }
+ },
+ "getJsonSchemaToolParameters": {
+  "strict": "{\"type\":\"object\",\"required\":[\"path\",\"offset\",\"metadata\",\"nullable\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"anyOf\":[{\"type\":\"boolean\"},{\"type\":\"null\"}]}},\"required\":[\"enabled\"],\"additionalProperties\":false},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}},\"additionalProperties\":false}",
+  "nonStrict": "{\"type\":\"object\",\"required\":[\"path\",\"metadata\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"type\":\"number\"},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"type\":\"boolean\"}}},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}}}",
+  "officialFalse": "{\"type\":\"object\",\"required\":[\"path\",\"metadata\"],\"properties\":{\"path\":{\"type\":\"string\"},\"offset\":{\"type\":\"number\"},\"metadata\":{\"type\":\"object\",\"properties\":{\"enabled\":{\"type\":\"boolean\"}}},\"nullable\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}]}}}"
+ }
+}

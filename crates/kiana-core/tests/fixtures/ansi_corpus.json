@@ -1,0 +1,1328 @@
+[
+ {
+  "input": "plain",
+  "output": "plain"
+ },
+ {
+  "input": "a\u001b[31mred\u001b[0mz",
+  "output": "aredz"
+ },
+ {
+  "input": "a\u001b]8;;https://example.com\u0007link\u001b]8;;\u0007z",
+  "output": "alinkz"
+ },
+ {
+  "input": "a\u001b]unterminated",
+  "output": "anterminated"
+ },
+ {
+  "input": "a\u001b]funterminated",
+  "output": "aunterminated"
+ },
+ {
+  "input": "a\u001bPabc\u001b\\z",
+  "output": "aabc\u001b\\z"
+ },
+ {
+  "input": "a\u001b^abc\u0007z",
+  "output": "a\u001b^abc\u0007z"
+ },
+ {
+  "input": "a\u001b_abcz",
+  "output": "a\u001b_abcz"
+ },
+ {
+  "input": "aabcz",
+  "output": "aabcz"
+ },
+ {
+  "input": "aabcz",
+  "output": "aabcz"
+ },
+ {
+  "input": "a31mred",
+  "output": "ared"
+ },
+ {
+  "input": "a\u001b(0x",
+  "output": "ax"
+ },
+ {
+  "input": "a\u001b*0x",
+  "output": "a\u001b*0x"
+ },
+ {
+  "input": "a\u001b+c",
+  "output": "a\u001b+c"
+ },
+ {
+  "input": "a\u001b/0x",
+  "output": "a\u001b/0x"
+ },
+ {
+  "input": "a\u001bcok",
+  "output": "aok"
+ },
+ {
+  "input": "a\u001b\\ok",
+  "output": "a\u001b\\ok"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "xay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001baay",
+  "output": "x\u001baay"
+ },
+ {
+  "input": "x\u001ba1y",
+  "output": "x\u001ba1y"
+ },
+ {
+  "input": "x\u001ba[y",
+  "output": "x\u001ba[y"
+ },
+ {
+  "input": "x\u001ba)y",
+  "output": "x\u001ba)y"
+ },
+ {
+  "input": "x\u001bamy",
+  "output": "x\u001bamy"
+ },
+ {
+  "input": "x\u001ba\\y",
+  "output": "x\u001ba\\y"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001ba"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "x\u001bfy",
+  "output": "xy"
+ },
+ {
+  "input": "xfy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bfay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001bf1y",
+  "output": "x1y"
+ },
+ {
+  "input": "x\u001bf[y",
+  "output": "x[y"
+ },
+ {
+  "input": "x\u001bf)y",
+  "output": "x)y"
+ },
+ {
+  "input": "x\u001bfmy",
+  "output": "xmy"
+ },
+ {
+  "input": "x\u001bf\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001bfy",
+  "output": "x"
+ },
+ {
+  "input": "x\u001bfy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b0y",
+  "output": "x"
+ },
+ {
+  "input": "x0y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b0ay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001b01y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b0[y",
+  "output": "x[y"
+ },
+ {
+  "input": "x\u001b0)y",
+  "output": "x)y"
+ },
+ {
+  "input": "x\u001b0my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b0\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001b0y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b0y",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x"
+ },
+ {
+  "input": "x1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b1ay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001b11y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b1[y",
+  "output": "x[y"
+ },
+ {
+  "input": "x\u001b1)y",
+  "output": "x)y"
+ },
+ {
+  "input": "x\u001b1my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b1\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b;y",
+  "output": "x"
+ },
+ {
+  "input": "x;y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b;ay",
+  "output": "x\u001b;ay"
+ },
+ {
+  "input": "x\u001b;1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b;[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b;)y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b;my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b;\\y",
+  "output": "x\u001b;\\y"
+ },
+ {
+  "input": "x\u001b;y",
+  "output": "x\u001b;"
+ },
+ {
+  "input": "x\u001b;y",
+  "output": "x\u001b;y"
+ },
+ {
+  "input": "x\u001b:y",
+  "output": "x\u001b:y"
+ },
+ {
+  "input": "x:y",
+  "output": "x:y"
+ },
+ {
+  "input": "x\u001b:ay",
+  "output": "x\u001b:ay"
+ },
+ {
+  "input": "x\u001b:1y",
+  "output": "x\u001b:1y"
+ },
+ {
+  "input": "x\u001b:[y",
+  "output": "x\u001b:[y"
+ },
+ {
+  "input": "x\u001b:)y",
+  "output": "x\u001b:)y"
+ },
+ {
+  "input": "x\u001b:my",
+  "output": "x\u001b:my"
+ },
+ {
+  "input": "x\u001b:\\y",
+  "output": "x\u001b:\\y"
+ },
+ {
+  "input": "x\u001b:y",
+  "output": "x\u001b:"
+ },
+ {
+  "input": "x\u001b:y",
+  "output": "x\u001b:y"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x"
+ },
+ {
+  "input": "x[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b[ay",
+  "output": "x\u001b[ay"
+ },
+ {
+  "input": "x\u001b[1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b[[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b[)y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b[my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b[\\y",
+  "output": "x\u001b[\\y"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b["
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b[y"
+ },
+ {
+  "input": "x\u001b]y",
+  "output": "x"
+ },
+ {
+  "input": "x]y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b]ay",
+  "output": "x\u001b]ay"
+ },
+ {
+  "input": "x\u001b]1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b][y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b])y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b]my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b]\\y",
+  "output": "x\u001b]\\y"
+ },
+ {
+  "input": "x\u001b]y",
+  "output": "x\u001b]"
+ },
+ {
+  "input": "x\u001b]y",
+  "output": "x\u001b]y"
+ },
+ {
+  "input": "x\u001b(y",
+  "output": "x"
+ },
+ {
+  "input": "x(y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b(ay",
+  "output": "x\u001b(ay"
+ },
+ {
+  "input": "x\u001b(1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b([y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b()y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b(my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b(\\y",
+  "output": "x\u001b(\\y"
+ },
+ {
+  "input": "x\u001b(y",
+  "output": "x\u001b("
+ },
+ {
+  "input": "x\u001b(y",
+  "output": "x\u001b(y"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x"
+ },
+ {
+  "input": "x)y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b)ay",
+  "output": "x\u001b)ay"
+ },
+ {
+  "input": "x\u001b)1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b)[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b))y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b)my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b)\\y",
+  "output": "x\u001b)\\y"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b)"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b)y"
+ },
+ {
+  "input": "x\u001b#y",
+  "output": "x"
+ },
+ {
+  "input": "x#y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b#ay",
+  "output": "x\u001b#ay"
+ },
+ {
+  "input": "x\u001b#1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b#[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b#)y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b#my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b#\\y",
+  "output": "x\u001b#\\y"
+ },
+ {
+  "input": "x\u001b#y",
+  "output": "x\u001b#"
+ },
+ {
+  "input": "x\u001b#y",
+  "output": "x\u001b#y"
+ },
+ {
+  "input": "x\u001b?y",
+  "output": "x"
+ },
+ {
+  "input": "x?y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b?ay",
+  "output": "x\u001b?ay"
+ },
+ {
+  "input": "x\u001b?1y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b?[y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b?)y",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b?my",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b?\\y",
+  "output": "x\u001b?\\y"
+ },
+ {
+  "input": "x\u001b?y",
+  "output": "x\u001b?"
+ },
+ {
+  "input": "x\u001b?y",
+  "output": "x\u001b?y"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "xy"
+ },
+ {
+  "input": "xmy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bmay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001bm1y",
+  "output": "x1y"
+ },
+ {
+  "input": "x\u001bm[y",
+  "output": "x[y"
+ },
+ {
+  "input": "x\u001bm)y",
+  "output": "x)y"
+ },
+ {
+  "input": "x\u001bmmy",
+  "output": "xmy"
+ },
+ {
+  "input": "x\u001bm\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "x"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bPy",
+  "output": "xy"
+ },
+ {
+  "input": "xPy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bPay",
+  "output": "xay"
+ },
+ {
+  "input": "x\u001bP1y",
+  "output": "x1y"
+ },
+ {
+  "input": "x\u001bP[y",
+  "output": "x[y"
+ },
+ {
+  "input": "x\u001bP)y",
+  "output": "x)y"
+ },
+ {
+  "input": "x\u001bPmy",
+  "output": "xmy"
+ },
+ {
+  "input": "x\u001bP\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001bPy",
+  "output": "x"
+ },
+ {
+  "input": "x\u001bPy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001b_y",
+  "output": "x\u001b_y"
+ },
+ {
+  "input": "x_y",
+  "output": "x_y"
+ },
+ {
+  "input": "x\u001b_ay",
+  "output": "x\u001b_ay"
+ },
+ {
+  "input": "x\u001b_1y",
+  "output": "x\u001b_1y"
+ },
+ {
+  "input": "x\u001b_[y",
+  "output": "x\u001b_[y"
+ },
+ {
+  "input": "x\u001b_)y",
+  "output": "x\u001b_)y"
+ },
+ {
+  "input": "x\u001b_my",
+  "output": "x\u001b_my"
+ },
+ {
+  "input": "x\u001b_\\y",
+  "output": "x\u001b_\\y"
+ },
+ {
+  "input": "x\u001b_y",
+  "output": "x\u001b_"
+ },
+ {
+  "input": "x\u001b_y",
+  "output": "x\u001b_y"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\\y",
+  "output": "x\\y"
+ },
+ {
+  "input": "x\u001b\\ay",
+  "output": "x\u001b\\ay"
+ },
+ {
+  "input": "x\u001b\\1y",
+  "output": "x\u001b\\1y"
+ },
+ {
+  "input": "x\u001b\\[y",
+  "output": "x\u001b\\[y"
+ },
+ {
+  "input": "x\u001b\\)y",
+  "output": "x\u001b\\)y"
+ },
+ {
+  "input": "x\u001b\\my",
+  "output": "x\u001b\\my"
+ },
+ {
+  "input": "x\u001b\\\\y",
+  "output": "x\u001b\\\\y"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\u001b\u0007y",
+  "output": "x\u001b\u0007y"
+ },
+ {
+  "input": "x\u0007y",
+  "output": "x\u0007y"
+ },
+ {
+  "input": "x\u001b\u0007ay",
+  "output": "x\u001b\u0007ay"
+ },
+ {
+  "input": "x\u001b\u00071y",
+  "output": "x\u001b\u00071y"
+ },
+ {
+  "input": "x\u001b\u0007[y",
+  "output": "x\u001b\u0007[y"
+ },
+ {
+  "input": "x\u001b\u0007)y",
+  "output": "x\u001b\u0007)y"
+ },
+ {
+  "input": "x\u001b\u0007my",
+  "output": "x\u001b\u0007my"
+ },
+ {
+  "input": "x\u001b\u0007\\y",
+  "output": "x\u001b\u0007\\y"
+ },
+ {
+  "input": "x\u001b\u0007y",
+  "output": "x\u001b\u0007"
+ },
+ {
+  "input": "x\u001b\u0007y",
+  "output": "x\u001b\u0007y"
+ },
+ {
+  "input": "x\u001b\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x"
+ },
+ {
+  "input": "x\u001b\u001bay",
+  "output": "x\u001b\u001bay"
+ },
+ {
+  "input": "x\u001b\u001b1y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001b\u001b[y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001b\u001b)y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001b\u001bmy",
+  "output": "x\u001by"
+ },
+ {
+  "input": "x\u001b\u001b\\y",
+  "output": "x\u001b\u001b\\y"
+ },
+ {
+  "input": "x\u001b\u001by",
+  "output": "x\u001b\u001b"
+ },
+ {
+  "input": "x\u001b\u001by",
+  "output": "x\u001b\u001by"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "xy",
+  "output": "x"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "x\u001by"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "xy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x\u001b1y"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b[y"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b)y"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "x\u001bmy"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "xy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x\u001b1y"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b[y"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b)y"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "x\u001bmy"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "xy",
+  "output": "xy"
+ },
+ {
+  "input": "x\u001bay",
+  "output": "x\u001bay"
+ },
+ {
+  "input": "x\u001b1y",
+  "output": "x\u001b1y"
+ },
+ {
+  "input": "x\u001b[y",
+  "output": "x\u001b[y"
+ },
+ {
+  "input": "x\u001b)y",
+  "output": "x\u001b)y"
+ },
+ {
+  "input": "x\u001bmy",
+  "output": "x\u001bmy"
+ },
+ {
+  "input": "x\u001b\\y",
+  "output": "x\u001b\\y"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001b"
+ },
+ {
+  "input": "x\u001by",
+  "output": "x\u001by"
+ },
+ {
+  "input": "",
+  "strip": "",
+  "complete": "",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "plain",
+  "strip": "plain",
+  "complete": "plain",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b",
+  "strip": "\u001b",
+  "complete": "",
+  "pending": "\u001b",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[",
+  "strip": "\u001b[",
+  "complete": "",
+  "pending": "\u001b[",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[31",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[31",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[31m",
+  "strip": "",
+  "complete": "\u001b[31m",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]",
+  "strip": "\u001b]",
+  "complete": "",
+  "pending": "\u001b]",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]0;title",
+  "strip": "itle",
+  "complete": "",
+  "pending": "\u001b]0;title",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]0;title\u0007",
+  "strip": "",
+  "complete": "\u001b]0;title\u0007",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "a\u001b]0;window title\u001b\\b\n",
+  "strip": "ab\n",
+  "complete": "a\u001b]0;window title\u001b\\b\n",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b\\",
+  "strip": "\u001b\\",
+  "complete": "\u001b\\",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]x\u0007\u001b]y",
+  "strip": "",
+  "complete": "\u001b]x\u0007",
+  "pending": "\u001b]y",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]abc\u001b\\",
+  "strip": "",
+  "complete": "\u001b]abc\u001b\\",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "x\u001b]y",
+  "strip": "x",
+  "complete": "x",
+  "pending": "\u001b]y",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]abc\u001b",
+  "strip": "\u001b]abc\u001b",
+  "complete": "",
+  "pending": "\u001b]abc\u001b",
+  "kind": "split"
+ },
+ {
+  "input": "\u001bPabc",
+  "strip": "abc",
+  "complete": "\u001bPabc",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b^abc",
+  "strip": "\u001b^abc",
+  "complete": "\u001b^abc",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b_abc",
+  "strip": "\u001b_abc",
+  "complete": "\u001b_abc",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "",
+  "strip": "",
+  "complete": "",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "31",
+  "strip": "",
+  "complete": "",
+  "pending": "31",
+  "kind": "split"
+ },
+ {
+  "input": "31m",
+  "strip": "",
+  "complete": "31m",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "abc",
+  "strip": "abc",
+  "complete": "abc",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[1;2",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[1;2",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[1:2",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[1:2",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[12;34;56;78",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[12;34;56;78",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[12345",
+  "strip": "",
+  "complete": "\u001b[12345",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[?25",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[?25",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[?25l",
+  "strip": "",
+  "complete": "\u001b[?25l",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]",
+  "strip": "\u001b]",
+  "complete": "",
+  "pending": "\u001b]",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]0;",
+  "strip": ";",
+  "complete": "",
+  "pending": "\u001b]0;",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]0;",
+  "strip": "",
+  "complete": "\u001b]0;",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]0;abc\u001b\\",
+  "strip": "",
+  "complete": "\u001b]0;abc\u001b\\",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[999",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[999",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[1;",
+  "strip": ";",
+  "complete": "",
+  "pending": "\u001b[1;",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[;1",
+  "strip": "",
+  "complete": "",
+  "pending": "\u001b[;1",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[1:",
+  "strip": ":",
+  "complete": "",
+  "pending": "\u001b[1:",
+  "kind": "split"
+ },
+ {
+  "input": "before\u001b",
+  "strip": "before\u001b",
+  "complete": "before",
+  "pending": "\u001b",
+  "kind": "split"
+ },
+ {
+  "input": "a\u001b]0;window ",
+  "strip": "a;window ",
+  "complete": "a",
+  "pending": "\u001b]0;window ",
+  "kind": "split"
+ },
+ {
+  "input": "a\u001b]0;window title\u001b",
+  "strip": "a;window title\u001b",
+  "complete": "a",
+  "pending": "\u001b]0;window title\u001b",
+  "kind": "split"
+ },
+ {
+  "input": "\u001bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "strip": "\u001bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "complete": "\u001bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "strip": "\u001b]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "complete": "\u001b]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u001b[",
+  "strip": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u001b[",
+  "complete": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "pending": "\u001b[",
+  "kind": "split"
+ },
+ {
+  "input": "é\u001b[31",
+  "strip": "é",
+  "complete": "é",
+  "pending": "\u001b[31",
+  "kind": "split"
+ },
+ {
+  "input": "😀\u001b]",
+  "strip": "😀\u001b]",
+  "complete": "😀",
+  "pending": "\u001b]",
+  "kind": "split"
+ },
+ {
+  "input": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀\u001b]",
+  "strip": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀\u001b]",
+  "complete": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+  "pending": "\u001b]",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[31m😀",
+  "strip": "😀",
+  "complete": "\u001b[31m😀",
+  "pending": "",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[",
+  "strip": "\u001b[",
+  "complete": "",
+  "pending": "\u001b[",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[]",
+  "strip": "\u001b[]",
+  "complete": "",
+  "pending": "\u001b[]",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[#",
+  "strip": "\u001b[#",
+  "complete": "",
+  "pending": "\u001b[#",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[?",
+  "strip": "\u001b[?",
+  "complete": "",
+  "pending": "\u001b[?",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[(",
+  "strip": "\u001b[(",
+  "complete": "",
+  "pending": "\u001b[(",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[)",
+  "strip": "\u001b[)",
+  "complete": "",
+  "pending": "\u001b[)",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[;",
+  "strip": "\u001b[;",
+  "complete": "",
+  "pending": "\u001b[;",
+  "kind": "split"
+ },
+ {
+  "input": "\u001b[:",
+  "strip": "\u001b[:",
+  "complete": "\u001b[:",
+  "pending": "",
+  "kind": "split"
+ }
+]

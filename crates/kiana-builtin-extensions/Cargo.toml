@@ -1,0 +1,48 @@
+[package]
+name = "kiana-builtin-extensions"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-builtin-extensions：mcp / codemode / llama.cpp / tool-search 四个内置扩展。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+globset = { workspace = true }
+sha2 = { workspace = true }
+futures = { workspace = true }
+url = { workspace = true }
+dirs = { workspace = true }
+chrono = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-ui-kit = { workspace = true }
+kiana-tools = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-extensions = { workspace = true }
+kiana-mcp = { workspace = true }
+# MCP stdio 子进程沙箱：与 bash/execute_bash 共用 ExecutionPolicy / SandboxManager。
+kiana-sandbox = { workspace = true }
+kiana-codemode = { workspace = true }
+kiana-json = { workspace = true }
+base64 = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+insta = { workspace = true }
+wiremock = { workspace = true }
+reqwest = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

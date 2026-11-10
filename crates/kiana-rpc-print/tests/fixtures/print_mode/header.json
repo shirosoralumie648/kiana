@@ -1,0 +1,11 @@
+{
+  "node": "v26.12.1",
+  "source": "print-mode.ts: writeRawStdout(`${JSON.stringify(session.sessionManager.getHeader())}\\n`)",
+  "header": {
+    "type": "session",
+    "id": "session-1",
+    "timestamp": "2024-12-03T14:00:00.000Z",
+    "cwd": "/tmp/project"
+  },
+  "line": "{\"type\":\"session\",\"id\":\"session-1\",\"timestamp\":\"2024-12-03T14:00:00.000Z\",\"cwd\":\"/tmp/project\"}\n"
+}

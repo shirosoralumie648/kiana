@@ -1,0 +1,12 @@
+{
+  "note": "Error texts observed from quickjs-ng 0.16.2 / rquickjs 0.14.0 (the engine pinned by spec/design-extension-runtime.md §1.2). Recorded by the probe programs under /home/ctyun/kiana-work/scratch/engine-core-probe (limits.rs, misc.rs) and asserted by tests/engine.rs so an engine upgrade cannot silently change user-visible messages.",
+  "interrupt": { "name": "InternalError", "message": "interrupted" },
+  "out_of_memory": { "name": "InternalError", "message": "out of memory" },
+  "out_of_memory_null_fallback": {
+    "name": "Error",
+    "message": "null",
+    "note": "quickjs.c JS_ThrowError2 falls back to JS_NULL when the InternalError object cannot be allocated while the heap is already at the limit; the message then goes through String(null)."
+  },
+  "stack_overflow": { "name": "RangeError", "message": "Maximum call stack size exceeded" },
+  "unknown_host_kind_prefix": "unknown host kind: "
+}

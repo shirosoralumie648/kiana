@@ -1,0 +1,263 @@
+{
+  "model": {
+    "id": "golden-deployment",
+    "name": "Golden",
+    "api": "azure-openai-responses",
+    "provider": "azure",
+    "baseUrl": "",
+    "reasoning": true,
+    "thinkingLevelMap": {
+      "off": null,
+      "minimal": null,
+      "low": "low",
+      "medium": "medium",
+      "high": "high",
+      "xhigh": "xhigh",
+      "max": "max"
+    },
+    "input": [
+      "text",
+      "image"
+    ],
+    "cost": {
+      "input": 1,
+      "output": 2,
+      "cacheRead": 0.5,
+      "cacheWrite": 0
+    },
+    "contextWindow": 128000,
+    "maxTokens": 8192,
+    "samplingParams": {
+      "top_p": 0.8
+    },
+    "compat": {
+      "supportsStrictMode": true,
+      "supportsOpenAIGrammarTools": true,
+      "supportsAdditionalTools": true,
+      "supportsToolSearch": true,
+      "supportsMidConvoSystemMessages": true
+    }
+  },
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "System prompt",
+        "toolsAdded": [
+          {
+            "name": "read",
+            "description": "Read a file",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "query",
+            "description": "Grammar tool",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "input"
+              ]
+            },
+            "constrainedSampling": {
+              "type": "grammar",
+              "variants": {
+                "openai_lark": "start: /.+/"
+              }
+            }
+          }
+        ],
+        "timestamp": 0
+      },
+      {
+        "role": "user",
+        "content": "Read it",
+        "timestamp": 1700000000001
+      },
+      {
+        "role": "assistant",
+        "api": "azure-openai-responses",
+        "provider": "azure",
+        "model": "golden-deployment",
+        "content": [
+          {
+            "type": "toolCall",
+            "id": "call_1|fc_1",
+            "name": "read",
+            "arguments": {
+              "path": "README.md"
+            }
+          }
+        ],
+        "usage": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 0,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        },
+        "stopReason": "toolUse",
+        "timestamp": 1700000000002
+      },
+      {
+        "role": "toolResult",
+        "toolCallId": "call_1|fc_1",
+        "toolName": "read",
+        "content": [
+          {
+            "type": "text",
+            "text": "contents"
+          }
+        ],
+        "isError": false,
+        "timestamp": 1700000000003
+      },
+      {
+        "role": "user",
+        "content": "Thanks",
+        "timestamp": 1700000000004
+      }
+    ]
+  },
+  "options": {
+    "azureBaseUrl": "https://my-resource.openai.azure.com",
+    "azureApiVersion": "2024-12-01-preview",
+    "azureDeploymentName": "my-deployment",
+    "sessionId": "session-xyz",
+    "maxTokens": 1234,
+    "temperature": 0.3,
+    "toolChoice": {
+      "type": "function",
+      "name": "read"
+    },
+    "reasoningEffort": "high",
+    "reasoningSummary": "detailed",
+    "samplingParams": {
+      "top_p": 0.9
+    }
+  },
+  "params": {
+    "model": "my-deployment",
+    "input": [
+      {
+        "type": "additional_tools",
+        "role": "developer",
+        "tools": [
+          {
+            "type": "function",
+            "name": "read",
+            "description": "Read a file",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ]
+            },
+            "strict": false
+          },
+          {
+            "type": "custom",
+            "name": "query",
+            "description": "Grammar tool",
+            "format": {
+              "type": "grammar",
+              "syntax": "lark",
+              "definition": "start: /.+/"
+            }
+          }
+        ]
+      },
+      {
+        "role": "developer",
+        "content": "System prompt"
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Read it"
+          }
+        ]
+      },
+      {
+        "type": "function_call",
+        "id": "fc_1",
+        "call_id": "call_1",
+        "name": "read",
+        "arguments": "{\"path\":\"README.md\"}"
+      },
+      {
+        "type": "function_call_output",
+        "call_id": "call_1",
+        "output": "contents"
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Thanks"
+          }
+        ]
+      }
+    ],
+    "stream": true,
+    "prompt_cache_key": "session-xyz",
+    "store": false,
+    "max_output_tokens": 1234,
+    "temperature": 0.3,
+    "tool_choice": {
+      "type": "function",
+      "name": "read"
+    },
+    "reasoning": {
+      "effort": "high",
+      "summary": "detailed"
+    },
+    "include": [
+      "reasoning.encrypted_content"
+    ],
+    "top_p": 0.9
+  },
+  "url": "https://my-resource.openai.azure.com/openai/v1/responses?api-version=2024-12-01-preview",
+  "headers": {
+    "accept": "application/json",
+    "api-key": "azure-key",
+    "content-type": "application/json",
+    "user-agent": "kiana/1.4.0 (linux; node/v26.12.1; x64)",
+    "x-stainless-arch": "x64",
+    "x-stainless-lang": "js",
+    "x-stainless-os": "Linux",
+    "x-stainless-package-version": "7.19.0",
+    "x-stainless-retry-count": "0",
+    "x-stainless-runtime": "node",
+    "x-stainless-runtime-version": "v26.12.1"
+  }
+}

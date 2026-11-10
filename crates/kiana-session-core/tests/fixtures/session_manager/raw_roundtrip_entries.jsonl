@@ -1,0 +1,3 @@
+{"type":"message","id":"u1","parentId":null,"timestamp":"2026-01-01T00:00:01.000Z","extraField":{"keep":true},"message":{"role":"user","content":"hi","timestamp":1,"messageExtra":7}}
+{"type":"custom","customType":"ext","data":{"z":1},"customExtra":"keep?","id":"c1","parentId":"u1","timestamp":"2026-01-01T00:00:02.000Z"}
+{"type":"compaction","id":"k1","parentId":"c1","timestamp":"2026-01-01T00:00:03.000Z","summary":"s","firstKeptEntryId":"u1","tokensBefore":10,"compactionExtra":true}

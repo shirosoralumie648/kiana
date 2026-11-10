@@ -1,0 +1,1179 @@
+{
+ "models": [
+  {
+   "id": "é",
+   "name": "é",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "É",
+   "name": "É",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "éx",
+   "name": "éx",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "Éx",
+   "name": "Éx",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "a",
+   "name": "a",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "a1",
+   "name": "a1",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "a2",
+   "name": "a2",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "😀",
+   "name": "😀",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "[abc1",
+   "name": "[abc1",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "[abcX",
+   "name": "[abcX",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "{}x",
+   "name": "{}x",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": ".hidden",
+   "name": ".hidden",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "ab",
+   "name": "ab",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "A1",
+   "name": "A1",
+   "api": "openai-completions",
+   "provider": "p",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": ".hidden",
+   "name": ".hidden",
+   "api": "openai-completions",
+   "provider": "dotted",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "inner",
+   "name": "inner",
+   "api": "openai-completions",
+   "provider": "dotted",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  },
+  {
+   "id": "a1",
+   "name": "a1",
+   "api": "openai-completions",
+   "provider": "other",
+   "baseUrl": "https://example.invalid",
+   "reasoning": true,
+   "input": [
+    "text"
+   ],
+   "cost": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0
+   },
+   "contextWindow": 128000,
+   "maxTokens": 8192
+  }
+ ],
+ "cases": [
+  {
+   "name": "p/é*",
+   "patterns": [
+    "p/é*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/É*",
+   "patterns": [
+    "p/É*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/?",
+   "patterns": [
+    "p/?"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/??",
+   "patterns": [
+    "p/??"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[é]",
+   "patterns": [
+    "p/[é]"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[É]",
+   "patterns": [
+    "p/[É]"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[[:alpha:]]*",
+   "patterns": [
+    "p/[[:alpha:]]*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[[:alnum:]]*",
+   "patterns": [
+    "p/[[:alnum:]]*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[[:upper:]]*",
+   "patterns": [
+    "p/[[:upper:]]*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[[:digit:]]*",
+   "patterns": [
+    "p/[[:digit:]]*"
+   ],
+   "scopedModels": [],
+   "diagnostics": [
+    {
+     "type": "warning",
+     "code": "no-match",
+     "message": "No models match pattern \"p/[[:digit:]]*\"",
+     "pattern": "p/[[:digit:]]*"
+    }
+   ]
+  },
+  {
+   "name": "p/?(a1)",
+   "patterns": [
+    "p/?(a1)"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/*(a1)",
+   "patterns": [
+    "p/*(a1)"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/+(a?)",
+   "patterns": [
+    "p/+(a?)"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/@(a1|a2)*",
+   "patterns": [
+    "p/@(a1|a2)*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/!(a2)*",
+   "patterns": [
+    "p/!(a2)*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[abc*",
+   "patterns": [
+    "p/[abc*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/{}*",
+   "patterns": [
+    "p/{}*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "*/*",
+   "patterns": [
+    "*/*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "dotted/inner",
+     "thinkingLevel": null
+    },
+    {
+     "model": "other/a1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "**/",
+   "patterns": [
+    "**/"
+   ],
+   "scopedModels": [],
+   "diagnostics": [
+    {
+     "type": "warning",
+     "code": "no-match",
+     "message": "No models match pattern \"**/\"",
+     "pattern": "**/"
+    }
+   ]
+  },
+  {
+   "name": "p/*",
+   "patterns": [
+    "p/*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/**",
+   "patterns": [
+    "p/**"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/*/*",
+   "patterns": [
+    "p/*/*"
+   ],
+   "scopedModels": [],
+   "diagnostics": [
+    {
+     "type": "warning",
+     "code": "no-match",
+     "message": "No models match pattern \"p/*/*\"",
+     "pattern": "p/*/*"
+    }
+   ]
+  },
+  {
+   "name": "dotted/*",
+   "patterns": [
+    "dotted/*"
+   ],
+   "scopedModels": [
+    {
+     "model": "dotted/inner",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "dotted/**",
+   "patterns": [
+    "dotted/**"
+   ],
+   "scopedModels": [
+    {
+     "model": "dotted/inner",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "inner",
+   "patterns": [
+    "inner"
+   ],
+   "scopedModels": [
+    {
+     "model": "dotted/inner",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[!a]*",
+   "patterns": [
+    "p/[!a]*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abc1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/[abcX",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/{}x",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[a-]*",
+   "patterns": [
+    "p/[a-]*"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a1",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a2",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/ab",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/A1",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/{a,a1}",
+   "patterns": [
+    "p/{a,a1}"
+   ],
+   "scopedModels": [],
+   "diagnostics": [
+    {
+     "type": "warning",
+     "code": "no-match",
+     "message": "No models match pattern \"p/{a,a1}\"",
+     "pattern": "p/{a,a1}"
+    }
+   ]
+  },
+  {
+   "name": "p/É?",
+   "patterns": [
+    "p/É?"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/éx",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/Éx",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  },
+  {
+   "name": "p/[[:graph:]]",
+   "patterns": [
+    "p/[[:graph:]]"
+   ],
+   "scopedModels": [
+    {
+     "model": "p/é",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/É",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/a",
+     "thinkingLevel": null
+    },
+    {
+     "model": "p/😀",
+     "thinkingLevel": null
+    }
+   ],
+   "diagnostics": []
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "all": {
+  "traces": [
+   "d",
+   "b",
+   "c",
+   "a"
+  ],
+  "cursor": null
+ },
+ "limit1p1": {
+  "traces": [
+   "d"
+  ],
+  "cursor": "[30000,\"00000000-0000-4000-8000-000000000000:4\"]"
+ },
+ "limit1p2": {
+  "traces": [
+   "b"
+  ],
+  "cursor": "[20000,\"00000000-0000-4000-8000-000000000000:2\"]"
+ },
+ "cursorNull": {
+  "traces": [
+   "d",
+   "b",
+   "c",
+   "a"
+  ],
+  "cursor": null
+ },
+ "cursorEmptyArray": {
+  "traces": [],
+  "cursor": null
+ },
+ "cursorString": {
+  "traces": [],
+  "cursor": null
+ },
+ "cursorObject": {
+  "traces": [],
+  "cursor": null
+ },
+ "cursorNumber": {
+  "traces": [],
+  "cursor": null
+ },
+ "cursorBad": {
+  "errorKind": "parse"
+ },
+ "limitInfinity": {
+  "traces": [
+   "d",
+   "b",
+   "c",
+   "a"
+  ],
+  "cursor": null
+ },
+ "limitFraction": {
+  "traces": [
+   "d",
+   "b"
+  ],
+  "cursor": "[20000,\"00000000-0000-4000-8000-000000000000:2\"]"
+ },
+ "limitNaN": {
+  "traces": [],
+  "cursor": null
+ },
+ "limitZero": {
+  "errorKind": "type"
+ },
+ "limitNeg1": {
+  "traces": [
+   "d",
+   "b",
+   "c"
+  ],
+  "cursor": "[20000,\"00000000-0000-4000-8000-000000000000:3\"]"
+ },
+ "limitNeg2": {
+  "traces": [
+   "d",
+   "b"
+  ],
+  "cursor": "[20000,\"00000000-0000-4000-8000-000000000000:2\"]"
+ },
+ "limitNeg3": {
+  "traces": [
+   "d"
+  ],
+  "cursor": "[30000,\"00000000-0000-4000-8000-000000000000:4\"]"
+ },
+ "three-all": {
+  "traces": [
+   "t3",
+   "t2",
+   "t1"
+  ],
+  "cursor": null
+ },
+ "three-limit2": {
+  "traces": [
+   "t3",
+   "t2"
+  ],
+  "cursor": "[30000,\"00000000-0000-4000-8000-000000000000:2\"]"
+ },
+ "three-limit2page2": {
+  "traces": [
+   "t1"
+  ],
+  "cursor": null
+ },
+ "three-limit3": {
+  "traces": [
+   "t3",
+   "t2",
+   "t1"
+  ],
+  "cursor": null
+ },
+ "three-limit4": {
+  "traces": [
+   "t3",
+   "t2",
+   "t1"
+  ],
+  "cursor": null
+ },
+ "three-limitNeg1": {
+  "traces": [
+   "t3",
+   "t2"
+  ],
+  "cursor": "[30000,\"00000000-0000-4000-8000-000000000000:2\"]"
+ },
+ "three-limitNeg2": {
+  "traces": [
+   "t3"
+  ],
+  "cursor": "[40000,\"00000000-0000-4000-8000-000000000000:3\"]"
+ },
+ "three-limitNeg3": {
+  "errorKind": "type"
+ },
+ "three-limitNeg5": {
+  "errorKind": "type"
+ },
+ "empty-limit0": {
+  "traces": [],
+  "cursor": null
+ },
+ "empty-limitNeg1": {
+  "errorKind": "type"
+ },
+ "empty-limitPos": {
+  "traces": [],
+  "cursor": null
+ }
+}

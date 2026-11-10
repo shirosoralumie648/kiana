@@ -1,0 +1,71 @@
+[package]
+name = "kiana-tui"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/tui：tui-core + tui-text + tui-components + terminal 全部合为一个 crate。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+unicode-width = { workspace = true }
+unicode-segmentation = { workspace = true }
+# CJK 词典引擎的 NFKC 归一化（ICU `CjkBreakEngine` 对词典段先做 NFKC）；见 src/word_dict.rs。
+unicode-normalization = { workspace = true }
+# `Intl.Segmenter("word")`（CJK 词典 + 泰/老挝词边界）；见 src/text.rs 的模块文档。
+icu_segmenter = { workspace = true }
+# `localeCompare`（autocomplete 的目录/条目排序）；locale 从 LC_ALL/LC_MESSAGES/LANG 解析，
+# 空/C/POSIX → en-US（ARCHITECTURE.md §6.4、§8 第 27 条）。
+icu_collator = { workspace = true }
+icu_locale = { workspace = true }
+# `Math.atan2`（见 src/oklab.rs 的模块文档）。
+libm = { workspace = true }
+regex = { workspace = true }
+fancy-regex = { workspace = true }
+base64 = { workspace = true }
+url = { workspace = true }
+kiana-json = { workspace = true }
+# `ProcessTerminal` 的 TTY 层（termios/ioctl/isatty/kill(SIGWINCH)/localtime_r），见 src/terminal.rs。
+libc = { workspace = true }
+# `homedir()`（`shortenImagePath` 的 `~` 压缩）：`$HOME` / `getpwuid_r` / `USERPROFILE`，与 `node:os` 一致。
+dirs = { workspace = true }
+# `Math.random()`（`allocateImageId`）：OS 熵，避免新增 `rand` 依赖。
+getrandom = { workspace = true }
+# 剪贴板读取在 Linux 上需要走平台命令（xclip/xsel/wl-paste）与 PowerShell，均为 tokio 进程。
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+async-trait = { workspace = true }
+futures-core = { workspace = true }
+
+# 原生平台层（src/native/**，对应 native/{clipboard.h,linux,darwin,win32}）。逐平台可选，
+# 见 ARCHITECTURE.md §8 第 17 条与 GAPS G1.5 的决策 (a)：实现在 kiana-tui 内部，feature 默认关闭，
+# `native` 聚合 feature 在支持的平台上拉起对应后端。
+[target.'cfg(target_os = "linux")'.dependencies]
+x11rb = { workspace = true, optional = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = { workspace = true, optional = true }
+objc2-foundation = { workspace = true, optional = true }
+objc2-app-kit = { workspace = true, optional = true }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { workspace = true, optional = true }
+
+[features]
+default = []
+# Linux X11 剪贴板（libxcb 等价物；无 DISPLAY 时仍返回 None）。
+x11 = ["dep:x11rb"]
+# Darwin AppKit 剪贴板 + 修饰键。
+darwin = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
+# Win32 剪贴板 + 修饰键 + VT 输入。
+win32 = ["dep:windows-sys"]
+# 平台自动选择：构建目标支持且该平台后端开启时才真正启用（见 src/native/mod.rs）。
+native = []
+
+[[test]]
+name = "native_clipboard"
+path = "tests/native_clipboard.rs"

@@ -1,0 +1,23 @@
+{
+ "call_duration": "{\"name\":\"t\",\"status\":\"ok\",\"durationMs\":3}",
+ "call_duration_frac": "{\"name\":\"t\",\"status\":\"ok\",\"durationMs\":1.5}",
+ "call_duration_small": "{\"name\":\"t\",\"status\":\"ok\",\"durationMs\":0.000001}",
+ "call_duration_exp": "{\"name\":\"t\",\"status\":\"ok\",\"durationMs\":1e-7}",
+ "host_now_int": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":1000}",
+ "host_now_epoch": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":1700000000000}",
+ "host_now_negzero": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":0}",
+ "host_now_micro": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":0.000001}",
+ "host_now_big": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":1e+21}",
+ "host_now_nan": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":null}",
+ "host_now_inf": "{\"type\":\"result\",\"id\":1,\"ok\":true,\"now\":null}",
+ "vm_start": "{\"code\":\"1\",\"tools\":[],\"globals\":[],\"memoryLimitBytes\":33554432,\"store\":{},\"deterministic\":{\"startedAt\":5,\"seed\":7}}",
+ "source_options": "{\"maxOutputTokens\":1,\"timeoutMs\":1500}",
+ "store_writes": "{\"set\":{\"1\":2,\"2\":1,\"b\":3},\"delete\":[]}",
+ "store_writes_index_order": "{\"set\":{\"2\":\"b\",\"10\":\"a\",\"01\":\"c\"},\"delete\":[\"k\"]}",
+ "outcome_properties": "{\"ok\":false,\"message\":\"m\",\"properties\":{\"2\":2,\"10\":1,\"a\":3}}",
+ "vm_store": "{\"code\":\"1\",\"tools\":[],\"globals\":[],\"store\":{\"1\":\"a\",\"2\":\"b\"}}",
+ "result_null_value": "{\"ok\":true,\"value\":null,\"output\":[],\"calls\":[],\"storeWrites\":{\"set\":{},\"delete\":[]}}",
+ "outcome_null_value": "{\"ok\":true,\"value\":null}",
+ "host_call_null_args": "{\"id\":1,\"target\":\"tool\",\"name\":\"x\",\"args\":null}",
+ "host_call_absent_args": "{\"id\":1,\"target\":\"tool\",\"name\":\"x\"}"
+}

@@ -1,0 +1,82 @@
+{
+  "number_vectors": [
+    {
+      "value": 2.5,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":2.5}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":2.5}"
+    },
+    {
+      "value": 1,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":1}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":1}"
+    },
+    {
+      "value": 0.5,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0.5}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0.5}"
+    },
+    {
+      "value": 100,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":100}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":100}"
+    },
+    {
+      "value": 0.000001,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0.000001}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0.000001}"
+    },
+    {
+      "value": 0.0000015,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0.0000015}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0.0000015}"
+    },
+    {
+      "value": 0.000003,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0.000003}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0.000003}"
+    },
+    {
+      "value": 9300000000000000000,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":9300000000000000000}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":9300000000000000000}"
+    },
+    {
+      "value": 100000000000000000000,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":100000000000000000000}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":100000000000000000000}"
+    },
+    {
+      "value": 0,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0}"
+    },
+    {
+      "value": 123456789012345680000,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":123456789012345680000}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":123456789012345680000}"
+    },
+    {
+      "value": 0.0000015,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":0.0000015}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":0.0000015}"
+    },
+    {
+      "value": 1e+21,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":1e+21}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":1e+21}"
+    },
+    {
+      "value": 1e-7,
+      "context_usage_json": "{\"tokens\":1,\"contextWindow\":1,\"percent\":1e-7}",
+      "tool_input_json": "{\"command\":\"true\",\"timeout\":1e-7}"
+    }
+  ],
+  "grep_details_fractional_limit": "{\"matchLimitReached\":2.5}",
+  "find_details_fractional_limit": "{\"resultLimitReached\":2.5}",
+  "ls_details_fractional_limit": "{\"entryLimitReached\":2.5}",
+  "grep_notice_fractional_limit": "2.5 matches limit reached. Use limit=5 for more, or refine pattern",
+  "find_notice_fractional_limit": "2.5 results limit reached. Use limit=5 for more, or refine pattern",
+  "ls_notice_fractional_limit": "2.5 entries limit reached. Use limit=5 for more",
+  "context_usage_null_json": "{\"tokens\":null,\"contextWindow\":0,\"percent\":null}",
+  "cache_warming_decision_json": "{\"type\":\"cache_warming_decision\",\"warmCost\":0.000003,\"missCost\":0.0000015,\"continuationProbability\":9300000000000000000,\"action\":\"warm\"}"
+}

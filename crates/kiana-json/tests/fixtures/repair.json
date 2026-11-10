@@ -1,0 +1,89 @@
+{
+ "note": "expected = repairJson(input) (packages/ai/src/utils/json-parse.ts)",
+ "cases": [
+  {
+   "input": "{\"a\":\"\\url{x}\"}",
+   "expected": "{\"a\":\"\\\\url{x}\"}"
+  },
+  {
+   "input": "{\"a\":\"caf\\u00e9 \\url\"}",
+   "expected": "{\"a\":\"caf\\u00e9 \\\\url\"}"
+  },
+  {
+   "input": "{\"text\":\"ab\\u00",
+   "expected": "{\"text\":\"ab\\\\u00"
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "expected": "{\"a\":\"x\\ny\"}"
+  },
+  {
+   "input": "{\"a\":1,}",
+   "expected": "{\"a\":1,}"
+  },
+  {
+   "input": "{\"a\":\"\\u12\"}",
+   "expected": "{\"a\":\"\\\\u12\"}"
+  },
+  {
+   "input": "{\"a\":\"\\u1234\"}",
+   "expected": "{\"a\":\"\\u1234\"}"
+  },
+  {
+   "input": "{\"a\":\"\\\\\"}",
+   "expected": "{\"a\":\"\\\\\"}"
+  },
+  {
+   "input": "{\"a\":\"\\uD83D\\uDE00\"}",
+   "expected": "{\"a\":\"\\uD83D\\uDE00\"}"
+  },
+  {
+   "input": "plain",
+   "expected": "plain"
+  },
+  {
+   "input": "\"end\\\\",
+   "expected": "\"end\\\\"
+  },
+  {
+   "input": "\"a\\",
+   "expected": "\"a\\\\"
+  },
+  {
+   "input": "{\"a\":\"\\uZZZZ\"}",
+   "expected": "{\"a\":\"\\\\uZZZZ\"}"
+  },
+  {
+   "input": "{\"a\":\"\\/\"}",
+   "expected": "{\"a\":\"\\/\"}"
+  },
+  {
+   "input": "{\"a\":\"\\b\\f\\n\\r\\t\"}",
+   "expected": "{\"a\":\"\\b\\f\\n\\r\\t\"}"
+  },
+  {
+   "input": "{\"a\":\"\\u00E9\",\"b\":\"\\u00e\"}",
+   "expected": "{\"a\":\"\\u00E9\",\"b\":\"\\\\u00e\"}"
+  },
+  {
+   "input": "😀\\q",
+   "expected": "😀\\q"
+  },
+  {
+   "input": "",
+   "expected": ""
+  },
+  {
+   "input": "{\"a\":\"\\u0000\\u001f\"}",
+   "expected": "{\"a\":\"\\u0000\\u001f\"}"
+  },
+  {
+   "input": "\"\\u00e9😀\"",
+   "expected": "\"\\u00e9😀\""
+  },
+  {
+   "input": "{\"a\":\"x\u0001y\"}",
+   "expected": "{\"a\":\"x\\u0001y\"}"
+  }
+ ]
+}

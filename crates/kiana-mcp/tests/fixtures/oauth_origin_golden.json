@@ -1,0 +1,562 @@
+{
+  "build": [
+    {
+      "input": "blob:https://example.com/uuid",
+      "result": {
+        "ok": true,
+        "urls": [
+          {
+            "href": "https://example.com/.well-known/oauth-authorization-serverhttps://example.com/uuid",
+            "type": "oauth"
+          },
+          {
+            "href": "https://example.com/.well-known/openid-configurationhttps://example.com/uuid",
+            "type": "oidc"
+          },
+          {
+            "href": "https://example.com/uuid/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "blob:http://example.com:8080/uuid",
+      "result": {
+        "ok": true,
+        "urls": [
+          {
+            "href": "http://example.com:8080/.well-known/oauth-authorization-serverhttp://example.com:8080/uuid",
+            "type": "oauth"
+          },
+          {
+            "href": "http://example.com:8080/.well-known/openid-configurationhttp://example.com:8080/uuid",
+            "type": "oidc"
+          },
+          {
+            "href": "http://example.com:8080/uuid/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "blob:https://example.com/",
+      "result": {
+        "ok": true,
+        "urls": [
+          {
+            "href": "https://example.com/.well-known/oauth-authorization-serverhttps://example.com",
+            "type": "oauth"
+          },
+          {
+            "href": "https://example.com/.well-known/openid-configurationhttps://example.com",
+            "type": "oidc"
+          },
+          {
+            "href": "https://example.com/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "blob:https://example.com:443/uuid",
+      "result": {
+        "ok": true,
+        "urls": [
+          {
+            "href": "https://example.com/.well-known/oauth-authorization-serverhttps://example.com:443/uuid",
+            "type": "oauth"
+          },
+          {
+            "href": "https://example.com/.well-known/openid-configurationhttps://example.com:443/uuid",
+            "type": "oidc"
+          },
+          {
+            "href": "https://example.com/uuid/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    },
+    {
+      "input": "blob:ftp://x/y",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:ws://x/y",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:wss://x/y",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:file:///x",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:blob:https://x/y",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:null/abc",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "blob:",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "file://host//a",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "file:///a",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "foo://host/path",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "foo:bar",
+      "result": {
+        "ok": false,
+        "name": "TypeError",
+        "message": "Invalid URL"
+      }
+    },
+    {
+      "input": "ftp://x/y",
+      "result": {
+        "ok": true,
+        "urls": [
+          {
+            "href": "ftp://x/.well-known/oauth-authorization-server/y",
+            "type": "oauth"
+          },
+          {
+            "href": "ftp://x/.well-known/openid-configuration/y",
+            "type": "oidc"
+          },
+          {
+            "href": "ftp://x/y/.well-known/openid-configuration",
+            "type": "oidc"
+          }
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "input": "file://host//a",
+      "result": {
+        "ok": true,
+        "value": "file://host//a"
+      },
+      "rust": {
+        "ok": true,
+        "value": "file://host/a"
+      }
+    },
+    {
+      "input": "file:////a",
+      "result": {
+        "ok": true,
+        "value": "file:////a"
+      },
+      "rust": {
+        "ok": true,
+        "value": "file:///a"
+      }
+    },
+    {
+      "input": "FILE://H//A",
+      "result": {
+        "ok": true,
+        "value": "file://h//A"
+      },
+      "rust": {
+        "ok": true,
+        "value": "file://h/A"
+      }
+    },
+    {
+      "input": "file://h//",
+      "result": {
+        "ok": true,
+        "value": "file://h//"
+      },
+      "rust": {
+        "ok": true,
+        "value": "file://h/"
+      }
+    },
+    {
+      "input": "file:///a//b",
+      "result": {
+        "ok": true,
+        "value": "file:///a//b"
+      }
+    },
+    {
+      "input": "file://host/x#frag",
+      "result": {
+        "ok": true,
+        "value": "file://host/x"
+      }
+    },
+    {
+      "input": "blob:https://x/y#frag",
+      "result": {
+        "ok": true,
+        "value": "blob:https://x/y"
+      }
+    },
+    {
+      "input": "blob:ftp://x/y#frag",
+      "result": {
+        "ok": true,
+        "value": "blob:ftp://x/y"
+      }
+    },
+    {
+      "input": "blob:https://x/y",
+      "result": {
+        "ok": true,
+        "value": "blob:https://x/y"
+      }
+    },
+    {
+      "input": "blob:",
+      "result": {
+        "ok": true,
+        "value": "blob:"
+      }
+    },
+    {
+      "input": "ftp://x/y#f",
+      "result": {
+        "ok": true,
+        "value": "ftp://x/y"
+      }
+    },
+    {
+      "input": "foo:bar#f",
+      "result": {
+        "ok": true,
+        "value": "foo:bar"
+      }
+    },
+    {
+      "input": "https://x.example/a^b",
+      "result": {
+        "ok": true,
+        "value": "https://x.example/a%5Eb"
+      }
+    }
+  ],
+  "select": [
+    {
+      "serverUrl": "blob:ftp://x/y",
+      "metadata": {
+        "resource": "ftp://x/y"
+      },
+      "requested": "blob:ftp://x/y",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource ftp://x/y does not match MCP server blob:ftp://x/y"
+      }
+    },
+    {
+      "serverUrl": "blob:ws://x/y",
+      "metadata": {
+        "resource": "ws://x/y"
+      },
+      "requested": "blob:ws://x/y",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource ws://x/y does not match MCP server blob:ws://x/y"
+      }
+    },
+    {
+      "serverUrl": "blob:wss://x/y",
+      "metadata": {
+        "resource": "wss://x/y"
+      },
+      "requested": "blob:wss://x/y",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource wss://x/y does not match MCP server blob:wss://x/y"
+      }
+    },
+    {
+      "serverUrl": "blob:blob:https://x/y",
+      "metadata": {
+        "resource": "https://x"
+      },
+      "requested": "blob:blob:https://x/y",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://x does not match MCP server blob:blob:https://x/y"
+      }
+    },
+    {
+      "serverUrl": "blob:https://example.com/uuid",
+      "metadata": {
+        "resource": "https://example.com"
+      },
+      "requested": "blob:https://example.com/uuid",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://example.com does not match MCP server blob:https://example.com/uuid"
+      }
+    },
+    {
+      "serverUrl": "blob:https://example.com/uuid",
+      "metadata": {
+        "resource": "https://example.com/uuid"
+      },
+      "requested": "blob:https://example.com/uuid",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource https://example.com/uuid does not match MCP server blob:https://example.com/uuid"
+      }
+    },
+    {
+      "serverUrl": "blob:http://example.com:8080/u",
+      "metadata": {
+        "resource": "http://example.com:8080/other"
+      },
+      "requested": "blob:http://example.com:8080/u",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource http://example.com:8080/other does not match MCP server blob:http://example.com:8080/u"
+      }
+    },
+    {
+      "serverUrl": "https://example.com/uuid",
+      "metadata": {
+        "resource": "blob:https://example.com/uuid"
+      },
+      "requested": "https://example.com/uuid",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource blob:https://example.com/uuid does not match MCP server https://example.com/uuid"
+      }
+    },
+    {
+      "serverUrl": "file://host//a",
+      "metadata": {
+        "resource": "file://host/a"
+      },
+      "requested": "file://host//a",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource file://host/a does not match MCP server file://host//a"
+      },
+      "rust": {
+        "requested": "file://host/a",
+        "result": {
+          "ok": true,
+          "value": "file://host/a"
+        }
+      }
+    },
+    {
+      "serverUrl": "file:////a",
+      "metadata": {
+        "resource": "file:///a"
+      },
+      "requested": "file:////a",
+      "result": {
+        "ok": false,
+        "name": "Error",
+        "message": "Protected resource file:///a does not match MCP server file:////a"
+      },
+      "rust": {
+        "requested": "file:///a",
+        "result": {
+          "ok": true,
+          "value": "file:///a"
+        }
+      }
+    },
+    {
+      "serverUrl": "file:///a//b",
+      "metadata": {
+        "resource": "file:///a//b/"
+      },
+      "requested": "file:///a//b",
+      "result": {
+        "ok": true,
+        "value": "file:///a//b/"
+      }
+    },
+    {
+      "serverUrl": "file://host/x",
+      "metadata": {
+        "resource": "file://host/x"
+      },
+      "requested": "file://host/x",
+      "result": {
+        "ok": true,
+        "value": "file://host/x"
+      }
+    }
+  ],
+  "www": [
+    {
+      "header": "Bearer resource_metadata=\"file://host//a\"",
+      "resourceMetadataUrl": "file://host//a",
+      "rust": {
+        "resourceMetadataUrl": "file://host/a"
+      }
+    },
+    {
+      "header": "Bearer resource_metadata=\"file:////a\"",
+      "resourceMetadataUrl": "file:////a",
+      "rust": {
+        "resourceMetadataUrl": "file:///a"
+      }
+    },
+    {
+      "header": "Bearer resource_metadata=\"file:///a//b\"",
+      "resourceMetadataUrl": "file:///a//b"
+    },
+    {
+      "header": "Bearer resource_metadata=\"blob:https://x/y\"",
+      "resourceMetadataUrl": "blob:https://x/y"
+    }
+  ],
+  "fetchHeaders": [
+    {
+      "value": "1.0",
+      "ok": true,
+      "stored": "1.0"
+    },
+    {
+      "value": "1.0\nX: y",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Headers.append: \"1.0\nX: y\" is an invalid header value."
+    },
+    {
+      "value": "1.0\rX: y",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Headers.append: \"1.0\rX: y\" is an invalid header value."
+    },
+    {
+      "value": "a\u0000b",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Headers.append: \"a\u0000b\" is an invalid header value."
+    },
+    {
+      "value": "你好",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Cannot convert argument to a ByteString because the character at index 0 has a value of 20320 which is greater than 255."
+    },
+    {
+      "value": "€",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Cannot convert argument to a ByteString because the character at index 0 has a value of 8364 which is greater than 255."
+    },
+    {
+      "value": "xĀ",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Cannot convert argument to a ByteString because the character at index 1 has a value of 256 which is greater than 255."
+    },
+    {
+      "value": "Ā",
+      "ok": false,
+      "name": "TypeError",
+      "message": "Cannot convert argument to a ByteString because the character at index 0 has a value of 256 which is greater than 255."
+    },
+    {
+      "value": "ok/value",
+      "ok": true,
+      "stored": "ok/value"
+    },
+    {
+      "value": " spaced ",
+      "ok": true,
+      "stored": "spaced"
+    },
+    {
+      "value": "a\tb",
+      "ok": true,
+      "stored": "a\tb"
+    },
+    {
+      "value": "  ",
+      "ok": true,
+      "stored": ""
+    },
+    {
+      "value": "\t1.0\t",
+      "ok": true,
+      "stored": "1.0"
+    },
+    {
+      "value": "\n1.0",
+      "ok": true,
+      "stored": "1.0"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+[package]
+name = "kiana-mcp"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/mcp：JSON-RPC、协议类型、stdio/streamable-http/in-memory 传输、OAuth。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+reqwest = { workspace = true }
+url = { workspace = true }
+base64 = { workspace = true }
+regex = { workspace = true }
+kiana-json = { workspace = true }
+# OAuth PKCE：`crypto.getRandomValues(32)` + `crypto.subtle.digest("SHA-256")`
+# （spec/telemetry-mcp.md §5 的映射表）。
+sha2 = { workspace = true }
+getrandom = { workspace = true }
+# 浏览器 `crypto.randomUUID()`（telemetry-sqlite 不在本 crate；这里给 stdio 传输的实例名用）。
+uuid = { workspace = true }
+# streamable-http 传输需要一个长驻 Client 与 SSE 读取。
+futures-core = { workspace = true }
+# `adaptOAuthProvider` 的共享刷新：`futures::future::Shared`（并发 401 await 同一个 future）。
+futures = { workspace = true }
+# `http::HeaderMap`：`McpFetch` 的请求/响应头与 `UnauthorizedContext.headers`
+# （spec/telemetry-mcp.md §12/§17.4 要求 JS `Headers` 兼容层）。
+http = { workspace = true }
+# `hyper::ext::ReasonPhrase`：`Response.statusText` 要读状态行里的原因短语（reqwest 不暴露它，
+# 只把它留在响应 extensions 里）。hyper 已是 reqwest 的依赖，版本由根 Cargo.toml 固定；
+# `ReasonPhrase` 由 `http1` 特性导出，这里显式写上而不依赖特性合并的偶然结果。
+hyper = { workspace = true, features = ["http1"] }
+# stdio 传输：`setsid` 建独立进程组、`killpg` 杀组、`atexit` 退出钩子（spec/telemetry-mcp.md §15.7）。
+libc = { workspace = true }
+# stdio 子进程沙箱：MCP 服务器与 bash/execute_bash 共用 ExecutionPolicy / SandboxManager。
+kiana-sandbox = { workspace = true }
+
+[dev-dependencies]
+# `tokio::time::pause`/`advance`（TS 的 `vi.useFakeTimers`）只在测试里用；
+# `features = ["test-util"]` 不会泄漏进库依赖（dev-dependencies 只在测试目标里参与特性合并）。
+tokio = { workspace = true, features = ["test-util"] }

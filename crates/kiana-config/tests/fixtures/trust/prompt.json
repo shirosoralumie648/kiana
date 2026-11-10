@@ -1,0 +1,3 @@
+{
+  "prompt": "Trust project folder?\n/work/project\n\nThis allows kiana to load .kiana settings and resources, install missing project packages, and execute project extensions."
+}

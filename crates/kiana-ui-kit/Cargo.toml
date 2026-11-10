@@ -1,0 +1,17 @@
+[package]
+name = "kiana-ui-kit"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "无业务依赖的共用渲染小件：供 kiana-tools 渲染器与 kiana-interactive 复用。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-core = { workspace = true }
+regex = { workspace = true }
+tokio-util = { workspace = true }

@@ -1,0 +1,14 @@
+---
+source: crates/kiana-builtin-extensions/src/llama/ui.rs
+expression: "render_text(&view, 80)"
+---
+────────────────────────────────────────────────────────────────────────────────
+ Loading model                                                                  
+ qwen                                                                           
+
+ Loading load tensors                                                           
+ ██████████████████████████████────────── 75%                                   
+ 768 B / 1.00 KiB                                                               
+
+ escape/ctrl+c stop                                                             
+────────────────────────────────────────────────────────────────────────────────

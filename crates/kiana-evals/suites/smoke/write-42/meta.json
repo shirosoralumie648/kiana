@@ -1,0 +1,19 @@
+{
+  "id": "write-42",
+  "language": "shell",
+  "testCommand": ["sh", "-c", "grep -qx 42 answer.txt"],
+  "timeoutMs": 30000,
+  "maxAttempts": 2,
+  "instructions": "Write the number 42 (and nothing else) into answer.txt.",
+  "files": [
+    {"path": "solution/answer.txt", "role": "solution"},
+    {"path": "tests/check.sh", "role": "test"},
+    {"path": "examples/example.txt", "role": "example"}
+  ],
+  "mock": {
+    "path": "answer.txt",
+    "initial": "41",
+    "repair": "42",
+    "finalText": "done"
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "entries_order",
+    "title": "t",
+    "args": "{\"b\":1,\"2\":\"two\",\"a\":2,\"10\":\"ten\"}",
+    "collapsed": "t 2=\"two\" 10=\"ten\" b=1 a=2",
+    "expanded": "t\n  2: two\n  10: ten\n  b: 1\n  a: 2"
+  },
+  {
+    "name": "js_number_formats_and_nested_key_order",
+    "title": "t",
+    "args": "{\"tiny\":1e-6,\"zero\":-0.0,\"huge\":1e17,\"huge2\":1e20,\"veryhuge\":123456789012345680000,\"nested\":{\"2\":\"a\",\"1\":\"b\",\"x\":1}}",
+    "collapsed": "t tiny=0.000001 zero=0 huge=100000000000000000 huge2=100000000000000000000 veryhuge=123456789012345...",
+    "expanded": "t\n  tiny: 0.000001\n  zero: 0\n  huge: 100000000000000000\n  huge2: 100000000000000000000\n  veryhuge: 123456789012345680000\n  nested: {\n      \"1\": \"b\",\n      \"2\": \"a\",\n      \"x\": 1\n    }"
+  },
+  {
+    "name": "nested_arrays_tabs_and_crlf",
+    "title": "run",
+    "args": "{\"list\":[1,2,{\"z\":1,\"a\":2}],\"text\":\"a\\tb\\r\\nc\",\"empty\":{},\"none\":null,\"flag\":true}",
+    "collapsed": "run list=[1,2,{\"z\":1,\"a\":2}] text=\"a\\tb\\r\\nc\" empty={} none=null flag=true",
+    "expanded": "run\n  list: [\n      1,\n      2,\n      {\n        \"z\": 1,\n        \"a\": 2\n      }\n    ]\n  text: a   b\n    c\n  empty: {}\n  none: null\n  flag: true"
+  },
+  {
+    "name": "array_args",
+    "title": "t",
+    "args": "[1,2,3]",
+    "collapsed": "t args=[1,2,3]",
+    "expanded": "t\n  args: [\n      1,\n      2,\n      3\n    ]"
+  },
+  {
+    "name": "string_args",
+    "title": "t",
+    "args": "\"v\"",
+    "collapsed": "t args=\"v\"",
+    "expanded": "t\n  args: v"
+  },
+  {
+    "name": "number_args",
+    "title": "t",
+    "args": "5",
+    "collapsed": "t args=5",
+    "expanded": "t\n  args: 5"
+  },
+  {
+    "name": "boolean_args",
+    "title": "t",
+    "args": "true",
+    "collapsed": "t args=true",
+    "expanded": "t\n  args: true"
+  },
+  {
+    "name": "empty_object",
+    "title": "t",
+    "args": "{}",
+    "collapsed": "t",
+    "expanded": "t"
+  }
+]

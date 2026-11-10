@@ -1,0 +1,55 @@
+[package]
+name = "kiana-chord"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/chord（package name kiana-chord，lib name chord）：契约、delta、wire、连接、host/reload。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-telemetry = { workspace = true }
+kiana-json = { workspace = true }
+
+# schema.rs：`pattern`/`patternProperties` 与 format 校验（JS `new RegExp(pattern, "u")` 的等价物）
+regex = { workspace = true }
+# schema.rs：TypeBox 的 `UnicodeRegExp`（ECMAScript 语法：u-mode `\w`/`\d`、lookaround、反向引用、
+# 以及非法 pattern 抛 SyntaxError）——`regex` crate 的语义不同，用户 pattern 必须走它。
+regress = { workspace = true }
+# schema.rs：`format: "url"` = `URL.canParse`；link/loader：地址解析
+url = { workspace = true }
+# schema.rs：`idn-email`/`idn-hostname` 的 NFC 规范化
+unicode-normalization = { workspace = true }
+futures = { workspace = true }
+
+# 其他单元（link / connection / host / manager / cluster）按 spec 需要的依赖：
+# link.ts 的 raw-deflate 打包与 `{chord2: …}` base64 信封；manager.ts 的锁键 sha256、
+# telemetry-sqlite 的 scope uuid、进程锁（unix socket / named pipe）。
+flate2 = { workspace = true }
+base64 = { workspace = true }
+sha2 = { workspace = true }
+uuid = { workspace = true }
+libc = { workspace = true }
+# 注意：根 `[workspace.dependencies]` 的 `socket2 = "=0.6.0"` 与 tokio 1.54.1 需要的
+# `^0.6.3`（锁文件里是 0.6.5）冲突，因此 kiana-chord 暂不引入 socket2；manager.rs 的进程锁
+# 若需要它，由架构者修正根 pin 后由该单元加一行。
+
+rusqlite = { workspace = true, optional = true, features = ["bundled"] }
+tokio-tungstenite = { workspace = true, optional = true }
+[features]
+default = ["delta", "context"]
+node = []
+sqlite = ["dep:rusqlite"]
+sqlite-node = ["sqlite"]
+sqlite-cloudflare = ["sqlite"]
+telemetry-sqlite = ["sqlite"]
+ws = ["dep:tokio-tungstenite"]
+delta = []
+context = []

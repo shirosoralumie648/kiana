@@ -1,0 +1,528 @@
+{
+ "note": "partial-json@0.1.7 parse(input) with Allow.ALL. value = JSON.stringify(result); error.class is PartialJSON|MalformedJSON|Error. Object keys of the result are listed separately (JS own enumerable keys); \"__proto__\" never becomes an own key.",
+ "cases": [
+  {
+   "input": "",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "Error",
+    "message": " is empty"
+   }
+  },
+  {
+   "input": "   ",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "Error",
+    "message": "    is empty"
+   }
+  },
+  {
+   "input": "null",
+   "value": "null",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "true",
+   "value": "true",
+   "type": "boolean",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "false",
+   "value": "false",
+   "type": "boolean",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "123",
+   "value": "123",
+   "type": "number",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "\"abc\"",
+   "value": "\"abc\"",
+   "type": "string",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "[1,2]",
+   "value": "[1,2]",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "[1,2",
+   "value": "[1,2]",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "{\"a\":1}",
+   "value": "{\"a\":1}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":1,}",
+   "value": "{\"a\":1}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":1 \"b\":2}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "{\"a\":1,\"b\":",
+   "value": "{\"a\":1}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\": [1,2",
+   "value": "{\"a\":[1,2]}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "12.",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unterminated fractional number in JSON at position 3 (line 1 column 4) at position 0"
+   }
+  },
+  {
+   "input": ".5",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unexpected token '.', \".5\" is not valid JSON at position 0"
+   }
+  },
+  {
+   "input": "{\"text\":\"ab\\u00",
+   "value": "{\"text\":\"ab\"}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "text"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "nul",
+   "value": "null",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "tru",
+   "value": "true",
+   "type": "boolean",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "NaN",
+   "value": "null",
+   "type": "number",
+   "non_finite_number": true,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "Infinity",
+   "value": "null",
+   "type": "number",
+   "non_finite_number": true,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "{\"__proto__\":1,\"a\":2}",
+   "value": "{\"a\":2}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"b\":1,\"2\":2,\"a\":3,\"1\":4}",
+   "value": "{\"1\":4,\"2\":2,\"b\":1,\"a\":3}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "1",
+    "2",
+    "b",
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":1,\"a\":2}",
+   "value": "{\"a\":2}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":1} trailing",
+   "value": "{\"a\":1}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":\"\\url{x}\"}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "12.e",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unterminated fractional number in JSON at position 3 (line 1 column 4) at position 0"
+   }
+  },
+  {
+   "input": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\",\"time\":.5}]}",
+   "value": "{\"action\":\"apply\",\"actions\":[{\"kind\":\"seek\"}]}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "action",
+    "actions"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"kind\":\"seek\",\"clipId\":\"clip-fl",
+   "value": "{\"kind\":\"seek\",\"clipId\":\"clip-fl\"}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "kind",
+    "clipId"
+   ],
+   "error": null
+  },
+  {
+   "input": "]]]}}}{",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unexpected token ']', \"]]]}}}{\" is not valid JSON at position 0"
+   }
+  },
+  {
+   "input": "{\"a\":01,\"b\":1.,\"c\":.5,\"d\":+1,\"e\":0x10,\"f\":1e}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "{\"a\": tru, \"b\": nulll, \"c\": falsey}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "{\"a\":{\"b\":{\"c\":",
+   "value": "{\"a\":{\"b\":{}}}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\\\": 1}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "\"unterminated \\",
+   "value": "\"unterminated \"",
+   "type": "string",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "// comment\n{\"a\":1}",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unexpected token '/', \"// comment\n{\"a\":1}\" is not valid JSON at position 0"
+   }
+  },
+  {
+   "input": "[[[",
+   "value": "[[[]]]",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "{\"a\":[{\"b\":\"c",
+   "value": "{\"a\":[{\"b\":\"c\"}]}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "undefined",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: \"undefined\" is not valid JSON at position 0"
+   }
+  },
+  {
+   "input": "Inf",
+   "value": "null",
+   "type": "number",
+   "non_finite_number": true,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "-Inf",
+   "value": "null",
+   "type": "number",
+   "non_finite_number": true,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "{\"a\":NaN,\"b\":Infinity,\"c\":-Infinity,\"d\":undefined,\"e\":1}",
+   "value": "{\"a\":null,\"b\":null,\"c\":null}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a",
+    "b",
+    "c"
+   ],
+   "error": null
+  },
+  {
+   "input": "[1 2, , 3,]",
+   "value": "[]",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "{\"a\":[1,2}, \"b\":3]",
+   "value": "{\"a\":[1,2]}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":\"x\"} trailing garbage {\"b\":2}",
+   "value": "{\"a\":\"x\"}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "\u0000{\u0001\"a\"\u0002:\u00031}",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "SyntaxError: Unexpected token '\u0000', \"\u0000{\u0001\"a\"\u0002:\u00031}\" is not valid JSON at position 0"
+   }
+  },
+  {
+   "input": "{\"a\":\"x\"}}}]]]",
+   "value": "{\"a\":\"x\"}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"__proto__\":{\"x\":1},\"a\":2}",
+   "value": "{\"a\":2}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "12",
+   "value": "12",
+   "type": "number",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "fals",
+   "value": "false",
+   "type": "boolean",
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "Na",
+   "value": "null",
+   "type": "number",
+   "non_finite_number": true,
+   "object_keys": null,
+   "error": null
+  },
+  {
+   "input": "-",
+   "value": null,
+   "type": null,
+   "non_finite_number": false,
+   "object_keys": null,
+   "error": {
+    "class": "MalformedJSON",
+    "message": "Not sure what '-' is at position 0"
+   }
+  },
+  {
+   "input": "{\"a\":\"x\ny\"}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  },
+  {
+   "input": "{\"a\":\"\\uD83D\\uDE00\"}",
+   "value": "{\"a\":\"😀\"}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [
+    "a"
+   ],
+   "error": null
+  },
+  {
+   "input": "{\"a\":\"\\uD8\"}",
+   "value": "{}",
+   "type": "object",
+   "non_finite_number": false,
+   "object_keys": [],
+   "error": null
+  }
+ ]
+}

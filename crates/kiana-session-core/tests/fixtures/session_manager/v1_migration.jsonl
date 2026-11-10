@@ -1,0 +1,3 @@
+{"type":"session","id":"v1-session","timestamp":"2026-01-01T00:00:00.000Z","cwd":"/tmp/fixture"}
+{"type":"message","timestamp":"2026-01-01T00:00:01.000Z","message":{"role":"user","content":"hi","timestamp":1}}
+{"type":"compaction","timestamp":"2026-01-01T00:00:02.000Z","summary":"s","firstKeptEntryIndex":1,"tokensBefore":5}

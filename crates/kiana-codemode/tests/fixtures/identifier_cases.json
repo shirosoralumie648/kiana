@@ -1,0 +1,134 @@
+[
+ {
+  "name": "",
+  "identifier": "_"
+ },
+ {
+  "name": "a",
+  "identifier": "a"
+ },
+ {
+  "name": "A",
+  "identifier": "A"
+ },
+ {
+  "name": "_",
+  "identifier": "_"
+ },
+ {
+  "name": "$",
+  "identifier": "$"
+ },
+ {
+  "name": "mcp__docs__search",
+  "identifier": "mcp__docs__search"
+ },
+ {
+  "name": "my-tool",
+  "identifier": "my_tool"
+ },
+ {
+  "name": "a.b",
+  "identifier": "a_b"
+ },
+ {
+  "name": "a b",
+  "identifier": "a_b"
+ },
+ {
+  "name": "1a",
+  "identifier": "_a"
+ },
+ {
+  "name": "9lives",
+  "identifier": "_lives"
+ },
+ {
+  "name": "-a",
+  "identifier": "_a"
+ },
+ {
+  "name": "--a--",
+  "identifier": "__a__"
+ },
+ {
+  "name": "é",
+  "identifier": "e_"
+ },
+ {
+  "name": "héllo",
+  "identifier": "h_llo"
+ },
+ {
+  "name": "😀",
+  "identifier": "_"
+ },
+ {
+  "name": "a😀b",
+  "identifier": "a_b"
+ },
+ {
+  "name": "Δ",
+  "identifier": "_"
+ },
+ {
+  "name": "aΔ",
+  "identifier": "a_"
+ },
+ {
+  "name": "foo_bar",
+  "identifier": "foo_bar"
+ },
+ {
+  "name": "FOO",
+  "identifier": "FOO"
+ },
+ {
+  "name": "a$b",
+  "identifier": "a$b"
+ },
+ {
+  "name": "tools",
+  "identifier": "tools"
+ },
+ {
+  "name": "ALL_TOOLS",
+  "identifier": "ALL_TOOLS"
+ },
+ {
+  "name": "with/slash",
+  "identifier": "with_slash"
+ },
+ {
+  "name": "with:colon",
+  "identifier": "with_colon"
+ },
+ {
+  "name": "x\ty",
+  "identifier": "x_y"
+ },
+ {
+  "name": "été",
+  "identifier": "_t_"
+ },
+ {
+  "name": "日本語",
+  "identifier": "___"
+ },
+ {
+  "name": "a1",
+  "identifier": "a1"
+ },
+ {
+  "name": "1",
+  "identifier": "_"
+ },
+ {
+  "name": "a-b_c$d",
+  "identifier": "a_b_c$d"
+ },
+ {
+  "name": "😀x",
+  "identifier": "_x"
+ }
+]

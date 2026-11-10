@@ -1,0 +1,149 @@
+{
+  "description": "Golden vectors generated from the TypeScript reference (packages/coding-agent/src/utils/image-resize.ts#formatDimensionNote) with Node 26 on 2026-10-30. `note` is the exact string produced by String.prototype.toFixed(2).",
+  "dimension_notes": [
+    {
+      "original_width": 2000,
+      "original_height": 1000,
+      "width": 1000,
+      "height": 500,
+      "note": "[Image: original 2000x1000, displayed at 1000x500. Multiply coordinates by 2.00 to map to original image.]"
+    },
+    {
+      "original_width": 2400,
+      "original_height": 4800,
+      "width": 1000,
+      "height": 2000,
+      "note": "[Image: original 2400x4800, displayed at 1000x2000. Multiply coordinates by 2.40 to map to original image.]"
+    },
+    {
+      "original_width": 1,
+      "original_height": 1,
+      "width": 1,
+      "height": 1,
+      "note": "[Image: original 1x1, displayed at 1x1. Multiply coordinates by 1.00 to map to original image.]"
+    },
+    {
+      "original_width": 100,
+      "original_height": 50,
+      "width": 3,
+      "height": 7,
+      "note": "[Image: original 100x50, displayed at 3x7. Multiply coordinates by 33.33 to map to original image.]"
+    },
+    {
+      "original_width": 1000,
+      "original_height": 1000,
+      "width": 999,
+      "height": 999,
+      "note": "[Image: original 1000x1000, displayed at 999x999. Multiply coordinates by 1.00 to map to original image.]"
+    },
+    {
+      "original_width": 5,
+      "original_height": 5,
+      "width": 3,
+      "height": 3,
+      "note": "[Image: original 5x5, displayed at 3x3. Multiply coordinates by 1.67 to map to original image.]"
+    },
+    {
+      "original_width": 7,
+      "original_height": 7,
+      "width": 2,
+      "height": 2,
+      "note": "[Image: original 7x7, displayed at 2x2. Multiply coordinates by 3.50 to map to original image.]"
+    },
+    {
+      "original_width": 200,
+      "original_height": 100,
+      "width": 3,
+      "height": 1,
+      "note": "[Image: original 200x100, displayed at 3x1. Multiply coordinates by 66.67 to map to original image.]"
+    },
+    {
+      "original_width": 2,
+      "original_height": 3,
+      "width": 7,
+      "height": 11,
+      "note": "[Image: original 2x3, displayed at 7x11. Multiply coordinates by 0.29 to map to original image.]"
+    },
+    {
+      "original_width": 10,
+      "original_height": 10,
+      "width": 4,
+      "height": 4,
+      "note": "[Image: original 10x10, displayed at 4x4. Multiply coordinates by 2.50 to map to original image.]"
+    },
+    {
+      "original_width": 1,
+      "original_height": 1,
+      "width": 3,
+      "height": 3,
+      "note": "[Image: original 1x1, displayed at 3x3. Multiply coordinates by 0.33 to map to original image.]"
+    },
+    {
+      "original_width": 1,
+      "original_height": 1,
+      "width": 8,
+      "height": 8,
+      "note": "[Image: original 1x1, displayed at 8x8. Multiply coordinates by 0.13 to map to original image.]"
+    },
+    {
+      "original_width": 3,
+      "original_height": 3,
+      "width": 8,
+      "height": 8,
+      "note": "[Image: original 3x3, displayed at 8x8. Multiply coordinates by 0.38 to map to original image.]"
+    },
+    {
+      "original_width": 6,
+      "original_height": 6,
+      "width": 16,
+      "height": 16,
+      "note": "[Image: original 6x6, displayed at 16x16. Multiply coordinates by 0.38 to map to original image.]"
+    },
+    {
+      "original_width": 7,
+      "original_height": 7,
+      "width": 16,
+      "height": 16,
+      "note": "[Image: original 7x7, displayed at 16x16. Multiply coordinates by 0.44 to map to original image.]"
+    },
+    {
+      "original_width": 9,
+      "original_height": 9,
+      "width": 16,
+      "height": 16,
+      "note": "[Image: original 9x9, displayed at 16x16. Multiply coordinates by 0.56 to map to original image.]"
+    },
+    {
+      "original_width": 11,
+      "original_height": 11,
+      "width": 16,
+      "height": 16,
+      "note": "[Image: original 11x11, displayed at 16x16. Multiply coordinates by 0.69 to map to original image.]"
+    },
+    {
+      "original_width": 13,
+      "original_height": 13,
+      "width": 16,
+      "height": 16,
+      "note": "[Image: original 13x13, displayed at 16x16. Multiply coordinates by 0.81 to map to original image.]"
+    }
+  ],
+  "osc52": [
+    {
+      "text": "hello",
+      "encoded_length": 8
+    },
+    {
+      "text": "café 日本語",
+      "encoded_length": 20
+    },
+    {
+      "text_length": 75000,
+      "encoded_length": 100000
+    },
+    {
+      "text_length": 75001,
+      "encoded_length": 100004
+    }
+  ]
+}

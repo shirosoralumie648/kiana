@@ -1,0 +1,30 @@
+{
+  "locale": "zh",
+  "strict": true,
+  "strings": {
+    "approval.title": "需要权限",
+    "approval.allow_once": "只允许一次",
+    "approval.allow_always": "总是允许（{{scope}}）",
+    "approval.reject": "拒绝",
+    "approval.reason": "原因",
+    "approval.dangerous": "危险操作：默认选中「拒绝」，按 Enter 不会批准。",
+    "approval.risk_loading": "风险分析：分析中……（仅供参考）",
+    "approval.risk_advisory": "风险（仅供参考）",
+    "approval.risk_what": "可能出什么问题",
+    "approval.suggestions": "可选操作",
+    "modal.approval_position": "审批 {{index}}/{{total}}",
+    "modal.question_position": "问题 {{index}}/{{total}}",
+    "modal.settings_title": "设置",
+    "modal.multi_select_hint": "空格切换，a 全选，o 其他，Enter 提交",
+    "modal.submit_hint": "Enter 提交",
+    "pending.sending": "发送中……",
+    "pending.failed": "发送失败：{{error}}",
+    "pending.retry": "重试",
+    "pending.timeout": "发送超时",
+    "i18n.hint.lines": [
+      "使用方向键移动。",
+      "按 Enter 确认。",
+      "按 Esc 取消。"
+    ]
+  }
+}

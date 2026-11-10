@@ -1,0 +1,3539 @@
+{
+  "truncations": [
+    {
+      "content": "",
+      "options": {},
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "a",
+      "options": {},
+      "head": {
+        "content": "a",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "a",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "a\n",
+      "options": {},
+      "head": {
+        "content": "a\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "a\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "a\n\n",
+      "options": {},
+      "head": {
+        "content": "a\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 3,
+        "outputLines": 2,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "a\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 3,
+        "outputLines": 2,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n",
+      "options": {},
+      "head": {
+        "content": "\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "one\ntwo\nthree",
+      "options": {},
+      "head": {
+        "content": "one\ntwo\nthree",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 3,
+        "outputBytes": 13,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "one\ntwo\nthree",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 3,
+        "outputBytes": 13,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "one\ntwo\nthree\n",
+      "options": {},
+      "head": {
+        "content": "one\ntwo\nthree\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 14,
+        "outputLines": 3,
+        "outputBytes": 14,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "one\ntwo\nthree\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 14,
+        "outputLines": 3,
+        "outputBytes": 14,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "one\ntwo\nthree",
+      "options": {
+        "maxLines": 2
+      },
+      "head": {
+        "content": "one\ntwo",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "two\nthree",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 2,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "one\ntwo\nthree\n",
+      "options": {
+        "maxLines": 2
+      },
+      "head": {
+        "content": "one\ntwo",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 14,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "two\nthree",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 14,
+        "outputLines": 2,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "one\ntwo\nthree",
+      "options": {
+        "maxBytes": 5
+      },
+      "head": {
+        "content": "one",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 5
+      },
+      "tail": {
+        "content": "three",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 5
+      }
+    },
+    {
+      "content": "one\ntwo\nthree",
+      "options": {
+        "maxBytes": 7
+      },
+      "head": {
+        "content": "one\ntwo",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 7
+      },
+      "tail": {
+        "content": "three",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 7
+      }
+    },
+    {
+      "content": "one\ntwo\nthree",
+      "options": {
+        "maxBytes": 8
+      },
+      "head": {
+        "content": "one\ntwo",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      },
+      "tail": {
+        "content": "three",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 13,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      }
+    },
+    {
+      "content": "abcdefghij\nsecond",
+      "options": {
+        "maxBytes": 4
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 17,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 4
+      },
+      "tail": {
+        "content": "cond",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 17,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 4
+      }
+    },
+    {
+      "content": "abcdefghij\nsecond",
+      "options": {
+        "maxBytes": 6
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 17,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 6
+      },
+      "tail": {
+        "content": "second",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 17,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 6
+      }
+    },
+    {
+      "content": "😀😀😀😀",
+      "options": {
+        "maxBytes": 10
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 16,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 10
+      },
+      "tail": {
+        "content": "😀😀",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 16,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 10
+      }
+    },
+    {
+      "content": "😀😀😀😀",
+      "options": {
+        "maxBytes": 9
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 16,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 9
+      },
+      "tail": {
+        "content": "😀😀",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 16,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 9
+      }
+    },
+    {
+      "content": "line1\r\nline2\r\n",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "line1\r",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 14,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "line2\r",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 14,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "options": {
+        "maxBytes": 30
+      },
+      "head": {
+        "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 30,
+        "outputLines": 1,
+        "outputBytes": 30,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 30
+      },
+      "tail": {
+        "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 30,
+        "outputLines": 1,
+        "outputBytes": 30,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 30
+      }
+    },
+    {
+      "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "options": {
+        "maxBytes": 30
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 31,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 30
+      },
+      "tail": {
+        "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 31,
+        "outputLines": 1,
+        "outputBytes": 30,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 30
+      }
+    },
+    {
+      "content": "aaaaa\nbbbbb",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 100
+      },
+      "head": {
+        "content": "aaaaa",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 100
+      },
+      "tail": {
+        "content": "bbbbb",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 100
+      }
+    },
+    {
+      "content": "aaaaa\nbbbbb",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 6
+      },
+      "head": {
+        "content": "aaaaa",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 6
+      },
+      "tail": {
+        "content": "bbbbb",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 6
+      }
+    },
+    {
+      "content": "line-1\nline-2\nline-3\nline-4\nline-5\nline-6\nline-7\nline-8\nline-9\nline-10",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "line-1\nline-2\nline-3",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 10,
+        "totalBytes": 70,
+        "outputLines": 3,
+        "outputBytes": 20,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "line-8\nline-9\nline-10",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 10,
+        "totalBytes": 70,
+        "outputLines": 3,
+        "outputBytes": 21,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "éééééééééé",
+      "options": {
+        "maxBytes": 7
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 20,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 7
+      },
+      "tail": {
+        "content": "ééé",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 20,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 7
+      }
+    },
+    {
+      "content": "éééééééééé",
+      "options": {
+        "maxBytes": 6
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 20,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 6
+      },
+      "tail": {
+        "content": "ééé",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 20,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 6
+      }
+    },
+    {
+      "content": "é\n\n😀bb\r\nzzzzzzzzzzzzzzzzzzzzccc",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 2
+      },
+      "head": {
+        "content": "é",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 35,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 2
+      },
+      "tail": {
+        "content": "cc",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 35,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 2
+      }
+    },
+    {
+      "content": "bbé\r\n\r\naabbbbé",
+      "options": {},
+      "head": {
+        "content": "bbé\r\n\r\naabbbbé",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 16,
+        "outputLines": 3,
+        "outputBytes": 16,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bbé\r\n\r\naabbbbé",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 16,
+        "outputLines": 3,
+        "outputBytes": 16,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n\nzzzzzzzzzzzzzzzzzzzzbbé\r\na\r\nlinezzzzzzzzzzzzzzzzzzzz",
+      "options": {
+        "maxLines": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 55,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 55,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "é\n\ncccbb\n\n",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 2
+      },
+      "head": {
+        "content": "é",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 2
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 11,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 2
+      }
+    },
+    {
+      "content": "bbccc\r\nzzzzzzzzzzzzzzzzzzzz\n\nccc",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "bbccc\r\nzzzzzzzzzzzzzzzzzzzz\n\nccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 32,
+        "outputLines": 4,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bbccc\r\nzzzzzzzzzzzzzzzzzzzz\n\nccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 32,
+        "outputLines": 4,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "bbzzzzzzzzzzzzzzzzzzzzccc\n\n",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "bbzzzzzzzzzzzzzzzzzzzzccc\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 27,
+        "outputLines": 2,
+        "outputBytes": 27,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bbzzzzzzzzzzzzzzzzzzzzccc\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 27,
+        "outputLines": 2,
+        "outputBytes": 27,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\nbbébba",
+      "options": {
+        "maxBytes": 40
+      },
+      "head": {
+        "content": "\nbbébba",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 8,
+        "outputLines": 2,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      },
+      "tail": {
+        "content": "\nbbébba",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 8,
+        "outputLines": 2,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      }
+    },
+    {
+      "content": "é\r\n",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "é\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "é\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "cccccczzzzzzzzzzzzzzzzzzzz\r\n😀é",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 34,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "😀é",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 34,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxBytes": 8
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      }
+    },
+    {
+      "content": "\n\nbbzzzzzzzzzzzzzzzzzzzzazzzzzzzzzzzzzzzzzzzza\n\n😀\n",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "\n",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 5,
+        "totalBytes": 53,
+        "outputLines": 2,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "\n😀",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 5,
+        "totalBytes": 53,
+        "outputLines": 2,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "\n",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "bblinelinezzzzzzzzzzzzzzzzzzzzccc",
+      "options": {},
+      "head": {
+        "content": "bblinelinezzzzzzzzzzzzzzzzzzzzccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 33,
+        "outputLines": 1,
+        "outputBytes": 33,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bblinelinezzzzzzzzzzzzzzzzzzzzccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 33,
+        "outputLines": 1,
+        "outputBytes": 33,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "ccczzzzzzzzzzzzzzzzzzzz\n\n",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 21
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 25,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 5,
+        "maxBytes": 21
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 25,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 21
+      }
+    },
+    {
+      "content": "zzzzzzzzzzzzzzzzzzzzlinecccébbzzzzzzzzzzzzzzzzzzzz\r\n😀😀zzzzzzzzzzzzzzzzzzzz\r\n",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 83,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "zzzzzzzzzzzz\r",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 83,
+        "outputLines": 1,
+        "outputBytes": 13,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "lineccc\nzzzzzzzzzzzzzzzzzzzzbb\n\n😀bbbb",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "lineccc",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 40,
+        "outputLines": 1,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "😀bbbb",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 40,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "ccclinezzzzzzzzzzzzzzzzzzzz\r\n\r\na",
+      "options": {},
+      "head": {
+        "content": "ccclinezzzzzzzzzzzzzzzzzzzz\r\n\r\na",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 32,
+        "outputLines": 3,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "ccclinezzzzzzzzzzzzzzzzzzzz\r\n\r\na",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 32,
+        "outputLines": 3,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "😀\n\n😀",
+      "options": {
+        "maxLines": 0,
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 10,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 10,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "bblinea😀\r\nacccé\n\n\r\n",
+      "options": {},
+      "head": {
+        "content": "bblinea😀\r\nacccé\n\n\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 23,
+        "outputLines": 4,
+        "outputBytes": 23,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bblinea😀\r\nacccé\n\n\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 23,
+        "outputLines": 4,
+        "outputBytes": 23,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "ccc",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 5
+      },
+      "head": {
+        "content": "ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 5
+      },
+      "tail": {
+        "content": "ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 5
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "bbaé",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "bbaé",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 5,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bbaé",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 5,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "ccczzzzzzzzzzzzzzzzzzzz😀éline\ncccaé\n",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 41,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "cccaé",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 41,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "bbbbzzzzzzzzzzzzzzzzzzzzcccccca\r\n\n\nzzzzzzzzzzzzzzzzzzzz",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "bbbbzzzzzzzzzzzzzzzzzzzzcccccca\r\n\n\nzzzzzzzzzzzzzzzzzzzz",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 55,
+        "outputLines": 4,
+        "outputBytes": 55,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bbbbzzzzzzzzzzzzzzzzzzzzcccccca\r\n\n\nzzzzzzzzzzzzzzzzzzzz",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 55,
+        "outputLines": 4,
+        "outputBytes": 55,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\naccc\r\n\nccc😀bb",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "\naccc\r\n",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 17,
+        "outputLines": 3,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "\nccc😀bb",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 17,
+        "outputLines": 2,
+        "outputBytes": 10,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "\n\n\n",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "line\r\nccc\r\nzzzzzzzzzzzzzzzzzzzzccc",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "line\r\nccc\r",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 34,
+        "outputLines": 2,
+        "outputBytes": 10,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "zzzzzzzzzzccc",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 34,
+        "outputLines": 1,
+        "outputBytes": 13,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "cccéécccé",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 12,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "abbé😀",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 3
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 9,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2,
+        "maxBytes": 3
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 3
+      }
+    },
+    {
+      "content": "\r\n\nbb😀\n\n\r\n",
+      "options": {
+        "maxLines": 0,
+        "maxBytes": 5
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 13,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 5
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 13,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 5
+      }
+    },
+    {
+      "content": "\nzzzzzzzzzzzzzzzzzzzz\na\r\nazzzzzzzzzzzzzzzzzzzz\r\n",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 21
+      },
+      "head": {
+        "content": "\nzzzzzzzzzzzzzzzzzzzz",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 48,
+        "outputLines": 2,
+        "outputBytes": 21,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 21
+      },
+      "tail": {
+        "content": "zzzzzzzzzzzzzzzzzzzz\r",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 48,
+        "outputLines": 1,
+        "outputBytes": 21,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 21
+      }
+    },
+    {
+      "content": "\nbb",
+      "options": {
+        "maxLines": 0,
+        "maxBytes": 1
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 3,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 1
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 3,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 1
+      }
+    },
+    {
+      "content": "bb\nbb",
+      "options": {
+        "maxLines": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\r\n\r\naline\n\nlinea😀ccc",
+      "options": {
+        "maxBytes": 40
+      },
+      "head": {
+        "content": "\r\n\r\naline\n\nlinea😀ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 23,
+        "outputLines": 5,
+        "outputBytes": 23,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      },
+      "tail": {
+        "content": "\r\n\r\naline\n\nlinea😀ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 23,
+        "outputLines": 5,
+        "outputBytes": 23,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      }
+    },
+    {
+      "content": "\n\n😀ccc",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "\n\n😀ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 9,
+        "outputLines": 3,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\n\n😀ccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 9,
+        "outputLines": 3,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n\nzzzzzzzzzzzzzzzzzzzz\r\nzzzzzzzzzzzzzzzzzzzz\n\n",
+      "options": {},
+      "head": {
+        "content": "\n\nzzzzzzzzzzzzzzzzzzzz\r\nzzzzzzzzzzzzzzzzzzzz\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 46,
+        "outputLines": 5,
+        "outputBytes": 46,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\n\nzzzzzzzzzzzzzzzzzzzz\r\nzzzzzzzzzzzzzzzzzzzz\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 46,
+        "outputLines": 5,
+        "outputBytes": 46,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "😀lineline\n\r\n\n\nline",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 3
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 5,
+        "totalBytes": 21,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2,
+        "maxBytes": 3
+      },
+      "tail": {
+        "content": "ine",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 5,
+        "totalBytes": 21,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 3
+      }
+    },
+    {
+      "content": "\r\n\n\nccc",
+      "options": {
+        "maxLines": 2
+      },
+      "head": {
+        "content": "\r\n",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 7,
+        "outputLines": 2,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\nccc",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 7,
+        "outputLines": 2,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "😀",
+      "options": {
+        "maxLines": 3,
+        "maxBytes": 3
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 3,
+        "maxBytes": 3
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 3
+      }
+    },
+    {
+      "content": "cccbb\n\n",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "cccbb\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 7,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "cccbb\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 7,
+        "outputLines": 2,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\néalinea",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "éalinea",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "éé\n😀ccc",
+      "options": {
+        "maxBytes": 8
+      },
+      "head": {
+        "content": "éé",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      },
+      "tail": {
+        "content": "😀ccc",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 7,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 8
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "line\n\né",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 8,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 3,
+        "totalBytes": 8,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "😀bb\r\n",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "😀bb\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 8,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "😀bb\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 8,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "a\n\r\n\n\na\r\n\n",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "a\n\r\n",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 6,
+        "totalBytes": 10,
+        "outputLines": 3,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\na\r\n",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 6,
+        "totalBytes": 10,
+        "outputLines": 3,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n😀😀a",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 8
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 10,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 8
+      },
+      "tail": {
+        "content": "😀a",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 2,
+        "totalBytes": 10,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 8
+      }
+    },
+    {
+      "content": "😀zzzzzzzzzzzzzzzzzzzzbb\n\n\r\n😀zzzzzzzzzzzzzzzzzzzz😀",
+      "options": {
+        "maxLines": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 58,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 58,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "zzzzzzzzzzzzzzzzzzzz\n\nlinebba",
+      "options": {
+        "maxLines": 5
+      },
+      "head": {
+        "content": "zzzzzzzzzzzzzzzzzzzz\n\nlinebba",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 29,
+        "outputLines": 3,
+        "outputBytes": 29,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "zzzzzzzzzzzzzzzzzzzz\n\nlinebba",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 3,
+        "totalBytes": 29,
+        "outputLines": 3,
+        "outputBytes": 29,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "a😀",
+      "options": {
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "a😀",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 5,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "a😀",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 5,
+        "outputLines": 1,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "ccc\n\n",
+      "options": {
+        "maxLines": 2
+      },
+      "head": {
+        "content": "ccc\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 2,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "ccc\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 2,
+        "outputBytes": 5,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n\n\n\na\r\né😀é\r\n\n\nline",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 5
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 9,
+        "totalBytes": 23,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 5
+      },
+      "tail": {
+        "content": "line",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 9,
+        "totalBytes": 23,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 5
+      }
+    },
+    {
+      "content": "\n\n\nbbéé😀é",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 1
+      },
+      "head": {
+        "content": "\n",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 15,
+        "outputLines": 2,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 1
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 15,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 1
+      }
+    },
+    {
+      "content": "linebbbblinea\r\n",
+      "options": {
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 15,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 15,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "é",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "é",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "é",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "aaline\n\n",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "aaline",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 8,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 8,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\r\nccc",
+      "options": {
+        "maxLines": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 5,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "😀zzzzzzzzzzzzzzzzzzzz\r\n",
+      "options": {
+        "maxBytes": 40
+      },
+      "head": {
+        "content": "😀zzzzzzzzzzzzzzzzzzzz\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 26,
+        "outputLines": 1,
+        "outputBytes": 26,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      },
+      "tail": {
+        "content": "😀zzzzzzzzzzzzzzzzzzzz\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 26,
+        "outputLines": 1,
+        "outputBytes": 26,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 40
+      }
+    },
+    {
+      "content": "ccc\n\néabb\n\n",
+      "options": {
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 12,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2000,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "\r\n\r\n\r\n\r\nline",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 2
+      },
+      "head": {
+        "content": "\r",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 2
+      },
+      "tail": {
+        "content": "ne",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 5,
+        "totalBytes": 12,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 2
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxBytes": 21
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 21
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 21
+      }
+    },
+    {
+      "content": "éa",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 40
+      },
+      "head": {
+        "content": "éa",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 40
+      },
+      "tail": {
+        "content": "éa",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 3,
+        "outputLines": 1,
+        "outputBytes": 3,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 40
+      }
+    },
+    {
+      "content": "😀",
+      "options": {
+        "maxBytes": 21
+      },
+      "head": {
+        "content": "😀",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 21
+      },
+      "tail": {
+        "content": "😀",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 21
+      }
+    },
+    {
+      "content": "bba\n\n😀azzzzzzzzzzzzzzzzzzzz\n\n",
+      "options": {},
+      "head": {
+        "content": "bba\n\n😀azzzzzzzzzzzzzzzzzzzz\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 32,
+        "outputLines": 4,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "bba\n\n😀azzzzzzzzzzzzzzzzzzzz\n\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 4,
+        "totalBytes": 32,
+        "outputLines": 4,
+        "outputBytes": 32,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "😀éccc",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "😀éccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "😀éccc",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 9,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n\nline",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 6,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "line",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 3,
+        "totalBytes": 6,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "cccccc\nccc\r\n\n\nbb\r\n",
+      "options": {},
+      "head": {
+        "content": "cccccc\nccc\r\n\n\nbb\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 18,
+        "outputLines": 5,
+        "outputBytes": 18,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "cccccc\nccc\r\n\n\nbb\r\n",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 5,
+        "totalBytes": 18,
+        "outputLines": 5,
+        "outputBytes": 18,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "ébb",
+      "options": {
+        "maxLines": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 1,
+        "totalBytes": 4,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 0,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "\n\n😀\n\n\n\n\r\n😀😀line",
+      "options": {
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 8,
+        "totalBytes": 24,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 8,
+        "totalBytes": 24,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 5,
+        "maxBytes": 0
+      }
+    },
+    {
+      "content": "\n\n\n\nbbaccc\ncccccc",
+      "options": {
+        "maxLines": 3
+      },
+      "head": {
+        "content": "\n\n",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 6,
+        "totalBytes": 17,
+        "outputLines": 3,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "\nbbaccc\ncccccc",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 6,
+        "totalBytes": 17,
+        "outputLines": 3,
+        "outputBytes": 14,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 51200
+      }
+    },
+    {
+      "content": "",
+      "options": {
+        "maxBytes": 1
+      },
+      "head": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 1
+      },
+      "tail": {
+        "content": "",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 0,
+        "totalBytes": 0,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2000,
+        "maxBytes": 1
+      }
+    },
+    {
+      "content": "bb\nbbline",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 13
+      },
+      "head": {
+        "content": "bb",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 13
+      },
+      "tail": {
+        "content": "bbline",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 9,
+        "outputLines": 1,
+        "outputBytes": 6,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 13
+      }
+    },
+    {
+      "content": "a",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 2
+      },
+      "head": {
+        "content": "a",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 2
+      },
+      "tail": {
+        "content": "a",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 1,
+        "outputLines": 1,
+        "outputBytes": 1,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 2
+      }
+    },
+    {
+      "content": "😀\nazzzzzzzzzzzzzzzzzzzz",
+      "options": {
+        "maxLines": 1,
+        "maxBytes": 8
+      },
+      "head": {
+        "content": "😀",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 26,
+        "outputLines": 1,
+        "outputBytes": 4,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 8
+      },
+      "tail": {
+        "content": "zzzzzzzz",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 2,
+        "totalBytes": 26,
+        "outputLines": 1,
+        "outputBytes": 8,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 8
+      }
+    },
+    {
+      "content": "zzzzzzzzzzzzzzzzzzzzécccccczzzzzzzzzzzzzzzzzzzz\n",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 2
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 49,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 2,
+        "maxBytes": 2
+      },
+      "tail": {
+        "content": "zz",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 1,
+        "totalBytes": 49,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": true,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 2
+      }
+    },
+    {
+      "content": "\nbb😀aabb\n\nzzzzzzzzzzzzzzzzzzzza",
+      "options": {
+        "maxLines": 2,
+        "maxBytes": 40
+      },
+      "head": {
+        "content": "\nbb😀aabb",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 34,
+        "outputLines": 2,
+        "outputBytes": 11,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 40
+      },
+      "tail": {
+        "content": "\nzzzzzzzzzzzzzzzzzzzza",
+        "truncated": true,
+        "truncatedBy": "lines",
+        "totalLines": 4,
+        "totalBytes": 34,
+        "outputLines": 2,
+        "outputBytes": 22,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 2,
+        "maxBytes": 40
+      }
+    },
+    {
+      "content": "zzzzzzzzzzzzzzzzzzzza\n\n😀zzzzzzzzzzzzzzzzzzzz😀lineline\n\n",
+      "options": {
+        "maxLines": 3,
+        "maxBytes": 5
+      },
+      "head": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 61,
+        "outputLines": 0,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": true,
+        "maxLines": 3,
+        "maxBytes": 5
+      },
+      "tail": {
+        "content": "",
+        "truncated": true,
+        "truncatedBy": "bytes",
+        "totalLines": 4,
+        "totalBytes": 61,
+        "outputLines": 1,
+        "outputBytes": 0,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 3,
+        "maxBytes": 5
+      }
+    },
+    {
+      "content": "é",
+      "options": {
+        "maxLines": 1
+      },
+      "head": {
+        "content": "é",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      },
+      "tail": {
+        "content": "é",
+        "truncated": false,
+        "truncatedBy": null,
+        "totalLines": 1,
+        "totalBytes": 2,
+        "outputLines": 1,
+        "outputBytes": 2,
+        "lastLinePartial": false,
+        "firstLineExceedsLimit": false,
+        "maxLines": 1,
+        "maxBytes": 51200
+      }
+    }
+  ],
+  "formatSize": [
+    [
+      0,
+      "0B"
+    ],
+    [
+      1,
+      "1B"
+    ],
+    [
+      255,
+      "255B"
+    ],
+    [
+      256,
+      "256B"
+    ],
+    [
+      512,
+      "512B"
+    ],
+    [
+      768,
+      "768B"
+    ],
+    [
+      1023,
+      "1023B"
+    ],
+    [
+      1024,
+      "1.0KB"
+    ],
+    [
+      1280,
+      "1.3KB"
+    ],
+    [
+      1536,
+      "1.5KB"
+    ],
+    [
+      2304,
+      "2.3KB"
+    ],
+    [
+      51200,
+      "50.0KB"
+    ],
+    [
+      1048575,
+      "1024.0KB"
+    ],
+    [
+      1048576,
+      "1.0MB"
+    ],
+    [
+      1572864,
+      "1.5MB"
+    ],
+    [
+      3145728,
+      "3.0MB"
+    ]
+  ],
+  "truncateLine": [
+    [
+      "hello",
+      500,
+      {
+        "text": "hello",
+        "wasTruncated": false
+      }
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      500,
+      {
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "wasTruncated": false
+      }
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      500,
+      {
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "wasTruncated": false
+      }
+    ],
+    [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      500,
+      {
+        "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... [truncated]",
+        "wasTruncated": true
+      }
+    ],
+    [
+      "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      500,
+      {
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀... [truncated]",
+        "wasTruncated": true
+      }
+    ],
+    [
+      "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      500,
+      {
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀... [truncated]",
+        "wasTruncated": true
+      }
+    ],
+    [
+      "\t tab",
+      3,
+      {
+        "text": "\t t... [truncated]",
+        "wasTruncated": true
+      }
+    ]
+  ],
+  "truncateMiddle": [
+    [
+      "hello",
+      20,
+      {
+        "content": "hello",
+        "truncated": false,
+        "removedChars": 0,
+        "totalBytes": 5,
+        "totalLines": 1
+      }
+    ],
+    [
+      "abcdefghij",
+      8,
+      {
+        "content": "abcd…2 chars truncated…ghij",
+        "truncated": true,
+        "removedChars": 2,
+        "totalBytes": 10,
+        "totalLines": 1
+      }
+    ],
+    [
+      "abcdefghij",
+      9,
+      {
+        "content": "abcd…1 chars truncated…fghij",
+        "truncated": true,
+        "removedChars": 1,
+        "totalBytes": 10,
+        "totalLines": 1
+      }
+    ],
+    [
+      "abcdefghij",
+      0,
+      {
+        "content": "…10 chars truncated…",
+        "truncated": true,
+        "removedChars": 10,
+        "totalBytes": 10,
+        "totalLines": 1
+      }
+    ],
+    [
+      "aé😀b",
+      7,
+      {
+        "content": "aé…1 chars truncated…b",
+        "truncated": true,
+        "removedChars": 1,
+        "totalBytes": 8,
+        "totalLines": 1
+      }
+    ],
+    [
+      "line1\nline2\nline3",
+      5,
+      {
+        "content": "li…12 chars truncated…ne3",
+        "truncated": true,
+        "removedChars": 12,
+        "totalBytes": 17,
+        "totalLines": 3
+      }
+    ],
+    [
+      "😀😀😀😀😀😀😀😀😀😀",
+      12,
+      {
+        "content": "😀…8 chars truncated…😀",
+        "truncated": true,
+        "removedChars": 8,
+        "totalBytes": 40,
+        "totalLines": 1
+      }
+    ]
+  ]
+}

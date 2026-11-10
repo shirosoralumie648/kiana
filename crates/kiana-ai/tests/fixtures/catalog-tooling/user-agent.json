@@ -1,0 +1,650 @@
+[
+ {
+  "input": null,
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "KIANA/1.2.3",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "Kiana/1.2.3",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kIaNa/1.2.3",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "p",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (linux; node/v22.0.0; x64)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b; c)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;;b)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;;)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (;a)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (;)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ()",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ()",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b; c; d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a); x",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 x",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3(a)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3  (a)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ( a )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a ;b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b; c)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c;d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c; d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b; c d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a(b))",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a)b)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ((a))",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b(c))",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ()",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (; ; )",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ( )",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b; c)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 x",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3x",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3﻿x",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3\tx",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3\nx",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "éé/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "ππ/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "é ",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "; kiana/",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "-\té(",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "\t;é ",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "\t) kiana/",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": ";-é-",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "éé",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "pK/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 é",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/é",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (é)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (é;é)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (é;é;é)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (é;)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;é)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;é;é)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3​(paren)",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b​)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "İ/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "ı/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "pİ/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c\u0000)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c)\u0000",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/0.84.4 (linux; node/v22.0.0; x64)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=0.84.4",
+  "error": null
+ },
+ {
+  "input": "kiana/0.84.4 (linux; node/v22.0.0)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=0.84.4",
+  "error": null
+ },
+ {
+  "input": "kiana/0.84.4 (linux)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=0.84.4",
+  "error": null
+ },
+ {
+  "input": "kiana/0.84.4 (linux; x64)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=0.84.4",
+  "error": null
+ },
+ {
+  "input": "kiana/0.84.4 (linux; node/v22.0.0; x64; extra)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=0.84.4",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;c;d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/latest",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/v1.0.0",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=v1.0.0",
+  "error": null
+ },
+ {
+  "input": "kiana/1.0.0+build",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.0.0%2Bbuild",
+  "error": null
+ },
+ {
+  "input": "kiana/1.0.0-rc.1",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.0.0-rc.1",
+  "error": null
+ },
+ {
+  "input": "curl/8.0.0",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": " ",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 ",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": " kiana/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana /1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/ 1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3/4",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a,b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a=b)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b=c;d)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a; b; c; d; e)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "ÿþ/1.0.0",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/ÿ",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (ÿ;ÿ)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "😀/1.2.3",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (😀)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;😀)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ },
+ {
+  "input": "😀",
+  "kind": "catalog",
+  "location": null,
+  "error": null
+ },
+ {
+  "input": "kiana/1.2.3 (a;b;😀)",
+  "kind": "redirect",
+  "location": "https://kiana.dev/api/models?kiana-version=1.2.3",
+  "error": null
+ }
+]

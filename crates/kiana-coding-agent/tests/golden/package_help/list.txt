@@ -1,0 +1,9 @@
+Usage:
+  kiana list [--approve|--no-approve]
+
+List installed packages from user and project settings.
+
+Options:
+  -a, --approve      Trust project-local files for this command
+  -na, --no-approve  Ignore project-local files for this command
+

@@ -1,0 +1,99 @@
+{
+  "node": "v26.12.1",
+  "cases": [
+    {
+      "input_json": "{\"a\":1e+21,\"b\":5e-7,\"c\":0.0030000000000000005}",
+      "line": "{\"a\":1e+21,\"b\":5e-7,\"c\":0.0030000000000000005}\n"
+    },
+    {
+      "input_json": "{\"text\":\"a b c\"}",
+      "line": "{\"text\":\"a b c\"}\n"
+    },
+    {
+      "input_json": "[1,\"two\",null,true,{\"nested\":[]}]",
+      "line": "[1,\"two\",null,true,{\"nested\":[]}]\n"
+    },
+    {
+      "input_json": "\"plain\"",
+      "line": "\"plain\"\n"
+    },
+    {
+      "input_json": "0.000001",
+      "line": "0.000001\n"
+    },
+    {
+      "input_json": "1e-7",
+      "line": "1e-7\n"
+    },
+    {
+      "input_json": "1e+21",
+      "line": "1e+21\n"
+    },
+    {
+      "input_json": "100000000000000000000",
+      "line": "100000000000000000000\n"
+    },
+    {
+      "input_json": "123456789012345680000",
+      "line": "123456789012345680000\n"
+    },
+    {
+      "input_json": "{}",
+      "line": "{}\n"
+    },
+    {
+      "input_json": "[]",
+      "line": "[]\n"
+    },
+    {
+      "input_json": "{\"text\":\"\\\"\\\\\\n\\t\\u0000\\u001f ﻿\"}",
+      "line": "{\"text\":\"\\\"\\\\\\n\\t\\u0000\\u001f ﻿\"}\n"
+    },
+    {
+      "input_json": "{\"emoji\":\"😀\",\"tab\":\"\\t\"}",
+      "line": "{\"emoji\":\"😀\",\"tab\":\"\\t\"}\n"
+    },
+    {
+      "input_json": "{\"b\":1}",
+      "line": "{\"b\":1}\n"
+    },
+    {
+      "input_json": "[null]",
+      "line": "[null]\n"
+    },
+    {
+      "input_json": "{\"1\":1,\"2\":2,\"4294967294\":4,\"b\":1,\"01\":3,\"4294967295\":5,\"-1\":6}",
+      "line": "{\"1\":1,\"2\":2,\"4294967294\":4,\"b\":1,\"01\":3,\"4294967295\":5,\"-1\":6}\n"
+    },
+    {
+      "input_json": "{\"nested\":{\"z\":1,\"a\":{\"deep\":[1.5,0,100]}}}",
+      "line": "{\"nested\":{\"z\":1,\"a\":{\"deep\":[1.5,0,100]}}}\n"
+    }
+  ],
+  "special": [
+    {
+      "name": "minus_zero",
+      "line": "0\n"
+    },
+    {
+      "name": "nan",
+      "line": "null\n"
+    },
+    {
+      "name": "infinity",
+      "line": "null\n"
+    },
+    {
+      "name": "negative_infinity",
+      "line": "null\n"
+    },
+    {
+      "name": "undefined",
+      "line": "undefined\n"
+    },
+    {
+      "name": "null",
+      "line": "null\n"
+    }
+  ]
+}

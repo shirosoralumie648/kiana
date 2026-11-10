@@ -1,0 +1,3899 @@
+{
+  "generator": "typebox 1.3.27 Compile Check/Errors",
+  "cases": [
+    {
+      "label": "up_allOf_pass",
+      "schema": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "a"
+            ]
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_allOf_two_branches",
+      "schema": {
+        "allOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "properties": {
+              "b": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_allOf_one_fails",
+      "schema": {
+        "allOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_anyOf_both_pass",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "b": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_anyOf_one_pass",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_anyOf_none_pass",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "anyOf",
+          "instancePath": "",
+          "message": "must match a schema in anyOf",
+          "params": {}
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_oneOf_one_pass",
+      "schema": {
+        "oneOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              },
+              "required": [
+                "a"
+              ]
+            }
+          },
+          {
+            "properties": {
+              "b": {
+                "type": "string"
+              },
+              "required": [
+                "b"
+              ]
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "oneOf",
+          "instancePath": "",
+          "message": "must match exactly one schema in oneOf",
+          "params": {
+            "passingSchemas": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_oneOf_two_pass",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "b": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "oneOf",
+          "instancePath": "",
+          "message": "must match exactly one schema in oneOf",
+          "params": {
+            "passingSchemas": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_oneOf_none_pass",
+      "schema": {
+        "oneOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "oneOf",
+          "instancePath": "",
+          "message": "must match exactly one schema in oneOf",
+          "params": {
+            "passingSchemas": []
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_not",
+      "schema": {
+        "not": {
+          "properties": {
+            "a": {
+              "type": "string"
+            }
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_not_fails",
+      "schema": {
+        "not": {
+          "properties": {
+            "a": {
+              "type": "number"
+            }
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "not",
+          "instancePath": "",
+          "message": "must not be valid",
+          "params": {}
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_if_then",
+      "schema": {
+        "type": "object",
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "a"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "a": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "a"
+          ]
+        },
+        "else": {
+          "properties": {
+            "b": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "b"
+          ]
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "kind": "a",
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_if_else",
+      "schema": {
+        "type": "object",
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "a"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "a": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "a"
+          ]
+        },
+        "else": {
+          "properties": {
+            "b": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "b"
+          ]
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "kind": "b",
+        "b": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "kind"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_if_else_extra",
+      "schema": {
+        "type": "object",
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "a"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "a": {
+              "type": "number"
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "b": {
+              "type": "number"
+            }
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "kind": "b",
+        "b": 1,
+        "c": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "kind",
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_addprops_true",
+      "schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x": "ok"
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_addprops_schema_ok",
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_addprops_schema_bad",
+      "schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/x",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "additionalProperties",
+          "instancePath": "",
+          "message": "must not have additional properties",
+          "params": {
+            "additionalProperties": [
+              "x"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "x"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_addprops_false",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "boolean",
+          "instancePath": "/x",
+          "message": "schema is false",
+          "params": {}
+        },
+        {
+          "keyword": "additionalProperties",
+          "instancePath": "",
+          "message": "must not have additional properties",
+          "params": {
+            "additionalProperties": [
+              "x"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "x"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_properties_ok",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_properties_bad",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_properties_bad_then_good",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": "s",
+        "b": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_properties_good_then_bad",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "b": {
+            "type": "number"
+          },
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "b": 1,
+        "a": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b",
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_pattern_ok",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_pattern_partial",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": 1,
+        "c": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_pattern_bad",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": "x",
+        "c": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/ab",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "ab",
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_nested_object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "inner": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "inner": {
+          "a": 1,
+          "b": 2
+        }
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "/inner",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "inner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_nested_inner_ok_outer_extra",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "inner": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "inner": {
+          "a": 1
+        },
+        "z": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "z"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_type_object",
+      "schema": {
+        "type": "object",
+        "unevaluatedProperties": false
+      },
+      "value": [
+        1,
+        "x"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "",
+          "message": "must be object",
+          "params": {
+            "type": "object"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_no_type",
+      "schema": {
+        "unevaluatedProperties": false
+      },
+      "value": [
+        1,
+        "x"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_schema",
+      "schema": {
+        "unevaluatedProperties": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        "x"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_empty",
+      "schema": {
+        "unevaluatedProperties": false
+      },
+      "value": [],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_string_value",
+      "schema": {
+        "unevaluatedProperties": false
+      },
+      "value": "x",
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_ref_merges",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/n"
+          }
+        },
+        "$defs": {
+          "n": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_ref_nested_defs",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$defs": {
+              "n": {
+                "type": "number"
+              }
+            },
+            "$ref": "#/$defs/n"
+          }
+        }
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_ref_nested_defs_bad",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$defs": {
+              "n": {
+                "type": "number"
+              }
+            },
+            "$ref": "#/$defs/n"
+          }
+        }
+      },
+      "value": {
+        "a": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_nested_defs_deeper",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "object",
+            "properties": {
+              "z": {
+                "$defs": {
+                  "n": {
+                    "type": "number"
+                  }
+                },
+                "$ref": "#/$defs/n"
+              }
+            }
+          }
+        }
+      },
+      "value": {
+        "a": {
+          "z": 1
+        }
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_nested_sibling_after",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/n"
+          },
+          "b": {
+            "$defs": {
+              "n": {
+                "type": "number"
+              }
+            },
+            "$ref": "#/$defs/n"
+          }
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_nested_sibling_before",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "b": {
+            "$defs": {
+              "n": {
+                "type": "number"
+              }
+            },
+            "$ref": "#/$defs/n"
+          },
+          "a": {
+            "$ref": "#/$defs/n"
+          }
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_local_over_root",
+      "schema": {
+        "type": "object",
+        "$defs": {
+          "n": {
+            "type": "string"
+          }
+        },
+        "properties": {
+          "a": {
+            "$defs": {
+              "n": {
+                "type": "number"
+              }
+            },
+            "$ref": "#/$defs/n"
+          }
+        }
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_in_allOf_defs",
+      "schema": {
+        "allOf": [
+          {
+            "properties": {
+              "q": {
+                "$defs": {
+                  "n": {
+                    "type": "number"
+                  }
+                },
+                "$ref": "#/$defs/n"
+              }
+            }
+          }
+        ],
+        "type": "object"
+      },
+      "value": {
+        "q": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_const_skipped",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/x"
+          },
+          "c": {
+            "const": {
+              "x": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "x": {
+          "type": "string"
+        }
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_prop_in_properties",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/properties/b"
+          },
+          "b": {
+            "type": "number"
+          }
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_array_index",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/allOf/0"
+          }
+        },
+        "allOf": [
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_anchor_nested",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#num"
+          },
+          "b": {
+            "type": "object",
+            "properties": {
+              "c": {
+                "$anchor": "num",
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": {
+          "c": 2
+        }
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_ok",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        "a"
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_missing",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        }
+      },
+      "value": [
+        "a"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_empty",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        }
+      },
+      "value": [],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_min0",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0
+      },
+      "value": [],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_min0_data",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0
+      },
+      "value": [
+        1
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_min0_max0",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0,
+        "maxContains": 0
+      },
+      "value": [
+        1
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 0,
+            "maxContains": 0
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_min0_max1_over",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0,
+        "maxContains": 1
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 0,
+            "maxContains": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_min0_max2_ok",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0,
+        "maxContains": 2
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_max_only_over",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "maxContains": 1
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 1,
+            "maxContains": 1
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_min2_fail",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 2
+      },
+      "value": [
+        1,
+        "a"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 2
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_min2_ok",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 2
+      },
+      "value": [
+        1,
+        2,
+        "a"
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "contains_min0_uneval_items",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "minContains": 0,
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_uneval_items",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "contains_uneval_items_none",
+      "schema": {
+        "type": "array",
+        "contains": {
+          "type": "number"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        "a"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 1
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "maxContains_without_contains",
+      "schema": {
+        "type": "array",
+        "maxContains": 1
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "items_tuple_partial",
+      "schema": {
+        "type": "array",
+        "items": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_unsized_partial",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_prefix_partial",
+      "schema": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "number"
+          }
+        ],
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_prefix_partial_schema",
+      "schema": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "number"
+          }
+        ],
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": {
+          "type": "string"
+        }
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_prefix_only",
+      "schema": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "number"
+          }
+        ],
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        2,
+        3
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_additional_items",
+      "schema": {
+        "type": "array",
+        "items": [
+          {
+            "type": "number"
+          }
+        ],
+        "additionalItems": {
+          "type": "string"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/2",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_additional_items_bad",
+      "schema": {
+        "type": "array",
+        "items": [
+          {
+            "type": "number"
+          }
+        ],
+        "additionalItems": {
+          "type": "string"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        "a",
+        2,
+        3
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/2",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "items_uneval_empty",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "required_and_uneval",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a",
+          "b"
+        ],
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "c": 3
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "required",
+          "instancePath": "",
+          "message": "must have required properties b",
+          "params": {
+            "requiredProperties": [
+              "b"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "anyOf_error_merge",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "value": true,
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "anyOf",
+          "instancePath": "",
+          "message": "must match a schema in anyOf",
+          "params": {}
+        }
+      ]
+    },
+    {
+      "label": "oneOf_passing_params",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          }
+        ]
+      },
+      "value": 1,
+      "check": false,
+      "errors": [
+        {
+          "keyword": "oneOf",
+          "instancePath": "",
+          "message": "must match exactly one schema in oneOf",
+          "params": {
+            "passingSchemas": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "not_error",
+      "schema": {
+        "not": {
+          "type": "number"
+        }
+      },
+      "value": 1,
+      "check": false,
+      "errors": [
+        {
+          "keyword": "not",
+          "instancePath": "",
+          "message": "must not be valid",
+          "params": {}
+        }
+      ]
+    },
+    {
+      "label": "multiple_errors_cap",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j"
+        ]
+      },
+      "value": {},
+      "check": false,
+      "errors": [
+        {
+          "keyword": "required",
+          "instancePath": "",
+          "message": "must have required properties a, b, c, d, e, f, g, h, i, j",
+          "params": {
+            "requiredProperties": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g",
+              "h",
+              "i",
+              "j"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "array_type_mismatch",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        }
+      },
+      "value": [
+        1
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "",
+          "message": "must be object",
+          "params": {
+            "type": "object"
+          }
+        }
+      ]
+    },
+    {
+      "label": "deps_array_uneval",
+      "schema": {
+        "type": "object",
+        "dependencies": {
+          "a": [
+            "b"
+          ]
+        },
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2,
+        "c": 3
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "deps_schema_uneval",
+      "schema": {
+        "type": "object",
+        "dependencies": {
+          "a": {
+            "properties": {
+              "b": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "dependentRequired_uneval",
+      "schema": {
+        "type": "object",
+        "dependentRequired": {
+          "a": [
+            "b"
+          ]
+        },
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2,
+        "c": 3
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "dependentSchemas_uneval",
+      "schema": {
+        "type": "object",
+        "dependentSchemas": {
+          "a": {
+            "properties": {
+              "b": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "propertyNames_uneval",
+      "schema": {
+        "type": "object",
+        "propertyNames": {
+          "pattern": "^[a-z]+$"
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": 1,
+        "A": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "pattern",
+          "instancePath": "/A",
+          "message": "must match pattern \"^[a-z]+$\"",
+          "params": {
+            "pattern": "^[a-z]+$"
+          }
+        },
+        {
+          "keyword": "propertyNames",
+          "instancePath": "",
+          "message": "property names A are invalid",
+          "params": {
+            "propertyNames": [
+              "A"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "ab",
+              "A"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "minProperties_uneval",
+      "schema": {
+        "type": "object",
+        "minProperties": 2,
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "minProperties",
+          "instancePath": "",
+          "message": "must not have fewer than 2 properties",
+          "params": {
+            "limit": 2
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "required_missing_uneval",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a"
+        ],
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "required",
+          "instancePath": "",
+          "message": "must have required properties a",
+          "params": {
+            "requiredProperties": [
+              "a"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "allOf_nested_anyOf",
+      "schema": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "properties": {
+                  "a": {
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "c": {
+                    "type": "number"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "c": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "anyOf_branch_partial_fail",
+      "schema": {
+        "anyOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "oneOf_branch_partial_fail",
+      "schema": {
+        "oneOf": [
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "allOf_bool_true_branch",
+      "schema": {
+        "allOf": [
+          true,
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "allOf_bool_false_branch",
+      "schema": {
+        "allOf": [
+          false,
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "boolean",
+          "instancePath": "",
+          "message": "schema is false",
+          "params": {}
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "anyOf_bool_true_branch",
+      "schema": {
+        "anyOf": [
+          false,
+          {
+            "properties": {
+              "a": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "if_no_then",
+      "schema": {
+        "type": "object",
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "a"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "kind": "a",
+        "x": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "x"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "if_then_extra",
+      "schema": {
+        "type": "object",
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "a"
+            }
+          },
+          "required": [
+            "kind"
+          ]
+        },
+        "then": {
+          "properties": {
+            "a": {
+              "type": "number"
+            }
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "kind": "a",
+        "a": 1,
+        "x": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "x"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "not_nested_keys",
+      "schema": {
+        "type": "object",
+        "not": {
+          "properties": {
+            "a": {
+              "type": "string"
+            },
+            "b": {
+              "type": "string"
+            }
+          }
+        },
+        "properties": {
+          "c": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": "s",
+        "c": 3
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "not_object_pass",
+      "schema": {
+        "type": "object",
+        "not": {
+          "required": [
+            "z"
+          ]
+        },
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_nested_arrays",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "unevaluatedItems": false
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          "x"
+        ]
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "/1",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ui_outer_only",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "array"
+        },
+        "unevaluatedItems": false
+      },
+      "value": [
+        [
+          1
+        ],
+        []
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_tuple_short",
+      "schema": {
+        "type": "array",
+        "items": [
+          {
+            "type": "number"
+          }
+        ],
+        "unevaluatedItems": false
+      },
+      "value": [
+        1
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_tuple_none",
+      "schema": {
+        "type": "array",
+        "items": [
+          {
+            "type": "number"
+          }
+        ],
+        "unevaluatedItems": false
+      },
+      "value": [],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_prefix_extra",
+      "schema": {
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "number"
+          }
+        ],
+        "unevaluatedItems": {
+          "type": "string"
+        }
+      },
+      "value": [
+        1,
+        "a",
+        2,
+        "b"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ui_schema_all_pass",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_schema_some_fail",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "unevaluatedItems": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        "a",
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ui_contains_bool_true",
+      "schema": {
+        "type": "array",
+        "contains": true,
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ui_contains_bool_false",
+      "schema": {
+        "type": "array",
+        "contains": false,
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "contains",
+          "instancePath": "",
+          "message": "must contain at least 1 valid item",
+          "params": {
+            "minContains": 1
+          }
+        },
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ui_min_contains_no_contains",
+      "schema": {
+        "type": "array",
+        "minContains": 2,
+        "unevaluatedItems": false
+      },
+      "value": [
+        1,
+        2
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedItems",
+          "instancePath": "",
+          "message": "must not have unevaluated items",
+          "params": {
+            "unevaluatedItems": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_schema_ok",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": {
+          "type": "number"
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_schema_fail",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": {
+          "type": "number"
+        }
+      },
+      "value": {
+        "a": 1,
+        "b": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": true
+      },
+      "value": {
+        "a": 1,
+        "b": "s"
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_false_empty",
+      "schema": {
+        "type": "object",
+        "unevaluatedProperties": false
+      },
+      "value": {},
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "up_pattern_overlap",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^a": {
+            "type": "number"
+          },
+          "b$": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": 1,
+        "x": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "x"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_pattern_overlap_fail",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^a": {
+            "type": "number"
+          },
+          "b$": {
+            "type": "string"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "ab": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/ab",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "ab"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "addprops_pattern",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^x": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": {
+          "type": "string"
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x1": 1,
+        "y": "s"
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "addprops_pattern_bad",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^x": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": {
+          "type": "string"
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "x1": 1,
+        "y": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/y",
+          "message": "must be string",
+          "params": {
+            "type": "string"
+          }
+        },
+        {
+          "keyword": "additionalProperties",
+          "instancePath": "",
+          "message": "must not have additional properties",
+          "params": {
+            "additionalProperties": [
+              "y"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "y"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "addprops_false_props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "boolean",
+          "instancePath": "/b",
+          "message": "schema is false",
+          "params": {}
+        },
+        {
+          "keyword": "additionalProperties",
+          "instancePath": "",
+          "message": "must not have additional properties",
+          "params": {
+            "additionalProperties": [
+              "b"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_uneval_target",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/obj"
+          }
+        },
+        "$defs": {
+          "obj": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "/a",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "y"
+            ]
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "ref_uneval_both_ok",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/obj"
+          }
+        },
+        "$defs": {
+          "obj": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": {
+          "x": 1
+        }
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_bool_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/y"
+          }
+        },
+        "$defs": {
+          "y": true
+        }
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "ref_bool_false",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/$defs/n"
+          }
+        },
+        "$defs": {
+          "n": false
+        }
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "boolean",
+          "instancePath": "/a",
+          "message": "schema is false",
+          "params": {}
+        }
+      ]
+    },
+    {
+      "label": "ref_into_nested_uneval",
+      "schema": {
+        "allOf": [
+          {
+            "properties": {
+              "a": {
+                "$ref": "#/x"
+              }
+            }
+          }
+        ],
+        "unevaluatedProperties": false,
+        "x": {
+          "properties": {
+            "q": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "value": {
+        "a": {
+          "q": 1
+        }
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "capacity_many_errors",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j"
+        ],
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          },
+          "c": {
+            "type": "number"
+          }
+        }
+      },
+      "value": {
+        "a": "s",
+        "b": "s",
+        "c": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "required",
+          "instancePath": "",
+          "message": "must have required properties d, e, f, g, h, i, j",
+          "params": {
+            "requiredProperties": [
+              "d",
+              "e",
+              "f",
+              "g",
+              "h",
+              "i",
+              "j"
+            ]
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/c",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        }
+      ]
+    },
+    {
+      "label": "error_after_capacity_uneval",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "z"
+        ],
+        "unevaluatedProperties": {
+          "type": "string"
+        }
+      },
+      "value": {
+        "a": "s",
+        "b": "s",
+        "c": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "required",
+          "instancePath": "",
+          "message": "must have required properties z",
+          "params": {
+            "requiredProperties": [
+              "z"
+            ]
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/a",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "c"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_const_extra",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "const": 1
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": 2
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "prop_bool_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": true
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": true,
+      "errors": []
+    },
+    {
+      "label": "prop_bool_false",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": false
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "boolean",
+          "instancePath": "/a",
+          "message": "schema is false",
+          "params": {}
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_schema_mixed",
+      "schema": {
+        "unevaluatedProperties": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        "x",
+        3
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "up_array_with_type_array",
+      "schema": {
+        "type": "array",
+        "unevaluatedProperties": {
+          "type": "number"
+        }
+      },
+      "value": [
+        1,
+        "x"
+      ],
+      "check": false,
+      "errors": [
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "leak_three_props",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          },
+          "c": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "a": 1,
+        "b": "s",
+        "c": 3
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "leak_pattern_then_props",
+      "schema": {
+        "type": "object",
+        "patternProperties": {
+          "^z": {
+            "type": "number"
+          }
+        },
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "unevaluatedProperties": false
+      },
+      "value": {
+        "z1": "s",
+        "a": 1,
+        "b": "s"
+      },
+      "check": false,
+      "errors": [
+        {
+          "keyword": "type",
+          "instancePath": "/z1",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "type",
+          "instancePath": "/b",
+          "message": "must be number",
+          "params": {
+            "type": "number"
+          }
+        },
+        {
+          "keyword": "unevaluatedProperties",
+          "instancePath": "",
+          "message": "must not have unevaluated properties",
+          "params": {
+            "unevaluatedProperties": [
+              "z1",
+              "a",
+              "b"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

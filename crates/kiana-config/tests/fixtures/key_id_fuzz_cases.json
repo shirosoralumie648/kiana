@@ -1,0 +1,3472 @@
+{
+  "values": [
+    {
+      "value": "",
+      "valid": false
+    },
+    {
+      "value": " ,+\\+-@",
+      "valid": false
+    },
+    {
+      "value": " <&+space+]",
+      "valid": false
+    },
+    {
+      "value": " =",
+      "valid": false
+    },
+    {
+      "value": " alt+*not-a-keytab",
+      "valid": false
+    },
+    {
+      "value": " escape+|?",
+      "valid": false
+    },
+    {
+      "value": "!",
+      "valid": true
+    },
+    {
+      "value": "! ;+.pageDown+\\",
+      "valid": false
+    },
+    {
+      "value": "! `+' ;+~",
+      "valid": false
+    },
+    {
+      "value": "! ctrl+",
+      "valid": false
+    },
+    {
+      "value": "!$+a",
+      "valid": false
+    },
+    {
+      "value": "!+`",
+      "valid": false
+    },
+    {
+      "value": "!tab/ > space",
+      "valid": false
+    },
+    {
+      "value": "#",
+      "valid": true
+    },
+    {
+      "value": "#&",
+      "valid": false
+    },
+    {
+      "value": "#+! -",
+      "valid": false
+    },
+    {
+      "value": "#+>+{ pageDown",
+      "valid": false
+    },
+    {
+      "value": "#+_+esc",
+      "valid": false
+    },
+    {
+      "value": "#?z*",
+      "valid": false
+    },
+    {
+      "value": "#Z $Z+&",
+      "valid": false
+    },
+    {
+      "value": "#alt",
+      "valid": false
+    },
+    {
+      "value": "#esc+ctrl+z",
+      "valid": false
+    },
+    {
+      "value": "$ + shift+9",
+      "valid": false
+    },
+    {
+      "value": "$control A",
+      "valid": false
+    },
+    {
+      "value": "%",
+      "valid": true
+    },
+    {
+      "value": "% =",
+      "valid": false
+    },
+    {
+      "value": "% =+]+",
+      "valid": false
+    },
+    {
+      "value": "% f13 =+=",
+      "valid": false
+    },
+    {
+      "value": "% pageUp",
+      "valid": false
+    },
+    {
+      "value": "% ~ @",
+      "valid": false
+    },
+    {
+      "value": "%&",
+      "valid": false
+    },
+    {
+      "value": "%+-? @[",
+      "valid": false
+    },
+    {
+      "value": "%+<[\\",
+      "valid": false
+    },
+    {
+      "value": "%+ctrl+++ {<",
+      "valid": false
+    },
+    {
+      "value": "%+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "%[ f1",
+      "valid": false
+    },
+    {
+      "value": "&",
+      "valid": true
+    },
+    {
+      "value": "& ] shift",
+      "valid": false
+    },
+    {
+      "value": "& alt",
+      "valid": false
+    },
+    {
+      "value": "& escf12",
+      "valid": false
+    },
+    {
+      "value": "& f13",
+      "valid": false
+    },
+    {
+      "value": "&*+{",
+      "valid": false
+    },
+    {
+      "value": "&+<",
+      "valid": false
+    },
+    {
+      "value": "&+[",
+      "valid": false
+    },
+    {
+      "value": "&>a escape",
+      "valid": false
+    },
+    {
+      "value": "&?+SHIFT *",
+      "valid": false
+    },
+    {
+      "value": "&Ctrl+}#,",
+      "valid": false
+    },
+    {
+      "value": "&control+enterescape+?",
+      "valid": false
+    },
+    {
+      "value": "'",
+      "valid": true
+    },
+    {
+      "value": "' }_+=",
+      "valid": false
+    },
+    {
+      "value": "'+- _+@",
+      "valid": false
+    },
+    {
+      "value": "'control+?+/",
+      "valid": false
+    },
+    {
+      "value": "(",
+      "valid": true
+    },
+    {
+      "value": "( $`+9>",
+      "valid": false
+    },
+    {
+      "value": "( +^ alt*",
+      "valid": false
+    },
+    {
+      "value": "( <,",
+      "valid": false
+    },
+    {
+      "value": "( ctrl+",
+      "valid": false
+    },
+    {
+      "value": "( esc",
+      "valid": false
+    },
+    {
+      "value": "(+^, % .",
+      "valid": false
+    },
+    {
+      "value": "(+shift 0 @+*",
+      "valid": false
+    },
+    {
+      "value": "(+|+>",
+      "valid": false
+    },
+    {
+      "value": "(_+= enter",
+      "valid": false
+    },
+    {
+      "value": "(not-a-key /",
+      "valid": false
+    },
+    {
+      "value": "(not-a-keyf1 ++'",
+      "valid": false
+    },
+    {
+      "value": "(z+controlpageUp",
+      "valid": false
+    },
+    {
+      "value": ")",
+      "valid": true
+    },
+    {
+      "value": ") )",
+      "valid": false
+    },
+    {
+      "value": ") +SHIFT ^ SHIFT",
+      "valid": false
+    },
+    {
+      "value": ") <.",
+      "valid": false
+    },
+    {
+      "value": ") =++.",
+      "valid": false
+    },
+    {
+      "value": ") SHIFT+`+|",
+      "valid": false
+    },
+    {
+      "value": ") alt{",
+      "valid": false
+    },
+    {
+      "value": ") ctrl+",
+      "valid": false
+    },
+    {
+      "value": ")& A",
+      "valid": false
+    },
+    {
+      "value": ")+@A a",
+      "valid": false
+    },
+    {
+      "value": ")+SHIFT :",
+      "valid": false
+    },
+    {
+      "value": ")+alt[",
+      "valid": false
+    },
+    {
+      "value": ")+esc",
+      "valid": false
+    },
+    {
+      "value": "*",
+      "valid": true
+    },
+    {
+      "value": "* ,+< ",
+      "valid": false
+    },
+    {
+      "value": "* ] ctrl+",
+      "valid": false
+    },
+    {
+      "value": "* ` shift]",
+      "valid": false
+    },
+    {
+      "value": "* alt",
+      "valid": false
+    },
+    {
+      "value": "* { ~ z+z",
+      "valid": false
+    },
+    {
+      "value": "*+control",
+      "valid": false
+    },
+    {
+      "value": "*\\+.+?",
+      "valid": false
+    },
+    {
+      "value": "+",
+      "valid": true
+    },
+    {
+      "value": "+ ?",
+      "valid": false
+    },
+    {
+      "value": "+ tabCtrl+!",
+      "valid": false
+    },
+    {
+      "value": "+%_+super`",
+      "valid": false
+    },
+    {
+      "value": "+'^*(",
+      "valid": false
+    },
+    {
+      "value": "++; _ >",
+      "valid": false
+    },
+    {
+      "value": "+< :",
+      "valid": false
+    },
+    {
+      "value": "+? pageDown shift",
+      "valid": false
+    },
+    {
+      "value": ",",
+      "valid": true
+    },
+    {
+      "value": ",$+tab-+!",
+      "valid": false
+    },
+    {
+      "value": ",+f13 &+Ctrl",
+      "valid": false
+    },
+    {
+      "value": ",+space escape ;",
+      "valid": false
+    },
+    {
+      "value": ",alt+z pageUp",
+      "valid": false
+    },
+    {
+      "value": ",enter",
+      "valid": false
+    },
+    {
+      "value": ",f12+ a ;",
+      "valid": false
+    },
+    {
+      "value": "-",
+      "valid": true
+    },
+    {
+      "value": "- enterctrl+",
+      "valid": false
+    },
+    {
+      "value": "- escape &+$",
+      "valid": false
+    },
+    {
+      "value": "-+`",
+      "valid": false
+    },
+    {
+      "value": "-+shiftCtrl <+",
+      "valid": false
+    },
+    {
+      "value": "-/&",
+      "valid": false
+    },
+    {
+      "value": "-=0space",
+      "valid": false
+    },
+    {
+      "value": "-]",
+      "valid": false
+    },
+    {
+      "value": "-f12+[f12",
+      "valid": false
+    },
+    {
+      "value": "-not-a-key _super+/",
+      "valid": false
+    },
+    {
+      "value": "-~+f12",
+      "valid": false
+    },
+    {
+      "value": ".",
+      "valid": true
+    },
+    {
+      "value": ". not-a-key+[",
+      "valid": false
+    },
+    {
+      "value": ". |+alt;tab",
+      "valid": false
+    },
+    {
+      "value": ".+#",
+      "valid": false
+    },
+    {
+      "value": ".+SHIFT",
+      "valid": false
+    },
+    {
+      "value": ".+spacea+f1",
+      "valid": false
+    },
+    {
+      "value": ".[_+~&",
+      "valid": false
+    },
+    {
+      "value": ".\\,",
+      "valid": false
+    },
+    {
+      "value": ".space",
+      "valid": false
+    },
+    {
+      "value": "/",
+      "valid": true
+    },
+    {
+      "value": "/ ;",
+      "valid": false
+    },
+    {
+      "value": "/ escape+A+$",
+      "valid": false
+    },
+    {
+      "value": "/ {+~",
+      "valid": false
+    },
+    {
+      "value": "/< ~",
+      "valid": false
+    },
+    {
+      "value": "/z",
+      "valid": false
+    },
+    {
+      "value": "0",
+      "valid": true
+    },
+    {
+      "value": "0 $Z",
+      "valid": false
+    },
+    {
+      "value": "0 /",
+      "valid": false
+    },
+    {
+      "value": "0 [`+.alt",
+      "valid": false
+    },
+    {
+      "value": "0 `",
+      "valid": false
+    },
+    {
+      "value": "0 escpageDowntab alt",
+      "valid": false
+    },
+    {
+      "value": "0! ",
+      "valid": false
+    },
+    {
+      "value": "0*+\\+pageDown ctrl",
+      "valid": false
+    },
+    {
+      "value": "0+'f13",
+      "valid": false
+    },
+    {
+      "value": "0+control",
+      "valid": false
+    },
+    {
+      "value": "0+esc",
+      "valid": false
+    },
+    {
+      "value": "0Z+",
+      "valid": false
+    },
+    {
+      "value": "0[",
+      "valid": false
+    },
+    {
+      "value": "0^ f12 ;",
+      "valid": false
+    },
+    {
+      "value": "0enter A+esc++",
+      "valid": false
+    },
+    {
+      "value": "0pageUp+pageUpf13escape",
+      "valid": false
+    },
+    {
+      "value": "9",
+      "valid": true
+    },
+    {
+      "value": "9 0`",
+      "valid": false
+    },
+    {
+      "value": "9 ?+{+^",
+      "valid": false
+    },
+    {
+      "value": "9 \\ & A)",
+      "valid": false
+    },
+    {
+      "value": "9 ctrl control ?",
+      "valid": false
+    },
+    {
+      "value": "9 shift~+#+?",
+      "valid": false
+    },
+    {
+      "value": "9 space+$[",
+      "valid": false
+    },
+    {
+      "value": "9 z",
+      "valid": false
+    },
+    {
+      "value": "9++",
+      "valid": false
+    },
+    {
+      "value": "9+9tab+super",
+      "valid": false
+    },
+    {
+      "value": "9+A [ space",
+      "valid": false
+    },
+    {
+      "value": "9= A+",
+      "valid": false
+    },
+    {
+      "value": ":",
+      "valid": true
+    },
+    {
+      "value": ": a+)=",
+      "valid": false
+    },
+    {
+      "value": ": escape",
+      "valid": false
+    },
+    {
+      "value": ":! super",
+      "valid": false
+    },
+    {
+      "value": ":+%z#:",
+      "valid": false
+    },
+    {
+      "value": ":+. esc ~",
+      "valid": false
+    },
+    {
+      "value": ":+\\esc_+;",
+      "valid": false
+    },
+    {
+      "value": ":+f12++(",
+      "valid": false
+    },
+    {
+      "value": ":[f1 a[",
+      "valid": false
+    },
+    {
+      "value": ":enter control+>+control",
+      "valid": false
+    },
+    {
+      "value": ";",
+      "valid": true
+    },
+    {
+      "value": "; # A",
+      "valid": false
+    },
+    {
+      "value": "; ;+\\(+\\",
+      "valid": false
+    },
+    {
+      "value": ";!",
+      "valid": false
+    },
+    {
+      "value": ";+0",
+      "valid": false
+    },
+    {
+      "value": ";+0 escape++ escape",
+      "valid": false
+    },
+    {
+      "value": ";+; escape;",
+      "valid": false
+    },
+    {
+      "value": ";+shift>",
+      "valid": false
+    },
+    {
+      "value": ";Ctrl",
+      "valid": false
+    },
+    {
+      "value": ";escape 9Z+",
+      "valid": false
+    },
+    {
+      "value": ";pageUp~+] [",
+      "valid": false
+    },
+    {
+      "value": ";shift .tab ;",
+      "valid": false
+    },
+    {
+      "value": "<",
+      "valid": true
+    },
+    {
+      "value": "< < f12 .",
+      "valid": false
+    },
+    {
+      "value": "< Ctrl",
+      "valid": false
+    },
+    {
+      "value": "< shift",
+      "valid": false
+    },
+    {
+      "value": "<+!+z",
+      "valid": false
+    },
+    {
+      "value": "<+:+= pageUp",
+      "valid": false
+    },
+    {
+      "value": "<+_not-a-key+escape+\\",
+      "valid": false
+    },
+    {
+      "value": "<+}",
+      "valid": false
+    },
+    {
+      "value": "<f13+pageUp)9",
+      "valid": false
+    },
+    {
+      "value": "=",
+      "valid": true
+    },
+    {
+      "value": "= , (escapeenter",
+      "valid": false
+    },
+    {
+      "value": "= a+<+<",
+      "valid": false
+    },
+    {
+      "value": "= pageDown \\+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "=+9 '+`+>",
+      "valid": false
+    },
+    {
+      "value": "=^ z",
+      "valid": false
+    },
+    {
+      "value": "=control+not-a-key not-a-key",
+      "valid": false
+    },
+    {
+      "value": "=escape { 0",
+      "valid": false
+    },
+    {
+      "value": "=tab ]tab ctrl",
+      "valid": false
+    },
+    {
+      "value": ">",
+      "valid": true
+    },
+    {
+      "value": "> #+escape Z _",
+      "valid": false
+    },
+    {
+      "value": "> *",
+      "valid": false
+    },
+    {
+      "value": "> , }+'\\",
+      "valid": false
+    },
+    {
+      "value": ">#f1",
+      "valid": false
+    },
+    {
+      "value": ">+. pageDown",
+      "valid": false
+    },
+    {
+      "value": ">+ctrl",
+      "valid": false
+    },
+    {
+      "value": ">`+f1super`",
+      "valid": false
+    },
+    {
+      "value": ">tab enter <",
+      "valid": false
+    },
+    {
+      "value": "?",
+      "valid": true
+    },
+    {
+      "value": "? * )",
+      "valid": false
+    },
+    {
+      "value": "? -",
+      "valid": false
+    },
+    {
+      "value": "?$_+.a",
+      "valid": false
+    },
+    {
+      "value": "?+\\,",
+      "valid": false
+    },
+    {
+      "value": "?+^",
+      "valid": false
+    },
+    {
+      "value": "?+}",
+      "valid": false
+    },
+    {
+      "value": "?/ )+not-a-key 9",
+      "valid": false
+    },
+    {
+      "value": "@",
+      "valid": true
+    },
+    {
+      "value": "@ (",
+      "valid": false
+    },
+    {
+      "value": "@ =+*+$+.",
+      "valid": false
+    },
+    {
+      "value": "@ \\ $+^+*",
+      "valid": false
+    },
+    {
+      "value": "@'",
+      "valid": false
+    },
+    {
+      "value": "@(",
+      "valid": false
+    },
+    {
+      "value": "@+f13",
+      "valid": false
+    },
+    {
+      "value": "@. pageDown",
+      "valid": false
+    },
+    {
+      "value": "@zA+z",
+      "valid": false
+    },
+    {
+      "value": "A",
+      "valid": false
+    },
+    {
+      "value": "A$ 9 0",
+      "valid": false
+    },
+    {
+      "value": "A+shift (",
+      "valid": false
+    },
+    {
+      "value": "A+~\\+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "A`",
+      "valid": false
+    },
+    {
+      "value": "A|",
+      "valid": false
+    },
+    {
+      "value": "Ctrl",
+      "valid": false
+    },
+    {
+      "value": "Ctrl )",
+      "valid": false
+    },
+    {
+      "value": "Ctrl + ",
+      "valid": false
+    },
+    {
+      "value": "Ctrl \\",
+      "valid": false
+    },
+    {
+      "value": "Ctrl++ Ctrl ",
+      "valid": false
+    },
+    {
+      "value": "Ctrlcontrol",
+      "valid": false
+    },
+    {
+      "value": "Ctrlshift \\ ~",
+      "valid": false
+    },
+    {
+      "value": "Ctrltab+, f12",
+      "valid": false
+    },
+    {
+      "value": "SHIFT",
+      "valid": false
+    },
+    {
+      "value": "SHIFT! pageUp",
+      "valid": false
+    },
+    {
+      "value": "SHIFT+pageDown",
+      "valid": false
+    },
+    {
+      "value": "SHIFT+~,+*+a",
+      "valid": false
+    },
+    {
+      "value": "SHIFTA control!",
+      "valid": false
+    },
+    {
+      "value": "SHIFTnot-a-key",
+      "valid": false
+    },
+    {
+      "value": "SHIFTpageUp+/+% ;",
+      "valid": false
+    },
+    {
+      "value": "Z",
+      "valid": false
+    },
+    {
+      "value": "Z (",
+      "valid": false
+    },
+    {
+      "value": "Z :+],+super",
+      "valid": false
+    },
+    {
+      "value": "Z =",
+      "valid": false
+    },
+    {
+      "value": "Z ] ctrl+",
+      "valid": false
+    },
+    {
+      "value": "Z pageDown",
+      "valid": false
+    },
+    {
+      "value": "Z&ctrl++]+tab",
+      "valid": false
+    },
+    {
+      "value": "Z(",
+      "valid": false
+    },
+    {
+      "value": "Z+SHIFT;|",
+      "valid": false
+    },
+    {
+      "value": "Zctrl+",
+      "valid": false
+    },
+    {
+      "value": "ZpageUp!{",
+      "valid": false
+    },
+    {
+      "value": "[",
+      "valid": true
+    },
+    {
+      "value": "[ ')",
+      "valid": false
+    },
+    {
+      "value": "[ f12+>+[ @",
+      "valid": false
+    },
+    {
+      "value": "[&",
+      "valid": false
+    },
+    {
+      "value": "[+> ,-+,",
+      "valid": false
+    },
+    {
+      "value": "[+[%",
+      "valid": false
+    },
+    {
+      "value": "[+^+,space",
+      "valid": false
+    },
+    {
+      "value": "[+_ctrl+z _",
+      "valid": false
+    },
+    {
+      "value": "[+`/ ^+*",
+      "valid": false
+    },
+    {
+      "value": "[+pageDownenter",
+      "valid": false
+    },
+    {
+      "value": "[+{ pageUp",
+      "valid": false
+    },
+    {
+      "value": "[escape",
+      "valid": false
+    },
+    {
+      "value": "\\",
+      "valid": true
+    },
+    {
+      "value": "\\ ( \\ pageDown",
+      "valid": false
+    },
+    {
+      "value": "\\ AZ pageDown",
+      "valid": false
+    },
+    {
+      "value": "\\ space",
+      "valid": false
+    },
+    {
+      "value": "\\) ctrl++ctrl+enter",
+      "valid": false
+    },
+    {
+      "value": "\\+* <",
+      "valid": false
+    },
+    {
+      "value": "\\+f12",
+      "valid": false
+    },
+    {
+      "value": "\\+pageUp 9 shift+*",
+      "valid": false
+    },
+    {
+      "value": "\\.[",
+      "valid": false
+    },
+    {
+      "value": "\\^",
+      "valid": false
+    },
+    {
+      "value": "\\a",
+      "valid": false
+    },
+    {
+      "value": "]",
+      "valid": true
+    },
+    {
+      "value": "] not-a-key+enter",
+      "valid": false
+    },
+    {
+      "value": "]+<z ctrl",
+      "valid": false
+    },
+    {
+      "value": "]+?+<",
+      "valid": false
+    },
+    {
+      "value": "]+a",
+      "valid": false
+    },
+    {
+      "value": "]control ; @",
+      "valid": false
+    },
+    {
+      "value": "^ -",
+      "valid": false
+    },
+    {
+      "value": "^ @",
+      "valid": false
+    },
+    {
+      "value": "^ pageDown+ ?",
+      "valid": false
+    },
+    {
+      "value": "^ |+!",
+      "valid": false
+    },
+    {
+      "value": "^+%ctrl+& -",
+      "valid": false
+    },
+    {
+      "value": "^+@\\<",
+      "valid": false
+    },
+    {
+      "value": "^+a '+f13",
+      "valid": false
+    },
+    {
+      "value": "^;+0escape",
+      "valid": false
+    },
+    {
+      "value": "^a",
+      "valid": false
+    },
+    {
+      "value": "^control{",
+      "valid": false
+    },
+    {
+      "value": "_",
+      "valid": true
+    },
+    {
+      "value": "_ ",
+      "valid": false
+    },
+    {
+      "value": "_ [",
+      "valid": false
+    },
+    {
+      "value": "_ ^ z+{ alt",
+      "valid": false
+    },
+    {
+      "value": "_ a.",
+      "valid": false
+    },
+    {
+      "value": "_ tab+/+~",
+      "valid": false
+    },
+    {
+      "value": "_% !=+_",
+      "valid": false
+    },
+    {
+      "value": "_+enter",
+      "valid": false
+    },
+    {
+      "value": "_-+9",
+      "valid": false
+    },
+    {
+      "value": "_0",
+      "valid": false
+    },
+    {
+      "value": "_0*+f1",
+      "valid": false
+    },
+    {
+      "value": "_Z @+f13",
+      "valid": false
+    },
+    {
+      "value": "_alt [",
+      "valid": false
+    },
+    {
+      "value": "`",
+      "valid": true
+    },
+    {
+      "value": "` *",
+      "valid": false
+    },
+    {
+      "value": "` * <",
+      "valid": false
+    },
+    {
+      "value": "`! pageDown _ Ctrl",
+      "valid": false
+    },
+    {
+      "value": "`% not-a-key",
+      "valid": false
+    },
+    {
+      "value": "`+[ ",
+      "valid": false
+    },
+    {
+      "value": "`+tab%|",
+      "valid": false
+    },
+    {
+      "value": "`, pageDown f13",
+      "valid": false
+    },
+    {
+      "value": "`_+super",
+      "valid": false
+    },
+    {
+      "value": "a",
+      "valid": true
+    },
+    {
+      "value": "a /+control+pageDown",
+      "valid": false
+    },
+    {
+      "value": "a 0 /+Ctrl f1",
+      "valid": false
+    },
+    {
+      "value": "a 9 space .",
+      "valid": false
+    },
+    {
+      "value": "a pageUp+=",
+      "valid": false
+    },
+    {
+      "value": "a tab ' escf1",
+      "valid": false
+    },
+    {
+      "value": "a ~",
+      "valid": false
+    },
+    {
+      "value": "a(",
+      "valid": false
+    },
+    {
+      "value": "a:f13pageUp:",
+      "valid": false
+    },
+    {
+      "value": "alt",
+      "valid": false
+    },
+    {
+      "value": "alt -+tab space",
+      "valid": false
+    },
+    {
+      "value": "alt / a _",
+      "valid": false
+    },
+    {
+      "value": "alt+$",
+      "valid": true
+    },
+    {
+      "value": "alt+*",
+      "valid": true
+    },
+    {
+      "value": "alt+,",
+      "valid": true
+    },
+    {
+      "value": "alt+0",
+      "valid": true
+    },
+    {
+      "value": "alt+:",
+      "valid": true
+    },
+    {
+      "value": "alt+<",
+      "valid": true
+    },
+    {
+      "value": "alt+=",
+      "valid": true
+    },
+    {
+      "value": "alt+A",
+      "valid": false
+    },
+    {
+      "value": "alt+]",
+      "valid": true
+    },
+    {
+      "value": "alt+alt+#",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+<",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+alt+alt+shift+>",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+alt+super+super+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+ctrl+ctrl+shift+ctrl+tab",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+ctrl+|",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+shift+#",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+shift+9",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+super+=",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+super+ctrl+ctrl+space",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+super+shift+alt+alt+%",
+      "valid": false
+    },
+    {
+      "value": "alt+alt+|",
+      "valid": false
+    },
+    {
+      "value": "alt+control",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+!",
+      "valid": true
+    },
+    {
+      "value": "alt+ctrl+)",
+      "valid": true
+    },
+    {
+      "value": "alt+ctrl+;",
+      "valid": true
+    },
+    {
+      "value": "alt+ctrl+^",
+      "valid": true
+    },
+    {
+      "value": "alt+ctrl+alt+#",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+alt+9",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+alt+shift+shift+shift+}",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+alt+super+,",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+alt+super+shift+f1",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+ctrl+=",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+ctrl+alt+ctrl+super+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+ctrl+ctrl+super+ctrl+alt",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+ctrl+shift+<",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+ctrl+shift+ctrl+ctrl+A",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+shift+alt+shift+9",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+shift+ctrl+9",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+shift+shift+escape",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+super+alt+super+shift+f13",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+super+ctrl+shift+?",
+      "valid": false
+    },
+    {
+      "value": "alt+ctrl+super+escape",
+      "valid": true
+    },
+    {
+      "value": "alt+f1",
+      "valid": true
+    },
+    {
+      "value": "alt+f12",
+      "valid": true
+    },
+    {
+      "value": "alt+pageDown",
+      "valid": true
+    },
+    {
+      "value": "alt+shift+$",
+      "valid": true
+    },
+    {
+      "value": "alt+shift+alt+ctrl+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+alt+super+ctrl+shift+f12",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+alt+control",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+alt+super+shift+super",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+ctrl+|",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+shift+space",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+shift+super",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+ctrl+shift+super+alt+a",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+shift+_",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+shift+super+shift+alt+#",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+super+alt+shift+-",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+super+alt+space",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+super+ctrl+alt+shift+f13",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+super+ctrl+f12",
+      "valid": true
+    },
+    {
+      "value": "alt+shift+super+super+shift+shift+%",
+      "valid": false
+    },
+    {
+      "value": "alt+shift+super+super+super+>",
+      "valid": false
+    },
+    {
+      "value": "alt+super+$",
+      "valid": true
+    },
+    {
+      "value": "alt+super+alt+<",
+      "valid": false
+    },
+    {
+      "value": "alt+super+alt+alt+shift+{",
+      "valid": false
+    },
+    {
+      "value": "alt+super+ctrl+)",
+      "valid": true
+    },
+    {
+      "value": "alt+super+ctrl+alt+shift+shift+:",
+      "valid": false
+    },
+    {
+      "value": "alt+super+ctrl+alt+super+shift+f13",
+      "valid": false
+    },
+    {
+      "value": "alt+super+ctrl+ctrl+super+super++",
+      "valid": false
+    },
+    {
+      "value": "alt+super+f13",
+      "valid": false
+    },
+    {
+      "value": "alt+super+pageDown",
+      "valid": true
+    },
+    {
+      "value": "alt+super+shift+'",
+      "valid": true
+    },
+    {
+      "value": "alt+super+shift+.",
+      "valid": true
+    },
+    {
+      "value": "alt+super+shift+ctrl+(",
+      "valid": true
+    },
+    {
+      "value": "alt+super+tab",
+      "valid": true
+    },
+    {
+      "value": "alt+{",
+      "valid": true
+    },
+    {
+      "value": "alt+|",
+      "valid": true
+    },
+    {
+      "value": "alt[pageDown+tab#",
+      "valid": false
+    },
+    {
+      "value": "altpageUp9 ctrl f12",
+      "valid": false
+    },
+    {
+      "value": "altspace+'~ space",
+      "valid": false
+    },
+    {
+      "value": "apageUp",
+      "valid": false
+    },
+    {
+      "value": "á",
+      "valid": false
+    },
+    {
+      "value": "control",
+      "valid": false
+    },
+    {
+      "value": "control -+% `",
+      "valid": false
+    },
+    {
+      "value": "control _",
+      "valid": false
+    },
+    {
+      "value": "control {$%",
+      "valid": false
+    },
+    {
+      "value": "control+#",
+      "valid": false
+    },
+    {
+      "value": "control^+*-",
+      "valid": false
+    },
+    {
+      "value": "ctrl",
+      "valid": false
+    },
+    {
+      "value": "ctrl 0+Ctrl shift",
+      "valid": false
+    },
+    {
+      "value": "ctrl [` [",
+      "valid": false
+    },
+    {
+      "value": "ctrl not-a-key+'+&",
+      "valid": false
+    },
+    {
+      "value": "ctrl' >{<",
+      "valid": false
+    },
+    {
+      "value": "ctrl*\\+*",
+      "valid": false
+    },
+    {
+      "value": "ctrl+",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ 0 pageDown",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ =+,z+/",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ [)",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ escapenot-a-key@pageDown",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ }[",
+      "valid": false
+    },
+    {
+      "value": "ctrl+(",
+      "valid": true
+    },
+    {
+      "value": "ctrl+)",
+      "valid": true
+    },
+    {
+      "value": "ctrl++#+f12",
+      "valid": false
+    },
+    {
+      "value": "ctrl++controlenter+[/",
+      "valid": false
+    },
+    {
+      "value": "ctrl++super",
+      "valid": false
+    },
+    {
+      "value": "ctrl+-",
+      "valid": true
+    },
+    {
+      "value": "ctrl+-@^ control",
+      "valid": false
+    },
+    {
+      "value": "ctrl+/",
+      "valid": true
+    },
+    {
+      "value": "ctrl+=",
+      "valid": true
+    },
+    {
+      "value": "ctrl+?",
+      "valid": true
+    },
+    {
+      "value": "ctrl+A",
+      "valid": false
+    },
+    {
+      "value": "ctrl+[",
+      "valid": true
+    },
+    {
+      "value": "ctrl+\\",
+      "valid": true
+    },
+    {
+      "value": "ctrl+]",
+      "valid": true
+    },
+    {
+      "value": "ctrl+a",
+      "valid": true
+    },
+    {
+      "value": "ctrl+a\u0000",
+      "valid": false
+    },
+    {
+      "value": "ctrl+a\t",
+      "valid": false
+    },
+    {
+      "value": "ctrl+a\r",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+/",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+0",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+`",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+alt+shift+ctrl+\\",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+ctrl+alt+?",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+ctrl+alt+ctrl+escape",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+ctrl+enter",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+f12",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+shift+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+shift+super+super+ctrl+<",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+shift+z",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+super",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+super+ctrl",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+super+ctrl+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+super+shift+\\",
+      "valid": true
+    },
+    {
+      "value": "ctrl+alt+super+shift+alt+alt+Ctrl",
+      "valid": false
+    },
+    {
+      "value": "ctrl+alt+super+shift+ctrl+alt+?",
+      "valid": false
+    },
+    {
+      "value": "ctrl+a ",
+      "valid": false
+    },
+    {
+      "value": "ctrl+control",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt+alt+-",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt+alt+f13",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt+ctrl+alt+super+9",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt+shift+shift+0",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+alt+shift+shift+super++",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+ctrl+ctrl+esc",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+ctrl+f13",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+ctrl+super+alt+ctrl+$",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+ctrl+super+alt+ctrl+{",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+alt+shift+-",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+alt+shift+.",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+alt+super+alt+'",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+ctrl+=",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+ctrl+alt+Ctrl",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+shift+super+ctrl+!",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+alt+<",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+alt+alt+0",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+ctrl+enter",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+ctrl+shift+)",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+shift+shift+escape",
+      "valid": false
+    },
+    {
+      "value": "ctrl+ctrl+super+super+alt+super+#",
+      "valid": false
+    },
+    {
+      "value": "ctrl+f1+enter",
+      "valid": false
+    },
+    {
+      "value": "ctrl+pageDown",
+      "valid": true
+    },
+    {
+      "value": "ctrl+pageDown f12+#",
+      "valid": false
+    },
+    {
+      "value": "ctrl+pageDown) (",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+$",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+9",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+@",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+a",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+alt+)",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+alt+ctrl+alt+alt+#",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+alt+super+f12",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+ctrl+alt+shift+tab",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+ctrl+alt+super+ctrl+enter",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+ctrl+control",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+ctrl+ctrl+super+ctrl+_",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+ctrl+ctrl+super+esc",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+shift+;",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+super",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+super+alt+)",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+super+alt+alt+*",
+      "valid": false
+    },
+    {
+      "value": "ctrl+shift+super+space",
+      "valid": true
+    },
+    {
+      "value": "ctrl+shift+super+super+shift+@",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+<",
+      "valid": true
+    },
+    {
+      "value": "ctrl+super+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+[",
+      "valid": true
+    },
+    {
+      "value": "ctrl+super+alt+alt+-",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+alt+shift+*",
+      "valid": true
+    },
+    {
+      "value": "ctrl+super+ctrl+&",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+ctrl+alt+alt+alt+shift",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+ctrl+alt+alt+shift+",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+ctrl+ctrl+shift+shift+\\",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+ctrl+shift+shift+]",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+f12",
+      "valid": true
+    },
+    {
+      "value": "ctrl+super+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+shift+alt+alt+%",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+shift+ctrl+shift+$",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+shift+ctrl+super+super+0",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+shift+ctrl+|",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+super+9",
+      "valid": false
+    },
+    {
+      "value": "ctrl+super+super+alt+ctrl+ctrl+>",
+      "valid": false
+    },
+    {
+      "value": "ctrl+é",
+      "valid": false
+    },
+    {
+      "value": "ctrl+😀",
+      "valid": false
+    },
+    {
+      "value": "ctrlctrl+9",
+      "valid": false
+    },
+    {
+      "value": "enter",
+      "valid": true
+    },
+    {
+      "value": "enter (;",
+      "valid": false
+    },
+    {
+      "value": "enter +esc",
+      "valid": false
+    },
+    {
+      "value": "enter .+",
+      "valid": false
+    },
+    {
+      "value": "enter Ctrl f13",
+      "valid": false
+    },
+    {
+      "value": "enter ^ * z escape",
+      "valid": false
+    },
+    {
+      "value": "enter(+spaceesc",
+      "valid": false
+    },
+    {
+      "value": "enter+++enter",
+      "valid": false
+    },
+    {
+      "value": "enter+_ =+space_",
+      "valid": false
+    },
+    {
+      "value": "enter+space control ctrl",
+      "valid": false
+    },
+    {
+      "value": "enter?+.",
+      "valid": false
+    },
+    {
+      "value": "esc * alt+# %",
+      "valid": false
+    },
+    {
+      "value": "esc Ctrl <+SHIFT SHIFT",
+      "valid": false
+    },
+    {
+      "value": "esc a+Ctrl",
+      "valid": false
+    },
+    {
+      "value": "esc }",
+      "valid": false
+    },
+    {
+      "value": "esc+9!",
+      "valid": false
+    },
+    {
+      "value": "esc+^tab",
+      "valid": false
+    },
+    {
+      "value": "esc+f1~ SHIFT>",
+      "valid": false
+    },
+    {
+      "value": "escape",
+      "valid": true
+    },
+    {
+      "value": "escape A Ctrl+esc",
+      "valid": false
+    },
+    {
+      "value": "escape SHIFT",
+      "valid": false
+    },
+    {
+      "value": "escape ^space",
+      "valid": false
+    },
+    {
+      "value": "escape# esc SHIFT !",
+      "valid": false
+    },
+    {
+      "value": "escape#+pageUp",
+      "valid": false
+    },
+    {
+      "value": "escape+$+ctrl++=",
+      "valid": false
+    },
+    {
+      "value": "escape+escape .",
+      "valid": false
+    },
+    {
+      "value": "escape+pageDown [f1+9",
+      "valid": false
+    },
+    {
+      "value": "escesc pageUp+shift0",
+      "valid": false
+    },
+    {
+      "value": "escf1+f12@",
+      "valid": false
+    },
+    {
+      "value": "escf12+,+>",
+      "valid": false
+    },
+    {
+      "value": "escnot-a-key+~",
+      "valid": false
+    },
+    {
+      "value": "esc~",
+      "valid": false
+    },
+    {
+      "value": "f1",
+      "valid": true
+    },
+    {
+      "value": "f1 pageDown+:++`",
+      "valid": false
+    },
+    {
+      "value": "f1+a+A 0",
+      "valid": false
+    },
+    {
+      "value": "f1+tab+%+super",
+      "valid": false
+    },
+    {
+      "value": "f1,",
+      "valid": false
+    },
+    {
+      "value": "f12",
+      "valid": true
+    },
+    {
+      "value": "f12 !+'`",
+      "valid": false
+    },
+    {
+      "value": "f12 pageDown f12+%",
+      "valid": false
+    },
+    {
+      "value": "f12 pageDown!",
+      "valid": false
+    },
+    {
+      "value": "f12 pageUp",
+      "valid": false
+    },
+    {
+      "value": "f12 ~+:",
+      "valid": false
+    },
+    {
+      "value": "f12+] $",
+      "valid": false
+    },
+    {
+      "value": "f12enteresc",
+      "valid": false
+    },
+    {
+      "value": "f12space+= 9 A",
+      "valid": false
+    },
+    {
+      "value": "f13",
+      "valid": false
+    },
+    {
+      "value": "f13 [+=+f13 ~",
+      "valid": false
+    },
+    {
+      "value": "f13+*~+enter",
+      "valid": false
+    },
+    {
+      "value": "f13+- *' `",
+      "valid": false
+    },
+    {
+      "value": "f13+- }",
+      "valid": false
+    },
+    {
+      "value": "f13+ctrl",
+      "valid": false
+    },
+    {
+      "value": "f13enter )",
+      "valid": false
+    },
+    {
+      "value": "f1@",
+      "valid": false
+    },
+    {
+      "value": "f1not-a-key",
+      "valid": false
+    },
+    {
+      "value": "f1z",
+      "valid": false
+    },
+    {
+      "value": "not-a-key",
+      "valid": false
+    },
+    {
+      "value": "not-a-key $ >",
+      "valid": false
+    },
+    {
+      "value": "not-a-key esc",
+      "valid": false
+    },
+    {
+      "value": "not-a-key ~,+} |",
+      "valid": false
+    },
+    {
+      "value": "not-a-key!",
+      "valid": false
+    },
+    {
+      "value": "not-a-key+ctrl`ctrl+",
+      "valid": false
+    },
+    {
+      "value": "not-a-key+|++ control",
+      "valid": false
+    },
+    {
+      "value": "pageDown",
+      "valid": true
+    },
+    {
+      "value": "pageDown !+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "pageDown < #+:+_",
+      "valid": false
+    },
+    {
+      "value": "pageDown Ctrl+pageUp+;",
+      "valid": false
+    },
+    {
+      "value": "pageDown SHIFT ctrl+",
+      "valid": false
+    },
+    {
+      "value": "pageDown ctrl+ { 9",
+      "valid": false
+    },
+    {
+      "value": "pageDown enter+A enter",
+      "valid": false
+    },
+    {
+      "value": "pageDown space+0 ^ f1",
+      "valid": false
+    },
+    {
+      "value": "pageDown+# 9",
+      "valid": false
+    },
+    {
+      "value": "pageDown+not-a-keyentersuper",
+      "valid": false
+    },
+    {
+      "value": "pageDown[",
+      "valid": false
+    },
+    {
+      "value": "pageDown\\f13. '",
+      "valid": false
+    },
+    {
+      "value": "pageDownf12+% \\",
+      "valid": false
+    },
+    {
+      "value": "pageDown},",
+      "valid": false
+    },
+    {
+      "value": "pageUp",
+      "valid": true
+    },
+    {
+      "value": "pageUp 0 \\",
+      "valid": false
+    },
+    {
+      "value": "pageUp <",
+      "valid": false
+    },
+    {
+      "value": "pageUp a (",
+      "valid": false
+    },
+    {
+      "value": "pageUp*} ;",
+      "valid": false
+    },
+    {
+      "value": "pageUp+pageUp+shift+not-a-key+*",
+      "valid": false
+    },
+    {
+      "value": "pageUp9 >",
+      "valid": false
+    },
+    {
+      "value": "pageUpesc",
+      "valid": false
+    },
+    {
+      "value": "pageUpsuper",
+      "valid": false
+    },
+    {
+      "value": "shift",
+      "valid": false
+    },
+    {
+      "value": "shift $ Z+control f13",
+      "valid": false
+    },
+    {
+      "value": "shift ++*[",
+      "valid": false
+    },
+    {
+      "value": "shift =",
+      "valid": false
+    },
+    {
+      "value": "shift controlpageUp+&",
+      "valid": false
+    },
+    {
+      "value": "shift pageDown+/",
+      "valid": false
+    },
+    {
+      "value": "shift#tab*",
+      "valid": false
+    },
+    {
+      "value": "shift+#",
+      "valid": true
+    },
+    {
+      "value": "shift+$",
+      "valid": true
+    },
+    {
+      "value": "shift+/",
+      "valid": true
+    },
+    {
+      "value": "shift+:",
+      "valid": true
+    },
+    {
+      "value": "shift+?+(+| :",
+      "valid": false
+    },
+    {
+      "value": "shift+A",
+      "valid": false
+    },
+    {
+      "value": "shift+^",
+      "valid": true
+    },
+    {
+      "value": "shift+_",
+      "valid": true
+    },
+    {
+      "value": "shift+alt+-",
+      "valid": true
+    },
+    {
+      "value": "shift+alt+]",
+      "valid": true
+    },
+    {
+      "value": "shift+alt+alt+A",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+Z",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+alt+ctrl+tab",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+ctrl+f1",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+shift",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+shift+;",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+shift+alt+alt+space",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+shift+super+super+$",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+alt+tab",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+ctrl+ctrl+alt++",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+ctrl+ctrl+alt+shift",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+shift",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+shift+&",
+      "valid": false
+    },
+    {
+      "value": "shift+alt+super+shift+?",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+[",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+`",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+alt+;",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+alt+@",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+alt+super",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+ctrl+alt+ctrl+shift+|",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+ctrl+f1",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+ctrl+pageUp",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+escape",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+shift+#",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+shift+$",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+shift+ctrl+ctrl+alt+@",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+shift+super+pageDown",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+super+/",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+super+alt+alt",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+super+ctrl+shift+ctrl+pageUp",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+super+shift+ctrl",
+      "valid": false
+    },
+    {
+      "value": "shift+ctrl+tab",
+      "valid": true
+    },
+    {
+      "value": "shift+ctrl+z",
+      "valid": true
+    },
+    {
+      "value": "shift+esc",
+      "valid": true
+    },
+    {
+      "value": "shift+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "shift+pageUp",
+      "valid": true
+    },
+    {
+      "value": "shift+shift+",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+0",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+a",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+alt+ctrl",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+alt+shift+alt+_",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+ctrl+#",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+ctrl+ctrl+*",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+ctrl+super+-",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+shift+:",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+shift+shift+ctrl+,",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+shift+super+shift+shift+:",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+super+alt+]",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+super+ctrl+ctrl+alt+_",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+super+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "shift+shift+super+super+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "shift+super+alt+ctrl+'",
+      "valid": true
+    },
+    {
+      "value": "shift+super+alt+ctrl+super+`",
+      "valid": false
+    },
+    {
+      "value": "shift+super+alt+shift+shift+ctrl+@",
+      "valid": false
+    },
+    {
+      "value": "shift+super+alt+shift+super+alt+control",
+      "valid": false
+    },
+    {
+      "value": "shift+super+control",
+      "valid": false
+    },
+    {
+      "value": "shift+super+ctrl+alt+escape",
+      "valid": true
+    },
+    {
+      "value": "shift+super+ctrl+alt+f1",
+      "valid": true
+    },
+    {
+      "value": "shift+super+ctrl+alt+super+/",
+      "valid": false
+    },
+    {
+      "value": "shift+super+ctrl+shift+shift+`",
+      "valid": false
+    },
+    {
+      "value": "shift+super+shift+ctrl+}",
+      "valid": false
+    },
+    {
+      "value": "shift+super+shift+shift+alt+ctrl+esc",
+      "valid": false
+    },
+    {
+      "value": "shift+super+super+alt+super+shift+'",
+      "valid": false
+    },
+    {
+      "value": "shift+super+super+super+ctrl+'",
+      "valid": false
+    },
+    {
+      "value": "shift+super+super+super+ctrl+alt+_",
+      "valid": false
+    },
+    {
+      "value": "shift+super+~",
+      "valid": true
+    },
+    {
+      "value": "shift+z",
+      "valid": true
+    },
+    {
+      "value": "shift/f13",
+      "valid": false
+    },
+    {
+      "value": "shiftf12;ctrl+ \\",
+      "valid": false
+    },
+    {
+      "value": "space",
+      "valid": true
+    },
+    {
+      "value": "space enter . ctrl",
+      "valid": false
+    },
+    {
+      "value": "space pageDown+^+?",
+      "valid": false
+    },
+    {
+      "value": "space&#",
+      "valid": false
+    },
+    {
+      "value": "space+! $)+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "space+)",
+      "valid": false
+    },
+    {
+      "value": "space+, ! < enter",
+      "valid": false
+    },
+    {
+      "value": "space+9",
+      "valid": false
+    },
+    {
+      "value": "space+a)A+",
+      "valid": false
+    },
+    {
+      "value": "space+ctrl++ctrl+",
+      "valid": false
+    },
+    {
+      "value": "space+escape altspace",
+      "valid": false
+    },
+    {
+      "value": "space^ &$",
+      "valid": false
+    },
+    {
+      "value": "spacesuper f13",
+      "valid": false
+    },
+    {
+      "value": "super",
+      "valid": false
+    },
+    {
+      "value": "super =0+[",
+      "valid": false
+    },
+    {
+      "value": "super \\",
+      "valid": false
+    },
+    {
+      "value": "super% @[ f1",
+      "valid": false
+    },
+    {
+      "value": "super+!",
+      "valid": true
+    },
+    {
+      "value": "super+#",
+      "valid": true
+    },
+    {
+      "value": "super+*",
+      "valid": true
+    },
+    {
+      "value": "super+++0'",
+      "valid": false
+    },
+    {
+      "value": "super+,shift< f1",
+      "valid": false
+    },
+    {
+      "value": "super+.",
+      "valid": true
+    },
+    {
+      "value": "super+9",
+      "valid": true
+    },
+    {
+      "value": "super+:",
+      "valid": true
+    },
+    {
+      "value": "super+=",
+      "valid": true
+    },
+    {
+      "value": "super+>",
+      "valid": true
+    },
+    {
+      "value": "super+?",
+      "valid": true
+    },
+    {
+      "value": "super+@",
+      "valid": true
+    },
+    {
+      "value": "super+`",
+      "valid": true
+    },
+    {
+      "value": "super+a",
+      "valid": true
+    },
+    {
+      "value": "super+alt+:",
+      "valid": true
+    },
+    {
+      "value": "super+alt+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "super+alt+_",
+      "valid": true
+    },
+    {
+      "value": "super+alt+alt+alt+.",
+      "valid": false
+    },
+    {
+      "value": "super+alt+alt+ctrl+pageUp",
+      "valid": false
+    },
+    {
+      "value": "super+alt+alt+super+shift+shift+!",
+      "valid": false
+    },
+    {
+      "value": "super+alt+alt+super+super+ctrl+,",
+      "valid": false
+    },
+    {
+      "value": "super+alt+ctrl+alt+alt+]",
+      "valid": false
+    },
+    {
+      "value": "super+alt+ctrl+ctrl+shift+shift+Ctrl",
+      "valid": false
+    },
+    {
+      "value": "super+alt+ctrl+super+ctrl+^",
+      "valid": false
+    },
+    {
+      "value": "super+alt+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "super+alt+space",
+      "valid": true
+    },
+    {
+      "value": "super+alt+super+@",
+      "valid": false
+    },
+    {
+      "value": "super+alt+super+alt+",
+      "valid": false
+    },
+    {
+      "value": "super+alt+super+f1",
+      "valid": false
+    },
+    {
+      "value": "super+alt+super+shift+ctrl+alt+<",
+      "valid": false
+    },
+    {
+      "value": "super+control",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+:",
+      "valid": true
+    },
+    {
+      "value": "super+ctrl+Ctrl",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+alt+alt+super+.",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+alt+ctrl+ctrl+not-a-key",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+alt+f1",
+      "valid": true
+    },
+    {
+      "value": "super+ctrl+alt+shift+ctrl+tab",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+ctrl+super+super+shift",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+ctrl+super+super+super+pageDown",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+ctrl+super+|",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+pageUp",
+      "valid": true
+    },
+    {
+      "value": "super+ctrl+shift+!",
+      "valid": true
+    },
+    {
+      "value": "super+ctrl+shift+alt+ctrl",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+shift+shift+shift+-",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+shift+shift+shift+z",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+shift+super+@",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+shift+super+A",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+shift+super+ctrl+esc",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+super+0",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+super+9",
+      "valid": false
+    },
+    {
+      "value": "super+ctrl+super+alt+alt+pageDown",
+      "valid": false
+    },
+    {
+      "value": "super+escape",
+      "valid": true
+    },
+    {
+      "value": "super+f12",
+      "valid": true
+    },
+    {
+      "value": "super+shift+",
+      "valid": false
+    },
+    {
+      "value": "super+shift+$",
+      "valid": true
+    },
+    {
+      "value": "super+shift+,",
+      "valid": true
+    },
+    {
+      "value": "super+shift+alt",
+      "valid": false
+    },
+    {
+      "value": "super+shift+alt+shift+ctrl+shift+escape",
+      "valid": false
+    },
+    {
+      "value": "super+shift+alt+shift+super+`",
+      "valid": false
+    },
+    {
+      "value": "super+shift+ctrl+alt+ctrl+f12",
+      "valid": false
+    },
+    {
+      "value": "super+shift+ctrl+alt+shift+space",
+      "valid": false
+    },
+    {
+      "value": "super+shift+ctrl+ctrl+super+`",
+      "valid": false
+    },
+    {
+      "value": "super+shift+ctrl+shift+ctrl+ctrl+:",
+      "valid": false
+    },
+    {
+      "value": "super+shift+ctrl+super+super+alt+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift++",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift+ctrl+ctrl",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift+shift+*",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift+shift+[",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift+shift+ctrl+alt+z",
+      "valid": false
+    },
+    {
+      "value": "super+shift+shift+shift+ctrl+ctrl+$",
+      "valid": false
+    },
+    {
+      "value": "super+shift+super+=",
+      "valid": false
+    },
+    {
+      "value": "super+shift+~",
+      "valid": true
+    },
+    {
+      "value": "super+super+#",
+      "valid": false
+    },
+    {
+      "value": "super+super+9",
+      "valid": false
+    },
+    {
+      "value": "super+super+alt+alt+super+super+$",
+      "valid": false
+    },
+    {
+      "value": "super+super+alt+ctrl+,",
+      "valid": false
+    },
+    {
+      "value": "super+super+alt+ctrl+{",
+      "valid": false
+    },
+    {
+      "value": "super+super+alt+super+shift+ctrl+)",
+      "valid": false
+    },
+    {
+      "value": "super+super+ctrl+alt+<",
+      "valid": false
+    },
+    {
+      "value": "super+super+shift+ctrl+]",
+      "valid": false
+    },
+    {
+      "value": "super+super+shift+ctrl+shift+alt+/",
+      "valid": false
+    },
+    {
+      "value": "super+super+shift+ctrl+super+ctrl+:",
+      "valid": false
+    },
+    {
+      "value": "super+super+shift+shift+ctrl+super+ctrl+",
+      "valid": false
+    },
+    {
+      "value": "super+super+shift+super+super+ctrl+`",
+      "valid": false
+    },
+    {
+      "value": "super+super+super+ctrl+shift+ctrl+`",
+      "valid": false
+    },
+    {
+      "value": "super+super+tab",
+      "valid": false
+    },
+    {
+      "value": "super+tab",
+      "valid": true
+    },
+    {
+      "value": "super+~\\",
+      "valid": false
+    },
+    {
+      "value": "superZ) A",
+      "valid": false
+    },
+    {
+      "value": "super\\ space+++SHIFT",
+      "valid": false
+    },
+    {
+      "value": "superctrlescape`0",
+      "valid": false
+    },
+    {
+      "value": "tab",
+      "valid": true
+    },
+    {
+      "value": "tab #",
+      "valid": false
+    },
+    {
+      "value": "tab '",
+      "valid": false
+    },
+    {
+      "value": "tab @",
+      "valid": false
+    },
+    {
+      "value": "tab @+a",
+      "valid": false
+    },
+    {
+      "value": "tab+'}",
+      "valid": false
+    },
+    {
+      "value": "tab+(",
+      "valid": false
+    },
+    {
+      "value": "tab+ctrl &",
+      "valid": false
+    },
+    {
+      "value": "tab@",
+      "valid": false
+    },
+    {
+      "value": "tab]+,",
+      "valid": false
+    },
+    {
+      "value": "tabesc+@",
+      "valid": false
+    },
+    {
+      "value": "tabf13 :+f1+\\",
+      "valid": false
+    },
+    {
+      "value": "z",
+      "valid": true
+    },
+    {
+      "value": "z &+'+shift+^",
+      "valid": false
+    },
+    {
+      "value": "z ] enter",
+      "valid": false
+    },
+    {
+      "value": "z esc A+f12",
+      "valid": false
+    },
+    {
+      "value": "z space super not-a-keypageUp",
+      "valid": false
+    },
+    {
+      "value": "z |9",
+      "valid": false
+    },
+    {
+      "value": "z)+ctrl",
+      "valid": false
+    },
+    {
+      "value": "z+++~)",
+      "valid": false
+    },
+    {
+      "value": "z+9]+super?",
+      "valid": false
+    },
+    {
+      "value": "z+@+ctrl++]+)",
+      "valid": false
+    },
+    {
+      "value": "z+a",
+      "valid": false
+    },
+    {
+      "value": "z+|",
+      "valid": false
+    },
+    {
+      "value": "z@+pageUp+=",
+      "valid": false
+    },
+    {
+      "value": "zspace 9",
+      "valid": false
+    },
+    {
+      "value": "{",
+      "valid": true
+    },
+    {
+      "value": "{ enter",
+      "valid": false
+    },
+    {
+      "value": "{ ~+\\Ctrl",
+      "valid": false
+    },
+    {
+      "value": "{$+-",
+      "valid": false
+    },
+    {
+      "value": "{+: {control+{",
+      "valid": false
+    },
+    {
+      "value": "{+SHIFT",
+      "valid": false
+    },
+    {
+      "value": "{+]ctrl",
+      "valid": false
+    },
+    {
+      "value": "|",
+      "valid": true
+    },
+    {
+      "value": "| pageDown",
+      "valid": false
+    },
+    {
+      "value": "| tab",
+      "valid": false
+    },
+    {
+      "value": "|+\\)",
+      "valid": false
+    },
+    {
+      "value": "|+pageDown",
+      "valid": false
+    },
+    {
+      "value": "|esc+SHIFT+~",
+      "valid": false
+    },
+    {
+      "value": "|not-a-key alt% ,",
+      "valid": false
+    },
+    {
+      "value": "}",
+      "valid": true
+    },
+    {
+      "value": "} enterf1 _",
+      "valid": false
+    },
+    {
+      "value": "} ~0 Z escape",
+      "valid": false
+    },
+    {
+      "value": "}+=control@",
+      "valid": false
+    },
+    {
+      "value": "}+alt;+_",
+      "valid": false
+    },
+    {
+      "value": "}a+\\",
+      "valid": false
+    },
+    {
+      "value": "~",
+      "valid": true
+    },
+    {
+      "value": "~ -+'",
+      "valid": false
+    },
+    {
+      "value": "~ .! *esc",
+      "valid": false
+    },
+    {
+      "value": "~ Z",
+      "valid": false
+    },
+    {
+      "value": "~+",
+      "valid": false
+    },
+    {
+      "value": "~+control &",
+      "valid": false
+    },
+    {
+      "value": "~Z",
+      "valid": false
+    },
+    {
+      "value": "é",
+      "valid": false
+    },
+    {
+      "value": "😀",
+      "valid": false
+    }
+  ]
+}

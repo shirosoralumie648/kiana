@@ -1,0 +1,9 @@
+{"type":"session","version":3,"id":"raw","timestamp":"2026-01-01T00:00:00.000Z","cwd":"/tmp/kiana-r"}
+{"type":"message","id":"e1","parentId":null,"timestamp":"1970-01-01T00:00:00.001Z","message":{"role":"user","content":"hi","timestamp":1}}
+"hello"
+[1,2]
+42
+true
+null
+
+{}

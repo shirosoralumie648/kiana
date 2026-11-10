@@ -1,0 +1,30 @@
+{
+  "locale": "en",
+  "strict": false,
+  "strings": {
+    "approval.title": "Permission required",
+    "approval.allow_once": "Allow once",
+    "approval.allow_always": "Always allow ({{scope}})",
+    "approval.reject": "Reject",
+    "approval.reason": "Reason",
+    "approval.dangerous": "Dangerous action: default selection is Reject; Enter does not approve.",
+    "approval.risk_loading": "Risk analysis: analyzing... (advisory)",
+    "approval.risk_advisory": "Risk (advisory)",
+    "approval.risk_what": "What could go wrong",
+    "approval.suggestions": "Suggestions",
+    "modal.approval_position": "Approval {{index}}/{{total}}",
+    "modal.question_position": "Question {{index}}/{{total}}",
+    "modal.settings_title": "Settings",
+    "modal.multi_select_hint": "Space toggle, a select all, o other, Enter submit",
+    "modal.submit_hint": "Enter submit",
+    "pending.sending": "Sending...",
+    "pending.failed": "Failed to send: {{error}}",
+    "pending.retry": "Retry",
+    "pending.timeout": "Send timed out",
+    "i18n.hint.lines": [
+      "Use arrow keys to move.",
+      "Enter to confirm.",
+      "Esc to cancel."
+    ]
+  }
+}

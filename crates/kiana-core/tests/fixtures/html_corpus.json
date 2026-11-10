@@ -1,0 +1,263 @@
+{
+ "entities": [
+  {
+   "entity": "amp",
+   "decoded": "&"
+  },
+  {
+   "entity": "lt",
+   "decoded": "<"
+  },
+  {
+   "entity": "gt",
+   "decoded": ">"
+  },
+  {
+   "entity": "quot",
+   "decoded": "\""
+  },
+  {
+   "entity": "apos",
+   "decoded": "'"
+  },
+  {
+   "entity": "AMP",
+   "decoded": null
+  },
+  {
+   "entity": "#x41",
+   "decoded": "A"
+  },
+  {
+   "entity": "#X41",
+   "decoded": "A"
+  },
+  {
+   "entity": "#65",
+   "decoded": "A"
+  },
+  {
+   "entity": "# 65",
+   "decoded": "A"
+  },
+  {
+   "entity": "#+65",
+   "decoded": "A"
+  },
+  {
+   "entity": "#-0",
+   "decoded": "\u0000"
+  },
+  {
+   "entity": "#0x10",
+   "decoded": "\u0000"
+  },
+  {
+   "entity": "#x0x41",
+   "decoded": "A"
+  },
+  {
+   "entity": "#x 41",
+   "decoded": "A"
+  },
+  {
+   "entity": "#x1g",
+   "decoded": "\u0001"
+  },
+  {
+   "entity": "#xg",
+   "decoded": null
+  },
+  {
+   "entity": "#",
+   "decoded": null
+  },
+  {
+   "entity": "#x",
+   "decoded": null
+  },
+  {
+   "entity": "#9999999999999999999999999999999",
+   "decoded": null
+  },
+  {
+   "entity": "#1114111",
+   "decoded": "􏿿"
+  },
+  {
+   "entity": "#1114112",
+   "decoded": null
+  },
+  {
+   "entity": "#-1",
+   "decoded": null
+  },
+  {
+   "entity": "#x1F600",
+   "decoded": "😀"
+  },
+  {
+   "entity": "#09",
+   "decoded": "\t"
+  },
+  {
+   "entity": "#x4A",
+   "decoded": "J"
+  },
+  {
+   "entity": "unknown",
+   "decoded": null
+  },
+  {
+   "entity": "",
+   "decoded": null
+  }
+ ],
+ "at": [
+  {
+   "text": "&amp;",
+   "index": 0,
+   "decoded": {
+    "text": "&",
+    "length": 5
+   }
+  },
+  {
+   "text": "a&amp;b",
+   "index": 1,
+   "decoded": {
+    "text": "&",
+    "length": 5
+   }
+  },
+  {
+   "text": "&#x41;",
+   "index": 0,
+   "decoded": {
+    "text": "A",
+    "length": 6
+   }
+  },
+  {
+   "text": "&#65;",
+   "index": 0,
+   "decoded": {
+    "text": "A",
+    "length": 5
+   }
+  },
+  {
+   "text": "&;",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&amp",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&amp;x",
+   "index": 4,
+   "decoded": null
+  },
+  {
+   "text": "&amp;",
+   "index": 5,
+   "decoded": null
+  },
+  {
+   "text": "&amp;",
+   "index": 100,
+   "decoded": null
+  },
+  {
+   "text": "&&amp;",
+   "index": 1,
+   "decoded": {
+    "text": "&",
+    "length": 5
+   }
+  },
+  {
+   "text": "😀&amp;",
+   "index": 2,
+   "decoded": {
+    "text": "&",
+    "length": 5
+   }
+  },
+  {
+   "text": "😀&amp;",
+   "index": 1,
+   "decoded": null
+  },
+  {
+   "text": "a&b;c",
+   "index": 1,
+   "decoded": null
+  },
+  {
+   "text": "&#x1F600;",
+   "index": 0,
+   "decoded": {
+    "text": "😀",
+    "length": 9
+   }
+  },
+  {
+   "text": "&quot;&apos;&lt;&gt;",
+   "index": 0,
+   "decoded": {
+    "text": "\"",
+    "length": 6
+   }
+  },
+  {
+   "text": "&quot;&apos;&lt;&gt;",
+   "index": 6,
+   "decoded": {
+    "text": "'",
+    "length": 6
+   }
+  },
+  {
+   "text": "&quot;&apos;&lt;&gt;",
+   "index": 12,
+   "decoded": {
+    "text": "<",
+    "length": 4
+   }
+  },
+  {
+   "text": "&#1234567890;",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&#x1234567;",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&#x;",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&#;",
+   "index": 0,
+   "decoded": null
+  },
+  {
+   "text": "&nbsp;",
+   "index": 0,
+   "decoded": null
+  }
+ ]
+}

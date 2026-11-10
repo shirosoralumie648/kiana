@@ -1,0 +1,14 @@
+---
+source: crates/kiana-builtin-extensions/src/llama/ui.rs
+expression: "render_text(&view, 120)"
+---
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Download model                                                                                                         
+
+ Model name or owner/repository[:quant]                                                                                 
+>                                                                                                                       
+
+  Type at least 2 characters                                                                                            
+
+ enter select • escape/ctrl+c back                                                                                      
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

@@ -1,0 +1,2679 @@
+{
+ "pairs": [
+  {
+   "name": "equal",
+   "old": "a\nb\nc\n",
+   "new": "a\nb\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "basic",
+   "old": "a\nb\nc\n",
+   "new": "a\nB\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n a\n-b\n+B\n c\n",
+   "diff": " 1 a\n-2 b\n+2 B\n 3 c",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "no-eol",
+   "old": "a\nb",
+   "new": "a\nB",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n a\n-b\n\\ No newline at end of file\n+B\n\\ No newline at end of file\n",
+   "diff": " 1 a\n-2 b\n+2 B",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "eol-added",
+   "old": "a\nb",
+   "new": "a\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n a\n-b\n\\ No newline at end of file\n+b\n",
+   "diff": " 1 a\n-2 b\n+2 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "eol-removed",
+   "old": "a\nb\n",
+   "new": "a\nb",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n a\n-b\n+b\n\\ No newline at end of file\n",
+   "diff": " 1 a\n-2 b\n+2 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "empty-old",
+   "old": "",
+   "new": "a\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -0,0 +1,1 @@\n+a\n",
+   "diff": "+1 a",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "empty-new",
+   "old": "a\n",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,1 +0,0 @@\n-a\n",
+   "diff": "-1 a",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "both-empty",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "no-newline-both",
+   "old": "",
+   "new": "x",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -0,0 +1,1 @@\n+x\n\\ No newline at end of file\n",
+   "diff": "+1 x",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "add",
+   "old": "a\nb\n",
+   "new": "a\nx\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,3 @@\n a\n+x\n b\n",
+   "diff": " 1 a\n+2 x\n 2 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "remove",
+   "old": "a\nx\nb\n",
+   "new": "a\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,2 @@\n a\n-x\n b\n",
+   "diff": " 1 a\n-2 x\n 3 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "replace-all",
+   "old": "a\nb\nc\n",
+   "new": "x\ny\nz\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n-a\n-b\n-c\n+x\n+y\n+z\n",
+   "diff": "-1 a\n-2 b\n-3 c\n+1 x\n+2 y\n+3 z",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "crlf",
+   "old": "a\r\nb\r\nc\r\n",
+   "new": "a\r\nB\r\nc\r\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n a\r\n-b\r\n+B\r\n c\r\n",
+   "diff": " 1 a\r\n-2 b\r\n+2 B\r\n 3 c\r",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "mixed-endings",
+   "old": "a\r\nb\nc\r\n",
+   "new": "a\nB\r\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n-a\r\n-b\n-c\r\n+a\n+B\r\n+c\n",
+   "diff": "-1 a\r\n-2 b\n-3 c\r\n+1 a\n+2 B\r\n+3 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "cjk",
+   "old": "你好\n世界\n第三行\n",
+   "new": "你好\n世界！\n第三行\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n 你好\n-世界\n+世界！\n 第三行\n",
+   "diff": " 1 你好\n-2 世界\n+2 世界！\n 3 第三行",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "emoji",
+   "old": "a😀b\nc\nd\n",
+   "new": "a😀b\nC\nd\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n a😀b\n-c\n+C\n d\n",
+   "diff": " 1 a😀b\n-2 c\n+2 C\n 3 d",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "trailing-spaces",
+   "old": "line one   \nline two  \nline three\n",
+   "new": "line one   \nLINE two\nline three\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n line one   \n-line two  \n+LINE two\n line three\n",
+   "diff": " 1 line one   \n-2 line two  \n+2 LINE two\n 3 line three",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "dup-lines",
+   "old": "A\nB\nA\nB\nA\n",
+   "new": "A\nB\nB\nA\nB\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n A\n B\n-A\n B\n A\n+B\n",
+   "diff": " 1 A\n 2 B\n-3 A\n 4 B\n 5 A\n+5 B",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "move-line",
+   "old": "1\n2\n3\n4\n5\n",
+   "new": "1\n3\n4\n2\n5\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n 1\n-2\n 3\n 4\n+2\n 5\n",
+   "diff": " 1 1\n-2 2\n 3 3\n 4 4\n+4 2\n 5 5",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "big-gap",
+   "old": "line 0\nline 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8\nline 9\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\n",
+   "new": "line 0\nline 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8\nline 9\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nLINE 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\nline 40\nline 41\nline 42\nline 43\nline 44\nline 45\nline 46\nline 47\nline 48\nline 49\nline 50\nline 51\nline 52\nline 53\nline 54\nline 55\nline 56\nline 57\nline 58\nline 59\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -27,9 +27,9 @@\n line 26\n line 27\n line 28\n line 29\n-line 30\n+LINE 30\n line 31\n line 32\n line 33\n line 34\n",
+   "diff": "    ...\n 27 line 26\n 28 line 27\n 29 line 28\n 30 line 29\n-31 line 30\n+31 LINE 30\n 32 line 31\n 33 line 32\n 34 line 33\n 35 line 34\n    ...",
+   "firstChangedLine": 31
+  },
+  {
+   "name": "two-hunks",
+   "old": "line 0\nline 1\nline 2\nline 3\nline 4\nline 5\nline 6\nline 7\nline 8\nline 9\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nline 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\n",
+   "new": "line 0\nline 1\nline 2\nline 3\nline 4\nLINE 5\nline 6\nline 7\nline 8\nline 9\nline 10\nline 11\nline 12\nline 13\nline 14\nline 15\nline 16\nline 17\nline 18\nline 19\nline 20\nline 21\nline 22\nline 23\nline 24\nline 25\nline 26\nline 27\nline 28\nline 29\nLINE 30\nline 31\nline 32\nline 33\nline 34\nline 35\nline 36\nline 37\nline 38\nline 39\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,9 +2,9 @@\n line 1\n line 2\n line 3\n line 4\n-line 5\n+LINE 5\n line 6\n line 7\n line 8\n line 9\n@@ -27,9 +27,9 @@\n line 26\n line 27\n line 28\n line 29\n-line 30\n+LINE 30\n line 31\n line 32\n line 33\n line 34\n",
+   "diff": "    ...\n  2 line 1\n  3 line 2\n  4 line 3\n  5 line 4\n- 6 line 5\n+ 6 LINE 5\n  7 line 6\n  8 line 7\n  9 line 8\n 10 line 9\n    ...\n 27 line 26\n 28 line 27\n 29 line 28\n 30 line 29\n-31 line 30\n+31 LINE 30\n 32 line 31\n 33 line 32\n 34 line 33\n 35 line 34\n    ...",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "ctx0",
+   "old": "a\nb\nc\n",
+   "new": "a\nB\nc\n",
+   "context": 0,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,1 +2,1 @@\n-b\n+B\n",
+   "diff": "   ...\n-2 b\n+2 B\n   ...",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "ctx1",
+   "old": "a\nb\nc\nd\ne\n",
+   "new": "a\nb\nC\nd\ne\n",
+   "context": 1,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,3 +2,3 @@\n b\n-c\n+C\n d\n",
+   "diff": "   ...\n 2 b\n-3 c\n+3 C\n 4 d\n   ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "ctx2",
+   "old": "a\nb\nc\nd\ne\nf\n",
+   "new": "a\nb\nC\nd\ne\nf\n",
+   "context": 2,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n a\n b\n-c\n+C\n d\n e\n",
+   "diff": " 1 a\n 2 b\n-3 c\n+3 C\n 4 d\n 5 e\n   ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "adjacent-changes",
+   "old": "a\nb\nc\nd\n",
+   "new": "a\nX\nY\nd\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n a\n-b\n-c\n+X\n+Y\n d\n",
+   "diff": " 1 a\n-2 b\n-3 c\n+2 X\n+3 Y\n 4 d",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "insert-only-start",
+   "old": "b\nc\n",
+   "new": "a\nb\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,3 @@\n+a\n b\n c\n",
+   "diff": "+1 a\n 1 b\n 2 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "append",
+   "old": "a\nb\n",
+   "new": "a\nb\nc\nd\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,4 @@\n a\n b\n+c\n+d\n",
+   "diff": " 1 a\n 2 b\n+3 c\n+4 d",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "prepend",
+   "old": "a\nb\n",
+   "new": "c\nd\na\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,4 @@\n+c\n+d\n a\n b\n",
+   "diff": "+1 c\n+2 d\n 1 a\n 2 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "blank-lines",
+   "old": "a\n\n\nb\n",
+   "new": "a\n\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,3 @@\n a\n \n-\n b\n",
+   "diff": " 1 a\n 2 \n-3 \n 4 b",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "only-newlines",
+   "old": "\n\n\n",
+   "new": "\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,2 @@\n \n \n-\n",
+   "diff": " 1 \n 2 \n-3 ",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "one-char-lines",
+   "old": "x\ny\nz\n",
+   "new": "x\nY\nz\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n x\n-y\n+Y\n z\n",
+   "diff": " 1 x\n-2 y\n+2 Y\n 3 z",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-0",
+   "old": "\nx y\ntab\t\nx y\nhello\na\n  \n1\ntab\t\nworld\n1\n0\n1",
+   "new": "\nx y\ntab\t\nx y\nhello\na\n1\ntab\t\nworld\n1\n1\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -3,11 +3,9 @@\n tab\t\n x y\n hello\n a\n-  \n 1\n tab\t\n world\n 1\n-0\n-1\n\\ No newline at end of file\n+1\n",
+   "diff": "    ...\n  3 tab\t\n  4 x y\n  5 hello\n  6 a\n- 7   \n  8 1\n  9 tab\t\n 10 world\n 11 1\n-12 0\n-13 1\n+11 1",
+   "firstChangedLine": 7
+  },
+  {
+   "name": "random-1",
+   "old": "a\nhello\nc\n  \nb\n\n",
+   "new": "a\nhello\nc\n  \nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,5 +2,4 @@\n hello\n c\n   \n b\n-\n",
+   "diff": "   ...\n 2 hello\n 3 c\n 4   \n 5 b\n-6 ",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-2",
+   "old": "c\na\nemoji😀\ntab\t\n",
+   "new": "c\na\nemoji😀\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n c\n a\n emoji😀\n-tab\t\n+tab\t\n\\ No newline at end of file\n",
+   "diff": " 1 c\n 2 a\n 3 emoji😀\n-4 tab\t\n+4 tab\t",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-3",
+   "old": "a\n日本語\n0\n日本語\ntab\t\nworld\n\n\nx y\n  \n\nb\n0\n",
+   "new": "a\n日本語\na\n日本語\ntab\t\nworld\n\n\nx y\n  \nb\n0",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,12 @@\n a\n 日本語\n-0\n+a\n 日本語\n tab\t\n world\n \n \n x y\n   \n-\n b\n-0\n+0\n\\ No newline at end of file\n",
+   "diff": "  1 a\n  2 日本語\n- 3 0\n+ 3 a\n  4 日本語\n  5 tab\t\n  6 world\n  7 \n  8 \n  9 x y\n 10   \n-11 \n 12 b\n-13 0\n+12 0",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-4",
+   "old": "b\nhello\n1\n1\n  \n\n",
+   "new": "b\nhello\n1\n1\n  \n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-5",
+   "old": "c\ntab\t\n0\n\n  \n\n  ",
+   "new": "c\ntab\t\n0\na\nemoji😀\n  \n\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,8 @@\n c\n tab\t\n 0\n-\n+a\n+emoji😀\n   \n \n-  \n\\ No newline at end of file\n+tab\t\n\\ No newline at end of file\n",
+   "diff": " 1 c\n 2 tab\t\n 3 0\n-4 \n+4 a\n+5 emoji😀\n 5   \n 6 \n-7   \n+8 tab\t",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-6",
+   "old": "world\n\n\n1\nworld\nc\n",
+   "new": "world\n\n\n1\nworld\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-7",
+   "old": "\ntab\t\nhello\n1\ntab\t",
+   "new": "emoji😀\na\ntab\t\nhello\n1\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,6 @@\n-\n+emoji😀\n+a\n tab\t\n hello\n 1\n tab\t\n\\ No newline at end of file\n",
+   "diff": "-1 \n+1 emoji😀\n+2 a\n 2 tab\t\n 3 hello\n 4 1\n 5 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-8",
+   "old": "b\n日本語\nhello\na",
+   "new": "hello\n日本語\nb\n日本語\nhello\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,6 @@\n+hello\n+日本語\n b\n 日本語\n hello\n-a\n\\ No newline at end of file\n+tab\t\n",
+   "diff": "+1 hello\n+2 日本語\n 1 b\n 2 日本語\n 3 hello\n-4 a\n+6 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-9",
+   "old": "0\nworld\nemoji😀\n0\n0\nb\n1\nworld\ntab\t\n\nx y\na\nc\n",
+   "new": "0\nworld\nemoji😀\n0\n0\nb\n1\nworld\ntab\t\n\nx y\na\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-10",
+   "old": "",
+   "new": "emoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -0,0 +1,1 @@\n+emoji😀\n",
+   "diff": "+1 emoji😀",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-11",
+   "old": "emoji😀\nhello\nb\n  \n1\n  ",
+   "new": "emoji😀\nemoji😀\nc\nb\n  \nb\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,7 @@\n emoji😀\n-hello\n+emoji😀\n+c\n b\n   \n-1\n+b\n   \n\\ No newline at end of file\n",
+   "diff": " 1 emoji😀\n-2 hello\n+2 emoji😀\n+3 c\n 3 b\n 4   \n-5 1\n+6 b\n 6   ",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-12",
+   "old": "tab\t\nemoji😀\nhello\nb\nb",
+   "new": "emoji😀\nhello\n日本語\na\nb\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,6 @@\n-tab\t\n emoji😀\n hello\n+日本語\n+a\n b\n-b\n\\ No newline at end of file\n+b\n",
+   "diff": "-1 tab\t\n 2 emoji😀\n 3 hello\n+3 日本語\n+4 a\n 4 b\n-5 b\n+6 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-13",
+   "old": "a\n\nb\na\na\nemoji😀\na\n  \n1\na\n",
+   "new": "a\n\nb\na\na\n  \n1\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,9 +2,7 @@\n \n b\n a\n a\n-emoji😀\n-a\n   \n 1\n-a\n+a\n\\ No newline at end of file\n",
+   "diff": "    ...\n  2 \n  3 b\n  4 a\n  5 a\n- 6 emoji😀\n- 7 a\n  8   \n  9 1\n-10 a\n+ 8 a",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-14",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-15",
+   "old": "emoji😀\nc\nworld\nc\ntab\t\nemoji😀\nb\n0\nworld\n日本語\n",
+   "new": "emoji😀\nc\nworld\nc\nc\ntab\t\n0\nemoji😀\nb\ntab\t\nworld\n日本語\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,12 @@\n emoji😀\n c\n world\n c\n+c\n tab\t\n+0\n emoji😀\n b\n-0\n+tab\t\n world\n 日本語\n",
+   "diff": "  1 emoji😀\n  2 c\n  3 world\n  4 c\n+ 5 c\n  5 tab\t\n+ 7 0\n  6 emoji😀\n  7 b\n- 8 0\n+10 tab\t\n  9 world\n 10 日本語",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-16",
+   "old": "  \na",
+   "new": "1\n  \nb",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,3 @@\n+1\n   \n-a\n\\ No newline at end of file\n+b\n\\ No newline at end of file\n",
+   "diff": "+1 1\n 1   \n-2 a\n+3 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-17",
+   "old": "b\ntab\t\ntab\t\nc\n",
+   "new": "\n  \nx y\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n-b\n-tab\t\n-tab\t\n-c\n+\n+  \n+x y\n+tab\t\n\\ No newline at end of file\n",
+   "diff": "-1 b\n-2 tab\t\n-3 tab\t\n-4 c\n+1 \n+2   \n+3 x y\n+4 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-18",
+   "old": "world\n1\n1\nhello\nx y\n日本語",
+   "new": "0\n1\n1\nhello",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,4 @@\n-world\n+0\n 1\n 1\n-hello\n-x y\n-日本語\n\\ No newline at end of file\n+hello\n\\ No newline at end of file\n",
+   "diff": "-1 world\n+1 0\n 2 1\n 3 1\n-4 hello\n-5 x y\n-6 日本語\n+4 hello",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-19",
+   "old": "0\nc\n0\na\ntab\t\nworld\nx y\n",
+   "new": "0\nc\n0\ntab\t\nworld\nx y",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,6 @@\n 0\n c\n 0\n-a\n tab\t\n world\n-x y\n+x y\n\\ No newline at end of file\n",
+   "diff": " 1 0\n 2 c\n 3 0\n-4 a\n 5 tab\t\n 6 world\n-7 x y\n+6 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-20",
+   "old": "world\na\n\na\n0\n日本語\n0\n",
+   "new": "world\na\n\na\n0\n日本語\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-21",
+   "old": "0\n日本語\n1\n  \n日本語",
+   "new": "0\n日本語\n1\n  \n1",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n 0\n 日本語\n 1\n   \n-日本語\n\\ No newline at end of file\n+1\n\\ No newline at end of file\n",
+   "diff": " 1 0\n 2 日本語\n 3 1\n 4   \n-5 日本語\n+5 1",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-22",
+   "old": "  \nb\nhello",
+   "new": "  \nb\nhello",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-23",
+   "old": "tab\t\nx y\nc\nc\nc\nhello\nx y\n日本語\nhello\n  \nb\n日本語\n",
+   "new": "c\nc\nc\nhello\nx y\n日本語\nhello\nb\n日本語\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,9 @@\n-tab\t\n-x y\n c\n c\n c\n hello\n x y\n 日本語\n hello\n-  \n b\n 日本語\n",
+   "diff": "- 1 tab\t\n- 2 x y\n  3 c\n  4 c\n  5 c\n  6 hello\n  7 x y\n  8 日本語\n  9 hello\n-10   \n 11 b\n 12 日本語",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-24",
+   "old": "  \n1\nhello\n",
+   "new": "  \n  \n\n1\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,5 @@\n   \n+  \n+\n 1\n hello\n",
+   "diff": " 1   \n+2   \n+3 \n 2 1\n 3 hello",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-25",
+   "old": "world\nworld\n日本語\n\n  \n1\ntab\t\nworld\na\n",
+   "new": "world\nworld\n日本語\n\n  \n  \n1\nworld\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,8 +2,8 @@\n world\n 日本語\n \n   \n+  \n 1\n-tab\t\n world\n a\n",
+   "diff": "    ...\n  2 world\n  3 日本語\n  4 \n  5   \n+ 6   \n  6 1\n- 7 tab\t\n  8 world\n  9 a",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-26",
+   "old": "hello\ntab\t\na\n1\nb\nx y\nworld\ntab\t\nx y\ntab\t",
+   "new": "hello\ntab\t\na\n1\nb\ntab\t\nx y\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,9 +2,7 @@\n tab\t\n a\n 1\n b\n-x y\n-world\n tab\t\n x y\n-tab\t\n\\ No newline at end of file\n+tab\t\n",
+   "diff": "    ...\n  2 tab\t\n  3 a\n  4 1\n  5 b\n- 6 x y\n- 7 world\n  8 tab\t\n  9 x y\n-10 tab\t\n+ 8 tab\t",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-27",
+   "old": "\n  \na\n  \n  \na\n  \n日本語\n0\n日本語\nx y\nhello\n日本語\n",
+   "new": "\n  \na\n  \nx y\na\n  \n日本語\n0\n日本語\nx y\nhello\nemoji😀\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,14 @@\n \n   \n a\n   \n-  \n+x y\n a\n   \n 日本語\n 0\n 日本語\n x y\n hello\n-日本語\n+emoji😀\n+  \n\\ No newline at end of file\n",
+   "diff": "  1 \n  2   \n  3 a\n  4   \n- 5   \n+ 5 x y\n  6 a\n  7   \n  8 日本語\n  9 0\n 10 日本語\n 11 x y\n 12 hello\n-13 日本語\n+13 emoji😀\n+14   ",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-28",
+   "old": "0\nemoji😀\n1\n  ",
+   "new": "0\nemoji😀\n1\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n 0\n emoji😀\n 1\n-  \n\\ No newline at end of file\n+  \n",
+   "diff": " 1 0\n 2 emoji😀\n 3 1\n-4   \n+4   ",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-29",
+   "old": "a\nhello\nworld\nx y\nworld\nx y\n0\na\nworld\n",
+   "new": "a\nhello\n\nworld\nx y\nworld\nx y\n0\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,9 +1,9 @@\n a\n hello\n+\n world\n x y\n world\n x y\n 0\n-a\n-world\n+tab\t\n\\ No newline at end of file\n",
+   "diff": "  1 a\n  2 hello\n+ 3 \n  3 world\n  4 x y\n  5 world\n  6 x y\n  7 0\n- 8 a\n- 9 world\n+ 9 tab\t",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-30",
+   "old": "1\nc\nemoji😀\n日本語\n日本語\n日本語\ntab\t\ntab\t\n0\nworld\n日本語\nhello\n",
+   "new": "1\nc\ntab\t\n日本語\n日本語\n日本語\ntab\t\ntab\t\n0\nworld\n日本語\nhello",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,12 @@\n 1\n c\n-emoji😀\n+tab\t\n 日本語\n 日本語\n 日本語\n tab\t\n tab\t\n 0\n world\n 日本語\n-hello\n+hello\n\\ No newline at end of file\n",
+   "diff": "  1 1\n  2 c\n- 3 emoji😀\n+ 3 tab\t\n  4 日本語\n  5 日本語\n  6 日本語\n  7 tab\t\n  8 tab\t\n  9 0\n 10 world\n 11 日本語\n-12 hello\n+12 hello",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-31",
+   "old": "\nemoji😀\nworld\n1\n",
+   "new": "\n0\nworld\n1\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n \n-emoji😀\n+0\n world\n 1\n",
+   "diff": " 1 \n-2 emoji😀\n+2 0\n 3 world\n 4 1",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-32",
+   "old": "x y\n\nc\nb\nx y",
+   "new": "x y\n\nc\nb\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n x y\n \n c\n b\n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": " 1 x y\n 2 \n 3 c\n 4 b\n-5 x y\n+5 x y",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-33",
+   "old": "hello\n\n0\n0\n日本語\n  \n  \nemoji😀\nworld\nx y\n日本語\n",
+   "new": "hello\n\n0\nb\n0\n日本語\n  \n  \nemoji😀\nworld\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,11 +1,11 @@\n hello\n \n 0\n+b\n 0\n 日本語\n   \n   \n emoji😀\n world\n x y\n-日本語\n",
+   "diff": "  1 hello\n  2 \n  3 0\n+ 4 b\n  4 0\n  5 日本語\n  6   \n  7   \n  8 emoji😀\n  9 world\n 10 x y\n-11 日本語",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-34",
+   "old": "日本語\n日本語\na\nhello\n",
+   "new": "日本語\nx y\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,3 @@\n 日本語\n-日本語\n-a\n-hello\n+x y\n+a\n\\ No newline at end of file\n",
+   "diff": " 1 日本語\n-2 日本語\n-3 a\n-4 hello\n+2 x y\n+3 a",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-35",
+   "old": "  \nhello\n0\nc\na\n\n",
+   "new": "  \nhello\n0\n  \na\nx y\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,7 @@\n   \n hello\n 0\n-c\n+  \n a\n-\n+x y\n+x y\n",
+   "diff": " 1   \n 2 hello\n 3 0\n-4 c\n+4   \n 5 a\n-6 \n+6 x y\n+7 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-36",
+   "old": "x y\n",
+   "new": "x y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-37",
+   "old": "  \nemoji😀\n1\n0\nemoji😀\nx y\n0\nb\nx y\ntab\t\nworld\n\n",
+   "new": "  \nemoji😀\n1\n0\nemoji😀\n\n0\nb\nx y\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,11 +2,9 @@\n emoji😀\n 1\n 0\n emoji😀\n-x y\n+\n 0\n b\n x y\n tab\t\n-world\n-\n",
+   "diff": "    ...\n  2 emoji😀\n  3 1\n  4 0\n  5 emoji😀\n- 6 x y\n+ 6 \n  7 0\n  8 b\n  9 x y\n 10 tab\t\n-11 world\n-12 ",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-38",
+   "old": "\nworld\nemoji😀\nhello\n日本語\n0\n1\na\na",
+   "new": "\nworld\nb\nhello\n0\n1\n  \na\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,9 +1,9 @@\n \n world\n-emoji😀\n+b\n hello\n-日本語\n 0\n 1\n+  \n a\n-a\n\\ No newline at end of file\n+a\n",
+   "diff": "  1 \n  2 world\n- 3 emoji😀\n+ 3 b\n  4 hello\n- 5 日本語\n  6 0\n  7 1\n+ 7   \n  8 a\n- 9 a\n+ 9 a",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-39",
+   "old": "  \nc\n  \nb\nc\nb\n0\nemoji😀\nb\nc\nemoji😀\n1\n",
+   "new": "  \nc\nworld\n  \nb\nb\nc\nb\n0\nemoji😀\nb\nc\nemoji😀\n1\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,10 @@\n   \n c\n+world\n   \n b\n+b\n c\n b\n 0\n emoji😀\n",
+   "diff": "  1   \n  2 c\n+ 3 world\n  3   \n  4 b\n+ 6 b\n  5 c\n  6 b\n  7 0\n  8 emoji😀\n    ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-40",
+   "old": "world\n日本語\nhello\n1\n0\nworld\nworld\nemoji😀\nemoji😀\na\n日本語\nx y\n",
+   "new": "world\n日本語\nhello\nemoji😀\n0\nworld\nworld\nemoji😀\nemoji😀\nb\n日本語\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,12 @@\n world\n 日本語\n hello\n-1\n+emoji😀\n 0\n world\n world\n emoji😀\n emoji😀\n-a\n+b\n 日本語\n x y\n",
+   "diff": "  1 world\n  2 日本語\n  3 hello\n- 4 1\n+ 4 emoji😀\n  5 0\n  6 world\n  7 world\n  8 emoji😀\n  9 emoji😀\n-10 a\n+10 b\n 11 日本語\n 12 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-41",
+   "old": "b\nhello\ntab\t\n",
+   "new": "b\na\nemoji😀\nhello\ntab\t\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,6 @@\n b\n+a\n+emoji😀\n hello\n tab\t\n+world\n",
+   "diff": " 1 b\n+2 a\n+3 emoji😀\n 2 hello\n 3 tab\t\n+6 world",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-42",
+   "old": "emoji😀\n  \nemoji😀\nworld\n  \nx y\nemoji😀",
+   "new": "world\nemoji😀\nworld\na\n  \nx y\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,7 @@\n+world\n emoji😀\n-  \n-emoji😀\n world\n+a\n   \n x y\n-emoji😀\n\\ No newline at end of file\n+emoji😀\n",
+   "diff": "+1 world\n 1 emoji😀\n-2   \n-3 emoji😀\n 4 world\n+4 a\n 5   \n 6 x y\n-7 emoji😀\n+7 emoji😀",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-43",
+   "old": "日本語\ntab\t\na\n0\n  \n\nemoji😀\n1\nhello\n",
+   "new": "日本語\ntab\t\n0\n0\n  \n\n\n1\nhello\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,9 +1,10 @@\n 日本語\n tab\t\n-a\n 0\n+0\n   \n \n-emoji😀\n+\n 1\n hello\n+hello\n",
+   "diff": "  1 日本語\n  2 tab\t\n- 3 a\n  4 0\n+ 4 0\n  5   \n  6 \n- 7 emoji😀\n+ 7 \n  8 1\n  9 hello\n+10 hello",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-44",
+   "old": "hello\ntab\t\nx y\nc\n  \n\nc\n",
+   "new": "0\nhello\ntab\t\nx y\nc\n  \na\nworld\n\nx y\nc",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,11 @@\n+0\n hello\n tab\t\n x y\n c\n   \n+a\n+world\n \n-c\n+x y\n+c\n\\ No newline at end of file\n",
+   "diff": "+ 1 0\n  1 hello\n  2 tab\t\n  3 x y\n  4 c\n  5   \n+ 7 a\n+ 8 world\n  6 \n- 7 c\n+10 x y\n+11 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-45",
+   "old": "hello\n0\nemoji😀\ntab\t\nemoji😀\nb\nc",
+   "new": "hello\n0\nb\ntab\t\nemoji😀\nb\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,7 @@\n hello\n 0\n-emoji😀\n+b\n tab\t\n emoji😀\n b\n-c\n\\ No newline at end of file\n+c\n",
+   "diff": " 1 hello\n 2 0\n-3 emoji😀\n+3 b\n 4 tab\t\n 5 emoji😀\n 6 b\n-7 c\n+7 c",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-46",
+   "old": "a\nc\n日本語\nemoji😀\n1\n\n1\n日本語\na\na\n  \nworld",
+   "new": "a\nc\n日本語\nemoji😀\n1\n\n1\n日本語\na\na\n  \ntab\t\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -8,5 +8,6 @@\n 日本語\n a\n a\n   \n-world\n\\ No newline at end of file\n+tab\t\n+world\n",
+   "diff": "    ...\n  8 日本語\n  9 a\n 10 a\n 11   \n-12 world\n+12 tab\t\n+13 world",
+   "firstChangedLine": 12
+  },
+  {
+   "name": "random-47",
+   "old": "hello\nx y\nemoji😀\nb\na\na\ntab\t\nx y\ntab\t\n\nemoji😀\n  \n",
+   "new": "hello\nx y\nemoji😀\nb\na\na\ntab\t\nx y\ntab\t\n\nemoji😀\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-48",
+   "old": "b\n  \n1\na\nb\n1\ntab\t\n",
+   "new": "world\n  \n1\nb\n1\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,6 @@\n-b\n+world\n   \n 1\n-a\n b\n 1\n-tab\t\n+tab\t\n\\ No newline at end of file\n",
+   "diff": "-1 b\n+1 world\n 2   \n 3 1\n-4 a\n 5 b\n 6 1\n-7 tab\t\n+6 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-49",
+   "old": "hello\n\nb\nworld\nhello\n  \n\nb\na\n0\n日本語\n1",
+   "new": "hello\n\nb\nworld\nhello\n  \n\nb\na\n0\n日本語\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -8,5 +8,5 @@\n b\n a\n 0\n 日本語\n-1\n\\ No newline at end of file\n+a\n\\ No newline at end of file\n",
+   "diff": "    ...\n  8 b\n  9 a\n 10 0\n 11 日本語\n-12 1\n+12 a",
+   "firstChangedLine": 12
+  },
+  {
+   "name": "random-50",
+   "old": "world\n  \n  \na\nx y\nc\n",
+   "new": "emoji😀\nx y\n  \na\nb\nx y\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,7 @@\n-world\n+emoji😀\n+x y\n   \n-  \n a\n+b\n x y\n c\n",
+   "diff": "-1 world\n+1 emoji😀\n+2 x y\n 2   \n-3   \n 4 a\n+5 b\n 5 x y\n 6 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-51",
+   "old": "emoji😀\nworld\n0\n\nx y\nx y\n",
+   "new": "world\n\n\nx y\nemoji😀\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,6 @@\n-emoji😀\n world\n-0\n \n+\n x y\n+emoji😀\n x y\n",
+   "diff": "-1 emoji😀\n 2 world\n-3 0\n 4 \n+3 \n 5 x y\n+5 emoji😀\n 6 x y",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-52",
+   "old": "world\n1\na\nemoji😀\n\n",
+   "new": "world\n1\na\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,4 @@\n world\n 1\n a\n emoji😀\n-\n",
+   "diff": " 1 world\n 2 1\n 3 a\n 4 emoji😀\n-5 ",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-53",
+   "old": "1\nworld\nemoji😀\nx y\n日本語\nx y\n日本語\nb\n0\n0\nworld\nb",
+   "new": "1\nemoji😀\nx y\n日本語\nx y\n日本語\nb\n  \nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,9 @@\n 1\n-world\n emoji😀\n x y\n 日本語\n x y\n 日本語\n b\n-0\n-0\n-world\n-b\n\\ No newline at end of file\n+  \n+b\n",
+   "diff": "  1 1\n- 2 world\n  3 emoji😀\n  4 x y\n  5 日本語\n  6 x y\n  7 日本語\n  8 b\n- 9 0\n-10 0\n-11 world\n-12 b\n+ 8   \n+ 9 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-54",
+   "old": "x y\n\nx y\n1\n\n",
+   "new": "0\n  \n\nx y\n1\n\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,7 @@\n-x y\n+0\n+  \n \n x y\n 1\n \n+c\n",
+   "diff": "-1 x y\n+1 0\n+2   \n 2 \n 3 x y\n 4 1\n 5 \n+7 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-55",
+   "old": "\n\n\n",
+   "new": "c\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,1 @@\n-\n-\n-\n+c\n",
+   "diff": "-1 \n-2 \n-3 \n+1 c",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-56",
+   "old": "1\n日本語\n\n",
+   "new": "1\n日本語\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n 1\n 日本語\n-\n+world\n",
+   "diff": " 1 1\n 2 日本語\n-3 \n+3 world",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-57",
+   "old": "emoji😀\ntab\t\nb\nhello\nc\n日本語\nemoji😀\nb\n0\nc\nb\na\n",
+   "new": "tab\t\nb\nhello\nc\n日本語\nemoji😀\nb\n0\nc\nb\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,4 @@\n-emoji😀\n tab\t\n b\n hello\n c\n",
+   "diff": "- 1 emoji😀\n  2 tab\t\n  3 b\n  4 hello\n  5 c\n    ...",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-58",
+   "old": "c\n\n  \nemoji😀\nemoji😀\nworld\nb\na\nc\nhello\n1\nx y\n  ",
+   "new": "c\n\n  \nemoji😀\nemoji😀\nworld\nb\na\nc\nhello\n1\nx y\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-59",
+   "old": "world\n日本語\n\na\n日本語\n  \nhello\n日本語\n日本語\n1\nb\na",
+   "new": "world\n日本語\n\na\n日本語\n  \nhello\n日本語\n日本語\n1\nb\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-60",
+   "old": "1\nhello\n0\ntab\t\n\nb\nx y\n0\nx y\nworld\n日本語\n\nx y\n",
+   "new": "1\nhello\nx y\n0\ntab\t\n\n日本語\nx y\n日本語\nx y\nworld\n日本語\n\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,13 @@\n 1\n hello\n+x y\n 0\n tab\t\n \n-b\n+日本語\n x y\n-0\n+日本語\n x y\n world\n 日本語\n \n",
+   "diff": "  1 1\n  2 hello\n+ 3 x y\n  3 0\n  4 tab\t\n  5 \n- 6 b\n+ 7 日本語\n  7 x y\n- 8 0\n+ 9 日本語\n  9 x y\n 10 world\n 11 日本語\n 12 \n    ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-61",
+   "old": "b\n1\nworld\n1\n  \n",
+   "new": "b\n1\nworld\n1\n1\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,6 @@\n b\n 1\n world\n 1\n-  \n+1\n+  \n\\ No newline at end of file\n",
+   "diff": " 1 b\n 2 1\n 3 world\n 4 1\n-5   \n+5 1\n+6   ",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-62",
+   "old": "x y\na\n1\nemoji😀\ntab\t\nb\nc\n日本語\nworld\n0\ntab\t\nb\n",
+   "new": "x y\na\n1\nemoji😀\ntab\t\nb\nc\n日本語\nworld\n0\ntab\t\nworld\nb",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -8,5 +8,6 @@\n 日本語\n world\n 0\n tab\t\n-b\n+world\n+b\n\\ No newline at end of file\n",
+   "diff": "    ...\n  8 日本語\n  9 world\n 10 0\n 11 tab\t\n-12 b\n+12 world\n+13 b",
+   "firstChangedLine": 12
+  },
+  {
+   "name": "random-63",
+   "old": "  \nc\n  \n",
+   "new": "  \na\n0\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,4 @@\n   \n-c\n+a\n+0\n   \n",
+   "diff": " 1   \n-2 c\n+2 a\n+3 0\n 3   ",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-64",
+   "old": "x y\n1\nworld\nemoji😀\n  \n\n1\n  \nc",
+   "new": "x y\n1\nworld\nemoji😀\n  \n\n1\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -4,6 +4,5 @@\n emoji😀\n   \n \n 1\n-  \n-c\n\\ No newline at end of file\n+c\n",
+   "diff": "   ...\n 4 emoji😀\n 5   \n 6 \n 7 1\n-8   \n-9 c\n+8 c",
+   "firstChangedLine": 8
+  },
+  {
+   "name": "random-65",
+   "old": "日本語\n0\n\nhello\nworld\nb\ntab\t\n",
+   "new": "tab\t\n  \n日本語\n0\n\nhello\nworld\nb\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,6 @@\n+tab\t\n+  \n 日本語\n 0\n \n hello\n",
+   "diff": "+ 1 tab\t\n+ 2   \n  1 日本語\n  2 0\n  3 \n  4 hello\n    ...",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-66",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-67",
+   "old": "hello\nb\nworld\nx y\nx y\nx y\nemoji😀",
+   "new": "hello\nb\nworld\nx y\nx y\nx y\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -3,5 +3,5 @@\n world\n x y\n x y\n x y\n-emoji😀\n\\ No newline at end of file\n+emoji😀\n",
+   "diff": "   ...\n 3 world\n 4 x y\n 5 x y\n 6 x y\n-7 emoji😀\n+7 emoji😀",
+   "firstChangedLine": 7
+  },
+  {
+   "name": "random-68",
+   "old": "  \na\na\nc\n\ntab\t\nx y",
+   "new": "  \na\na\nworld\nc\ntab\t\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,7 @@\n   \n a\n a\n+world\n c\n-\n tab\t\n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": " 1   \n 2 a\n 3 a\n+4 world\n 4 c\n-5 \n 6 tab\t\n-7 x y\n+7 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-69",
+   "old": "\na\nx y\ntab\t\nx y\nhello\nb\nb\nhello\n日本語\nx y\n",
+   "new": "\na\nx y\ntab\t\nx y\nb\n0\nb\nb\n日本語\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,10 +2,10 @@\n a\n x y\n tab\t\n x y\n-hello\n b\n+0\n b\n-hello\n+b\n 日本語\n x y\n",
+   "diff": "    ...\n  2 a\n  3 x y\n  4 tab\t\n  5 x y\n- 6 hello\n  7 b\n+ 7 0\n  8 b\n- 9 hello\n+ 9 b\n 10 日本語\n 11 x y",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-70",
+   "old": "hello\n日本語\n0\na\na\nc\ntab\t\nc\n",
+   "new": "a\n日本語\n0\na\na\nc\ntab\t\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n-hello\n+a\n 日本語\n 0\n a\n a\n",
+   "diff": "-1 hello\n+1 a\n 2 日本語\n 3 0\n 4 a\n 5 a\n   ...",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-71",
+   "old": "c\nemoji😀\n\n\nc\n日本語\n  \nb\na\nworld\nhello\nworld\nb\n",
+   "new": "c\nemoji😀\n1\n\nc\n日本語\n  \nb\na\nworld\nhello\nworld\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,8 @@\n c\n emoji😀\n+1\n \n-\n c\n 日本語\n   \n b\n",
+   "diff": "  1 c\n  2 emoji😀\n+ 3 1\n  3 \n- 4 \n  5 c\n  6 日本語\n  7   \n  8 b\n    ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-72",
+   "old": "  \n\n\n0\n  \nc\nhello\nhello\n",
+   "new": "  \n\n0\nworld\n0\n  \nc\nhello\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,9 @@\n   \n \n-\n 0\n+world\n+0\n   \n c\n hello\n-hello\n+x y\n",
+   "diff": "  1   \n  2 \n- 3 \n  4 0\n+ 4 world\n+ 5 0\n  5   \n  6 c\n  7 hello\n- 8 hello\n+ 9 x y",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-73",
+   "old": "world\nworld\n1\n  \n日本語\nb\n",
+   "new": "world\n1\n  \n\n日本語\nb\n日本語\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,7 @@\n world\n-world\n 1\n   \n+\n 日本語\n b\n+日本語\n",
+   "diff": " 1 world\n-2 world\n 3 1\n 4   \n+4 \n 5 日本語\n 6 b\n+7 日本語",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-74",
+   "old": "",
+   "new": "a",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -0,0 +1,1 @@\n+a\n\\ No newline at end of file\n",
+   "diff": "+1 a",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-75",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-76",
+   "old": "hello\nb\n日本語\n日本語\na\ntab\t\na\nworld\nemoji😀\n日本語\nc\nemoji😀\n1\n",
+   "new": "b\n日本語\n日本語\na\ntab\t\na\nworld\nemoji😀\n日本語\nc\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,4 @@\n-hello\n b\n 日本語\n 日本語\n a\n@@ -8,6 +7,5 @@\n world\n emoji😀\n 日本語\n c\n-emoji😀\n-1\n+b\n",
+   "diff": "- 1 hello\n  2 b\n  3 日本語\n  4 日本語\n  5 a\n    ...\n  8 world\n  9 emoji😀\n 10 日本語\n 11 c\n-12 emoji😀\n-13 1\n+11 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-77",
+   "old": "1\n1\nemoji😀\n",
+   "new": "tab\t\n1\n1\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,4 @@\n+tab\t\n 1\n 1\n emoji😀\n",
+   "diff": "+1 tab\t\n 1 1\n 2 1\n 3 emoji😀",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-78",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-79",
+   "old": "0\n",
+   "new": "  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,1 +1,1 @@\n-0\n+  \n",
+   "diff": "-1 0\n+1   ",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-80",
+   "old": "tab\t\nworld\n1\na\nx y\n\nhello\ntab\t\na\n0\n",
+   "new": "tab\t\nworld\n1\nc\n\nhello\ntab\t\na\n\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,10 @@\n tab\t\n world\n 1\n-a\n-x y\n+c\n \n hello\n tab\t\n a\n+\n 0\n",
+   "diff": "  1 tab\t\n  2 world\n  3 1\n- 4 a\n- 5 x y\n+ 4 c\n  6 \n  7 hello\n  8 tab\t\n  9 a\n+ 9 \n 10 0",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-81",
+   "old": "emoji😀\na\n\nworld\n  \n\na\n",
+   "new": "emoji😀\na\n\nworld\n  \n\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -3,5 +3,5 @@\n \n world\n   \n \n-a\n+a\n\\ No newline at end of file\n",
+   "diff": "   ...\n 3 \n 4 world\n 5   \n 6 \n-7 a\n+7 a",
+   "firstChangedLine": 7
+  },
+  {
+   "name": "random-82",
+   "old": "0\n日本語\n",
+   "new": "hello",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,1 @@\n-0\n-日本語\n+hello\n\\ No newline at end of file\n",
+   "diff": "-1 0\n-2 日本語\n+1 hello",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-83",
+   "old": "  \nc",
+   "new": "  \nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n   \n-c\n\\ No newline at end of file\n+c\n",
+   "diff": " 1   \n-2 c\n+2 c",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-84",
+   "old": "0\nx y\na\nhello\na\n\nb\nhello\n\nx y",
+   "new": "0\nx y\na\na\n\nb\nhello\n\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,9 @@\n 0\n x y\n a\n-hello\n a\n \n b\n hello\n \n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": "  1 0\n  2 x y\n  3 a\n- 4 hello\n  5 a\n  6 \n  7 b\n  8 hello\n  9 \n-10 x y\n+ 9 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-85",
+   "old": "b\nhello\nb\n",
+   "new": "b\nworld\nhello\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,4 @@\n b\n+world\n hello\n b\n",
+   "diff": " 1 b\n+2 world\n 2 hello\n 3 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-86",
+   "old": "tab\t\n  \nworld\nx y\n\n",
+   "new": "world\n  \n  \nx y\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n-tab\t\n-  \n world\n+  \n+  \n x y\n \n",
+   "diff": "-1 tab\t\n-2   \n 3 world\n+2   \n+3   \n 4 x y\n 5 ",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-87",
+   "old": "1\nb\n日本語\nemoji😀\nhello\nc\nhello\n1\nemoji😀\n  \n",
+   "new": "1\nb\n日本語\nemoji😀\nhello\nc\nhello\n1\n1\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -5,6 +5,6 @@\n hello\n c\n hello\n 1\n-emoji😀\n+1\n   \n",
+   "diff": "    ...\n  5 hello\n  6 c\n  7 hello\n  8 1\n- 9 emoji😀\n+ 9 1\n 10   ",
+   "firstChangedLine": 9
+  },
+  {
+   "name": "random-88",
+   "old": "a\n1\nemoji😀\n1\n\nb\ntab\t\nemoji😀\na\ntab\t\n",
+   "new": "a\n1\n0\n1\n\nb\ntab\t\nemoji😀\na\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,7 @@\n a\n 1\n-emoji😀\n+0\n 1\n \n b\n tab\t\n",
+   "diff": "  1 a\n  2 1\n- 3 emoji😀\n+ 3 0\n  4 1\n  5 \n  6 b\n  7 tab\t\n    ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-89",
+   "old": "1\nb\n\nemoji😀\nemoji😀\nworld\n0\nb\nemoji😀\nb\n",
+   "new": "1\nb\n\nemoji😀\nemoji😀\nworld\n0\nb\nemoji😀",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -5,6 +5,5 @@\n emoji😀\n world\n 0\n b\n-emoji😀\n-b\n+emoji😀\n\\ No newline at end of file\n",
+   "diff": "    ...\n  5 emoji😀\n  6 world\n  7 0\n  8 b\n- 9 emoji😀\n-10 b\n+ 9 emoji😀",
+   "firstChangedLine": 9
+  },
+  {
+   "name": "random-90",
+   "old": "  \n0\nworld\n",
+   "new": "  \n0\n0\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,4 @@\n   \n 0\n+0\n world\n",
+   "diff": " 1   \n 2 0\n+3 0\n 3 world",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-91",
+   "old": "0\ntab\t\nx y\n日本語\nworld\nhello\ntab\t\n  \nc\ntab\t",
+   "new": "日本語\ntab\t\nx y\n日本語\nworld\ntab\t\n  \nc\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,9 @@\n-0\n+日本語\n tab\t\n x y\n 日本語\n world\n-hello\n tab\t\n   \n c\n-tab\t\n\\ No newline at end of file\n+tab\t\n",
+   "diff": "- 1 0\n+ 1 日本語\n  2 tab\t\n  3 x y\n  4 日本語\n  5 world\n- 6 hello\n  7 tab\t\n  8   \n  9 c\n-10 tab\t\n+ 9 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-92",
+   "old": "\n  \nworld\nhello\n1\nhello\nworld\ntab\t\nworld\ntab\t\n0\nhello",
+   "new": "world\n  \nworld\nhello\n1\nhello\nworld\ntab\t\nworld\ntab\t\n0\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n-\n+world\n   \n world\n hello\n 1\n@@ -8,5 +8,5 @@\n tab\t\n world\n tab\t\n 0\n-hello\n\\ No newline at end of file\n+hello\n",
+   "diff": "- 1 \n+ 1 world\n  2   \n  3 world\n  4 hello\n  5 1\n    ...\n  8 tab\t\n  9 world\n 10 tab\t\n 11 0\n-12 hello\n+12 hello",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-93",
+   "old": "hello\nworld\nhello\ntab\t\n",
+   "new": "hello\na\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,3 @@\n hello\n-world\n-hello\n-tab\t\n+a\n+a\n\\ No newline at end of file\n",
+   "diff": " 1 hello\n-2 world\n-3 hello\n-4 tab\t\n+2 a\n+3 a",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-94",
+   "old": "emoji😀\n1\n\n0\n\nb\na\n1\na\na\nb\ntab\t\n",
+   "new": "emoji😀\n1\n\nx y\n\nb\na\n1\na\na\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,11 @@\n emoji😀\n 1\n \n-0\n+x y\n \n b\n a\n 1\n a\n a\n-b\n tab\t\n",
+   "diff": "  1 emoji😀\n  2 1\n  3 \n- 4 0\n+ 4 x y\n  5 \n  6 b\n  7 a\n  8 1\n  9 a\n 10 a\n-11 b\n 12 tab\t",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-95",
+   "old": "hello\n1\n0\n日本語\nworld\n日本語\n  ",
+   "new": "emoji😀\nhello\n1\n  \n0\n日本語\nworld\n日本語\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,9 @@\n+emoji😀\n hello\n 1\n+  \n 0\n 日本語\n world\n 日本語\n-  \n\\ No newline at end of file\n+  \n",
+   "diff": "+ 1 emoji😀\n  1 hello\n  2 1\n+ 4   \n  3 0\n  4 日本語\n  5 world\n  6 日本語\n- 7   \n+ 9   ",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-96",
+   "old": "a\nhello\nhello\n日本語\n0\n0\n1\nc\n  \n",
+   "new": "a\nhello\nhello\n日本語\na\n0\n0\n1\nc\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,9 @@\n a\n hello\n hello\n 日本語\n+a\n 0\n 0\n 1\n c\n",
+   "diff": "  1 a\n  2 hello\n  3 hello\n  4 日本語\n+ 5 a\n  5 0\n  6 0\n  7 1\n  8 c\n    ...",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-97",
+   "old": "world\n1\ntab\t\nhello\nx y\n0\na\n  \nb\n",
+   "new": "world\n1\ntab\t\n日本語\nemoji😀\nx y\nhello\nx y\n0\na\n  \nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,10 @@\n world\n 1\n tab\t\n+日本語\n+emoji😀\n+x y\n hello\n x y\n 0\n a\n",
+   "diff": "  1 world\n  2 1\n  3 tab\t\n+ 4 日本語\n+ 5 emoji😀\n+ 6 x y\n  4 hello\n  5 x y\n  6 0\n  7 a\n    ...",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-98",
+   "old": "1\n  \na\n",
+   "new": "1\n  \na\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,4 @@\n 1\n   \n a\n+tab\t\n",
+   "diff": " 1 1\n 2   \n 3 a\n+4 tab\t",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-99",
+   "old": "world\n\n0",
+   "new": "hello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,1 @@\n-world\n-\n-0\n\\ No newline at end of file\n+hello\n",
+   "diff": "-1 world\n-2 \n-3 0\n+1 hello",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-100",
+   "old": "tab\t\ntab\t\nx y\nc\na\na\n  \nc\nworld\ntab\t\n",
+   "new": "tab\t\ntab\t\nx y\ntab\t\nworld\nb\na\na\n  \nworld\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,11 @@\n tab\t\n tab\t\n x y\n-c\n+tab\t\n+world\n+b\n a\n a\n   \n-c\n world\n tab\t\n",
+   "diff": "  1 tab\t\n  2 tab\t\n  3 x y\n- 4 c\n+ 4 tab\t\n+ 5 world\n+ 6 b\n  5 a\n  6 a\n  7   \n- 8 c\n  9 world\n 10 tab\t",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-101",
+   "old": "0\nemoji😀\nhello\nc\ntab\t\nx y\na\n日本語\nworld",
+   "new": "0\nemoji😀\ntab\t\nc\ntab\t\nx y\na\n日本語\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,9 +1,9 @@\n 0\n emoji😀\n-hello\n+tab\t\n c\n tab\t\n x y\n a\n 日本語\n-world\n\\ No newline at end of file\n+world\n",
+   "diff": "  1 0\n  2 emoji😀\n- 3 hello\n+ 3 tab\t\n  4 c\n  5 tab\t\n  6 x y\n  7 a\n  8 日本語\n- 9 world\n+ 9 world",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-102",
+   "old": "\nx y\n\n0\nb\nx y\n0\n0\nemoji😀\na\nhello\nworld\nx y",
+   "new": "\nx y\n0\nb\nx y\n0\n0\nemoji😀\na\nhello\nworld\nx y",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,6 @@\n \n x y\n-\n 0\n b\n x y\n 0\n",
+   "diff": "  1 \n  2 x y\n- 3 \n  4 0\n  5 b\n  6 x y\n  7 0\n    ...",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-103",
+   "old": "emoji😀\n",
+   "new": "emoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-104",
+   "old": "日本語\n1\n1\nemoji😀\n",
+   "new": "日本語\n1\n1",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,3 @@\n 日本語\n 1\n-1\n-emoji😀\n+1\n\\ No newline at end of file\n",
+   "diff": " 1 日本語\n 2 1\n-3 1\n-4 emoji😀\n+3 1",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-105",
+   "old": "hello\n  \n",
+   "new": "hello\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-106",
+   "old": "emoji😀\n1\n0\n\n1\ntab\t\n\n",
+   "new": "emoji😀\n1\n0\n1\ntab\t\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,6 @@\n emoji😀\n 1\n 0\n-\n 1\n tab\t\n \n",
+   "diff": " 1 emoji😀\n 2 1\n 3 0\n-4 \n 5 1\n 6 tab\t\n 7 ",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-107",
+   "old": "  \ntab\t\nb\n日本語\na\nworld\nb\nworld\nworld\nx y",
+   "new": "  \ntab\t\nb\n日本語\na\nworld\nb\nworld\nworld\nx y",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-108",
+   "old": "日本語\ntab\t\n日本語\nb\na\n  \n日本語\n  \n  \nb\nworld\nworld\nc",
+   "new": "日本語\ntab\t\n日本語\nb\nc\n日本語\n  \nb\nworld\nworld\n\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,12 @@\n 日本語\n tab\t\n 日本語\n b\n-a\n-  \n+c\n 日本語\n   \n-  \n b\n world\n world\n-c\n\\ No newline at end of file\n+\n+c\n",
+   "diff": "  1 日本語\n  2 tab\t\n  3 日本語\n  4 b\n- 5 a\n- 6   \n+ 5 c\n  7 日本語\n  8   \n- 9   \n 10 b\n 11 world\n 12 world\n-13 c\n+11 \n+12 c",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-109",
+   "old": "emoji😀\n1\nb\n0\n日本語\ntab\t\nx y\na\n日本語\nx y\nhello\n",
+   "new": "1\nb\n0\n日本語\ntab\t\nx y\na\n日本語\nx y\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,4 @@\n-emoji😀\n 1\n b\n 0\n 日本語\n",
+   "diff": "- 1 emoji😀\n  2 1\n  3 b\n  4 0\n  5 日本語\n    ...",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-110",
+   "old": "emoji😀",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,1 +0,0 @@\n-emoji😀\n\\ No newline at end of file\n",
+   "diff": "-1 emoji😀",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-111",
+   "old": "x y\nc\ntab\t\nx y\nb\n1\nc\nb\nemoji😀\na\n0",
+   "new": "x y\nc\nemoji😀\nx y\nb\n1\nc\nb\nhello\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,11 +1,10 @@\n x y\n c\n-tab\t\n+emoji😀\n x y\n b\n 1\n c\n b\n-emoji😀\n-a\n-0\n\\ No newline at end of file\n+hello\n+0\n",
+   "diff": "  1 x y\n  2 c\n- 3 tab\t\n+ 3 emoji😀\n  4 x y\n  5 b\n  6 1\n  7 c\n  8 b\n- 9 emoji😀\n-10 a\n-11 0\n+ 9 hello\n+10 0",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-112",
+   "old": "日本語\n0\nc\n0\na\nemoji😀\n0\nemoji😀\nworld\n",
+   "new": "日本語\n\n0\nc\n0\na\nhello\n0\nemoji😀\nworld",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,9 +1,10 @@\n 日本語\n+\n 0\n c\n 0\n a\n-emoji😀\n+hello\n 0\n emoji😀\n-world\n+world\n\\ No newline at end of file\n",
+   "diff": "  1 日本語\n+ 2 \n  2 0\n  3 c\n  4 0\n  5 a\n- 6 emoji😀\n+ 7 hello\n  7 0\n  8 emoji😀\n- 9 world\n+10 world",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-113",
+   "old": "\n0\n0\nemoji😀\n\n0\n",
+   "new": "\n0\n0\nemoji😀\n\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-114",
+   "old": "tab\t\nworld\n0\n",
+   "new": "tab\t\nworld\n0",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n tab\t\n world\n-0\n+0\n\\ No newline at end of file\n",
+   "diff": " 1 tab\t\n 2 world\n-3 0\n+3 0",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-115",
+   "old": "b\n日本語\n\nc\ntab\t\n",
+   "new": "b\n1\n\nc\ntab\t\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,6 @@\n b\n-日本語\n+1\n \n c\n tab\t\n+hello\n",
+   "diff": " 1 b\n-2 日本語\n+2 1\n 3 \n 4 c\n 5 tab\t\n+6 hello",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-116",
+   "old": "world\n  \ntab\t\n日本語\na\nc\nemoji😀\n\n",
+   "new": "world\n  \ntab\t\n日本語\nworld\nc\nemoji😀\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,8 @@\n world\n   \n tab\t\n 日本語\n-a\n+world\n c\n emoji😀\n \n",
+   "diff": " 1 world\n 2   \n 3 tab\t\n 4 日本語\n-5 a\n+5 world\n 6 c\n 7 emoji😀\n 8 ",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-117",
+   "old": "x y\nc\nx y\n1\ntab\t\nx y\nhello\n",
+   "new": "x y\nc\nx y\n1\n  \ntab\t\nx y\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,8 @@\n x y\n c\n x y\n 1\n+  \n tab\t\n x y\n hello\n",
+   "diff": " 1 x y\n 2 c\n 3 x y\n 4 1\n+5   \n 5 tab\t\n 6 x y\n 7 hello",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-118",
+   "old": "tab\t\nhello\n0\nhello\nc\n0\nb\nemoji😀\nc\nb\n",
+   "new": "tab\t\nhello\nc\nb\nhello\nc\n0\nb\nemoji😀\nc\nb",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,11 @@\n tab\t\n hello\n-0\n+c\n+b\n hello\n c\n 0\n b\n emoji😀\n c\n-b\n+b\n\\ No newline at end of file\n",
+   "diff": "  1 tab\t\n  2 hello\n- 3 0\n+ 3 c\n+ 4 b\n  4 hello\n  5 c\n  6 0\n  7 b\n  8 emoji😀\n  9 c\n-10 b\n+11 b",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-119",
+   "old": "hello\n  \n  ",
+   "new": "hello\n  \n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n hello\n   \n-  \n\\ No newline at end of file\n+  \n",
+   "diff": " 1 hello\n 2   \n-3   \n+3   ",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-120",
+   "old": "b\nb\n0\nhello\nhello\n\n\ntab\t\nx y\n1\n0\nx y",
+   "new": "b\n0\nc\nhello\n\n\na\ntab\t\nx y\n1\n0\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,12 @@\n b\n-b\n 0\n+c\n hello\n-hello\n \n \n+a\n tab\t\n x y\n 1\n 0\n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": "  1 b\n- 2 b\n  3 0\n+ 3 c\n  4 hello\n- 5 hello\n  6 \n  7 \n+ 7 a\n  8 tab\t\n  9 x y\n 10 1\n 11 0\n-12 x y\n+12 x y",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-121",
+   "old": "0\n0\n0\nhello\nworld",
+   "new": "0\n0\nworld\n0\nb\nhello\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,7 @@\n 0\n 0\n+world\n 0\n+b\n hello\n-world\n\\ No newline at end of file\n+world\n",
+   "diff": " 1 0\n 2 0\n+3 world\n 3 0\n+5 b\n 4 hello\n-5 world\n+7 world",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-122",
+   "old": "1\n  \n",
+   "new": "1\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n 1\n-  \n+  \n\\ No newline at end of file\n",
+   "diff": " 1 1\n-2   \n+2   ",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-123",
+   "old": "日本語\nb\na\nemoji😀\nx y\ntab\t",
+   "new": "日本語\na\nemoji😀\nx y\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,5 @@\n 日本語\n-b\n a\n emoji😀\n x y\n-tab\t\n\\ No newline at end of file\n+tab\t\n",
+   "diff": " 1 日本語\n-2 b\n 3 a\n 4 emoji😀\n 5 x y\n-6 tab\t\n+5 tab\t",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-124",
+   "old": "1\n日本語\nhello\nemoji😀\n\n",
+   "new": "1\n1\n0\n日本語\nhello\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,6 @@\n 1\n+1\n+0\n 日本語\n hello\n emoji😀\n-\n",
+   "diff": " 1 1\n+2 1\n+3 0\n 2 日本語\n 3 hello\n 4 emoji😀\n-5 ",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-125",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-126",
+   "old": "a\ntab\t\nc\na\nhello\n0\n1\na\nemoji😀\nemoji😀",
+   "new": "a\ntab\t\nc\na\nhello\n0\n1\na\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -6,5 +6,4 @@\n 0\n 1\n a\n emoji😀\n-emoji😀\n\\ No newline at end of file\n",
+   "diff": "    ...\n  6 0\n  7 1\n  8 a\n  9 emoji😀\n-10 emoji😀",
+   "firstChangedLine": 10
+  },
+  {
+   "name": "random-127",
+   "old": "1\nemoji😀\n日本語\nb\n",
+   "new": "b\nemoji😀\n日本語\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n-1\n+b\n emoji😀\n 日本語\n b\n",
+   "diff": "-1 1\n+1 b\n 2 emoji😀\n 3 日本語\n 4 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-128",
+   "old": "a\n日本語\na\n  \n日本語\n",
+   "new": "a\n日本語\na\n  \n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n a\n 日本語\n a\n   \n-日本語\n+  \n",
+   "diff": " 1 a\n 2 日本語\n 3 a\n 4   \n-5 日本語\n+5   ",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-129",
+   "old": "1\na\nhello\ntab\t\nworld\nhello\nb\n",
+   "new": "c\na\nhello\nworld\nhello\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,6 @@\n-1\n+c\n a\n hello\n-tab\t\n world\n hello\n b\n",
+   "diff": "-1 1\n+1 c\n 2 a\n 3 hello\n-4 tab\t\n 5 world\n 6 hello\n 7 b",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-130",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-131",
+   "old": "日本語\nworld\nemoji😀\n",
+   "new": "日本語\nworld\nemoji😀",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n 日本語\n world\n-emoji😀\n+emoji😀\n\\ No newline at end of file\n",
+   "diff": " 1 日本語\n 2 world\n-3 emoji😀\n+3 emoji😀",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-132",
+   "old": "c\na\nb\n1\nc\nworld\n",
+   "new": "emoji😀\nhello\n1\nhello\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,5 @@\n-c\n-a\n-b\n+emoji😀\n+hello\n 1\n-c\n+hello\n world\n",
+   "diff": "-1 c\n-2 a\n-3 b\n+1 emoji😀\n+2 hello\n 4 1\n-5 c\n+4 hello\n 6 world",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-133",
+   "old": "emoji😀\nworld\n日本語\n0\nemoji😀\ntab\t\n日本語\n\n日本語\n\n  \nhello",
+   "new": "0\nemoji😀\n日本語\n0\ntab\t\ntab\t\n日本語\n\n日本語\n\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,12 +1,11 @@\n+0\n emoji😀\n-world\n 日本語\n 0\n-emoji😀\n tab\t\n+tab\t\n 日本語\n \n 日本語\n \n   \n-hello\n\\ No newline at end of file\n",
+   "diff": "+ 1 0\n  1 emoji😀\n- 2 world\n  3 日本語\n  4 0\n- 5 emoji😀\n  6 tab\t\n+ 6 tab\t\n  7 日本語\n  8 \n  9 日本語\n 10 \n 11   \n-12 hello",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-134",
+   "old": "a\n  \n0\nemoji😀\n0\nc\n0\ntab\t",
+   "new": "a\n  \n0\nemoji😀\nx y\nc\n0\ntab\t",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,8 @@\n a\n   \n 0\n emoji😀\n-0\n+x y\n c\n 0\n tab\t\n\\ No newline at end of file\n",
+   "diff": " 1 a\n 2   \n 3 0\n 4 emoji😀\n-5 0\n+5 x y\n 6 c\n 7 0\n 8 tab\t",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-135",
+   "old": "1\n0\ntab\t\ntab\t\n",
+   "new": "1\n0\ntab\t\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,4 @@\n 1\n 0\n tab\t\n-tab\t\n+c\n",
+   "diff": " 1 1\n 2 0\n 3 tab\t\n-4 tab\t\n+4 c",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-136",
+   "old": "1\n  \ntab\t\nb\nc\nemoji😀\nc\nx y",
+   "new": "  \nb\nc\n  \n日本語\nc\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,7 @@\n-1\n   \n-tab\t\n b\n c\n-emoji😀\n+  \n+日本語\n c\n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": "-1 1\n 2   \n-3 tab\t\n 4 b\n 5 c\n-6 emoji😀\n+4   \n+5 日本語\n 7 c\n-8 x y\n+7 x y",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-137",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-138",
+   "old": "  \na\n",
+   "new": "  \na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n   \n-a\n+a\n\\ No newline at end of file\n",
+   "diff": " 1   \n-2 a\n+2 a",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-139",
+   "old": "emoji😀\nb\n日本語\ntab\t\n\nworld\n",
+   "new": "emoji😀\nb\n日本語\n日本語\ntab\t\nworld\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,7 @@\n emoji😀\n b\n 日本語\n+日本語\n tab\t\n-\n world\n+\n",
+   "diff": " 1 emoji😀\n 2 b\n 3 日本語\n+4 日本語\n 4 tab\t\n-5 \n 6 world\n+7 ",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-140",
+   "old": "日本語\nemoji😀\nemoji😀\nemoji😀\nemoji😀\n\n  \nhello\n日本語\n1\nemoji😀\n",
+   "new": "日本語\nemoji😀\nemoji😀\nemoji😀\nemoji😀\n\n  \nhello\n日本語\n1\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-141",
+   "old": "0\nb\nemoji😀\nc\n日本語\n0\n",
+   "new": "b\nemoji😀\nc\nhello\n\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,6 +1,6 @@\n-0\n b\n emoji😀\n c\n-日本語\n+hello\n+\n 0\n",
+   "diff": "-1 0\n 2 b\n 3 emoji😀\n 4 c\n-5 日本語\n+4 hello\n+5 \n 6 0",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-142",
+   "old": "hello\nhello\n日本語\n",
+   "new": "hello\nhello\n日本語",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n hello\n hello\n-日本語\n+日本語\n\\ No newline at end of file\n",
+   "diff": " 1 hello\n 2 hello\n-3 日本語\n+3 日本語",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-143",
+   "old": "1\nworld\na\n0\nx y",
+   "new": "1\nworld\na\n0\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,5 @@\n 1\n world\n a\n 0\n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": " 1 1\n 2 world\n 3 a\n 4 0\n-5 x y\n+5 x y",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-144",
+   "old": "0\nhello\ntab\t\n\n  \ntab\t\nx y\n  \nc\nb\n0\n",
+   "new": "world\nhello\ntab\t\n\n  \ntab\t\nx y\n  \nb\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,11 +1,10 @@\n-0\n+world\n hello\n tab\t\n \n   \n tab\t\n x y\n   \n-c\n b\n 0\n",
+   "diff": "- 1 0\n+ 1 world\n  2 hello\n  3 tab\t\n  4 \n  5   \n  6 tab\t\n  7 x y\n  8   \n- 9 c\n 10 b\n 11 0",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-145",
+   "old": "emoji😀\na\ntab\t\nb\na\n1\nemoji😀\ntab\t\n\nemoji😀\nx y\nworld\n",
+   "new": "emoji😀\na\ntab\t\nb\na\n1\nemoji😀\ntab\t\nemoji😀\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -5,8 +5,6 @@\n a\n 1\n emoji😀\n tab\t\n-\n emoji😀\n-x y\n world\n",
+   "diff": "    ...\n  5 a\n  6 1\n  7 emoji😀\n  8 tab\t\n- 9 \n 10 emoji😀\n-11 x y\n 12 world",
+   "firstChangedLine": 9
+  },
+  {
+   "name": "random-146",
+   "old": "c\nhello\nworld\nworld\nx y\n  \ntab\t\n0\na\nemoji😀\n  \n",
+   "new": "c\nhello\nworld\nc\nworld\nx y\nc\n日本語\ntab\t\n0\na\nemoji😀\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,11 +1,13 @@\n c\n hello\n world\n+c\n world\n x y\n-  \n+c\n+日本語\n tab\t\n 0\n a\n emoji😀\n-  \n+  \n\\ No newline at end of file\n",
+   "diff": "  1 c\n  2 hello\n  3 world\n+ 4 c\n  4 world\n  5 x y\n- 6   \n+ 7 c\n+ 8 日本語\n  7 tab\t\n  8 0\n  9 a\n 10 emoji😀\n-11   \n+13   ",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-147",
+   "old": "",
+   "new": "",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-148",
+   "old": "1\nworld\n1\n  \nc\nworld\n  \n1\n1\ntab\t\n1\nc\na\n",
+   "new": "1\nworld\nworld\n1\n  \n\n\n  \n1\n1\ntab\t\n1\nc\na",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,14 @@\n 1\n world\n+world\n 1\n   \n-c\n-world\n+\n+\n   \n 1\n 1\n tab\t\n 1\n c\n-a\n+a\n\\ No newline at end of file\n",
+   "diff": "  1 1\n  2 world\n+ 3 world\n  3 1\n  4   \n- 5 c\n- 6 world\n+ 6 \n+ 7 \n  7   \n  8 1\n  9 1\n 10 tab\t\n 11 1\n 12 c\n-13 a\n+14 a",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-149",
+   "old": "0\nhello\nhello\nemoji😀\n0\nworld\n  \n1\n1\nworld\nemoji😀\n0\n",
+   "new": "0\nhello\nhello\nemoji😀\n0\nworld\n  \n1\n1\nworld\nemoji😀\n0\n0\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -9,4 +9,5 @@\n 1\n world\n emoji😀\n 0\n+0\n",
+   "diff": "    ...\n  9 1\n 10 world\n 11 emoji😀\n 12 0\n+13 0",
+   "firstChangedLine": 13
+  },
+  {
+   "name": "random-150",
+   "old": "b\nb\na\n1\nemoji😀\n  \nb\n日本語\nc",
+   "new": "b\nb\na\n1\nemoji😀\n  \nb\n日本語\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -5,5 +5,5 @@\n emoji😀\n   \n b\n 日本語\n-c\n\\ No newline at end of file\n+c\n",
+   "diff": "    ...\n  5 emoji😀\n  6   \n  7 b\n  8 日本語\n- 9 c\n+ 9 c",
+   "firstChangedLine": 9
+  },
+  {
+   "name": "random-151",
+   "old": "b\nb\nx y\nhello\n1\n  \nx y",
+   "new": "b\nb\nx y\ntab\t\n1\nemoji😀\nx y\n  \nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,9 @@\n b\n b\n x y\n-hello\n+tab\t\n 1\n+emoji😀\n+x y\n   \n-x y\n\\ No newline at end of file\n+x y\n",
+   "diff": "  1 b\n  2 b\n  3 x y\n- 4 hello\n+ 4 tab\t\n  5 1\n+ 6 emoji😀\n+ 7 x y\n  6   \n- 7 x y\n+ 9 x y",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-152",
+   "old": "0\n0\nx y\nemoji😀\n",
+   "new": "0\n0\nx y\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-153",
+   "old": "a\nemoji😀\n0\nc\n\nemoji😀\nc\nb\nhello\nworld\na\nworld\nb\n",
+   "new": "a\nemoji😀\n0\nc\nx y\nemoji😀\nc\nb\nhello\n\n\nworld\na\nworld\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,15 @@\n a\n emoji😀\n 0\n c\n-\n+x y\n emoji😀\n c\n b\n hello\n+\n+\n world\n a\n world\n b\n",
+   "diff": "  1 a\n  2 emoji😀\n  3 0\n  4 c\n- 5 \n+ 5 x y\n  6 emoji😀\n  7 c\n  8 b\n  9 hello\n+10 \n+11 \n 10 world\n 11 a\n 12 world\n 13 b",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-154",
+   "old": "a\n日本語\nc\ntab\t\ntab\t\nc\n1\n0",
+   "new": "c\nemoji😀\nc\ntab\t\nc\n1\n0",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,7 @@\n-a\n-日本語\n c\n+emoji😀\n+c\n tab\t\n-tab\t\n c\n 1\n 0\n\\ No newline at end of file\n",
+   "diff": "-1 a\n-2 日本語\n 3 c\n+2 emoji😀\n+3 c\n 4 tab\t\n-5 tab\t\n 6 c\n 7 1\n 8 0",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-155",
+   "old": "日本語\na\nc\na\ntab\t\na\nc\ntab\t\n日本語\na\nc\nx y\nhello\n",
+   "new": "日本語\na\nc\na\ntab\t\nc\ntab\t\n日本語\na\nc\nx y\nhello",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,12 +2,11 @@\n a\n c\n a\n tab\t\n-a\n c\n tab\t\n 日本語\n a\n c\n x y\n-hello\n+hello\n\\ No newline at end of file\n",
+   "diff": "    ...\n  2 a\n  3 c\n  4 a\n  5 tab\t\n- 6 a\n  7 c\n  8 tab\t\n  9 日本語\n 10 a\n 11 c\n 12 x y\n-13 hello\n+12 hello",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-156",
+   "old": "tab\t\nworld\ntab\t\n0\nhello\n\nworld\nc\n0\nc\n日本語\nhello\ntab\t",
+   "new": "tab\t\nworld\ntab\t\n0\nhello\n\nworld\nc\n0\n  \n日本語\nhello\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -6,8 +6,8 @@\n \n world\n c\n 0\n-c\n+  \n 日本語\n hello\n-tab\t\n\\ No newline at end of file\n+tab\t\n",
+   "diff": "    ...\n  6 \n  7 world\n  8 c\n  9 0\n-10 c\n+10   \n 11 日本語\n 12 hello\n-13 tab\t\n+13 tab\t",
+   "firstChangedLine": 10
+  },
+  {
+   "name": "random-157",
+   "old": "日本語\nx y\nc\nemoji😀\n  \n",
+   "new": "日本語\nx y\nc\n  \n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,5 +1,4 @@\n 日本語\n x y\n c\n-emoji😀\n   \n",
+   "diff": " 1 日本語\n 2 x y\n 3 c\n-4 emoji😀\n 5   ",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-158",
+   "old": "world\nb\n",
+   "new": "world\nb",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,2 @@\n world\n-b\n+b\n\\ No newline at end of file\n",
+   "diff": " 1 world\n-2 b\n+2 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-159",
+   "old": "a\n0\nhello\nemoji😀\nb\nx y\nhello\n1\nhello\n0\nx y\n",
+   "new": "a\n0\nhello\nemoji😀\nb\nx y\n0\n1\nhello\nb\nx y\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -3,9 +3,9 @@\n hello\n emoji😀\n b\n x y\n-hello\n+0\n 1\n hello\n-0\n+b\n x y\n",
+   "diff": "    ...\n  3 hello\n  4 emoji😀\n  5 b\n  6 x y\n- 7 hello\n+ 7 0\n  8 1\n  9 hello\n-10 0\n+10 b\n 11 x y",
+   "firstChangedLine": 7
+  },
+  {
+   "name": "random-160",
+   "old": "tab\t\nhello\n1\nemoji😀\n1\ntab\t\nx y\ntab\t\n  \nemoji😀\n\na\n",
+   "new": "tab\t\nhello\n1\nemoji😀\n1\nx y\ntab\t\n  \nemoji😀\n\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -2,9 +2,8 @@\n hello\n 1\n emoji😀\n 1\n-tab\t\n x y\n tab\t\n   \n emoji😀\n",
+   "diff": "    ...\n  2 hello\n  3 1\n  4 emoji😀\n  5 1\n- 6 tab\t\n  7 x y\n  8 tab\t\n  9   \n 10 emoji😀\n    ...",
+   "firstChangedLine": 6
+  },
+  {
+   "name": "random-161",
+   "old": "x y\nemoji😀\nx y\nb\ntab\t\nemoji😀\n\nhello\n\n\n  \na\nemoji😀\n",
+   "new": "x y\nemoji😀\nx y\nb\ntab\t\nemoji😀\n\nc\nhello\n\n\n  \na\n0\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -4,10 +4,12 @@\n b\n tab\t\n emoji😀\n \n+c\n hello\n \n \n   \n a\n-emoji😀\n+0\n+a\n",
+   "diff": "    ...\n  4 b\n  5 tab\t\n  6 emoji😀\n  7 \n+ 8 c\n  8 hello\n  9 \n 10 \n 11   \n 12 a\n-13 emoji😀\n+14 0\n+15 a",
+   "firstChangedLine": 8
+  },
+  {
+   "name": "random-162",
+   "old": "1\n\nx y\n  \na\nworld\ntab\t\n1\na\n\n",
+   "new": "1\n\nx y\n  \na\nworld\n1\na\n\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -3,8 +3,7 @@\n x y\n   \n a\n world\n-tab\t\n 1\n a\n \n",
+   "diff": "    ...\n  3 x y\n  4   \n  5 a\n  6 world\n- 7 tab\t\n  8 1\n  9 a\n 10 ",
+   "firstChangedLine": 7
+  },
+  {
+   "name": "random-163",
+   "old": "emoji😀\nb\ntab\t\na\n  \n\n0\nc\n",
+   "new": "emoji😀\nb\ntab\t\ntab\t\na\n  \nworld\n0\nc\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,9 @@\n emoji😀\n b\n tab\t\n+tab\t\n a\n   \n-\n+world\n 0\n c\n",
+   "diff": "  1 emoji😀\n  2 b\n  3 tab\t\n+ 4 tab\t\n  4 a\n  5   \n- 6 \n+ 7 world\n  7 0\n  8 c",
+   "firstChangedLine": 4
+  },
+  {
+   "name": "random-164",
+   "old": "a",
+   "new": "b\na\n1\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,1 +1,4 @@\n-a\n\\ No newline at end of file\n+b\n+a\n+1\n+a\n",
+   "diff": "-1 a\n+1 b\n+2 a\n+3 1\n+4 a",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-165",
+   "old": "hello\nworld\nx y\n0\n日本語\n日本語\nx y\nb\ntab\t\nhello\nhello\na\n1",
+   "new": "hello\nworld\nx y\n0\n日本語\n日本語\nx y\ntab\t\nhello\nhello\na\n1\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -4,10 +4,9 @@\n 0\n 日本語\n 日本語\n x y\n-b\n tab\t\n hello\n hello\n a\n-1\n\\ No newline at end of file\n+1\n",
+   "diff": "    ...\n  4 0\n  5 日本語\n  6 日本語\n  7 x y\n- 8 b\n  9 tab\t\n 10 hello\n 11 hello\n 12 a\n-13 1\n+12 1",
+   "firstChangedLine": 8
+  },
+  {
+   "name": "random-166",
+   "old": "0\nc\nb\na\n1\nb\nc\n1\nemoji😀\nemoji😀\n",
+   "new": "c\nc\nb\na\n1\nb\nc\n1\nemoji😀\n  \ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,10 +1,11 @@\n-0\n c\n+c\n b\n a\n 1\n b\n c\n 1\n emoji😀\n-emoji😀\n+  \n+tab\t\n",
+   "diff": "- 1 0\n  2 c\n+ 2 c\n  3 b\n  4 a\n  5 1\n  6 b\n  7 c\n  8 1\n  9 emoji😀\n-10 emoji😀\n+10   \n+11 tab\t",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-167",
+   "old": "1\nb\na\n日本語\nc\nemoji😀\n  \nc\nemoji😀\nemoji😀\nhello\n0\ntab\t\n",
+   "new": "1\nb\na\n日本語\nc\nemoji😀\n  \nc\nemoji😀\nemoji😀\n0\ntab\t\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -7,7 +7,6 @@\n   \n c\n emoji😀\n emoji😀\n-hello\n 0\n tab\t\n",
+   "diff": "    ...\n  7   \n  8 c\n  9 emoji😀\n 10 emoji😀\n-11 hello\n 12 0\n 13 tab\t",
+   "firstChangedLine": 11
+  },
+  {
+   "name": "random-168",
+   "old": "0\n",
+   "new": "world\nworld\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,1 +1,2 @@\n-0\n+world\n+world\n",
+   "diff": "-1 0\n+1 world\n+2 world",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-169",
+   "old": "emoji😀\nb\nc\na\nemoji😀\nb\nemoji😀\n日本語\n",
+   "new": "emoji😀\nb\nc\na\nx y\n0\nb\nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,8 +1,8 @@\n emoji😀\n b\n c\n a\n-emoji😀\n+x y\n+0\n b\n emoji😀\n-日本語\n",
+   "diff": " 1 emoji😀\n 2 b\n 3 c\n 4 a\n-5 emoji😀\n+5 x y\n+6 0\n 6 b\n 7 emoji😀\n-8 日本語",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-170",
+   "old": "\n0\nx y\n1\nx y\nhello\n",
+   "new": "\n0\nx y\n1\nx y\nhello\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-171",
+   "old": "  \ntab\t\nworld\n",
+   "new": "  \ntab\t\n  ",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,3 +1,3 @@\n   \n tab\t\n-world\n+  \n\\ No newline at end of file\n",
+   "diff": " 1   \n 2 tab\t\n-3 world\n+3   ",
+   "firstChangedLine": 3
+  },
+  {
+   "name": "random-172",
+   "old": "world\nx y\n",
+   "new": "x y",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,2 +1,1 @@\n-world\n-x y\n+x y\n\\ No newline at end of file\n",
+   "diff": "-1 world\n-2 x y\n+1 x y",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-173",
+   "old": "c\nemoji😀\n日本語\nemoji😀\nb\n",
+   "new": "c\nemoji😀\n日本語\nemoji😀\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-174",
+   "old": "emoji😀\ntab\t\nb\n1\ntab\t\nworld\nworld\n0\nx y\nb\n",
+   "new": "emoji😀\ntab\t\nb\n1\ntab\t\nworld\nworld\n0\nx y\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n",
+   "diff": "",
+   "firstChangedLine": null
+  },
+  {
+   "name": "random-175",
+   "old": "0\nworld\nx y\n\n1\n\nb",
+   "new": "0\nhello\nworld\nx y\n\n1\n\nb\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,7 +1,8 @@\n 0\n+hello\n world\n x y\n \n 1\n \n-b\n\\ No newline at end of file\n+b\n",
+   "diff": " 1 0\n+2 hello\n 2 world\n 3 x y\n 4 \n 5 1\n 6 \n-7 b\n+8 b",
+   "firstChangedLine": 2
+  },
+  {
+   "name": "random-176",
+   "old": "c\nx y\nhello\ntab\t\n日本語\nemoji😀\n  \nhello\nx y\nworld\nc\n0\na",
+   "new": "c\nx y\nhello\ntab\t\n1\nemoji😀\n  \n日本語\nb\nx y\nworld\nc\n0\na\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,13 +1,14 @@\n c\n x y\n hello\n tab\t\n-日本語\n+1\n emoji😀\n   \n-hello\n+日本語\n+b\n x y\n world\n c\n 0\n-a\n\\ No newline at end of file\n+a\n",
+   "diff": "  1 c\n  2 x y\n  3 hello\n  4 tab\t\n- 5 日本語\n+ 5 1\n  6 emoji😀\n  7   \n- 8 hello\n+ 8 日本語\n+ 9 b\n  9 x y\n 10 world\n 11 c\n 12 0\n-13 a\n+14 a",
+   "firstChangedLine": 5
+  },
+  {
+   "name": "random-177",
+   "old": "  \n0\n  \nemoji😀\n",
+   "new": "\n1\n0\n  \nemoji😀\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -1,4 +1,5 @@\n-  \n+\n+1\n 0\n   \n emoji😀\n",
+   "diff": "-1   \n+1 \n+2 1\n 2 0\n 3   \n 4 emoji😀",
+   "firstChangedLine": 1
+  },
+  {
+   "name": "random-178",
+   "old": "日本語\nemoji😀\nworld\n\nhello\ntab\t\nworld\nworld\nc\nworld\nx y\nworld\n",
+   "new": "日本語\nemoji😀\nworld\n\nhello\ntab\t\nworld\n  \nworld\nc\nworld\nx y\nworld",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -4,9 +4,10 @@\n \n hello\n tab\t\n world\n+  \n world\n c\n world\n x y\n-world\n+world\n\\ No newline at end of file\n",
+   "diff": "    ...\n  4 \n  5 hello\n  6 tab\t\n  7 world\n+ 8   \n  8 world\n  9 c\n 10 world\n 11 x y\n-12 world\n+13 world",
+   "firstChangedLine": 8
+  },
+  {
+   "name": "random-179",
+   "old": "x y\ntab\t\n\nworld\n日本語\nb\nhello\n  \ntab\t\nworld\nemoji😀\n日本語\n日本語\n",
+   "new": "x y\ntab\t\n\nworld\n日本語\nb\nhello\n  \ntab\t\nworld\nemoji😀\n日本語\nhello\n日本語\n日本語\n",
+   "context": 4,
+   "patch": "--- src/file.txt\n+++ src/file.txt\n@@ -9,5 +9,7 @@\n tab\t\n world\n emoji😀\n 日本語\n+hello\n 日本語\n+日本語\n",
+   "diff": "    ...\n  9 tab\t\n 10 world\n 11 emoji😀\n 12 日本語\n+13 hello\n 13 日本語\n+15 日本語",
+   "firstChangedLine": 13
+  }
+ ],
+ "apply": [
+  {
+   "name": "simple",
+   "content": "Hello, world!",
+   "edits": [
+    {
+     "oldText": "world",
+     "newText": "testing"
+    }
+   ],
+   "baseContent": "Hello, world!",
+   "newContent": "Hello, testing!",
+   "error": null
+  },
+  {
+   "name": "empty-edits-list",
+   "content": "hello\n",
+   "edits": [],
+   "baseContent": null,
+   "newContent": null,
+   "error": "No changes made to file.txt. The replacements produced identical content."
+  },
+  {
+   "name": "empty-old-text",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "",
+     "newText": "x"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "oldText must not be empty in file.txt."
+  },
+  {
+   "name": "empty-old-text-multi",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "hello",
+     "newText": "hi"
+    },
+    {
+     "oldText": "",
+     "newText": "x"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "edits[1].oldText must not be empty in file.txt."
+  },
+  {
+   "name": "not-found",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "nope",
+     "newText": "x"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Could not find the exact text in file.txt. The old text must match exactly including all whitespace and newlines."
+  },
+  {
+   "name": "not-found-multi",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "hello",
+     "newText": "hi"
+    },
+    {
+     "oldText": "nope",
+     "newText": "x"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Could not find edits[1] in file.txt. The oldText must match exactly including all whitespace and newlines."
+  },
+  {
+   "name": "duplicate",
+   "content": "foo foo foo",
+   "edits": [
+    {
+     "oldText": "foo",
+     "newText": "bar"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Found 3 occurrences of the text in file.txt. The text must be unique. Please provide more context to make it unique."
+  },
+  {
+   "name": "duplicate-multi",
+   "content": "x\nfoo foo foo\n",
+   "edits": [
+    {
+     "oldText": "x",
+     "newText": "y"
+    },
+    {
+     "oldText": "foo",
+     "newText": "bar"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Found 3 occurrences of edits[1] in file.txt. Each oldText must be unique. Please provide more context to make it unique."
+  },
+  {
+   "name": "overlap",
+   "content": "one\ntwo\nthree\n",
+   "edits": [
+    {
+     "oldText": "one\ntwo\n",
+     "newText": "ONE\nTWO\n"
+    },
+    {
+     "oldText": "two\nthree\n",
+     "newText": "TWO\nTHREE\n"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "edits[0] and edits[1] overlap in file.txt. Merge them into one edit or target disjoint regions."
+  },
+  {
+   "name": "no-change",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "hello",
+     "newText": "hello"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "No changes made to file.txt. The replacement produced identical content. This might indicate an issue with special characters or the text not existing as expected."
+  },
+  {
+   "name": "no-change-multi",
+   "content": "hello\n",
+   "edits": [
+    {
+     "oldText": "hello",
+     "newText": "hello"
+    },
+    {
+     "oldText": "x",
+     "newText": "y"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Could not find edits[1] in file.txt. The oldText must match exactly including all whitespace and newlines."
+  },
+  {
+   "name": "multi",
+   "content": "alpha\nbeta\ngamma\ndelta\n",
+   "edits": [
+    {
+     "oldText": "alpha\n",
+     "newText": "ALPHA\n"
+    },
+    {
+     "oldText": "gamma\n",
+     "newText": "GAMMA\n"
+    }
+   ],
+   "baseContent": "alpha\nbeta\ngamma\ndelta\n",
+   "newContent": "ALPHA\nbeta\nGAMMA\ndelta\n",
+   "error": null
+  },
+  {
+   "name": "original-match",
+   "content": "foo\nbar\nbaz\n",
+   "edits": [
+    {
+     "oldText": "foo\n",
+     "newText": "foo bar\n"
+    },
+    {
+     "oldText": "bar\n",
+     "newText": "BAR\n"
+    }
+   ],
+   "baseContent": "foo\nbar\nbaz\n",
+   "newContent": "foo bar\nBAR\nbaz\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-trailing-ws",
+   "content": "line one   \nline two  \nline three\n",
+   "edits": [
+    {
+     "oldText": "line one\nline two\n",
+     "newText": "replaced\n"
+    }
+   ],
+   "baseContent": "line one   \nline two  \nline three\n",
+   "newContent": "replaced\nline three\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-fullwidth",
+   "content": "你好，世界\n你好（世界）\n",
+   "edits": [
+    {
+     "oldText": "你好,世界\n你好(世界)\n",
+     "newText": "你好，kiana\n你好(kiana)\n"
+    }
+   ],
+   "baseContent": "你好，世界\n你好（世界）\n",
+   "newContent": "你好，kiana\n你好(kiana)\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-compat",
+   "content": "ＡＢＣ１２３\ncafé\n",
+   "edits": [
+    {
+     "oldText": "ABC123\ncafé\n",
+     "newText": "XYZ789\ncoffee\n"
+    }
+   ],
+   "baseContent": "ＡＢＣ１２３\ncafé\n",
+   "newContent": "XYZ789\ncoffee\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-smart-single",
+   "content": "console.log(‘hello’);\n",
+   "edits": [
+    {
+     "oldText": "console.log('hello');",
+     "newText": "console.log('world');"
+    }
+   ],
+   "baseContent": "console.log(‘hello’);\n",
+   "newContent": "console.log('world');\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-smart-double",
+   "content": "const msg = “Hello World”;\n",
+   "edits": [
+    {
+     "oldText": "const msg = \"Hello World\";",
+     "newText": "const msg = \"Goodbye\";"
+    }
+   ],
+   "baseContent": "const msg = “Hello World”;\n",
+   "newContent": "const msg = \"Goodbye\";\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-dashes",
+   "content": "range: 1–5\nbreak—here\n",
+   "edits": [
+    {
+     "oldText": "range: 1-5\nbreak-here",
+     "newText": "range: 10-50\nbreak--here"
+    }
+   ],
+   "baseContent": "range: 1–5\nbreak—here\n",
+   "newContent": "range: 10-50\nbreak--here\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-nbsp",
+   "content": "hello world\n",
+   "edits": [
+    {
+     "oldText": "hello world",
+     "newText": "hello universe"
+    }
+   ],
+   "baseContent": "hello world\n",
+   "newContent": "hello universe\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-exact-preferred",
+   "content": "const x = 'exact';\nconst y = 'other';\n",
+   "edits": [
+    {
+     "oldText": "const x = 'exact';",
+     "newText": "const x = 'changed';"
+    }
+   ],
+   "baseContent": "const x = 'exact';\nconst y = 'other';\n",
+   "newContent": "const x = 'changed';\nconst y = 'other';\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-duplicates",
+   "content": "hello world   \nhello world\n",
+   "edits": [
+    {
+     "oldText": "hello world",
+     "newText": "replaced"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Found 2 occurrences of the text in file.txt. The text must be unique. Please provide more context to make it unique."
+  },
+  {
+   "name": "fuzzy-multi",
+   "content": "console.log(‘hello’);\nhello world\n",
+   "edits": [
+    {
+     "oldText": "console.log('hello');\n",
+     "newText": "console.log('world');\n"
+    },
+    {
+     "oldText": "hello world\n",
+     "newText": "hello universe\n"
+    }
+   ],
+   "baseContent": "console.log(‘hello’);\nhello world\n",
+   "newContent": "console.log('world');\nhello universe\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-preserve-occurrence",
+   "content": "replace me   \nafter   \n",
+   "edits": [
+    {
+     "oldText": "replace me\n",
+     "newText": "after\n"
+    }
+   ],
+   "baseContent": "replace me   \nafter   \n",
+   "newContent": "after\nafter   \n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-preserve-multi",
+   "content": "keep before  \nfirst target  \nfirst after\nkeep middle   \nsecond target  \nsecond after\nkeep after  \n",
+   "edits": [
+    {
+     "oldText": "first target\nfirst after",
+     "newText": "FIRST\nFIRST2"
+    },
+    {
+     "oldText": "second target\nsecond after",
+     "newText": "SECOND\nSECOND2"
+    }
+   ],
+   "baseContent": "keep before  \nfirst target  \nfirst after\nkeep middle   \nsecond target  \nsecond after\nkeep after  \n",
+   "newContent": "keep before  \nFIRST\nFIRST2\nkeep middle   \nSECOND\nSECOND2\nkeep after  \n",
+   "error": null
+  },
+  {
+   "name": "crlf-oldtext",
+   "content": "line one\nline two\nline three\n",
+   "edits": [
+    {
+     "oldText": "line two\r\n",
+     "newText": "replaced line\r\n"
+    }
+   ],
+   "baseContent": "line one\nline two\nline three\n",
+   "newContent": "line one\nreplaced line\nline three\n",
+   "error": null
+  },
+  {
+   "name": "crlf-in-newtext",
+   "content": "first\nsecond\nthird\n",
+   "edits": [
+    {
+     "oldText": "second\n",
+     "newText": "REPLACED\r\n"
+    }
+   ],
+   "baseContent": "first\nsecond\nthird\n",
+   "newContent": "first\nREPLACED\nthird\n",
+   "error": null
+  },
+  {
+   "name": "bom-handled-by-caller",
+   "content": "first\nsecond\nthird\n",
+   "edits": [
+    {
+     "oldText": "second\n",
+     "newText": "REPLACED\n"
+    }
+   ],
+   "baseContent": "first\nsecond\nthird\n",
+   "newContent": "first\nREPLACED\nthird\n",
+   "error": null
+  },
+  {
+   "name": "unicode-offsets",
+   "content": "😀😀 target 😀\nsecond\n",
+   "edits": [
+    {
+     "oldText": "target",
+     "newText": "TARGET"
+    }
+   ],
+   "baseContent": "😀😀 target 😀\nsecond\n",
+   "newContent": "😀😀 TARGET 😀\nsecond\n",
+   "error": null
+  },
+  {
+   "name": "cjk-offsets",
+   "content": "第一行\n第二行\n第三行\n",
+   "edits": [
+    {
+     "oldText": "第二行",
+     "newText": "第二行！"
+    }
+   ],
+   "baseContent": "第一行\n第二行\n第三行\n",
+   "newContent": "第一行\n第二行！\n第三行\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-cjk-line",
+   "content": "你好，世界\n你好（世界）\n",
+   "edits": [
+    {
+     "oldText": "你好,世界\n",
+     "newText": "你好，kiana\n"
+    }
+   ],
+   "baseContent": "你好，世界\n你好（世界）\n",
+   "newContent": "你好，kiana\n你好（世界）\n",
+   "error": null
+  },
+  {
+   "name": "overlap-equal-start",
+   "content": "abcabc\n",
+   "edits": [
+    {
+     "oldText": "abc",
+     "newText": "x"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Found 2 occurrences of the text in file.txt. The text must be unique. Please provide more context to make it unique."
+  },
+  {
+   "name": "insert-at-end",
+   "content": "a\nb\n",
+   "edits": [
+    {
+     "oldText": "b\n",
+     "newText": "b\nc\n"
+    }
+   ],
+   "baseContent": "a\nb\n",
+   "newContent": "a\nb\nc\n",
+   "error": null
+  },
+  {
+   "name": "delete-entire",
+   "content": "a\nb\n",
+   "edits": [
+    {
+     "oldText": "a\nb\n",
+     "newText": ""
+    }
+   ],
+   "baseContent": "a\nb\n",
+   "newContent": "",
+   "error": null
+  },
+  {
+   "name": "whitespace-only-old",
+   "content": "a\n \nb\n",
+   "edits": [
+    {
+     "oldText": " \n",
+     "newText": "\n"
+    }
+   ],
+   "baseContent": null,
+   "newContent": null,
+   "error": "Found 3 occurrences of the text in file.txt. The text must be unique. Please provide more context to make it unique."
+  },
+  {
+   "name": "fuzzy-multiline-trailing",
+   "content": "keep  \ntarget one  \ntarget two  \nkeep2\n",
+   "edits": [
+    {
+     "oldText": "target one\ntarget two\n",
+     "newText": "TARGET 1\nTARGET 2\n"
+    }
+   ],
+   "baseContent": "keep  \ntarget one  \ntarget two  \nkeep2\n",
+   "newContent": "keep  \nTARGET 1\nTARGET 2\nkeep2\n",
+   "error": null
+  },
+  {
+   "name": "fuzzy-dedent-kept",
+   "content": "  indented  \nreplace  \n",
+   "edits": [
+    {
+     "oldText": "replace\n",
+     "newText": "REPLACED\n"
+    }
+   ],
+   "baseContent": "  indented  \nreplace  \n",
+   "newContent": "  indented  \nREPLACED\n",
+   "error": null
+  }
+ ],
+ "normalize": [
+  {
+   "input": "hello   \nworld\t\n",
+   "expected": "hello\nworld\n"
+  },
+  {
+   "input": "“smart” ‘quotes’ ‚‛ „‟",
+   "expected": "\"smart\" 'quotes' '' \"\""
+  },
+  {
+   "input": "dash ‐‑‒–—―− end",
+   "expected": "dash ------- end"
+  },
+  {
+   "input": "space            　end",
+   "expected": "space             end"
+  },
+  {
+   "input": "ＡＢＣ１２３",
+   "expected": "ABC123"
+  },
+  {
+   "input": "café\n",
+   "expected": "café\n"
+  },
+  {
+   "input": "ＡＢＣ１２３\ncafé\n",
+   "expected": "ABC123\ncafé\n"
+  },
+  {
+   "input": "no change\n",
+   "expected": "no change\n"
+  },
+  {
+   "input": "",
+   "expected": ""
+  },
+  {
+   "input": "\n\n",
+   "expected": "\n\n"
+  },
+  {
+   "input": "  leading kept\ntrailing removed   ",
+   "expected": "  leading kept\ntrailing removed"
+  }
+ ],
+ "prepare": [
+  {
+   "name": "legacy",
+   "input": {
+    "path": "file.txt",
+    "oldText": "before",
+    "newText": "after"
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "before",
+      "newText": "after"
+     }
+    ]
+   }
+  },
+  {
+   "name": "legacy-append",
+   "input": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ],
+    "oldText": "c",
+    "newText": "d"
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     },
+     {
+      "oldText": "c",
+      "newText": "d"
+     }
+    ]
+   }
+  },
+  {
+   "name": "valid",
+   "input": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   }
+  },
+  {
+   "name": "null-ish",
+   "input": null,
+   "output": null
+  },
+  {
+   "name": "undefined-ish",
+   "output": {
+    "__undefined": true
+   }
+  },
+  {
+   "name": "string",
+   "input": "garbage",
+   "output": "garbage"
+  },
+  {
+   "name": "stringified-edits",
+   "input": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   }
+  },
+  {
+   "name": "stringified-single",
+   "input": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   }
+  },
+  {
+   "name": "stringified-invalid",
+   "input": {
+    "path": "file.txt",
+    "edits": "not json"
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": "not json"
+   }
+  },
+  {
+   "name": "single-edit-object",
+   "input": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "a",
+      "newText": "b"
+     }
+    ]
+   }
+  },
+  {
+   "name": "partial-legacy",
+   "input": {
+    "path": "file.txt",
+    "oldText": "a"
+   },
+   "output": {
+    "path": "file.txt",
+    "oldText": "a"
+   }
+  },
+  {
+   "name": "edits-not-array",
+   "input": {
+    "path": "file.txt",
+    "edits": 7
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": 7
+   }
+  },
+  {
+   "name": "legacy-with-nonarray-edits",
+   "input": {
+    "path": "file.txt",
+    "edits": "x",
+    "oldText": "c",
+    "newText": "d"
+   },
+   "output": {
+    "path": "file.txt",
+    "edits": [
+     {
+      "oldText": "c",
+      "newText": "d"
+     }
+    ]
+   }
+  },
+  {
+   "name": "extra-keys-order",
+   "input": {
+    "z": 1,
+    "oldText": "c",
+    "newText": "d",
+    "a": 2
+   },
+   "output": {
+    "z": 1,
+    "a": 2,
+    "edits": [
+     {
+      "oldText": "c",
+      "newText": "d"
+     }
+    ]
+   }
+  }
+ ]
+}

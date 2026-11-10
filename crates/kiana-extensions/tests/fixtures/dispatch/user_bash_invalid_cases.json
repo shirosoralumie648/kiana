@@ -1,0 +1,22 @@
+[
+  {
+    "name": "returns null",
+    "body": "kiana.on(\"user_bash\", () => null);"
+  },
+  {
+    "name": "returns an empty object",
+    "body": "kiana.on(\"user_bash\", () => ({}));"
+  },
+  {
+    "name": "omits exitCode",
+    "body": "kiana.on(\"user_bash\", () => ({ result: { output: \"x\", cancelled: false, truncated: false } }));"
+  },
+  {
+    "name": "has a null exitCode",
+    "body": "kiana.on(\"user_bash\", () => ({ result: { output: \"x\", exitCode: null, cancelled: false, truncated: false } }));"
+  },
+  {
+    "name": "has both operations and result",
+    "body": "kiana.on(\"user_bash\", () => ({ operations: { exec: async () => ({ exitCode: 0 }) }, result: { output: \"x\", exitCode: 0, cancelled: false, truncated: false } }));"
+  }
+]

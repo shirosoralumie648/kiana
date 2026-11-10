@@ -1,0 +1,23 @@
+[package]
+name = "kiana-compaction"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 core/compaction：切点选择、摘要生成、分支摘要。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-json = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

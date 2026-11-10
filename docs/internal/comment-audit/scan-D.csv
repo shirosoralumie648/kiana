@@ -1,0 +1,580 @@
+﻿category,priority,area,crate,path,line,kind,is_test,matched,excerpt,suggested_action
+D,medium,root,,ARCHITECTURE.md,440,markdown,no,逐字一致,`[kiana] Failed to load extension ...`），是用户可见的输出契约，需逐字保留；实现方式：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,root,,ARCHITECTURE.md,520,markdown,no,逐字一致,当测试需要访问私有项时）。`describe`/`it` 的**标题逐字保留**（英文原文），因为失败报告需要与历史测试名对照。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,root,,ARCHITECTURE.md,1963,markdown,no,逐字一致,`HttpError::message` 是用户可见契约，使用 `error.message` 的逐字文本（reqwest 的错误文本要转写，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,root,,CLAUDE.md,39,markdown,no,保真,1. **行为保真是产品目标**：错误文案、事件顺序、JSON 键序、落盘格式、默认值、超时都要与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/Cargo.toml,14,toml,no,逐位一致,# （差 1 ULP，会把该值变成 `0.00024375`），开启后与 JS `JSON.parse` 的位模式逐位一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/src/agent.rs,1720,rust-doc,no,逐字一致,/// 检查抛 `Agent is already processing.`，但正常路径上各入口的同步检查先抛各自逐字文本；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/src/loop_guard.rs,16,rust-doc,no,逐字一致,//! | [`LoopDetectorKind::ShellStagnation`] | 同一 shell 命令且输出逐字相同 | 2 / 4 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/src/loop_guard.rs,694,rust-line,no,逐字一致,// 连续段里输出必须逐字相同；只要有一次变化就视为有进展。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/src/types.rs,80,rust-doc,no,强约束,/// `details`/`structuredContent`）都经过 `JSON.stringify`，落盘与上屏的字节必须一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/src/wire_keys.rs,148,rust-doc,no,保真,/// 分支在当前仓库不可达，本函数不会产生上述包装对象；远端 JSON 的保真（未知字段与插入序）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-agent-core,crates/kiana-agent-core/tests/util/calculate.rs,577,rust-line,yes,逐字一致,// 错误消息只要求非空，不要求与其他实现的文本逐字相同；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/Cargo.toml,42,toml,no,逐位一致,# 5 万个样本里约 10% 差 1-2 ulp；libm（musl/fdlibm 系）与 V8 逐位一致，才能对上测试,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/build.rs,128,rust-line,no,完全一致,// manifest 的键集合必须与目录里的数据文件集合完全一致（多一个少一个都报错）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/anthropic_messages.rs,54,rust-doc,no,保真,//! - **字节级保真**：`build_params` 中字段的插入顺序是当前稳定契约（JSON 序列化顺序,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/azure_openai_responses.rs,571,rust-doc,no,完全一致,/// `thrown_value` 只有在快照的消息与 `error.message` 完全一致时才采用它来还原状态码与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/bedrock_converse_stream.rs,2229,rust-doc,no,逐字一致,/// 文本逐字保留（含前导换行、双空格缩进与 `{error}` 字面量），因为它会出现在,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/bedrock_converse_stream.rs,2293,rust-doc,no,逐字一致,/// - 任何 JSON.parse 失败 → `SyntaxError`（`js_parse` 给出与 V8 逐字一致的文案）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/cloudflare.rs,45,rust-doc,no,完全一致,//! [`HttpClient`] 时完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/constrained_sampling.rs,65,rust-doc,no,逐字一致,//! 中断言，不在 fixture 里。完整逐字文本以 `spec/ai-api-anthropic-openai.md`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/constrained_sampling.rs,803,rust-doc,no,逐字一致,/// 消息逐字保留。其他非对象 `variants`（字符串 / 数字 / 数组）的属性访问不抛错，视作未设置。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/kiana_messages.rs,135,rust-doc,no,保真,/// 策略版本。协议用 JSON 数字表达，用 `f64` 保真（协议没有声明必须是整数）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/mistral_conversations.rs,17,rust-doc,no,逐字一致,//! `constrained_sampling`（strict JSON schema）、`kiana_json`（与 JS 逐字一致的,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/mistral_conversations.rs,510,rust-doc,no,逐位一致,/// `short_hash` 的算法必须与 `spec/ai-api-other.md` §2.12.2 规定的 `shortHash` 逐位一致：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/mistral_conversations.rs,1964,rust-line,no,逐字一致,// `Display`，因为派生 tool call id 的种子要求逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_codex_responses.rs,2164,rust-doc,no,完全一致,/// input/previous_response_id 外完全一致”的比较；`last_response_items` 是本轮助手输出,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_codex_responses.rs,2712,rust-doc,no,完全一致,/// 去掉 `input` 与 `previous_response_id` 后的请求体，用于判断“除增量部分外完全一致”。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_codex_responses.rs,2737,rust-doc,no,完全一致,/// 1. 上次请求体除 `input`/`previous_response_id` 外与本次完全一致；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_completions.rs,1576,rust-doc,no,保真,/// 若输入可能含非 BMP 字符，这里是已知的保真差异。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_responses_shared.rs,761,rust-doc,no,完全一致,/// 只有 `AiError` 的消息与最后一次 HTTP 失败完全一致时才复用 `RequestFailure.value`：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_responses_shared.rs,1071,rust-doc,no,逐字一致,/// 不支持；错误消息由 `constrained_sampling` 生成并逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/openai_responses_shared.rs,2263,rust-doc,no,逐字一致,/// 直接成为用户可见错误，必须逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/system_one_shared.rs,590,rust-doc,no,逐字一致,/// 其余字段（`instructions`、`criteria`）逐字保留。`choice`/`score` 的序列化结果已经是,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/api/transform_messages.rs,70,rust-doc,no,逐字一致,/// [`downgrade_unsupported_images`]）。文本必须逐字保持：它会被发给 provider 并进入历史。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/auth/oauth/github_copilot.rs,1245,rust-doc,no,完全一致,/// 对 `get_github_copilot_base_url` 的转发，语义完全一致：token > 企业域 > 默认值。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/auth/oauth/openai_chatgpt.rs,23,rust-doc,no,完全一致,//! 必须与兑换 token 时提交的完全一致，固定值让两处天然相同。代价是同一主机同一时刻只能,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/auth/oauth/openai_codex.rs,133,rust-doc,no,完全一致,/// 这里的值：它要与授权时登记的 redirect_uri 完全一致，否则令牌兑换会被拒。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/auth/resolve.rs,366,rust-line,no,强约束,// 同一个闭包既做锁外乐观检查、又作为锁内 `needs_refresh`：两处判定必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/bin/kiana-ai.rs,41,rust-doc,no,逐字一致,//! `cli::main`，在这里另起一套会绕开 `cli.rs` 的逐字文本/退出码契约，使子进程测试与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/error.rs,13,rust-doc,no,保真,//! （模型目录/鉴权）、`AuthError`（OAuth 交互）等。能用 JS 文本保真的路径尽量保留原文。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/error.rs,112,rust-line,no,保真,// 不附加任何字段名/错误链（见模块文档的字节级保真说明）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/error.rs,121,rust-line,no,逐字一致,// serde_json 的错误文本是 Rust 自己的描述，不保证与 V8 `JSON.parse` 的文本逐字一致；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/error.rs,122,rust-line,no,保真,// 需要 JS 文本保真的解析路径应使用 `kiana_json`（见下一个 `From` 实现）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/error.rs,129,rust-line,no,逐字一致,// `ParseError.message` 与 V8 `SyntaxError.message`（或宽松解析的错误文本）逐字一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/http/reqwest_client.rs,286,rust-line,no,完全一致,// 本实现与 fetch 的 forbidden method 判定**不完全一致**（待核实的代码问题）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/image_models.rs,182,rust-doc,no,逐字一致,/// 文本必须逐字保持：测试 `mismatched_api_surfaces_as_an_error_result` 直接断言它。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/legacy_api_aliases.rs,23,rust-doc,no,逐字一致,//! `GenerativeAI`/`Conversations` 后缀，逐字保留以免破坏按旧名调用的下游代码）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/model_catalog.rs,106,rust-line,no,逐字节一致,// JS 语义不同（U+FEFF / U+0085、半数取偶、UTF-16 码元序），替换会破坏逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/model_catalog.rs,2364,rust-doc,no,完全一致,"/// 集合与它完全一致；再逐个解析 `data/<provider>.json`，得到 `""type:id"" -> api` 结构。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/model_catalog.rs,2582,rust-line,no,完全一致,// 第一层：数据文件集合必须与结构里的 provider 完全一致（manifest 自身不算数据文件）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/model_catalog.rs,4253,rust-doc,no,逐字节一致,/// 与既有输出逐字节一致（数据文件是逐字节产物）。调用方传入已取回的 JSON，测试因此不需要,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/model_catalog.rs,8285,rust-line,no,完全一致,// 完全一致（多一个少一个都报错）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/models/provider.rs,328,rust-doc,no,逐字一致,/// 键必须与 `model.api` 逐字相同；空 map 视为没有图像能力（`has_generate_images`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/models/provider.rs,333,rust-doc,no,逐字一致,/// 键必须与 `model.api` 逐字相同；空 map 视为没有分类能力（`has_classify` 为,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/models/store.rs,93,rust-doc,no,逐字一致,/// 反序列化时的原始 `models` 数组（逐字保留，含未知类型/未知字段的模型）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/all.rs,67,rust-doc,no,逐字一致,/// [`crate::models::ModelsStoreEntry::raw_models`] 逐字保留原始 JSON 数组（无损往返）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/catalog.rs,280,rust-line,no,完全一致,// 测试锁定三类不变量：provider 顺序与 spec/ai-core.md §2.3.1 完全一致且三张表各有 42 个,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/cloudflare_ai_gateway.rs,20,rust-doc,no,逐字一致,//! - api map 的键必须与模型目录里的 `api` 逐字相同，否则命中的模型会拿到错误流,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/cloudflare_workers_ai.rs,13,rust-doc,no,逐字一致,//! - classifier：key 为 `cloudflare-workers-ai-system-one`（与目录模型的 `api` 逐字对应），,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/model_schema.rs,7,rust-doc,no,完全一致,//! 的运行时形状与 TypeBox 1.3 完全一致（见 `tests/fixtures/providers/schemas.json`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/model_schema.rs,20,rust-doc,no,强约束,//! （不是写 `null`），record 的递归条件与 union 的分支选择也必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/opencode.rs,23,rust-doc,no,逐字一致,//! - `ByApi` 的键必须与目录里每条模型的 `api` 逐字相同（区分大小写）。新增或改名一个,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/opencode_go.rs,15,rust-doc,no,逐字一致,//! - 约束相同：`ByApi` 的键必须与目录里的 `api` 逐字一致，四个适配器都要经过,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/openrouter.rs,301,rust-line,no,逐字一致,// 键必须与目录里 chat 模型的 `api` 值逐字一致；未命中的模型会得到错误流。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/radius_config.rs,490,rust-doc,no,完全一致,/// [`load_radius_gateway_config`] 传 `default_oauth_fetch()`。除传输实现外行为完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/typesafe.rs,14,rust-doc,no,逐字一致,//! - `classifiers` 的键必须与目录模型条目的 `api` 逐字相同（`typesafe-system-one`），,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/typesafe.rs,53,rust-line,no,逐字一致,// 键必须与目录模型条目的 `api` 逐字一致；`create_provider` 按 `model.api` 查这张表。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/vercel_ai_gateway.rs,19,rust-doc,no,逐字一致,//! - `classifiers` 的键必须与 classifier 模型条目的 `api` 逐字相同,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/providers/vercel_ai_gateway.rs,57,rust-line,no,逐字一致,// 键必须与 classifier 模型条目的 `api` 逐字一致；`create_provider` 按 `model.api` 查表。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/request_policy/cache.rs,7,rust-doc,no,逐字节一致,//! - [`CacheSemantics::ImplicitStrict`]：provider 只复用从开头逐字节一致的前缀；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/request_policy/cache.rs,37,rust-doc,no,逐字节一致,/// 只复用从头逐字节一致的前缀。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/types.rs,90,rust-doc,no,逐字节一致,/// 需要与 `JSON.stringify` 逐字节一致时不能替换成无序容器。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/utils/abort.rs,84,rust-doc,no,保真,/// 保真测试分别锁定了这两个字符串，不要合并。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/utils/provider_env.rs,31,rust-doc,no,保真,//! `process.env` 则总能给出字符串。需要逐字节保真的调用方要自行处理这个差异。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/src/utils/retry.rs,228,rust-doc,no,强约束,/// 回调不能改变重试结果，也不能把错误传回循环。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/anthropic_oauth.rs,665,rust-doc,yes,逐字一致,/// 但格式化本身与注入错误逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/cli_login.rs,4,rust-doc,yes,逐字一致,//! （`spec/ai-core.md` §3.1 的逐字文本）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/generate_models_strict.rs,150,rust-doc,yes,逐字节一致,/// 3. 每个模型对象的字段与 **字段插入顺序**都相同，序列化后逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/message_types.rs,140,rust-line,yes,逐字节一致,// 序列化逐字节一致（键序 == 结构体字段声明序）。浮点必须先过 `kiana_json` 的 JS 数字格式化,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/providers.rs,176,rust-doc,yes,逐字一致,/// 仍逐字保留原始 JSON，`ModelsStoreEntry::raw_models` 依赖它做无损往返。本测试锁定,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ai,crates/kiana-ai/tests/streaming_tool_arguments.rs,5,rust-doc,yes,完全一致,//! 1. 流式参数只增不减、最终参数与完整 JSON 完全一致，且流内部状态（raw 文本快照）不会泄漏到,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/codemode/renderer.rs,39,rust-doc,no,保真,//! # 数值与字符串的 JS 保真,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/mcp/runtime.rs,729,rust-doc,no,完全一致,/// [`create_default_transport`] 完全一致：依次回退到进程级默认与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/mcp/tools.rs,14,rust-doc,no,逐字一致,//! 3. 渲染器每帧新建组件而不是复用 `lastComponent`；宿主的 `last_component` 没有向下转型，无法复用具体组件，输出逐字一致（复用只是性能优化）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/mcp/ui.rs,1015,rust-doc,no,逐字节一致,/// 快照必须与 `Theme::fg`/`Theme::bold` 逐字节一致（空串与探针含 NUL 的情况也要覆盖）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/theme_snapshot.rs,7,rust-doc,no,逐字节一致,//! 捕获到的开/关序列与 `Theme::fg`/`Theme::bold` 逐字节一致：用一个不会出现在 ANSI 序列,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-builtin-extensions,crates/kiana-builtin-extensions/src/theme_snapshot.rs,26,rust-doc,no,完全一致,//! `AnsiWrap::wrap` 只做 `open + text + close`。这与 `Theme::fg` 的形状完全一致；但,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/context/index.rs,550,rust-doc,no,强约束,/// - 实现必须不可变：`&self` 上的查询不得改变可观察状态，因为同一个 [`ContextRef`] 会被,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/contract/coverage.rs,238,rust-doc,no,完全一致,/// 1. fingerprint 相同 → `Ok(None)`：canonical JSON 完全一致（version 也相同）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/contract/mod.rs,57,rust-doc,no,逐字节一致,//! 逐字节一致，否则同一契约会得到不同指纹（`canonicalJson` 对键排序，数字格式与字符串转义,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/delta/index.rs,4,rust-doc,no,逐字一致,//! `UnsafePathError`）是 wire 兼容性的一部分，逐字保留，统一由 [`OpError`] 承载,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/json.rs,28,rust-doc,no,保真,//! 需要逐字节保真的地方是**键的顺序**：工作区启用了 `serde_json` 的 `preserve_order`，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/output.rs,50,rust-doc,no,强约束,//! 一字节或一行的后缀，head 合并成一块），而压缩不得改变窗口内容。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/src/wire.rs,961,rust-doc,no,保真,/// 的——它唯一的用途是喂给 `schema::check`，逐字节保真比可读性重要。结构上，顶层 `anyOf` 的,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/tests/context.rs,491,rust-line,yes,逐字一致,// `String(error)`：DOMException 分支逐字一致；`Error` 分支在 JS 里是,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/tests/contract.rs,173,rust-line,yes,逐字一致,// 夹具：description JSON 与指纹逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/tests/output_skip.rs,67,rust-doc,yes,强约束,/// 两个缓冲看到同样的输出时快照必须相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/tests/output_skip.rs,144,rust-line,yes,强约束,// 进度提交会在任意时刻快照；快照压缩存储，但绝不能改变窗口。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-chord,crates/kiana-chord/tests/schema.rs,120,rust-line,yes,强约束,// `raw_errors` 是同一趟遍历的未本地化版本：条数必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/runtime/execution.rs,83,rust-doc,no,逐字一致,//! 保证，其余三条逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/runtime/host.rs,518,rust-doc,no,逐字一致,/// `ERR_WORKER_PATH(specifier)` 的逐字文本（node 26 的 `internal/errors`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/runtime/prelude_source.rs,7,rust-doc,no,逐字一致,//! ARCHITECTURE.md §8 第 22 条与 spec 附录 A），因此本模块的常量必须与基准文本逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/runtime/vm.rs,889,rust-doc,no,逐字节一致,/// 3 个 U+FFFD，文本长度进一步偏离既定策略。合法 UTF-8（含 4 字节的星平面字符）逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/runtime/worker.rs,470,rust-doc,no,完全一致,/// 完全一致。测试用它注入会 panic / 会卡住的实现，而不污染 [`set_start_vm`] 的全局单例,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/source.rs,67,rust-doc,no,逐字一致,/// Rust 侧只逐字保留文本（不解析它）。注意首字符是换行、缩进为 TAB、行尾为 `\n`。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/types.rs,10,rust-doc,no,保真,//! # JSON 文本保真（`ARCHITECTURE.md` §4.3 第 3、4 条）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/src/wasm.rs,837,rust-line,no,逐字一致,"// 实测 `readFile(""/etc/passwd/quickjs.wasm"")` 给出逐字相同的这一行）。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/api_surface.rs,136,rust-doc,yes,逐字一致,/// spec §2.2.5：`loadQuickJSWasm(path?)` 的加载失败沿用 Node 的逐字文本；当前稳定契约，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/declarations.rs,3,rust-doc,yes,逐字一致,//! 每个 `describe`/`it` 标题逐字保留（ARCHITECTURE.md §4.8 第 1 条），便于与黄金样例及历史失败报告对照。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/declarations.rs,1249,rust-doc,yes,逐字一致,/// 逐字相同的类型，要么同样抛错（无效百分号转义触发 panic，与黄金样例一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/declarations.rs,1295,rust-doc,yes,逐字一致,/// 偏差条目逐条钉死「只少了那一条 tag，其余逐字相同」，因此偏差既不会被误当成 bug 修掉,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/declarations.rs,1390,rust-line,yes,逐字一致,// 除 tag 之外的部分必须逐字一致：把两侧的 tag 都抹掉再比。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/protocol.rs,310,rust-line,yes,保真,// JSON 文本保真（`ARCHITECTURE.md` §4.3 第 3、4 条）：数字按 ECMAScript,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-codemode,crates/kiana-codemode/tests/source.rs,3,rust-doc,yes,逐字一致,//! 每个 `describe`/`it` 标题逐字保留（ARCHITECTURE.md §4.8 第 1 条），让每条 Rust 测试与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-coding-agent,crates/kiana-coding-agent/src/cron/store.rs,140,rust-doc,no,完全一致,"/// owner 是否仍存活：start-time 必须完全一致；没有 start-time 时退回 `kill(pid,0)`。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-coding-agent,crates/kiana-coding-agent/tests/regressions_5661_uppercase_header_values.rs,4,rust-doc,yes,逐字一致,//! 迁移后的 `models.json` 必须逐字保持不变；随后用 `ModelRuntime` 断言大写 env-var,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-compaction,crates/kiana-compaction/src/branch_summarization.rs,44,rust-doc,no,保真,//! # 保真约束,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-compaction,crates/kiana-compaction/src/pipeline.rs,83,rust-doc,no,逐字节一致,/// 与当前条目是否逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-compaction,crates/kiana-compaction/src/pipeline.rs,278,rust-doc,no,完全一致,/// 文件清单、`details` 结构完全一致，便于 wire agent 逐步替换而不改变会话文件形状。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/auth/storage.rs,28,rust-doc,no,逐字一致,//! - 写路径在锁内重新解析磁盘内容、只改目标 provider，其余键（含未知形状、键序）逐字保留；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/auth/storage.rs,198,rust-doc,no,逐字一致,/// 的文案逐字一致（[`kiana_json::js_parse`]），改动需同步测试。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/cache/warmer.rs,812,rust-doc,no,逐字一致,/// 真正的清理由 `on_mode_changed` 负责。判定顺序与 spec 逐字一致：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/cache/warmer.rs,1606,rust-doc,no,逐字一致,/// 输出模板逐字对应 spec §3.7，四种形态：`Inactive (reason)`、`Stopped (details)`、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/models/catalog_http.rs,98,rust-doc,no,逐字一致,/// 条目，因此同时给出强类型投影 [`Self::models`] 与逐字保留的 [`Self::raw_models`],人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/models/catalog_http.rs,1131,rust-doc,no,逐字一致,/// 先读头：`Last-Modified` 缺失、非法或为空时 `last_modified = 0`；`ETag` 逐字保留,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/models/composer.rs,22,rust-doc,no,逐字一致,//! - `withConfiguredAuth` 的 `Authorization: Bearer <key>` 键名逐字保留大写 `A`。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/models/composer.rs,128,rust-doc,no,逐字一致,/// 方法名与字段适配逐字对应 `adaptOAuth`：`onAuth` → `auth_url`，`onDeviceCode` →,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/models/runtime.rs,155,rust-doc,no,完全一致,/// [`AuthResolutionOverrides`] 完全一致（`apiKey`/`env`/`minOAuthValidityMs`/`signal`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/settings/mod.rs,1205,rust-doc,no,完全一致,/// 相同的 JSON 形态再交给后端，后续读取路径因此与文件后端完全一致。两个 `expect`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/src/trust/project_trust.rs,9,rust-doc,no,强约束,//! 判定顺序（不得改变，顺序决定信任决策的优先级）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/auth_storage.rs,1328,rust-doc,yes,逐字一致,/// JSON.parse 的错误文案与 V8 逐字一致（不是 serde_json 的文案）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/auth_storage.rs,1485,rust-doc,yes,逐字一致,/// 未知形状的条目在修改其它 provider 时逐字保留（auth.json 不因未知 type 丢数据）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/auth_storage.rs,1567,rust-line,yes,逐字一致,// 其它无法表达的条目在写回时逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/config_value_migration.rs,137,rust-line,yes,逐字一致,// 迁移/读取流程不触碰 models.json：内容逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/resolve_config_value.rs,287,rust-line,yes,逐字一致,// 以下为补充的规范测试（§2.11.3/§2.11.4 要求逐字一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-config,crates/kiana-config/tests/settings_manager_bug.rs,10,rust-doc,yes,完全一致,//! 断言落盘字节完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/artifact_store.rs,293,rust-doc,no,逐字节一致,/// 这是“artifact 可以 offset 回读且逐字节一致”的底层保证：返回的字节与写入,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/child_process.rs,601,rust-doc,no,保真,/// 非法字节被替换为 U+FFFD；需要逐字节保真（Node 未指定 `encoding` 时的 `Buffer`）时用,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/image_process.rs,18,rust-doc,no,逐字节一致,//! `photon-rs` **原生**编译，不引入 wasm 运行时。实测 JPEG 编码逐字节一致，PNG 的像素数据可能,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/output_budget.rs,348,rust-line,no,逐字节一致,// 逐字节一致：任意区间。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/shell.rs,847,rust-line,no,逐字一致,// 非 UTF-8 的 PATH 条目必须逐字保留，不能被 lossy 替换成 U+FFFD。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/text.rs,11,rust-doc,no,完全一致,//! `&s[3..]`（U+FEFF 的 UTF-8 编码是 `EF BB BF`）语义完全一致，不需要 UTF-16 适配。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/tools_manager.rs,701,rust-doc,no,逐字一致,/// 以保证输出与既有文案逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-core,crates/kiana-core/src/zip.rs,20,rust-doc,no,逐字节一致,//! **字节**可能不同，但解压结果一致；CRC 与头字段逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/codemode/codemode.rs,1870,rust-line,no,完全一致,// journal 里这个调用是 global：目标、名字、参数必须与记录完全一致才能直接投记录值，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/harness/live.rs,525,rust-doc,no,完全一致,/// 会把落单的代理项替换成 U+FFFD，而 JS 的 `slice` 保留孤立代理项，两者并不完全一致，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/harness/telemetry.rs,484,rust-doc,no,逐字节一致,/// 顺序（`kiana-telemetry` 的黄金向量只按语义比较，不要求键序逐字节一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/session/transaction.rs,1801,rust-line,no,强约束,// 阶段 3（已存在）：定义语义与持久记录必须一致；持久版本高于定义或需要迁移却没有,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/storage/memory.rs,89,rust-doc,no,逐字节一致,//! - 地址键经 `kiana_json::js_object::stringify` 生成，必须与 `JSON.stringify` 逐字节一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/storage/memory.rs,1092,rust-doc,no,完全一致,/// `kind`/`key`/`history`/`fork` 完全一致；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/storage/sqlite/migrations.rs,4,rust-doc,no,逐字一致,//! CHECK 约束）。语句文本是持久化格式的一部分，必须逐字保持稳定（缩进是制表符），因为,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/storage/sqlite/storage.rs,228,rust-doc,no,逐字一致,/// 把 `error` 记进槽并转成 [`SqliteError`]（消息逐字保留）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/storage/sqlite/storage.rs,1457,rust-doc,no,完全一致,/// 作用域，且 kind/key/history/fork 与目标记录完全一致，否则把失败包成,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/types.rs,373,rust-doc,no,逐字节一致,/// 把一条记录写成与 `JSON.stringify` 逐字节一致的文本。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/types.rs,2621,rust-doc,no,逐字一致,/// 或运行期 `String`；空串同样 `panic!`，消息逐字相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-durable,crates/kiana-durable/src/types.rs,2945,rust-doc,no,逐字一致,/// 得到逐字相同的字符串。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-env,crates/kiana-env/tests/docs.rs,5,rust-doc,yes,逐字一致,//! 而 README/CHANGELOG 记录的是随 npm 包发布的版本（ARCHITECTURE.md §8.25 不再发 npm，但文本仍逐字保留）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-env-client,crates/kiana-env-client/src/lib.rs,51,rust-doc,no,保真,//! 本文件（crate 根）是模块树加一组跨模块共用的 Node 保真工具：`SharedResult`（一次完成、可多次,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-env-client,crates/kiana-env-client/src/lib.rs,89,rust-doc,no,保真,//! 6. [`list_files`]、[`watch`]、[`terminal`]。本文件其余部分是上述模块共用的保真工具，可最后读。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-env-client,crates/kiana-env-client/src/list_files.rs,268,rust-doc,no,完全一致,/// 因此本地读写、bash、watch 的行为与直接使用 `NodeExecutionEnv` 完全一致；`id()` 也返回它的,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-env-client,crates/kiana-env-client/src/ssh.rs,1202,rust-doc,no,逐字一致,/// 判断只看每行第一个 JS 空白分隔的字段：等于 `host_key_alias` 的行全部删除，其它行逐字保留,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-evals,crates/kiana-evals/src/cli.rs,460,rust-doc,no,强约束,"/// 两个变体的发现结果必须一致，比较 `JSON.stringify([fullName, normalizedFile])` 的排序数组。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-evals,crates/kiana-evals/src/cli.rs,465,rust-doc,no,强约束,/// 的是 `Vec` 而不是集合，因此条数也必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/src/index.rs,7,rust-doc,no,逐字节一致,//! 导出产物的逐字节一致性（golden 夹具锁定）由三件事保证：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/src/lib.rs,59,rust-doc,no,逐字节一致,//! - [`assets`]：逐字节内嵌的模板与 vendored 资源；导出需与 golden 基线逐字节一致，故必须保留原始字节。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/src/lib.rs,90,rust-doc,no,逐字节一致,//! - 导出的逐字节一致性依赖三件事：资产不变；每个占位符恰好替换一次且顺序固定,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/tests/assets.rs,5,rust-doc,yes,逐字节一致,//! 内嵌同一份文件；任何字节变化都会破坏 HTML 导出的逐字节一致性。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/tests/export_html_cjk.rs,7,rust-doc,yes,逐字节一致,//! 1. 断言 `template.js` 与 `vendor/marked-cjk-friendly.min.js` 逐字节一致（SHA-256）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/tests/export_html_system_messages.rs,7,rust-doc,yes,完全一致,//! 行为与参考版本完全一致）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-export,crates/kiana-export/tests/export_html_unknown_fields.rs,88,rust-doc,yes,逐字一致,/// 导出载荷逐字保留它们；最后一条没有字符串 id 时 `leafId` 按 `undefined` 处理，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ext-api,crates/kiana-ext-api/src/events.rs,3599,rust-doc,no,逐字一致,/// （消息逐字保留，避免丢失 handler 抛出的原始错误上下文；`ARCHITECTURE.md` §4.1）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ext-api,crates/kiana-ext-api/src/tool_result.rs,233,rust-doc,no,逐字一致,/// `Box<dyn Error + Send + Sync>` 透传（消息逐字保留，避免丢失实现抛出的原始错误上下文；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/engine/promise.rs,6,rust-doc,no,逐字一致,//! JS 协议（`js/prelude_core.js`，与设计文档 §2.3 的 `globalThis.__kiana` 逐字一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/engine/promise.rs,235,rust-doc,no,完全一致,/// 走 `JSON.parse` 而不是逐键 `Object::set`：这样才能拿到与 JS 完全一致的对象语义,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/engine/promise.rs,589,rust-doc,no,保真,/// 保真 JS 的数字/对象字符串化）；prelude 尚未安装时退回 Rust 侧的属性读取。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/index.rs,127,rust-line,no,逐字一致,// 因此这里补齐缺的 5 个；签名与 `kiana-ext-api` 的字段类型逐字一致，可以直接赋值。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,48,rust-doc,no,逐字节一致,//! `url` 的百分号编码与 Node 的 `pathToFileURL` 逐字节一致（`file_url`，见 golden fixture），,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,289,rust-doc,no,逐字一致,/// 与 jiti/Node 逐字一致的裸消息（`Cannot find module …` / `ParseError: …`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,321,rust-doc,no,逐字节一致,/// 模块名（与 `Module::declare` 的 name 逐字节一致，可能带 `?v=`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,565,rust-doc,no,完全一致,/// 用当前开关装饰一个 `Resolver`（§3.4 的严格去缓存）。开关关闭时行为与内层完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,799,rust-doc,no,逐字节一致,/// `name` 可以是带 `?v=` 的入口名：声明出的模块名与 `name` 逐字节一致，`import.meta.url`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/loader_impl.rs,2053,rust-doc,no,逐字节一致,/// 逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/mod.rs,3643,rust-doc,no,保真,/// 因此 `undefined`、函数等保真（`user_bash` 的 `{ operations }` 与事件 handler 依赖它）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/resolver.rs,32,rust-doc,no,逐字节一致,//! 时用同名键提供源码。**名字必须逐字节一致**（QuickJS 的模块缓存键就是名字）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/loader/transpile.rs,4,rust-doc,no,逐字一致,//! 流水线与设计文档逐字一致：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/runner/noop_ui.rs,40,rust-doc,no,强约束,//! （`noop_ui_object`），与这里的 Rust 实现是两份代码；两者的可见默认值必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/virtual_modules.rs,199,rust-doc,no,逐字一致,/// 拼写必须与 bridge.js 的判断逐字一致：未知拼写会落到 callable 分支，`Object` 成员会被,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/src/virtual_modules.rs,785,rust-doc,no,逐字节一致,/// 必须与 loader 交给 `Module::declare` 的名字逐字节一致，否则同一个模块会在缓存里出现两份,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/tests/engine_timers.rs,823,rust-line,yes,逐字一致,// 必须逐字一致，否则可观测行为会与 Node 26 偏差（全局枚举性、参数校验文案+codes、AbortSignal 表面、句柄形状）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/tests/intl.rs,3,rust-doc,yes,逐字一致,//! 本地化文本只在 ICU4X 与 Node 输出**已实测逐字一致**时才比较（§6.4 的清单，避免 ICU 数据差异造成假失败）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/tests/intl.rs,343,rust-doc,yes,逐字一致,/// 这些 locale 的 ICU4X 输出与 Node 的 ICU 输出逐字相同，可用于逐字断言（§6.4 清单，20 个 locale 夹具核对）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-extensions,crates/kiana-extensions/tests/virtual_modules.rs,307,rust-line,yes,强约束,// 随机字节由测试桩提供，序列位（variant）与 Node 夹具不同；版本/长度/形状必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/assets/mod.rs,40,rust-doc,no,保真,//! * 字节保真由测试锁定（长度、base64 长度与 PNG magic 前缀）；换资源前必须逐项核对，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/approval_mode_indicator.rs,130,rust-doc,no,完全一致,/// [`Self::set_mode`] 完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/easter_egg_3d.rs,415,rust-doc,no,逐位一致,/// 1 ulp（旋转矩阵/姿态因此不是逐位一致，会破坏按 Node 输出生成的金帧对拍）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/permissions_dialog.rs,47,rust-doc,no,逐字一致,//! [`PermissionsView::AddDirectoryScope`]。其余变体与设计文档逐字对应。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/permissions_dialog.rs,485,rust-doc,no,逐字一致,/// 构造一个只含该条目的临时 settings 再取回策略里的规则，保证与启动路径的解析逐字一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/permissions_dialog.rs,508,rust-doc,no,逐字一致,/// `ManagedOrCli`（不可删除）。走同一个引擎入口可以保证两侧逐字相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/radius_login_selector.rs,274,rust-doc,no,逐字一致,/// 选中判定依赖内层对选中行的渲染结果与本函数用 `→ ` + `label` 重建的文本逐字相同,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/radius_login_selector.rs,340,rust-doc,no,完全一致,/// 必须与 `options` 中的某一项完全一致，否则不会出现微光（`render` 按文本匹配）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/session_selector.rs,901,rust-doc,no,强约束,/// 后台预加载完成不能改变用户正在看的界面（否则列表会在浏览途中跳动）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/tasks_dialog.rs,1191,rust-doc,no,完全一致,/// 三种模式的数据与列表正文完全一致，只有 interactive 的提示行不同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/tree_selector.rs,2842,rust-doc,no,完全一致,/// 两个及以上按键且修饰键前缀完全一致时，只写一次前缀、后缀用 `/` 连接以压缩帮助行宽度,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/components/trust_selector.rs,259,rust-line,no,完全一致,// 完全一致。不比较 project_trusted，也不识别 session-only 选项（本组件不启用）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/program_status_reporter.rs,47,rust-doc,no,完全一致,//! - `last_report` 不随 `reset` 清空，所以重置后的状态若与上次完全一致会被去重吞掉。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/render_core/approval.rs,510,rust-doc,no,逐字一致,/// 走语言包；`translator` 为 `None` 时输出与历史英文版本逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/render_core/modal.rs,453,rust-doc,no,逐字一致,/// 渲染；`translator` 为 `None` 时输出与 [`Self::render_lines`] 逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/render_core/modal.rs,584,rust-doc,no,逐字一致,/// 设置/替换翻译器（`modal.*` key）。未设置时输出与历史英文版本逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/session_share.rs,36,rust-doc,no,保真,//! - 用户可见文案与分支流程是稳定契约，保真优先于惯用写法；改文案或分支前必须同步,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/src/session_share.rs,286,rust-doc,no,保真,/// 调用方再回退到 `io::Error` 自身的 Display。映射表是文案保真用的**子集**，不是全部 errno。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/tests/components_mermaid.rs,331,rust-line,yes,完全一致,// 直接对比 plain 行：边框、箭头与宽度都要与下方期望字面量完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-interactive,crates/kiana-interactive/tests/render_core_modal.rs,74,rust-doc,yes,逐字一致,/// 未设置翻译器时，英文输出保持逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/src/js_object.rs,3,rust-doc,no,逐字节一致,//! 三个必须逐字节一致的地方：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/src/js_object.rs,418,rust-doc,no,强约束,/// - 对象：键集合必须相同（先比长度，再逐键在对方中查找），与插入序无关；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/src/js_object.rs,419,rust-doc,no,强约束,/// - 数组：长度必须相同，元素逐项比较；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/src/js_string.rs,85,rust-doc,no,逐字一致,/// `typeof` 的字符串形式（与 V8 的返回值逐字一致，全部小写）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/src/js_string.rs,225,rust-doc,no,强约束,/// 类型必须相同且值相等：`1` 与 `1.0` 都走数字分支，按 `f64` 比较（相等）；`NaN` 与,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/tests/api_golden.rs,49,rust-doc,yes,逐字一致,/// 只用于对照 fixture；`kiana-ai` 的实现必须与它逐字一致（`tests/api_golden.rs` 的 `tool_call`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/tests/parse_streaming.rs,4,rust-doc,yes,逐字一致,//! 的 3 个 `it` 逐字保留；其余用例来自 golden fixture。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-json,crates/kiana-json/tests/parse_v8.rs,1,rust-doc,yes,兼容面,//! `JSON.parse` 的 V8 兼容面：消息、位置、excerpt、接受度。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/jsonrpc.rs,41,rust-doc,no,保真,//! # 保真约束,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/jsonrpc.rs,46,rust-doc,no,逐字一致,//! 否则线上字节会变化，`tests/wire.rs` 断言的是逐字文本（当前稳定契约，改动需同步测试）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/jsonrpc.rs,141,rust-doc,no,保真,/// 否则请求 id 的线上字节会变化（§22.3 的键序与数字保真要求）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/jsonrpc.rs,180,rust-doc,no,逐字一致,/// 断言逐字文本）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/errors.rs,6,rust-doc,no,逐字一致,//! 它们的消息构造逐字对应 `spec/telemetry-mcp.md` §27.2：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/errors.rs,536,rust-doc,no,逐字一致,/// `OAuthRegistrationError`、`McpOAuthAuthorizationRequiredError`），消息逐字保留；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/errors.rs,545,rust-doc,no,逐字一致,/// - 其余五个 OAuth 类 → `McpTransportError::named`：`name()` 是各自的类名，消息逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/errors.rs,559,rust-line,no,逐字一致,// 这些测试锁定三件事：五类消息的逐字文本（含 issuer 的 `none`/引号格式与 `message || code`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/flow.rs,2342,rust-line,no,强约束,// WHATWG 的 `URL.hostname` 对 IPv6 带方括号，`url::Url::host_str()` 必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/oauth/provider.rs,2127,rust-line,no,逐字一致,// ……但写回的 JSON 与读入时逐字一致（含未知的顶层/嵌套键与键序）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/protocol_types.rs,51,rust-doc,no,逐字一致,//! 它们也不能在 `extra` 里再放一份（`serde(flatten)` 会写出重复键）。要逐字保留这类对象，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/protocol_types.rs,1236,rust-doc,no,逐字一致,/// `error.message` 逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/transports/streamable_http.rs,340,rust-doc,no,完全一致,/// `Buffer.byteLength(buffered) > maxEventBytes` 的判定，必须在字节数上完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/src/transports.rs,408,rust-doc,no,逐字一致,/// 收 [`Value`] 而不是 `JsonRpcMessage`：见模块文档（服务端风格的响应、键序逐字保留）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/api_surface.rs,7,rust-doc,yes,逐字一致,//! 在冻结契约里合并成一个 [`McpError`] 枚举，`name()` 逐字保留四个类名，因此,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/content.rs,249,rust-doc,yes,逐字一致,/// 占位字符串逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/content.rs,683,rust-line,yes,逐字一致,// 静默合并，因此这里在逐字文本里按对象深度统计键名。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/content.rs,823,rust-line,yes,强约束,// 类型化路径给出同样的结果（两条 API 必须一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/oauth_core.rs,326,rust-doc,yes,强约束,"/// 黄金数据里带 `""rust""` 的用例给出 Rust 侧归一化后的钉住值，其余用例两边必须一致。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/stdio_framing.rs,5,rust-doc,yes,逐字一致,//! 的 stdin 得到）：服务器可能比较原始字节，因此断言逐字文本。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-mcp,crates/kiana-mcp/tests/wire.rs,5,rust-doc,yes,逐字一致,//! `JSON.stringify`）。服务器可能比较原始字节，所以这里断言的是**逐字文本**。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-memory,crates/kiana-memory/src/entry.rs,324,rust-line,no,强约束,// 语义往返：解析 → 规范化 → 再解析，结构必须一致。这样既接受外部格式化，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-memory,crates/kiana-memory/src/index.rs,273,rust-line,no,逐字一致,// 往返校验：解析出的条目重新渲染必须逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-memory,crates/kiana-memory/src/service.rs,356,rust-doc,no,完全一致,/// `pinned_bytes` 完全一致，否则返回 [`MemoryError::PinnedEntryChanged`]，不写盘。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/src/footer_data_provider.rs,525,rust-doc,no,完全一致,/// 行为与生产路径的 watcher 错误回调完全一致，仅用于测试。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/src/loader/context_files.rs,41,rust-doc,no,逐字一致,/// 每个目录的候选文件（顺序即优先级；大小写变体逐字保留，以匹配不同文件系统上的实际文件名）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/src/package/paths.rs,1562,rust-line,no,逐字一致,// 的实际行为一致（待核实：是否与某组官方样例逐字对应，仓库内未找到出处），作为,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/src/system_prompt.rs,461,rust-doc,no,完全一致,/// 构造系统提示文本（与 transcript 回放 system 消息的渲染完全一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/tests/package_manager.rs,3,rust-doc,yes,逐字一致,//! 描述块与 `it` 标题逐字保留。原本需要用 `vi.spyOn` 覆盖的私有方法，这里用 PATH 注入的,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-resources,crates/kiana-resources/tests/resource_loader.rs,3,rust-doc,yes,逐字一致,//! 测试标题逐字保留。少数断言依赖 `ExtensionRunner` 的命令重名解析（`deploy:1` /,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/src/jsonl.rs,20,rust-doc,no,逐字节一致,//! 一个未完成的前缀结尾。逐段解码与 V8 的替换结果逐字节一致（由随机分块对拍保证）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/src/lib.rs,17,rust-doc,no,保真,//! 字节级保真是整个移植项目的验收标准：print/JSON 模式与 RPC 模式在 stdout 上写出的每一条,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/src/rpc_mode.rs,26,rust-doc,no,逐字一致,//! - `success` / `error` 记录用 [`crate::rpc_types::RpcResponse`]（字段序与省略规则逐字一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/js_json_parity.rs,13,rust-doc,yes,逐字节一致,/// `serializeJsonLine` 的数字格式与 Node 的 `JSON.stringify` 逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/json_event_parity.rs,3,rust-doc,yes,逐字一致,//! - 回归套件 #7290 / #7911 / #7925 的标题逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/json_event_parity.rs,78,rust-doc,yes,逐字节一致,/// 与黄金数据逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/json_event_parity.rs,285,rust-doc,yes,逐字节一致,/// `message_start`/`message_end`/`turn_end`/`agent_end` 都必须逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/json_event_parity.rs,341,rust-doc,yes,强约束,/// 顶层与嵌套载荷（`get_state` 的 `data.model`）都必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/jsonl_parity.rs,110,rust-doc,yes,逐字节一致,/// 黄金数据：与 Node v26.12.1 `attachJsonlLineReader` 的分块行为逐字节一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/rpc_client_commands.rs,324,rust-doc,yes,逐字一致,/// 30s 请求超时的逐字文本（用 50ms 覆盖快速验证）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-rpc-print,crates/kiana-rpc-print/tests/rpc_ui_parity.rs,202,rust-doc,yes,逐字节一致,/// 等待一条新请求，校验它是 UUID v4 且与 fixture 的模板逐字节一致（`{id}` 替换为实际 id）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/src/acceptance.rs,703,rust-doc,no,强约束,/// 完整块正则（块内前缀必须一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/src/agent_session.rs,4831,rust-doc,no,完全一致,/// `ApplyPatchSettings::from_config` 完全一致（`tools.applyPatch.models` /,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/src/agent_session.rs,10596,rust-doc,no,完全一致,/// store 错误上报必须完全一致，因此共用这一条路径。声明式 stage 流水线,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/src/background/tool.rs,40,rust-line,no,逐字节一致,// 黄金 fixture 逐字节一致（`kiana-tools/tests/tool_definitions_golden.rs`），后台,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/tests/checkpoint.rs,419,rust-line,yes,完全一致,// 复用 crate 的实现，保证与 ledger 期望完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session,crates/kiana-session/tests/porting_e2e.rs,935,rust-line,yes,逐字节一致,// Artifact：聚合预算把完整内容落盘，占位符带路径；按 offset 回读必须逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/compaction_support.rs,51,rust-doc,no,逐字节一致,/// 当前历史是否与快照逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_export.rs,71,rust-doc,no,保真,/// # 保真约束,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_manager.rs,2178,rust-doc,no,强约束,/// `migrate_hook_message_role` 同时改 `raw.message.role` 与 typed 消息，二者必须一致，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_manager.rs,5700,rust-doc,no,逐字一致,/// 逐字保留。这里返回与 [`SessionManager::get_branch`] 相同路径的原始值。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_manager.rs,5862,rust-doc,no,保真,/// 边界）。需要逐字保真时用 [`SessionManager::get_entries_json`]。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_manager.rs,5871,rust-doc,no,逐字一致,/// 逐字保留（见模块文档）。typed [`SessionEntry`] 无法承载未建模字段，因此导出这类,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/src/session_manager.rs,5872,rust-doc,no,逐字节一致,/// 需要逐字节一致的消费方必须用本方法。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-session-core,crates/kiana-session-core/tests/session_export.rs,167,rust-doc,yes,逐字一致,"/// `{ ...entry, parentId }`——未知字段、未建模条目类型与键位置逐字保留。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/jsjson.rs,844,rust-doc,no,逐字一致,/// 且接受时 `JSON.stringify(JSON.parse(input))` 逐字相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/lib.rs,80,rust-doc,no,保真,//! - 输出保真：进入文本/JSON 的浮点与键序按 JS 语义处理（`kiana-json` 与私有,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/lib.rs,86,rust-doc,no,保真,//! → `render`/`json`（输出保真）→ `testing`/`store_conformance`（适配器一致性套件）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/memory.rs,1850,rust-doc,no,完全一致,/// JS `===`：变体必须完全一致；数组是对象引用，永不等于查询里的标量。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/store_conformance.rs,693,rust-doc,no,完全一致,"/// 再用 `name:""root"", limit:3` 逐页拉取，拼出的 id 序列必须与一次性查询完全一致 ——",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/src/testing.rs,959,rust-line,yes,强约束,// 同一 span 的 inject 应保持稳定；创建子树不能改变它输出的 carrier。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-telemetry,crates/kiana-telemetry/tests/memory_edges.rs,94,rust-doc,yes,逐字一致,/// `Number(span)` 的本地 id、`RecordedTelemetrySpan` 快照与 `StoredSpan` 快照逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,29,rust-doc,no,逐位一致,//! 逐位一致，以保证主题列表排序在平台间稳定，见 kiana-tui 的 localeCompare 说明）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,31,rust-doc,no,逐字一致,//! position/line/column、片段规则、整串特例与错误文案逐字一致，保证解析错误文案稳定）。它接受 `1e999`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,764,rust-doc,no,逐字节一致,"/// 得到的（`Theme::style` 必须和 `styleText(..., theme.colors[…], mode)` 逐字节一致，这是 ANSI 输出的稳定契约）。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,1262,rust-doc,no,逐字一致,/// `error.message` 逐字相同，这条文案是当前稳定契约，改动需同步测试。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,1310,rust-line,no,逐位一致,// （`kiana-tui` 已提供与 Node 26 逐位一致的实现，以保证排序稳定）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,1455,rust-doc,no,逐字一致,/// 位置、行/列（`\r`/`\r\n` 都是换行）、整串特例与片段截断都与 V8 逐字一致，保证错误文案稳定。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,1462,rust-doc,no,逐字节一致,/// U+FFFD 表示。Node 把该消息写成 UTF-8 时同样编码成 EF BF BD，因此输出逐字节一致（当前稳定契约）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-theme,crates/kiana-theme/src/theme.rs,3099,rust-line,no,逐字节一致,// 编码成 EF BF BD（U+FFFD），因此 Rust 字符串用 U+FFFD 表示即可得到逐字节一致的输出。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/bash.rs,394,rust-doc,no,逐字节一致,/// `read` 工具导出面之外，bash schema 也必须与黄金 fixture 逐字节一致（`tests/tool_definitions_golden.rs`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/bash.rs,902,rust-doc,no,完全一致,/// `sandbox` 为 `None` 时行为与前者完全一致。`Some` 时每次 exec 都先调用,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/bash.rs,953,rust-doc,no,完全一致,/// 不一致。未设置策略时与 [`create_local_bash_operations`] 完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/bash.rs,1202,rust-doc,no,逐字一致,/// 省略 Node 错误末尾的 ` '<path>'`（其余逐字一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/edit_diff.rs,21,rust-doc,no,逐字一致,//! - [`apply_edits_to_normalized_content`] 的错误文本逐字保留（§2.8.6；用户可见契约，改动需同步测试），并且,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/src/renderers/write.rs,12,rust-doc,no,完全一致,//! 缓存输出必须与全量重建完全一致，纯属性能优化（流式参数每帧只高亮新增行 + 刷新前 50 行）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/tests/file_tools_renderers.rs,618,rust-line,yes,完全一致,// 参数完整时一次性重建；输出必须与增量缓存完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tools,crates/kiana-tools/tests/tool_definitions_golden.rs,3,rust-doc,yes,"逐字一致, 逐字节一致",//! 「8 个工具的 schema 与黄金 fixture 逐字节一致」「description/promptSnippet/promptGuidelines 逐字一致」）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/alt_screen.rs,3729,rust-line,no,完全一致,// 单击判定：从未拖动，且落点（行/列/是否同一滚动视图）与按下点完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/alt_screen.rs,4053,rust-doc,no,逐字一致,/// 原有 SGR 序列逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/autocomplete.rs,921,rust-line,no,逐位一致,// locale），所以要让排序逐位一致，必须同时复刻 **locale 解析** 与 **collation 选择**。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/autocomplete.rs,945,rust-line,no,逐位一致,// ICU4X 2.4.0 在**默认选项**下与 Node 的 ICU 78.3 逐位一致（en-US / und / zh-CN / zh-TW /,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/components/box_component.rs,20,rust-doc,no,完全一致,//! 完全一致则直接返回缓存的最终行。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/components/box_component.rs,176,rust-doc,no,强约束,/// 判断缓存能否用于本次输出：宽度、背景采样、子项原始行（逐行比较）都必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/components/editor/mod.rs,3144,rust-line,no,逐字一致,// 这是当前输出契约的一部分，必须逐字保留。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/components/editor/mod.rs,4230,rust-doc,no,完全一致,/// 文本与发起时完全一致、光标行列与发起时一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/flash.rs,13,rust-doc,no,逐字一致,//! `flash()` 的插入顺序与 `render()` 的输出顺序保持逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/fuzzy.rs,162,rust-line,no,完全一致,// 这个分支只可能出现在 text 与 query 码元序列完全一致时。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/latex.rs,24,rust-doc,no,完全一致,//! 不同（Rust 是 `U+FFFD`）；但**终端字节完全一致**——Node 把落单代理写成 UTF-8 时正是,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/latex.rs,37,rust-doc,no,逐字一致,//! `space_named_operator_left` / `space_named_operator_right`（匹配互不重叠，结果逐字相同）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/latex.rs,2035,rust-doc,no,逐字一致,/// 单遍替换，不用正则。语义与 `replace` 逐字相同：匹配 `\s* 运算符 \s*` 并把整段换成运算符，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/main_screen.rs,27,rust-doc,no,逐字一致,//! - 超宽行用 `panic!` 报告，载荷是**逐字相同**的错误文本（[`TuiMainScreen::do_render`] 的,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/markdown/block.rs,1064,rust-line,no,强约束,// 表头与对齐列数必须一致；行可以不同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/native/win32.rs,363,rust-line,no,逐字一致,// 配对代理项（全部正常文本）逐字保留，未配对的孤立代理项只能替换为 U+FFFD,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/oklab.rs,43,rust-doc,no,逐位一致,//! - 目标是**与 V8/Node 逐位一致**：`tests/oklab_parity.rs` 用 bit pattern 黄金数据断言,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/oklab.rs,60,rust-doc,no,逐位一致,/// `sqrt(a*a+b*b)`（同一样本集里约 24% 差 1 ulp）。这个逐位一致的版本在 165k 个,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/oklab.rs,172,rust-doc,no,逐位一致,/// 样本（含次正规数、负数、±0、Inf、NaN）上与 V8 逐位一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/src/terminal.rs,283,rust-doc,no,逐字节一致,/// U+FFFD，因此 `Some` 不保证与原值逐字节一致。需要 JS 真值语义的调用方（如,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/chat_simple.rs,7,rust-doc,yes,逐字一致,//! **逐字保留**：欢迎文本、两条斜杠命令的语义（`children.length > 3` 时删除倒数第二个子项；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/fuzzy.rs,4,rust-doc,yes,完全一致,//! 分数是固定的逐位数值，任何实现都必须完全一致，因此这里用 `assert_eq!` 断言精确值。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/latex.rs,6,rust-doc,yes,逐字一致,//! 19 个显式 `it` 的标题逐字保留为 Rust 测试名（便于回溯源用例）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/latex.rs,61,rust-doc,yes,逐字一致,/// 每个 case 的标题都逐字保留（`JSON.stringify` 对字符串就是带引号的 JSON 字面量）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/latex.rs,75,rust-line,yes,逐字一致,// 19 个显式 `it`（标题逐字保留，便于回溯源用例）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-tui,crates/kiana-tui/tests/native_platform.rs,204,rust-doc,yes,强约束,/// 未编译后端时 `native_backend_compiled()` 与 `getNativeClipboard()` 必须一致：两者都由同一编译期后端开关决定，出现分歧即是实现 bug。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ui-kit,crates/kiana-ui-kit/src/diff.rs,12,rust-doc,no,完全一致,//! 处理与 JS 完全一致；只有「两个不同星形平面字符共享高代理项」这类病态输入会在,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ui-kit,crates/kiana-ui-kit/src/diff.rs,17,rust-doc,no,逐字一致,//! `render_diff` 的解析规则逐字保留：`parseDiffLine` 的正则,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,crates,kiana-ui-kit,crates/kiana-ui-kit/src/dynamic_border.rs,56,rust-doc,no,完全一致,/// 保存同一个 trait object，渲染行为完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/ARCHITECTURE_OVERVIEW.md,102,markdown,no,逐字一致,`error.message` **逐字一致**；实现方式不统一（`AiError`/`ChordError` 手写 `Display`，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/ARCHITECTURE_OVERVIEW.md,242,markdown,no,保真,错误文本、事件顺序），先假设它是保真要求，再找测试确认。**,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/COMMENT_PROGRESS.md,63,markdown,no,逐字节一致,| re-verify: kiana-json + kiana-ai root | wf_aed5a98a-9f0 | 4 | 4 | 4 | 0 | 2026-11-06 | 对试点单元做二次审阅：u283/u284/u286/u061 共发现 18 处问题并全部修复（u061 修复 9 处，含 kiana-json 逐字节一致性的被迫偏差、ModelsError 范围、HttpClient 命名、重试分散等）；u285 的审阅…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/COMMON_MISTAKES.md,11,markdown,no,保真,事件顺序、JSON 键序、落盘格式、默认值。这些注释是**保真溯源**：告诉你这段代码在,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/GLOSSARY.md,114,markdown,no,保真,## 7. 测试与保真,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,9,markdown,no,保真,本 ADR 回答一个问题：Kiana 从「行为保真的 coding agent」走向「异构 Agent 集群」，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,19,markdown,no,保真,- 行为保真是产品目标：`AgentEvent` / `AgentSessionEvent` / `SessionHeader` / RPC /,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,25,markdown,no,保真,Kiana 已经是「高保真单 Agent 执行内核 + 扩展与治理底座 + 一套已实现但未接线的持久任务,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,59,markdown,no,保真,模型可见 `task` 工具均不在首期；其中模型可见工具需要单独的产品与保真决策。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,377,markdown,no,保真,`2025-11-25` 上的保真移植，**不默认升级**；rmcp 仅作 dev-dependency 互操作 oracle。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/adr/work-orchestration.md,484,markdown,no,保真,- 代价是：模型可见的多 Agent 能力仍不会立即出现在 CLI/TUI；这是有意的保真取舍。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/guide/mcp.md,249,markdown,no,强约束,- `oauth.callbackUrl` 与 `oauth.callbackPort` 都写明端口时必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/fix-passes/pass-6-phases-11b-12b.md,94,markdown,no,逐字节一致,tool_definitions_golden: 3 passed（bash schema 保持逐字节一致）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/handoffs/phase-12a.md,62,markdown,no,强约束,| `MessageEnd`（assistant text） | `AssistantText` | id 用消息 id；如果之前有 provisional slot，id 必须一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/integration-audit.md,508,markdown,no,逐字一致,`None`，`None` 时序列化与旧版逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/integration-e2e.md,68,markdown,no,完全一致,"| 11 | 压缩：artifact offset 回读 | 同上 | `enforce_aggregate_tool_result_budget(..., Some(&ArtifactStore), ...)` 把完整内容落盘；从占位符 `artifact: <path>` 取路径与 id，`read_range(id, offset, length)` 与原始内容的字节区间完全一致；占位符替换后 tool pair 仍合法。 |",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/phase-08-evals-loop-guard.md,49,markdown,no,逐字一致,- shell 停滞与 action 停滞都要求**输出逐字相同**；stateful poll 的输出变化会重置计数。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/phase-09-request-policy-otel.md,119,markdown,no,逐字节一致,- `ImplicitStrict`（只复用逐字节一致前缀）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/phase-12a-tui-frame-contract.md,184,markdown,no,完全一致,resize 后，committed + viewport 的非空行与逻辑 transcript 完全一致；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/plan.md,312,markdown,no,逐字节一致,- 10MB bash 输出 wrapper <50k 字符，artifact 可以 offset 回读且逐字节一致；JSON outline 的 offset/length 能切出有效子串。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/plan.md,343,markdown,no,逐字节一致,- apply_patch fixture 覆盖 add/update/delete/move、多文件、多 hunk、CRLF、Unicode、EOF、重复 context、空 patch，输出逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/tui-panels-design.md,31,markdown,no,逐字节一致,`… • <mode>`；`None` 时输出与今天逐字节一致，保护 footer golden。颜色映射沿用 qwen,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/tui-panels-design.md,213,markdown,no,逐字一致,的公开薄包装），保证与启动时的解析逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/tui-panels-design.md,448,markdown,no,逐字节一致,- `mode = None`（引擎未启用）时不追加任何字符，输出与今天逐字节一致；这保护,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/wiring/phase-04-07-08.md,29,markdown,no,完全一致,handoff 的公开 API 与实际 `kiana-hooks` 完全一致（`HookRegistry::add_source`、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,docs,,docs/history/porting/wiring/phase-04-07-08.md,95,markdown,no,完全一致,完全一致（`tools.applyPatch.models` / `tools.apply_patch.models`），未知键跨层按,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/GAPS.md,37,markdown,no,逐字节一致,| G2.4 | Photon：原生 `photon-rs 0.3.3`，JPEG 逐字节一致、PNG 允许末位舍入；**不引入 wasm 运行时** | 第 20 条 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/GAPS.md,136,markdown,no,逐字一致,`error.message` 的逐字文本，`status` 只在“头已到、读体失败”时出现；重试留在 provider 层。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,4,markdown,no,完全一致,目标：Rust 重写后**功能与用户交互完全一致**——相同的公开 API 语义、相同的错误消息、相同的消息/事件顺序、相同的线格式、相同的默认值与超时、相同的确定性指纹与随机数。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,2338,markdown,no,完全一致,**值导入**（行为必须完全一致；Rust 侧应直接调用同一 `kiana_ai` crate 的对应函数）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,2443,markdown,no,逐字一致,| Lark grammar（`CODEMODE_SOURCE_GRAMMAR`） | 提供给 provider 的约束语法 | 字符串常量 | 只需**逐字保留文本**（Rust 侧不解析它）；`parseCodemodeSource` 手写实现。 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,3490,markdown,no,逐字一致,"- **Rust 侧必须逐字保留 `""\n\nReceived arguments:\n""` 这两行的格式**：它会被 `validateToolArguments` 原样拼进",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,3541,markdown,no,逐字一致,Rust 端口若把 kiana-ai 一起移植，这些函数的输出必须逐字一致，否则真机请求头会变。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/agent-codemode.md,3784,markdown,no,逐字节一致,WASI shim，必须逐字节一致（否则 QuickJS 读到的时间/随机数会完全不同）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-anthropic-openai.md,1813,markdown,no,完全一致,- `resolveCacheRetention`：与 Anthropic 版完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-anthropic-openai.md,2172,markdown,no,逐位一致,`shortHash` 本体（**此前规范只引用、未给出算法；跨版本 tool call id 依赖它逐位一致，故在此补全**）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-anthropic-openai.md,2194,markdown,no,强约束,- **不要**引入 `DefaultHasher`/`fxhash` 等替代实现；已有会话文件里的 tool call id 与新生成 id 必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-anthropic-openai.md,5613,markdown,no,逐字一致,- [ ] 每个错误消息、占位文本、HTTP 头名、JSON 字段名与第 3、4 节逐字一致（可用快照测试）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,356,markdown,no,强约束,内部类型（不导出，但线上格式必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,1750,markdown,no,逐位一致,`shortHash` 见 §2.13（must 逐位一致，因为 ID 会发给服务端并在回放时复用）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,2527,markdown,no,完全一致,// 之后与 Gemini 版完全一致（thinking 分支相同）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,2599,markdown,no,逐字一致,"`buildParams` 与 Gemini 版**逐字相同**（包括 `""Request aborted""`）。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,3149,markdown,no,强约束,浮点运算顺序必须一致（Rust 用 `f64`，同样的表达式顺序）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,3573,markdown,no,逐位一致,| 哈希（base36 shortHash） | 手写（勿用 `DefaultHasher`） | 必须逐位一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,4240,markdown,no,完全一致,JSON 字段与 JS 完全一致（含 `parameters` 的键序与 `constrainedSampling`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,4245,markdown,no,强约束,`JSON.stringify` 保序 → 若测试快照比对 payload 键序，必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-api-other.md,4714,markdown,no,强约束,**A.5.4 `getSupportedThinkingLevels` 的精确算法（跨单元但必须一致）**,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,27,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,390,markdown,no,逐字一致,"name `""Anthropic API key""`；`login` 用 `secret` prompt `""Enter Anthropic API key""`（与 `envApiKeyAuth` 逐字相同）；",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,819,markdown,no,逐字一致,Rust 侧若用 hyper/axum 无法逐字一致 —— 见 6.2 第 20 条。）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,985,markdown,no,逐字一致,Rust 侧建议在第一次使用时读取以规避该陷阱，但若要逐字一致则仍应在构造 `AnthropicOAuth` 时读取。）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,1847,markdown,no,逐字一致,ai-core 提供且逐字一致**（本单元的回调服务器直接把它的输出写到响应里）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,1851,markdown,no,逐字一致,## 3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,1854,markdown,no,逐字一致,属 tui/coding-agent 单元）。以下文本**由本单元产生**，必须逐字一致（含标点、大小写、省略号、冒号后的空格）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,2504,markdown,no,逐字一致,15. **`JSON.stringify(json)` 作为错误消息的一部分**：必须与 V8 输出逐字一致（键顺序 = 解析顺序 → `preserve_order`；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,2524,markdown,no,逐字一致,`content-type`**，因此不要求头部逐字一致；但 `content-type` 的**值**（含大小写键）在通用服务器,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,2745,markdown,no,完全一致,完全一致（键顺序、`undefined` 省略、无末尾换行）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-auth.md,2821,markdown,no,保真,"pub extra: IndexMap<String, JsonValue>, // 保序、保真回写（env 之外的未知字段）",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,7,markdown,no,强约束,的 `KIANA_AI_VERSION` 与 `package.json` 必须一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,23,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,1034,markdown,no,逐字一致,由于 `models.json` 会持久化 compat，字段名/默认值必须逐字保留。**逐字段清单（字段名、类型、默认值、描述短语）**：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,1095,markdown,no,强约束,> specifier 的动态 import 或延迟 require 正是为此）。Rust 侧没有这个限制，但**行为**必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,1978,markdown,no,逐字一致,- 以 `jsonschema` crate 做 `Check`/`Errors`（**错误文本与路径格式需自建**，因为要求逐字一致）；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,2986,markdown,no,完全一致,- 校验要求 manifest 的 `files` 键集合与数据文件集合完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,3028,markdown,no,逐字一致,两者是同一个动作，**文案必须逐字保留**），否则 `check:model-data` 失败。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ai-core.md,3853,markdown,no,逐字一致,> Rust 提示：这两条链的 `source` 字符串是**用户可见的诊断信息**（会出现在错误与日志中），必须逐字一致；,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,14,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,94,markdown,no,强约束,相关文档（行为权威，必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,167,markdown,no,完全一致,1. **字节级文案**：所有【逐字】字符串必须完全一致，包括末尾句号、双引号、`…`(U+2026)、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,3492,markdown,no,完全一致,- 嵌套调用经 agent loop 的 `ctx.executeTool`，验证/钩子/权限与直接调用完全一致；**只有脚本输出**进入模型上下文。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,4394,markdown,no,强约束,渲染细节（必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,4752,markdown,no,完全一致,关键行为（WHATWG URL 语义，必须完全一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,4802,markdown,no,强约束,**`watch` 的 SSE 解析**（逐字算法，Rust 必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,5596,markdown,no,强约束,`handleInput(data)` 的顺序（**必须一致**）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,5979,markdown,no,逐字一致,本节汇总所有**必须逐字一致**的用户可见文本。实现时建议统一放进 `strings` 模块并用快照测试锁定。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,6662,markdown,no,强约束,缩进与空格一致，但**数组/对象空值**格式必须一致：`{}`、`[]`，JS 相同）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,6769,markdown,no,逐字一致,Rust 侧应对应 `#[test]`/`#[tokio::test]`，并保留断言中的**逐字文本**。全部测试位于,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-builtin-extensions.md,7470,markdown,no,逐字一致,以下每条都在 §2.21.1 补入或此处补充，逐字文本请以 `docs/mcp.md` 为准。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-cli.md,13,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-cli.md,412,markdown,no,强约束,主文本 **【逐字】**（`${APP_NAME}` 展开为 `kiana`；chalk.bold 包裹标题；行首缩进与空行必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-cli.md,2380,markdown,no,完全一致,| `photon-node`（WASM） | `image` + `jpeg-encoder`/`png` + 自写 Lanczos3 | **最难**：输出字节需与 Photon 的 resize/encode 完全一致，否则 base64 不同。见 §8。 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-cli.md,2569,markdown,no,完全一致,3. **chalk v6 颜色级别判定**。`--help` 在 TTY 下必须带颜色、在管道下必须不带；`FORCE_COLOR`/`NO_COLOR`/`TERM=dumb`/`CI` 的组合规则需与 chalk 完全一致。任何偏差都会改变字节输出。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-cli.md,2580,markdown,no,强约束,14. **`zlib.crc32`/`deflateRawSync` 字节**：ZIP 若被外部工具校验，deflate 实现（zlib vs miniz_oxide）可能产生不同压缩字节，但解压结果一致；CRC 必须一致（`crc32fast` 一致）。测试若比对整包哈希需锁定压缩级别与实现。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,13,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,107,markdown,no,逐字一致,10. `defaultModelPerProvider` 中的 `{{SECRET_*}}` 字符串是**本 checkout 中的脱敏占位**，必须逐字保留（测试断言字面值），不得替换或删除。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,478,markdown,no,完全一致,上表共 **59** 行（`$schema` + 58 个设置项），与 `schemas/settings.schema.json` 的 `properties` 键数 59 完全一致；顺序即该 schema 中键的顺序。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,1380,markdown,no,强约束,`resolveProjectTrusted(options)` —— 判定顺序**不得改变**：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,2180,markdown,no,逐字一致,> 安全说明：`qwen3.7-max`、`qwen3.8-max`、`mimo-v2.6-pro` 三处在**当前检出**中是脱敏占位符，测试按字面断言。Rust 侧必须逐字保留这三个字符串，既不得当作真实凭据外泄，也不得替换/清洗。键顺序即 `Object.keys` 顺序，`findInitialModel`/`restoreModelFromSession` 的第 3/4 步依赖该顺序。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,3588,markdown,no,逐字一致,见 §2.27.2 的 43 个 `app.*` 默认键与 §2.27.3 的 4 个 TUI 覆盖。TUI 中按键帮助（如 `/help`、状态栏 hint）读取的 `description` 字符串必须逐字一致（见 §2.27.2 表格右列）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,3957,markdown,no,强约束,### 5.2 本单元**暴露**的接口（其它单元依赖，签名必须一致）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,4189,markdown,no,逐字一致,3. **provider 四层合成的精确顺序与回退**：`applyModelsJson`（内置 baseUrl/compat/radius 特例/自定义模型 upsert）→ `applyExtension`（扩展 models 是权威列表，`baseUrl` 硬覆盖）→ 旧式 OAuth `modifyModels`（chat 与非 chat **重排**）→ `modelOverrides`（仅 chat）。加上 `com…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-config-models.md,4384,markdown,no,逐字一致,| §2.25 | 生成正则里负向前瞻写成 `ctrl\+.*ctrl\+\+`（`\+` 重复） | 与 `schemas/keybindings.schema.json` 逐字一致的 343 字符版本（每处 `\+` 仅一次） |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-extensions.md,15,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-extensions.md,3152,markdown,no,强约束,（`ca-resources` 拥有实现，但扩展语义在此，必须一致。）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-extensions.md,4783,markdown,no,逐字一致,- [ ] `getAliases()` 22 项别名逐字一致（§2.2.1）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,15,markdown,no,完全一致,> Rust 实现必须输出完全一致的文本（除另有说明）。凡标 **【逐字】** 的字符串，测试会逐字节比对。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,32,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,1399,markdown,no,完全一致,完全一致的那一项；找不到则 0。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,6088,markdown,no,强约束,但**文本必须一致**）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,7441,markdown,no,完全一致,`regex` crate 的 `\s` 默认是 Unicode 的 `White_Space`（**不含** `﻿`）——若需完全一致，显式写成,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,7559,markdown,no,逐字节一致,但可见效果相同；为逐字节一致，以 **`fg` 在外** 为准。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,8942,markdown,no,逐字一致,本单元**直接**触盘/触网的地方很少，但以下文件与协议必须逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,9423,markdown,no,"逐字节一致, 强约束",| `@silvia-odwyer/photon-node` | `ensurePngTranscoder`（非 PNG → PNG） | `image` crate | 转码结果不必逐字节一致（只要视觉正确），但**只转一次**的缓存语义必须一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,9822,markdown,no,强约束,- **射线投射的浮点顺序**：`dot`、`length`、`normalize` 的运算顺序必须一致；`LIGHT`/`HALF_VECTOR`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,9850,markdown,no,强约束,但 `Markdown` 组件的折行策略（按 `visible_width` 折）必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,9853,markdown,no,完全一致,Rust 侧逐行比对。这是最稳的方式，也是唯一能保证「TUI 文本完全一致」的方式。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,9889,markdown,no,逐字一致,"- 警告文本 `'dropped, expected a link: ""invalid""'` 必须逐字一致。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,10027,markdown,no,逐字一致,- [ ] 所有用户可见字符串与 §3 逐字一致（用统一快照文件比对）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,10039,markdown,no,逐位一致,需产品决策：是否接受「视觉一致但非逐位一致」。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,10844,markdown,no,完全一致,"- `wc -l` 48 个文件求和 = **11,856**，与 §0.1 完全一致；无未列入的文件。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-components.md,11025,markdown,no,强约束,**步进是加法**（不是每点重算乘法）——浮点误差路径必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,13,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,22,markdown,no,保真,但它是**所有用户可见字节的唯一产地**，因此逐字保真度要求最高。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,2818,markdown,no,逐位一致,"`shuffleSteps(model, cycle)` 的**精确算法**（伪随机必须逐位一致）：",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,6092,markdown,no,强约束,| `ai-core` / `ai-api-*` / `ai-auth` | `Model`、`modelsAreEqual`、`getSupportedThinkingLevels`、`isRetryableAssistantError`、`AssistantMessage`/`Message`/`Usage`、`AuthEvent`/`AuthPrompt`/`AuthInfoLink`/`OAuthDeviceCodeInf…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,6226,markdown,no,完全一致,| **`String.prototype.toLowerCase()`** | 搜索、模型名去重 | Rust `str::to_lowercase()` 使用 Unicode 默认大小写映射，与 JS 在**土耳其语 İ** 等少数码点不同；对 ASCII 完全一致。`getDistinctModelName` 用 `/[^\p{L}\p{N}]+/u` 分词——Rust `regex` 支持 `\p{L}`/`\p{N}` |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,7324,markdown,no,逐字一致,- [ ] `/hotkeys` 输出与 §2.50.16 模板逐字一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,7328,markdown,no,逐字节一致,- [ ] OSC 7501 上报格式（含 base64、2048 字节截断、`app` 校验）逐字节一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-interactive-mode.md,7337,markdown,no,逐字一致,"- [ ] 工具结果折叠预览 10 行 + `... (N more lines, <key> to expand)` 逐字一致",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,15,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,29,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,783,markdown,no,完全一致,JS 正则完全一致的回溯行为；若用 `regex`，需用 `regex::escape` 无关的**命名捕获**并注意,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,2144,markdown,no,保真,**argv 保真**：参数不被 shell 解析（测试 `should preserve argv entries containing spaces`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,5167,markdown,no,逐字节一致,| `chalk` | 6.0.0 | 终端着色 | `anstyle` / `owo-colors` + 自写 chalk 兼容层 | chalk 6 的级别检测：`--color` 标志、`FORCE_COLOR`/`NO_COLOR`、`TERM=dumb`、TTY。**必须逐字节一致**（含 `chalk.bold(chalk.yellow(x))` 的嵌套顺序：先内层 SGR 后外层，结束时统一 reset）。Rust …,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,5171,markdown,no,完全一致,| `semver` | 7.8.5 | 版本范围 | `semver` crate | `valid`/`validRange`/`satisfies`/`gt`/`maxSatisfying`/`rcompare`。差异：npm semver 允许 `latest`/tag 作为「非版本」（`valid` 返回 null），`semver` crate 的 `Version::parse` 同样失败——语义一致。**`maxS…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,5730,markdown,no,完全一致,三份规范对 crate 的划分不完全一致：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-resources.md,6229,markdown,no,保真,- 正文 §2 的逐文件行为描述与 §4 的外部格式**保真度很高**（抽查的上百处常量、文案、分支顺序均一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,69,markdown,no,逐字节一致,- **【逐字】** 标记的字符串必须逐字节一致（含空格、标点、大小写、换行）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,90,markdown,no,逐字一致,`kiana-rpc-client`），行为、错误消息、超时逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,375,markdown,no,逐字一致,`docs/json.md:205`–`218` 的 `JsonAssistantMessageEvent<T>` 与 `JsonAgentSessionEvent` 与此逐字一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,3468,markdown,no,逐字一致,1. **V8 `JSON.parse` 错误消息逐字一致**（RPC 的 `Failed to parse command: ...`）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,3496,markdown,no,强约束,`_startRun` 的 `onStarted` 回调时机（`_prepareRun` 成功后、`agent.prompt` 前）也必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-rpc-print.md,3962,markdown,no,逐字节一致,11. **片段窗口可能切断代理对**：Rust `String` 无法表示孤立代理项；若要逐字节一致，必须用,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-session.md,31,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-session.md,2680,markdown,no,逐字一致,注意错误输出格式必须逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-session.md,2732,markdown,no,逐字一致,## 3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-session.md,3281,markdown,no,逐字一致,`formatNoModelSelectedMessage()`、`formatNoModelsAvailableMessage()`（逐字文本见 3.1）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-session.md,3977,markdown,no,强约束,三者必须一致，否则 `getContextUsage` 与阈值判定会漂移。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,45,markdown,no,逐字一致,3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,96,markdown,no,逐字一致,必须逐字一致，因为它们既进入模型上下文，也进入会话文件与 HTML 导出。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,767,markdown,no,强约束,（可能产生跨行变化，但 NFKC 不引入换行），顺序必须一致（先 NFKC 再去行尾空白，因为 NFKC 可能把,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,2553,markdown,no,强约束,这是既定行为，Rust 需照抄：**预渲染的时长文本不可信但必须一致**）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,3074,markdown,no,逐字节一致,**前提**：资产必须逐字节一致（SHA-256 见 2.25/2.26/2.27/2.29），且 `template.js` / `template.css` /,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,3310,markdown,no,强约束,`getExportTemplateDir` 的运行时路径查找在 Rust 里退化为编译期资产（但**导出内容必须一致**）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,3437,markdown,no,逐字一致,## 3. 用户可见表面（逐字文本）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,3799,markdown,no,强约束,**接口不变量**：`projection.messages` 与 `projection.entries[i].messages` 的拼接**必须一致**,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,3947,markdown,no,逐字一致,| `typebox` | 1.3.27 | 参数/输出 JSON Schema | `serde_json::json!` 常量，或 `schemars` | TypeBox `Type.Object` 默认 `additionalProperties:false`、`required` 只含非 Optional；Rust 要**手写** schema 常量以保证字段顺序与描述逐字一致。不要用 derive 生成的命名/`$re…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4455,markdown,no,逐字一致,- [ ] 8 个工具的 description/promptSnippet/promptGuidelines 逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4456,markdown,no,逐字一致,- [ ] 所有 `Error.message` 文本逐字一致（第 3.4 节清单全覆盖）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4465,markdown,no,逐字节一致,- [ ] 压缩的 4 个 prompt 与 `SUMMARIZATION_SYSTEM_PROMPT` 逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4479,markdown,no,完全一致,- [ ] HTML 导出资产（`template.html/js/css` + 3 个 vendor）的 SHA-256 与 2.25/2.26/2.27/2.29 完全一致，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4483,markdown,no,逐字一致,"尺寸提示的 `toFixed(2)`（`1.125 → ""1.13""`）逐字一致；`detectSupportedImageMimeType` 对",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/ca-tools-compaction-export.md,4600,markdown,no,逐字一致,- **3.6**：新增约 20 条逐字文本（系统提示展开提示、`System Prompt Update`、`Tools Added/Removed`、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,3,markdown,no,完全一致,本文件是 `@earendil-works/chord` 包核心单元 `chord-core` 的逐项移植规格。目标：用 Rust 重写后**功能与用户交互完全一致**——同样的导出 API（对应语义）、同样的错误码与错误消息、同样的线上协议帧、同样的进程锁格式、同样的默认值与超时、同样的可见行为顺序（发布队列、通知顺序、重载各阶段）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2141,markdown,no,强约束,`BaseLink`（抽象基类，未导出）的共享行为（Rust 侧等价 trait/默认实现必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2242,markdown,no,强约束,### 5.3 不变量（跨单元共享，必须一致）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2264,markdown,no,强约束,| `node:zlib`（`deflateRawSync`/`inflateRawSync`） | 载荷打包 | `flate2`（`Compression::fast()` = level 1，`DeflateEncoder` raw） | deflate 输出字节**不要求**逐字节相同（对端解压即可），但 raw 格式、level 1、阈值判定（按 JS 字符串长度）必须一致；浏览器路径用 `DecompressionSt…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2403,markdown,no,逐位一致,2. **`Math.imul` 双路 FNV-1a + UTF-16 code unit**：`hash64` 必须逐位一致，否则指纹变化会让**所有**跨版本契约匹配失败（包括浏览器缓存、`shape.contract`、远程 key）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2413,markdown,no,完全一致,12. **字符串/数字的 JSON 表示**：`canonicalJson` 与 `JSON.stringify` 的数字格式、字符串转义（包括 lone surrogate）、`Math.imul` 溢出，都必须与 JS 完全一致，否则指纹/identity/帧字节都会不同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-core.md,2547,markdown,no,逐字一致,以下内容逐字核对后与源码一致，不需要改动：§2.1 errors（12 个错误码顺序、`retryable` 集合、`fromWireError` 正则）、§2.2 contract 的 `opaque` 正则/reserved 成员顺序/`coverage`/`bind`/`takesNoArgs`、§2.3 的 activation/unwind/lease/gate/refs 主要流程、§2.4 的流控（window/pen…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,2710,markdown,no,逐字一致,帧 schema 是 `Type.Union`（**23 个变体**，按源码顺序：hello、ack、hold、release、shape、gone、call、result、cancel、sub、unsub、resync、state、ping、pong、bye、root_end、invalidate、prepare、vote、commit、retire、abort）。下表按同一顺序列出，编号 10/11、14/15、21/23 各…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,2995,markdown,no,强约束,"- `copyJson(value, { omitUndefinedProperties? }) -> JsonValue`（严格 JSON、无别名、保留 null 原型语义可忽略但键集合与顺序必须一致）；",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,3031,markdown,no,逐字节一致,| `node:zlib`（`deflateRawSync`/`inflateRawSync`） | payload 压缩 | `flate2`（`DeflateEncoder` with `Compression::fast()`） | 必须生成/接受 **raw deflate**（无 zlib 头尾）；level 1 对应 `Compression::fast()`，但**压缩字节流不要求与 zlib 逐字节相同**（对端只…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,3099,markdown,no,强约束,测试是行为的**权威来源**：下面按文件逐条列出标题（逐字，`describe` 容器标题与 `it`/`test` 用例标题都在内），并在每节前给出该文件断言的行为摘要。移植时每条用例都应有一个对应的 Rust 测试（名称可本地化，但断言必须一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,3107,markdown,no,强约束,下表按文件列出**全部字面标题**（逐字，含 describe 标题）。带插值 / `%s` / `%i` 的 16 个参数化点无法静态给出唯一标题，统一在对应文件节末以「参数化」小节列出其源码表达式、参数表与展开数。移植时每个声明点都应有一个对应的 Rust 测试（名称可本地化，但断言必须一致）；参数化点要按展开数逐例覆盖。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4391,markdown,no,逐字节一致,"- 逐字节一致的 deflate 需要绑定 zlib（`flate2` 的 zlib backend 也未必同版本）；若测试只校验""能解压""，可用任意 level。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4415,markdown,no,逐字节一致,7. **Deflate 逐字节一致**：是否有测试比对压缩字节（若有，必须绑定同版本 zlib）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4419,markdown,no,逐字一致,11. **`typebox@1.3.27` 源码不可得**：仓库未安装 `node_modules`，`Value.Errors` 的逐字文案无法从磁盘核对（§3.4）。移植 `schema/check.rs` 前必须取得该版本源码（`npm pack typebox@1.3.27`），否则 `invalid/*` 消息无法保证逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4420,markdown,no,完全一致,12. **`TypeBox` 的 `Value.Clean` 与 `additionalProperties`**：`normalize` 依赖 `Clean` 删除 `additionalProperties:false` 之外的未声明键；需确认 `Clean` 在遇到 `patternProperties`、`anyOf`、嵌套 `additionalProperties` schema 时的删除范围（Rust 侧必须完全一…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4590,markdown,no,逐字一致,"- `forkDriver` 的 `onOutput` 镜像写回父进程 `process[stream].write(chunk)` 时**不检查父进程对应流是否可写**（若父是 `stdio: ""inherit""` 之外的场景可能抛错）—— 逐字保留即可。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/chord-rest.md,4615,markdown,no,逐字一致,4. **§3.2 的 33 个 reason 字符串**、§3.1 的 12 个错误码与顺序、§3.5 的协议关闭原因，全部与源码逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,23,markdown,no,逐字节一致,`Text.render` 的输出与 Node **逐字节一致**（含 ANSI、CJK、emoji ZWJ、tab）；`typebox`、`uuidv7`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,885,markdown,no,逐字节一致,- 输出已实测与 Node **逐字节一致**（见 §9.2）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,904,markdown,no,保真,### 9.2 保真度证据（实测，QuickJS vs Node 逐字节）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,918,markdown,no,完全一致,QuickJS 与 Node 的输出**完全一致**（含 `truncateToWidth` 补的 `\x1b[0m`）。这一条是整个设计,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,1218,markdown,no,保真,## 13. 保真度 vs 性能：哪些放 JS，哪些放 Rust,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,1222,markdown,no,保真,| 组件（`Text`/`Box`/`Markdown`/`Editor`/`SelectList`…） | **JS（原样）** | 逐字节保真；性能足够（§12.2） |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,1341,markdown,no,逐字节一致,- [ ] `visibleWidth`/`truncateToWidth`/`Text.render` 对固定语料与 Node 输出**逐字节一致**。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-js-shim-heavy.md,1357,markdown,no,"逐字节一致, 保真",| kiana-tui 保真 + 基准 | `/tmp/qjs-probe/src/main.rs` | 输出逐字节一致；倍率见 §12.2 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,10,markdown,no,兼容面,与 `ca-extensions` 的关系：本文只决定**引擎、加载、绑定、事件循环、Node 兼容面**；事件语义、合并规则、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,31,markdown,no,兼容面,一句话：**引擎不是风险，兼容面才是风险**。风险集中在 Intl、原生 addon、WebAssembly、以及 `node:net`/`node:http`,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,372,markdown,no,逐字一致,`zod` 校验行为与 Node 26 逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,530,markdown,no,逐字一致,逐字一致，详见 §11.2 与 §14.4。**未能验证的只剩网络层**（真实 TLS/HTTP 分块边界/socket 生命周期），,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,560,markdown,no,逐字节一致,`fg` 的返回是 ANSI 字符串，**逐字节一致**是关键（`ca-extensions` §3 的字节比对）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,914,markdown,no,逐字一致,| `sandbox/` | **A（需 shim + 一个前提）** | `/tmp/sbprobe` 已把整条依赖图跑通：`@anthropic-ai/sandbox-runtime@0.0.26` + `zod@3.25.76` + `commander@12` + `shell-quote@1.12` + `@pondwader/socks5-server@1.0.10`，共 **664 个 ESM 模块 / 921 KB…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,916,markdown,no,逐字一致,| `custom-provider-anthropic/` | **A（需 shim；SDK 已实测）** | `/tmp/sbprobe` 实测 `@anthropic-ai/sdk@0.52.0` 在 QuickJS 下**完整跑通**，且 **CJS 入口（`index.js`，43 个 CJS 模块，约 18 ms）与 ESM 入口（`index.mjs`，43 个 ESM 模块 / 178 KB，约 12 ms）两条路…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,923,markdown,no,完全一致,均无法与 Node 的 ICU 完全一致。已覆盖：`toLocaleString` 的 en-US 常见路径。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,930,markdown,no,完全一致,"`highWaterMark`/`pause/resume` 与 Node 不完全一致；examples 只用 `on(""data"")`，因此当前语料不受影响。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,935,markdown,no,逐字一致,QuickJS 的文案不同；`ca-extensions` §3.5 的「扩展作者可见 TypeError」无法逐字一致，只能保证,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,1087,markdown,no,逐字一致,（与 Node 26 实测逐字一致。）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,1091,markdown,no,强约束,同一用例在 Node 下跑作控制组，两者输出必须相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,1122,markdown,no,逐字一致,| Q1 | `@anthropic-ai/sdk@0.52.0` 的真实网络行为（TLS、HTTP/2、重试、真实 SSE 分块边界）尚未在 QuickJS 下验证；本地 fake-fetch 已跑通协议层 | `custom-provider-anthropic` 的 A 级判定 | 语义层已无风险（`/tmp/sbprobe`：构造、`messages.create`、`messages.stream` 全通，与 Node …,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-risk-first.md,1150,markdown,no,逐字一致,| `/tmp/sbprobe` | **真实 npm 依赖图端到端**：664 模块 `sandbox-runtime`+`zod` 链接 75-83 ms / 0 语法失败；`zod` 校验与 Node 逐字一致；`@anthropic-ai/sdk` 43 模块（CJS 约 18 ms / ESM 约 12 ms 两入口），`messages.create` 与 **`messages.stream` SSE 全链路**（`…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-rquickjs-native-bindings.md,12,markdown,no,兼容面,API 绑定形态、TUI 互操作、Node 兼容面、npm 支持、性能与兼容语料**。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-rquickjs-native-bindings.md,42,markdown,no,兼容面,一句话：**引擎不是瓶颈，兼容面才是**。真正的硬缺口只有三处：`Intl`（`Segmenter`/`toLocaleString`）、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-rquickjs-native-bindings.md,2008,markdown,no,完全一致,4. **Node 流语义**：`createReadStream` 的 `highWaterMark`/`pause`/`resume` 与 Node 不完全一致,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime-rquickjs-native-bindings.md,2011,markdown,no,逐字一致,"QuickJS 的不同。`ca-extensions.md` §3.5 的""扩展作者可见 TypeError""只能保证语义一致，不能逐字一致。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,11,markdown,no,兼容面,- 本文只决定引擎、线程与事件循环、模块加载、API 绑定形态、TUI 互操作、Node 兼容面、locale、测试与实施顺序。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,23,markdown,no,保真,| 设计 | 兼容性 | 保真度 | 实现风险 | 性能 | 可维护性 | 均分 | 名次 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,33,markdown,no,兼容面,它把「引擎不是风险、兼容面才是风险」说对了。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,51,markdown,no,兼容面,| RF | 风险登记册与 A/B/C/D 口径；真 CJS `require`（IIFE + 预登记 `module.exports`）；`?v=<gen>-<seq>` 去缓存；`import.meta.url` 用真实路径；Node 内建清单；§14.4 的三条 npm 回归；`sandbox`/`doom`/`gondolin` 判定 | 全部有原型支撑，且是兼容面的主体 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1142,markdown,no,逐字一致,toLocaleTimeString` 与 `Number#toLocaleString`。已实测与 Node **逐字一致**的 locale（`YMDT::short()` + `YearStyle::Full`）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1208,markdown,no,逐字一致,| `sandbox/` | A（需 §7.3 的真实 TCP + 真 CJS） | `/tmp/sbprobe` 664 模块 / 921 KB / 75–83 ms、0 语法失败、`zod` 校验与 Node 逐字一致；`initialize()` 停在 bridge socket 仅因缺真实 `net` |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1210,markdown,no,逐字一致,| `custom-provider-anthropic/` | A（需 shim；SDK 已实测） | `/tmp/sbprobe`：`@anthropic-ai/sdk@0.52.0` CJS（43 模块 ~18 ms）与 ESM（43 模块/178 KB ~12 ms）两入口都通；构造、`messages.create`、`messages.stream` SSE 全链路与 Node 控制组逐字一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1234,markdown,no,完全一致,"4. **Node 流语义**：`highWaterMark`/`pause`/`resume`/背压与 Node 不完全一致；语料只用 `on(""data"")`/`for await`。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1236,markdown,no,逐字一致,`ca-extensions.md` §3.5 只能保证语义一致，不能逐字一致。**扩展 API 自己的错误文案**（§4.3/§4.9）逐字。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1385,markdown,no,逐字一致,`visibleWidth` 三个函数上与 Node 逐字一致（JS 案 §9.2 的夹具，验收 Rust 侧实现）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1409,markdown,no,强约束,**`AbortController.abort()` 调用次数为 0**（抓「定时器立即触发」bug）；Node 控制组输出必须相同。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/design-extension-runtime.md,1493,markdown,no,逐字一致,| `/tmp/icusz`（本轮） | ICU4X 2.4.0 与 Node 的 locale 对照（en-US 等逐字一致，ja/ko 等有零填充差异） |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,2620,markdown,no,逐字一致,firstKept: EntryId; // 逐字保留的第一条；摘要条目的 head,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,2640,markdown,no,逐字节一致,`SUMMARIZATION_PROMPT`【逐字】（Markdown 模板，必须逐字节一致；行间空行与 `- [x]` / `- [ ]` 都是内容）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,5014,markdown,no,强约束,### 3.4 默认设置数值（逐字，必须一致）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,5378,markdown,no,强约束,"| `typebox` | 工具参数 schema | `schemars` / `jsonschema` 生成 + 自写 `Compile` 等价 | 只需要""给定 `serde_json::Value` 参数、按 `TSchema` 校验并修复（`Value.Clean`/`Value.Default`/`Value.Convert`）""。**`validateToolArguments` 的修复结果**（`prepareAr…",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,6606,markdown,no,完全一致,"10. **`kiana.live` 的完整 base 规则**（`checkpointWhen`）与 `kiana.tool.nested-call` 的""一个调用一个文档""（family，scope task）。`harness-live-deltas` 的 ""keeps a complete base exactly while nothing runs"" 与 `harness-nested-tools` 的 ""stores…",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,6625,markdown,no,逐字一致,- [ ] telemetry span/event/metric 的名字、属性名、枚举值、status 映射逐字一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-harness.md,6685,markdown,no,逐字一致,### A.5 需要逐字保留的**其它**字符串（上文未覆盖）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,1229,markdown,no,逐字节一致,#### 键函数（**必须逐字节一致，JSONL/SQLite/IndexedDB 依赖同类语义**）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,1905,markdown,no,完全一致,- `record` 列的 JSON 必须与 JS `JSON.stringify` 输出**完全一致**（键插入序、省略 undefined）。这决定 `jsonl`/`sqlite` 互操作与测试的字符串断言。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,2078,markdown,no,完全一致,**Rust 决策**：IndexedDB 是浏览器专用。Rust 侧有两个选项：(a) 用 `indexed_db_futures`/`web-sys` 在 `wasm32-unknown-unknown` 下实现同构后端；(b) 明确标记为 out-of-scope 并在 `spec` 中声明。**建议 (b)**，除非 wasm 目标是硬需求；若实现，必须复用同一套 ID/地址/文档语义，且 `commit` 的 adopt…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,3173,markdown,no,强约束,`normalizeForFuzzyMatch(text)` 顺序（**必须一致**）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,3923,markdown,no,强约束,**`CodemodeCall` 内部机制补遗（原 spec 只给语义概述，以下为实现细节，移植时必须一致）**：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,4612,markdown,no,逐字一致,| `@earendil-works/kiana-codemode` | QuickJS 沙箱、声明渲染 | `kiana-codemode`（自研，`rquickjs`） | `renderToolSample`/`toCodemodeIdentifier` 输出必须逐字一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,4615,markdown,no,强约束,| `@silvia-odwyer/photon` | WASM 图像处理 | `image` + `kamadak-exif`（或保留自写 EXIF） | 编码参数、缩放滤镜（Lanczos3）、JPEG 质量链必须一致；Photon 的 `get_bytes()` 是 PNG 编码 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,5265,markdown,no,强约束,- jsdiff `diffLines` 的分组方式（相同/新增/删除块）决定 `parts` 序列；`hasLeadingChange`/`hasTrailingChange` 的组合共 4 种；` ...` 跳过的行数计算必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/durable-rest.md,5310,markdown,no,强约束,- 本单元的值多为整数，风险低；但 `EntryRecord` 中若含模型返回的浮点，必须一致。**建议**：实现 `js_number_to_string(f64)`（移植 ECMAScript Number::toString）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,29,markdown,no,强约束,设计契约（`docs/protocol.md`、`docs/semantics.md`）：`RemoteExecutionEnv` 的结果必须与远端机器上运行的 `NodeExecutionEnv` 一致；只有错误消息文本允许不同，错误 **code** 必须一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,1346,markdown,no,逐字一致,- `README.md`（66 行）与 `CHANGELOG.md`（26 行，1.4.0 / 1.3.0 / 1.2.0（listFiles + PTY）/ 1.1.0 / 1.0.4）需要逐字保留（npm `files` 包含它们，CI 校验打包文件清单）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,1980,markdown,no,强约束,- 返回对象键顺序固定：`schemaVersion`、`protocolDigest`、`control`、`treatment`、`comparisons`、`blockedPairs`、`operationalTotals`（JSON 序列化顺序必须一致）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,2398,markdown,no,逐字一致,- `EnvConformanceCase` / `StorageConformanceCase` 的 `name` 会出现在测试报告里，必须逐字保留（§2.3.5 / §2.3.6 名单）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,2584,markdown,no,强约束,| `ignore`（daemon 已用） | `ignore`（同 crate） | `WalkBuilder` 行为必须一致 |,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,2646,markdown,no,完全一致,- `Docker`：Rust 用 `std::process::Command` 调 `docker`，参数顺序完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/env-evals-durable-testing.md,2834,markdown,no,强约束,6. **`LineScanner` 的字节级结果**：`newlines/start/end/firstLineEnd/lastLineStart/selectedBytes/firstLineBytes` 在任意块大小切分下都必须相同（单测对块大小 1..=5 全枚举）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/telemetry-mcp.md,9,markdown,no,逐字节一致,- 约定：`verbatim`（逐字）表示字符串必须逐字节一致；`name` 表示错误对象的 `name` 属性；所有算法用伪代码给出，,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/telemetry-mcp.md,3089,markdown,no,保真,3. **Node 错误文本保真度**：`JSON.parse` 的 `SyntaxError` 文本、`fetch` 的 `TypeError`/`UND_ERR_*` 消息、,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/telemetry-mcp.md,3100,markdown,no,保真,`kiana-mcp` 的 JSON 解析中强制 f64（完全等价）还是接受差异（保真但可能与 JS 输出不同），需在实现时拍板。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/telemetry-mcp.md,3190,markdown,no,强约束,也不要用 `PartialEq`），并且 `-0.0` 与 `0.0` 的哈希必须相同（用 `to_bits` 前先 `+ 0.0` 归一化，或,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/telemetry-mcp.md,3405,markdown,no,强约束,`kiana.durable.*`，适配器可翻译到后端约定但不得改变发出的词汇表。这与 §19.1 的消费者列表一致，但,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-components.md,1267,markdown,no,逐字一致,"`computeVerticalMoveColumn(currentVisualCol, sourceMaxVisualCol, targetMaxVisualCol)`——**粘性列决策表（源码注释，逐字保留）**：",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-components.md,2073,markdown,no,强约束,| `marked` | 18.0.11 | Markdown lexer（`Marked`、`Tokenizer`、`TokenizerExtension`、`Tokens`、`Marked#use`） | 无直接等价。候选：`pulldown-cmark`（CommonMark + GFM tables/strikethrough/tasklist）、`comrak`（更全的 GFM）、`markdown-rs` | **最大…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-components.md,2103,markdown,no,逐字一致,8. **`String.prototype.trim()`**：JS trim 去掉的空白集合 = WhiteSpace + LineTerminator（含 U+FEFF 之外的全部 Zs、`\t\n\v\f\r`、U+00A0、U+1680、U+2000-200A、U+2028/2029、U+202F、U+205F、U+3000）。Rust `str::trim` 用 `char::is_whitespace`（Unicod…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-components.md,2244,markdown,no,逐字一致,1. **Markdown 的 token 流与样式穿插顺序**。`marked` 18 的 token 边界（尤其列表 loose/tight、嵌套 blockquote 的 `space` token、gfm 表格）与任何 Rust Markdown 库都不同。输出是**逐字符 ANSI 拼接**（`strong → theme.bold(inner) + stylePrefix`、块级样式在后处理阶段 apply），任何 t…,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-components.md,2259,markdown,no,完全一致,"16. **`truncateToWidth` 的省略号前 `\x1b[0m`**。Markdown/TruncatedText/SelectList 都依赖这一细节；Rust 侧必须与 tui-core 的 `truncate_to_width` 完全一致（含 `ellipsis = """"` 时不加 reset 的分支）。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,13,markdown,no,完全一致,> Rust 实现必须输出完全一致的字节序列（除另有说明）。中文用于解释语义。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,262,markdown,no,逐字节一致,#### 2.0.2 `ansiCodeLength` 精确规则（**渲染逐字节一致的关键**）,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,277,markdown,no,强约束,**推论**（Rust 必须一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,1012,markdown,no,逐字节一致,`to_ascii_lowercase()` 即可（但为了逐字节一致，仍建议用 `to_lowercase()`——对 ASCII 结果相同）。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,4525,markdown,no,逐字一致,行为上被外层的 `< 30` 覆盖，但 Rust 侧若省略不影响结果，若保留须逐字一致）：,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-core.md,6197,markdown,no,完全一致,3. `splits a large full render without changing its output` — >1 MiB 全量渲染被切成多次 `write`，但拼接后与不切分完全一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-text.md,3624,markdown,no,逐字节一致,本单元是库层（无 CLI、无 HTTP、无配置文件），用户可见面由**字符串常量、ANSI 序列、按键绑定与布局尺寸**构成。以下全部必须在 Rust 端逐字节一致。,人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-text.md,4318,markdown,no,强约束,"**注意**：`getFileSuggestions` 的排序是""目录优先，再 `localeCompare(label)`""；`getFuzzyFileSuggestions` 的排序是 `(score desc, depth asc, length asc, localeCompare)`。两处都必须一致。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-text.md,4323,markdown,no,完全一致,"- **A（推荐）**：内部一律用 `Vec<u16>` 或 `Utf16String` 表示""可编辑文本/光标""（`editor`、`input`、`autocomplete`、`search` 的文本偏移），只在渲染/输出时转 `String`。这保证 `cursorCol`、`item.value.length`、`slice` 的行为与 JS 完全一致（emoji 占 2）。",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-text.md,4499,markdown,no,逐字一致,"**Rust 测试策略**：把 `defineCases` 的 (source, expected) 二元组导出为 JSON fixture（`tests/fixtures/latex-cases.json`，**共 92 条**，5 个 `defineCases` 块分别为 **37 / 8 / 5 / 25 / 17**；**注意 `renderLatex(source)` 用默认 `{}` 选项，即内联模式**），Rust …",人工判断：确认是否仍有独立技术原因；没有则删除
+D,medium,spec,,spec/tui-text.md,5209,markdown,no,完全一致,"- **Rust 实现建议**：从 `LC_ALL`/`LC_MESSAGES`/`LANG` 解析 locale（`zh_CN.UTF-8` → `zh-CN`），空/`C`/`POSIX` → `en-US`，再交给 `icu_collation`。若想与""用户机器上的 Node 完全一致""，还需注意 macOS/Windows 的 locale 解析差异。",人工判断：确认是否仍有独立技术原因；没有则删除

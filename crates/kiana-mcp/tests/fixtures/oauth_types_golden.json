@@ -1,0 +1,878 @@
+{
+  "parsers": [
+    {
+      "functionName": "parseProtectedResourceMetadata",
+      "cases": [
+        {
+          "input": {
+            "resource": "https://a.example"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"https://a.example\"}"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "authorization_servers": [
+              "https://as.example"
+            ],
+            "scopes_supported": [
+              "a",
+              "b"
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"https://a.example\",\"authorization_servers\":[\"https://as.example\"],\"scopes_supported\":[\"a\",\"b\"]}"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "scopes_supported": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid scopes_supported"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "scopes_supported": []
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"https://a.example\",\"scopes_supported\":[]}"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "authorization_servers": null,
+            "scopes_supported": null
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"https://a.example\"}"
+          }
+        },
+        {
+          "input": {
+            "resource": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": null
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": 5
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": "file:///etc/passwd"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": "not a url"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "authorization_servers": [
+              "file:///x"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization server URL"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "authorization_servers": [
+              5
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization_servers"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "extra": {
+              "keep": 1
+            },
+            "zzz": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"https://a.example\",\"extra\":{\"keep\":1},\"zzz\":[1,2]}"
+          }
+        },
+        {
+          "input": {
+            "resource": "https://a.example",
+            "authorization_servers": [
+              "https://x",
+              5
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization_servers"
+          }
+        },
+        {
+          "input": [],
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata"
+          }
+        },
+        {
+          "input": null,
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata"
+          }
+        },
+        {
+          "input": "x",
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata"
+          }
+        },
+        {
+          "input": {},
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth protected resource metadata resource"
+          }
+        },
+        {
+          "input": {
+            "resource": "HTTPS://A.EXAMPLE/MCP"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"resource\":\"HTTPS://A.EXAMPLE/MCP\"}"
+          }
+        },
+        {
+          "input": {
+            "1": "one",
+            "2": "two",
+            "resource": "https://a.example",
+            "mobile": {
+              "scopes": [
+                "x"
+              ]
+            }
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"1\":\"one\",\"2\":\"two\",\"resource\":\"https://a.example\",\"mobile\":{\"scopes\":[\"x\"]}}"
+          }
+        }
+      ]
+    },
+    {
+      "functionName": "parseAuthorizationServerMetadata",
+      "cases": [
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"]}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": []
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[]}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid response_types_supported"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": null
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid response_types_supported"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid response_types_supported"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "registration_endpoint": "https://i.example/register",
+            "scopes_supported": [
+              "a"
+            ],
+            "grant_types_supported": [
+              "authorization_code"
+            ],
+            "token_endpoint_auth_methods_supported": [
+              "none"
+            ],
+            "code_challenge_methods_supported": [
+              "S256"
+            ],
+            "client_id_metadata_document_supported": true,
+            "authorization_response_iss_parameter_supported": false,
+            "extra": 1
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"],\"registration_endpoint\":\"https://i.example/register\",\"scopes_supported\":[\"a\"],\"grant_types_supported\":[\"authorization_code\"],\"token_endpoint_auth_methods_supported\":[\"none\"],\"code_challenge_methods_supported\":[\"S256\"],\"client_id_metadata_document_supported\":true,\"authorization_response_iss_parameter_supported\":false,\"extra\":1}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "client_id_metadata_document_supported": "yes",
+            "authorization_response_iss_parameter_supported": 1
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"]}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "registration_endpoint": ""
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"]}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "registration_endpoint": null
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"]}"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "registration_endpoint": "file:///x"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid registration endpoint"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "search-ms:query=x",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization endpoint"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "ms-msdt:/id",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization endpoint"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "file://attacker.example/share/x.exe",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization endpoint"
+          }
+        },
+        {
+          "input": {
+            "issuer": "ftp://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization server issuer"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "",
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid token endpoint"
+          }
+        },
+        {
+          "input": {
+            "issuer": "https://i.example",
+            "authorization_endpoint": "https://i.example/authorize",
+            "token_endpoint": "https://i.example/token",
+            "response_types_supported": [
+              "code"
+            ],
+            "code_challenge_methods_supported": []
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"issuer\":\"https://i.example\",\"authorization_endpoint\":\"https://i.example/authorize\",\"token_endpoint\":\"https://i.example/token\",\"response_types_supported\":[\"code\"],\"code_challenge_methods_supported\":[]}"
+          }
+        },
+        {
+          "input": {
+            "response_types_supported": [
+              "code"
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid authorization server issuer"
+          }
+        },
+        {
+          "input": {},
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid response_types_supported"
+          }
+        }
+      ]
+    },
+    {
+      "functionName": "parseOAuthTokens",
+      "cases": [
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": 3600,
+            "scope": "s",
+            "refresh_token": "r",
+            "id_token": "i"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":3600,\"scope\":\"s\",\"refresh_token\":\"r\",\"id_token\":\"i\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": null
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": ""
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": "0x10"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":16}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": "1e3"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":1000}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": []
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":0}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": [
+              5
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":5}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": [
+              1,
+              2
+            ]
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid expires_in"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": true
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":1}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid expires_in"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": "abc"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid expires_in"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": 1.5
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":1.5}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "expires_in": "-0"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\",\"expires_in\":0}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "scope": ""
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "scope": null,
+            "refresh_token": ""
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "access_token": "",
+            "token_type": "Bearer"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid access_token"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid token_type"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid token_type"
+          }
+        },
+        {
+          "input": {
+            "token_type": "Bearer"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid access_token"
+          }
+        },
+        {
+          "input": {
+            "access_token": "a",
+            "token_type": "Bearer",
+            "extra": [
+              1
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"access_token\":\"a\",\"token_type\":\"Bearer\"}"
+          }
+        },
+        {
+          "input": {
+            "expires_in": "abc"
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid expires_in"
+          }
+        },
+        {
+          "input": [],
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth token response"
+          }
+        }
+      ]
+    },
+    {
+      "functionName": "parseClientInformation",
+      "cases": [
+        {
+          "input": {
+            "client_id": "c",
+            "redirect_uris": [
+              "http://127.0.0.1/cb"
+            ]
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"redirect_uris\":[\"http://127.0.0.1/cb\"]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c"
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "redirect_uris": null
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "redirect_uris": []
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "redirect_uris": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid redirect_uris"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "client_secret": "",
+            "client_id_issued_at": 1.5,
+            "client_secret_expires_at": 0
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"client_id_issued_at\":1.5,\"client_secret_expires_at\":0,\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "client_secret": "s",
+            "client_id_issued_at": "1",
+            "client_secret_expires_at": null
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"client_secret\":\"s\",\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": {
+            "client_id": ""
+          },
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid client_id"
+          }
+        },
+        {
+          "input": {
+            "client_id": "c",
+            "client_name": "n",
+            "grant_types": [
+              "authorization_code"
+            ],
+            "custom": true
+          },
+          "result": {
+            "ok": true,
+            "json": "{\"client_id\":\"c\",\"client_name\":\"n\",\"grant_types\":[\"authorization_code\"],\"custom\":true,\"redirect_uris\":[]}"
+          }
+        },
+        {
+          "input": null,
+          "result": {
+            "ok": false,
+            "name": "Error",
+            "message": "Invalid OAuth client registration response"
+          }
+        }
+      ]
+    }
+  ]
+}

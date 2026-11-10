@@ -1,0 +1,2521 @@
+[
+ {
+  "schema": {
+   "type": "string"
+  },
+  "maxChars": null,
+  "expected": "string"
+ },
+ {
+  "schema": {
+   "type": "integer"
+  },
+  "maxChars": null,
+  "expected": "number"
+ },
+ {
+  "schema": {
+   "type": "number"
+  },
+  "maxChars": null,
+  "expected": "number"
+ },
+ {
+  "schema": {
+   "type": "boolean"
+  },
+  "maxChars": null,
+  "expected": "boolean"
+ },
+ {
+  "schema": {
+   "type": "null"
+  },
+  "maxChars": null,
+  "expected": "null"
+ },
+ {
+  "schema": {
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  "maxChars": null,
+  "expected": "string | null"
+ },
+ {
+  "schema": {
+   "type": [
+    "string",
+    "unknown"
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "const": "a"
+  },
+  "maxChars": null,
+  "expected": "\"a\""
+ },
+ {
+  "schema": {
+   "const": 1
+  },
+  "maxChars": null,
+  "expected": "1"
+ },
+ {
+  "schema": {
+   "const": 1.5
+  },
+  "maxChars": null,
+  "expected": "1.5"
+ },
+ {
+  "schema": {
+   "const": 1e+21
+  },
+  "maxChars": null,
+  "expected": "1e+21"
+ },
+ {
+  "schema": {
+   "const": 0
+  },
+  "maxChars": null,
+  "expected": "0"
+ },
+ {
+  "schema": {
+   "const": null
+  },
+  "maxChars": null,
+  "expected": "null"
+ },
+ {
+  "schema": {
+   "const": true
+  },
+  "maxChars": null,
+  "expected": "true"
+ },
+ {
+  "schema": {
+   "const": {
+    "2": 1,
+    "a": 1e+21,
+    "b": 0,
+    "c": 1.5
+   }
+  },
+  "maxChars": null,
+  "expected": "{\"2\":1,\"a\":1e+21,\"b\":0,\"c\":1.5}"
+ },
+ {
+  "schema": {
+   "const": [
+    1,
+    "a",
+    null
+   ]
+  },
+  "maxChars": null,
+  "expected": "[1,\"a\",null]"
+ },
+ {
+  "schema": {
+   "enum": [
+    "a",
+    1,
+    null
+   ]
+  },
+  "maxChars": null,
+  "expected": "\"a\" | 1 | null"
+ },
+ {
+  "schema": {
+   "enum": []
+  },
+  "maxChars": null,
+  "expected": "never"
+ },
+ {
+  "schema": {
+   "enum": [
+    "a",
+    "a"
+   ]
+  },
+  "maxChars": null,
+  "expected": "\"a\""
+ },
+ {
+  "schema": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "number"
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "string | number"
+ },
+ {
+  "schema": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {}
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "anyOf": []
+  },
+  "maxChars": null,
+  "expected": "never"
+ },
+ {
+  "schema": {
+   "oneOf": [
+    {
+     "const": 1
+    },
+    {
+     "const": 2
+    },
+    {
+     "const": 1
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "1 | 2"
+ },
+ {
+  "schema": {
+   "allOf": [
+    {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "number"
+      }
+     ]
+    },
+    {
+     "const": 1
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "(string | number) & 1"
+ },
+ {
+  "schema": {
+   "allOf": [
+    {
+     "type": "bogus"
+    },
+    {
+     "type": "wat"
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "allOf": [
+    {
+     "type": "string"
+    },
+    {
+     "const": 1
+    },
+    {
+     "type": "bogus"
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "string & 1"
+ },
+ {
+  "schema": {
+   "anyOf": [
+    {
+     "type": "string"
+    }
+   ],
+   "oneOf": [
+    {
+     "const": 3
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "string"
+ },
+ {
+  "schema": {
+   "anyOf": "not-array",
+   "oneOf": [
+    {
+     "const": 3
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "3"
+ },
+ {
+  "schema": {
+   "$ref": "#/defs/x"
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": true,
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": false,
+  "maxChars": null,
+  "expected": "never"
+ },
+ {
+  "schema": null,
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": [],
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": "string",
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": 5,
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "bogus"
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": 5
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {},
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "city": {
+     "type": "string"
+    },
+    "max-lines": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "city"
+   ],
+   "additionalProperties": false
+  },
+  "maxChars": null,
+  "expected": "{ city: string; \"max-lines\"?: number; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "number"
+   }
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: number; }"
+ },
+ {
+  "schema": {
+   "type": "object"
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {},
+   "additionalProperties": false
+  },
+  "maxChars": null,
+  "expected": "{}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {},
+   "additionalProperties": true
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "additionalProperties": null
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": true,
+    "b": false,
+    "c": {}
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; b?: never; c?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": null
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "": {
+     "type": "string"
+    },
+    "a b": {
+     "const": "x"
+    },
+    "ok": {
+     "const": 1
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ \"\"?: string; \"a b\"?: \"x\"; ok?: 1; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "2": {
+     "type": "string"
+    },
+    "10": {
+     "type": "string"
+    },
+    "b": {
+     "type": "string"
+    },
+    "A": {
+     "type": "string"
+    },
+    "\u00e9": {
+     "type": "string"
+    },
+    "a": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ \"10\"?: string; \"2\"?: string; A?: string; a?: string; b?: string; \"\u00e9\"?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "\ud83d\ude00": {
+     "type": "string"
+    },
+    "\uffff": {
+     "type": "string"
+    },
+    "z": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ z?: string; \"\ud83d\ude00\"?: string; \"\uffff\"?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a\n": {
+     "type": "string"
+    },
+    "b": {
+     "type": "number"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ \"a\\n\"?: string; b?: number; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "a",
+    1,
+    null
+   ]
+  },
+  "maxChars": null,
+  "expected": "{ a: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string"
+    },
+    "b": {
+     "type": "string"
+    }
+   },
+   "required": "a"
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; b?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "weather": {
+     "type": "array",
+     "description": "look up weather for a given list of locations",
+     "items": {
+      "type": "object",
+      "properties": {
+       "location": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "location"
+      ]
+     }
+    }
+   },
+   "required": [
+    "weather"
+   ]
+  },
+  "maxChars": null,
+  "expected": "{\n  // look up weather for a given list of locations\n  weather: Array<{ location: string; }>;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "outer": {
+     "type": "object",
+     "description": "Outer",
+     "properties": {
+      "inner": {
+       "type": "string",
+       "description": "Inner"
+      }
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // Outer\n  outer?: {\n    // Inner\n    inner?: string;\n  };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "outer": {
+     "type": "object",
+     "properties": {
+      "inner": {
+       "type": "string",
+       "description": "Inner"
+      }
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ outer?: {\n  // Inner\n  inner?: string;\n}; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": "   "
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": 5
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": "line1\r\nline2\n\nline4"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // line1\n  // line2\n  // line4\n  a?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": "x\u2028y\u2029z"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // x\n  // y\n  // z\n  a?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": "\ufeff padded \u00a0"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // padded\n  a?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "number"
+   },
+   "properties": {
+    "a": {
+     "type": "string",
+     "description": "A"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // A\n  a?: string;\n  [key: string]: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "timeoutMs": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 30000,
+     "default": 0,
+     "description": "Wait in milliseconds."
+    },
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z]+$",
+     "maxLength": 8
+    },
+    "tags": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "maxItems": 5,
+     "uniqueItems": true,
+     "deprecated": true
+    },
+    "name": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "id"
+   ]
+  },
+  "maxChars": null,
+  "expected": "{\n  // @maxLength 8 @pattern ^[a-z]+$\n  id: string;\n  name?: string;\n  // @maxItems 5 @uniqueItems @deprecated\n  tags?: Array<string>;\n  // Wait in milliseconds.\n  // @integer @minimum 0 @maximum 30000 @default 0\n  timeoutMs?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "limit": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 100
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Limit"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 1 @maximum 100\n  limit?: number | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 10,
+       "maximum": 50,
+       "format": "int32"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "minimum": 0,
+     "maximum": 20,
+     "format": "port"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 10 @maximum 20 @format port @format int32\n  n?: number | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 0,
+     "exclusiveMinimum": true,
+     "maximum": 10,
+     "exclusiveMaximum": false
+    },
+    "m": {
+     "anyOf": [
+      {
+       "type": "number",
+       "maximum": 5,
+       "exclusiveMaximum": true
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "maximum": 8
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @maximum 8 @exclusiveMaximum 5\n  m?: number | null;\n  // @integer @exclusiveMinimum 0 @maximum 10\n  n?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "exclusiveMinimum": true
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer\n  n?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "anyOf": [
+      {
+       "type": "integer",
+       "minimum": 1
+      },
+      {
+       "type": "integer",
+       "minimum": 5
+      }
+     ],
+     "minimum": 0
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @minimum 0\n  n?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "oneOf": [
+      {
+       "type": "string",
+       "format": "date"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @format date\n  n?: string | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": [
+      "integer",
+      "string"
+     ],
+     "minimum": 3
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 3\n  x?: number | string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "multipleOf": 2.5
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @multipleOf 2.5\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 3,
+     "minItems": 2,
+     "maxItems": 9
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @minLength 1 @maxLength 3 @minItems 2 @maxItems 9\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": {
+      "b": 1,
+      "a": [
+       1,
+       2
+      ]
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @default {\"b\":1,\"a\":[1,2]}\n  x?: { [key: string]: unknown; };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": {
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: { [key: string]: unknown; }; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "sep": {
+     "type": "string",
+     "pattern": "^[\r\n\u2028\u2029]$",
+     "default": "\u2028",
+     "description": "a\u2028b"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // a\n  // b\n  // @pattern ^[\\u000d\\u000a\\u2028\\u2029]$ @default \"\\u2028\"\n  sep?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\ud83d\ude00"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\ud83d\ude00\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "integer",
+     "minimum": 1e+21
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 1e+21\n  x?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "integer",
+     "minimum": -1.5e-07
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum -1.5e-7\n  x?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "format": "a\nb"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @format a\\u000ab\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "format": "a */ b"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @format a */ b\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 1\n  n?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "maxChars": 20,
+  "expected": "{ n?: number; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "maxChars": 10,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "maxChars": 15,
+  "expected": "{ n?: number; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "n": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "maxChars": 14,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "\ud83d\ude00": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": 24,
+  "expected": "{ \"\ud83d\ude00\"?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "\ud83d\ude00": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": 15,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "item": {
+     "$ref": "#/$defs/Item"
+    },
+    "legacy": {
+     "$ref": "#/definitions/Legacy"
+    },
+    "remote": {
+     "$ref": "https://example.com/schema.json"
+    }
+   },
+   "required": [
+    "item"
+   ],
+   "$defs": {
+    "Item": {
+     "type": "object",
+     "properties": {
+      "id": {
+       "type": "string"
+      },
+      "parent": {
+       "$ref": "#/$defs/Item"
+      }
+     },
+     "required": [
+      "id"
+     ]
+    }
+   },
+   "definitions": {
+    "Legacy": {
+     "enum": [
+      "a",
+      "b"
+     ]
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ item: { id: string; parent?: unknown; }; legacy?: \"a\" | \"b\"; remote?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/T"
+    },
+    "b": {
+     "$ref": "#/$defs/F"
+    }
+   },
+   "$defs": {
+    "T": true,
+    "F": false
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; b?: never; }"
+ },
+ {
+  "schema": {
+   "$ref": "#",
+   "type": "object",
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/x~1y"
+    },
+    "b": {
+     "$ref": "#/$defs/p~0q"
+    },
+    "c": {
+     "$ref": "#/$defs/a%20b"
+    },
+    "d": {
+     "$ref": "#/$defs/%C3%A9"
+    }
+   },
+   "$defs": {
+    "x/y": {
+     "const": 1
+    },
+    "p~q": {
+     "const": 2
+    },
+    "a b": {
+     "const": 3
+    },
+    "\u00e9": {
+     "const": 4
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: 1; b?: 2; c?: 3; d?: 4; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/nope"
+    }
+   },
+   "$defs": {}
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/x/"
+    }
+   },
+   "$defs": {
+    "x": {
+     "const": 7
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: 7; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/x//y"
+    }
+   },
+   "$defs": {
+    "x": {
+     "y": {
+      "const": 8
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: 8; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: { a?: unknown; }; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": ""
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": 5
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/x",
+     "type": "string"
+    }
+   },
+   "$defs": {
+    "x": {
+     "const": 9
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: 9; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/D0"
+    }
+   },
+   "$defs": {
+    "D0": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D1"
+      }
+     }
+    },
+    "D1": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D2"
+      }
+     }
+    },
+    "D2": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D3"
+      }
+     }
+    },
+    "D3": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D4"
+      }
+     }
+    },
+    "D4": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D5"
+      }
+     }
+    },
+    "D5": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D6"
+      }
+     }
+    },
+    "D6": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D7"
+      }
+     }
+    },
+    "D7": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D8"
+      }
+     }
+    },
+    "D8": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D9"
+      }
+     }
+    },
+    "D9": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D10"
+      }
+     }
+    },
+    "D10": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D11"
+      }
+     }
+    },
+    "D11": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D12"
+      }
+     }
+    },
+    "D12": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D13"
+      }
+     }
+    },
+    "D13": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D14"
+      }
+     }
+    },
+    "D14": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D15"
+      }
+     }
+    },
+    "D15": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D16"
+      }
+     }
+    },
+    "D16": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D17"
+      }
+     }
+    },
+    "D17": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D18"
+      }
+     }
+    },
+    "D18": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D19"
+      }
+     }
+    },
+    "D19": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D20"
+      }
+     }
+    },
+    "D20": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D21"
+      }
+     }
+    },
+    "D21": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D22"
+      }
+     }
+    },
+    "D22": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D23"
+      }
+     }
+    },
+    "D23": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D24"
+      }
+     }
+    },
+    "D24": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D25"
+      }
+     }
+    },
+    "D25": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D26"
+      }
+     }
+    },
+    "D26": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D27"
+      }
+     }
+    },
+    "D27": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D28"
+      }
+     }
+    },
+    "D28": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D29"
+      }
+     }
+    },
+    "D29": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D30"
+      }
+     }
+    },
+    "D30": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D31"
+      }
+     }
+    },
+    "D31": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D32"
+      }
+     }
+    },
+    "D32": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D33"
+      }
+     }
+    },
+    "D33": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D34"
+      }
+     }
+    },
+    "D34": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D35"
+      }
+     }
+    },
+    "D35": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D36"
+      }
+     }
+    },
+    "D36": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D37"
+      }
+     }
+    },
+    "D37": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D38"
+      }
+     }
+    },
+    "D38": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D39"
+      }
+     }
+    },
+    "D39": {
+     "type": "object",
+     "properties": {
+      "n": {
+       "$ref": "#/$defs/D40"
+      }
+     }
+    },
+    "D40": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: { n?: unknown; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/A"
+    }
+   },
+   "$defs": {
+    "A": {
+     "$ref": "#/$defs/B"
+    },
+    "B": {
+     "$ref": "#/$defs/A"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "a": {
+     "$ref": "#/$defs/Dir"
+    }
+   },
+   "$defs": {
+    "Dir": {
+     "type": "object",
+     "properties": {
+      "self": {
+       "$ref": "#/$defs/Dir"
+      },
+      "list": {
+       "type": "array",
+       "items": {
+        "$ref": "#/$defs/File"
+       }
+      }
+     }
+    },
+    "File": {
+     "type": "object",
+     "properties": {
+      "parent": {
+       "$ref": "#/$defs/Dir"
+      }
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: { list?: Array<{ parent?: unknown; }>; self?: unknown; }; }"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "maxChars": null,
+  "expected": "Array<string>"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "prefixItems": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "number"
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "[string, number]"
+ },
+ {
+  "schema": {
+   "type": "array"
+  },
+  "maxChars": null,
+  "expected": "unknown[]"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "items": null
+  },
+  "maxChars": null,
+  "expected": "Array<unknown>"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "items": true
+  },
+  "maxChars": null,
+  "expected": "Array<unknown>"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "items": [
+    {
+     "type": "string"
+    },
+    {
+     "const": 2
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "[string, 2]"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "prefixItems": []
+  },
+  "maxChars": null,
+  "expected": "unknown[]"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "prefixItems": [
+    {
+     "type": "string"
+    }
+   ],
+   "items": [
+    {
+     "const": 1
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "[string]"
+ },
+ {
+  "schema": {
+   "type": "array",
+   "items": {
+    "type": "array",
+    "items": {
+     "type": "boolean"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "Array<Array<boolean>>"
+ },
+ {
+  "schema": {
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; }"
+ },
+ {
+  "schema": {
+   "items": {
+    "type": "string"
+   }
+  },
+  "maxChars": null,
+  "expected": "Array<string>"
+ },
+ {
+  "schema": {
+   "prefixItems": [
+    {
+     "const": 1
+    }
+   ]
+  },
+  "maxChars": null,
+  "expected": "[1]"
+ },
+ {
+  "schema": {
+   "required": [
+    "a"
+   ]
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: unknown; }"
+ },
+ {
+  "schema": {
+   "additionalProperties": false
+  },
+  "maxChars": null,
+  "expected": "{}"
+ },
+ {
+  "schema": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; } | null"
+ },
+ {
+  "schema": {
+   "type": [
+    true
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "date",
+       "minLength": 3
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "format": "date",
+     "minLength": 3
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @minLength 3 @format date\n  x?: string | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      {
+       "type": "string",
+       "format": "1"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "format": 1
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @format 1 @format 1\n  x?: string | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      {
+       "type": "string",
+       "pattern": "a"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "pattern": "a"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern a\n  x?: string | null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "format": ""
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @format \n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 0
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 0 @maximum 0\n  x?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "integer",
+     "minimum": 0
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @integer @minimum 0\n  x?: number;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": null
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: { [key: string]: unknown; }; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": false
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @default false\n  x?: { [key: string]: unknown; };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": 0
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @default 0\n  x?: { [key: string]: unknown; };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": ""
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @default \"\"\n  x?: { [key: string]: unknown; };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "default": "a\u2028b"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @default \"a\\u2028b\"\n  x?: { [key: string]: unknown; };\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u2028"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern \\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\\u2028\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028\u2028"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: string; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": []
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: never; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      true,
+      false,
+      null,
+      []
+     ]
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      true
+     ]
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      false
+     ]
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: never; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "anyOf": [
+      {
+       "type": "null"
+      }
+     ],
+     "minimum": 2
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @minimum 2\n  x?: null;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "allOf": []
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "allOf": true
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "enum": "a"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {}
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "object",
+     "properties": {
+      "y": {
+       "type": "object",
+       "properties": {
+        "z": {
+         "type": "string",
+         "description": "Z"
+        }
+       },
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: { y?: {\n  // Z\n  z?: string;\n}; }; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "description": "Only a comment"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // Only a comment\n  x?: unknown;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "description": "\ufeff"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "description": "\u0085kept\u0085"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // \u0085kept\u0085\n  x?: unknown;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "description": "a\rb"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // a\n  // b\n  x?: unknown;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "description": "\r\n"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ x?: unknown; }"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "a\nb\nc\n"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern a\\u000ab\\u000ac\\u000a\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": "object",
+   "properties": {
+    "x": {
+     "type": "string",
+     "pattern": "a\r\nb"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{\n  // @pattern a\\u000d\\u000ab\n  x?: string;\n}"
+ },
+ {
+  "schema": {
+   "type": [
+    [
+     "string"
+    ]
+   ]
+  },
+  "maxChars": null,
+  "expected": "string"
+ },
+ {
+  "schema": {
+   "type": [
+    [
+     "string",
+     "null"
+    ],
+    "number"
+   ]
+  },
+  "maxChars": null,
+  "expected": "string | null | number"
+ },
+ {
+  "schema": {
+   "type": [
+    [
+     "string"
+    ],
+    []
+   ]
+  },
+  "maxChars": null,
+  "expected": "string | never"
+ },
+ {
+  "schema": {
+   "type": [
+    5
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": [
+    [
+     [
+      "boolean"
+     ]
+    ]
+   ]
+  },
+  "maxChars": null,
+  "expected": "boolean"
+ },
+ {
+  "schema": {
+   "type": [
+    null,
+    "string"
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": [
+    true,
+    "string"
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": [
+    {
+     "type": "string"
+    },
+    "number"
+   ]
+  },
+  "maxChars": null,
+  "expected": "unknown"
+ },
+ {
+  "schema": {
+   "type": [
+    "object",
+    [
+     "array",
+     "string"
+    ]
+   ]
+  },
+  "maxChars": null,
+  "expected": "{ [key: string]: unknown; } | unknown[] | string"
+ },
+ {
+  "schema": {
+   "type": [
+    "object"
+   ],
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   }
+  },
+  "maxChars": null,
+  "expected": "{ a?: string; }"
+ },
+ {
+  "schema": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "properties": {
+    "a": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "a"
+   ]
+  },
+  "maxChars": null,
+  "expected": "string | null"
+ },
+ {
+  "schema": {
+   "type": [
+    "array",
+    "null"
+   ],
+   "items": {
+    "type": "string"
+   }
+  },
+  "maxChars": null,
+  "expected": "Array<string> | null"
+ }
+]

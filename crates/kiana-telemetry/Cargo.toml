@@ -1,0 +1,21 @@
+[package]
+name = "kiana-telemetry"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/telemetry：TelemetryContext/Span/Metrics/Store/Propagation 契约与内存实现。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+indexmap = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+kiana-json = { workspace = true }
+uuid = { workspace = true }
+# OTLP/HTTP 导出（traces/logs/metrics）。reqwest 在根 workspace 已固定版本与 feature；
+# 本 crate 只用到普通 HTTP 与 h2c（gRPC prior knowledge），不引入 tonic/prost。
+reqwest = { workspace = true }

@@ -1,0 +1,57 @@
+[package]
+name = "kiana-coding-agent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-cli：启动编排、参数解析、CLI 子命令、迁移、SDK 导出面；二进制 kiana 与 kiana-rpc。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+regex = { workspace = true }
+filetime = { workspace = true }
+libc = { workspace = true }
+url = { workspace = true }
+kiana-json = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-extensions = { workspace = true }
+kiana-tools = { workspace = true }
+kiana-resources = { workspace = true }
+kiana-session = { workspace = true }
+kiana-durable = { workspace = true }
+kiana-permissions = { workspace = true }
+kiana-sandbox = { workspace = true }
+kiana-compaction = { workspace = true }
+kiana-export = { workspace = true }
+kiana-builtin-extensions = { workspace = true }
+kiana-interactive = { workspace = true }
+kiana-rpc-print = { workspace = true }
+reqwest = { workspace = true }
+
+[[bin]]
+name = "kiana"
+path = "src/main.rs"
+
+[[bin]]
+name = "kiana-rpc"
+path = "src/bin/kiana-rpc.rs"
+
+[dev-dependencies]
+tempfile = { workspace = true }
+insta = { workspace = true }
+wiremock = { workspace = true }
+tokio = { workspace = true, features = ["test-util"] }

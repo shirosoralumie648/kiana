@@ -1,0 +1,1035 @@
+{
+ "transcript": {
+  "createInitialSystemMessage": [
+   null,
+   {
+    "role": "system",
+    "content": "p",
+    "timestamp": 0
+   },
+   {
+    "role": "system",
+    "content": "",
+    "toolsAdded": [
+     {
+      "name": "x"
+     }
+    ],
+    "timestamp": 0
+   }
+  ],
+  "normalizeContext": {
+   "messages": [
+    {
+     "role": "user",
+     "content": "u",
+     "timestamp": 1
+    }
+   ]
+  },
+  "getInitialSystemMessage": {
+   "role": "system",
+   "content": "base prompt",
+   "sections": {
+    "a": "one",
+    "b": null
+   },
+   "toolsAdded": [
+    {
+     "name": "read",
+     "description": "r",
+     "parameters": {
+      "type": "object"
+     }
+    }
+   ],
+   "timestamp": 7
+  },
+  "withoutInitialSystemMessage": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "hi"
+     }
+    ],
+    "timestamp": 8
+   },
+   {
+    "role": "system",
+    "content": [
+     {
+      "type": "text",
+      "text": "more"
+     }
+    ],
+    "sections": {
+     "a": "two",
+     "c": "three"
+    },
+    "toolsRemoved": [
+     {
+      "name": "read"
+     }
+    ],
+    "toolsAdded": [
+     {
+      "name": "bash",
+      "description": "b",
+      "parameters": {
+       "type": "object"
+      }
+     }
+    ],
+    "timestamp": 9
+   }
+  ],
+  "getCurrentTools": [
+   {
+    "name": "bash",
+    "description": "b",
+    "parameters": {
+     "type": "object"
+    }
+   }
+  ],
+  "getCurrentSystemMessage": {
+   "role": "system",
+   "content": "base prompt\n\nmore",
+   "sections": {
+    "a": "two",
+    "c": "three"
+   },
+   "toolsAdded": [
+    {
+     "name": "bash",
+     "description": "b",
+     "parameters": {
+      "type": "object"
+     }
+    }
+   ],
+   "timestamp": 7
+  },
+  "getCurrentSystemPrompt": "base prompt\n\nmore\n\ntwo\n\nthree",
+  "collapseSystemMessages": {
+   "messages": [
+    {
+     "role": "system",
+     "content": "base prompt\n\nmore",
+     "sections": {
+      "a": "two",
+      "c": "three"
+     },
+     "toolsAdded": [
+      {
+       "name": "bash",
+       "description": "b",
+       "parameters": {
+        "type": "object"
+       }
+      }
+     ],
+     "timestamp": 7
+    },
+    {
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "hi"
+      }
+     ],
+     "timestamp": 8
+    }
+   ]
+  },
+  "resolveTranscriptTrue": {
+   "messages": [
+    {
+     "role": "system",
+     "content": "base prompt",
+     "sections": {
+      "a": "one",
+      "b": null
+     },
+     "toolsAdded": [
+      {
+       "name": "read",
+       "description": "r",
+       "parameters": {
+        "type": "object"
+       }
+      }
+     ],
+     "timestamp": 7
+    },
+    {
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "hi"
+      }
+     ],
+     "timestamp": 8
+    },
+    {
+     "role": "system",
+     "content": [
+      {
+       "type": "text",
+       "text": "more"
+      }
+     ],
+     "sections": {
+      "a": "two",
+      "c": "three"
+     },
+     "toolsRemoved": [
+      {
+       "name": "read"
+      }
+     ],
+     "toolsAdded": [
+      {
+       "name": "bash",
+       "description": "b",
+       "parameters": {
+        "type": "object"
+       }
+      }
+     ],
+     "timestamp": 9
+    }
+   ]
+  },
+  "resolveTranscriptFalse": {
+   "messages": [
+    {
+     "role": "system",
+     "content": "base prompt\n\nmore",
+     "sections": {
+      "a": "two",
+      "c": "three"
+     },
+     "toolsAdded": [
+      {
+       "name": "bash",
+       "description": "b",
+       "parameters": {
+        "type": "object"
+       }
+      }
+     ],
+     "timestamp": 7
+    },
+    {
+     "role": "user",
+     "content": [
+      {
+       "type": "text",
+       "text": "hi"
+      }
+     ],
+     "timestamp": 8
+    }
+   ]
+  },
+  "toToolDeclaration": {
+   "name": "t",
+   "description": "d",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "x": {
+      "type": "string"
+     }
+    }
+   },
+   "constrainedSampling": false
+  },
+  "declarationsEqual": [
+   true
+  ],
+  "getToolStateChanges": {
+   "toolsAdded": [
+    {
+     "name": "c",
+     "description": "d",
+     "parameters": {
+      "type": "object"
+     }
+    }
+   ],
+   "toolsRemoved": [
+    {
+     "name": "b"
+    }
+   ]
+  },
+  "getDeclaredTools": [
+   {
+    "name": "read",
+    "description": "r",
+    "parameters": {
+     "type": "object"
+    }
+   },
+   {
+    "name": "bash",
+    "description": "b",
+    "parameters": {
+     "type": "object"
+    }
+   }
+  ],
+  "hasToolRedefinitions": [
+   false
+  ],
+  "hasNonAdditiveToolChanges": [
+   true
+  ],
+  "resolveTranscriptTools": [
+   {
+    "requestTools": [
+     {
+      "name": "bash",
+      "description": "b",
+      "parameters": {
+       "type": "object"
+      }
+     }
+    ],
+    "foldedSystemMessages": 2
+   },
+   {
+    "requestTools": [
+     {
+      "name": "bash",
+      "description": "b",
+      "parameters": {
+       "type": "object"
+      }
+     }
+    ],
+    "foldedSystemMessages": 2
+   },
+   {
+    "requestTools": [],
+    "foldedSystemMessages": 0
+   }
+  ]
+ },
+ "text": {
+  "contentText": [
+   "s",
+   "a\nb",
+   "a|b"
+  ],
+  "getSystemMessageText": "base\n\none",
+  "renderSystemMessageUpdate": "x\n\nUpdated system prompt section \"a\":\n\none\n\nRemoved system prompt section \"b\"."
+ },
+ "parseStreaming": [
+  {},
+  {},
+  {
+   "a": 1
+  },
+  {
+   "a": 1
+  },
+  {
+   "name": "ba"
+  },
+  {},
+  [
+   1,
+   2
+  ],
+  {
+   "x": "\\q"
+  }
+ ],
+ "overflow": {
+  "patterns": [
+   "prompt (?:is )?too long",
+   "prompt exceeds max length",
+   "request_too_large",
+   "input is too long for requested model",
+   "exceeds the context window",
+   "exceeds (?:the )?(?:model'?s )?maximum context length(?: of [\\d,]+ tokens?|\\s*\\([\\d,]+\\))",
+   "input token count.*exceeds the maximum",
+   "maximum prompt length is \\d+",
+   "reduce the length of the messages",
+   "maximum context length is \\d+ tokens",
+   "exceeds (?:the )?maximum allowed input length of [\\d,]+ tokens?",
+   "input \\(\\d+ tokens\\) is longer than the model'?s context length \\(\\d+ tokens\\)",
+   "exceeds the limit of \\d+",
+   "exceeds the available context size",
+   "greater than the context length",
+   "context window exceeds limit",
+   "exceeded model token limit",
+   "too large for model with \\d+ maximum context length",
+   "prompt has [\\d,]+ tokens?, but the configured context size is [\\d,]+ tokens?",
+   "model_context_window_exceeded",
+   "prompt too long; exceeded (?:max )?context length",
+   "range of input length should be",
+   "context[_ ]length[_ ]exceeded",
+   "too many tokens",
+   "token limit exceeded",
+   "^(?:[\\w -]+ API error \\(413\\):|413(?:\\s|:|$))"
+  ],
+  "cases": [
+   [
+    true,
+    true,
+    false
+   ],
+   [
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    true,
+    true
+   ]
+  ]
+ },
+ "envCases": {
+  "findEnvKeys": [
+   [
+    "ANTHROPIC_AUTH_TOKEN",
+    "ANTHROPIC_API_KEY"
+   ],
+   [
+    "OPENAI_API_KEY"
+   ],
+   null,
+   null
+  ],
+  "getEnvApiKey": [
+   "sk-a",
+   "sk-o",
+   null
+  ]
+ },
+ "identity": {
+  "formatThrownValue": [
+   "boom",
+   "s",
+   "5",
+   "null"
+  ],
+  "extractDiagnosticError": [
+   {
+    "name": "Error",
+    "message": "x",
+    "stack": "Error: x\n    at /home/ctyun/kiana-work/scratch/kiana-extensions__virtual-modules/golden.ts:71:64\n    at async Function.import (/home/ctyun/kiana-work/upstream-reference/node_modules/jiti/dist/jiti.cjs:1:187718)\n    at async file:///home/ctyun/kiana-work/scratch/kiana-extensions__virtual-modules/run-golden.mjs:17:16"
+   },
+   {
+    "name": "ThrownValue",
+    "message": "plain"
+   }
+  ],
+  "mergeClientIdentity": {
+   "userAgent": "short",
+   "attribution": {
+    "name": "a",
+    "url": "u"
+   },
+   "version": "1.2.3"
+  },
+  "getClientVersion": [
+   "1.4.0",
+   "9"
+  ],
+  "formatUserAgent": [
+   "kiana/1.4.0 (linux; node/v26.12.1; x64)",
+   "kiana",
+   "custom-agent"
+  ],
+  "getAttributionHeaders": [
+   {
+    "HTTP-Referer": "https://kiana.dev",
+    "X-OpenRouter-Title": "kiana",
+    "X-OpenRouter-Categories": "cli-agent"
+   },
+   {
+    "X-BILLING-INVOKE-ORIGIN": "Kiana"
+   },
+   {
+    "x-opencode-client": "kiana"
+   },
+   {
+    "x-opencode-client": "kiana"
+   }
+  ],
+  "getIdentityHeaders": {
+   "User-Agent": "kiana/1 (linux; node/v26.12.1; x64)"
+  },
+  "getOpenCodeSessionHeaders": [
+   {
+    "x-opencode-session": "sid"
+   },
+   null
+  ]
+ },
+ "modelsCases": {
+  "calculateCost": {
+   "returned": {
+    "input": 1.5,
+    "output": 0.011250000000000001,
+    "cacheRead": 5.9999999999999995e-05,
+    "cacheWrite": 0.00042,
+    "total": 1.51173,
+    "totalFromProvider": false
+   },
+   "usageCost": {
+    "input": 1.5,
+    "output": 0.011250000000000001,
+    "cacheRead": 5.9999999999999995e-05,
+    "cacheWrite": 0.00042,
+    "total": 1.51173,
+    "totalFromProvider": false
+   }
+  },
+  "getModelType": [
+   "chat",
+   "chat",
+   "image"
+  ],
+  "isModelType": [
+   true,
+   false
+  ],
+  "hasApi": [
+   true,
+   false
+  ],
+  "modelsAreEqual": [
+   true,
+   false,
+   false
+  ],
+  "clamp": [
+   "off",
+   "high",
+   "high",
+   "off",
+   [
+    "off",
+    "minimal",
+    "low",
+    "medium",
+    "high"
+   ],
+   [
+    "off",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "max"
+   ]
+  ]
+ },
+ "tools": {
+  "formatReadLineRange": [
+   "",
+   "",
+   ":5",
+   ":5-7",
+   ":1",
+   "",
+   ":1.5-2.5",
+   ":1-4"
+  ],
+  "truncateHead": [
+   {
+    "content": "a\nb\nc",
+    "truncated": false,
+    "truncatedBy": null,
+    "totalLines": 3,
+    "totalBytes": 5,
+    "outputLines": 3,
+    "outputBytes": 5,
+    "lastLinePartial": false,
+    "firstLineExceedsLimit": false,
+    "maxLines": 2000,
+    "maxBytes": 51200
+   },
+   {
+    "content": "a\nb",
+    "truncated": true,
+    "truncatedBy": "lines",
+    "totalLines": 3,
+    "totalBytes": 5,
+    "outputLines": 2,
+    "outputBytes": 3,
+    "lastLinePartial": false,
+    "firstLineExceedsLimit": false,
+    "maxLines": 2,
+    "maxBytes": 51200
+   },
+   {
+    "content": "",
+    "truncated": true,
+    "truncatedBy": "bytes",
+    "totalLines": 1,
+    "totalBytes": 6,
+    "outputLines": 0,
+    "outputBytes": 0,
+    "lastLinePartial": false,
+    "firstLineExceedsLimit": true,
+    "maxLines": 2000,
+    "maxBytes": 3
+   },
+   {
+    "content": "",
+    "truncated": true,
+    "truncatedBy": "bytes",
+    "totalLines": 2,
+    "totalBytes": 8,
+    "outputLines": 0,
+    "outputBytes": 0,
+    "lastLinePartial": false,
+    "firstLineExceedsLimit": true,
+    "maxLines": 2000,
+    "maxBytes": 3
+   }
+  ],
+  "parseFrontmatter": [
+   {
+    "frontmatter": {},
+    "body": "hello"
+   },
+   {
+    "frontmatter": {
+     "a": 1,
+     "b": [
+      "x",
+      "y"
+     ]
+    },
+    "body": "body"
+   },
+   {
+    "frontmatter": {
+     "x": true
+    },
+    "body": ""
+   }
+  ],
+  "convertToLlm": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "u"
+     }
+    ],
+    "timestamp": 1
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Ran `ls`\n```\na\n```"
+     }
+    ],
+    "timestamp": 2
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "hello"
+     }
+    ],
+    "timestamp": 4
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "The following is a summary of a branch that this conversation came back from:\n\n<summary>\nsum</summary>"
+     }
+    ],
+    "timestamp": 5
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "The conversation history before this point was compacted into the following summary:\n\n<summary>\ncsum\n</summary>"
+     }
+    ],
+    "timestamp": 6
+   }
+  ],
+  "formatSize": [
+   "0B",
+   "512B",
+   "1023B",
+   "1.0KB",
+   "1.5KB",
+   "1024.0KB",
+   "1.0MB",
+   "1.5MB",
+   "1.5B",
+   "-1B",
+   "1023.4B"
+  ],
+  "truncateLine": [
+   {
+    "text": "short",
+    "wasTruncated": false
+   },
+   {
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "wasTruncated": false
+   },
+   {
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... [truncated]",
+    "wasTruncated": true
+   },
+   {
+    "text": "yyyyyyyyyy... [truncated]",
+    "wasTruncated": true
+   },
+   {
+    "text": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé... [truncated]",
+    "wasTruncated": true
+   },
+   {
+    "text": "... [truncated]",
+    "wasTruncated": true
+   }
+  ]
+ },
+ "validateArguments": [
+  {
+   "ok": {
+    "count": 42,
+    "flag": true,
+    "text": "5"
+   }
+  },
+  {
+   "error": "Validation failed for tool \"read\":\n  - count: must be integer\n\nReceived arguments:\n{\n  \"count\": 1.5,\n  \"opt\": null\n}"
+  },
+  {
+   "error": "Validation failed for tool \"read\":\n  - count: must have required properties count\n  - flag: must be boolean\n\nReceived arguments:\n{\n  \"flag\": \"truthy\"\n}"
+  },
+  {
+   "error": "Invalid arguments for tool \"read\": bad json"
+  },
+  {
+   "ok": {
+    "n": 7,
+    "label": "3"
+   }
+  },
+  {
+   "error": "Validation failed for tool \"boxed\":\n  - n: must have required properties n\n\nReceived arguments:\n{\n  \"label\": \"x\"\n}"
+  }
+ ],
+ "validateCalls": [
+  {
+   "ok": {
+    "count": 42,
+    "flag": true,
+    "text": "5"
+   }
+  },
+  {
+   "error": "Tool \"boxed\" not found"
+  },
+  {
+   "error": "Tool \"missing\" not found"
+  }
+ ],
+ "retryDelays": [
+  100,
+  100,
+  400,
+  250,
+  60000,
+  60000
+ ],
+ "retryMessages": [
+  true,
+  true,
+  false,
+  false,
+  false,
+  false,
+  true,
+  true,
+  true,
+  false,
+  false,
+  false,
+  false
+ ],
+ "identityCases": {
+  "providers": [
+   "p"
+  ],
+  "model": {
+   "provider": "openai",
+   "id": "gpt"
+  },
+  "stream": {
+   "model": "m",
+   "identity": {
+    "userAgent": "short",
+    "attribution": {
+     "name": "kiana",
+     "url": "https://kiana.dev"
+    },
+    "version": "9"
+   },
+   "extra": "s"
+  },
+  "streamOverride": {
+   "model": "m",
+   "identity": {
+    "userAgent": "x",
+    "attribution": {
+     "name": "kiana",
+     "url": "https://kiana.dev"
+    },
+    "version": "1"
+   },
+   "extra": "s"
+  },
+  "refresh": {
+   "refresh": {
+    "identity": {
+     "version": "2"
+    }
+   }
+  },
+  "readOnlyKeys": [
+   false,
+   false,
+   false
+  ],
+  "mutableKeys": [
+   true,
+   true,
+   true
+  ],
+  "setProvider": {
+   "set": "p"
+  },
+  "deleteProvider": {
+   "deleted": "x"
+  },
+  "clearProviders": {
+   "cleared": true
+  },
+  "streamMutable": {
+   "model": "sm"
+  }
+ },
+ "retryCalls": {
+  "abort": {
+   "attempts": 1,
+   "result": {
+    "role": "assistant",
+    "stopReason": "aborted",
+    "provider": "p",
+    "model": "m"
+   },
+   "events": [
+    [
+     "scheduled",
+     1,
+     2,
+     100,
+     "rate limit exceeded"
+    ],
+    [
+     "finished",
+     false,
+     1,
+     "rate limit exceeded"
+    ]
+   ]
+  },
+  "exhausted": {
+   "attempts": 1,
+   "result": {
+    "role": "assistant",
+    "stopReason": "error",
+    "errorMessage": "insufficient_quota",
+    "provider": "p",
+    "model": "m"
+   },
+   "events": []
+  },
+  "success": {
+   "result": {
+    "role": "assistant",
+    "stopReason": "stop",
+    "provider": "p",
+    "model": "m"
+   },
+   "events": []
+  },
+  "disabled": {
+   "result": {
+    "role": "assistant",
+    "stopReason": "error",
+    "errorMessage": "rate limit exceeded",
+    "provider": "p",
+    "model": "m"
+   },
+   "events": []
+  }
+ },
+ "authCases": {
+  "name": "Test Provider",
+  "stored": {
+   "auth": {
+    "apiKey": "sk-stored"
+   },
+   "env": {
+    "REGION": "eu"
+   },
+   "source": "stored credential"
+  },
+  "envVar": {
+   "auth": {
+    "apiKey": "sk-b"
+   },
+   "source": "B_KEY"
+  },
+  "none": null,
+  "login": {
+   "type": "api_key",
+   "key": {
+    "type": "secret",
+    "message": "Enter Test Provider",
+    "answer": "sk-login"
+   }
+  }
+ },
+ "oauthCases": {
+  "loadsBefore": 0,
+  "name": "Test OAuth",
+  "isSubscription": true,
+  "loginLabel": "Sign in",
+  "login": {
+   "type": "oauth",
+   "value": "login"
+  },
+  "refresh": {
+   "type": "oauth",
+   "value": "refresh"
+  },
+  "toAuth": {
+   "apiKey": "oauth-key"
+  },
+  "loadsAfter": 1
+ },
+ "lazyCases": {
+  "apiLoadsAfterFirstUse": 2,
+  "directEvents": [
+   "start",
+   "done"
+  ],
+  "directObserverEvents": [
+   "start",
+   "done"
+  ],
+  "directObservedResults": [
+   "m"
+  ],
+  "hasDeferred": [
+   "function",
+   "function"
+  ],
+  "hasDeferredWhenNotRequested": [
+   "undefined",
+   "undefined"
+  ],
+  "events": [
+   "start",
+   "done"
+  ],
+  "simpleEvents": [
+   "text_delta",
+   "done"
+  ],
+  "observerEvents": [],
+  "observedResults": [],
+  "failingEvents": [
+   {
+    "type": "error",
+    "message": "setup boom",
+    "stopReason": "error"
+   }
+  ]
+ },
+ "imagesCases": {
+  "providerApi": "test-images",
+  "unknown": null,
+  "generated": {
+   "api": "test-images",
+   "provider": "p",
+   "model": "m",
+   "output": [],
+   "stopReason": "stop",
+   "timestamp": 1,
+   "seenOptions": {
+    "n": 1
+   }
+  },
+  "mismatch": {
+   "error": "No API provider registered for api: other"
+  },
+  "wrappedMismatch": {
+   "error": "Mismatched api: other expected test-images"
+  },
+  "missing": {
+   "error": "No API provider registered for api: nope"
+  }
+ },
+ "cleanupCases": {
+  "seen": [
+   [
+    "a",
+    "s1"
+   ],
+   [
+    "b",
+    "s1"
+   ],
+   [
+    "b",
+    "s2"
+   ]
+  ],
+  "aggregateMessage": "Failed to cleanup session resources",
+  "afterUnregister": {
+   "error": "Failed to cleanup session resources"
+  }
+ }
+}

@@ -1,0 +1,640 @@
+--- /tmp/kiana-comment-baseline/crates/kiana-ai/src/api/google_shared.rs	2026-11-05 19:01:04.424464672 +0800
++++ crates/kiana-ai/src/api/google_shared.rs	2026-11-07 10:41:31.113717258 +0800
+@@ -316,48 +316,39 @@
+     let gemini3 = {
+         // /gemini-3(?:\.\d+)?-(?:pro|flash)/
+         // 次版本号必须至少有一位数字；`gemini-3.-pro` 不算命中。
+-        match id.find("gemini-3") {
+-            Some(index) => {
+-                let rest = &id[index + "gemini-3".len()..];
+-                let rest = if let Some(stripped) = rest.strip_prefix('.') {
+-                    let digits = stripped.chars().take_while(char::is_ascii_digit).count();
+-                    if digits == 0 { "" } else { &stripped[digits..] }
+-                } else {
+-                    rest
+-                };
+-                rest.starts_with("-pro") || rest.starts_with("-flash")
+-            }
+-            None => false,
+-        }
++        id.match_indices("gemini-3").any(|(index, _)| {
++            let rest = &id[index + "gemini-3".len()..];
++            let rest = if let Some(stripped) = rest.strip_prefix('.') {
++                let digits = stripped.chars().take_while(char::is_ascii_digit).count();
++                if digits == 0 { "" } else { &stripped[digits..] }
++            } else {
++                rest
++            };
++            rest.starts_with("-pro") || rest.starts_with("-flash")
++        })
+     };
+     let gemini4plus = {
+         // /gemini-(?:[4-9]|[1-9]\d)/
+         // 单个 4–9，或 1–9 后紧跟第二位数字：即两位版本号 10–99，三位及以上不匹配。
+-        match id.find("gemini-") {
+-            Some(index) => {
+-                let rest = &id[index + "gemini-".len()..];
+-                let mut chars = rest.chars();
+-                match chars.next() {
+-                    Some(first) if ('4'..='9').contains(&first) => true,
+-                    Some(first) if ('1'..='9').contains(&first) => {
+-                        chars.next().is_some_and(|second| second.is_ascii_digit())
+-                    }
+-                    _ => false,
++        id.match_indices("gemini-").any(|(index, _)| {
++            let rest = &id[index + "gemini-".len()..];
++            let mut chars = rest.chars();
++            match chars.next() {
++                Some(first) if ('4'..='9').contains(&first) => true,
++                Some(first) if ('1'..='9').contains(&first) => {
++                    chars.next().is_some_and(|second| second.is_ascii_digit())
+                 }
++                _ => false,
+             }
+-            None => false,
+-        }
++        })
+     };
+     let gemma4 = {
+         // /gemma-?4/
+         // `gemma-4...` 与 `gemma4...` 两种写法都命中。
+-        match id.find("gemma") {
+-            Some(index) => {
+-                let rest = &id[index + "gemma".len()..];
+-                rest.starts_with('4') || rest.starts_with("-4")
+-            }
+-            None => false,
+-        }
++        id.match_indices("gemma").any(|(index, _)| {
++            let rest = &id[index + "gemma".len()..];
++            rest.starts_with('4') || rest.starts_with("-4")
++        })
+     };
+     // 两个滚动别名无法被上面的前缀模式覆盖，单独比较。
+     gemini3
+@@ -1029,7 +1020,7 @@
+ /// `resolveGoogleFunctionCallingMode(tools, toolChoice, supportsStrictMode)`。
+ ///
+ /// 返回要写进 `toolConfig.functionCallingConfig.mode` 的字符串；`None` 表示整个
+-/// `toolConfig` 都不发。优先级与 TS 一致：
++/// `toolConfig` 都不发。优先级如下：
+ ///
+ /// 1. `tool_choice` 为 `none` / `any` → 直接映射（显式禁用/强制调用优先于 strict）；
+ /// 2. 任一工具解析出 `strict = true` → `VALIDATED`（strict 工具要求校验模式；`AUTO`
+@@ -4330,6 +4321,21 @@
+     use serde_json::json;
+ 
+     #[test]
++    fn thinking_level_detection_checks_every_model_id_occurrence() {
++        let uses = |id: &str| {
++            uses_google_thinking_level(&Model {
++                id: id.into(),
++                ..Model::default()
++            })
++        };
++        // 第一个 `gemini-` 是旧版本，后面才是 4.x：不能只看第一次出现。
++        assert!(uses("gemini-2.5-gemini-4-pro"));
++        assert!(uses("prefix-gemini-3-flash"));
++        assert!(uses("gemini-2.5-gemma-4-x"));
++        assert!(!uses("gemini-2.5-pro"));
++    }
++
++    #[test]
+     fn error_body_is_only_json_parsed_when_the_content_type_says_json() {
+         // `content-type: application/json`：错误体就是解析后的 JSON（重新 stringify）。
+         let failure = throw_error_if_not_ok(
+--- /tmp/kiana-comment-baseline/crates/kiana-ai/src/api/kiana_messages.rs	2026-11-06 18:31:34.244098304 +0800
++++ crates/kiana-ai/src/api/kiana_messages.rs	2026-11-07 10:44:59.762198484 +0800
+@@ -40,7 +40,7 @@
+ //! 5. `done` / `error` 是终态：读到后立即停止读取，`push` 同时提交 `result()`。
+ //! 6. 流正常结束却没有终态事件 → 生成 `"<provider> stream ended without a terminal event"`。
+ //!
+-//! 本适配器**不做重试**（单次请求；`StreamOptions::max_retries` 等字段被忽略），与 TS 一致。
++//! 本适配器**不做重试**：单次请求，`StreamOptions::max_retries` 等字段被忽略；是否重试由上层调用方决定。
+ //!
+ //! # 协议约束
+ //!
+@@ -126,13 +126,13 @@
+ ///
+ /// 对应线上 `done`/`error` 事件里可选的 `rewrite` 字段。适配器不会把它反序列化成这个
+ /// 结构体，而是把 `rewrite` 的原始 JSON 键值整体放进诊断 details（见
+-/// `append_rewrite_diagnostic`）；本类型只描述形状。字段按 camelCase 序列化，与 TS 一致。
++/// `append_rewrite_diagnostic`）；本类型只描述形状。字段按 camelCase 序列化（线上协议字段名）。
+ #[derive(Debug, Clone, Default, PartialEq, serde::Serialize, serde::Deserialize)]
+ #[serde(rename_all = "camelCase")]
+ pub struct KianaMessagesRewriteImpact {
+     /// 触发重写的策略标识。
+     pub policy_id: String,
+-    /// 策略版本。TS 是 `number`，用 `f64` 保真（协议没有声明必须是整数）。
++    /// 策略版本。协议用 JSON 数字表达，用 `f64` 保真（协议没有声明必须是整数）。
+     pub policy_version: f64,
+     /// 服务端是否实际改写了消息。
+     pub changed: bool,
+@@ -320,11 +320,18 @@
+ 
+ /// JS 的数组下标：`undefined` / 非整数 / 负数都按 `undefined` 处理。
+ ///
+-/// 只接受有限、非负、整数值且不超过 `usize` 的数字。注意这里**没有**按 JS 数组的
+-/// 2^32-2 上限截断（`canonical_array_index` 有）：JS 里 `arr[2^32]` 是普通属性而不是数组
+-/// 元素，这里却会当成合法下标，`set_block` 会为它逐个填充空洞，超大值存在内存放大风险。
++/// 单条消息 content 的最大块数。
++///
++/// JS 的稀疏数组可以在 2^32-2 处赋值而不分配内存；Rust 的 `Vec` 用占位块填洞，
++/// 因此这里必须有实际上限。65k 个内容块远超任何真实响应。
++const MAX_CONTENT_INDEX: usize = 65_536;
++
++/// 只接受有限、非负、整数值，并应用与 [`canonical_array_index`] 相同的上限。
++/// 否则不可信的 `contentIndex`（如 `4000000000`）会让 `set_block` 填充数十亿个
++/// 占位块，耗尽内存。
+ fn as_index(value: f64) -> Option<usize> {
+-    if value.is_finite() && value >= 0.0 && value.fract() == 0.0 && value <= usize::MAX as f64 {
++    if value.is_finite() && value >= 0.0 && value.fract() == 0.0 && value < MAX_CONTENT_INDEX as f64
++    {
+         Some(value as usize)
+     } else {
+         None
+@@ -336,9 +343,8 @@
+ /// JS 里 `arr["0"]` 与 `arr[0]` 是同一个属性；线上 JSON 的 `contentIndex` 若是字符串，
+ /// TS 仍按数组下标处理（只要字符串是规范的 uint32 索引）。
+ ///
+-/// 10 字符上限是充分的：最大合法下标 2^32-2 恰好 10 位。`u32::MAX` 本身（数组长度为
+-/// 2^32 时才会出现）不能作为下标，因此 `>= u32::MAX` 一律拒绝。前导零、负号、小数点与
+-/// 非 ASCII 数字都会落选。
++/// 10 字符上限是充分的：2^32-2 恰好 10 位。除 JS 的数组下标规则外，还应用
++/// [`MAX_CONTENT_INDEX`] 的实际内存上限。前导零、负号、小数点与非 ASCII 数字都会落选。
+ fn canonical_array_index(text: &str) -> Option<usize> {
+     if text.is_empty() || text.len() > 10 {
+         return None;
+@@ -350,8 +356,7 @@
+         return None;
+     }
+     let value: u64 = text.parse().ok()?;
+-    // 2^32 - 1 是数组长度上限，不能作为下标。
+-    if value >= u32::MAX as u64 {
++    if value >= MAX_CONTENT_INDEX as u64 {
+         return None;
+     }
+     Some(value as usize)
+@@ -970,9 +975,8 @@
+     if data.is_empty() || data == "[DONE]" {
+         return Ok(None);
+     }
+-    // TS 是裸 `JSON.parse(data)`：解析失败抛 V8 的 `SyntaxError`，外层 catch 取
+-    // `error.message` 作为 errorMessage。`js_parse` 的文案与 V8 逐字一致，且接受
+-    // JSON.parse 接受的一切输入（孤立代理项、溢出数字）。
++    // 解析失败时把 `js_parse` 的错误消息直接作为 errorMessage：该文案与 V8 一致，
++    // 且接受 `JSON.parse` 接受的一切输入（孤立代理项、溢出数字）。
+     kiana_json::js_parse::parse(&data)
+         .map(Some)
+         .map_err(|error| AiError::new(AiErrorKind::Parse, error.message))
+@@ -992,8 +996,8 @@
+ /// 未消费的 body 直接丢弃。同步处理（切帧/解析/回调）期间不检查取消，因此单个超大帧的
+ /// 处理不会被中途打断。
+ ///
+-/// `on_event` 返回 `true` 时立即 `return Ok(())`，不再读取剩余 body（等价于 TS 生成器的
+-/// `return`，`finally` 释放 reader）。解析错误或 `on_event` 返回 `Err` 也会立即结束，不会
++/// `on_event` 返回 `true` 时立即 `return Ok(())`，不再读取剩余 body（提前返回即丢弃
++/// reader、释放连接）。解析错误或 `on_event` 返回 `Err` 也会立即结束，不会
+ /// 继续消费流。
+ ///
+ /// # 末尾处理
+@@ -1295,7 +1299,7 @@
+     }
+ 
+     // 阶段 3：请求头按 identity → 默认 → 用户 的顺序合并；同名键后者覆盖前者，值为 `None`
+-    // 会删除已有的同名头。注意**不读取 `model.headers`**（与 TS 一致，不同于 Mistral）。
++    // 会删除已有的同名头。注意**不读取 `model.headers`**（该字段只用于 Mistral 适配器）。
+     let identity_headers = get_identity_headers(
+         &ClientIdentityTarget::new(&model.provider, &model.base_url),
+         base.identity.as_ref(),
+@@ -1698,3 +1702,20 @@
+     };
+     phrase.to_string()
+ }
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn numeric_content_index_applies_the_js_array_limit() {
++        assert_eq!(as_index(0.0), Some(0));
++        assert_eq!(as_index(4_000_000_000.0), None);
++        assert_eq!(as_index(70_000.0), None);
++        assert_eq!(as_index(-1.0), None);
++        assert_eq!(as_index(1.5), None);
++        // 字符串路径必须给出同样的上限。
++        assert_eq!(canonical_array_index("4000000000"), None);
++        assert_eq!(canonical_array_index("70000"), None);
++    }
++}
+--- /tmp/kiana-comment-baseline/crates/kiana-ai/src/models/mod.rs	2026-11-07 01:24:06.927694672 +0800
++++ crates/kiana-ai/src/models/mod.rs	2026-11-07 10:37:13.549884582 +0800
+@@ -757,7 +757,7 @@
+ ///
+ /// TS 返回一个新的 `{ ...entry, models: filtered }` 对象，原始数组里的未知模型不会跟着
+ /// 走；Rust 的 [`ModelsStoreEntry::raw_models`] 因此在这里清空（provider 若把 `stored`
+-/// 原样发布回去，行为与 TS 一致：只写过滤后的模型）。
++/// 原样发布回去，持久化的也只有过滤后的模型）。
+ fn with_known_model_types(entry: ModelsStoreEntry) -> ModelsStoreEntry {
+     ModelsStoreEntry {
+         models: entry
+@@ -931,12 +931,28 @@
+     /// 返回 `(generation, controller)`；controller 同时用于组合调用方 signal（见
+     /// `refresh_models`），以及在该 provider 被增删时中止本次刷新。
+     fn begin_provider_refresh(&self, provider_id: &str) -> (u64, Arc<AbortScope>) {
+-        let generation = self.supersede_provider_refresh(provider_id);
+         let controller = Arc::new(AbortScope::new());
+-        self.refresh_controllers
+-            .lock()
+-            .unwrap_or_else(|e| e.into_inner())
+-            .insert(provider_id.to_owned(), Arc::clone(&controller));
++        // 代际自增、移除旧 controller、安装新 controller 必须在同一个临界区完成。
++        // 分成两段时，两个并发刷新都可能在对方插入前先 supersede，结果两个 controller
++        // 同时存在，较早的那个既不会被 abort 也不会被后续 delete 清理。
++        let (generation, previous) = {
++            let mut generations = self
++                .refresh_generations
++                .lock()
++                .unwrap_or_else(|e| e.into_inner());
++            let generation = generations.get(provider_id).copied().unwrap_or(0) + 1;
++            generations.insert(provider_id.to_owned(), generation);
++            let previous = self
++                .refresh_controllers
++                .lock()
++                .unwrap_or_else(|e| e.into_inner())
++                .insert(provider_id.to_owned(), Arc::clone(&controller));
++            (generation, previous)
++        };
++        // 先释放锁再 abort（abort 会同步派发监听器）。
++        if let Some(previous) = previous {
++            previous.abort();
++        }
+         (generation, controller)
+     }
+ 
+@@ -957,8 +973,8 @@
+ /// `publishProviderModels(providerId, generation, signal, publication)`。
+ #[allow(clippy::result_large_err)]
+ ///
+-/// 同一 provider 的发布串行化（每个 provider 一把 `tokio::sync::Mutex` 等价于 TS 的
+-/// Promise 链）；取消或代际变化会丢弃过期发布（过期的 `update` 不执行；若取代发生在存储
++/// 同一 provider 的发布串行化（每个 provider 一把 `tokio::sync::Mutex`，保证发布按序
++/// 执行）；取消或代际变化会丢弃过期发布（过期的 `update` 不执行；若取代发生在存储
+ /// 写入期间，写盘可能已发生，随后由新一代覆盖）。
+ ///
+ /// 执行顺序：取锁 → 检查取消/代际 → 按 persist 写/删存储 → 再检查一次 → 同步执行
+@@ -1413,9 +1429,9 @@
+ 
+ /// `requireChatProvider(model)`：先断言 chat，再查 provider。
+ ///
+-/// 顺序与 TS 一致：非 chat 模型即使 provider 也未注册，报的是「不是 chat 模型」而不是
+-/// 「未知 provider」。两条错误分别是 `types::require_chat` 的错误与 `require_provider` 的
+-/// code `provider`。
++/// 顺序固定：非 chat 模型即使 provider 也未注册，报的是「不是 chat 模型」而不是
++/// 「未知 provider」（先按模型类型给出更精确的错误）。两条错误分别是
++/// `types::require_chat` 的错误与 `require_provider` 的 code `provider`。
+ fn require_chat_provider(
+     state: &ModelsState,
+     model: &Model,
+@@ -2497,7 +2513,7 @@
+         // 整个 async 块等价 TS 的 try：任何一步的 `?` 都跳到下面的 match 错误分支，
+         // 最终不会把 `Err` 泄漏给调用方。
+         let result: Result<AssistantImages, AiError> = async {
+-            // 顺序与 TS 一致：先断言图片模型，再查 provider，再检查能力，最后才解析凭证
++            // 顺序固定：先断言图片模型，再查 provider，再检查能力，最后才解析凭证
+             // （能力缺失时会直接返回，不会走到鉴权/OAuth 刷新）。
+             let any_model = typed_any_model(model);
+             crate::utils::model_operations::assert_image_model(&any_model)
+--- /tmp/kiana-comment-baseline/crates/kiana-coding-agent/src/app.rs	2026-11-05 23:50:59.365422691 +0800
++++ crates/kiana-coding-agent/src/app.rs	2026-11-07 10:49:10.399974003 +0800
+@@ -89,6 +89,7 @@
+ use kiana_core::timings::{TimingLabel, print_timings, reset_timings, time};
+ use kiana_ext_api::types::{ExtensionFlag, InlineExtension};
+ use kiana_interactive::{InteractiveMode, InteractiveModeOptions};
++use kiana_permissions::{RuleDecision, parse_cli_rule};
+ use kiana_resources::loader::{DefaultResourceLoaderOptions, ResourceLoaderReloadOptions};
+ use kiana_rpc_print::{
+     PrintModeOptions, PrintOutputMode, global_raw_stdout, run_print_mode, run_rpc_mode,
+@@ -402,7 +403,7 @@
+ 
+     // 18. 启动设置与诊断。
+     //
+-    // 这里用默认构造（默认信任项目，与 TS 一致）创建启动期实例：它服务于首次设置、
++    // 这里用默认构造（默认信任项目）创建启动期实例：它服务于首次设置、
+     // 主题、sessionDir 与设置诊断。会话运行期会按项目信任结果重建另一个实例。
+     let startup_settings_manager = SettingsManager::create(&cwd, &agent_dir);
+     let startup_settings_diagnostics =
+@@ -593,6 +594,28 @@
+     // 29. 运行期服务与 HTTP 配置。
+     let services = runtime.services();
+     let session = runtime.session();
++    // 命令行权限覆盖：settings/env 已在 `Core::new` 里生效，这里追加优先级更高的
++    // `--permission-mode` / `--allow` / `--deny` / `--add-dir`。Deny 规则仍然优先。
++    if let Some(mode) = parsed.permission_mode {
++        session.set_permission_mode(mode);
++    }
++    let cli_permission_rules = parsed
++        .permission_allow
++        .iter()
++        .filter_map(|spec| parse_cli_rule(spec, RuleDecision::Allow))
++        .chain(
++            parsed
++                .permission_deny
++                .iter()
++                .filter_map(|spec| parse_cli_rule(spec, RuleDecision::Deny)),
++        )
++        .collect::<Vec<_>>();
++    if !cli_permission_rules.is_empty() {
++        session.add_permission_rules(cli_permission_rules);
++    }
++    for dir in &parsed.add_dirs {
++        session.add_permission_directory(dir.clone());
++    }
+     let model_fallback_message = runtime.model_fallback_message();
+     let settings_manager = services.settings_manager.clone();
+     let model_runtime = services.model_runtime.clone();
+@@ -1447,7 +1470,7 @@
+ 
+ /// `createSessionManager(parsed, cwd, sessionDir, settingsManager)`。
+ ///
+-/// 分支顺序与 TS 一致（先命中先返回）：
++/// 分支顺序固定为“先命中先返回”：
+ /// 1. `--no-session` / `--help` / `--list-models`：返回内存会话，不写盘
+ ///    （`get_session_file()` 恒为 `None`）；`--session-id` 仍作为新会话 id，非法 id 会
+ ///    报错。
+@@ -1469,7 +1492,7 @@
+     settings_manager: &SettingsManager,
+     output: &Output,
+ ) -> CliResult<SessionManager> {
+-    // `settings_manager` 只被 `--resume` 选择器使用（与 TS 一致）。
++    // `settings_manager` 只被 `--resume` 选择器使用。
+     //
+     // help/list-models 也需要一个可工作的 SessionManager，但绝不能持久化：否则会得到一个
+     // 持久化的 `SessionManager`（`get_session_file()` 为 `Some`，文件本身仍要等到首条
+--- /tmp/kiana-comment-baseline/crates/kiana-resources/src/bug_report.rs	2026-11-07 01:24:50.131991954 +0800
++++ crates/kiana-resources/src/bug_report.rs	2026-11-07 10:50:43.118629818 +0800
+@@ -281,14 +281,34 @@
+     // 嵌套形式：`foo:https://user:pass@host`（外层不是 URL 的协议前缀）。
+     // TS 的嵌套正则用 `.*` 匹配内层，而 JS 的 `.` 不跨行终止符；因此含 `\n`、`\r`、
+     // U+2028/U+2029 时这里不按嵌套处理，走下面的普通解析路径。
+-    if let Some((scheme, rest)) = split_scheme(value)
++    //
++    // 迭代剥离而不是递归：嵌套层数由输入长度决定，递归会在构造的
++    // `a:a:a:…:https://user:pass@host` 上栈溢出。
++    let mut schemes: Vec<&str> = Vec::new();
++    let mut current = value;
++    while let Some((scheme, rest)) = split_scheme(current)
+         && let Some((_inner, after_inner)) = split_scheme(rest)
+         && after_inner.starts_with("//")
+         && !rest.contains(['\n', '\r', '\u{2028}', '\u{2029}'])
+     {
+-        return format!("{scheme}:{}", redact_url(rest));
++        schemes.push(scheme);
++        current = rest;
+     }
++    let redacted = redact_url_flat(current);
++    if schemes.is_empty() {
++        return redacted;
++    }
++    let mut output = String::with_capacity(value.len());
++    for scheme in schemes {
++        output.push_str(scheme);
++        output.push(':');
++    }
++    output.push_str(&redacted);
++    output
++}
+ 
++/// 单层 URL 的脱敏（不含嵌套协议前缀）。
++fn redact_url_flat(value: &str) -> String {
+     let Ok(mut url) = url::Url::parse(value) else {
+         return value.to_string();
+     };
+@@ -1411,8 +1431,9 @@
+ /// 写入会话的自定义条目数据（`BUG_REPORT_CUSTOM_ENTRY_TYPE` 条目）。
+ /// TS: `bug-report.ts#BugReportSessionEntryData`。
+ ///
+-/// 字段顺序与 TS 一致：`id`、`createdAt`、`hint`、`sessionIncluded`、`summaryIncluded`、
+-/// `delivery`、`path`。`path` 只在 `delivery === "zip"` 时出现（TS 的可选字段）。
++/// 字段顺序是序列化契约（serde 按声明顺序输出，测试逐字锁定）：`id`、`createdAt`、
++/// `hint`、`sessionIncluded`、`summaryIncluded`、`delivery`、`path`。`path` 只在
++/// `delivery === "zip"` 时出现（可选字段）。
+ ///
+ /// 序列化由 serde 属性锁定：`rename_all = "camelCase"` 产生 `createdAt` /
+ /// `sessionIncluded` / `summaryIncluded`；`hint` 为 `None` 时写出 `null`；`path` 带
+@@ -2096,7 +2117,7 @@
+         .map(kiana_json::js_string::js_trim)
+         .filter(|hint| !hint.is_empty());
+ 
+-    // prompt 顺序与 TS 一致：可选的行数提示、<conversation>、可选 <user-report>、指令。
++    // prompt 各段顺序固定（测试锁定）：可选的行数提示、<conversation>、可选 <user-report>、指令。
+     let mut parts: Vec<String> = Vec::new();
+     if messages.len() < options.messages.len() {
+         parts.push(format!(
+@@ -2163,7 +2184,7 @@
+     )
+     .await?;
+ 
+-    // 错误优先级与 TS 一致：取消 → Error/Length → toolCall → 空文本。
++    // 错误优先级固定：取消 → Error/Length → toolCall → 空文本。取消优先，避免被后续错误掩盖。
+     if response.stop_reason == kiana_ai::types::StopReason::Aborted {
+         return Err(BugReportSummaryError::new(
+             "Bug report summary was cancelled",
+@@ -2467,3 +2488,30 @@
+         message: format!("Bug report upload failed: {reason}"),
+     })
+ }
++
++#[cfg(test)]
++mod redact_url_tests {
++    use super::redact_url;
++
++    #[test]
++    fn nested_scheme_prefix_is_redacted() {
++        assert_eq!(
++            redact_url("git:https://user:pass@example.com/x"),
++            "git:https://example.com/x"
++        );
++    }
++
++    #[test]
++    fn long_scheme_prefix_chains_do_not_overflow() {
++        let mut value = String::new();
++        for _ in 0..10_000 {
++            value.push_str("a:");
++        }
++        value.push_str("https://user:pass@example.com/x");
++        // 不是可识别的嵌套形式（每层内层都以另一层协议开头），按普通 URL 原样返回；
++        // 关键是迭代实现不会栈溢出。
++        let redacted = redact_url(&value);
++        assert!(redacted.starts_with("a:a:"));
++        assert!(redacted.ends_with("https://user:pass@example.com/x"));
++    }
++}
+--- /tmp/kiana-comment-baseline/crates/kiana-session/src/agent_session.rs	2026-11-07 09:52:37.664490301 +0800
++++ crates/kiana-session/src/agent_session.rs	2026-11-07 10:45:13.525296087 +0800
+@@ -65,6 +65,7 @@
+ //! `AgentSession` 的公开方法。
+ 
+ use std::collections::{HashMap, HashSet};
++use std::path::PathBuf;
+ use std::rc::Rc;
+ use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+ use std::sync::{Arc, Mutex, MutexGuard, Weak};
+@@ -141,7 +142,10 @@
+     ExtensionErrorListener, ExtensionUiContext, ShutdownHandler, ToolDefinition, ToolExposure,
+     ToolInfo, ToolLoadout,
+ };
+-use kiana_permissions::{PermissionDecision, PermissionEngine, PermissionRequest};
++use kiana_permissions::{
++    PermissionDecision, PermissionEngine, PermissionFlags, PermissionMode, PermissionPolicy,
++    PermissionRequest, PermissionRule,
++};
+ use kiana_resources::loader::{ResourceExtensionPath, ResourceExtensionPaths, ResourceLoader};
+ use kiana_resources::prompts::PromptTemplate;
+ use kiana_resources::system_prompt::{
+@@ -221,7 +225,7 @@
+ 
+ /// `std::io::Error` → Node fs 异常 message（`ENOENT: no such file or directory, open '<path>'`）。
+ ///
+-/// `readFileSync` 的调用方只读取 `error.message`；libuv 的 errno 文案必须逐字一致。
++/// 调用方只读取 `error.message`，errno 文案属当前稳定契约，改动需同步测试。
+ fn node_fs_error_message(syscall: &str, path: &str, error: &std::io::Error) -> String {
+     // Node/libuv 在 read 阶段的 EISDIR 不带路径（`EISDIR: illegal operation on a directory, read`）。
+     if syscall == "read" && error.kind() == std::io::ErrorKind::IsADirectory {
+@@ -800,7 +804,7 @@
+     SessionHeaderMissing,
+     /// recovery omission 无法找到来源条目。
+     RecoveryOmissionUnresolved,
+-    /// 其它（逐字保留 TS 的 message）。
++    /// 其它错误：消息原样透传（Display 直接输出，调用方按文本判断）。
+     Other(String),
+ }
+ 
+@@ -1734,8 +1738,16 @@
+         });
+         agent.set_stream_function(Arc::clone(&standard_stream_function));
+ 
+-        // 环境变量启用时构造权限引擎；未设置时保持 `None`，行为与引入权限层之前一致。
+-        let permissions = PermissionEngine::from_env(cwd.as_str()).map(Arc::new);
++        // settings 的 `permissions` 对象启用权限引擎；命令行 flags 由调用方在会话创建后
++        // 通过 `set_permission_*` 追加。两者都没有配置时回退到环境变量，行为与引入权限层
++        // 之前一致。
++        let permission_settings = settings_manager.get_settings().raw("permissions");
++        let permissions = PermissionEngine::from_settings_and_flags(
++            cwd.as_str(),
++            permission_settings.as_ref(),
++            &PermissionFlags::default(),
++        )
++        .map(Arc::new);
+ 
+         Core {
+             agent,
+@@ -3058,6 +3070,67 @@
+         self.refusal_for(&engine, &request).await
+     }
+ 
++    /// 运行期切换权限模式。
++    ///
++    /// 引擎尚未启用时新建一个（默认使用会话 cwd 作为工作区根）；这样 CLI 的
++    /// `--permission-mode` 不依赖 settings 必须存在。
++    fn set_permission_mode(&self, mode: PermissionMode) {
++        let mut guard = lock(&self.permissions);
++        match guard.as_ref() {
++            Some(engine) => engine.set_mode(mode),
++            None => {
++                *guard = Some(Arc::new(PermissionEngine::new(PermissionPolicy::new(
++                    mode,
++                    self.cwd.as_str(),
++                ))));
++            }
++        }
++    }
++
++    /// 替换全部权限规则。
++    fn set_permission_rules(&self, rules: Vec<PermissionRule>) {
++        let mut guard = lock(&self.permissions);
++        match guard.as_ref() {
++            Some(engine) => engine.set_rules(rules),
++            None => {
++                let mut policy = PermissionPolicy::new(PermissionMode::Default, self.cwd.as_str());
++                policy.rules = rules;
++                *guard = Some(Arc::new(PermissionEngine::new(policy)));
++            }
++        }
++    }
++
++    /// 追加权限规则（不覆盖 settings/env 已有的规则）。
++    fn add_permission_rules(&self, rules: impl IntoIterator<Item = PermissionRule>) {
++        let rules: Vec<PermissionRule> = rules.into_iter().collect();
++        if rules.is_empty() {
++            return;
++        }
++        let mut guard = lock(&self.permissions);
++        match guard.as_ref() {
++            Some(engine) => engine.add_rules(rules),
++            None => {
++                let mut policy = PermissionPolicy::new(PermissionMode::Default, self.cwd.as_str());
++                policy.rules = rules;
++                *guard = Some(Arc::new(PermissionEngine::new(policy)));
++            }
++        }
++    }
++
++    /// 追加一个可写工作区根（CLI `--add-dir`）。
++    fn add_permission_directory(&self, path: impl Into<PathBuf>) {
++        let path = path.into();
++        let mut guard = lock(&self.permissions);
++        match guard.as_ref() {
++            Some(engine) => engine.add_workspace_root(path),
++            None => {
++                let policy = PermissionPolicy::new(PermissionMode::Default, self.cwd.as_str())
++                    .with_workspace_roots(vec![self.cwd.clone().into(), path]);
++                *guard = Some(Arc::new(PermissionEngine::new(policy)));
++            }
++        }
++    }
++
+     /// 权限检查用的参数：bash 工具实际执行的是 `prefix + "\n" + command`
+     /// （`ShellExecute`），权限层必须看到同一份文本，否则前缀里的危险命令不会被检查，
+     /// 审批 key 也与实际执行不一致。
+@@ -8214,6 +8287,38 @@
+         let _ = self.core.settings_manager.set_retry_enabled(enabled);
+     }
+ 
++    // -- permissions --------------------------------------------------------
++
++    /// 运行期切换权限模式。
++    ///
++    /// 模式在下一个工具调用立即生效；切换会清空本会话的「总是允许」记录。引擎尚未启用
++    /// 时（settings/env 都没有配置）会创建一个默认策略的引擎。
++    pub fn set_permission_mode(&self, mode: PermissionMode) {
++        self.core.set_permission_mode(mode);
++    }
++
++    /// 替换全部权限规则。
++    pub fn set_permission_rules(&self, rules: Vec<PermissionRule>) {
++        self.core.set_permission_rules(rules);
++    }
++
++    /// 追加权限规则（保留 settings/env 已有的规则）。
++    pub fn add_permission_rules(&self, rules: impl IntoIterator<Item = PermissionRule>) {
++        self.core.add_permission_rules(rules);
++    }
++
++    /// 追加一个可写工作区根（CLI `--add-dir`）。
++    pub fn add_permission_directory(&self, path: impl Into<PathBuf>) {
++        self.core.add_permission_directory(path);
++    }
++
++    /// 当前权限模式；权限引擎未启用时返回 `None`。
++    pub fn permission_mode(&self) -> Option<PermissionMode> {
++        lock(&self.core.permissions)
++            .as_ref()
++            .map(|engine| engine.mode())
++    }
++
+     // -- bash ---------------------------------------------------------------
+ 
+     /// `executeBash(command, onChunk?, options?)`。

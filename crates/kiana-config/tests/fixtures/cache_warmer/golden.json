@@ -1,0 +1,557 @@
+{
+  "models": {
+    "adaptive": {
+      "id": "claude-opus-4-6",
+      "name": "Claude Opus 4.6",
+      "api": "anthropic-messages",
+      "provider": "anthropic",
+      "baseUrl": "https://api.anthropic.com",
+      "reasoning": true,
+      "input": [
+        "text",
+        "image"
+      ],
+      "cost": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
+      },
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "thinkingLevelMap": {
+        "max": "max"
+      },
+      "compat": {
+        "forceAdaptiveThinking": true,
+        "supportsStrictTools": true
+      },
+      "promptCache": {
+        "short": 300,
+        "long": 3600
+      },
+      "inputLimits": {
+        "maxRequestBytes": 33554432,
+        "images": {
+          "maxPerRequest": 600,
+          "resize": {
+            "maxWidth": 2000,
+            "maxHeight": 2000,
+            "maxBytes": 4718592,
+            "jpegQuality": 80
+          }
+        }
+      },
+      "type": "chat"
+    },
+    "budget": {
+      "id": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5 (latest)",
+      "api": "anthropic-messages",
+      "provider": "anthropic",
+      "baseUrl": "https://api.anthropic.com",
+      "reasoning": true,
+      "input": [
+        "text",
+        "image"
+      ],
+      "cost": {
+        "input": 3,
+        "output": 15,
+        "cacheRead": 0.3,
+        "cacheWrite": 3.75
+      },
+      "contextWindow": 200000,
+      "maxTokens": 64000,
+      "compat": {
+        "supportsStrictTools": true
+      },
+      "promptCache": {
+        "short": 300,
+        "long": 3600
+      },
+      "inputLimits": {
+        "maxRequestBytes": 33554432,
+        "images": {
+          "maxPerRequest": 100,
+          "resize": {
+            "maxWidth": 2000,
+            "maxHeight": 2000,
+            "maxBytes": 4718592,
+            "jpegQuality": 80
+          }
+        }
+      },
+      "type": "chat"
+    },
+    "openai": {
+      "id": "gpt-5",
+      "name": "GPT-5",
+      "api": "openai-responses",
+      "provider": "openai",
+      "baseUrl": "https://api.openai.com/v1",
+      "reasoning": true,
+      "input": [
+        "text",
+        "image"
+      ],
+      "cost": {
+        "input": 1.25,
+        "output": 10,
+        "cacheRead": 0.125,
+        "cacheWrite": 0
+      },
+      "contextWindow": 400000,
+      "maxTokens": 128000,
+      "thinkingLevelMap": {
+        "off": null,
+        "minimal": "minimal",
+        "low": "low",
+        "medium": "medium",
+        "high": "high",
+        "xhigh": null,
+        "max": null
+      },
+      "compat": {
+        "supportsStrictMode": true,
+        "supportsOpenAIGrammarTools": true
+      },
+      "inputLimits": {
+        "maxRequestBytes": 536870912,
+        "images": {
+          "maxPerRequest": 1500,
+          "resize": {
+            "maxWidth": 2000,
+            "maxHeight": 2000,
+            "maxBytes": 4718592,
+            "jpegQuality": 80
+          }
+        }
+      },
+      "type": "chat",
+      "promptCache": {
+        "short": 300,
+        "long": 86400
+      }
+    },
+    "unknown": {
+      "id": "claude-opus-4-6",
+      "name": "Claude Opus 4.6",
+      "api": "anthropic-messages",
+      "provider": "anthropic",
+      "baseUrl": "https://api.anthropic.com",
+      "reasoning": true,
+      "input": [
+        "text",
+        "image"
+      ],
+      "cost": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
+      },
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "thinkingLevelMap": {
+        "max": "max"
+      },
+      "compat": {
+        "forceAdaptiveThinking": true,
+        "supportsStrictTools": true
+      },
+      "inputLimits": {
+        "maxRequestBytes": 33554432,
+        "images": {
+          "maxPerRequest": 600,
+          "resize": {
+            "maxWidth": 2000,
+            "maxHeight": 2000,
+            "maxBytes": 4718592,
+            "jpegQuality": 80
+          }
+        }
+      },
+      "type": "chat"
+    }
+  },
+  "eligibility": {
+    "ttls": [
+      300000,
+      3600000,
+      null,
+      3600000,
+      86400000,
+      null
+    ],
+    "delays": [
+      270000,
+      50000,
+      null
+    ],
+    "replayable": [
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  "economics": {
+    "cacheHitCost": 0.049999999999999996,
+    "cacheMissCost": 0.625,
+    "warmCost": 0.05002499999999999,
+    "missCost": 0.575
+  },
+  "statuses": [
+    {
+      "name": "inactive without decision",
+      "status": {
+        "state": "inactive",
+        "reason": "waiting for first request"
+      },
+      "now": 0,
+      "formatted": "Inactive (waiting for first request)"
+    },
+    {
+      "name": "inactive without reason",
+      "status": {
+        "state": "inactive"
+      },
+      "now": 0,
+      "formatted": "Inactive (unknown reason)"
+    },
+    {
+      "name": "scheduled decision",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 222000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.6,
+          "expectedSavings": 0.36,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision in 3m 42s (60% continuation probability, expected savings $0.360 >= $0.050 -> warm)"
+    },
+    {
+      "name": "decision now",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 0,
+        "decision": {
+          "phase": "streaming",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 1,
+          "expectedSavings": 0.608,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision now (100% continuation probability while agent is running, expected savings $0.608 >= $0.050 -> warm)"
+    },
+    {
+      "name": "stopped below threshold",
+      "status": {
+        "state": "inactive",
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.6,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": -0.50685,
+          "economicsAvailable": true,
+          "action": "stop"
+        },
+        "extensionOverride": false
+      },
+      "now": 0,
+      "formatted": "Stopped (15% continuation probability, expected savings -$0.507 < $0.050 -> stop)"
+    },
+    {
+      "name": "stopped by extension",
+      "status": {
+        "state": "inactive",
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.6,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": -0.50685,
+          "economicsAvailable": true,
+          "action": "stop"
+        },
+        "extensionOverride": true
+      },
+      "now": 0,
+      "formatted": "Stopped (extension override, 15% continuation probability, expected savings -$0.507 < $0.050)"
+    },
+    {
+      "name": "inactive economics unavailable",
+      "status": {
+        "state": "inactive",
+        "reason": "cache economics unavailable",
+        "decision": {
+          "phase": "streaming",
+          "warmCost": 0,
+          "missCost": 0,
+          "continuationProbability": 1,
+          "expectedSavings": 0,
+          "economicsAvailable": false,
+          "action": "stop"
+        },
+        "extensionOverride": false
+      },
+      "now": 0,
+      "formatted": "Inactive (cache economics unavailable)"
+    },
+    {
+      "name": "refreshing",
+      "status": {
+        "state": "refreshing",
+        "nextWarmAt": 60000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": 0.08015,
+          "economicsAvailable": true,
+          "action": "warm"
+        },
+        "extensionOverride": true
+      },
+      "now": 0,
+      "formatted": "Warming cache (extension override, 15% continuation probability, expected savings $0.080 >= $0.050)"
+    },
+    {
+      "name": "decision hours",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 3723000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": 0.08015,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision in 1h 2m 3s (15% continuation probability, expected savings $0.080 >= $0.050 -> warm)"
+    },
+    {
+      "name": "decision minutes only",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 120000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": 0.08015,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision in 2m (15% continuation probability, expected savings $0.080 >= $0.050 -> warm)"
+    },
+    {
+      "name": "decision seconds only",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 42500,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": 0.08015,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision in 43s (15% continuation probability, expected savings $0.080 >= $0.050 -> warm)"
+    },
+    {
+      "name": "negative expected savings formatting",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 1000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 1.5,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": -1.40685,
+          "economicsAvailable": true,
+          "action": "stop"
+        }
+      },
+      "now": 0,
+      "formatted": "Decision in 1s (15% continuation probability, expected savings -$1.407 < $0.050 -> stop)"
+    },
+    {
+      "name": "future now",
+      "status": {
+        "state": "scheduled",
+        "nextWarmAt": 10000,
+        "decision": {
+          "phase": "idle",
+          "warmCost": 0.013,
+          "missCost": 0.621,
+          "continuationProbability": 0.15,
+          "expectedSavings": 0.08015,
+          "economicsAvailable": true,
+          "action": "warm"
+        }
+      },
+      "now": 20000,
+      "formatted": "Decision now (15% continuation probability, expected savings $0.080 >= $0.050 -> warm)"
+    }
+  ],
+  "usages": [
+    {
+      "entry": {
+        "type": "usage",
+        "id": "a",
+        "parentId": null,
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "kind": "cache_warm",
+        "provider": "anthropic",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 0,
+          "output": 1,
+          "cacheRead": 100,
+          "cacheWrite": 0,
+          "totalTokens": 101,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0.02940725,
+            "cacheWrite": 0,
+            "total": 0.02949725
+          }
+        }
+      },
+      "formatted": "Cache warmed: $0.029497"
+    },
+    {
+      "entry": {
+        "type": "usage",
+        "id": "b",
+        "parentId": null,
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "kind": "cache_warm",
+        "provider": "anthropic",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 0,
+          "output": 1,
+          "cacheRead": 100,
+          "cacheWrite": 0,
+          "totalTokens": 101,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0.02940725,
+            "cacheWrite": 0,
+            "total": 0.02949725
+          }
+        },
+        "note": "extension override"
+      },
+      "formatted": "Cache warmed (extension override): $0.029497"
+    },
+    {
+      "entry": {
+        "type": "usage",
+        "id": "c",
+        "parentId": null,
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "kind": "cache_warm",
+        "provider": "anthropic",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 0,
+          "output": 1,
+          "cacheRead": 100,
+          "cacheWrite": 0,
+          "totalTokens": 101,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        }
+      },
+      "formatted": "Cache warmed: $0.000"
+    },
+    {
+      "entry": {
+        "type": "usage",
+        "id": "d",
+        "parentId": null,
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "kind": "cache_warm",
+        "provider": "anthropic",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 0,
+          "output": 1,
+          "cacheRead": 100,
+          "cacheWrite": 0,
+          "totalTokens": 101,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0.00004,
+            "cacheWrite": 0,
+            "total": 0.00004
+          }
+        }
+      },
+      "formatted": "Cache warmed: $0.00004"
+    },
+    {
+      "entry": {
+        "type": "usage",
+        "id": "e",
+        "parentId": null,
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "kind": "cache_warm",
+        "provider": "anthropic",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 0,
+          "output": 1,
+          "cacheRead": 100,
+          "cacheWrite": 0,
+          "totalTokens": 101,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 12.3456789,
+            "cacheWrite": 0,
+            "total": 12.3456789
+          }
+        }
+      },
+      "formatted": "Cache warmed: $12.345679"
+    }
+  ]
+}

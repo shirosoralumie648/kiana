@@ -1,0 +1,58 @@
+Fetching models from models.dev API...
+Fetching models from NVIDIA NIM API...
+Fetched 85 model IDs from NVIDIA NIM
+Loaded 814 tool-capable models from models.dev
+Fetching classifier models from models.dev API...
+Fetching models from OpenRouter API...
+Fetched 397 tool-capable, 63 image, and 30 classifier models from OpenRouter
+Fetching models from Vercel AI Gateway API...
+Fetched 303 tool-capable and 14 classifier models from Vercel AI Gateway
+Fetching models from Radius API...
+Fetched 32 models from Radius
+Generated JSON model catalog under /home/ctyun/kiana-work/scratch/kiana-ai__catalog-tooling/golden-trimmed
+
+Model Statistics:
+  Total tool-capable models: 1602
+  Reasoning-capable models: 1361
+  amazon-bedrock: 194 chat models, 0 image models, 0 classifier models
+  anthropic: 17 chat models, 0 image models, 0 classifier models
+  google: 24 chat models, 0 image models, 0 classifier models
+  google-vertex: 14 chat models, 0 image models, 0 classifier models
+  openai: 43 chat models, 0 image models, 1 classifier models
+  groq: 7 chat models, 0 image models, 0 classifier models
+  cerebras: 2 chat models, 0 image models, 0 classifier models
+  cloudflare-workers-ai: 19 chat models, 0 image models, 5 classifier models
+  cloudflare-ai-gateway: 58 chat models, 0 image models, 0 classifier models
+  xai: 4 chat models, 0 image models, 0 classifier models
+  meta: 6 chat models, 0 image models, 0 classifier models
+  zai: 7 chat models, 0 image models, 0 classifier models
+  zai-coding-cn: 4 chat models, 0 image models, 0 classifier models
+  mistral: 32 chat models, 0 image models, 0 classifier models
+  huggingface: 78 chat models, 0 image models, 0 classifier models
+  fireworks: 29 chat models, 0 image models, 0 classifier models
+  nvidia: 22 chat models, 0 image models, 0 classifier models
+  together: 15 chat models, 0 image models, 0 classifier models
+  baseten: 14 chat models, 0 image models, 0 classifier models
+  opencode: 80 chat models, 0 image models, 2 classifier models
+  opencode-go: 30 chat models, 0 image models, 0 classifier models
+  github-copilot: 27 chat models, 0 image models, 0 classifier models
+  minimax: 4 chat models, 0 image models, 0 classifier models
+  minimax-cn: 4 chat models, 0 image models, 0 classifier models
+  kimi-coding: 6 chat models, 0 image models, 0 classifier models
+  moonshotai: 6 chat models, 0 image models, 0 classifier models
+  moonshotai-cn: 6 chat models, 0 image models, 0 classifier models
+  xiaomi: 3 chat models, 0 image models, 0 classifier models
+  xiaomi-token-plan-cn: 2 chat models, 0 image models, 0 classifier models
+  xiaomi-token-plan-ams: 2 chat models, 0 image models, 0 classifier models
+  xiaomi-token-plan-sgp: 2 chat models, 0 image models, 0 classifier models
+  qwen-token-plan: 21 chat models, 0 image models, 0 classifier models
+  qwen-token-plan-individual: 9 chat models, 0 image models, 0 classifier models
+  qwen-token-plan-cn: 21 chat models, 0 image models, 0 classifier models
+  openrouter: 399 chat models, 63 image models, 30 classifier models
+  vercel-ai-gateway: 303 chat models, 0 image models, 14 classifier models
+  radius: 32 chat models, 0 image models, 0 classifier models
+  deepseek: 2 chat models, 0 image models, 0 classifier models
+  ant-ling: 3 chat models, 0 image models, 0 classifier models
+  openai-codex: 7 chat models, 0 image models, 0 classifier models
+  azure: 44 chat models, 0 image models, 0 classifier models
+  typesafe: 0 chat models, 0 image models, 1 classifier models

@@ -1,0 +1,263 @@
+{
+  "all": [
+    "aaa-trace",
+    "mmm-trace",
+    "zzz-trace",
+    "half-trace",
+    "zero-trace"
+  ],
+  "cursorCases": [
+    {
+      "cursor": "[\"1000\",\"a\"]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,[\"0\"]]",
+      "ids": [
+        "aaa-trace",
+        "mmm-trace",
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,{}]",
+      "ids": [
+        "aaa-trace",
+        "mmm-trace",
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "{\"0\":1000,\"1\":\"a\"}",
+      "ids": [
+        "aaa-trace",
+        "mmm-trace",
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,null]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,true]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,[\"mmm-trace\"]]",
+      "ids": [
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[null,\"a\"]",
+      "ids": []
+    },
+    {
+      "cursor": "\"1000\"",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "\"2\"",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "{\"0\":\"1\",\"1\":\"0\"}",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "{\"0\":0.5,\"1\":\"a\"}",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[[0.5],\"a\"]",
+      "ids": [
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[0.5,\"a\"]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[\"0.5\",\"a\"]",
+      "ids": [
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "\"  \"",
+      "ids": []
+    },
+    {
+      "cursor": "\"0.5\"",
+      "ids": []
+    },
+    {
+      "cursor": "[1000,\"`\"]",
+      "ids": [
+        "aaa-trace",
+        "mmm-trace",
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,\"{\"]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,\"aaa\"]",
+      "ids": [
+        "aaa-trace",
+        "mmm-trace",
+        "zzz-trace",
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,\"�-trace\"]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "[[1000],\"a\"]",
+      "ids": [
+        "half-trace",
+        "zero-trace"
+      ]
+    },
+    {
+      "cursor": "\"ab\"",
+      "ids": []
+    },
+    {
+      "cursor": "5",
+      "ids": []
+    }
+  ],
+  "numericCases": [
+    {
+      "cursor": "[1000,5]",
+      "ids": [
+        "10",
+        "9"
+      ]
+    },
+    {
+      "cursor": "[1000,\"5\"]",
+      "ids": [
+        "9",
+        "abc"
+      ]
+    },
+    {
+      "cursor": "[1000,[5]]",
+      "ids": [
+        "9",
+        "abc"
+      ]
+    },
+    {
+      "cursor": "[1000,true]",
+      "ids": [
+        "10",
+        "9"
+      ]
+    },
+    {
+      "cursor": "[1000,null]",
+      "ids": [
+        "10",
+        "9"
+      ]
+    }
+  ],
+  "astralOrder": [
+    "aaa-trace",
+    "😀-trace",
+    "�-trace"
+  ],
+  "astralCursors": [
+    {
+      "cursor": "[1000,\"aaa-trace\"]",
+      "ids": [
+        "😀-trace",
+        "�-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,\"😀-trace\"]",
+      "ids": [
+        "�-trace"
+      ]
+    },
+    {
+      "cursor": "[1000,\"�-trace\"]",
+      "ids": []
+    }
+  ],
+  "nan": {
+    "names": [
+      [
+        "nan"
+      ],
+      [
+        "nan",
+        "zero"
+      ]
+    ],
+    "hasCursor": [
+      true,
+      false
+    ],
+    "cursorIsNullStarted": true,
+    "resumeNames": []
+  }
+}

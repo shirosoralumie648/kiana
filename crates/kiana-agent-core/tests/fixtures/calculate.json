@@ -1,0 +1,162 @@
+[
+  {
+    "expression": "123 * 456",
+    "text": "123 * 456 = 56088",
+    "error": null
+  },
+  {
+    "expression": "5 + 3",
+    "text": "5 + 3 = 8",
+    "error": null
+  },
+  {
+    "expression": "2+2",
+    "text": "2+2 = 4",
+    "error": null
+  },
+  {
+    "expression": "1 + 2 * 3",
+    "text": "1 + 2 * 3 = 7",
+    "error": null
+  },
+  {
+    "expression": "(1 + 2) * 3",
+    "text": "(1 + 2) * 3 = 9",
+    "error": null
+  },
+  {
+    "expression": "2 ** 10",
+    "text": "2 ** 10 = 1024",
+    "error": null
+  },
+  {
+    "expression": "2 ** 3 ** 2",
+    "text": "2 ** 3 ** 2 = 512",
+    "error": null
+  },
+  {
+    "expression": "10 % 3",
+    "text": "10 % 3 = 1",
+    "error": null
+  },
+  {
+    "expression": "2 * 3 % 4",
+    "text": "2 * 3 % 4 = 2",
+    "error": null
+  },
+  {
+    "expression": "5 - 2 - 1",
+    "text": "5 - 2 - 1 = 2",
+    "error": null
+  },
+  {
+    "expression": "7 / 2",
+    "text": "7 / 2 = 3.5",
+    "error": null
+  },
+  {
+    "expression": "1 / 3",
+    "text": "1 / 3 = 0.3333333333333333",
+    "error": null
+  },
+  {
+    "expression": "0.1 + 0.2",
+    "text": "0.1 + 0.2 = 0.30000000000000004",
+    "error": null
+  },
+  {
+    "expression": "1.5 * 2",
+    "text": "1.5 * 2 = 3",
+    "error": null
+  },
+  {
+    "expression": ".5 + .5",
+    "text": ".5 + .5 = 1",
+    "error": null
+  },
+  {
+    "expression": "1e21 * 1",
+    "text": "1e21 * 1 = 1e+21",
+    "error": null
+  },
+  {
+    "expression": "1e-7 * 1",
+    "text": "1e-7 * 1 = 1e-7",
+    "error": null
+  },
+  {
+    "expression": "123456789012345680000 * 1",
+    "text": "123456789012345680000 * 1 = 123456789012345680000",
+    "error": null
+  },
+  {
+    "expression": "-(3 + 4)",
+    "text": "-(3 + 4) = -7",
+    "error": null
+  },
+  {
+    "expression": "+5",
+    "text": "+5 = 5",
+    "error": null
+  },
+  {
+    "expression": "0 / 0",
+    "text": "0 / 0 = NaN",
+    "error": null
+  },
+  {
+    "expression": "1 / 0",
+    "text": "1 / 0 = Infinity",
+    "error": null
+  },
+  {
+    "expression": "-1 / 0",
+    "text": "-1 / 0 = -Infinity",
+    "error": null
+  },
+  {
+    "expression": "1e308 * 10",
+    "text": "1e308 * 10 = Infinity",
+    "error": null
+  },
+  {
+    "expression": "1e400",
+    "text": "1e400 = Infinity",
+    "error": null
+  },
+  {
+    "expression": "0 * -1",
+    "text": "0 * -1 = 0",
+    "error": null
+  },
+  {
+    "expression": "-0.0 + 0",
+    "text": "-0.0 + 0 = 0",
+    "error": null
+  },
+  {
+    "expression": "2.5e-3 + 1",
+    "text": "2.5e-3 + 1 = 1.0025",
+    "error": null
+  },
+  {
+    "expression": "9007199254740993 + 0",
+    "text": "9007199254740993 + 0 = 9007199254740992",
+    "error": null
+  },
+  {
+    "expression": "999999999999999999999 + 1",
+    "text": "999999999999999999999 + 1 = 1e+21",
+    "error": null
+  },
+  {
+    "expression": "0x10 + 1",
+    "text": "0x10 + 1 = 17",
+    "error": null
+  },
+  {
+    "expression": "  42  ",
+    "text": "  42   = 42",
+    "error": null
+  }
+]

@@ -1,0 +1,1478 @@
+{
+  "requests": [
+    {
+      "id": 1,
+      "op": "lstat",
+      "json": {
+        "path": "<root>/a.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 2,
+      "op": "lstat",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 3,
+      "op": "lstat",
+      "json": {
+        "path": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 4,
+      "op": "realpath",
+      "json": {
+        "path": "<root>/dir"
+      },
+      "payload": null
+    },
+    {
+      "id": 5,
+      "op": "realpath",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 6,
+      "op": "write",
+      "json": {
+        "path": "<root>/new.txt",
+        "parents": true
+      },
+      "payload": "hello"
+    },
+    {
+      "id": 7,
+      "op": "write",
+      "json": {
+        "path": "<root>/sub/deep/new.txt",
+        "parents": true,
+        "keep": true
+      },
+      "payload": "hello"
+    },
+    {
+      "id": 8,
+      "op": "write",
+      "json": {
+        "path": "<root>/a.txt",
+        "append": true
+      },
+      "payload": "!"
+    },
+    {
+      "id": 9,
+      "op": "write",
+      "json": {
+        "path": "<root>/no/parent.txt",
+        "parents": false
+      },
+      "payload": "x"
+    },
+    {
+      "id": 10,
+      "op": "truncate",
+      "json": {
+        "path": "<root>/a.txt",
+        "size": 3
+      },
+      "payload": null
+    },
+    {
+      "id": 11,
+      "op": "truncate",
+      "json": {
+        "path": "<root>/missing",
+        "size": 0
+      },
+      "payload": null
+    },
+    {
+      "id": 12,
+      "op": "truncate",
+      "json": {
+        "path": "<root>/a.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 13,
+      "op": "fsync",
+      "json": {
+        "path": "<root>/a.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 14,
+      "op": "fsync",
+      "json": {
+        "path": "<root>/dir"
+      },
+      "payload": null
+    },
+    {
+      "id": 15,
+      "op": "fsync",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 16,
+      "op": "rename",
+      "json": {
+        "path": "<root>/new.txt",
+        "to": "<root>/renamed.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 17,
+      "op": "rename",
+      "json": {
+        "path": "<root>/missing",
+        "to": "<root>/x"
+      },
+      "payload": null
+    },
+    {
+      "id": 18,
+      "op": "mkdir",
+      "json": {
+        "path": "<root>/made",
+        "recursive": false
+      },
+      "payload": null
+    },
+    {
+      "id": 19,
+      "op": "mkdir",
+      "json": {
+        "path": "<root>/made",
+        "recursive": false
+      },
+      "payload": null
+    },
+    {
+      "id": 20,
+      "op": "mkdir",
+      "json": {
+        "path": "<root>/x/y/z",
+        "recursive": true
+      },
+      "payload": null
+    },
+    {
+      "id": 21,
+      "op": "mkdir",
+      "json": {
+        "path": "<root>/a.txt/x",
+        "recursive": true
+      },
+      "payload": null
+    },
+    {
+      "id": 22,
+      "op": "mkdir",
+      "json": {
+        "path": "<root>/file/x",
+        "recursive": true
+      },
+      "payload": null
+    },
+    {
+      "id": 23,
+      "op": "rm",
+      "json": {
+        "path": "<root>/a.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 24,
+      "op": "rm",
+      "json": {
+        "path": "<root>/a.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 25,
+      "op": "rm",
+      "json": {
+        "path": "<root>/a.txt",
+        "force": true
+      },
+      "payload": null
+    },
+    {
+      "id": 26,
+      "op": "rm",
+      "json": {
+        "path": "<root>/dir"
+      },
+      "payload": null
+    },
+    {
+      "id": 27,
+      "op": "rm",
+      "json": {
+        "path": "<root>/dir",
+        "recursive": true
+      },
+      "payload": null
+    },
+    {
+      "id": 28,
+      "op": "mkdtemp",
+      "json": {
+        "path": "<root>/prefix-"
+      },
+      "payload": null
+    },
+    {
+      "id": 29,
+      "op": "mkdtemp",
+      "json": {
+        "path": "<root>/missing/prefix-"
+      },
+      "payload": null
+    },
+    {
+      "id": 30,
+      "op": "open",
+      "json": {
+        "path": "<root>/renamed.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 31,
+      "op": "open",
+      "json": {
+        "path": "<root>/dir"
+      },
+      "payload": null
+    },
+    {
+      "id": 32,
+      "op": "open",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 33,
+      "op": "open",
+      "json": {
+        "path": "<root>/renamed.txt",
+        "mode": "read"
+      },
+      "payload": null
+    },
+    {
+      "id": 34,
+      "op": "open",
+      "json": {
+        "path": "<root>/renamed.txt",
+        "noFollow": true
+      },
+      "payload": null
+    },
+    {
+      "id": 35,
+      "op": "open",
+      "json": {
+        "path": "<root>/dir",
+        "mode": "read"
+      },
+      "payload": null
+    },
+    {
+      "id": 36,
+      "op": "opendir",
+      "json": {
+        "path": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 37,
+      "op": "opendir",
+      "json": {
+        "path": "<root>/renamed.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 38,
+      "op": "opendir",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 39,
+      "op": "scanLines",
+      "json": {
+        "handle": 2,
+        "startLine": 0
+      },
+      "payload": null
+    },
+    {
+      "id": 40,
+      "op": "scanLines",
+      "json": {
+        "handle": 2,
+        "startLine": 0,
+        "endLine": 1
+      },
+      "payload": null
+    },
+    {
+      "id": 41,
+      "op": "scanLines",
+      "json": {
+        "handle": 2,
+        "startLine": 5
+      },
+      "payload": null
+    },
+    {
+      "id": 42,
+      "op": "scanLines",
+      "json": {
+        "handle": 2,
+        "startLine": 2,
+        "endLine": 2
+      },
+      "payload": null
+    },
+    {
+      "id": 43,
+      "op": "scanLines",
+      "json": {
+        "handle": 2,
+        "startLine": 0,
+        "endLine": "x"
+      },
+      "payload": null
+    },
+    {
+      "id": 44,
+      "op": "pread",
+      "json": {
+        "handle": 2,
+        "offset": 1,
+        "length": 2
+      },
+      "payload": null
+    },
+    {
+      "id": 45,
+      "op": "pread",
+      "json": {
+        "handle": 2,
+        "length": 10
+      },
+      "payload": null
+    },
+    {
+      "id": 46,
+      "op": "fstat",
+      "json": {
+        "handle": 2
+      },
+      "payload": null
+    },
+    {
+      "id": 47,
+      "op": "readdir",
+      "json": {
+        "handle": 999,
+        "max": 10
+      },
+      "payload": null
+    },
+    {
+      "id": 48,
+      "op": "readdir",
+      "json": {
+        "handle": 0,
+        "max": 10
+      },
+      "payload": null
+    },
+    {
+      "id": 49,
+      "op": "close",
+      "json": {
+        "handle": 999
+      },
+      "payload": null
+    },
+    {
+      "id": 50,
+      "op": "close",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 51,
+      "op": "pread",
+      "json": {
+        "handle": 999,
+        "length": 10
+      },
+      "payload": null
+    },
+    {
+      "id": 52,
+      "op": "fstat",
+      "json": {
+        "handle": 999
+      },
+      "payload": null
+    },
+    {
+      "id": 53,
+      "op": "scanLines",
+      "json": {
+        "handle": 999,
+        "startLine": 0
+      },
+      "payload": null
+    },
+    {
+      "id": 54,
+      "op": "writeChunk",
+      "json": {
+        "handle": 999
+      },
+      "payload": "x"
+    },
+    {
+      "id": 55,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 56,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>",
+        "maxEntries": 2
+      },
+      "payload": null
+    },
+    {
+      "id": 57,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>",
+        "maxBytes": 8
+      },
+      "payload": null
+    },
+    {
+      "id": 58,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>",
+        "timeoutMs": 0
+      },
+      "payload": null
+    },
+    {
+      "id": 59,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 60,
+      "op": "listFiles",
+      "json": {
+        "path": "<root>/renamed.txt"
+      },
+      "payload": null
+    },
+    {
+      "id": 61,
+      "op": "listFiles",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 62,
+      "op": "lstat",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 63,
+      "op": "exec",
+      "json": {
+        "argv": [
+          "sh",
+          "-c",
+          "printf out; printf err >&2; exit 3"
+        ],
+        "cwd": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 64,
+      "op": "exec",
+      "json": {
+        "argv": [
+          "sh",
+          "-c",
+          "printf 'a\\nb\\nc\\n'"
+        ],
+        "cwd": "<root>",
+        "window": {
+          "maxBytes": 4,
+          "maxLines": 1,
+          "minIntervalMs": 0,
+          "bytesPerSecond": 1000000000000
+        }
+      },
+      "payload": null
+    },
+    {
+      "id": 65,
+      "op": "exec",
+      "json": {
+        "command": "echo hi",
+        "cwd": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 66,
+      "op": "exec",
+      "json": {
+        "command": "true",
+        "cwd": "<root>/missing"
+      },
+      "payload": null
+    },
+    {
+      "id": 67,
+      "op": "exec",
+      "json": {
+        "argv": [],
+        "cwd": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 68,
+      "op": "exec",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 69,
+      "op": "exec",
+      "json": {
+        "argv": [
+          "sh",
+          "-c",
+          "kill -TERM $$"
+        ],
+        "cwd": "<root>"
+      },
+      "payload": null
+    },
+    {
+      "id": 70,
+      "op": "exec",
+      "json": {
+        "argv": [
+          "sh",
+          "-c",
+          "printf 'a\\nb\\nc\\n'"
+        ],
+        "cwd": "<root>",
+        "spill": {
+          "afterBytes": 2,
+          "afterLines": 1
+        }
+      },
+      "payload": null
+    },
+    {
+      "id": 71,
+      "op": "exec",
+      "json": {
+        "argv": [
+          "sh",
+          "-c",
+          "printf hello"
+        ],
+        "cwd": "<root>",
+        "spill": {
+          "afterBytes": 100,
+          "afterLines": 100
+        }
+      },
+      "payload": null
+    },
+    {
+      "id": 72,
+      "op": "exec",
+      "json": {
+        "command": "printf %s \"$FOO\"",
+        "cwd": "<root>",
+        "env": {
+          "FOO": "bar"
+        }
+      },
+      "payload": null
+    },
+    {
+      "id": 73,
+      "op": "exec",
+      "json": {
+        "command": "echo hi",
+        "cwd": "<root>",
+        "shellPath": "/does/not/exist"
+      },
+      "payload": null
+    },
+    {
+      "id": 74,
+      "op": "watch",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 75,
+      "op": "watch",
+      "json": {
+        "targets": [
+          {}
+        ]
+      },
+      "payload": null
+    },
+    {
+      "id": 76,
+      "op": "pty",
+      "json": {
+        "cwd": "<root>",
+        "cols": 0,
+        "rows": 24
+      },
+      "payload": null
+    },
+    {
+      "id": 77,
+      "op": "pty",
+      "json": {
+        "cwd": "<root>",
+        "cols": 80,
+        "rows": 24,
+        "argv": []
+      },
+      "payload": null
+    },
+    {
+      "id": 78,
+      "op": "pty",
+      "json": {
+        "cols": 80,
+        "rows": 24
+      },
+      "payload": null
+    },
+    {
+      "id": 79,
+      "op": "ptyWrite",
+      "json": {
+        "target": 999
+      },
+      "payload": null
+    },
+    {
+      "id": 80,
+      "op": "ptyResize",
+      "json": {
+        "target": 999
+      },
+      "payload": null
+    },
+    {
+      "id": 81,
+      "op": "ptyForeground",
+      "json": {
+        "target": 999
+      },
+      "payload": null
+    },
+    {
+      "id": 82,
+      "op": "ptyWrite",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 83,
+      "op": "info",
+      "json": {},
+      "payload": null
+    },
+    {
+      "id": 84,
+      "op": "hello",
+      "json": {
+        "protocol": 1
+      },
+      "payload": null
+    }
+  ],
+  "replies": [
+    {
+      "id": 1,
+      "op": "lstat",
+      "result": {
+        "name": "a.txt",
+        "kind": "file",
+        "size": 11
+      }
+    },
+    {
+      "id": 2,
+      "op": "lstat",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, lstat '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "lstat"
+      }
+    },
+    {
+      "id": 3,
+      "op": "lstat",
+      "result": {
+        "name": "<root-name>",
+        "kind": "directory",
+        "size": 4096
+      }
+    },
+    {
+      "id": 4,
+      "op": "realpath",
+      "result": {
+        "path": "<root>/dir"
+      }
+    },
+    {
+      "id": 5,
+      "op": "realpath",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, realpath '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "realpath"
+      }
+    },
+    {
+      "id": 6,
+      "op": "write",
+      "result": {}
+    },
+    {
+      "id": 7,
+      "op": "write",
+      "result": {
+        "handle": 1
+      }
+    },
+    {
+      "id": 8,
+      "op": "write",
+      "result": {}
+    },
+    {
+      "id": 9,
+      "op": "write",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/no/parent.txt'",
+        "path": "<root>/no/parent.txt",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 10,
+      "op": "truncate",
+      "result": {}
+    },
+    {
+      "id": 11,
+      "op": "truncate",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 12,
+      "op": "truncate",
+      "error": {
+        "code": "EINVAL",
+        "message": "missing or invalid field size"
+      }
+    },
+    {
+      "id": 13,
+      "op": "fsync",
+      "result": {}
+    },
+    {
+      "id": 14,
+      "op": "fsync",
+      "error": {
+        "code": "EISDIR",
+        "message": "EISDIR: illegal operation on a directory, open '<root>/dir'",
+        "path": "<root>/dir"
+      }
+    },
+    {
+      "id": 15,
+      "op": "fsync",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 16,
+      "op": "rename",
+      "result": {}
+    },
+    {
+      "id": 17,
+      "op": "rename",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, rename '<root>/missing' -> '<root>/x'",
+        "path": "<root>/missing",
+        "syscall": "rename"
+      }
+    },
+    {
+      "id": 18,
+      "op": "mkdir",
+      "result": {}
+    },
+    {
+      "id": 19,
+      "op": "mkdir",
+      "error": {
+        "code": "EEXIST",
+        "message": "EEXIST: file already exists, mkdir '<root>/made'",
+        "path": "<root>/made",
+        "syscall": "mkdir"
+      }
+    },
+    {
+      "id": 20,
+      "op": "mkdir",
+      "result": {}
+    },
+    {
+      "id": 21,
+      "op": "mkdir",
+      "error": {
+        "code": "ENOTDIR",
+        "message": "ENOTDIR: not a directory, mkdir '<root>/a.txt/x'",
+        "path": "<root>/a.txt/x",
+        "syscall": "mkdir"
+      }
+    },
+    {
+      "id": 22,
+      "op": "mkdir",
+      "result": {}
+    },
+    {
+      "id": 23,
+      "op": "rm",
+      "result": {}
+    },
+    {
+      "id": 24,
+      "op": "rm",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, lstat '<root>/a.txt'",
+        "path": "<root>/a.txt",
+        "syscall": "lstat"
+      }
+    },
+    {
+      "id": 25,
+      "op": "rm",
+      "result": {}
+    },
+    {
+      "id": 26,
+      "op": "rm",
+      "error": {
+        "code": "ERR_FS_EISDIR",
+        "message": "Path is a directory: rm returned EISDIR (is a directory) <root>/dir",
+        "path": "<root>/dir"
+      }
+    },
+    {
+      "id": 27,
+      "op": "rm",
+      "result": {}
+    },
+    {
+      "id": 28,
+      "op": "mkdtemp",
+      "result": {
+        "path": "<root>/prefix-<random>"
+      }
+    },
+    {
+      "id": 29,
+      "op": "mkdtemp",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, mkdtemp '<root>/missing/prefix-<random>'",
+        "path": "<root>/missing/prefix-<random>",
+        "syscall": "mkdtemp"
+      }
+    },
+    {
+      "id": 30,
+      "op": "open",
+      "result": {
+        "handle": 2,
+        "info": {
+          "name": "renamed.txt",
+          "kind": "file",
+          "size": 5
+        }
+      }
+    },
+    {
+      "id": 31,
+      "op": "open",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/dir'",
+        "path": "<root>/dir",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 32,
+      "op": "open",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 33,
+      "op": "open",
+      "result": {
+        "handle": 3,
+        "stat": {
+          "name": "renamed.txt",
+          "kind": "file",
+          "size": 5
+        }
+      }
+    },
+    {
+      "id": 34,
+      "op": "open",
+      "result": {
+        "handle": 4,
+        "info": {
+          "name": "renamed.txt",
+          "kind": "file",
+          "size": 5
+        }
+      }
+    },
+    {
+      "id": 35,
+      "op": "open",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, open '<root>/dir'",
+        "path": "<root>/dir",
+        "syscall": "open"
+      }
+    },
+    {
+      "id": 36,
+      "op": "opendir",
+      "result": {
+        "handle": 5
+      }
+    },
+    {
+      "id": 37,
+      "op": "opendir",
+      "error": {
+        "code": "ENOTDIR",
+        "message": "ENOTDIR: not a directory, opendir '<root>/renamed.txt'",
+        "path": "<root>/renamed.txt",
+        "syscall": "opendir"
+      }
+    },
+    {
+      "id": 38,
+      "op": "opendir",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, opendir '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "opendir"
+      }
+    },
+    {
+      "id": 39,
+      "op": "scanLines",
+      "result": {
+        "end": 5,
+        "firstLineBytes": 5,
+        "firstLineEnd": 5,
+        "lastLineStart": 0,
+        "newlines": 0,
+        "selectedBytes": 5,
+        "start": 0
+      }
+    },
+    {
+      "id": 40,
+      "op": "scanLines",
+      "result": {
+        "end": 5,
+        "firstLineBytes": 5,
+        "firstLineEnd": 5,
+        "lastLineStart": 0,
+        "newlines": 0,
+        "selectedBytes": 5,
+        "start": 0
+      }
+    },
+    {
+      "id": 41,
+      "op": "scanLines",
+      "result": {
+        "end": 5,
+        "firstLineBytes": 0,
+        "firstLineEnd": 5,
+        "lastLineStart": 5,
+        "newlines": 0,
+        "selectedBytes": 0,
+        "start": 5
+      }
+    },
+    {
+      "id": 42,
+      "op": "scanLines",
+      "error": {
+        "code": "EINVAL",
+        "message": "Invalid line range"
+      }
+    },
+    {
+      "id": 43,
+      "op": "scanLines",
+      "result": {
+        "end": 5,
+        "firstLineBytes": 5,
+        "firstLineEnd": 5,
+        "lastLineStart": 0,
+        "newlines": 0,
+        "selectedBytes": 5,
+        "start": 0
+      }
+    },
+    {
+      "id": 44,
+      "op": "pread",
+      "result": {},
+      "payload": "el"
+    },
+    {
+      "id": 45,
+      "op": "pread",
+      "result": {},
+      "payload": "hello"
+    },
+    {
+      "id": 46,
+      "op": "fstat",
+      "result": {
+        "name": "renamed.txt",
+        "kind": "file",
+        "size": 5
+      }
+    },
+    {
+      "id": 47,
+      "op": "readdir",
+      "error": {
+        "code": "EBADF",
+        "message": "not a directory handle"
+      }
+    },
+    {
+      "id": 48,
+      "op": "readdir",
+      "error": {
+        "code": "EBADF",
+        "message": "not a directory handle"
+      }
+    },
+    {
+      "id": 49,
+      "op": "close",
+      "result": {}
+    },
+    {
+      "id": 50,
+      "op": "close",
+      "error": {
+        "code": "EINVAL",
+        "message": "missing or invalid field handle"
+      }
+    },
+    {
+      "id": 51,
+      "op": "pread",
+      "error": {
+        "code": "EBADF",
+        "message": "unknown handle"
+      }
+    },
+    {
+      "id": 52,
+      "op": "fstat",
+      "error": {
+        "code": "EBADF",
+        "message": "unknown handle"
+      }
+    },
+    {
+      "id": 53,
+      "op": "scanLines",
+      "error": {
+        "code": "EBADF",
+        "message": "unknown handle"
+      }
+    },
+    {
+      "id": 54,
+      "op": "writeChunk",
+      "error": {
+        "code": "EBADF",
+        "message": "unknown handle"
+      }
+    },
+    {
+      "id": 55,
+      "op": "listFiles",
+      "result": {
+        "count": 11,
+        "truncated": false
+      },
+      "payload": "dfile\u0000dfile/x\u0000dmade\u0000dprefix-<random>\u0000frenamed.txt\u0000dsub\u0000dsub/deep\u0000fsub/deep/new.txt\u0000dx\u0000dx/y\u0000dx/y/z\u0000"
+    },
+    {
+      "id": 56,
+      "op": "listFiles",
+      "result": {
+        "count": 2,
+        "truncated": true
+      },
+      "payload": "dfile\u0000dfile/x\u0000"
+    },
+    {
+      "id": 57,
+      "op": "listFiles",
+      "result": {
+        "count": 1,
+        "truncated": true
+      },
+      "payload": "dfile\u0000"
+    },
+    {
+      "id": 58,
+      "op": "listFiles",
+      "result": {
+        "count": 0,
+        "truncated": true
+      }
+    },
+    {
+      "id": 59,
+      "op": "listFiles",
+      "error": {
+        "code": "ENOENT",
+        "message": "ENOENT: no such file or directory, scandir '<root>/missing'",
+        "path": "<root>/missing",
+        "syscall": "scandir"
+      }
+    },
+    {
+      "id": 60,
+      "op": "listFiles",
+      "error": {
+        "code": "ENOTDIR",
+        "message": "ENOTDIR: not a directory, scandir '<root>/renamed.txt'",
+        "path": "<root>/renamed.txt"
+      }
+    },
+    {
+      "id": 61,
+      "op": "listFiles",
+      "error": {
+        "code": "EINVAL",
+        "message": "missing field path"
+      }
+    },
+    {
+      "id": 62,
+      "op": "lstat",
+      "error": {
+        "code": "EINVAL",
+        "message": "missing field path"
+      }
+    },
+    {
+      "id": 63,
+      "op": "exec",
+      "result": {
+        "exitCode": 3
+      },
+      "stdout": "out",
+      "stderr": "err"
+    },
+    {
+      "id": 64,
+      "op": "exec",
+      "result": {
+        "exitCode": 0
+      },
+      "stdout": "a\nb\nc\n",
+      "stderr": ""
+    },
+    {
+      "id": 65,
+      "op": "exec",
+      "result": {
+        "exitCode": 0
+      },
+      "stdout": "hi\n",
+      "stderr": ""
+    },
+    {
+      "id": 66,
+      "op": "exec",
+      "error": {
+        "code": "spawn_error",
+        "message": "Working directory does not exist: <root>/missing\nCannot execute bash commands."
+      }
+    },
+    {
+      "id": 67,
+      "op": "exec",
+      "error": {
+        "code": "spawn_error",
+        "message": "Empty argv: no program to run"
+      }
+    },
+    {
+      "id": 68,
+      "op": "exec",
+      "error": {
+        "code": "EINVAL",
+        "message": "exec needs cwd"
+      }
+    },
+    {
+      "id": 69,
+      "op": "exec",
+      "result": {
+        "exitCode": 143
+      },
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "id": 70,
+      "op": "exec",
+      "result": {
+        "exitCode": 0
+      },
+      "stdout": "a\nb\nc\n",
+      "stderr": "",
+      "spillPath": true
+    },
+    {
+      "id": 71,
+      "op": "exec",
+      "result": {
+        "exitCode": 0
+      },
+      "stdout": "hello",
+      "stderr": ""
+    },
+    {
+      "id": 72,
+      "op": "exec",
+      "result": {
+        "exitCode": 0
+      },
+      "stdout": "bar",
+      "stderr": ""
+    },
+    {
+      "id": 73,
+      "op": "exec",
+      "error": {
+        "code": "shell_unavailable",
+        "message": "Custom shell path not found: /does/not/exist"
+      }
+    },
+    {
+      "id": 74,
+      "op": "watch",
+      "error": {
+        "code": "EINVAL",
+        "message": "watch needs targets"
+      }
+    },
+    {
+      "id": 75,
+      "op": "watch",
+      "error": {
+        "code": "EINVAL",
+        "message": "watch needs targets"
+      }
+    },
+    {
+      "id": 76,
+      "op": "pty",
+      "error": {
+        "code": "EINVAL",
+        "message": "cols must be between 1 and 4096"
+      }
+    },
+    {
+      "id": 77,
+      "op": "pty",
+      "error": {
+        "code": "EINVAL",
+        "message": "argv must be a non-empty array of strings"
+      }
+    },
+    {
+      "id": 78,
+      "op": "pty",
+      "error": {
+        "code": "EINVAL",
+        "message": "pty needs cwd"
+      }
+    },
+    {
+      "id": 79,
+      "op": "ptyWrite",
+      "error": {
+        "code": "EBADF",
+        "message": "no running terminal with this id"
+      }
+    },
+    {
+      "id": 80,
+      "op": "ptyResize",
+      "error": {
+        "code": "EBADF",
+        "message": "no running terminal with this id"
+      }
+    },
+    {
+      "id": 81,
+      "op": "ptyForeground",
+      "error": {
+        "code": "EBADF",
+        "message": "no running terminal with this id"
+      }
+    },
+    {
+      "id": 82,
+      "op": "ptyWrite",
+      "error": {
+        "code": "EINVAL",
+        "message": "missing field target"
+      }
+    },
+    {
+      "id": 83,
+      "op": "info",
+      "error": {
+        "code": "EINVAL",
+        "message": "unknown operation info"
+      }
+    },
+    {
+      "id": 84,
+      "op": "hello",
+      "result": {
+        "protocol": 1,
+        "version": "<version>",
+        "os": "linux",
+        "arch": "x86_64",
+        "separator": "/",
+        "driveCwds": {},
+        "features": [
+          "listFiles"
+        ],
+        "hasHome": true,
+        "hasCwd": true,
+        "hasTmpdir": true,
+        "hasPid": true
+      }
+    }
+  ],
+  "exitCode": 0
+}

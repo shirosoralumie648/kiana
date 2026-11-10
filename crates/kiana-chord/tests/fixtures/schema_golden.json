@@ -1,0 +1,3523 @@
+{
+  "hash64": {
+    "empty": "811c9dc55ad1e806",
+    "hello": "4f9f2cab3bd27f02",
+    "unicode": "2be08a5af0f6d94c",
+    "nul": "10f3abd20d357d5c",
+    "long": "07d1816515dd0eaa"
+  },
+  "canonicalJson": {
+    "nested": "{\"a\":[1,{\"y\":true,\"z\":null}],\"b\":1}",
+    "undefinedDropped": "{\"a\":1,\"c\":{\"e\":2}}",
+    "arrayUndefined": "[1,null,3]",
+    "numbers": "{\"a\":1e+21,\"b\":1e-7,\"c\":0,\"d\":1.5,\"e\":100000000000000000000}",
+    "keys": "{\"10\":1,\"2\":2,\"a\":4,\"b\":3}"
+  },
+  "schemas": {
+    "chatInput": {
+      "type": "object",
+      "required": [
+        "session",
+        "conversation"
+      ],
+      "properties": {
+        "session": {
+          "type": "string"
+        },
+        "conversation": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    },
+    "sessionOnly": {
+      "type": "object",
+      "required": [
+        "session"
+      ],
+      "properties": {
+        "session": {
+          "type": "string"
+        }
+      }
+    },
+    "textView": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "numberView": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "number"
+        }
+      }
+    },
+    "fnString": {
+      "type": "function",
+      "parameters": [
+        {
+          "type": "string"
+        }
+      ],
+      "returnType": {
+        "type": "void"
+      }
+    },
+    "fnUnknown": {
+      "type": "function",
+      "parameters": [
+        {}
+      ],
+      "returnType": {
+        "type": "void"
+      }
+    },
+    "arrayNum": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "union": {
+      "anyOf": [
+        {
+          "type": "string",
+          "const": "a"
+        },
+        {
+          "type": "string",
+          "const": "b"
+        }
+      ]
+    },
+    "enum3": {
+      "enum": [
+        "x",
+        "y"
+      ]
+    },
+    "tuple": {
+      "type": "array",
+      "additionalItems": false,
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "minItems": 2
+    },
+    "record": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "number"
+        }
+      }
+    },
+    "optionalProp": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "emptyObj": {
+      "type": "object",
+      "properties": {}
+    },
+    "str": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 4,
+      "pattern": "^[a-z]+$"
+    }
+  },
+  "values": {
+    "ok": {
+      "session": "s",
+      "conversation": 1
+    },
+    "missing": {
+      "session": "s"
+    },
+    "wrongType": {
+      "session": 1,
+      "conversation": 0
+    },
+    "extra": {
+      "session": "s",
+      "conversation": 0,
+      "extra": true
+    },
+    "notObject": 5,
+    "emptyArr": [],
+    "badArr": [
+      1,
+      "x"
+    ],
+    "unionOk": "a",
+    "unionBad": "c",
+    "tupleOk": [
+      "a",
+      1
+    ],
+    "tupleBad": [
+      1,
+      "a"
+    ],
+    "recordOk": {
+      "a": 1
+    },
+    "recordBad": {
+      "a": "x"
+    },
+    "strOk": "abc",
+    "short": "a",
+    "mixed": "AB"
+  },
+  "check": {
+    "chatInput": {
+      "missing": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "conversation"
+              ]
+            },
+            "message": "must have required properties conversation"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/properties/session",
+            "instancePath": "/session",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "session",
+                "conversation"
+              ]
+            },
+            "message": "must have required properties session, conversation"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "session",
+                "conversation"
+              ]
+            },
+            "message": "must have required properties session, conversation"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "sessionOnly": {
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/properties/session",
+            "instancePath": "/session",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "session"
+              ]
+            },
+            "message": "must have required properties session"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "session"
+              ]
+            },
+            "message": "must have required properties session"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "textView": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "numberView": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "required",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "requiredProperties": [
+                "text"
+              ]
+            },
+            "message": "must have required properties text"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "fnString": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      }
+    },
+    "fnUnknown": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "function"
+            },
+            "message": "must be function"
+          }
+        ]
+      }
+    },
+    "arrayNum": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/items",
+            "instancePath": "/1",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/items",
+            "instancePath": "/0",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/items",
+            "instancePath": "/1",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      }
+    },
+    "union": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/0",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "a"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "const",
+            "schemaPath": "#/anyOf/1",
+            "instancePath": "",
+            "params": {
+              "allowedValue": "b"
+            },
+            "message": "must be equal to constant"
+          },
+          {
+            "keyword": "anyOf",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {},
+            "message": "must match a schema in anyOf"
+          }
+        ]
+      }
+    },
+    "enum3": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "enum",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "allowedValues": [
+                "x",
+                "y"
+              ]
+            },
+            "message": "must be equal to one of the allowed values"
+          }
+        ]
+      }
+    },
+    "tuple": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "minItems",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "limit": 2
+            },
+            "message": "must not have fewer than 2 items"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/items/0",
+            "instancePath": "/0",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/items/1",
+            "instancePath": "/1",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/items/0",
+            "instancePath": "/0",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/items/1",
+            "instancePath": "/1",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "array"
+            },
+            "message": "must be array"
+          }
+        ]
+      }
+    },
+    "record": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/patternProperties/^.*$",
+            "instancePath": "/session",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/patternProperties/^.*$",
+            "instancePath": "/session",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/patternProperties/^.*$",
+            "instancePath": "/session",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          },
+          {
+            "keyword": "type",
+            "schemaPath": "#/patternProperties/^.*$",
+            "instancePath": "/extra",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/patternProperties/^.*$",
+            "instancePath": "/a",
+            "params": {
+              "type": "number"
+            },
+            "message": "must be number"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "optionalProp": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/session",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/conversation",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "additionalProperties",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "additionalProperties": [
+                "session",
+                "conversation"
+              ]
+            },
+            "message": "must not have additional properties"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/session",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "additionalProperties",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "additionalProperties": [
+                "session"
+              ]
+            },
+            "message": "must not have additional properties"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/session",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/conversation",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "additionalProperties",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "additionalProperties": [
+                "session",
+                "conversation"
+              ]
+            },
+            "message": "must not have additional properties"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/session",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/conversation",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "boolean",
+            "schemaPath": "#/additionalProperties",
+            "instancePath": "/extra",
+            "params": {},
+            "message": "schema is false"
+          },
+          {
+            "keyword": "additionalProperties",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "additionalProperties": [
+                "session",
+                "conversation",
+                "extra"
+              ]
+            },
+            "message": "must not have additional properties"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#/properties/a",
+            "instancePath": "/a",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "emptyObj": {
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "strOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "object"
+            },
+            "message": "must be object"
+          }
+        ]
+      }
+    },
+    "str": {
+      "ok": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "missing": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "wrongType": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "extra": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "notObject": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "emptyArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "badArr": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "unionOk": {
+        "errors": [
+          {
+            "keyword": "minLength",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "limit": 2
+            },
+            "message": "must not have fewer than 2 characters"
+          }
+        ]
+      },
+      "unionBad": {
+        "errors": [
+          {
+            "keyword": "minLength",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "limit": 2
+            },
+            "message": "must not have fewer than 2 characters"
+          }
+        ]
+      },
+      "tupleOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "tupleBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "recordOk": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "recordBad": {
+        "errors": [
+          {
+            "keyword": "type",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "type": "string"
+            },
+            "message": "must be string"
+          }
+        ]
+      },
+      "short": {
+        "errors": [
+          {
+            "keyword": "minLength",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "limit": 2
+            },
+            "message": "must not have fewer than 2 characters"
+          }
+        ]
+      },
+      "mixed": {
+        "errors": [
+          {
+            "keyword": "pattern",
+            "schemaPath": "#",
+            "instancePath": "",
+            "params": {
+              "pattern": "^[a-z]+$"
+            },
+            "message": "must match pattern \"^[a-z]+$\""
+          }
+        ]
+      }
+    }
+  },
+  "normalize": {
+    "chatDefaults": {
+      "session": "s",
+      "conversation": 0
+    },
+    "chatGiven": {
+      "session": "s",
+      "conversation": 3
+    },
+    "nullInput": {
+      "conversation": 0
+    },
+    "cleaned": {
+      "a": "x"
+    },
+    "nested": {}
+  },
+  "assertValid": {
+    "wrongType": "/session must be string",
+    "extra": "",
+    "notObject": "/ must be object",
+    "short": "/ must not have fewer than 2 characters",
+    "mixed": "/ must match pattern \"^[a-z]+$\""
+  },
+  "fits": {
+    "fnUnknownToFnString": true,
+    "fnStringToFnUnknown": false,
+    "sessionOnlyToChat": false,
+    "chatToSessionOnly": true,
+    "numberViewToTextView": false,
+    "textViewToNumberView": false,
+    "emptyToEmpty": true
+  }
+}

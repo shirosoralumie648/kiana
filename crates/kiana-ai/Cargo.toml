@@ -1,0 +1,85 @@
+[package]
+name = "kiana-ai"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 packages/ai（含 ai-auth 子单元与全部 api/provider 实现）。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+# `model_catalog.rs` 的 `Date.parse` 本地时区（V8 DateCache::ToUTC 走 libc mktime）。
+libc = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true, features = ["io-util"] }
+uuid = { workspace = true }
+getrandom = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+base64 = { workspace = true }
+regex = { workspace = true }
+fancy-regex = { workspace = true }
+regress = { workspace = true }
+url = { workspace = true }
+percent-encoding = { workspace = true }
+num-bigint = { workspace = true }
+num-traits = { workspace = true }
+kiana-telemetry = { workspace = true }
+kiana-json = { workspace = true }
+futures-core = { workspace = true }
+futures = { workspace = true }
+unicode-normalization = { workspace = true }
+# `utils/provider_retry.rs` 的 `Date.parse` 本地时区解释（V8 `DateCache` 的等价物）。
+chrono = { workspace = true }
+# `auth/context.rs` 的 `os.homedir()`（`~` 展开）。
+dirs = { workspace = true }
+# `api/llama_cpp_classify.rs` 的 softmax：V8 的 `Math.exp` 是 fdlibm 端口，std 的 exp 在
+# 5 万个样本里约 10% 差 1-2 ulp；libm（musl/fdlibm 系）与 V8 逐位一致，才能对上测试
+# 锁定的黄金值。
+libm = { workspace = true }
+
+# HTTP 默认实现（src/http/reqwest_client.rs）。provider 适配层仍只依赖 `http::HttpClient`，
+# 这里只是让 crate 自带一个可用的实现；`fetch` 注入点保持不变（ARCHITECTURE.md §8 第 19 条）。
+reqwest = { workspace = true }
+# 响应体解压按 `fetch`（undici）的语义做，而不是 reqwest 内建的 `Decompression`：
+# undici 按 `content-encoding` 显式解压并**保留**该响应头，reqwest 的 feature 会删掉
+# content-encoding/content-length，且把 accept-encoding 改成 `gzip,deflate,br`。见 `http/reqwest_client.rs`。
+async-compression = { version = "=0.4.51", default-features = false, features = ["tokio", "gzip", "deflate", "zlib", "brotli", "zstd"] }
+
+# Bedrock：手写 SigV4（sha2 + hmac）+ 手写 AWS event-stream 解码，不引入 AWS SDK
+# （ARCHITECTURE.md §8 第 6 条）。
+hmac = { workspace = true }
+# Bedrock 手写 `application/vnd.amazon.eventstream` 分帧的 prelude/message CRC32 校验。
+crc32fast = { workspace = true }
+
+# Codex 的 WebSocket 传输（api/openai_codex_responses.rs）。
+tokio-tungstenite = { workspace = true }
+
+# Codex 请求体的 zstd 压缩（spec/ai-api-anthropic-openai.md §2.14.4）。
+zstd = { workspace = true }
+
+# 模型目录的编译期校验（build.rs 按 .manifest.json 校验 sha256、计算 structureHash）。
+[build-dependencies]
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+# `Date.parse(generatedAt)` 的本地时区解释（无偏移的日期时间按构建机时区，与 Node 一致）。
+chrono = { workspace = true }
+
+[dev-dependencies]
+# `#[tokio::test(start_paused = true)]`（`auth/oauth/device-code.rs` 的假时钟测试）。
+tokio = { workspace = true, features = ["test-util"] }
+# 默认 `HttpClient` 的 e2e 测试（spec/ai-core.md §4.8 第 6 条）。
+wiremock = { workspace = true }
+# `reqwest_client.rs` 的单测自己造 gzip/zlib 响应体（验证 fetch 式解压与响应头保留）。
+flate2 = { workspace = true }
+# `tests/build_script.rs` 把 build.rs 当模块引入，`Date.parse` 的本地时区期望值也用它计算。
+chrono = { workspace = true }
+
+[[bin]]
+name = "kiana-ai"
+path = "src/bin/kiana-ai.rs"

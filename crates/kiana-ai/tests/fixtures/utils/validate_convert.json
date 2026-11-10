@@ -1,0 +1,1459 @@
+{
+  "generator": "validateToolArguments from packages/ai/src/utils/validation.ts (TypeBox 1.3.27, Node type-stripping)",
+  "cases": [
+    {
+      "label": "plain_number_string",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "plain_number_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": true
+      },
+      "ok": {
+        "value": 1
+      }
+    },
+    {
+      "label": "plain_number_null",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": 0
+      }
+    },
+    {
+      "label": "plain_integer_string",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "plain_boolean_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "true"
+      },
+      "ok": {
+        "value": true
+      }
+    },
+    {
+      "label": "plain_boolean_false",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "false"
+      },
+      "ok": {
+        "value": false
+      }
+    },
+    {
+      "label": "plain_boolean_one",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": 1
+      },
+      "ok": {
+        "value": true
+      }
+    },
+    {
+      "label": "plain_boolean_zero",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": 0
+      },
+      "ok": {
+        "value": false
+      }
+    },
+    {
+      "label": "plain_string_null",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": ""
+      }
+    },
+    {
+      "label": "plain_string_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": true
+      },
+      "ok": {
+        "value": "true"
+      }
+    },
+    {
+      "label": "plain_null_empty",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": ""
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_null_zero",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": 0
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_null_false",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": false
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_union_number_string",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "number",
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "ok": {
+        "value": "1"
+      }
+    },
+    {
+      "label": "plain_union_boolean_number",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "boolean",
+              "number"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "ok": {
+        "value": 1
+      }
+    },
+    {
+      "label": "plain_reject_boolean_1",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be boolean\n\nReceived arguments:\n{\n  \"value\": \"1\"\n}"
+    },
+    {
+      "label": "plain_reject_boolean_0",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "0"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be boolean\n\nReceived arguments:\n{\n  \"value\": \"0\"\n}"
+    },
+    {
+      "label": "plain_reject_null_string",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "null"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be null\n\nReceived arguments:\n{\n  \"value\": \"null\"\n}"
+    },
+    {
+      "label": "plain_reject_integer_fraction",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": 42.1
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be integer\n\nReceived arguments:\n{\n  \"value\": 42.1\n}"
+    },
+    {
+      "label": "plain_reject_number_upper_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "TRUE"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be number\n\nReceived arguments:\n{\n  \"value\": \"TRUE\"\n}"
+    },
+    {
+      "label": "plain_reject_number_empty",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": ""
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be number\n\nReceived arguments:\n{\n  \"value\": \"\"\n}"
+    },
+    {
+      "label": "plain_reject_boolean_upper_true",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "TRUE"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be boolean\n\nReceived arguments:\n{\n  \"value\": \"TRUE\"\n}"
+    },
+    {
+      "label": "plain_reject_enum",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              1,
+              "a"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be equal to one of the allowed values\n\nReceived arguments:\n{\n  \"value\": \"1\"\n}"
+    },
+    {
+      "label": "plain_reject_array_object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": {
+          "a": "5"
+        }
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be array\n\nReceived arguments:\n{\n  \"value\": {\n    \"a\": \"5\"\n  }\n}"
+    },
+    {
+      "label": "plain_reject_number_123n",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "123n"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - value: must be number\n\nReceived arguments:\n{\n  \"value\": \"123n\"\n}"
+    },
+    {
+      "label": "plain_anyof_nullable_empty",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": ""
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_oneof_nullable_null",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_array_nullable_null",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "plain_anyof_nullable_42",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "live_number_string",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "live_number_empty",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": ""
+      },
+      "ok": {
+        "value": 0
+      }
+    },
+    {
+      "label": "live_number_true_word",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "true"
+      },
+      "ok": {
+        "value": 1
+      }
+    },
+    {
+      "label": "live_number_123n",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "123n"
+      },
+      "ok": {
+        "value": 123
+      }
+    },
+    {
+      "label": "live_number_fraction",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "1.9"
+      },
+      "ok": {
+        "value": 1.9
+      }
+    },
+    {
+      "label": "live_string_null",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "~kind": "String"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": "null"
+      }
+    },
+    {
+      "label": "live_string_number",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "~kind": "String"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": 12
+      },
+      "ok": {
+        "value": "12"
+      }
+    },
+    {
+      "label": "live_boolean_upper_true",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "~kind": "Boolean"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "TRUE"
+      },
+      "ok": {
+        "value": true
+      }
+    },
+    {
+      "label": "live_boolean_mixed_false",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "~kind": "Boolean"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "False"
+      },
+      "ok": {
+        "value": false
+      }
+    },
+    {
+      "label": "live_integer_fraction_string",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "integer",
+            "~kind": "Integer"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "42.1"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "live_integer_fraction_number",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "integer",
+            "~kind": "Integer"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": 42.1
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "live_null_string",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "null",
+            "~kind": "Null"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "null"
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "live_null_undefined_word",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "null",
+            "~kind": "Null"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "undefined"
+      },
+      "ok": {
+        "value": null
+      }
+    },
+    {
+      "label": "live_literal_number",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "number",
+            "const": 1,
+            "~kind": "Literal"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "ok": {
+        "value": 1
+      }
+    },
+    {
+      "label": "live_literal_string",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "const": "a",
+            "~kind": "Literal"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "a"
+      },
+      "ok": {
+        "value": "a"
+      }
+    },
+    {
+      "label": "live_enum_numeric",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "enum": [
+              1,
+              "a"
+            ],
+            "~kind": "Enum"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "1"
+      },
+      "ok": {
+        "value": 1
+      }
+    },
+    {
+      "label": "live_union_number_null_empty",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number",
+                "~kind": "Number"
+              },
+              {
+                "type": "null",
+                "~kind": "Null"
+              }
+            ],
+            "~kind": "Union"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": ""
+      },
+      "ok": {
+        "value": 0
+      }
+    },
+    {
+      "label": "live_union_number_null_42",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number",
+                "~kind": "Number"
+              },
+              {
+                "type": "null",
+                "~kind": "Null"
+              }
+            ],
+            "~kind": "Union"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": 42
+      }
+    },
+    {
+      "label": "live_array_items_string",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "~kind": "Number"
+            },
+            "~kind": "Array"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": "42"
+      },
+      "ok": {
+        "value": [
+          42
+        ]
+      }
+    },
+    {
+      "label": "live_array_items_array",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "~kind": "Number"
+            },
+            "~kind": "Array"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": [
+          "1",
+          "2"
+        ]
+      },
+      "ok": {
+        "value": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "label": "live_tuple_elements",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "array",
+            "additionalItems": false,
+            "items": [
+              {
+                "type": "number",
+                "~kind": "Number"
+              },
+              {
+                "type": "string",
+                "~kind": "String"
+              }
+            ],
+            "minItems": 2,
+            "~kind": "Tuple"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": [
+          "1",
+          2
+        ]
+      },
+      "ok": {
+        "value": [
+          1,
+          "2"
+        ]
+      }
+    },
+    {
+      "label": "live_record_string_number",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "type": "number",
+                "~kind": "Number"
+              }
+            },
+            "~kind": "Record"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": {
+          "a": "1",
+          "b": "2"
+        }
+      },
+      "ok": {
+        "value": {
+          "a": 1,
+          "b": 2
+        }
+      }
+    },
+    {
+      "label": "live_object_additional",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a"
+        ],
+        "properties": {
+          "a": {
+            "type": "string",
+            "~kind": "String"
+          }
+        },
+        "additionalProperties": {
+          "type": "number",
+          "~kind": "Number"
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "a": "x",
+        "b": "5"
+      },
+      "ok": {
+        "a": "x",
+        "b": 5
+      }
+    },
+    {
+      "label": "live_object_two_props_additional",
+      "schema": {
+        "type": "object",
+        "required": [
+          "a",
+          "b"
+        ],
+        "properties": {
+          "a": {
+            "type": "number",
+            "~kind": "Number"
+          },
+          "b": {
+            "type": "number",
+            "~kind": "Number"
+          }
+        },
+        "additionalProperties": {
+          "type": "string",
+          "~kind": "String"
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "a": "1",
+        "b": "2",
+        "c": 3
+      },
+      "ok": {
+        "a": 1,
+        "b": 2,
+        "c": "3"
+      }
+    },
+    {
+      "label": "live_nested_object",
+      "schema": {
+        "type": "object",
+        "required": [
+          "nested"
+        ],
+        "properties": {
+          "nested": {
+            "type": "object",
+            "required": [
+              "n"
+            ],
+            "properties": {
+              "n": {
+                "type": "number",
+                "~kind": "Number"
+              }
+            },
+            "~kind": "Object"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "nested": {
+          "n": "5"
+        }
+      },
+      "ok": {
+        "nested": {
+          "n": 5
+        }
+      }
+    },
+    {
+      "label": "live_root_array",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "~kind": "Number"
+        },
+        "~kind": "Array"
+      },
+      "arguments": {
+        "a": 5
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be array\n\nReceived arguments:\n{\n  \"a\": 5\n}"
+    },
+    {
+      "label": "live_root_array_items_absent",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "number",
+          "~kind": "Number"
+        },
+        "~kind": "Array"
+      },
+      "arguments": {
+        "a": "5"
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be array\n\nReceived arguments:\n{\n  \"a\": \"5\"\n}"
+    },
+    {
+      "label": "live_root_number",
+      "schema": {
+        "type": "number",
+        "~kind": "Number"
+      },
+      "arguments": {
+        "a": 5
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be number\n\nReceived arguments:\n{\n  \"a\": 5\n}"
+    },
+    {
+      "label": "live_root_string",
+      "schema": {
+        "type": "string",
+        "~kind": "String"
+      },
+      "arguments": {
+        "a": 5
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be string\n\nReceived arguments:\n{\n  \"a\": 5\n}"
+    },
+    {
+      "label": "live_root_union",
+      "schema": {
+        "anyOf": [
+          {
+            "type": "number",
+            "~kind": "Number"
+          },
+          {
+            "type": "string",
+            "~kind": "String"
+          }
+        ],
+        "~kind": "Union"
+      },
+      "arguments": {
+        "a": 5
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be number\n  - root: must be string\n  - root: must match a schema in anyOf\n\nReceived arguments:\n{\n  \"a\": 5\n}"
+    },
+    {
+      "label": "live_root_tuple",
+      "schema": {
+        "type": "array",
+        "additionalItems": false,
+        "items": [
+          {
+            "type": "number",
+            "~kind": "Number"
+          }
+        ],
+        "minItems": 1,
+        "~kind": "Tuple"
+      },
+      "arguments": {
+        "a": 5
+      },
+      "error": "Validation failed for tool \"echo\":\n  - root: must be array\n\nReceived arguments:\n{\n  \"a\": 5\n}"
+    },
+    {
+      "label": "live_intersect",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "allOf": [
+              {
+                "type": "object",
+                "required": [
+                  "a"
+                ],
+                "properties": {
+                  "a": {
+                    "type": "number",
+                    "~kind": "Number"
+                  }
+                },
+                "~kind": "Object"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "b"
+                ],
+                "properties": {
+                  "b": {
+                    "type": "number",
+                    "~kind": "Number"
+                  }
+                },
+                "~kind": "Object"
+              }
+            ],
+            "~kind": "Intersect"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": {
+          "a": "1",
+          "b": "2"
+        }
+      },
+      "ok": {
+        "value": {
+          "a": 1,
+          "b": 2
+        }
+      }
+    },
+    {
+      "label": "live_optional_null_removed",
+      "schema": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "~kind": "String"
+          },
+          "offset": {
+            "type": "number",
+            "~kind": "Number",
+            "~optional": true
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "path": "f",
+        "offset": null
+      },
+      "ok": {
+        "path": "f"
+      }
+    },
+    {
+      "label": "live_union_already_matches",
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number",
+                "~kind": "Number"
+              },
+              {
+                "type": "null",
+                "~kind": "Null"
+              }
+            ],
+            "~kind": "Union"
+          }
+        },
+        "~kind": "Object"
+      },
+      "arguments": {
+        "value": null
+      },
+      "ok": {
+        "value": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/kiana-json",
+    "crates/kiana-permissions",
+    "crates/kiana-sandbox",
+    "crates/kiana-telemetry",
+    "crates/kiana-ai",
+    "crates/kiana-mcp",
+    "crates/kiana-tui",
+    "crates/kiana-codemode",
+    "crates/kiana-agent-core",
+    "crates/kiana-chord",
+    "crates/kiana-durable",
+    "crates/kiana-env-client",
+    "crates/kiana-env",
+    "crates/kiana-core",
+    "crates/kiana-session-core",
+    "crates/kiana-config",
+    "crates/kiana-theme",
+    "crates/kiana-compaction",
+    "crates/kiana-export",
+    "crates/kiana-ext-api",
+    "crates/kiana-tools",
+    "crates/kiana-resources",
+    "crates/kiana-session",
+    "crates/kiana-extensions",
+    "crates/kiana-ui-kit",
+    "crates/kiana-builtin-extensions",
+    "crates/kiana-interactive",
+    "crates/kiana-rpc-print",
+    "crates/kiana-coding-agent",
+    "crates/kiana-evals",
+    "crates/kiana-hooks",
+    "crates/kiana-memory",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+publish = false
+repository = "https://github.com/earendil-works/kiana"
+
+# ---------------------------------------------------------------------------
+# Exact pins. Every entry below was checked with `cargo info <name>@<version>`
+# on 2026-10-26; the entries referenced by a crate are also resolved by the
+# real `cargo check --workspace` that gates this skeleton. Entries not yet
+# referenced are inert (Cargo does not resolve unused workspace dependencies)
+# and exist so later stages never invent a version. ARCHITECTURE.md §4 carries
+# the same table together with the rationale and the feature sets.
+# ---------------------------------------------------------------------------
+[workspace.dependencies]
+# workspace crates ----------------------------------------------------------
+kiana-json = { path = "crates/kiana-json" }
+kiana-permissions = { path = "crates/kiana-permissions" }
+kiana-sandbox = { path = "crates/kiana-sandbox" }
+kiana-telemetry = { path = "crates/kiana-telemetry" }
+kiana-ai = { path = "crates/kiana-ai" }
+kiana-mcp = { path = "crates/kiana-mcp" }
+kiana-tui = { path = "crates/kiana-tui" }
+kiana-codemode = { path = "crates/kiana-codemode" }
+kiana-agent-core = { path = "crates/kiana-agent-core" }
+kiana-chord = { path = "crates/kiana-chord" }
+kiana-durable = { path = "crates/kiana-durable" }
+kiana-env-client = { path = "crates/kiana-env-client" }
+kiana-core = { path = "crates/kiana-core" }
+kiana-session-core = { path = "crates/kiana-session-core" }
+kiana-config = { path = "crates/kiana-config" }
+kiana-theme = { path = "crates/kiana-theme" }
+kiana-compaction = { path = "crates/kiana-compaction" }
+kiana-export = { path = "crates/kiana-export" }
+kiana-ext-api = { path = "crates/kiana-ext-api" }
+kiana-tools = { path = "crates/kiana-tools" }
+kiana-resources = { path = "crates/kiana-resources" }
+kiana-session = { path = "crates/kiana-session" }
+kiana-extensions = { path = "crates/kiana-extensions" }
+kiana-ui-kit = { path = "crates/kiana-ui-kit" }
+kiana-builtin-extensions = { path = "crates/kiana-builtin-extensions" }
+kiana-interactive = { path = "crates/kiana-interactive" }
+kiana-rpc-print = { path = "crates/kiana-rpc-print" }
+kiana-coding-agent = { path = "crates/kiana-coding-agent" }
+kiana-evals = { path = "crates/kiana-evals" }
+kiana-hooks = { path = "crates/kiana-hooks" }
+kiana-memory = { path = "crates/kiana-memory" }
+
+# serialization / JS semantics ----------------------------------------------
+serde = { version = "=1.0.229", features = ["derive", "rc"] }
+serde_json = { version = "=1.0.154", features = ["preserve_order", "raw_value"] }
+indexmap = { version = "=2.14.2", features = ["serde"] }
+ryu = "=1.0.20"
+num-bigint = "=0.4.6"
+num-traits = "=0.2.19"
+
+# text / unicode ------------------------------------------------------------
+unicode-width = "=0.2.2"
+unicode-segmentation = "=1.13.3"
+unicode-normalization = "=0.1.26"
+encoding_rs = "=0.8.42"
+percent-encoding = "=2.3.2"
+url = "=2.5.8"
+base64 = "=0.23.1"
+hex = "=0.4.3"
+mime = "=0.3.17"
+
+# crypto / ids / random -----------------------------------------------------
+sha2 = "=0.11.1"
+hmac = "=0.13.0"
+uuid = { version = "=1.29.0", features = ["v4", "v7"] }
+getrandom = "=0.4.3"
+rand = "=0.9.2"
+
+# patterns / globbing -------------------------------------------------------
+regex = "=1.13.1"
+fancy-regex = "=0.16.2"
+# TypeBox compiles `pattern`/`patternProperties` with `new RegExp(p, "u")` (ECMAScript syntax:
+# `\w`/`\d` ASCII-only in u-mode, `.` excludes line terminators, lookaround/backrefs, and invalid
+# patterns throw). `regress` implements EcmaScript regex syntax; pinned for schema.rs.
+regress = "=0.10.4"
+glob = "=0.3.3"
+globset = "=0.4.20"
+ignore = "=0.4.33"
+semver = "=1.0.27"
+
+# async / runtime -----------------------------------------------------------
+tokio = { version = "=1.54.1", features = ["rt", "rt-multi-thread", "macros", "sync", "time", "process", "io-util", "fs", "net", "signal"] }
+tokio-util = "=0.7.20"
+futures = "=0.3.34"
+futures-core = "=0.3.34"
+async-trait = "=0.1.89"
+libc = "=0.2.190"
+
+# errors / logging ----------------------------------------------------------
+thiserror = "=2.0.21"
+anyhow = "=1.0.100"
+tracing = "=0.1.44"
+tracing-subscriber = "=0.3.20"
+
+# filesystem / platform -----------------------------------------------------
+notify = "=8.2.1"
+tempfile = "=3.27.0"
+# proper-lockfile 的目录 mtime 心跳（`fs.utimes`；Windows 上 std 无法直接改目录时间戳）。
+filetime = "=0.2.29"
+dirs = "=6.0.0"
+chrono = "=0.4.42"
+chrono-tz = "=0.10.4"
+nix = { version = "=0.30.1", features = ["signal", "process"] }
+# kiana-tui native clipboard/modifier layer (ARCHITECTURE.md §8.17)
+x11rb = "=0.14.0"
+objc2 = "=0.6.5"
+objc2-foundation = "=0.3.2"
+objc2-app-kit = "=0.3.2"
+socket2 = "=0.6.0"
+windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_Security", "Win32_Storage_FileSystem", "Win32_System_Console", "Win32_System_DataExchange", "Win32_System_IO", "Win32_System_JobObjects", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_System_Ole", "Win32_System_Registry", "Win32_System_SystemInformation", "Win32_System_Threading", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_WindowsAndMessaging"] }
+
+# http / websocket ----------------------------------------------------------
+# `gzip`/`deflate`/`brotli` 的**内建解压**保留 feature（其它 crate 可能用），`kiana-ai` 自己的客户端
+# 逐 client 关闭它们（`.no_gzip()/...`），改为按 `fetch` 语义解压，见 `src/http/reqwest_client.rs`。
+# `socks` 无额外依赖（`socks = []`，实现基于 `hyper-util` 的 `SocksV4/SocksV5`），供
+# `kiana-core` 的 `http_dispatcher` 复刻 undici 的 `socks5:`/`socks:` 代理（见该模块文档）。
+reqwest = { version = "=0.13.5", default-features = false, features = ["rustls", "stream", "json", "gzip", "deflate", "brotli", "http2", "system-proxy", "socks"] }
+# `fetch`（undici）语义的响应体解压，见 `crates/kiana-ai/src/http/reqwest_client.rs`。
+async-compression = { version = "=0.4.51", default-features = false, features = ["tokio", "gzip", "deflate", "zlib", "brotli", "zstd"] }
+http = "=1.5.0"
+http-body-util = "=0.1.5"
+hyper = "=1.12.0"
+hyper-util = "=0.1.21"
+tokio-tungstenite = { version = "=0.30.0", features = ["rustls-tls-native-roots"] }
+flate2 = "=1.1.10"
+crc32fast = "=1.5.0"
+zstd = "=0.14.3"
+
+# sqlite --------------------------------------------------------------------
+rusqlite = "=0.41.0"
+
+# images --------------------------------------------------------------------
+image = "=0.25.10"
+# photon-rs 0.3.3 解码用的 image 版本（`PhotonImage::new_from_byteslice` 内部
+# `image::load_from_memory(...).unwrap()`）。`kiana-durable` 直接依赖同一版本做可失败解码，
+# 失败时返回 `None`（等价 TS 的 `catch`），且不会向 stderr 打印 panic。
+image024 = { package = "image", version = "=0.24.9", default-features = false }
+# image 0.24（photon-rs）的 JPEG 解码器。TS 的 photon wasm 用 0.3.1 的**平台无关**路径构建
+# （wasm32 没有 x86 SSE2 的 IDCT/YCbCr 快速路径）；0.3.2 或原生 SIMD 路径会改变解码像素。
+jpeg-decoder = { version = "=0.3.1", default-features = false }
+kamadak-exif = "=0.6.1"
+# Same Photon source as the TS build, compiled natively instead of to wasm (ARCHITECTURE.md §8.20).
+photon-rs = { version = "=0.3.3", default-features = false }
+
+# extension runtime (optional features, see ARCHITECTURE.md §9) -------------
+rquickjs = { version = "=0.14.0", default-features = false, features = ["std", "loader", "macro"] }
+oxc_allocator = "=0.155.0"
+oxc_ast = "=0.155.0"
+oxc_parser = "=0.155.0"
+oxc_semantic = "=0.155.0"
+oxc_transformer = "=0.155.0"
+oxc_codegen = "=0.155.0"
+oxc_span = "=0.155.0"
+oxc_resolver = "=11.24.3"
+wasmtime = "=50.0.0"
+icu_decimal = { version = "=2.4.0", default-features = false, features = ["compiled_data", "alloc"] }
+icu_datetime = { version = "=2.4.0", default-features = false, features = ["compiled_data"] }
+icu_time = { version = "=2.4.0", default-features = false, features = ["compiled_data"] }
+icu_locale = "=2.4.0"
+# ICU4X 的 part 注解（`formatToParts` 的 integer/group/decimal/fraction 切分）。
+writeable = "=0.6.4"
+# `localeCompare` 的等价物（autocomplete 的目录排序，见 ARCHITECTURE.md §6.4）。
+icu_collator = { version = "=2.4.0", default-features = false, features = ["compiled_data"] }
+# `Intl.Segmenter` 的 word 粒度等价物（用 dictionary 模式；`isWordLike` 由按码点生成的表另行判定，
+# 因此不需要 `auto` / LSTM 数据）。
+icu_segmenter = { version = "=2.4.0", default-features = false, features = ["compiled_data"] }
+# `Math.atan2` 的位级等价物（V8 与 fdlibm 同源；std 的 atan2 在 16 万个 OKLCH 色相样本里有 ~4% 差 1 ulp）。
+libm = { version = "=0.2.16", default-features = false, features = ["arch"] }
+
+# testing -------------------------------------------------------------------
+insta = "=1.43.2"
+wiremock = "=0.6.5"
+proptest = "=1.12.0"
+similar = "=3.2.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev.package.wasmtime]
+opt-level = 3
+
+# 集成测试会链接 ~500 个测试二进制（kiana-ai 213 个 test target + kiana-durable 94 个 + 40 个
+# examples，且 kiana-durable/kiana-codemode 链入 wasmtime）。默认 dev debuginfo 下每个二进制
+# ~0.5 GB，完整 `cargo test --workspace` 需要 >100 GB 磁盘（2026-10-30 的 M1 验证中曾把
+# 磁盘占满）。测试不需要 DWARF；保留 debug assertions，只丢弃调试信息。
+[profile.test]
+debug = 0
+strip = "debuginfo"

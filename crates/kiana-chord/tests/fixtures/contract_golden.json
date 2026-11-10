@@ -1,0 +1,250 @@
+{
+  "additive": {
+    "bind": "undefined",
+    "coverage": null
+  },
+  "chatV1": {
+    "description": {
+      "host": {
+        "key": "session",
+        "prefix": "session:"
+      },
+      "input": {
+        "properties": {
+          "conversation": {
+            "default": 0,
+            "type": "number"
+          },
+          "session": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "session",
+          "conversation"
+        ],
+        "type": "object"
+      },
+      "name": "t.chat",
+      "scope": "remote",
+      "variants": {
+        "participant": {
+          "send": {
+            "args": {
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            },
+            "kind": "method",
+            "result": {
+              "properties": {
+                "id": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          },
+          "view": {
+            "kind": "state",
+            "schema": {
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          }
+        },
+        "viewer": {
+          "view": {
+            "kind": "state",
+            "schema": {
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          }
+        }
+      },
+      "version": 1
+    },
+    "fingerprint": "e8ee3f28594f8426"
+  },
+  "chatV1Copy": {
+    "fingerprint": "e8ee3f28594f8426"
+  },
+  "chatV2": {
+    "fingerprint": "e8e783634fb1ed86"
+  },
+  "constants": {
+    "LOCAL_VARIANT": "",
+    "RESERVED_MEMBERS": [
+      "variant",
+      "status",
+      "ready",
+      "shape",
+      "error",
+      "onShape",
+      "onStatus",
+      "release",
+      "then",
+      "contract"
+    ],
+    "placedOnFamilyExact": false,
+    "placedOnFamilyLonger": true,
+    "placedOnNamed": true,
+    "placementTextFamily": "session:<session>",
+    "placementTextNamed": "server"
+  },
+  "errors": {
+    "badVersion": {
+      "message": "contract version must be a positive integer",
+      "name": "TypeError"
+    },
+    "bothKinds": {
+      "message": "member x is both state and method in t.a",
+      "name": "TypeError"
+    },
+    "emptyName": {
+      "message": "contract name is empty",
+      "name": "TypeError"
+    },
+    "hostExtra": {
+      "message": "remote contract t needs `host`: hostNamed(…) or hostFamily(…)",
+      "name": "TypeError"
+    },
+    "hostFamilyKey": {
+      "message": "hostFamily needs an input field name",
+      "name": "TypeError"
+    },
+    "hostFamilyPrefix": {
+      "message": "hostFamily needs a host-name prefix",
+      "name": "TypeError"
+    },
+    "hostNamedEmpty": {
+      "message": "hostNamed needs a host name",
+      "name": "TypeError"
+    },
+    "noHost": {
+      "message": "remote contract t needs `host`: hostNamed(…) or hostFamily(…)",
+      "name": "TypeError"
+    },
+    "noVariants": {
+      "message": "remote contract t has no variants",
+      "name": "TypeError"
+    },
+    "notMethod": {
+      "message": "methods.x is not a method()",
+      "name": "TypeError"
+    },
+    "opaqueBad": {
+      "message": "opaque id must be name@version: x",
+      "name": "TypeError"
+    },
+    "opaqueRemote": {
+      "message": "remote contracts cannot expose opaque members: h",
+      "name": "TypeError"
+    },
+    "reserved": {
+      "message": "member name is reserved: status",
+      "name": "TypeError"
+    }
+  },
+  "identityA": "{\"session\":\"s\"}",
+  "identityB": "{\"session\":\"s\"}",
+  "methods": {
+    "argsNone": ".m arguments",
+    "noneArgs": ".m arguments",
+    "noneMember": {
+      "kind": "method"
+    },
+    "noneNone": null,
+    "noneResult": ".m result",
+    "resultNone": null,
+    "takesNoArgsArgs": false,
+    "takesNoArgsNone": true
+  },
+  "normalizeInput": {
+    "conversation": 0,
+    "session": "s"
+  },
+  "opaque": {
+    "coverage": ".harness opaque h@2 != h@1"
+  },
+  "required": {
+    "bindError": {
+      "code": "contract_mismatch",
+      "message": "contract_mismatch: t.chat@1 does not cover the consumer's description (participant.send arguments); forgotten version bump?"
+    },
+    "coverage": "participant.send arguments"
+  },
+  "resolveHostError": {
+    "code": "invalid",
+    "message": "invalid/placement: t: input field session names no host",
+    "reason": "placement"
+  },
+  "resolveHostOk": "session:S1",
+  "retyped": {
+    "coverage": "viewer.view state"
+  },
+  "token": {
+    "defKeys": [
+      "host",
+      "input",
+      "variants",
+      "version"
+    ],
+    "fingerprint": "e8ee3f28594f8426",
+    "name": "t.chat",
+    "scope": "remote",
+    "version": 1
+  },
+  "tokenErrors": {
+    "badScope": {
+      "code": "invalid",
+      "message": "invalid/token: malformed contract token",
+      "reason": "token"
+    },
+    "badVersion": {
+      "code": "invalid",
+      "message": "invalid/token: malformed contract token",
+      "reason": "token"
+    },
+    "emptyName": null,
+    "localWithHost": {
+      "code": "invalid",
+      "message": "invalid/token: malformed contract token",
+      "reason": "token"
+    },
+    "missingHost": {
+      "code": "invalid",
+      "message": "invalid/token: malformed contract token",
+      "reason": "token"
+    }
+  },
+  "v2BindAdapter": "same",
+  "v2BindError": {
+    "code": "contract_mismatch",
+    "message": "contract_mismatch: t.chat: provider version 2, consumer version 1, no accepts adapter"
+  }
+}

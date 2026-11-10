@@ -1,0 +1,12 @@
+Documentation Eval Comparisons
+  tool access
+         Pairs  2/2 eligible
+     Pass rate  +50.0 pp (with 100.0%, without 50.0%)
+         Flags  treatment-saturated, flaky
+        Tokens  +0.0 (with 150.0, without 150.0, 2 pairs)
+         Tools  -0.5 (with 2.0, without 2.5, 2 pairs)
+       Latency  -100.0ms (with 900.0ms, without 1000.0ms, 2 pairs)
+     Est. cost  +$0.0000 (with $0.0100, without $0.0100, 2 pairs)
+  Operational totals
+    without_docs: 2 runs, 300 tokens, 5 tools, 2.00s, $0.0200 cost
+    with_docs: 2 runs, 300 tokens, 4 tools, 1.80s, $0.0200 cost

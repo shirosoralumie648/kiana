@@ -1,0 +1,952 @@
+[
+  {
+    "group": "docs-root",
+    "work_file": "docs/internal/comment-audit/work/docs-root.md",
+    "rows": 25,
+    "files": [
+      "ARCHITECTURE.md"
+    ]
+  },
+  {
+    "group": "kiana-agent-core",
+    "work_file": "docs/internal/comment-audit/work/kiana-agent-core.md",
+    "rows": 37,
+    "files": [
+      "crates/kiana-agent-core/Cargo.toml",
+      "crates/kiana-agent-core/src/agent.rs",
+      "crates/kiana-agent-core/src/agent_loop.rs",
+      "crates/kiana-agent-core/src/lib.rs",
+      "crates/kiana-agent-core/src/proxy.rs",
+      "crates/kiana-agent-core/src/stream_fn.rs",
+      "crates/kiana-agent-core/src/types.rs",
+      "crates/kiana-agent-core/src/wire_keys.rs",
+      "crates/kiana-agent-core/tests/agent.rs",
+      "crates/kiana-agent-core/tests/agent_loop.rs",
+      "crates/kiana-agent-core/tests/proxy.rs",
+      "crates/kiana-agent-core/tests/public_api.rs",
+      "crates/kiana-agent-core/tests/util/calculate.rs",
+      "crates/kiana-agent-core/tests/util/get_current_time.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/src/api/bedrock_converse_stream.rs",
+      "crates/kiana-ai/src/api/mistral_conversations.rs",
+      "crates/kiana-ai/src/api/openai_completions.rs",
+      "crates/kiana-ai/src/auth/oauth/github_copilot.rs",
+      "crates/kiana-ai/src/error.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-2.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/src/api/azure_openai_responses.rs",
+      "crates/kiana-ai/src/api/constrained_sampling.rs",
+      "crates/kiana-ai/src/api/system_one_shared.rs",
+      "crates/kiana-ai/src/model_catalog.rs",
+      "crates/kiana-ai/src/models/provider.rs",
+      "crates/kiana-ai/src/types.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-3",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-3.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/src/api/azure_openai_config.rs",
+      "crates/kiana-ai/src/api/kiana_messages.rs",
+      "crates/kiana-ai/src/api/lazy.rs",
+      "crates/kiana-ai/src/api/openai_codex_responses.rs",
+      "crates/kiana-ai/src/api/openai_responses_shared.rs",
+      "crates/kiana-ai/src/auth/oauth/openai_chatgpt.rs",
+      "crates/kiana-ai/src/providers/faux.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-4",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-4.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/Cargo.toml",
+      "crates/kiana-ai/src/api/llama_cpp_classify.rs",
+      "crates/kiana-ai/src/api/openai_responses.rs",
+      "crates/kiana-ai/src/auth/oauth/openai_codex.rs",
+      "crates/kiana-ai/src/compat.rs",
+      "crates/kiana-ai/src/http/reqwest_client.rs",
+      "crates/kiana-ai/src/image_models.rs",
+      "crates/kiana-ai/src/models/mod.rs",
+      "crates/kiana-ai/src/utils/overflow.rs",
+      "crates/kiana-ai/src/utils/streaming_json.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-5",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-5.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/build.rs",
+      "crates/kiana-ai/src/api/classifier_shared.rs",
+      "crates/kiana-ai/src/auth/oauth/callback_server.rs",
+      "crates/kiana-ai/src/auth/oauth/kimi_coding.rs",
+      "crates/kiana-ai/src/compat/extension_oauth_types.rs",
+      "crates/kiana-ai/src/env_api_keys.rs",
+      "crates/kiana-ai/src/providers/catalog.rs",
+      "crates/kiana-ai/src/providers/model_schema.rs",
+      "crates/kiana-ai/src/utils/identity.rs",
+      "crates/kiana-ai/src/utils/model_operations.rs",
+      "crates/kiana-ai/src/utils/node_http_proxy.rs",
+      "crates/kiana-ai/src/utils/provider_retry.rs",
+      "crates/kiana-ai/src/utils/retry.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-6",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-6.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/src/api/anthropic_messages.rs",
+      "crates/kiana-ai/src/api/mod.rs",
+      "crates/kiana-ai/src/api/transform_messages.rs",
+      "crates/kiana-ai/src/auth/oauth/anthropic.rs",
+      "crates/kiana-ai/src/auth/oauth/meta.rs",
+      "crates/kiana-ai/src/auth/oauth/radius.rs",
+      "crates/kiana-ai/src/auth/oauth/xai.rs",
+      "crates/kiana-ai/src/http/mod.rs",
+      "crates/kiana-ai/src/models/store.rs",
+      "crates/kiana-ai/src/providers/openrouter_api.rs",
+      "crates/kiana-ai/src/providers/radius_config.rs",
+      "crates/kiana-ai/src/providers/typesafe.rs",
+      "crates/kiana-ai/src/providers/vercel_ai_gateway.rs",
+      "crates/kiana-ai/src/telemetry.rs",
+      "crates/kiana-ai/src/utils/abort.rs",
+      "crates/kiana-ai/src/utils/typebox_helpers.rs",
+      "crates/kiana-ai/src/utils/validation.rs",
+      "crates/kiana-ai/tests/lazy_module_load.rs",
+      "crates/kiana-ai/tests/message_types.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-7",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-7.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-ai/src/api/cloudflare.rs",
+      "crates/kiana-ai/src/api/github_copilot_headers.rs",
+      "crates/kiana-ai/src/api/google_shared.rs",
+      "crates/kiana-ai/src/api/google_vertex.rs",
+      "crates/kiana-ai/src/api/typesafe_system_one.rs",
+      "crates/kiana-ai/src/auth/helpers.rs",
+      "crates/kiana-ai/src/auth/oauth/device_code.rs",
+      "crates/kiana-ai/src/auth/oauth/mod.rs",
+      "crates/kiana-ai/src/auth/resolve.rs",
+      "crates/kiana-ai/src/bin/kiana-ai.rs",
+      "crates/kiana-ai/src/cli.rs",
+      "crates/kiana-ai/src/legacy_api_aliases.rs",
+      "crates/kiana-ai/src/models/cost.rs",
+      "crates/kiana-ai/src/providers/all.rs",
+      "crates/kiana-ai/src/providers/cloudflare_ai_gateway.rs",
+      "crates/kiana-ai/src/providers/cloudflare_workers_ai.rs",
+      "crates/kiana-ai/src/providers/images/mod.rs",
+      "crates/kiana-ai/src/providers/opencode.rs",
+      "crates/kiana-ai/src/providers/opencode_go.rs",
+      "crates/kiana-ai/src/providers/openrouter.rs",
+      "crates/kiana-ai/src/providers/qwen_token_plan.rs",
+      "crates/kiana-ai/src/session_resources.rs",
+      "crates/kiana-ai/src/utils/abort_signals.rs",
+      "crates/kiana-ai/src/utils/error_body.rs",
+      "crates/kiana-ai/src/utils/event_stream.rs",
+      "crates/kiana-ai/src/utils/models_error.rs",
+      "crates/kiana-ai/src/utils/oauth_page.rs",
+      "crates/kiana-ai/src/utils/provider_env.rs",
+      "crates/kiana-ai/src/utils/text.rs",
+      "crates/kiana-ai/src/utils/uuid.rs",
+      "crates/kiana-ai/src/utils/version.rs",
+      "crates/kiana-ai/tests/abort.rs",
+      "crates/kiana-ai/tests/anthropic_oauth.rs",
+      "crates/kiana-ai/tests/bedrock_convert_messages.rs",
+      "crates/kiana-ai/tests/cli_login.rs",
+      "crates/kiana-ai/tests/common/credentials.rs",
+      "crates/kiana-ai/tests/models_runtime.rs",
+      "crates/kiana-ai/tests/support/streaming_json_reference.rs"
+    ]
+  },
+  {
+    "group": "kiana-ai--part-8",
+    "work_file": "docs/internal/comment-audit/work/kiana-ai--part-8.md",
+    "rows": 10,
+    "files": [
+      "crates/kiana-ai/tests/common/sse.rs",
+      "crates/kiana-ai/tests/generate_models_strict.rs",
+      "crates/kiana-ai/tests/images.rs",
+      "crates/kiana-ai/tests/model_data_validation.rs",
+      "crates/kiana-ai/tests/pre_generation_error.rs",
+      "crates/kiana-ai/tests/providers.rs",
+      "crates/kiana-ai/tests/stream.rs",
+      "crates/kiana-ai/tests/streaming_json.rs",
+      "crates/kiana-ai/tests/streaming_tool_arguments.rs",
+      "crates/kiana-ai/tests/type_shapes.rs"
+    ]
+  },
+  {
+    "group": "kiana-builtin-extensions--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-builtin-extensions--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-builtin-extensions/src/codemode/execute.rs",
+      "crates/kiana-builtin-extensions/src/codemode/index.rs",
+      "crates/kiana-builtin-extensions/src/codemode/renderer.rs",
+      "crates/kiana-builtin-extensions/src/codemode/tool.rs",
+      "crates/kiana-builtin-extensions/src/index.rs",
+      "crates/kiana-builtin-extensions/src/llama/client.rs",
+      "crates/kiana-builtin-extensions/src/llama/mod.rs",
+      "crates/kiana-builtin-extensions/src/llama/provider.rs",
+      "crates/kiana-builtin-extensions/src/llama/ui.rs",
+      "crates/kiana-builtin-extensions/src/mcp/cli.rs",
+      "crates/kiana-builtin-extensions/src/mcp/resources.rs",
+      "crates/kiana-builtin-extensions/src/mcp/tools.rs",
+      "crates/kiana-builtin-extensions/src/mcp/ui.rs",
+      "crates/kiana-builtin-extensions/src/theme_snapshot.rs",
+      "crates/kiana-builtin-extensions/src/tool_search/tool.rs"
+    ]
+  },
+  {
+    "group": "kiana-builtin-extensions--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-builtin-extensions--part-2.md",
+    "rows": 2,
+    "files": [
+      "crates/kiana-builtin-extensions/src/mcp/index.rs",
+      "crates/kiana-builtin-extensions/src/mcp/oauth.rs"
+    ]
+  },
+  {
+    "group": "kiana-chord--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-chord--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-chord/src/context/index.rs",
+      "crates/kiana-chord/src/contract/describe.rs",
+      "crates/kiana-chord/src/delta/diff.rs",
+      "crates/kiana-chord/src/delta/index.rs",
+      "crates/kiana-chord/src/delta/mod.rs",
+      "crates/kiana-chord/src/delta/revision_validator.rs",
+      "crates/kiana-chord/src/errors.rs",
+      "crates/kiana-chord/src/output.rs",
+      "crates/kiana-chord/src/schema.rs",
+      "crates/kiana-chord/src/wire.rs",
+      "crates/kiana-chord/tests/output_skip.rs"
+    ]
+  },
+  {
+    "group": "kiana-chord--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-chord--part-2.md",
+    "rows": 19,
+    "files": [
+      "crates/kiana-chord/src/contract/coverage.rs",
+      "crates/kiana-chord/src/contract/mod.rs",
+      "crates/kiana-chord/src/delta/pending.rs",
+      "crates/kiana-chord/src/json.rs",
+      "crates/kiana-chord/src/lib.rs",
+      "crates/kiana-chord/src/sqlite/mod.rs",
+      "crates/kiana-chord/src/sqlite/node.rs",
+      "crates/kiana-chord/src/sqlite/schema.rs",
+      "crates/kiana-chord/src/telemetry_sqlite/store.rs",
+      "crates/kiana-chord/tests/context.rs",
+      "crates/kiana-chord/tests/contract.rs",
+      "crates/kiana-chord/tests/delta_ops.rs",
+      "crates/kiana-chord/tests/schema.rs",
+      "crates/kiana-chord/tests/sqlite_node.rs",
+      "crates/kiana-chord/tests/types.rs"
+    ]
+  },
+  {
+    "group": "kiana-codemode--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-codemode--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-codemode/src/declarations.rs",
+      "crates/kiana-codemode/src/lib.rs",
+      "crates/kiana-codemode/src/runtime/execution.rs",
+      "crates/kiana-codemode/src/runtime/host.rs",
+      "crates/kiana-codemode/src/runtime/prelude_source.rs",
+      "crates/kiana-codemode/src/runtime/protocol.rs",
+      "crates/kiana-codemode/src/runtime/remote.rs",
+      "crates/kiana-codemode/src/runtime/vm.rs",
+      "crates/kiana-codemode/src/runtime/worker.rs",
+      "crates/kiana-codemode/src/source.rs",
+      "crates/kiana-codemode/src/types.rs",
+      "crates/kiana-codemode/src/wasm.rs",
+      "crates/kiana-codemode/tests/declarations.rs",
+      "crates/kiana-codemode/tests/execution.rs"
+    ]
+  },
+  {
+    "group": "kiana-codemode--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-codemode--part-2.md",
+    "rows": 5,
+    "files": [
+      "crates/kiana-codemode/tests/api_surface.rs",
+      "crates/kiana-codemode/tests/deterministic.rs",
+      "crates/kiana-codemode/tests/protocol.rs",
+      "crates/kiana-codemode/tests/source.rs",
+      "crates/kiana-codemode/tests/vm.rs"
+    ]
+  },
+  {
+    "group": "kiana-coding-agent",
+    "work_file": "docs/internal/comment-audit/work/kiana-coding-agent.md",
+    "rows": 21,
+    "files": [
+      "crates/kiana-coding-agent/src/app.rs",
+      "crates/kiana-coding-agent/src/cli/auth_command.rs",
+      "crates/kiana-coding-agent/src/cli/session_picker.rs",
+      "crates/kiana-coding-agent/src/cli/startup_ui.rs",
+      "crates/kiana-coding-agent/src/migrations.rs",
+      "crates/kiana-coding-agent/src/package_manager_cli.rs",
+      "crates/kiana-coding-agent/tests/cli_smoke.rs",
+      "crates/kiana-coding-agent/tests/config_value_migration.rs",
+      "crates/kiana-coding-agent/tests/regressions_5661_uppercase_header_values.rs",
+      "crates/kiana-coding-agent/tests/regressions_7269_cli_end_of_options.rs",
+      "crates/kiana-coding-agent/tests/stdout_cleanliness.rs"
+    ]
+  },
+  {
+    "group": "kiana-compaction",
+    "work_file": "docs/internal/comment-audit/work/kiana-compaction.md",
+    "rows": 15,
+    "files": [
+      "crates/kiana-compaction/src/branch_summarization.rs",
+      "crates/kiana-compaction/src/compaction.rs",
+      "crates/kiana-compaction/src/utils.rs",
+      "crates/kiana-compaction/tests/branch_summarization.rs",
+      "crates/kiana-compaction/tests/malformed_sessions.rs"
+    ]
+  },
+  {
+    "group": "kiana-config",
+    "work_file": "docs/internal/comment-audit/work/kiana-config.md",
+    "rows": 39,
+    "files": [
+      "crates/kiana-config/src/auth/storage.rs",
+      "crates/kiana-config/src/cache/warmer.rs",
+      "crates/kiana-config/src/models/catalog_http.rs",
+      "crates/kiana-config/src/models/composer.rs",
+      "crates/kiana-config/src/models/config_file.rs",
+      "crates/kiana-config/src/models/runtime.rs",
+      "crates/kiana-config/src/resolve_config_value.rs",
+      "crates/kiana-config/src/settings/mod.rs",
+      "crates/kiana-config/src/settings/schema.rs",
+      "crates/kiana-config/src/trust/manager.rs",
+      "crates/kiana-config/src/trust/project_trust.rs",
+      "crates/kiana-config/tests/auth_storage.rs",
+      "crates/kiana-config/tests/config_schemas.rs",
+      "crates/kiana-config/tests/config_value_migration.rs",
+      "crates/kiana-config/tests/model_catalog_protocol.rs",
+      "crates/kiana-config/tests/resolve_config_value.rs",
+      "crates/kiana-config/tests/settings_manager_bug.rs"
+    ]
+  },
+  {
+    "group": "kiana-core--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-core--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-core/src/clipboard.rs",
+      "crates/kiana-core/src/frontmatter.rs",
+      "crates/kiana-core/src/git.rs",
+      "crates/kiana-core/src/mcp_servers.rs",
+      "crates/kiana-core/src/shell.rs",
+      "crates/kiana-core/src/syntax_highlight.rs",
+      "crates/kiana-core/src/tools_manager.rs"
+    ]
+  },
+  {
+    "group": "kiana-core--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-core--part-2.md",
+    "rows": 35,
+    "files": [
+      "crates/kiana-core/src/abort.rs",
+      "crates/kiana-core/src/changelog.rs",
+      "crates/kiana-core/src/child_process.rs",
+      "crates/kiana-core/src/config.rs",
+      "crates/kiana-core/src/diagnostics.rs",
+      "crates/kiana-core/src/exec.rs",
+      "crates/kiana-core/src/html.rs",
+      "crates/kiana-core/src/http_dispatcher.rs",
+      "crates/kiana-core/src/image_process.rs",
+      "crates/kiana-core/src/kiana_manifest.rs",
+      "crates/kiana-core/src/management_http.rs",
+      "crates/kiana-core/src/output_files.rs",
+      "crates/kiana-core/src/paths.rs",
+      "crates/kiana-core/src/slash_commands.rs",
+      "crates/kiana-core/src/source_info.rs",
+      "crates/kiana-core/src/text.rs",
+      "crates/kiana-core/src/zip.rs",
+      "crates/kiana-core/tests/child_process.rs",
+      "crates/kiana-core/tests/paths.rs",
+      "crates/kiana-core/tests/slash_commands.rs",
+      "crates/kiana-core/tests/syntax_highlight.rs"
+    ]
+  },
+  {
+    "group": "kiana-durable--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-durable--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-durable/src/env/node.rs",
+      "crates/kiana-durable/src/harness/generation.rs",
+      "crates/kiana-durable/src/harness/live.rs",
+      "crates/kiana-durable/src/storage/memory.rs",
+      "crates/kiana-durable/src/storage/sqlite/storage.rs",
+      "crates/kiana-durable/src/types.rs"
+    ]
+  },
+  {
+    "group": "kiana-durable--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-durable--part-2.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-durable/src/harness/compaction.rs",
+      "crates/kiana-durable/src/harness/events.rs",
+      "crates/kiana-durable/src/harness/prompt.rs",
+      "crates/kiana-durable/src/harness/view.rs",
+      "crates/kiana-durable/src/session/session.rs",
+      "crates/kiana-durable/src/session/transaction.rs",
+      "crates/kiana-durable/src/storage/jsonl/storage.rs",
+      "crates/kiana-durable/src/storage/scan.rs",
+      "crates/kiana-durable/src/storage/sqlite/migrations.rs",
+      "crates/kiana-durable/src/testing/env_conformance.rs",
+      "crates/kiana-durable/src/testing/storage_conformance.rs",
+      "crates/kiana-durable/src/tools/edit.rs",
+      "crates/kiana-durable/src/tools/edit_diff.rs",
+      "crates/kiana-durable/tests/tools_images.rs"
+    ]
+  },
+  {
+    "group": "kiana-durable--part-3",
+    "work_file": "docs/internal/comment-audit/work/kiana-durable--part-3.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-durable/Cargo.toml",
+      "crates/kiana-durable/examples/11_tasks.rs",
+      "crates/kiana-durable/examples/16_coding_tools.rs",
+      "crates/kiana-durable/examples/18_json.rs",
+      "crates/kiana-durable/src/codemode/codemode.rs",
+      "crates/kiana-durable/src/codemode/describe.rs",
+      "crates/kiana-durable/src/env/decode.rs",
+      "crates/kiana-durable/src/env/path/posix.rs",
+      "crates/kiana-durable/src/env/path/win32.rs",
+      "crates/kiana-durable/src/harness/harness.rs",
+      "crates/kiana-durable/src/harness/inbox.rs",
+      "crates/kiana-durable/src/harness/json.rs",
+      "crates/kiana-durable/src/harness/registry.rs",
+      "crates/kiana-durable/src/harness/scheduler.rs",
+      "crates/kiana-durable/src/harness/telemetry.rs",
+      "crates/kiana-durable/src/harness/usage.rs",
+      "crates/kiana-durable/src/images/exif.rs",
+      "crates/kiana-durable/src/images/node.rs",
+      "crates/kiana-durable/src/lib.rs",
+      "crates/kiana-durable/src/search.rs",
+      "crates/kiana-durable/src/storage/jsonl/node.rs",
+      "crates/kiana-durable/src/storage/sqlite/schema.rs",
+      "crates/kiana-durable/src/testing/storage_benchmark.rs",
+      "crates/kiana-durable/src/tool_search/tool_search.rs",
+      "crates/kiana-durable/src/tools/bash.rs",
+      "crates/kiana-durable/src/tools/env.rs",
+      "crates/kiana-durable/src/tools/image.rs",
+      "crates/kiana-durable/src/tools/path_utils.rs",
+      "crates/kiana-durable/src/tools/read.rs",
+      "crates/kiana-durable/src/truncate.rs",
+      "crates/kiana-durable/tests/env_node_spill.rs",
+      "crates/kiana-durable/tests/harness_read_only.rs",
+      "crates/kiana-durable/tests/memory_storage.rs",
+      "crates/kiana-durable/tests/session_tables.rs",
+      "crates/kiana-durable/tests/storage_memory.rs"
+    ]
+  },
+  {
+    "group": "kiana-durable--part-4",
+    "work_file": "docs/internal/comment-audit/work/kiana-durable--part-4.md",
+    "rows": 4,
+    "files": [
+      "crates/kiana-durable/tests/session_watches.rs",
+      "crates/kiana-durable/tests/sqlite_facade.rs",
+      "crates/kiana-durable/tests/sqlite_storage.rs",
+      "crates/kiana-durable/tests/types.rs"
+    ]
+  },
+  {
+    "group": "kiana-env",
+    "work_file": "docs/internal/comment-audit/work/kiana-env.md",
+    "rows": 3,
+    "files": [
+      "crates/kiana-env/src/errors.rs",
+      "crates/kiana-env/src/watch.rs",
+      "crates/kiana-env/tests/docs.rs"
+    ]
+  },
+  {
+    "group": "kiana-env-client",
+    "work_file": "docs/internal/comment-audit/work/kiana-env-client.md",
+    "rows": 15,
+    "files": [
+      "crates/kiana-env-client/src/connection.rs",
+      "crates/kiana-env-client/src/lib.rs",
+      "crates/kiana-env-client/src/list_files.rs",
+      "crates/kiana-env-client/src/ssh.rs",
+      "crates/kiana-env-client/tests/conformance.rs",
+      "crates/kiana-env-client/tests/remote.rs",
+      "crates/kiana-env-client/tests/ssh.rs",
+      "crates/kiana-env-client/tests/terminal.rs"
+    ]
+  },
+  {
+    "group": "kiana-evals",
+    "work_file": "docs/internal/comment-audit/work/kiana-evals.md",
+    "rows": 29,
+    "files": [
+      "crates/kiana-evals/src/cli.rs",
+      "crates/kiana-evals/src/docker.rs",
+      "crates/kiana-evals/src/harness.rs",
+      "crates/kiana-evals/src/lib.rs",
+      "crates/kiana-evals/src/plan.rs",
+      "crates/kiana-evals/src/report.rs",
+      "crates/kiana-evals/tests/support/acme_server.rs",
+      "crates/kiana-evals/tests/support/configured_runtime.rs"
+    ]
+  },
+  {
+    "group": "kiana-export",
+    "work_file": "docs/internal/comment-audit/work/kiana-export.md",
+    "rows": 15,
+    "files": [
+      "crates/kiana-export/src/index.rs",
+      "crates/kiana-export/src/lib.rs",
+      "crates/kiana-export/src/tool_renderer.rs",
+      "crates/kiana-export/tests/assets.rs",
+      "crates/kiana-export/tests/export_html_cjk.rs",
+      "crates/kiana-export/tests/export_html_golden.rs",
+      "crates/kiana-export/tests/export_html_system_messages.rs",
+      "crates/kiana-export/tests/export_html_unknown_fields.rs"
+    ]
+  },
+  {
+    "group": "kiana-ext-api",
+    "work_file": "docs/internal/comment-audit/work/kiana-ext-api.md",
+    "rows": 9,
+    "files": [
+      "crates/kiana-ext-api/src/events.rs",
+      "crates/kiana-ext-api/src/tool_result.rs",
+      "crates/kiana-ext-api/src/tool_types.rs",
+      "crates/kiana-ext-api/tests/tool_types.rs"
+    ]
+  },
+  {
+    "group": "kiana-extensions--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-extensions--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-extensions/src/engine/promise.rs",
+      "crates/kiana-extensions/src/loader/loader_impl.rs",
+      "crates/kiana-extensions/src/loader/mod.rs",
+      "crates/kiana-extensions/src/loader/transpile.rs",
+      "crates/kiana-extensions/src/runner/commands.rs",
+      "crates/kiana-extensions/src/runner/context.rs",
+      "crates/kiana-extensions/src/runner/dispatch.rs",
+      "crates/kiana-extensions/src/runner/mcp_registration.rs",
+      "crates/kiana-extensions/src/runner/mod.rs",
+      "crates/kiana-extensions/src/runner/noop_ui.rs",
+      "crates/kiana-extensions/src/ui/mod.rs",
+      "crates/kiana-extensions/src/virtual_modules.rs"
+    ]
+  },
+  {
+    "group": "kiana-extensions--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-extensions--part-2.md",
+    "rows": 12,
+    "files": [
+      "crates/kiana-extensions/src/index.rs",
+      "crates/kiana-extensions/src/lib.rs",
+      "crates/kiana-extensions/src/loader/resolver.rs",
+      "crates/kiana-extensions/src/runner/keybindings.rs",
+      "crates/kiana-extensions/tests/engine_timers.rs",
+      "crates/kiana-extensions/tests/extension_api_transaction.rs",
+      "crates/kiana-extensions/tests/extensions_discovery.rs",
+      "crates/kiana-extensions/tests/extensions_loader.rs",
+      "crates/kiana-extensions/tests/intl.rs",
+      "crates/kiana-extensions/tests/virtual_modules.rs"
+    ]
+  },
+  {
+    "group": "kiana-interactive--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-interactive--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-interactive/src/assets/mod.rs",
+      "crates/kiana-interactive/src/bug_report.rs",
+      "crates/kiana-interactive/src/components/config_selector.rs",
+      "crates/kiana-interactive/src/components/easter_egg_3d.rs",
+      "crates/kiana-interactive/src/components/model_selector.rs",
+      "crates/kiana-interactive/src/components/session_selector.rs",
+      "crates/kiana-interactive/src/components/settings_submenu.rs",
+      "crates/kiana-interactive/src/components/tree_selector.rs"
+    ]
+  },
+  {
+    "group": "kiana-interactive--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-interactive--part-2.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-interactive/src/components/armin.rs",
+      "crates/kiana-interactive/src/components/assistant_message.rs",
+      "crates/kiana-interactive/src/components/custom_editor.rs",
+      "crates/kiana-interactive/src/components/extension_selector.rs",
+      "crates/kiana-interactive/src/components/radius_login_selector.rs",
+      "crates/kiana-interactive/src/components/scoped_models_selector.rs",
+      "crates/kiana-interactive/src/components/settings_selector.rs",
+      "crates/kiana-interactive/src/components/status_indicator.rs",
+      "crates/kiana-interactive/src/components/trust_selector.rs",
+      "crates/kiana-interactive/src/components/user_message_selector.rs",
+      "crates/kiana-interactive/src/interactive_mode.rs",
+      "crates/kiana-interactive/src/interactive_mode/commands/mod.rs",
+      "crates/kiana-interactive/src/interactive_mode/extension_ui/mod.rs",
+      "crates/kiana-interactive/src/model_search.rs",
+      "crates/kiana-interactive/src/program_status_reporter.rs",
+      "crates/kiana-interactive/src/session_share.rs",
+      "crates/kiana-interactive/src/tui_renderer.rs"
+    ]
+  },
+  {
+    "group": "kiana-interactive--part-3",
+    "work_file": "docs/internal/comment-audit/work/kiana-interactive--part-3.md",
+    "rows": 19,
+    "files": [
+      "crates/kiana-interactive/src/components/custom_entry.rs",
+      "crates/kiana-interactive/src/components/extension_editor.rs",
+      "crates/kiana-interactive/src/components/extension_input.rs",
+      "crates/kiana-interactive/src/components/first_time_setup.rs",
+      "crates/kiana-interactive/src/components/footer.rs",
+      "crates/kiana-interactive/src/components/oauth_selector.rs",
+      "crates/kiana-interactive/src/components/show_images_selector.rs",
+      "crates/kiana-interactive/src/components/theme_selector.rs",
+      "crates/kiana-interactive/src/components/user_message.rs",
+      "crates/kiana-interactive/src/interactive_mode/commands/auth.rs",
+      "crates/kiana-interactive/src/interactive_mode/commands/bash_compact.rs",
+      "crates/kiana-interactive/src/interactive_mode/commands/session.rs",
+      "crates/kiana-interactive/src/interactive_mode/events.rs",
+      "crates/kiana-interactive/src/interactive_mode/render.rs",
+      "crates/kiana-interactive/tests/components_mermaid.rs",
+      "crates/kiana-interactive/tests/components_model_selector.rs",
+      "crates/kiana-interactive/tests/components_tree_selector.rs",
+      "crates/kiana-interactive/tests/external_editor.rs",
+      "crates/kiana-interactive/tests/interactive_mode_extension_ui.rs"
+    ]
+  },
+  {
+    "group": "kiana-json",
+    "work_file": "docs/internal/comment-audit/work/kiana-json.md",
+    "rows": 16,
+    "files": [
+      "crates/kiana-json/src/js_object.rs",
+      "crates/kiana-json/src/js_parse.rs",
+      "crates/kiana-json/src/js_parse/partial.rs",
+      "crates/kiana-json/src/js_string.rs",
+      "crates/kiana-json/tests/api_golden.rs",
+      "crates/kiana-json/tests/json_repair.rs",
+      "crates/kiana-json/tests/parse_streaming.rs",
+      "crates/kiana-json/tests/parse_v8.rs"
+    ]
+  },
+  {
+    "group": "kiana-mcp--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-mcp--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-mcp/src/auth_provider.rs",
+      "crates/kiana-mcp/src/client.rs",
+      "crates/kiana-mcp/src/index.rs",
+      "crates/kiana-mcp/src/jsonrpc.rs",
+      "crates/kiana-mcp/src/lib.rs",
+      "crates/kiana-mcp/src/oauth/errors.rs",
+      "crates/kiana-mcp/src/oauth/flow.rs",
+      "crates/kiana-mcp/src/oauth/types.rs",
+      "crates/kiana-mcp/src/protocol_types.rs",
+      "crates/kiana-mcp/src/transports/streamable_http.rs",
+      "crates/kiana-mcp/tests/content.rs"
+    ]
+  },
+  {
+    "group": "kiana-mcp--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-mcp--part-2.md",
+    "rows": 16,
+    "files": [
+      "crates/kiana-mcp/src/oauth/discovery.rs",
+      "crates/kiana-mcp/src/oauth/provider.rs",
+      "crates/kiana-mcp/src/transports.rs",
+      "crates/kiana-mcp/src/transports/in_memory.rs",
+      "crates/kiana-mcp/src/transports/stdio.rs",
+      "crates/kiana-mcp/tests/api_surface.rs",
+      "crates/kiana-mcp/tests/client.rs",
+      "crates/kiana-mcp/tests/oauth.rs",
+      "crates/kiana-mcp/tests/oauth_core.rs",
+      "crates/kiana-mcp/tests/stdio_framing.rs",
+      "crates/kiana-mcp/tests/streamable_http.rs",
+      "crates/kiana-mcp/tests/wire.rs"
+    ]
+  },
+  {
+    "group": "kiana-resources",
+    "work_file": "docs/internal/comment-audit/work/kiana-resources.md",
+    "rows": 32,
+    "files": [
+      "crates/kiana-resources/src/bug_report.rs",
+      "crates/kiana-resources/src/footer_data_provider.rs",
+      "crates/kiana-resources/src/lib.rs",
+      "crates/kiana-resources/src/loader/context_files.rs",
+      "crates/kiana-resources/src/loader/mod.rs",
+      "crates/kiana-resources/src/loader/source_info_map.rs",
+      "crates/kiana-resources/src/loader/themes.rs",
+      "crates/kiana-resources/src/package/discover.rs",
+      "crates/kiana-resources/src/package/mod.rs",
+      "crates/kiana-resources/src/package/npm.rs",
+      "crates/kiana-resources/src/package/paths.rs",
+      "crates/kiana-resources/src/package/patterns.rs",
+      "crates/kiana-resources/src/package/settings_io.rs",
+      "crates/kiana-resources/src/package/types.rs",
+      "crates/kiana-resources/src/skills/discover.rs",
+      "crates/kiana-resources/src/skills/mod.rs",
+      "crates/kiana-resources/src/skills/prompt.rs",
+      "crates/kiana-resources/src/skills/validate.rs",
+      "crates/kiana-resources/src/system_prompt.rs",
+      "crates/kiana-resources/tests/package_manager.rs",
+      "crates/kiana-resources/tests/prompt_templates.rs",
+      "crates/kiana-resources/tests/resource_loader.rs",
+      "crates/kiana-resources/tests/resource_loader_theme.rs"
+    ]
+  },
+  {
+    "group": "kiana-rpc-print",
+    "work_file": "docs/internal/comment-audit/work/kiana-rpc-print.md",
+    "rows": 27,
+    "files": [
+      "crates/kiana-rpc-print/src/index.rs",
+      "crates/kiana-rpc-print/src/jsonl.rs",
+      "crates/kiana-rpc-print/src/lib.rs",
+      "crates/kiana-rpc-print/src/print_mode.rs",
+      "crates/kiana-rpc-print/src/rpc_client.rs",
+      "crates/kiana-rpc-print/src/rpc_mode.rs",
+      "crates/kiana-rpc-print/src/rpc_types.rs",
+      "crates/kiana-rpc-print/tests/client_process_exit.rs",
+      "crates/kiana-rpc-print/tests/export_surface.rs",
+      "crates/kiana-rpc-print/tests/js_json_parity.rs",
+      "crates/kiana-rpc-print/tests/json_event_parity.rs",
+      "crates/kiana-rpc-print/tests/jsonl_parity.rs",
+      "crates/kiana-rpc-print/tests/print_mode_parity.rs",
+      "crates/kiana-rpc-print/tests/rpc_client_commands.rs",
+      "crates/kiana-rpc-print/tests/rpc_signal_parity.rs",
+      "crates/kiana-rpc-print/tests/rpc_ui_parity.rs"
+    ]
+  },
+  {
+    "group": "kiana-session",
+    "work_file": "docs/internal/comment-audit/work/kiana-session.md",
+    "rows": 5,
+    "files": [
+      "crates/kiana-session/src/agent_session.rs",
+      "crates/kiana-session/src/agent_session_runtime.rs",
+      "crates/kiana-session/tests/regression_8328_zero_usage_auto_compaction.rs",
+      "crates/kiana-session/tests/regression_9340_auto_compaction_cancellation.rs"
+    ]
+  },
+  {
+    "group": "kiana-session-core",
+    "work_file": "docs/internal/comment-audit/work/kiana-session-core.md",
+    "rows": 29,
+    "files": [
+      "crates/kiana-session-core/src/cache_stats.rs",
+      "crates/kiana-session-core/src/lib.rs",
+      "crates/kiana-session-core/src/messages.rs",
+      "crates/kiana-session-core/src/session_export.rs",
+      "crates/kiana-session-core/src/session_manager.rs",
+      "crates/kiana-session-core/src/virtual_models.rs",
+      "crates/kiana-session-core/tests/messages.rs",
+      "crates/kiana-session-core/tests/session_export.rs",
+      "crates/kiana-session-core/tests/session_info_modified_timestamp.rs",
+      "crates/kiana-session-core/tests/session_manager_migration.rs",
+      "crates/kiana-session-core/tests/session_manager_save_entry.rs"
+    ]
+  },
+  {
+    "group": "kiana-telemetry",
+    "work_file": "docs/internal/comment-audit/work/kiana-telemetry.md",
+    "rows": 34,
+    "files": [
+      "crates/kiana-telemetry/src/index.rs",
+      "crates/kiana-telemetry/src/jsjson.rs",
+      "crates/kiana-telemetry/src/lib.rs",
+      "crates/kiana-telemetry/src/memory.rs",
+      "crates/kiana-telemetry/src/render.rs",
+      "crates/kiana-telemetry/src/store_conformance.rs",
+      "crates/kiana-telemetry/src/testing.rs",
+      "crates/kiana-telemetry/src/timsort.rs",
+      "crates/kiana-telemetry/tests/conformance.rs",
+      "crates/kiana-telemetry/tests/cursor_pages.rs",
+      "crates/kiana-telemetry/tests/js_edges.rs",
+      "crates/kiana-telemetry/tests/memory_edges.rs",
+      "crates/kiana-telemetry/tests/metrics.rs",
+      "crates/kiana-telemetry/tests/propagation.rs",
+      "crates/kiana-telemetry/tests/render.rs",
+      "crates/kiana-telemetry/tests/reviewer_fixes.rs",
+      "crates/kiana-telemetry/tests/schema_golden.rs",
+      "crates/kiana-telemetry/tests/store.rs"
+    ]
+  },
+  {
+    "group": "kiana-theme",
+    "work_file": "docs/internal/comment-audit/work/kiana-theme.md",
+    "rows": 23,
+    "files": [
+      "crates/kiana-theme/src/assets.rs",
+      "crates/kiana-theme/src/lib.rs",
+      "crates/kiana-theme/src/theme.rs",
+      "crates/kiana-theme/src/theme_controller.rs",
+      "crates/kiana-theme/src/theme_schema.rs",
+      "crates/kiana-theme/tests/theme_picker.rs"
+    ]
+  },
+  {
+    "group": "kiana-tools",
+    "work_file": "docs/internal/comment-audit/work/kiana-tools.md",
+    "rows": 32,
+    "files": [
+      "crates/kiana-tools/src/bash.rs",
+      "crates/kiana-tools/src/bash_executor.rs",
+      "crates/kiana-tools/src/definition.rs",
+      "crates/kiana-tools/src/edit.rs",
+      "crates/kiana-tools/src/edit_diff.rs",
+      "crates/kiana-tools/src/file_mutation_queue.rs",
+      "crates/kiana-tools/src/find.rs",
+      "crates/kiana-tools/src/grep.rs",
+      "crates/kiana-tools/src/lib.rs",
+      "crates/kiana-tools/src/ls.rs",
+      "crates/kiana-tools/src/read.rs",
+      "crates/kiana-tools/src/render_utils.rs",
+      "crates/kiana-tools/src/renderers/edit.rs",
+      "crates/kiana-tools/src/renderers/ls.rs",
+      "crates/kiana-tools/src/renderers/read.rs",
+      "crates/kiana-tools/src/renderers/write.rs",
+      "crates/kiana-tools/src/write.rs",
+      "crates/kiana-tools/tests/file_tools_renderers.rs",
+      "crates/kiana-tools/tests/tool_definitions_golden.rs"
+    ]
+  },
+  {
+    "group": "kiana-tui--part-1",
+    "work_file": "docs/internal/comment-audit/work/kiana-tui--part-1.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-tui/src/alt_screen.rs",
+      "crates/kiana-tui/src/components/editor/mod.rs",
+      "crates/kiana-tui/src/latex.rs",
+      "crates/kiana-tui/src/stdin.rs",
+      "crates/kiana-tui/src/tui.rs"
+    ]
+  },
+  {
+    "group": "kiana-tui--part-2",
+    "work_file": "docs/internal/comment-audit/work/kiana-tui--part-2.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-tui/src/autocomplete.rs",
+      "crates/kiana-tui/src/components/scroll_view.rs",
+      "crates/kiana-tui/src/components/stack.rs",
+      "crates/kiana-tui/src/fuzzy.rs",
+      "crates/kiana-tui/src/main_screen.rs",
+      "crates/kiana-tui/src/oklab.rs",
+      "crates/kiana-tui/src/terminal.rs",
+      "crates/kiana-tui/tests/chat_simple.rs",
+      "crates/kiana-tui/tests/latex.rs"
+    ]
+  },
+  {
+    "group": "kiana-tui--part-3",
+    "work_file": "docs/internal/comment-audit/work/kiana-tui--part-3.md",
+    "rows": 40,
+    "files": [
+      "crates/kiana-tui/src/alt_screen_search.rs",
+      "crates/kiana-tui/src/colors.rs",
+      "crates/kiana-tui/src/components/box_component.rs",
+      "crates/kiana-tui/src/components/input.rs",
+      "crates/kiana-tui/src/components/loader.rs",
+      "crates/kiana-tui/src/components/markdown/mod.rs",
+      "crates/kiana-tui/src/components/settings_list.rs",
+      "crates/kiana-tui/src/editor_component.rs",
+      "crates/kiana-tui/src/flash.rs",
+      "crates/kiana-tui/src/keys.rs",
+      "crates/kiana-tui/src/layout.rs",
+      "crates/kiana-tui/src/lib.rs",
+      "crates/kiana-tui/src/markdown/block.rs",
+      "crates/kiana-tui/src/markdown/inline.rs",
+      "crates/kiana-tui/src/markdown/lexer.rs",
+      "crates/kiana-tui/src/markdown/mod.rs",
+      "crates/kiana-tui/src/markdown/table.rs",
+      "crates/kiana-tui/src/native/mod.rs",
+      "crates/kiana-tui/tests/editor.rs",
+      "crates/kiana-tui/tests/exit_restore.rs",
+      "crates/kiana-tui/tests/fuzzy.rs",
+      "crates/kiana-tui/tests/regression_review_fixes.rs",
+      "crates/kiana-tui/tests/tab_width.rs",
+      "crates/kiana-tui/tests/terminal_image.rs"
+    ]
+  },
+  {
+    "group": "kiana-tui--part-4",
+    "work_file": "docs/internal/comment-audit/work/kiana-tui--part-4.md",
+    "rows": 27,
+    "files": [
+      "crates/kiana-tui/src/native/darwin.rs",
+      "crates/kiana-tui/src/native/linux_x11.rs",
+      "crates/kiana-tui/src/native/module_path.rs",
+      "crates/kiana-tui/src/native/win32.rs",
+      "crates/kiana-tui/src/terminal_image.rs",
+      "crates/kiana-tui/src/text.rs",
+      "crates/kiana-tui/tests/autocomplete.rs",
+      "crates/kiana-tui/tests/autocomplete_skill_slash.rs",
+      "crates/kiana-tui/tests/bug_regression_isimageline_startswith_bug.rs",
+      "crates/kiana-tui/tests/cell_size_input.rs",
+      "crates/kiana-tui/tests/colors.rs",
+      "crates/kiana-tui/tests/common/mod.rs",
+      "crates/kiana-tui/tests/image_test.rs",
+      "crates/kiana-tui/tests/keybindings.rs",
+      "crates/kiana-tui/tests/keys.rs",
+      "crates/kiana-tui/tests/latex_review_regression.rs",
+      "crates/kiana-tui/tests/markdown.rs",
+      "crates/kiana-tui/tests/native_clipboard.rs",
+      "crates/kiana-tui/tests/native_clipboard_linux.rs",
+      "crates/kiana-tui/tests/native_platform.rs",
+      "crates/kiana-tui/tests/overlay_options.rs",
+      "crates/kiana-tui/tests/truncate_to_width.rs",
+      "crates/kiana-tui/tests/tui_alt_screen.rs",
+      "crates/kiana-tui/tests/visible_width.rs",
+      "crates/kiana-tui/tests/word_navigation.rs",
+      "crates/kiana-tui/tests/word_segmentation_node_parity.rs",
+      "crates/kiana-tui/tests/wrap_ansi.rs"
+    ]
+  },
+  {
+    "group": "kiana-ui-kit",
+    "work_file": "docs/internal/comment-audit/work/kiana-ui-kit.md",
+    "rows": 10,
+    "files": [
+      "crates/kiana-ui-kit/src/bordered_loader.rs",
+      "crates/kiana-ui-kit/src/countdown_timer.rs",
+      "crates/kiana-ui-kit/src/diff.rs",
+      "crates/kiana-ui-kit/src/dynamic_border.rs",
+      "crates/kiana-ui-kit/src/visual_truncate.rs"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+[package]
+name = "kiana-env"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Remote execution environment daemon for Kiana Durable"
+
+[dependencies]
+serde_json = { workspace = true }
+encoding_rs = { workspace = true }
+ignore = { workspace = true }
+notify = { workspace = true }
+
+[target.'cfg(unix)'.dependencies]
+libc = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { workspace = true }
+
+[[bin]]
+name = "kiana-env"
+path = "src/main.rs"

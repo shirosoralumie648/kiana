@@ -1,0 +1,784 @@
+{
+ "hostname": [
+  {
+   "value": "example.com",
+   "check": true
+  },
+  {
+   "value": "xn--fsq.com",
+   "check": true
+  },
+  {
+   "value": "xn--例例例-abc",
+   "check": false
+  },
+  {
+   "value": "例え",
+   "check": false
+  },
+  {
+   "value": "日本語",
+   "check": false
+  },
+  {
+   "value": "xn--例例例例例例-abc",
+   "check": false
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+   "check": false
+  },
+  {
+   "value": "-a.com",
+   "check": false
+  },
+  {
+   "value": "a-.com",
+   "check": false
+  },
+  {
+   "value": "a..b",
+   "check": false
+  },
+  {
+   "value": "a.b-",
+   "check": false
+  },
+  {
+   "value": "a.b.",
+   "check": false
+  },
+  {
+   "value": "xn---9uc-ab",
+   "check": false
+  },
+  {
+   "value": "xn--9uc-ab",
+   "check": false
+  },
+  {
+   "value": "xn--abc",
+   "check": false
+  },
+  {
+   "value": "xn--a-ecp",
+   "check": false
+  },
+  {
+   "value": "xn--bcher-kva.example",
+   "check": true
+  },
+  {
+   "value": "XN--BCHER-KVA.example",
+   "check": true
+  },
+  {
+   "value": "a_b.com",
+   "check": false
+  },
+  {
+   "value": "a b.com",
+   "check": false
+  },
+  {
+   "value": "*.example.com",
+   "check": false
+  },
+  {
+   "value": "",
+   "check": false
+  },
+  {
+   "value": "example.com.",
+   "check": false
+  },
+  {
+   "value": "1.2.3.4",
+   "check": true
+  },
+  {
+   "value": "xn--",
+   "check": false
+  },
+  {
+   "value": "xn---",
+   "check": false
+  },
+  {
+   "value": "xn--a",
+   "check": false
+  },
+  {
+   "value": "xn--ls8h",
+   "check": false
+  },
+  {
+   "value": "xn--ls8h.la",
+   "check": false
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "check": false
+  },
+  {
+   "value": "é.com",
+   "check": false
+  },
+  {
+   "value": "xn--9ca.com",
+   "check": true
+  }
+ ],
+ "idn-hostname": [
+  {
+   "value": "example.com",
+   "check": true
+  },
+  {
+   "value": "例え.テスト",
+   "check": true
+  },
+  {
+   "value": "é.com",
+   "check": true
+  },
+  {
+   "value": "é.com",
+   "check": true
+  },
+  {
+   "value": "xn--fsq.com",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+   "check": false
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaé.com",
+   "check": false
+  },
+  {
+   "value": "éééééééééééééééééééééééééééééééé.com",
+   "check": true
+  },
+  {
+   "value": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀.com",
+   "check": false
+  },
+  {
+   "value": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀.com",
+   "check": false
+  },
+  {
+   "value": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀.com",
+   "check": false
+  },
+  {
+   "value": "ａｂｃ.com",
+   "check": true
+  },
+  {
+   "value": "a­b.com",
+   "check": true
+  },
+  {
+   "value": "a。b.com",
+   "check": true
+  },
+  {
+   "value": "a​b.com",
+   "check": true
+  },
+  {
+   "value": "a b.com",
+   "check": false
+  },
+  {
+   "value": "",
+   "check": false
+  },
+  {
+   "value": "a.b.",
+   "check": false
+  },
+  {
+   "value": "例え..テスト",
+   "check": false
+  },
+  {
+   "value": "xn--例例例-abc",
+   "check": false
+  },
+  {
+   "value": "éééééééééééééééééééééééééééééé.com",
+   "check": true
+  },
+  {
+   "value": "𝕒.com",
+   "check": true
+  },
+  {
+   "value": "á.com",
+   "check": true
+  }
+ ],
+ "idn-email": [
+  {
+   "value": "a@é.com",
+   "check": true
+  },
+  {
+   "value": "a@é.com",
+   "check": true
+  },
+  {
+   "value": "a@b.com",
+   "check": true
+  },
+  {
+   "value": "a@b",
+   "check": true
+  },
+  {
+   "value": "a@例え.テスト",
+   "check": true
+  },
+  {
+   "value": "\"a b\"@example.com",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@b.com",
+   "check": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@b.com",
+   "check": true
+  },
+  {
+   "value": "a@b",
+   "check": true
+  },
+  {
+   "value": "a@b..c",
+   "check": false
+  },
+  {
+   "value": "a@-b.com",
+   "check": false
+  },
+  {
+   "value": "a@b-.com",
+   "check": false
+  },
+  {
+   "value": "a@b-c.com",
+   "check": true
+  },
+  {
+   "value": "a b@c.com",
+   "check": false
+  },
+  {
+   "value": "á@b.com",
+   "check": true
+  },
+  {
+   "value": "éééééééééééééééééééééééééééééééé@b.com",
+   "check": true
+  },
+  {
+   "value": "a@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@é.com",
+   "check": false
+  },
+  {
+   "value": "a@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@éa@é.com",
+   "check": false
+  },
+  {
+   "value": "a@😀.com",
+   "check": false
+  },
+  {
+   "value": "a@b",
+   "check": true
+  },
+  {
+   "value": "a@b.c",
+   "check": true
+  },
+  {
+   "value": "a@b.ć",
+   "check": true
+  },
+  {
+   "value": "A@B.COM",
+   "check": true
+  },
+  {
+   "value": "a@0.com",
+   "check": true
+  },
+  {
+   "value": "a@b.com.",
+   "check": false
+  }
+ ],
+ "uri": [
+  {
+   "value": "http://[::1]",
+   "check": true
+  },
+  {
+   "value": "http://[::1]:8080/",
+   "check": true
+  },
+  {
+   "value": "http://[::1]/a",
+   "check": true
+  },
+  {
+   "value": "https://[2001:db8::1]/x",
+   "check": true
+  },
+  {
+   "value": "http://user:pass@example.com/",
+   "check": true
+  },
+  {
+   "value": "http://example.com/",
+   "check": true
+  },
+  {
+   "value": "mailto:a@b.com",
+   "check": true
+  },
+  {
+   "value": "urn:isbn:123",
+   "check": true
+  },
+  {
+   "value": "http://example.com/a?b=c#d",
+   "check": true
+  },
+  {
+   "value": "1a:b",
+   "check": false
+  },
+  {
+   "value": "a_b:c",
+   "check": false
+  },
+  {
+   "value": "a-b:c",
+   "check": true
+  },
+  {
+   "value": "a+b:c",
+   "check": true
+  },
+  {
+   "value": "//a",
+   "check": false
+  },
+  {
+   "value": "/a",
+   "check": false
+  },
+  {
+   "value": "a",
+   "check": false
+  },
+  {
+   "value": "",
+   "check": false
+  },
+  {
+   "value": "http://",
+   "check": true
+  },
+  {
+   "value": "http:///x",
+   "check": true
+  },
+  {
+   "value": "http://a@b@c",
+   "check": false
+  },
+  {
+   "value": "http://a b",
+   "check": false
+  },
+  {
+   "value": "http://a%20b",
+   "check": true
+  },
+  {
+   "value": "http://[::1",
+   "check": false
+  },
+  {
+   "value": "http://[v1.a]/",
+   "check": true
+  },
+  {
+   "value": "http://[vF.a:b]/",
+   "check": true
+  },
+  {
+   "value": "http://1.2.3.4:80/",
+   "check": true
+  },
+  {
+   "value": "http://999.1.1.1/",
+   "check": true
+  },
+  {
+   "value": "http://[::ffff:1.2.3.4]/",
+   "check": true
+  },
+  {
+   "value": "HTTP://EXAMPLE.COM",
+   "check": true
+  },
+  {
+   "value": "http://example.com/%zz",
+   "check": false
+  },
+  {
+   "value": "http://example.com/%2f",
+   "check": true
+  },
+  {
+   "value": "file:///etc/passwd",
+   "check": true
+  },
+  {
+   "value": "?q",
+   "check": false
+  },
+  {
+   "value": "#f",
+   "check": false
+  },
+  {
+   "value": "a:b:c",
+   "check": true
+  },
+  {
+   "value": "http://a:b@c:80/d",
+   "check": true
+  },
+  {
+   "value": "http:",
+   "check": true
+  },
+  {
+   "value": "http:/",
+   "check": true
+  },
+  {
+   "value": "http://user@",
+   "check": true
+  },
+  {
+   "value": "http://@host",
+   "check": true
+  },
+  {
+   "value": "http://host:port/",
+   "check": false
+  },
+  {
+   "value": "http://host:80x/",
+   "check": false
+  }
+ ],
+ "uri-reference": [
+  {
+   "value": "http://[::1]",
+   "check": true
+  },
+  {
+   "value": "http://[::1]:8080/",
+   "check": true
+  },
+  {
+   "value": "http://[::1]/a",
+   "check": true
+  },
+  {
+   "value": "https://[2001:db8::1]/x",
+   "check": true
+  },
+  {
+   "value": "http://user:pass@example.com/",
+   "check": true
+  },
+  {
+   "value": "//[::1]",
+   "check": true
+  },
+  {
+   "value": "//user@host/x",
+   "check": true
+  },
+  {
+   "value": "//a@",
+   "check": true
+  },
+  {
+   "value": "//a@b",
+   "check": true
+  },
+  {
+   "value": "1a:b",
+   "check": false
+  },
+  {
+   "value": "a_b:c",
+   "check": false
+  },
+  {
+   "value": "//a:b",
+   "check": false
+  },
+  {
+   "value": "http://a@b@c",
+   "check": false
+  },
+  {
+   "value": "http://example.com/",
+   "check": true
+  },
+  {
+   "value": "a/b",
+   "check": true
+  },
+  {
+   "value": "//host/path",
+   "check": true
+  },
+  {
+   "value": "?q",
+   "check": true
+  },
+  {
+   "value": "#f",
+   "check": true
+  },
+  {
+   "value": "",
+   "check": true
+  },
+  {
+   "value": ".",
+   "check": true
+  },
+  {
+   "value": "..",
+   "check": true
+  },
+  {
+   "value": "a:b",
+   "check": true
+  },
+  {
+   "value": "a",
+   "check": true
+  },
+  {
+   "value": "//",
+   "check": true
+  },
+  {
+   "value": "///",
+   "check": true
+  },
+  {
+   "value": "//host:80",
+   "check": true
+  },
+  {
+   "value": "//[::1]:80",
+   "check": true
+  },
+  {
+   "value": "//user:pass@host:80/p?q#f",
+   "check": true
+  },
+  {
+   "value": "http:",
+   "check": true
+  },
+  {
+   "value": "http:/",
+   "check": true
+  },
+  {
+   "value": "http://",
+   "check": true
+  },
+  {
+   "value": "%zz",
+   "check": false
+  },
+  {
+   "value": "/a%2fb",
+   "check": true
+  }
+ ],
+ "iri": [
+  {
+   "value": "http://example.com/",
+   "check": true
+  },
+  {
+   "value": "http://例え.com/",
+   "check": true
+  },
+  {
+   "value": "http://example.com/é",
+   "check": true
+  },
+  {
+   "value": "http://a b/",
+   "check": false
+  },
+  {
+   "value": "not a uri",
+   "check": false
+  },
+  {
+   "value": "urn:x",
+   "check": true
+  }
+ ],
+ "iri-reference": [
+  {
+   "value": "/é",
+   "check": true
+  },
+  {
+   "value": "//例え.com/",
+   "check": true
+  },
+  {
+   "value": "a",
+   "check": true
+  },
+  {
+   "value": "http://a b/",
+   "check": false
+  },
+  {
+   "value": "a b",
+   "check": false
+  },
+  {
+   "value": "//a b",
+   "check": false
+  },
+  {
+   "value": "é",
+   "check": true
+  }
+ ],
+ "url": [
+  {
+   "value": "http://example.com/",
+   "check": true
+  },
+  {
+   "value": "https://例え.com/",
+   "check": true
+  },
+  {
+   "value": "not a url",
+   "check": false
+  },
+  {
+   "value": "mailto:a@b.com",
+   "check": true
+  },
+  {
+   "value": "file:///x",
+   "check": true
+  },
+  {
+   "value": "http://[::1]/",
+   "check": true
+  }
+ ],
+ "email": [
+  {
+   "value": "a@b.com",
+   "check": true
+  },
+  {
+   "value": "a@b",
+   "check": true
+  },
+  {
+   "value": "a b@c.com",
+   "check": false
+  },
+  {
+   "value": "a@-b.com",
+   "check": false
+  },
+  {
+   "value": "\"a b\"@c.com",
+   "check": true
+  }
+ ],
+ "ipv4": [
+  {
+   "value": "1.2.3.4",
+   "check": true
+  },
+  {
+   "value": "999.1.1.1",
+   "check": false
+  },
+  {
+   "value": "1.2.3",
+   "check": false
+  },
+  {
+   "value": "01.2.3.4",
+   "check": false
+  }
+ ],
+ "ipv6": [
+  {
+   "value": "::1",
+   "check": true
+  },
+  {
+   "value": "2001:db8::1",
+   "check": true
+  },
+  {
+   "value": "::ffff:1.2.3.4",
+   "check": true
+  },
+  {
+   "value": "bad",
+   "check": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+[package]
+name = "kiana-ext-api"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 core/extensions/types.ts：扩展公开 API（唯一权威）+ 工具输入/输出类型 + system prompt 选项类型。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-json = { workspace = true }
+kiana-tui = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-core = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-compaction = { workspace = true }

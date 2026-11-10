@@ -1,0 +1,199 @@
+{
+  "schemaJson": {
+    "type": "object",
+    "required": [
+      "name",
+      "tags"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "number"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "ownSymbols": 0,
+  "kindValue": null,
+  "checkInputs": [
+    {
+      "name": "x",
+      "age": 3,
+      "tags": [
+        "a"
+      ]
+    },
+    {
+      "name": "x",
+      "tags": []
+    },
+    {},
+    {
+      "name": 1,
+      "tags": []
+    },
+    {
+      "name": "x",
+      "age": "3",
+      "tags": []
+    },
+    {
+      "name": "x",
+      "tags": [
+        1
+      ]
+    },
+    null
+  ],
+  "checkResults": [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "errorsFor": [
+    {},
+    {
+      "name": 1,
+      "tags": []
+    },
+    {
+      "name": "x",
+      "age": "3",
+      "tags": [
+        1
+      ]
+    },
+    null
+  ],
+  "convertInputs": [
+    {
+      "name": 123,
+      "age": "42",
+      "tags": "x"
+    },
+    {
+      "name": true,
+      "tags": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "x",
+      "age": null,
+      "tags": []
+    }
+  ],
+  "valueCheckInputs": [
+    {
+      "name": "x",
+      "tags": []
+    },
+    {
+      "name": 1,
+      "tags": []
+    }
+  ],
+  "valueCheckResults": [
+    true,
+    false
+  ],
+  "stringEnum": {
+    "type": "string",
+    "enum": [
+      "add",
+      "sub"
+    ],
+    "description": "op"
+  },
+  "errors": [
+    [
+      {
+        "keyword": "required",
+        "schemaPath": "#",
+        "instancePath": "",
+        "params": {
+          "requiredProperties": [
+            "name",
+            "tags"
+          ]
+        },
+        "message": "must have required properties name, tags"
+      }
+    ],
+    [
+      {
+        "keyword": "type",
+        "schemaPath": "#/properties/name",
+        "instancePath": "/name",
+        "params": {
+          "type": "string"
+        },
+        "message": "must be string"
+      }
+    ],
+    [
+      {
+        "keyword": "type",
+        "schemaPath": "#/properties/age",
+        "instancePath": "/age",
+        "params": {
+          "type": "number"
+        },
+        "message": "must be number"
+      },
+      {
+        "keyword": "type",
+        "schemaPath": "#/properties/tags/items",
+        "instancePath": "/tags/0",
+        "params": {
+          "type": "string"
+        },
+        "message": "must be string"
+      }
+    ],
+    [
+      {
+        "keyword": "type",
+        "schemaPath": "#",
+        "instancePath": "",
+        "params": {
+          "type": "object"
+        },
+        "message": "must be object"
+      }
+    ]
+  ],
+  "convert": [
+    {
+      "name": "123",
+      "age": 42,
+      "tags": [
+        "x"
+      ]
+    },
+    {
+      "name": "true",
+      "tags": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "name": "x",
+      "age": 0,
+      "tags": []
+    }
+  ]
+}

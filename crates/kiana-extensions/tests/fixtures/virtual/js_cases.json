@@ -1,0 +1,101 @@
+{
+  "eventStream": {
+    "done": {
+      "events": [
+        {
+          "type": "text_start",
+          "contentIndex": 0
+        },
+        {
+          "type": "text_delta",
+          "contentIndex": 0,
+          "delta": "hi"
+        },
+        {
+          "type": "done",
+          "message": {
+            "role": "assistant",
+            "timestamp": 0,
+            "content": [
+              {
+                "type": "text",
+                "text": "hi"
+              }
+            ],
+            "usage": {},
+            "stopReason": "end"
+          }
+        }
+      ],
+      "result": {
+        "role": "assistant",
+        "timestamp": 0,
+        "content": [
+          {
+            "type": "text",
+            "text": "hi"
+          }
+        ],
+        "usage": {},
+        "stopReason": "end"
+      }
+    },
+    "error": {
+      "result": {
+        "role": "assistant",
+        "timestamp": 0,
+        "content": [],
+        "usage": {},
+        "stopReason": "error",
+        "errorMessage": "boom"
+      }
+    },
+    "end": {
+      "events": [
+        {
+          "type": "text_start",
+          "contentIndex": 0
+        }
+      ],
+      "result": {
+        "role": "assistant",
+        "timestamp": 0,
+        "content": [],
+        "usage": {},
+        "stopReason": "end"
+      }
+    }
+  },
+  "uuid": {
+    "fixed": "018bcfe5-6800-7421-a74f-2f7944cba15f",
+    "version": "7",
+    "variant": "a",
+    "length": 36,
+    "generated": [
+      [
+        "7",
+        "a",
+        36
+      ],
+      [
+        "7",
+        "a",
+        36
+      ],
+      [
+        "7",
+        "a",
+        36
+      ]
+    ]
+  },
+  "stringEnum": {
+    "type": "string",
+    "enum": [
+      "add",
+      "sub"
+    ],
+    "description": "op",
+    "default": "add"
+  }
+}

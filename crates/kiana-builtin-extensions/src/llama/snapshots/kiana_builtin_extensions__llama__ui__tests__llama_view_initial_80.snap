@@ -1,0 +1,10 @@
+---
+source: crates/kiana-builtin-extensions/src/llama/ui.rs
+expression: "render_text(&view, 80)"
+---
+────────────────────────────────────────────────────────────────────────────────
+ llama.cpp models                                                               
+                                                                                
+ Loading…                                                                       
+                                                                                
+────────────────────────────────────────────────────────────────────────────────

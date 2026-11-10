@@ -1,0 +1,22 @@
+{
+  "first": {
+    "render": [
+      "a1|10",
+      "a2|10",
+      "b1|10"
+    ],
+    "children": 2
+  },
+  "invalidation": {
+    "a": 1,
+    "b": 1
+  },
+  "afterRemove": [
+    "b1|4"
+  ],
+  "afterClear": {
+    "children": 0,
+    "lines": []
+  },
+  "cursor": "\u001b_kiana:c\u0007"
+}

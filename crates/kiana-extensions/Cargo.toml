@@ -1,0 +1,307 @@
+[package]
+name = "kiana-extensions"
+# 测试目标统一用 `required-features` 门控（见文件末尾）：`--no-default-features` 时
+# 整个 crate 退化为 `kiana-ext-api` 的再导出面，集成测试全部跳过。
+autotests = false
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "对应 ca-extensions 的运行时部分：加载器、ExtensionRunner、事件派发、虚拟模块。"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+futures = { workspace = true }
+kiana-ai = { workspace = true }
+kiana-agent-core = { workspace = true }
+kiana-core = { workspace = true }
+kiana-session-core = { workspace = true }
+kiana-config = { workspace = true }
+kiana-theme = { workspace = true }
+kiana-tools = { workspace = true }
+kiana-ext-api = { workspace = true }
+kiana-json = { workspace = true }
+kiana-tui = { workspace = true }
+
+# ---- 运行时第三方依赖（spec/design-extension-runtime.md §1.2）----
+# Node 内建与全局：url/percent-encoding（node:url）、base64（Buffer/atob）、
+# sha2（crypto.subtle.digest）、getrandom（crypto.getRandomValues）、uuid（randomUUID）、
+# flate2（node:zlib）、notify（fs.watch）、libc（process.kill）、tracing（宿主日志）、
+# regex（node shim 的参数校验）、unicode-width/unicode-segmentation（Intl/locale 与截断）。
+url = { workspace = true }
+percent-encoding = { workspace = true }
+reqwest = { workspace = true }
+chrono = { workspace = true }
+chrono-tz = { workspace = true }
+base64 = { workspace = true }
+sha2 = { workspace = true }
+getrandom = { workspace = true }
+uuid = { workspace = true }
+flate2 = { workspace = true }
+notify = { workspace = true }
+unicode-width = { workspace = true }
+unicode-segmentation = { workspace = true }
+regex = { workspace = true }
+tracing = { workspace = true }
+libc = { workspace = true }
+
+# ---- 扩展运行时（spec/design-extension-runtime.md §1.2）----
+# 骨架期默认不编译（编译 C/oxc 很重）；阶段 5 起把 `runtime` 加进 default。
+rquickjs = { workspace = true, optional = true }
+oxc_allocator = { workspace = true, optional = true }
+oxc_ast = { workspace = true, optional = true }
+oxc_parser = { workspace = true, optional = true }
+oxc_semantic = { workspace = true, optional = true }
+oxc_transformer = { workspace = true, optional = true }
+oxc_codegen = { workspace = true, optional = true }
+oxc_span = { workspace = true, optional = true }
+oxc_resolver = { workspace = true, optional = true }
+wasmtime = { workspace = true, optional = true }
+icu_decimal = { workspace = true, optional = true }
+icu_datetime = { workspace = true, optional = true }
+icu_time = { workspace = true, optional = true }
+icu_locale = { workspace = true, optional = true }
+# Intl.Segmenter word granularity: CJK dictionary segmentation (design §5.8/§7.4).
+icu_segmenter = { workspace = true, optional = true }
+writeable = { workspace = true, optional = true }
+
+# `process.kill` / `child.kill` on Windows: TerminateProcess (design §6.3).
+[target.'cfg(windows)'.dependencies]
+windows-sys = { workspace = true }
+
+[dev-dependencies]
+# `extension_context` 的 fake host 需要构造 `CompactionResult`（compact 的 onComplete 回调）。
+kiana-compaction = { workspace = true }
+# 测试用的临时目录（loader/corpus 的扩展发现测试）与快照（insta 的 `.snap`）。
+tempfile = { workspace = true }
+insta = { workspace = true }
+# 仅测试构建启用 tokio 的 mock 时钟（`start_paused`），引擎的定时器测试因此不依赖墙钟
+# （ARCHITECTURE.md §4.8 第 8 条）。普通依赖不启用 test-util。
+tokio = { workspace = true, features = ["test-util"] }
+
+[features]
+# 阶段 5 末把 `runtime` 与 `locale-data` 加进 default（ARCHITECTURE.md §8 第 4、27 条）。
+# `--no-default-features` 时全部运行期模块按 `#[cfg(feature = "runtime")]` 消失，crate
+# 退化为 `kiana-ext-api` 的再导出面；该构建已验证为绿色（`cargo check -p kiana-extensions
+# --no-default-features`）。
+default = ["runtime", "locale-data"]
+# JS 引擎 + TS 去类型 + 模块解析（设计文档 §1.2）
+runtime = [
+    "dep:rquickjs",
+    "dep:oxc_allocator",
+    "dep:oxc_ast",
+    "dep:oxc_parser",
+    "dep:oxc_semantic",
+    "dep:oxc_transformer",
+    "dep:oxc_codegen",
+    "dep:oxc_span",
+    "dep:oxc_resolver",
+]
+# Intl 的 locale 数据（默认开启的构建目标；见设计文档 §6.4）
+locale-data = ["dep:icu_decimal", "dep:icu_datetime", "dep:icu_time", "dep:icu_locale", "dep:icu_segmenter", "dep:writeable"]
+# WebAssembly（doom-overlay 示例）
+webassembly = ["runtime", "dep:wasmtime"]
+
+# ---- 测试目标：全部需要 runtime（`cargo test --no-default-features` 为空构建）----
+[[test]]
+name = "boundary"
+path = "tests/boundary.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "cjs_loader"
+path = "tests/cjs_loader.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "corpus"
+path = "tests/corpus.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "dispatch"
+path = "tests/dispatch.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "engine"
+path = "tests/engine.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "engine_promise"
+path = "tests/engine_promise.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "engine_shutdown"
+path = "tests/engine_shutdown.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "engine_timers"
+path = "tests/engine_timers.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "event_bus_lifecycle"
+path = "tests/event_bus_lifecycle.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_api_transaction"
+path = "tests/extension_api_transaction.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_provider_oauth"
+path = "tests/extension_provider_oauth.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_commands"
+path = "tests/extension_commands.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_context"
+path = "tests/extension_context.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_factory_cache"
+path = "tests/extension_factory_cache.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_keybindings"
+path = "tests/extension_keybindings.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_noop_ui"
+path = "tests/extension_noop_ui.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_ui_context"
+path = "tests/extension_ui_context.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extension_ui_prompt"
+path = "tests/extension_ui_prompt.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extensions_discovery"
+path = "tests/extensions_discovery.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extensions_loader"
+path = "tests/extensions_loader.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "extensions_runner"
+path = "tests/extensions_runner.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "globals"
+path = "tests/globals.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "intl"
+path = "tests/intl.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "js_component"
+path = "tests/js_component.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "loader_impl"
+path = "tests/loader_impl.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "mcp_registration"
+path = "tests/mcp_registration.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "module_cache"
+path = "tests/module_cache.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "module_resolver"
+path = "tests/module_resolver.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "node_shims"
+path = "tests/node_shims.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "print_json_ui"
+path = "tests/print_json_ui.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "project_trust"
+path = "tests/project_trust.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "public_surface"
+path = "tests/public_surface.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "render"
+path = "tests/render.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "tool_renderers"
+path = "tests/tool_renderers.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "ts_transpile"
+path = "tests/ts_transpile.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "typebox"
+path = "tests/typebox.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "virtual_module_identity"
+path = "tests/virtual_module_identity.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "virtual_modules"
+path = "tests/virtual_modules.rs"
+required-features = ["runtime"]
+
+[[test]]
+name = "wrapper"
+path = "tests/wrapper.rs"
+required-features = ["runtime"]
+

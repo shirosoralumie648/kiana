@@ -1,0 +1,90 @@
+{
+ "empty": {
+  "distinct": true,
+  "todoSignal": true,
+  "todoNoop": true,
+  "backgroundNoop": true,
+  "backgroundString": "[Context BACKGROUND_CONTEXT]",
+  "todoString": "[Context TODO_CONTEXT]"
+ },
+ "layer": {
+  "bgFirst": null,
+  "firstFirst": "one",
+  "firstSecond": null,
+  "secondFirst": "one",
+  "secondSecond": 2,
+  "replacedFirst": "updated",
+  "secondFirstStill": "one",
+  "string": "[Context BACKGROUND_CONTEXT].WithValue(first).WithValue(second).WithValue(first)"
+ },
+ "cancel": {
+  "childAborted": true,
+  "childReason": "child",
+  "siblingBefore": false,
+  "parentBefore": false,
+  "listenerCalls": 1,
+  "siblingAborted": true,
+  "siblingReason": "parent",
+  "parentUnchanged": true
+ },
+ "mask": {
+  "baseAborted": true,
+  "cleanupHasSignal": false,
+  "value": "preserved"
+ },
+ "abortCases": {
+  "noReason": {
+   "name": "AbortError",
+   "message": "This operation was aborted",
+   "string": "AbortError: This operation was aborted",
+   "isError": true,
+   "same": true
+  },
+  "nullValue": {
+   "name": "AbortError",
+   "message": "The operation was aborted",
+   "string": "AbortError: The operation was aborted",
+   "isError": true,
+   "same": false
+  },
+  "stringValue": {
+   "name": "AbortError",
+   "message": "The operation was aborted",
+   "string": "AbortError: The operation was aborted",
+   "isError": true,
+   "same": false
+  },
+  "zeroValue": {
+   "name": "AbortError",
+   "message": "The operation was aborted",
+   "string": "AbortError: The operation was aborted",
+   "isError": true,
+   "same": false
+  },
+  "plainError": {
+   "name": "Error",
+   "message": "boom",
+   "string": "Error: boom",
+   "isError": true,
+   "same": true
+  }
+ },
+ "spans": [
+  {
+   "name": "caller",
+   "parentId": null,
+   "linkCount": 0
+  },
+  {
+   "name": "outer",
+   "parentId": 1,
+   "linkCount": 0
+  },
+  {
+   "name": "inner",
+   "parentId": 2,
+   "linkCount": 1
+  }
+ ],
+ "noopTrace": 42
+}

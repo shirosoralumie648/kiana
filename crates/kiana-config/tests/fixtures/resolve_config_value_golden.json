@@ -1,0 +1,486 @@
+{
+  "_source": "Generated from packages/coding-agent/src/core/resolve-config-value.ts (upstream-reference) via node --experimental-strip-types; scoped env = {A:1,B:2,_:3,LONG_NAME:long,EMPTY:''}. Values are undefined -> null.",
+  "cases": [
+    {
+      "c": "",
+      "value": "",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$",
+      "value": "$",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$$",
+      "value": "$",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$!",
+      "value": "!",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "a$b",
+      "value": null,
+      "envName": null,
+      "envNames": [
+        "b"
+      ],
+      "missing": [
+        "b"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "${}",
+      "value": "${}",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A}",
+      "value": "1",
+      "envName": "A",
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A",
+      "value": "${A",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A}}",
+      "value": "1}",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$A_B",
+      "value": null,
+      "envName": "A_B",
+      "envNames": [
+        "A_B"
+      ],
+      "missing": [
+        "A_B"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "$_A",
+      "value": null,
+      "envName": "_A",
+      "envNames": [
+        "_A"
+      ],
+      "missing": [
+        "_A"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "$1A",
+      "value": "$1A",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$A-",
+      "value": "1-",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$ A",
+      "value": "$ A",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A-B}",
+      "value": "${A-B}",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${ A }",
+      "value": "${ A }",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$$A",
+      "value": "$A",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$$$A",
+      "value": "$1",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$!$A",
+      "value": "!1",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "x$y$z",
+      "value": null,
+      "envName": null,
+      "envNames": [
+        "y",
+        "z"
+      ],
+      "missing": [
+        "y",
+        "z"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "$LONG_NAME$LONG_NAME",
+      "value": "longlong",
+      "envName": null,
+      "envNames": [
+        "LONG_NAME"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A}${A}",
+      "value": "11",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$A$A",
+      "value": "11",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A}$B",
+      "value": "12",
+      "envName": null,
+      "envNames": [
+        "A",
+        "B"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$$${A}",
+      "value": "$1",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$!{$A}",
+      "value": "!{1}",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${{A}}",
+      "value": "${{A}}",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A{B}}",
+      "value": "${A{B}}",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "é$A",
+      "value": "é1",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$é",
+      "value": "$é",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$_",
+      "value": "3",
+      "envName": "_",
+      "envNames": [
+        "_"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${_}",
+      "value": "3",
+      "envName": "_",
+      "envNames": [
+        "_"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${_1}",
+      "value": null,
+      "envName": "_1",
+      "envNames": [
+        "_1"
+      ],
+      "missing": [
+        "_1"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "$A_B9",
+      "value": null,
+      "envName": "A_B9",
+      "envNames": [
+        "A_B9"
+      ],
+      "missing": [
+        "A_B9"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "﻿$A",
+      "value": "﻿1",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "a$$b",
+      "value": "a$b",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "a$!b",
+      "value": "a!b",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${UNCLOSED",
+      "value": "${UNCLOSED",
+      "envName": null,
+      "envNames": [],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "${A}$",
+      "value": "1$",
+      "envName": null,
+      "envNames": [
+        "A"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$A$B$A",
+      "value": "121",
+      "envName": null,
+      "envNames": [
+        "A",
+        "B"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "pre${B}post${LONG_NAME}",
+      "value": "pre2postlong",
+      "envName": null,
+      "envNames": [
+        "B",
+        "LONG_NAME"
+      ],
+      "missing": [],
+      "isCommand": false,
+      "configured": true
+    },
+    {
+      "c": "$EMPTY",
+      "value": null,
+      "envName": "EMPTY",
+      "envNames": [
+        "EMPTY"
+      ],
+      "missing": [
+        "EMPTY"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "${EMPTY}",
+      "value": null,
+      "envName": "EMPTY",
+      "envNames": [
+        "EMPTY"
+      ],
+      "missing": [
+        "EMPTY"
+      ],
+      "isCommand": false,
+      "configured": false
+    },
+    {
+      "c": "$A$EMPTY",
+      "value": null,
+      "envName": null,
+      "envNames": [
+        "A",
+        "EMPTY"
+      ],
+      "missing": [
+        "EMPTY"
+      ],
+      "isCommand": false,
+      "configured": false
+    }
+  ],
+  "fallback": [
+    "from-process",
+    "scoped",
+    "from-process",
+    null,
+    "  padded  "
+  ]
+}
